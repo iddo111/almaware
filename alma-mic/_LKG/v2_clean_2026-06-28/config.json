@@ -1,0 +1,33 @@
+{
+  "mic": "auto",
+  "prefer": [
+    "brio",
+    "scarlett"
+  ],
+  "avoid": [
+    "usbaudio",
+    "wh-1000xm4",
+    "hands-free",
+    "headset",
+    "bluetooth",
+    "mix"
+  ],
+  "language": "auto",
+  "lang_whitelist": [
+    "he",
+    "en"
+  ],
+  "translate_to_english": false,
+  "arming": "auto",
+  "wake_words": [
+    "ערן",
+    "קלוד",
+    "claude"
+  ],
+  "model": "ivrit-ai/whisper-large-v3-turbo-ct2",
+  "lora_dir": "",
+  "device": "auto",
+  "compute_type": "auto",
+  "type_output": true,
+  "auto_enter": true
+}

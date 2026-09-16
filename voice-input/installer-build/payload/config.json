@@ -1,0 +1,53 @@
+{
+  "_comment": "ALMAWARE Hebrew Mic — default config (fresh install). Auto-detects your microphone and GPU. Edit only if you know what you are doing.",
+  "input_device": null,
+  "fallback_devices": [
+    "USB",
+    "Headset",
+    "Microphone",
+    "Mic"
+  ],
+  "never_use_devices": [],
+  "idle_if_no_good_mic": false,
+  "output": "type",
+  "model": "ivrit-ai/whisper-large-v3-turbo-ct2",
+  "cpu_model": "base",
+  "device": "auto",
+  "language": null,
+  "lang_detect": "dual",
+  "base_model": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+  "lang_detect_min_prob": 0.55,
+  "lang_whitelist": [
+    "he",
+    "en"
+  ],
+  "owner_user": "default",
+  "hotkey": "ctrl+alt+space",
+  "vad_hotkey": "ctrl+alt+v",
+  "mode": "vad",
+  "auto_enter": true,
+  "duck_pct": 100,
+  "ducking_enabled": false,
+  "duck_target": "all_media",
+  "duck_exclude": [
+    "python.exe",
+    "ffplay.exe",
+    "WindowsTerminal.exe"
+  ],
+  "max_secs": 30,
+  "min_secs": 0.6,
+  "silence_secs": 1.0,
+  "vad_rms_threshold": 90,
+  "max_no_speech_prob": 0.6,
+  "min_avg_logprob": -1.0,
+  "initial_prompt": "",
+  "default_target": "focused",
+  "char_delay": 0.004,
+  "use_clipboard_paste": true,
+  "terminal_paste": false,
+  "allow_gpu": true,
+  "auto_focus_target": null,
+  "shortcuts": {},
+  "stt_vad_threshold": 0.2,
+  "stt_vad_min_silence_ms": 300
+}

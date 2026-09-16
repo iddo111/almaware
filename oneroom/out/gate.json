@@ -1,0 +1,228 @@
+{
+  "when": "2026-09-05T23:42:56",
+  "room": "D:/CLAUDE/oneroom/room.py — the workshop at night",
+  "boxes": 105,
+  "gate": "godot_gate.one_pair + godot_gate.verdict, imported verbatim",
+  "boulevard_for_reference": {
+    "coherence_floor": 0.06305337175323517,
+    "coherence_tzelem": 0.013867577991897658,
+    "fidelity_blank": 0.06555384068841175,
+    "fidelity_tzelem": 0.01983569156894489
+  },
+  "runs": {
+    "dark": {
+      "state": "dark",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "poses": 5,
+      "strokes": 30000,
+      "size": 0.006,
+      "rail_m": 2.052,
+      "pairs": [
+        {
+          "strokes": 30000,
+          "valid_px": 1240068,
+          "total_px": 2073600,
+          "coherence": {
+            "FLOOR_repaint_every_frame": 0.006880600612654887,
+            "TZELEM_world_anchored": 0.0030976545802540523,
+            "CEILING_warp_only": 0.0
+          },
+          "fidelity_mse": {
+            "BLANK_best_flat_colour": 0.011782289267620762,
+            "FLOOR_repaint_every_frame": 0.0013283432047302736,
+            "TZELEM_world_anchored": 0.001960556737029632,
+            "CEILING_warp_only": 0.009055573267768168
+          },
+          "step_m": 0.513
+        },
+        {
+          "strokes": 30000,
+          "valid_px": 1223237,
+          "total_px": 2073600,
+          "coherence": {
+            "FLOOR_repaint_every_frame": 0.006258739144127567,
+            "TZELEM_world_anchored": 0.0031345270699486673,
+            "CEILING_warp_only": 0.0
+          },
+          "fidelity_mse": {
+            "BLANK_best_flat_colour": 0.010243121465682212,
+            "FLOOR_repaint_every_frame": 0.001398933985350118,
+            "TZELEM_world_anchored": 0.002479927997691351,
+            "CEILING_warp_only": 0.00801304988720332
+          },
+          "step_m": 0.513
+        },
+        {
+          "strokes": 30000,
+          "valid_px": 1201649,
+          "total_px": 2073600,
+          "coherence": {
+            "FLOOR_repaint_every_frame": 0.006372416367886774,
+            "TZELEM_world_anchored": 0.0032001725859131247,
+            "CEILING_warp_only": 0.0
+          },
+          "fidelity_mse": {
+            "BLANK_best_flat_colour": 0.008860761866942256,
+            "FLOOR_repaint_every_frame": 0.0014490210771760726,
+            "TZELEM_world_anchored": 0.0018052710183190702,
+            "CEILING_warp_only": 0.007463528277430636
+          },
+          "step_m": 0.513
+        },
+        {
+          "strokes": 30000,
+          "valid_px": 1163520,
+          "total_px": 2073600,
+          "coherence": {
+            "FLOOR_repaint_every_frame": 0.005826496386467647,
+            "TZELEM_world_anchored": 0.0028238077401481947,
+            "CEILING_warp_only": 0.0
+          },
+          "fidelity_mse": {
+            "BLANK_best_flat_colour": 0.011050751782999416,
+            "FLOOR_repaint_every_frame": 0.001416988489044734,
+            "TZELEM_world_anchored": 0.0026917940447173288,
+            "CEILING_warp_only": 0.00924601438418443
+          },
+          "step_m": 0.513
+        }
+      ],
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.006334563127784218,
+        "TZELEM_world_anchored": 0.00306404049406601,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.010484231095811161,
+        "FLOOR_repaint_every_frame": 0.0013983216890752995,
+        "TZELEM_world_anchored": 0.002234387449439345,
+        "CEILING_warp_only": 0.008444541454146639
+      },
+      "pass": true,
+      "verdict": [
+        "PASS  coherence: TZELEM 0.00306 vs floor 0.00633 = x2.07 steadier",
+        "PASS  fidelity: TZELEM 0.00223 beats BLANK 0.01048 = x4.69",
+        "PASS  the cheat is caught: warp-only is perfectly coherent (0.00000) and tears on fidelity (0.00844)"
+      ],
+      "steadier_than_floor": 2.067388841646213,
+      "better_than_blank": 4.692217143647972,
+      "seconds": 1040.1,
+      "made": {
+        "truth_b": "D:\\CLAUDE\\oneroom\\out\\gate-dark-truth_b.jpg",
+        "tz_b": "D:\\CLAUDE\\oneroom\\out\\gate-dark-tz_b.jpg",
+        "fl_b": "D:\\CLAUDE\\oneroom\\out\\gate-dark-fl_b.jpg",
+        "ce_b": "D:\\CLAUDE\\oneroom\\out\\gate-dark-ce_b.jpg"
+      }
+    },
+    "lit": {
+      "state": "lit",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "poses": 5,
+      "strokes": 30000,
+      "size": 0.006,
+      "rail_m": 2.052,
+      "pairs": [
+        {
+          "strokes": 30000,
+          "valid_px": 1240068,
+          "total_px": 2073600,
+          "coherence": {
+            "FLOOR_repaint_every_frame": 0.009506164663637674,
+            "TZELEM_world_anchored": 0.0036128841929037336,
+            "CEILING_warp_only": 0.0
+          },
+          "fidelity_mse": {
+            "BLANK_best_flat_colour": 0.009630980750794486,
+            "FLOOR_repaint_every_frame": 0.00166685288951126,
+            "TZELEM_world_anchored": 0.0020994355248372463,
+            "CEILING_warp_only": 0.014650333929433013
+          },
+          "step_m": 0.513
+        },
+        {
+          "strokes": 30000,
+          "valid_px": 1223237,
+          "total_px": 2073600,
+          "coherence": {
+            "FLOOR_repaint_every_frame": 0.009031927894505886,
+            "TZELEM_world_anchored": 0.004056218954346813,
+            "CEILING_warp_only": 0.0
+          },
+          "fidelity_mse": {
+            "BLANK_best_flat_colour": 0.00892669020954644,
+            "FLOOR_repaint_every_frame": 0.001803383828710526,
+            "TZELEM_world_anchored": 0.0027688982279060214,
+            "CEILING_warp_only": 0.013998306491323675
+          },
+          "step_m": 0.513
+        },
+        {
+          "strokes": 30000,
+          "valid_px": 1201649,
+          "total_px": 2073600,
+          "coherence": {
+            "FLOOR_repaint_every_frame": 0.009199715446814073,
+            "TZELEM_world_anchored": 0.004226342529830137,
+            "CEILING_warp_only": 0.0
+          },
+          "fidelity_mse": {
+            "BLANK_best_flat_colour": 0.0072332727240586045,
+            "FLOOR_repaint_every_frame": 0.0017585024673845335,
+            "TZELEM_world_anchored": 0.0023152432614352006,
+            "CEILING_warp_only": 0.012409875414057274
+          },
+          "step_m": 0.513
+        },
+        {
+          "strokes": 30000,
+          "valid_px": 1163520,
+          "total_px": 2073600,
+          "coherence": {
+            "FLOOR_repaint_every_frame": 0.008329309241884924,
+            "TZELEM_world_anchored": 0.0037321082026581407,
+            "CEILING_warp_only": 0.0
+          },
+          "fidelity_mse": {
+            "BLANK_best_flat_colour": 0.005591571243350049,
+            "FLOOR_repaint_every_frame": 0.001701866933964562,
+            "TZELEM_world_anchored": 0.0028325752397989545,
+            "CEILING_warp_only": 0.01139802738559308
+          },
+          "step_m": 0.513
+        }
+      ],
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.009016779311710639,
+        "TZELEM_world_anchored": 0.0039068884699347065,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.007845628731937395,
+        "FLOOR_repaint_every_frame": 0.0017326515298927202,
+        "TZELEM_world_anchored": 0.0025040380634943557,
+        "CEILING_warp_only": 0.013114135805101762
+      },
+      "pass": true,
+      "verdict": [
+        "PASS  coherence: TZELEM 0.00391 vs floor 0.00902 = x2.31 steadier",
+        "PASS  fidelity: TZELEM 0.00250 beats BLANK 0.00785 = x3.13",
+        "PASS  the cheat is caught: warp-only is perfectly coherent (0.00000) and tears on fidelity (0.01311)"
+      ],
+      "steadier_than_floor": 2.3079182784711874,
+      "better_than_blank": 3.1331906836068266,
+      "seconds": 1068.6,
+      "made": {
+        "truth_b": "D:\\CLAUDE\\oneroom\\out\\gate-lit-truth_b.jpg",
+        "tz_b": "D:\\CLAUDE\\oneroom\\out\\gate-lit-tz_b.jpg",
+        "fl_b": "D:\\CLAUDE\\oneroom\\out\\gate-lit-fl_b.jpg",
+        "ce_b": "D:\\CLAUDE\\oneroom\\out\\gate-lit-ce_b.jpg"
+      }
+    }
+  }
+}

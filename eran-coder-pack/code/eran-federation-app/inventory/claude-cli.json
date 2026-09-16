@@ -1,0 +1,284 @@
+{
+  "inventory_metadata": {
+    "generated_at": "2026-08-10T04:50:00Z",
+    "total_projects_found": 150,
+    "significant_projects_listed": 25,
+    "coverage": "Live/active projects from last 15 days + strategic north-stars",
+    "note": "Complete list from MEMORY.md master index; 25 most significant selected by activity, status, and strategic value"
+  },
+  "projects": [
+    {
+      "name": "ALMAWARE Cockpit",
+      "path": "D:\\CLAUDE\\almaware-cockpit",
+      "what": "Live real-time fleet monitoring dashboard (HTML+JSON); shows Eran training, DGX status, services health, git branch",
+      "status": "live",
+      "url_or_run": "http://127.0.0.1:8790/ OR chrome --app=file:///D:/CLAUDE/almaware-cockpit/index.html",
+      "last_modified": "2026-08-10T04:49:47Z",
+      "files": 3
+    },
+    {
+      "name": "ALMAWARE HUD (Collector Daemon)",
+      "path": "D:\\CLAUDE\\almaware-hud",
+      "what": "Background service daemon that gathers fleet status, produces status.json for cockpit; monitors eran/grok1/services/DGX",
+      "status": "live",
+      "url_or_run": "D:\\CLAUDE\\almaware-hud\\start_collector.cmd OR python D:\\CLAUDE\\almaware-hud\\collector.py",
+      "last_modified": "2026-08-10T04:49:37Z",
+      "files": 24
+    },
+    {
+      "name": "Voice Ant Farm",
+      "path": "D:\\CLAUDE\\voice-ant-farm",
+      "what": "Hebrew voice-first acoustic unit learning system; trains 4 independent ants on iddo voice data; queen selects by heldout error (new: ant-c cos@1 0.424)",
+      "status": "live",
+      "url_or_run": "python colony.py train --recordings recordings --manifest manifest.json --state state OR http://127.0.0.1:8803/ (GUI)",
+      "last_modified": "2026-08-09T20:39:23Z",
+      "files": 40
+    },
+    {
+      "name": "ALMA-Recall (Search Index)",
+      "path": "D:\\CLAUDE\\alma-recall",
+      "what": "Full-text search over all Claude session memories and AI chat history on PC; SQLite index + web API",
+      "status": "live",
+      "url_or_run": "http://127.0.0.1:8794/ OR python recall.py index|serve",
+      "last_modified": "2026-08-09T12:34:22Z",
+      "files": 8
+    },
+    {
+      "name": "Alma-MIC (Audio I/O Platform)",
+      "path": "D:\\CLAUDE\\alma-mic",
+      "what": "Master audio capture/relay system; WASAPI loopback, device enumeration, codec bridges; feeds voice-ant-farm and A70 relay",
+      "status": "live",
+      "url_or_run": "python app.py OR scheduled task ALMA-MIC-Admin (active capture)",
+      "last_modified": "2026-08-09T09:54:48Z",
+      "files": 72
+    },
+    {
+      "name": "Alma-Federation (Multi-AI Coordinator)",
+      "path": "D:\\CLAUDE\\alma-federation",
+      "what": "Multi-LLM orchestration framework; coordinates claude-cli, Codex, Grok, Gemini, Qwen; work queue + dispatch",
+      "status": "live",
+      "url_or_run": "python orchestrator.py OR see log tail in almaware-cockpit",
+      "last_modified": "2026-08-10T04:49:37Z",
+      "files": 24
+    },
+    {
+      "name": "Eran-Movie (Full Documentary)",
+      "path": "D:\\CLAUDE\\eran-movie",
+      "what": "15-minute cinematic film of Eran's entire journey (byte-LM→ant-farm→darwish-ai→embodiment→HOLOBRAIN); real footage + Grok Imagine clips",
+      "status": "working",
+      "url_or_run": "HOW-THE-THROAT-WORKS.mp4 (1:51, complete scene), D:\\CLAUDE\\eran-movie\\MISSION.md for overview",
+      "last_modified": "2026-08-09T15:10:38Z",
+      "files": 3
+    },
+    {
+      "name": "Darwish-AI (Autonomous YT Training Loop)",
+      "path": "D:\\CLAUDE\\darwish-ai",
+      "what": "Daily autonomous YouTube video download→tokenize→train→sample cycle; 271.7M brain with impostor filter; runs on eran3",
+      "status": "live",
+      "url_or_run": "eran3 training loop active; monitor via almaware-cockpit or D:\\CLAUDE\\darwish-ai logs",
+      "last_modified": "2026-08-08T12:26:10Z",
+      "files": 5
+    },
+    {
+      "name": "ALMA-Larynx (Hebrew TTS)",
+      "path": "D:\\CLAUDE\\alma-larynx",
+      "what": "Hebrew text-to-speech engine; native male/female voices; feeds eran-movie narration and voice apps",
+      "status": "working",
+      "url_or_run": "python larynx.py <text> OR integrated into eran-movie pipeline",
+      "last_modified": "2026-08-09T02:33:58Z",
+      "files": 40
+    },
+    {
+      "name": "ALMA Optical Perceptron (Design Spec)",
+      "path": "D:\\CLAUDE\\alma-optical-perceptron",
+      "what": "Mark-II optical perceptron design: 4 optical inputs + bias = 5 synapse pairs; all-optical learning; memristor-free",
+      "status": "stale",
+      "url_or_run": "D:\\CLAUDE\\alma-optical-perceptron\\docs\\specs\\2026-08-08-alma-optical-perceptron-design.md",
+      "last_modified": "2026-08-08T13:30:37Z",
+      "files": 1
+    },
+    {
+      "name": "SDR Lab (Software-Defined Radio)",
+      "path": "D:\\CLAUDE\\sdr-lab",
+      "what": "RTL-SDR lab environment; reused 2026-05 rtl_ tools + zadig drivers; ready for dongle experiments",
+      "status": "working",
+      "url_or_run": "rtl_test (no device until dongle plugged); see D:\\CLAUDE\\sdr-lab scripts",
+      "last_modified": "2026-08-09T20:41:57Z",
+      "files": 4
+    },
+    {
+      "name": "VAGABOND Suite (A70 Smart Mic Swarm)",
+      "path": "D:\\CLAUDE\\vagabond",
+      "what": "15-agent swarm building native A70 Android app; always-on mic (he/en auto-detect) typing to focused PC window + Enter",
+      "status": "working",
+      "url_or_run": "Swarm launched 2026-08-10 04:40; agent architecture in orchestrator output",
+      "last_modified": "2026-08-10T04:46:55Z",
+      "files": 0
+    },
+    {
+      "name": "RAMCHAT (Team Council Hub)",
+      "path": "D:\\CLAUDE\\RAMCHAT",
+      "what": "Multi-AI coordination center; team roster (10/11 AIs live), work queue, atomic receipts, cross-AI conversation logs",
+      "status": "live",
+      "url_or_run": "python ramlink.py read|queue|post OR python ramlink.py queue --open (claim work)",
+      "last_modified": "2026-08-10T04:48:07Z",
+      "files": 20
+    },
+    {
+      "name": "Quorum (Consensus Engine)",
+      "path": "D:\\CLAUDE\\quorum",
+      "what": "AI voting/consensus system for high-stakes decisions; integrates grok1, claude-cli, gemini; used for Eran curriculum & approvals",
+      "status": "live",
+      "url_or_run": "python quorum.py --decision <topic> OR see RAMCHAT for active votes",
+      "last_modified": "2026-08-08T16:12:43Z",
+      "files": 58
+    },
+    {
+      "name": "ALMA-PI (Raspberry Pi Image)",
+      "path": "D:\\CLAUDE\\alma-pi",
+      "what": "Custom Raspberry Pi 5 OS image; flashing to 500GB SABRENT card in progress (rpi-imager, secondrun); firstrun hooks for wifi/ssh",
+      "status": "working",
+      "url_or_run": "Flashing in progress; once complete: boot Pi5, connect ssh, runs alma-mic+voice relay agents",
+      "last_modified": "2026-08-08T12:23:52Z",
+      "files": 6
+    },
+    {
+      "name": "Physical-AI Map (Historical & Present)",
+      "path": "D:\\CLAUDE\\physical-ai",
+      "what": "Archive documenting physical AI substrate evolution: Rosenblatt Mark-I, Widrow memristors, Chua '71, HP 2008, modern ReRAM/Knowm SDC",
+      "status": "stale",
+      "url_or_run": "D:\\CLAUDE\\physical-ai\\PHYSICAL-AI-MAP-2026-08-08.md",
+      "last_modified": "2026-08-08T11:25:22Z",
+      "files": 3
+    },
+    {
+      "name": "Perceptron Movie (4K Documentary)",
+      "path": "D:\\CLAUDE\\perceptron-movie",
+      "what": "10-minute 4K documentary on perceptron history and ALMA vision; archival project",
+      "status": "stale",
+      "url_or_run": "D:\\CLAUDE\\perceptron-movie (video file if exists) OR memory reference only",
+      "last_modified": "2026-07-14T01:58:42Z",
+      "files": 5
+    },
+    {
+      "name": "Eran-Audio (Voice Cortex)",
+      "path": "D:\\CLAUDE\\eran-audio",
+      "what": "Voice synthesis & recognition cortex for Eran child AI; integrates acoustic units from ant-farm; feeds embodiment demos",
+      "status": "working",
+      "url_or_run": "python main.py OR integrated into eran-live training",
+      "last_modified": "2026-08-10T04:49:37Z",
+      "files": 51
+    },
+    {
+      "name": "Alma-Headscan (3D Capture)",
+      "path": "D:\\CLAUDE\\alma-headscan",
+      "what": "3D head scanning & reconstruction from phone camera; basis for Eran embodiment (Pinocchio, robot heads)",
+      "status": "working",
+      "url_or_run": "python headscan.py --device <phone_ip> OR processed outputs in state/",
+      "last_modified": "2026-08-06T05:32:32Z",
+      "files": 59
+    },
+    {
+      "name": "Alma-Mic-Android (A70 App)",
+      "path": "D:\\CLAUDE\\alma-mic-android",
+      "what": "Android audio capture app for A70 tablet; feeds voice relay + VAGABOND swarm; Kotlin source + APK",
+      "status": "working",
+      "url_or_run": "APK installable on A70; source in D:\\CLAUDE\\alma-mic-android\\src",
+      "last_modified": "2026-08-06T06:19:50Z",
+      "files": 602
+    },
+    {
+      "name": "Alma-Figure (Robot Embodiment)",
+      "path": "D:\\CLAUDE\\alma-figure",
+      "what": "Robot body design & control; CAD models, servo code, gait learning; integrates with eran-audio voice",
+      "status": "working",
+      "url_or_run": "python control.py OR CAD files in designs/ folder",
+      "last_modified": "2026-08-06T04:06:39Z",
+      "files": 7
+    },
+    {
+      "name": "Alma-Language (ALMA Primitive Study)",
+      "path": "D:\\CLAUDE\\alma-language",
+      "what": "Linguistic foundation study; explores ALMA primitive 1-glyph constructs + spatial logic for Eran",
+      "status": "stale",
+      "url_or_run": "D:\\CLAUDE\\alma-language (reference/research only)",
+      "last_modified": "2026-07-11T14:07:27Z",
+      "files": 39
+    },
+    {
+      "name": "Alma-Govern (Governance Framework)",
+      "path": "D:\\CLAUDE\\alma-govern",
+      "what": "Rule-based governance system for Eran & ALMA ecosystem; ethics validators, constraint solvers",
+      "status": "stale",
+      "url_or_run": "D:\\CLAUDE\\alma-govern (design/reference only)",
+      "last_modified": "2026-07-22T04:07:03Z",
+      "files": 32
+    },
+    {
+      "name": "Alma-Brain-Sim (Neuromorphic Simulator)",
+      "path": "D:\\CLAUDE\\alma-brain-sim",
+      "what": "Standalone brain simulation: spiking neurons, plasticity rules, embodied learning; research platform for Eran",
+      "status": "stale",
+      "url_or_run": "python simulator.py --load <checkpoint> OR jupyter notebooks in research/",
+      "last_modified": "2026-07-15T14:43:54Z",
+      "files": 18
+    },
+    {
+      "name": "Alma-Tablet (Jetson Tab App)",
+      "path": "D:\\CLAUDE\\alma-tablet",
+      "what": "GUI for Eran on Jetson-powered tablet; real-time video, voice, touch interaction",
+      "status": "working",
+      "url_or_run": "Deploy to Jetson + tablet; start with start.sh",
+      "last_modified": "2026-08-08T02:00:56Z",
+      "files": 8
+    },
+    {
+      "name": "Alma-Comfy (ComfyUI Node Suite)",
+      "path": "D:\\CLAUDE\\alma-comfy",
+      "what": "Custom ComfyUI nodes for video generation (Grok Imagine integration); used in eran-movie pipeline",
+      "status": "working",
+      "url_or_run": "Copy to ComfyUI custom_nodes/ OR use via eran-movie make_movie.py",
+      "last_modified": "2026-07-22T17:05:05Z",
+      "files": 150
+    },
+    {
+      "name": "DGX Fleet Topology (Eran1/2/3/4)",
+      "path": "D:\\CLAUDE\\fleet",
+      "what": "DGX Spark cluster config: 4× GB10 GPUs (eran1/2 200G QSFP fabric, eran3 training, eran4 idle); ssh tunnels, mesh",
+      "status": "live",
+      "url_or_run": "ssh eran1/2/3/4 via tailscale (100.104.71.x) OR LAN 192.168.1.x; monitor in almaware-cockpit",
+      "last_modified": "2026-08-05T08:26:52Z",
+      "files": 25
+    }
+  ],
+  "skipped_significant_projects": [
+    "Amos Build (Kabbalah pattern-finder; cloud-only, not on PC)",
+    "ALMA Book (children's book + manifesto; WIP design docs only)",
+    "Eran-Live (Main LM; monitored but not directly runnable)",
+    "Shisha-Brain (analog neuromorphic design; early research)",
+    "Shisha-Lab (reservoir computing research; 71 files, design-phase)",
+    "Protoéran (byte-LM baseline; superseded by eran-live)",
+    "ALMA-Ozen (Hebrew ASR; archived)",
+    "Alma-Pi-Linux (ALMA-OS for Jetson; general purpose OS template)"
+  ],
+  "infrastructure_notes": {
+    "active_services": [
+      "almaware-cockpit :8790 (live)",
+      "voice-ant-farm GUI :8803 (live)",
+      "alma-recall :8794 (live)",
+      "qwen3-480b :8080 on eran1 via tailscale <tailnet-ip> (live)",
+      "alma-mic scheduled task (running, captures PC audio)"
+    ],
+    "dgx_fleet": "4/4 nodes up (eran1/2/3/4 all green on 2026-08-10 per cockpit); eran3 at 96% training darwish-ai brain",
+    "fabric": "QSFP 200Gbps dual-links between eran2↔eran1 and eran2↔eran3 (mesh hub on eran2); all verified up",
+    "team_ais": "10/11 live in RAMCHAT: claude-cli (you), Codex, Grok, Gemini, Qwen-CLI, Qwen3-480B, GPT-OSS-120B, GLM-5.2, Perplexity, deskclod (Desktop Claude); Nemotron offline"
+  },
+  "recent_milestones": [
+    "2026-08-10: almaware-cockpit + HUD collector LIVE; full fleet+services dashboard operational",
+    "2026-08-10: voice-ant-farm queen crowned (ant-c 0.424 cos@1, beats all-256 0.3712)",
+    "2026-08-09: eran-movie scene complete (HOW-THE-THROAT-WORKS.mp4, 1:51, 10MB, 1080p24)",
+    "2026-08-08: alma-optical-perceptron Mark-II design spec delivered (all-optical 5-synapse)",
+    "2026-08-08: darwish-ai autonomous daily loop CLOSED (sync→tokenize→train→sample→pull, 14 genuine sets / 2GB corpus)",
+    "2026-08-10: VAGABOND swarm launched (15-agent A70 smart-mic app build)"
+  ]
+}

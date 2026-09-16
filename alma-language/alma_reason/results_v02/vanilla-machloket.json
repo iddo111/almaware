@@ -1,0 +1,38 @@
+{
+  "corpus": "machloket",
+  "feature_set": "machloket",
+  "n_train": 20,
+  "n_test": 8,
+  "epochs": 60,
+  "eta": 0.05,
+  "models": {
+    "perceptron": {
+      "test_balanced_mean": 0.84375,
+      "test_balanced_min": 0.5,
+      "test_balanced_max": 1.0,
+      "train_balanced_mean": 0.81875,
+      "train_balanced_max": 0.9
+    },
+    "logreg": {
+      "test_balanced_mean": 1.0,
+      "test_balanced_min": 1.0,
+      "test_balanced_max": 1.0,
+      "train_balanced_mean": 0.9,
+      "train_balanced_max": 0.9
+    }
+  },
+  "baselines": {
+    "always מתרץ": {
+      "balanced": 0.5,
+      "accuracy": 0.5
+    },
+    "always מקשן": {
+      "balanced": 0.5,
+      "accuracy": 0.5
+    },
+    "coin toss": {
+      "balanced": 0.375,
+      "accuracy": 0.375
+    }
+  }
+}

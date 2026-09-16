@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<title>Guitar Teacher</title>
+<link rel="manifest" href="/guitar/manifest.json">
+<style>
+  :root { color-scheme: dark; --bg:#0a0a0a; --panel:#161616; --line:#2a2a2a; --fg:#f0f0f0; --dim:#888; --ok:#4ade80; --warn:#fbbf24; --err:#ef4444; --accent:#60a5fa; }
+  *{box-sizing:border-box} html,body{margin:0;padding:0;height:100%;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,sans-serif}
+  body{display:flex;flex-direction:column;min-height:100vh}
+  header{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+  h1{margin:0;font-size:18px;font-weight:500;opacity:.85}
+  nav{display:flex;gap:4px;padding:8px;border-bottom:1px solid var(--line);overflow-x:auto;background:#0d0d0d}
+  nav button{background:transparent;color:var(--fg);border:1px solid transparent;padding:10px 14px;border-radius:8px;font-size:14px;cursor:pointer;white-space:nowrap}
+  nav button.active{background:#1f2937;border-color:#374151}
+  main{flex:1;padding:16px;overflow-y:auto}
+  .panel{display:none}
+  .panel.active{display:block}
+  h2{font-size:16px;font-weight:500;margin:0 0 12px;opacity:.85}
+  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
+  button.primary{background:var(--fg);color:var(--bg);border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:500;cursor:pointer}
+  button.primary:disabled{opacity:.4}
+  button.secondary{background:#1f1f1f;color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14px;cursor:pointer}
+  .pitch{font-size:64px;font-weight:600;text-align:center;font-feature-settings:'tnum';margin:8px 0}
+  .pitch .cents{font-size:18px;opacity:.6;margin-left:8px}
+  .needle{height:28px;background:#1a1a1a;border-radius:14px;position:relative;overflow:hidden;border:1px solid var(--line)}
+  .needle .bar{position:absolute;top:0;bottom:0;width:4px;background:var(--ok);left:50%;transition:left .12s ease,background .12s ease}
+  .needle .center{position:absolute;top:0;bottom:0;width:1px;left:50%;background:#444}
+  .strings{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:14px}
+  .strings button{padding:14px 0;background:#1f1f1f;border:1px solid var(--line);color:var(--fg);border-radius:8px;font-size:16px;font-family:ui-monospace,monospace}
+  .strings button.target{border-color:var(--accent)}
+  .chord-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+  .chord-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;cursor:pointer}
+  .chord-card:hover{border-color:#444}
+  .chord-card .name{font-size:18px;font-weight:600;margin-bottom:6px}
+  .chord-card .tip{font-size:11px;opacity:.55}
+  .chord-svg{width:120px;height:140px;margin:0 auto;display:block}
+  details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:8px}
+  details summary{cursor:pointer;font-weight:500;padding:4px 0}
+  details p{font-size:14px;line-height:1.55;opacity:.85}
+  .song{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px}
+  .song .meta{display:flex;justify-content:space-between;font-size:13px;opacity:.7;margin-bottom:6px}
+  .song .chords{font-family:ui-monospace,monospace;font-size:14px;letter-spacing:1px}
+  .song a{color:var(--accent);text-decoration:none;font-size:13px}
+  .lang-he{direction:rtl;text-align:right}
+  .footer-note{font-size:11px;opacity:.45;text-align:center;padding:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Guitar Teacher</h1>
+  <span id="hdrStatus" style="font-size:12px;opacity:.55"></span>
+</header>
+<nav id="nav">
+  <button data-tab="tuner" class="active">Tuner</button>
+  <button data-tab="chords">Chords</button>
+  <button data-tab="theory">Theory</button>
+  <button data-tab="songs">Songs</button>
+  <button data-tab="practice">Practice</button>
+  <button data-tab="jam">Jam</button>
+  <button data-tab="repo">Repo</button>
+  <button data-tab="daw">DAW</button>
+  <button data-tab="services">Services</button>
+</nav>
+<main>
+
+<section id="tab-tuner" class="panel active">
+  <div class="card">
+    <h2>Tuner</h2>
+    <p style="font-size:13px;opacity:.7;margin:0 0 12px">Pluck a string. Lenient — within ±10 cents is "in tune". Color: <span style="color:var(--ok)">green=in</span>, <span style="color:var(--warn)">yellow=close</span>, <span style="color:var(--err)">red=off</span>.</p>
+    <div class="row" style="justify-content:space-between">
+      <button class="primary" id="tunerStart">Start mic</button>
+      <span id="tunerHz" style="font-size:13px;opacity:.6"></span>
+    </div>
+    <div class="pitch" id="tunerNote">—</div>
+    <div class="needle"><div class="bar" id="tunerBar"></div><div class="center"></div></div>
+    <div class="strings" id="strings">
+      <button data-string="E2" data-hz="82.41">E2<br><small>6 / low E</small></button>
+      <button data-string="A2" data-hz="110.00">A2<br><small>5</small></button>
+      <button data-string="D3" data-hz="146.83">D3<br><small>4</small></button>
+      <button data-string="G3" data-hz="196.00">G3<br><small>3</small></button>
+      <button data-string="B3" data-hz="246.94">B3<br><small>2</small></button>
+      <button data-string="E4" data-hz="329.63">E4<br><small>1 / high E</small></button>
+    </div>
+    <p class="footer-note">Standard tuning, A4 = 440 Hz. Tap a string to focus the tuner on it (auto-detect off).</p>
+  </div>
+</section>
+
+<section id="tab-chords" class="panel">
+  <h2>Chord library</h2>
+  <p style="font-size:13px;opacity:.7">Open chords first (no barre). Tap any chord to see fingering tips.</p>
+  <div class="chord-grid" id="chordGrid"></div>
+</section>
+
+<section id="tab-theory" class="panel">
+  <h2>Theory — the why</h2>
+  <details open><summary>Notes & the chromatic scale</summary>
+    <p>12 notes, repeating: <code>A A# B C C# D D# E F F# G G#</code>. Frets on a guitar = half steps. Two half steps = a whole step. The fretboard is just this 12-note loop, shifted across 6 strings.</p>
+  </details>
+  <details><summary>Intervals (the building blocks)</summary>
+    <p>Distance between two notes. Counted in half-steps:
+    <br>0 = unison, 1 = m2, 2 = M2, 3 = m3, 4 = M3, 5 = P4, 6 = TT, 7 = P5, 8 = m6, 9 = M6, 10 = m7, 11 = M7, 12 = octave.
+    <br>You hear them constantly: P5 (Twinkle Twinkle 1st leap), M3 (Oh When the Saints), m3 (Greensleeves).</p>
+  </details>
+  <details><summary>Major scale formula</summary>
+    <p><strong>W W H W W W H</strong> (W=whole, H=half). C major from C: <code>C D E F G A B C</code>. Every major scale follows the same pattern from its root. Learn this and you can build every major scale on the fretboard.</p>
+  </details>
+  <details><summary>Chord = stacked thirds</summary>
+    <p>A triad = root + 3rd + 5th from a scale. C major triad: C (root) + E (M3) + G (P5). Minor triad: lower the 3rd by a half-step. C minor = C + Eb + G. Every chord shape on the guitar is a way to grab these three notes (or four, for 7ths).</p>
+  </details>
+  <details><summary>The CAGED system</summary>
+    <p>Five movable shapes (C-A-G-E-D) cover the entire fretboard for any major chord. Learn them once → play any major chord anywhere. Then minor / 7th variants drop in by tweaking 1-2 notes.</p>
+  </details>
+  <details><summary>Keys & the cycle of fifths</summary>
+    <p>Move up a 5th: add a sharp. Move down a 5th: add a flat. Order: C→G→D→A→E→B→F#→… This is why so many songs in G use G–C–D and so many in D use D–G–A. The I–IV–V chords are always built from the same three scale degrees.</p>
+  </details>
+  <details><summary>Modes (advanced)</summary>
+    <p>Start the major scale from a different degree → different mode. From C major: starting on D = D Dorian (jazzy minor), starting on E = E Phrygian (Spanish/metal), starting on G = G Mixolydian (rock dominant). Same notes, different vibe — depends what you treat as "home".</p>
+  </details>
+  <details><summary>Rhythm: subdivisions & strumming</summary>
+    <p>4/4 = 4 quarter notes per bar. Strum down on each beat = D D D D. Add up-strums on the "and" of each beat = D U D U D U D U (8th notes). The classic folk strum: <strong>D D U U D U</strong> (count 1 2 &amp; &amp; 4 &amp;). Practice with metronome at 60 bpm, slow.</p>
+  </details>
+  <details><summary>Ear training (5 minutes a day)</summary>
+    <p>Sing intervals against a drone. Hum the root, then play P5, then P4, then M3. Brain learns the colors. Theta-band practice apps: Functional Ear Trainer (Android, FOSS). Adds up fast.</p>
+  </details>
+</section>
+
+<section id="tab-songs" class="panel">
+  <h2>Songs to play along</h2>
+  <p style="font-size:13px;opacity:.7">Each song: chord progression + tempo + YouTube link. Beginner → intermediate.</p>
+  <div id="songList"></div>
+</section>
+
+<section id="tab-jam" class="panel">
+  <h2>Jam — "Zoom for Musicians"</h2>
+  <div class="card">
+    <p style="font-size:13px;opacity:.8;margin:0 0 10px"><strong>Zoom is built for talk — it adds 200–600ms latency and crushes audio. Useless for jamming.</strong> Real low-latency audio needs a music-specific tool. All picks below are FOSS.</p>
+    <details open><summary><strong>SonoBus</strong> — top pick (audio-only)</summary>
+      <p>FOSS, peer-to-peer, ~20-50ms round-trip on the same continent. Cross-platform (Win/Mac/Linux/iOS/Android). No server needed for small groups — public servers free.<br>
+      Install: <a href="https://sonobus.net/" target="_blank">sonobus.net</a> → download → pick "Connect to a public server" → share group name with the other musician → both pluck strings.<br>
+      Latency budget: under 30ms feels like the same room. 30-60ms = tolerable. Over 80ms = falling apart. SonoBus shows your live RTT.</p>
+    </details>
+    <details><summary><strong>Jamulus</strong> — central server model</summary>
+      <p>FOSS, needs a public Jamulus server (free list at <a href="https://jamulus.io/" target="_blank">jamulus.io</a>). Great if everyone in same region. Slightly more setup than SonoBus.</p>
+    </details>
+    <details><summary><strong>JackTrip</strong> — pro-grade (Stanford CCRMA)</summary>
+      <p>Originally academic, now FOSS. Lowest latency of all three but needs more network setup (UDP ports). Recommended once you outgrow SonoBus.</p>
+    </details>
+    <p style="font-size:12px;opacity:.6;margin-top:14px">Video adds 100-300ms more delay and competes for bandwidth — start audio-only. Add video later by running Zoom <em>alongside</em> SonoBus (use Zoom muted for visual cues, SonoBus for sound).</p>
+  </div>
+</section>
+
+<section id="tab-repo" class="panel">
+  <h2>Repo — "GitHub for Musicians"</h2>
+  <div class="card">
+    <p style="font-size:13px;opacity:.8;margin:0 0 10px">Version control for songs, stems, DAW projects. Branch ideas, roll back mistakes, collaborate without overwriting.</p>
+    <details open><summary><strong>Splice</strong> — the de-facto industry tool</summary>
+      <p>Commercial, free tier. Auto-saves every DAW project save → cloud → version history → diff (visual + audio) between any two versions. Roll back any session. Branches not as elegant as Git but works for non-coders. <a href="https://splice.com/" target="_blank">splice.com</a></p>
+    </details>
+    <details><summary><strong>Git + Git LFS</strong> — pure FOSS</summary>
+      <p>For coders. Treat your DAW project folder as a Git repo, use Git LFS for the big audio files (stems, samples). Branch song ideas freely. Diff/merge text-format stuff (Reaper RPP, Tracktion XML). Less friendly for non-coders.<br>
+      Setup: <code>git init</code>, <code>git lfs install</code>, <code>git lfs track "*.wav" "*.als" "*.cpr"</code>, <code>git add .gitattributes</code>, then commit.</p>
+    </details>
+    <details><summary><strong>BandLab</strong> — collaborative DAW + version history</summary>
+      <p>Web-based DAW with built-in versioning + cloud + multi-user editing. Less powerful than Ableton but the collaboration model is the cleanest of any I've used. Free. <a href="https://www.bandlab.com/" target="_blank">bandlab.com</a></p>
+    </details>
+    <p style="font-size:12px;opacity:.6;margin-top:14px">For Iddo's setup specifically: D:\music-repo\ as a Git LFS repo per song, hosted on a private Gitea instance (FOSS) on your Tailscale network. Tell me when ready and I'll spin up Gitea in a container.</p>
+  </div>
+</section>
+
+<section id="tab-daw" class="panel">
+  <h2>DAW integration</h2>
+  <div class="card">
+    <p style="font-size:13px;opacity:.8;margin:0 0 10px">No official MCPs exist for Ableton or Cubase yet. Workable bridges below.</p>
+    <details open><summary><strong>Ableton Live</strong> — Max for Live + OSC</summary>
+      <p>Ableton ships with Max for Live (M4L). Patches exist that expose Live's API via OSC (Open Sound Control). A custom MCP can speak OSC → control Live: trigger clips, mute tracks, change BPM, automate. Library: <a href="https://github.com/ideoforms/AbletonOSC" target="_blank">AbletonOSC</a> (FOSS).<br>
+      Build path: thin MCP server in Python that wraps AbletonOSC + exposes <code>trigger_clip(track, scene)</code>, <code>set_bpm</code>, etc. as tools.</p>
+    </details>
+    <details><summary><strong>Cubase / Nuendo</strong> — Generic Remote + MIDI</summary>
+      <p>Cubase doesn't have a public scripting API. Workaround: Generic Remote setup maps any MIDI CC → any Cubase function. An MCP can send virtual MIDI (via loopMIDI) → Cubase responds. Less granular than Ableton.</p>
+    </details>
+    <details><summary><strong>Reaper</strong> — full scripting (best for AI control)</summary>
+      <p>If you can switch / supplement with Reaper: full ReaScript API (Python + Lua), Web Interface, OSC built-in. Easiest DAW to AI-control. FOSS-friendly license. Worth considering for AI-collab work.</p>
+    </details>
+    <details><summary><strong>Universal Audio Bridge — Ableton Link</strong></summary>
+      <p>Ableton Link sync across DAWs + apps (Live, Reason, Logic, mobile apps, even Reaper) — same beat clock. Not control, just sync. Useful for jam-session timing.</p>
+    </details>
+  </div>
+</section>
+
+<section id="tab-services" class="panel">
+  <h2>Services — Spotify / YouTube / etc.</h2>
+  <div class="card">
+    <p style="font-size:13px;opacity:.8;margin:0 0 12px">MCPs / connectors already wired into your Claude account.</p>
+    <details open><summary><strong>Spotify</strong> — connected ✓</summary>
+      <p>MCP id: <code>4c4ea7eb-bf1b-4bbc-a6cb-a930a5bc421a</code>. Already available in your Anthropic connectors. Tools: search tracks, create playlist, get currently-playing. Tell Claude "make a Spotify playlist of jazz standards in F" and it works.</p>
+    </details>
+    <details><summary><strong>YouTube</strong> — via yt-dlp + Data API</summary>
+      <p>No official YouTube MCP. Options: (a) yt-dlp wrapper as MCP for search + DL (FOSS), (b) YouTube Data API v3 key for search/metadata. Both buildable in ~50 lines.</p>
+    </details>
+    <details><summary><strong>Songsterr</strong> — tabs API</summary>
+      <p>Unofficial REST endpoints exist for chord/tab lookup. Wrap as MCP → ask Claude "give me chords for X song" and it pulls live.</p>
+    </details>
+    <details><summary><strong>Tonal.js</strong> — music theory MCP (FOSS)</summary>
+      <p>Already a JS library; could wrap as MCP for chord progressions, scales, voice leading. Pure-deterministic, no API key needed.</p>
+    </details>
+    <details><summary><strong>Hugging Face</strong> — model access ✓</summary>
+      <p>MCP id: <code>3e7102ba-f887-4031-b274-31c6c818bf1f</code>. Already connected. Useful for: music gen models, audio transcription (Whisper variants), MIDI generation models. Search "music" on HF Spaces.</p>
+    </details>
+  </div>
+</section>
+
+<section id="tab-practice" class="panel">
+  <h2>Practice routine (20 min)</h2>
+  <div class="card">
+    <ol style="line-height:1.8;padding-left:20px;font-size:14px">
+      <li><strong>Warm-up (3 min):</strong> Chromatic exercise 1-2-3-4 on each string, slow → fast.</li>
+      <li><strong>Tuning (1 min):</strong> Tuner tab. All 6 strings green.</li>
+      <li><strong>Chord changes (5 min):</strong> Pick 2 chords (e.g. G ↔ C). Switch every 4 beats with metronome at 60 bpm. Count successful switches in 1 min.</li>
+      <li><strong>One new thing (5 min):</strong> One new chord shape, scale, or theory concept. Tab in this app.</li>
+      <li><strong>Play a song (5 min):</strong> Songs tab. Even messy. Fun > perfect.</li>
+      <li><strong>Cool-down (1 min):</strong> Improvise on any 2 notes you like.</li>
+    </ol>
+    <p style="font-size:12px;opacity:.6">Daily consistency &gt; weekend cramming. 20 min × 7 days &gt; 2 hours × 1 day.</p>
+  </div>
+</section>
+
+</main>
+
+<script type="module">
+import { Pitchfinder } from 'https://esm.sh/pitchfinder@2';
+
+const $ = id => document.getElementById(id);
+const tabs = document.querySelectorAll('#nav button');
+const panels = document.querySelectorAll('.panel');
+tabs.forEach(b => b.addEventListener('click', () => {
+  tabs.forEach(t => t.classList.remove('active'));
+  panels.forEach(p => p.classList.remove('active'));
+  b.classList.add('active');
+  $('tab-' + b.dataset.tab).classList.add('active');
+}));
+
+// --- Tuner ---
+const NOTE_NAMES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+function hzToNote(hz) {
+  const midi = Math.round(69 + 12 * Math.log2(hz / 440));
+  const note = NOTE_NAMES[(midi % 12 + 12) % 12];
+  const octave = Math.floor(midi / 12) - 1;
+  const refHz = 440 * Math.pow(2, (midi - 69) / 12);
+  const cents = Math.round(1200 * Math.log2(hz / refHz));
+  return { name: note + octave, cents, refHz };
+}
+let audioCtx = null, processor = null, detector = null, focusHz = null;
+$('tunerStart').addEventListener('click', async () => {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false } });
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 44100 });
+    const src = audioCtx.createMediaStreamSource(stream);
+    detector = Pitchfinder.YIN({ sampleRate: 44100 });
+    const buf = new Float32Array(2048);
+    const analyser = audioCtx.createAnalyser();
+    analyser.fftSize = 2048;
+    src.connect(analyser);
+    $('tunerStart').textContent = 'Listening…';
+    $('tunerStart').disabled = true;
+    function tick() {
+      analyser.getFloatTimeDomainData(buf);
+      const hz = detector(buf);
+      if (hz && hz > 60 && hz < 1200) {
+        const ref = focusHz ? hzToNote(focusHz) : hzToNote(hz);
+        const live = hzToNote(hz);
+        const target = focusHz ? hzToNote(focusHz) : live;
+        const centsOff = focusHz ? Math.round(1200 * Math.log2(hz / focusHz)) : live.cents;
+        $('tunerNote').innerHTML = target.name + ' <span class="cents">' + (centsOff>0?'+':'') + centsOff + '¢</span>';
+        $('tunerHz').textContent = hz.toFixed(1) + ' Hz';
+        const pct = 50 + Math.max(-50, Math.min(50, centsOff / 2));
+        const bar = $('tunerBar');
+        bar.style.left = pct + '%';
+        bar.style.background = Math.abs(centsOff) < 10 ? 'var(--ok)' : Math.abs(centsOff) < 25 ? 'var(--warn)' : 'var(--err)';
+      }
+      requestAnimationFrame(tick);
+    }
+    tick();
+  } catch (e) {
+    $('tunerStart').textContent = 'Mic blocked';
+    $('hdrStatus').textContent = 'mic err: ' + e.message;
+  }
+});
+document.querySelectorAll('#strings button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('#strings button').forEach(x => x.classList.remove('target'));
+    b.classList.add('target');
+    focusHz = parseFloat(b.dataset.hz);
+  });
+});
+
+// --- Chord library (open chords) ---
+const CHORDS = [
+  { name: 'E', frets: [0,2,2,1,0,0], fingers: [0,2,3,1,0,0], tip: 'The classic. Ring on D, middle on A, index on G.' },
+  { name: 'Em', frets: [0,2,2,0,0,0], fingers: [0,2,3,0,0,0], tip: 'Two fingers. Easiest chord on the guitar.' },
+  { name: 'A', frets: [-1,0,2,2,2,0], fingers: [0,0,1,2,3,0], tip: 'Three fingers cramped on 2nd fret. Press just behind the fret.' },
+  { name: 'Am', frets: [-1,0,2,2,1,0], fingers: [0,0,2,3,1,0], tip: 'Same as A but slide ring finger down to B-string 1st fret.' },
+  { name: 'D', frets: [-1,-1,0,2,3,2], fingers: [0,0,0,1,3,2], tip: 'Triangle shape. Avoid hitting the 6th string.' },
+  { name: 'Dm', frets: [-1,-1,0,2,3,1], fingers: [0,0,0,2,3,1], tip: 'Index on high-E 1st fret. Mournful.' },
+  { name: 'G', frets: [3,2,0,0,0,3], fingers: [3,2,0,0,0,4], tip: 'Stretch! Ring on low-E 3rd, middle on A 2nd, pinky on high-E 3rd.' },
+  { name: 'C', frets: [-1,3,2,0,1,0], fingers: [0,3,2,0,1,0], tip: 'Ring on A 3rd, middle on D 2nd, index on B 1st. Skip low-E.' },
+  { name: 'Cmaj7', frets: [-1,3,2,0,0,0], fingers: [0,3,2,0,0,0], tip: 'C minus the index. Jazzy.' },
+  { name: 'F (easy)', frets: [-1,-1,3,2,1,1], fingers: [0,0,3,2,1,1], tip: 'Index barres B+E strings at 1st fret. The full F barre comes later.' },
+  { name: 'E7', frets: [0,2,0,1,0,0], fingers: [0,2,0,1,0,0], tip: 'Drop the ring finger off E. Bluesy.' },
+  { name: 'A7', frets: [-1,0,2,0,2,0], fingers: [0,0,2,0,3,0], tip: 'Drop the middle off A. Bluesy.' },
+  { name: 'D7', frets: [-1,-1,0,2,1,2], fingers: [0,0,0,2,1,3], tip: 'A flatter D — works in any blues.' },
+  { name: 'G7', frets: [3,2,0,0,0,1], fingers: [3,2,0,0,0,1], tip: 'G with index on high-E 1st fret.' },
+];
+const chordGrid = $('chordGrid');
+function chordSVG(chord) {
+  const strW = 20, fretH = 22, pad = 16;
+  const w = strW * 5 + pad * 2, h = fretH * 5 + pad * 2 + 12;
+  let svg = `<svg class="chord-svg" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">`;
+  svg += `<g stroke="#666" stroke-width="1">`;
+  for (let i = 0; i < 6; i++) svg += `<line x1="${pad + i*strW}" y1="${pad}" x2="${pad + i*strW}" y2="${pad + 5*fretH}"/>`;
+  for (let i = 0; i <= 5; i++) svg += `<line x1="${pad}" y1="${pad + i*fretH}" x2="${pad + 5*strW}" y2="${pad + i*fretH}" stroke-width="${i===0?2.5:1}"/>`;
+  svg += `</g>`;
+  chord.frets.forEach((f, i) => {
+    const x = pad + i*strW;
+    if (f === -1) svg += `<text x="${x}" y="${pad-4}" text-anchor="middle" fill="#ef4444" font-size="11">×</text>`;
+    else if (f === 0) svg += `<circle cx="${x}" cy="${pad-6}" r="3.5" fill="none" stroke="#4ade80"/>`;
+    else {
+      svg += `<circle cx="${x}" cy="${pad + (f-0.5)*fretH}" r="7" fill="#f0f0f0"/>`;
+      const finger = chord.fingers[i];
+      if (finger) svg += `<text x="${x}" y="${pad + (f-0.5)*fretH + 4}" text-anchor="middle" fill="#0a0a0a" font-size="10" font-weight="600">${finger}</text>`;
+    }
+  });
+  svg += `</svg>`;
+  return svg;
+}
+CHORDS.forEach(c => {
+  const card = document.createElement('div');
+  card.className = 'chord-card';
+  card.innerHTML = `<div class="name">${c.name}</div>${chordSVG(c)}<div class="tip">${c.tip}</div>`;
+  chordGrid.appendChild(card);
+});
+
+// --- Songs ---
+const SONGS = [
+  { title: 'Knockin\' on Heaven\'s Door — Dylan', chords: 'G D Am | G D C', tempo: '~70', yt: 'https://www.youtube.com/watch?v=rnKbImRPhTE', tip: 'Two-bar loop, 4 chords. Strum DDUUDU.' },
+  { title: 'Wonderwall — Oasis (Em version)', chords: 'Em7 G Dsus4 A7sus4', tempo: '~88', yt: 'https://www.youtube.com/watch?v=6hzrDeceEKc', tip: 'Capo 2 for Liam\'s key. Without capo: Em7 G Dsus4 A7sus4 all the way.' },
+  { title: 'Three Little Birds — Bob Marley', chords: 'A D | E A', tempo: '~76', yt: 'https://www.youtube.com/watch?v=zaGUr6wzyT8', tip: 'Three chords. Reggae upstroke on the offbeats.' },
+  { title: 'Stand By Me — Ben E. King', chords: 'A F#m D E', tempo: '~118', yt: 'https://www.youtube.com/watch?v=hwZNL7QVJjE', tip: 'I-vi-IV-V — the immortal 50s progression. Try it in C: C Am F G.' },
+  { title: 'Horse with No Name — America', chords: 'Em D6/9', tempo: '~120', yt: 'https://www.youtube.com/watch?v=zKB-2bDP08Y', tip: 'Only TWO chords. D6/9 = xx0200. Beginner-friendly all the way.' },
+  { title: 'Hey Joe — Hendrix', chords: 'C G D A E', tempo: '~80', yt: 'https://www.youtube.com/watch?v=rXwMrBb2x1Q', tip: 'Cycle of fourths. C→G→D→A→E. Pure rock blueprint.' },
+  { title: 'House of the Rising Sun — Animals', chords: 'Am C D F | Am C E E', tempo: '~88', yt: 'https://www.youtube.com/watch?v=AlMzZSeRwww', tip: 'Arpeggiate each chord with picks: bass note then top 3 strings.' },
+  { title: 'Imagine — John Lennon', chords: 'C Cmaj7 F | Am Dm G C', tempo: '~76', yt: 'https://www.youtube.com/watch?v=YkgkThdzX-8', tip: 'Slow piano feel. Strum on 1 and 3, accent the upbeats.' },
+  { title: 'Zombie — The Cranberries', chords: 'Em Cmaj7 G D/F#', tempo: '~84', yt: 'https://www.youtube.com/watch?v=6Ejga4kJUts', tip: 'Same 4 chords whole song. Strum hard on the chorus.' },
+  { title: 'יחד — Eyfo Hayeled (כששרים יחד)', langHe: true, chords: 'D A G D | Em A D', tempo: '~92', yt: 'https://www.youtube.com/watch?v=2lhdcOBHk6E', tip: 'אקורדים נקיים בקצב הליכה. שיר ראשון מצויין בעברית.' },
+  { title: 'שיר ערש — נעמי שמר', langHe: true, chords: 'Am Dm E Am', tempo: '~70', yt: 'https://www.youtube.com/watch?v=Ww_R3p1lUF0', tip: 'מינור קלאסי, שיר ערש - אצבעות עדינות.' },
+  { title: 'אני ואתה — אריק איינשטיין', langHe: true, chords: 'C G Am F | C G F C', tempo: '~96', yt: 'https://www.youtube.com/watch?v=Cf-OZbE3PnQ', tip: 'אבני יסוד של הפופ הישראלי. ארבעה אקורדים פתוחים.' },
+];
+const songList = $('songList');
+SONGS.forEach(s => {
+  const card = document.createElement('div');
+  card.className = 'song' + (s.langHe ? ' lang-he' : '');
+  card.innerHTML = `
+    <div class="meta"><span>${s.title}</span><span>♩=${s.tempo}</span></div>
+    <div class="chords">${s.chords}</div>
+    <div style="font-size:12px;opacity:.65;margin-top:6px">${s.tip}</div>
+    <a href="${s.yt}" target="_blank" rel="noopener" style="margin-top:6px;display:inline-block">▶ Open on YouTube</a>
+  `;
+  songList.appendChild(card);
+});
+
+$('hdrStatus').textContent = 'v0.1 — local';
+</script>
+</body>
+</html>

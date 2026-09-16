@@ -1,0 +1,48 @@
+{
+ "source": "pred.npz",
+ "views": 8,
+ "conf_percentile": 50.0,
+ "conf_threshold": 25.337268829345703,
+ "centre_frac": 0.55,
+ "centre_box": [
+  [
+   -0.6941951403785396,
+   -0.29812772669598886,
+   0.40300875781451984
+  ],
+  [
+   0.6740623358062998,
+   0.3038061237298497,
+   1.8903114214414964
+  ]
+ ],
+ "confident_points": 812224,
+ "voxels": 256,
+ "mesh_raw_vertices": 167456,
+ "mesh_raw_faces": 333866,
+ "mesh_vertices": 588,
+ "mesh_faces": 1459,
+ "bbox_lo": [
+  -0.773233802296634,
+  -0.2948313517209904,
+  0.42723850580658895
+ ],
+ "bbox_hi": [
+  0.7734497607330381,
+  0.32384207349087846,
+  1.819253712533294
+ ],
+ "bbox_size": [
+  1.546683563029672,
+  0.6186734252118689,
+  1.3920152067267049
+ ],
+ "watertight": {
+  "watertight": false,
+  "boundary_edges": 96,
+  "nonmanifold_edges": 530,
+  "euler": 177
+ },
+ "scale_is_arbitrary": true,
+ "note": "shape only. A feed-forward multi-view model returns the scene up to one similarity transform, so these units are not metres."
+}

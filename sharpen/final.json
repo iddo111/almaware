@@ -1,0 +1,151 @@
+{
+  "when": "2026-09-06T02:04:19",
+  "camera": "room.rail_camera(t=0.3) at 1600x900",
+  "published_reference": {
+    "lit": 125.7,
+    "dark": 10.2
+  },
+  "rows": [
+    {
+      "name": "BEFORE-dark",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final/BEFORE-dark.jpg",
+      "strokes": 340000,
+      "lapvar": 10.3,
+      "lapvar_norm": 121.4,
+      "coverage": 0.9998,
+      "render_s": 3.1
+    },
+    {
+      "name": "BEFORE-lit",
+      "state": "lit",
+      "file": "/home/eran1/sharpen-run/lab/final/BEFORE-lit.jpg",
+      "strokes": 340000,
+      "lapvar": 129.3,
+      "lapvar_norm": 219.4,
+      "coverage": 0.9998,
+      "render_s": 3.1
+    },
+    {
+      "name": "AFTER-dark",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final/AFTER-dark.jpg",
+      "strokes": 1200000,
+      "lapvar": 41.9,
+      "lapvar_norm": 532.2,
+      "coverage": 1.0,
+      "render_s": 3.7
+    },
+    {
+      "name": "AFTER-dark-AA2",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final/AFTER-dark-AA2.jpg",
+      "strokes": 1200000,
+      "lapvar": 19.0,
+      "lapvar_norm": 242.8,
+      "coverage": 1.0,
+      "render_s": 4.7
+    },
+    {
+      "name": "AFTER-dark-soft",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final/AFTER-dark-soft.jpg",
+      "strokes": 1200000,
+      "lapvar": 16.1,
+      "lapvar_norm": 208.7,
+      "coverage": 0.9914,
+      "render_s": 9.9
+    },
+    {
+      "name": "AFTER-lit",
+      "state": "lit",
+      "file": "/home/eran1/sharpen-run/lab/final/AFTER-lit.jpg",
+      "strokes": 1200000,
+      "lapvar": 468.0,
+      "lapvar_norm": 758.3,
+      "coverage": 1.0,
+      "render_s": 3.7
+    },
+    {
+      "name": "AFTER-lit-AA2",
+      "state": "lit",
+      "file": "/home/eran1/sharpen-run/lab/final/AFTER-lit-AA2.jpg",
+      "strokes": 1200000,
+      "lapvar": 205.9,
+      "lapvar_norm": 337.7,
+      "coverage": 1.0,
+      "render_s": 4.7
+    },
+    {
+      "name": "AFTER-lit-soft",
+      "state": "lit",
+      "file": "/home/eran1/sharpen-run/lab/final/AFTER-lit-soft.jpg",
+      "strokes": 1200000,
+      "lapvar": 261.0,
+      "lapvar_norm": 401.9,
+      "coverage": 0.9914,
+      "render_s": 10.0
+    },
+    {
+      "name": "AFTER-dark-grade1.6",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final/AFTER-dark-grade1.6.jpg",
+      "strokes": 1200000,
+      "lapvar": 105.7,
+      "lapvar_norm": 527.9,
+      "coverage": 1.0,
+      "render_s": 3.8
+    },
+    {
+      "name": "AFTER-dark-grade1.6-AA2",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final/AFTER-dark-grade1.6-AA2.jpg",
+      "strokes": 1200000,
+      "lapvar": 46.9,
+      "lapvar_norm": 235.6,
+      "coverage": 1.0,
+      "render_s": 4.8
+    },
+    {
+      "name": "AFTER-dark-grade2.2",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final/AFTER-dark-grade2.2.jpg",
+      "strokes": 1200000,
+      "lapvar": 197.7,
+      "lapvar_norm": 525.2,
+      "coverage": 1.0,
+      "render_s": 3.7
+    },
+    {
+      "name": "AFTER-dark-grade2.2-AA2",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final/AFTER-dark-grade2.2-AA2.jpg",
+      "strokes": 1200000,
+      "lapvar": 86.8,
+      "lapvar_norm": 232.0,
+      "coverage": 1.0,
+      "render_s": 4.7
+    },
+    {
+      "name": "AFTER-dark-grade3.0",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final/AFTER-dark-grade3.0.jpg",
+      "strokes": 1200000,
+      "lapvar": 353.5,
+      "lapvar_norm": 520.8,
+      "coverage": 1.0,
+      "render_s": 3.7
+    },
+    {
+      "name": "AFTER-dark-grade3.0-AA2",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final/AFTER-dark-grade3.0-AA2.jpg",
+      "strokes": 1200000,
+      "lapvar": 154.0,
+      "lapvar_norm": 228.3,
+      "coverage": 1.0,
+      "render_s": 4.7
+    }
+  ],
+  "seconds": 296.5
+}

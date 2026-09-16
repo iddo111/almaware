@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-07-11T00:00:00Z",
+  "eran1": {
+    "up": true,
+    "reachable_via": "LAN <lan-ip>",
+    "hostname": "eran1",
+    "uptime_h": 157,
+    "gpu_temp": 52,
+    "gpu_util": 9,
+    "load1": 0.36,
+    "mem_used_g": 95,
+    "mem_total_g": 121,
+    "disk_root": "1.8T/3.6T 51%",
+    "qsfp": {
+      "enp1s0f0np0": "UP <fabric-ip>/30",
+      "enp1s0f1np1": "DOWN",
+      "enP2p1s0f0np0": "UP (no ip)",
+      "enP2p1s0f1np1": "DOWN"
+    },
+    "procs": ["llama-server"]
+  },
+  "eran2": {
+    "up": true,
+    "reachable_via": "LAN <lan-ip>",
+    "hostname": "edgexpert-041d",
+    "uptime_h": 49,
+    "gpu_temp": 54,
+    "gpu_util": 0,
+    "load1": 0.71,
+    "mem_used_g": 100,
+    "mem_total_g": 121,
+    "disk_root": "796G/3.6T 23%",
+    "qsfp": {
+      "enp1s0f0np0": "UP <fabric-ip>/30",
+      "enp1s0f1np1": "UP <fabric-ip>/24",
+      "enP2p1s0f0np0": "UP link-local",
+      "enP2p1s0f1np1": "UP link-local"
+    },
+    "procs": ["rpc-server"],
+    "note": "fabric hub - all 4 QSFP interfaces up"
+  },
+  "eran3": {
+    "up": true,
+    "reachable_via": "200G fabric <fabric-ip> via eran1 ProxyJump (LAN/WiFi DOWN)",
+    "hostname": "edgexpert-01e6",
+    "uptime_h": 49,
+    "gpu_temp": 48,
+    "gpu_util": 0,
+    "load1": 0.77,
+    "mem_used_g": 68,
+    "mem_total_g": 121,
+    "disk_root": "919G/3.6T 27%",
+    "qsfp": {
+      "enp1s0f0np0": "DOWN",
+      "enp1s0f1np1": "UP <fabric-ip>/24",
+      "enP2p1s0f0np0": "DOWN",
+      "enP2p1s0f1np1": "UP (no ip)"
+    },
+    "procs": ["dnsmasq", "rpc-server"],
+    "lan_reachable": false,
+    "fabric_reachable": true,
+    "extra_iface": "enP7s7 UP <fabric-ip>/24 (direct wired link to eran4)"
+  },
+  "eran4": {
+    "up": true,
+    "reachable_via": "<fabric-ip> via eran3 direct-link enP7s7 (LAN/WiFi <lan-ip> DOWN)",
+    "hostname": "edgexpert-3636",
+    "uptime_h": 49,
+    "gpu_temp": 77,
+    "gpu_util": 92,
+    "load1": 1.01,
+    "mem_used_g": 5,
+    "mem_total_g": 121,
+    "disk_root": "956G/3.6T 28%",
+    "qsfp": {
+      "enP7s7": "UP <fabric-ip>/24 (direct wired link to eran3, NOT QSFP fabric)"
+    },
+    "procs": [],
+    "lan_reachable": false,
+    "fabric_reachable_via_eran3": true,
+    "note": "GPU 92% util at 77C but NO userspace llama-server/rpc-server/dnsmasq — training-like workload of unknown origin; verify what is driving the GPU"
+  }
+}

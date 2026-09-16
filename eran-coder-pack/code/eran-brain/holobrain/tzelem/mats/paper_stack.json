@@ -1,0 +1,41 @@
+{
+ "name": "paper_stack",
+ "kind": "paper",
+ "size": 512,
+ "mm_per_texel": 0.23809523809523808,
+ "physical_size_mm": 121.9047619047619,
+ "source": "room3d/frames/f0008.jpg",
+ "source_crop_xyxy": [
+  250,
+  110,
+  762,
+  622
+ ],
+ "source_px": [
+  512,
+  512
+ ],
+ "provenance": "Iddo Perez, room_20260905.mp4, filmed 2026-09-05, his own desk",
+ "licence": "Iddo's own footage - no third-party licence",
+ "scale_basis": "estimated",
+ "mm_per_px_source": 0.23809523809523808,
+ "roughness_base_authored": 0.92,
+ "metallic_authored": 0.0,
+ "relief_mm_authored": 0.9,
+ "albedo_is": "mean-normalised DETAIL, stored as sRGB with 1.0 at mid-grey",
+ "measured": [
+  "albedo",
+  "-"
+ ],
+ "derived": [
+  "height",
+  "normal",
+  "roughness-variation",
+  "ao"
+ ],
+ "authored": [
+  "roughness-base",
+  "metallic",
+  "relief_mm"
+ ]
+}

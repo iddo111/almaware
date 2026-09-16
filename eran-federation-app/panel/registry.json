@@ -1,0 +1,710 @@
+{
+ "schema": "fed-registry-v1",
+ "generated_at": "2026-08-23T21:43:35+03:00",
+ "note_en": "Node registry for the ERAN Federation panel. Seeded from the 5 inventory JSONs (2026-08-10 04:52-04:55) + live port verification 06:15. Leads, not truth: green/red comes only from live probes (ALMA Standard). public:false nodes never leave this machine. | 2026-08-23: removed 4 project nodes whose directory does not exist on disk (proj-historical-research-triad, proj-model-operations-console, proj-philips-10ff2-listener, proj-semicom-listener). They had probed gray as 'not tracked yet' since the registry was written, which read like a HUD gap but was a registry ghost: there is no project there to track. The other 13 'not tracked yet' nodes were real projects missing from the HUD's PROJECT_ROOTS and are now tracked. Restore from registry.json.bak-phantoms-20260823 if one of these is ever built.",
+ "note_he": "רישום צמתים ללוח הפדרציה של ערן. נזרע מחמשת קבצי המלאי + אימות פורטים חי. ירוק/אדום מגיע רק מבדיקות חיות — אף פעם לא מהרישום עצמו. צמתים עם public:false לעולם לא יוצאים מהמחשב הזה.",
+ "probe_conventions": {
+  "http": "GET target; 2xx-4xx = answering, connection refused/timeout = down. Fragmentless.",
+  "status_json": "GET the URL before '#', then follow the fragment: '#/a/b' = JSON Pointer (RFC 6901) into the document; '#id=X' = find element with id==X inside the top-level 'models' array. Missing key = gray (unknown), never green.",
+  "ramchat_file": "Read the local file (encoding utf-8, atomic os.replace writes = no torn reads), then follow '#/a/b' JSON Pointer. Never map the RAMCHAT shared-memory blocks.",
+  "alma_status": "GET target with the coordinator's auth header; the header value is read at runtime by server.py from the coordinator's local credential file and never stored in this registry nor in any pushed payload. Green from this probe means the worker is POLLING (dry-run), not executing — label honestly."
+ },
+ "nodes": [
+  {
+   "id": "dgx-eran1",
+   "name": "eran1 — ERAN himself (eranb-life, never restarted)",
+   "name_he": "ערן1 — ערן עצמו (האורגניזם — לא מאתחלים)",
+   "kind": "dgx",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/fleet/eran1"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "dgx-eran2",
+   "name": "eran2 — the senses (sense_organ :8830, fabric hub)",
+   "name_he": "ערן2 — החושים (איבר החישה :8830, רכזת המארג)",
+   "kind": "dgx",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/fleet/eran2"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "dgx-eran3",
+   "name": "eran3 — mostly idle (voice-ant-farm; disk 84% — watch)",
+   "name_he": "ערן3 — כמעט פנוי (חוות נמלים; דיסק 84%)",
+   "kind": "dgx",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/fleet/eran3"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "dgx-eran4",
+   "name": "eran4 — DARWISH (archived) + audio + nightly LoRA",
+   "name_he": "ערן4 — דרוויש (בארכיון) + אודיו + LoRA לילי",
+   "kind": "dgx",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/fleet/eran4"
+   },
+   "talk": {
+    "model_id": "gpt-oss-120b"
+   },
+   "public": true
+  },
+  {
+   "id": "fabric-qsfp",
+   "name": "QSFP 200G fabric (4 links, probed from eran2 — ignore the 'hub' label bug)",
+   "name_he": "מארג QSFP 200G (ארבעה קישורים)",
+   "kind": "dgx",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/fabric"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "svc-cockpit",
+   "name": "ALMAWARE Cockpit + HUD collector (:8790)",
+   "name_he": "קוקפיט אלמאוור + אוסף HUD",
+   "kind": "service",
+   "probe": {
+    "type": "http",
+    "target": "http://127.0.0.1:8790/status.json"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "svc-alma-recall",
+   "name": "ALMA-Recall search (:8794)",
+   "name_he": "אלמא-ריקול — חיפוש זיכרון",
+   "kind": "service",
+   "probe": {
+    "type": "http",
+    "target": "http://127.0.0.1:8794/"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "svc-ant-farm-gui",
+   "name": "Voice Ant Farm GUI (:8803)",
+   "name_he": "חוות הנמלים הקולית — ממשק",
+   "kind": "service",
+   "probe": {
+    "type": "http",
+    "target": "http://127.0.0.1:8803/"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "svc-quorum",
+   "name": "QUORUM — Talmudic debate arena (:8099)",
+   "name_he": "קוורום — זירת השקלא וטריא",
+   "kind": "council",
+   "probe": {
+    "type": "http",
+    "target": "http://127.0.0.1:8099/health"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "svc-alma-federation",
+   "name": "ALMA Federation coordinator (:8950) — DRY-RUN, polling is not executing",
+   "name_he": "מתאם פדרציית אלמא — הרצה יבשה בלבד",
+   "kind": "service",
+   "probe": {
+    "type": "alma_status",
+    "target": "http://127.0.0.1:8950/status"
+   },
+   "talk": null,
+   "public": false
+  },
+  {
+   "id": "svc-alma-gateway",
+   "name": "ALMA Local gateway (:8105)",
+   "name_he": "שער אלמא מקומי",
+   "kind": "service",
+   "probe": {
+    "type": "http",
+    "target": "http://127.0.0.1:8105/"
+   },
+   "talk": null,
+   "public": false
+  },
+  {
+   "id": "svc-ant-dashboard",
+   "name": "Ant dashboard server (:8890)",
+   "name_he": "לוח בקרת נמלים",
+   "kind": "service",
+   "probe": {
+    "type": "http",
+    "target": "http://127.0.0.1:8890/"
+   },
+   "talk": null,
+   "public": false
+  },
+  {
+   "id": "svc-preview-8103",
+   "name": "Preview server (:8103)",
+   "name_he": "שרת תצוגה מקדימה",
+   "kind": "service",
+   "probe": {
+    "type": "http",
+    "target": "http://127.0.0.1:8103/"
+   },
+   "talk": null,
+   "public": false
+  },
+  {
+   "id": "svc-federation-panel",
+   "name": "Federation panel (:8895) — this build, live",
+   "name_he": "לוח הפדרציה — הבנייה הנוכחית",
+   "kind": "service",
+   "probe": {
+    "type": "http",
+    "target": "http://127.0.0.1:8895/api/federation.json"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "ramchat-council",
+   "name": "RAMCHAT council (GUI + shared-RAM blocks, via watchdog file)",
+   "name_he": "מועצת רם-צ'אט",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\ramchat_watchdog_status.json#/gui"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "ramchat-queue",
+   "name": "RAMCHAT work queue (counts use both vocabularies: open/in_progress/done and processing/completed/failed)",
+   "name_he": "תור העבודה של רם-צ'אט",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\ramchat_prompt_queue.json#/"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "council-claude-cli",
+   "name": "claude-cli (Claude Code)",
+   "name_he": "קלוד CLI — חבר מועצה",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\roster.json#/members/claude-cli"
+   },
+   "talk": {
+    "model_id": "claude"
+   },
+   "public": true
+  },
+  {
+   "id": "council-deskclod",
+   "name": "deskclod (Desktop Claude)",
+   "name_he": "דסק-קלוד — חבר מועצה",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\roster.json#/members/deskclod"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "council-codex",
+   "name": "Codex",
+   "name_he": "קודקס — חבר מועצה",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\roster.json#/members/Codex"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "council-grok",
+   "name": "Grok",
+   "name_he": "גרוק — חבר מועצה",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\roster.json#/members/Grok"
+   },
+   "talk": {
+    "model_id": "grok"
+   },
+   "public": true
+  },
+  {
+   "id": "council-gemini",
+   "name": "Gemini",
+   "name_he": "ג'מיני — חבר מועצה",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\roster.json#/members/Gemini"
+   },
+   "talk": {
+    "model_id": "gemini"
+   },
+   "public": true
+  },
+  {
+   "id": "council-qwen-cli",
+   "name": "Qwen-CLI",
+   "name_he": "קוון CLI — חבר מועצה",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\roster.json#/members/Qwen-CLI"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "council-qwen3-480b",
+   "name": "Qwen3-480B (DGX fleet member)",
+   "name_he": "קוון3-480B — חבר מועצה",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\roster.json#/members/Qwen3-480B"
+   },
+   "talk": {
+    "model_id": "qwen3-coder-480b"
+   },
+   "public": true
+  },
+  {
+   "id": "council-gpt-oss-120b",
+   "name": "GPT-OSS 120B (council member)",
+   "name_he": "GPT-OSS 120B — חבר מועצה",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\roster.json#/members/GPT-OSS 120B"
+   },
+   "talk": {
+    "model_id": "gpt-oss-120b"
+   },
+   "public": true
+  },
+  {
+   "id": "council-glm-52",
+   "name": "GLM-5.2 Colibri (council member)",
+   "name_he": "GLM-5.2 קוליברי — חבר מועצה",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\roster.json#/members/GLM-5.2"
+   },
+   "talk": {
+    "model_id": "glm-5.2"
+   },
+   "public": true
+  },
+  {
+   "id": "council-nemotron",
+   "name": "Nemotron (via ALMA Harness)",
+   "name_he": "נמוטרון — חבר מועצה",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\roster.json#/members/Nemotron"
+   },
+   "talk": {
+    "model_id": "alma:nemotron"
+   },
+   "public": true
+  },
+  {
+   "id": "council-perplexity",
+   "name": "Perplexity",
+   "name_he": "פרפלקסיטי — חבר מועצה",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\roster.json#/members/Perplexity"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "council-alma-fs-mcp",
+   "name": "ALMA-FS-MCP (internal file bridge)",
+   "name_he": "גשר קבצים פנימי — חבר מועצה",
+   "kind": "council",
+   "probe": {
+    "type": "ramchat_file",
+    "target": "D:\\CLAUDE\\RAMCHAT\\roster.json#/members/ALMA-FS-MCP"
+   },
+   "talk": null,
+   "public": false
+  },
+  {
+   "id": "model-claude",
+   "name": "Claude CLI (installed is not proof of callability — first real turn is the gate)",
+   "name_he": "מודל קלוד CLI",
+   "kind": "model",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8099/api/models#id=claude"
+   },
+   "talk": {
+    "model_id": "claude"
+   },
+   "public": true
+  },
+  {
+   "id": "model-grok",
+   "name": "Grok CLI",
+   "name_he": "מודל גרוק CLI",
+   "kind": "model",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8099/api/models#id=grok"
+   },
+   "talk": {
+    "model_id": "grok"
+   },
+   "public": true
+  },
+  {
+   "id": "model-gemini",
+   "name": "Gemini CLI",
+   "name_he": "מודל ג'מיני CLI",
+   "kind": "model",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8099/api/models#id=gemini"
+   },
+   "talk": {
+    "model_id": "gemini"
+   },
+   "public": true
+  },
+  {
+   "id": "model-qwen3-coder-480b",
+   "name": "Qwen3-Coder-480B (eran1 fleet head)",
+   "name_he": "קוון3 קודר 480B — ראש הצי",
+   "kind": "model",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8099/api/models#id=qwen3-coder-480b"
+   },
+   "talk": {
+    "model_id": "qwen3-coder-480b"
+   },
+   "public": true
+  },
+  {
+   "id": "model-gpt-oss-120b",
+   "name": "GPT-OSS-120B (eran4)",
+   "name_he": "GPT-OSS 120B — ערן4",
+   "kind": "model",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8099/api/health#/models/gpt-oss-120b"
+   },
+   "talk": {
+    "model_id": "gpt-oss-120b"
+   },
+   "public": true
+  },
+  {
+   "id": "model-glm-52",
+   "name": "GLM-5.2 Colibri (eran4, ~3s/word — never liveness-ping by chat)",
+   "name_he": "GLM-5.2 קוליברי — איטי, ללא פינג צ'אט",
+   "kind": "model",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8099/api/health#/models/glm-5.2"
+   },
+   "talk": {
+    "model_id": "glm-5.2"
+   },
+   "public": true
+  },
+  {
+   "id": "model-coder-harness",
+   "name": "Coder harness agent (dgx4 — writes real files)",
+   "name_he": "סוכן קוד — כותב קבצים אמיתיים",
+   "kind": "model",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8099/api/health#/models/coder-harness"
+   },
+   "talk": {
+    "model_id": "coder-harness"
+   },
+   "public": false
+  },
+  {
+   "id": "model-ollama-local",
+   "name": "Ollama local (:11434)",
+   "name_he": "אולמה מקומי",
+   "kind": "model",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8099/api/health#/models/ollama-local"
+   },
+   "talk": {
+    "model_id": "ollama-local"
+   },
+   "public": true
+  },
+  {
+   "id": "model-alma-nemotron",
+   "name": "alma:nemotron (Harness route not configured in live quorum — expect gray)",
+   "name_he": "נמוטרון דרך אלמא — צפוי אפור",
+   "kind": "model",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8099/api/models#id=alma:nemotron"
+   },
+   "talk": {
+    "model_id": "alma:nemotron"
+   },
+   "public": true
+  },
+  {
+   "id": "model-alma-gptoss120b",
+   "name": "alma:gptoss120b (Harness route not configured in live quorum — expect gray)",
+   "name_he": "GPT-OSS דרך אלמא — צפוי אפור",
+   "kind": "model",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8099/api/models#id=alma:gptoss120b"
+   },
+   "talk": {
+    "model_id": "alma:gptoss120b"
+   },
+   "public": true
+  },
+  {
+   "id": "proj-vagabond",
+   "name": "VAGABOND — A70 smart-mic app swarm",
+   "name_he": "וגבונד — אפליקציית מיקרופון A70",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/vagabond"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-eran-audio",
+   "name": "Eran-Audio — voice cortex",
+   "name_he": "ערן-אודיו — קליפת הקול",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/eran-audio"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-eran-movie",
+   "name": "Eran-Movie — 15-minute documentary",
+   "name_he": "סרט ערן — דוקומנטרי",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/eran-movie"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-alma-mic",
+   "name": "ALMA-MIC — audio capture platform (private capture)",
+   "name_he": "אלמא-מיק — לכידת שמע פרטית",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/alma-mic"
+   },
+   "talk": null,
+   "public": false
+  },
+  {
+   "id": "proj-alma-larynx",
+   "name": "ALMA-Larynx — Hebrew TTS",
+   "name_he": "גרון אלמא — דיבור עברי",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/alma-larynx"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-sdr-lab",
+   "name": "SDR Lab — software-defined radio",
+   "name_he": "מעבדת רדיו מוגדר-תוכנה",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/sdr-lab"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-darwish-ai",
+   "name": "Darwish-AI — autonomous training loop (state = eran3 node)",
+   "name_he": "דרוויש — לולאת אימון אוטונומית על ערן3",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/fleet/eran3"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-alma-optical-perceptron",
+   "name": "ALMA Optical Perceptron — Mark-II design",
+   "name_he": "פרספטרון אופטי — עיצוב מארק 2",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/alma-optical-perceptron"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-alma-pi",
+   "name": "ALMA-PI — Raspberry Pi 5 image",
+   "name_he": "אלמא-פאי — תמונת ראספברי",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/alma-pi"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-physical-ai",
+   "name": "Physical-AI Map — substrate history archive",
+   "name_he": "מפת בינה פיזית",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/physical-ai"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-alma-tablet",
+   "name": "Alma-Tablet — Jetson tablet GUI",
+   "name_he": "טאבלט אלמא — ג'טסון",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/alma-tablet"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-alma-headscan",
+   "name": "Alma-Headscan — 3D capture (personal scans)",
+   "name_he": "סריקת ראש — צילומים אישיים",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/alma-headscan"
+   },
+   "talk": null,
+   "public": false
+  },
+  {
+   "id": "proj-alma-mic-android",
+   "name": "Alma-Mic-Android — A70 capture app",
+   "name_he": "מיק-אנדרואיד — אפליקציית לכידה",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/alma-mic-android"
+   },
+   "talk": null,
+   "public": false
+  },
+  {
+   "id": "proj-alma-figure",
+   "name": "Alma-Figure — robot embodiment",
+   "name_he": "דמות אלמא — התגשמות רובוטית",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/alma-figure"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-alma-comfy",
+   "name": "Alma-Comfy — ComfyUI node suite",
+   "name_he": "אלמא-קומפי — צמתי וידאו",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/alma-comfy"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-alma-govern",
+   "name": "Alma-Govern — governance framework",
+   "name_he": "ממשל אלמא",
+   "kind": "project",
+   "probe": {
+    "type": "status_json",
+    "target": "http://127.0.0.1:8790/status.json#/projects/items/alma-govern"
+   },
+   "talk": null,
+   "public": true
+  },
+  {
+   "id": "proj-federation-site",
+   "name": "Federation site — public Pages demos (truthfix)",
+   "name_he": "אתר הפדרציה הציבורי",
+   "kind": "project",
+   "probe": {
+    "type": "http",
+    "target": "https://eran-federation.pages.dev/"
+   },
+   "talk": null,
+   "public": true
+  }
+ ]
+}

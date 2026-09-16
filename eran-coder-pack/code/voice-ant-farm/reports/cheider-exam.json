@@ -1,0 +1,117 @@
+{
+  "question": "did the ants learn to READ — bind never-seen letter images to never-heard syllable sounds",
+  "chance": 0.045454545454545456,
+  "protocol": "22 classes, 132 held-out decisions per exam; letter images in fonts never seen in training; audio tokens from the published held-out split; binding = Hebbian PMI over co-presence moments only",
+  "world": {
+    "passes": 3,
+    "moments_total": 1544,
+    "moments_co_presence": 1188,
+    "train_fonts": [
+      "arial.ttf",
+      "times.ttf",
+      "tahoma.ttf",
+      "segoeui.ttf",
+      "david.ttf",
+      "lvnm.ttf",
+      "ahronbd.ttf",
+      "calibri.ttf"
+    ],
+    "heldout_fonts": [
+      "frank.ttf",
+      "gisha.ttf",
+      "nrkis.ttf"
+    ]
+  },
+  "ears": {
+    "queen": "vowel-cochlea26-scaled-512/ant-a",
+    "checkpoint_sha256": "a33f8f78af150da8a7a547387d6752a9284147c8c8f93516ad907c3c2b1a51cb",
+    "n_units": 512
+  },
+  "eyes": {
+    "sight_codebook_kind": "random-real-glimpses-64",
+    "units_used_train": 64,
+    "units_used_heldout": 39
+  },
+  "results": {
+    "exam_a_see_to_say": {
+      "top1": 0.1590909090909091,
+      "items": 132,
+      "per_class": {
+        "aa": "2/6",
+        "ah": "4/6",
+        "ba": "1/6",
+        "da": "0/6",
+        "ga": "0/6",
+        "ha": "0/6",
+        "ka": "0/6",
+        "kha": "0/6",
+        "la": "0/6",
+        "ma": "0/6",
+        "na": "2/6",
+        "pa": "0/6",
+        "qa": "0/6",
+        "ra": "3/6",
+        "sa": "0/6",
+        "sha": "3/6",
+        "ta": "1/6",
+        "tha": "0/6",
+        "tsa": "1/6",
+        "va": "0/6",
+        "ya": "4/6",
+        "za": "0/6"
+      },
+      "permutation_null": {
+        "draws": 200,
+        "mean": 0.04579545454545454,
+        "p95": 0.0761363636363635,
+        "max": 0.10606060606060606
+      }
+    },
+    "exam_b_hear_to_point": {
+      "top1": 0.12878787878787878,
+      "items": 132,
+      "per_class": {
+        "aa": "6/6",
+        "ah": "0/6",
+        "ba": "0/6",
+        "da": "1/6",
+        "ga": "0/6",
+        "ha": "0/6",
+        "ka": "0/6",
+        "kha": "0/6",
+        "la": "0/6",
+        "ma": "0/6",
+        "na": "1/6",
+        "pa": "0/6",
+        "qa": "0/6",
+        "ra": "0/6",
+        "sa": "0/6",
+        "sha": "3/6",
+        "ta": "0/6",
+        "tha": "0/6",
+        "tsa": "0/6",
+        "va": "0/6",
+        "ya": "6/6",
+        "za": "0/6"
+      },
+      "permutation_null": {
+        "draws": 200,
+        "mean": 0.045454545454545456,
+        "p95": 0.06818181818181818,
+        "max": 0.07575757575757576
+      }
+    }
+  },
+  "controls": {
+    "exam_a_see_to_say": {
+      "wrong_cheider_deranged_pairing_top1": 0.022727272727272728,
+      "column_shuffled_binding_top1": 0.08333333333333333
+    },
+    "exam_b_hear_to_point": {
+      "wrong_cheider_deranged_pairing_top1": 0.07575757575757576,
+      "column_shuffled_binding_top1": 0.09090909090909091
+    }
+  },
+  "date": "2026-08-11T07:01:20",
+  "seconds": 61.4
+}

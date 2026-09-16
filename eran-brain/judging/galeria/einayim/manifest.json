@@ -1,0 +1,78 @@
+{
+  "model": "EINAYIM / עיניים",
+  "status_line_he": "שני צינורות לאותה שאלה של עידו (3.9 19:27, אחרי שסרק את החדר עם ה-Quest). (א) מצלמות רגילות: 8 מבטים שרונדרו ע\"י הבמה של צלם עם עומק ומצלמה מדויקים, VGGT-1B על eran3 קיבל רק את התמונות. שגיאת עומק חציונית על אותו מבט 0: שתי מצלמות סמוכות (21 מעלות) 0.80% בחדר / 0.57% בסצנת האיברים; שמונה מבטים 0.83% / 0.38%; בסיס-שטוח 20.8%. שגיאת סיבוב יחסית 0.6 מעלות בשמונה מבטים, 4.6 מעלות בזוג הרחב (150 מעלות). המסקנה: שתי מצלמות עם בסיס קטן כבר מדייקות את המשטח הנראה - מצלמות נוספות קונות כיסוי ויציבות תנוחה, לא דיוק לפיקסל. (ב) הקסדה עצמה: שאיבת מש החדר ש-Quest 3 בונה ב-WebXR (סוכן אחר, אותו איבר). חיפוש על הדיסק: 133,751 קבצי מדיה נסרקו - אין שום סט צילומים סביב עצם אחד. מה שכן נמצא: alma-headscan כבר עשה SfM קלאסי על סלפי-וידאו של 45 שניות שלך ורשם 45 מתוך 60 פריימים לענן דליל של 3,439 נקודות; VGGT נותן עומק צפוף לכל פיקסל בכל פריים ב-3 שניות. הפריימים ההם נמחקו - הוידאו כנראה עדיין על הטלפון.",
+  "status_line_en": "Two pipes to one question of Iddo's (Sep 3, 19:27, after he scanned his room with the Quest). (a) ORDINARY CAMERAS: 8 views rendered by TZELEM's own stage with exact depth and camera; VGGT-1B on eran3 was given the pictures only. Median depth abs-rel on the SAME view 0: two nearby cameras (21 deg) 0.80% in the room / 0.57% on the organs scene; eight views 0.83% / 0.38%; flat baseline 20.8%. Relative rotation error 0.6 deg with eight views, 4.6 deg for the wide (150 deg) pair. Two cameras with a small baseline already get the visible surface right; more cameras buy COVERAGE and pose robustness, not per-pixel accuracy. (b) THE HEADSET ITSELF: pulling the room mesh the Quest 3 already builds in WebXR (a different agent, same organ).",
+  "items": [
+    {
+      "file": "CAMERAS-2-near-room.png",
+      "kind": "image",
+      "label_he": "אמת מול ניחוש — שתי מצלמות סמוכות (חדר)",
+      "note_he": "משמאל לימין: התצלום, מפת העומק האמיתית, מה ש-VGGT ניחש (אותו סרגל צבע בדיוק - מתיחה למינימום/מקסימום של עצמו היא השקר הוותיק בתחום), ומפת השגיאה 0-10%. שתי מצלמות במרחק 21 מעלות. חציון 0.80%, 87.9% מהפיקסלים בתוך 5%.",
+      "source": "einayim/viz.py על truth/room + pred/room_vggt_2near.npz"
+    },
+    {
+      "file": "CAMERAS-8-room.png",
+      "kind": "image",
+      "label_he": "אמת מול ניחוש — שמונה מבטים (חדר)",
+      "note_he": "אותו מבט 0 בדיוק, אחרי שהמודל ראה את כל שמונת המבטים. חציון 0.83%, 91.4% בתוך 5%. השגיאה כולה על קווי המתאר - שם באמת אין תשובה.",
+      "source": "einayim/viz.py על truth/room + pred/room_vggt_8.npz"
+    },
+    {
+      "file": "CAMERAS-2-wide-room.png",
+      "kind": "image",
+      "label_he": "מה שקורה כששתי המצלמות רחוקות מדי",
+      "note_he": "אותן שתי מצלמות, אבל 150 מעלות זו מזו. חציון 3.51% (פי 4.4 גרוע יותר) ושגיאת סיבוב 4.6 מעלות. זו התשובה המעשית לעידו: לצעוד סביב העצם בצעדים קטנים, לא לצלם משני צדדים נגדיים.",
+      "source": "einayim/viz.py על truth/room + pred/room_vggt_2.npz"
+    },
+    {
+      "file": "CAMERAS-2-near-organs.png",
+      "kind": "image",
+      "label_he": "אמת מול ניחוש — הצורה של קו והתבנית של הגרון",
+      "note_he": "הסצנה: KAV-first-shape.stl (הצורה הראשונה שקו אמר) ליד silicone-fold-mold.stl מדולל, על רצפה עם מרקם. שתי מצלמות בלבד: חציון 0.57%, 98.5% בתוך 5%.",
+      "source": "einayim/truthviews.py scene_organs + viz.py"
+    },
+    {
+      "file": "CAMERAS-8-organs.png",
+      "kind": "image",
+      "label_he": "אותה סצנה, שמונה מבטים",
+      "note_he": "חציון 0.38%, 98.4% בתוך 5%, שגיאת סיבוב יחסית 0.18 מעלות. הכל בשניות 3.5 של חישוב על GB10 אחד.",
+      "source": "einayim/viz.py על truth/organs + pred/organs_vggt_8.npz"
+    },
+    {
+      "file": "MESH-turntable-8views.gif",
+      "kind": "image",
+      "label_he": "המש שנבנה מהתמונות, מסתובב",
+      "note_he": "היתוך TSDF של העומקים שהמודל ניחש + צעידת קוביות + דילול ל-1,996 פאות, חתוך לאיברים בתיבה שניתנה ביד. הרנדור עצמו הוא MeshStage של צלם. חשוב: זה לא אטום - 225 קשתות שפה, כי המצלמות ראו רק צד אחד.",
+      "source": "einayim/fuse.py + objectmesh.py + turntable.py"
+    },
+    {
+      "file": "MESH-turntable-dropfolder.gif",
+      "kind": "image",
+      "label_he": "אותו דבר בלי יד אדם — הבידוד האוטומטי, וגם החולשה שלו",
+      "note_he": "תיקיית ההשלכה מריצה RANSAC על המישור הדומיננטי (השולחן/הרצפה, 90% מהענן) ומורידה אותו גם מהנפח וגם מהמשטח המאוחה. העצם אכן מבודד, אבל מה שנשאר מקוטע: EINAYIM עדיין לא יודע לפלח עצם. זה הפגם הפתוח, ולא מסתירים אותו.",
+      "source": "einayim/drop.py --once (וידאו 16 שניות -> 8 פריימים -> מש, 123 שניות מקצה לקצה)"
+    },
+    {
+      "file": "TZELEM-paints-what-the-eyes-saw.png",
+      "kind": "image",
+      "label_he": "צלם מצייר את מה שהעיניים לכדו",
+      "note_he": "בפעם הראשונה הצייר של ערן מסתכל על צורה שבאה מתצלומים ולא ממודליסט. 900 משיחות (anatomy.scatter + canvas.render, קוד שער 2, לא נגענו בו) על המש שנלכד.",
+      "source": "einayim/paint_capture.py"
+    },
+    {
+      "file": "einayim-organs-8views.stl",
+      "kind": "file",
+      "label_he": "ה-STL עצמו (מועמד לקורפוס של קו)",
+      "note_he": "1,996 פאות. הועתק גם ל-kav/from-einayim/ עם README שמסביר בדיוק איך נוצר ומה פגום בו. שום קובץ של kav לא שונה.",
+      "source": "eran-brain/holobrain/kav/from-einayim/einayim-organs-8views.stl"
+    },
+    {
+      "file": "QUEST-endpoint-test.png",
+      "kind": "image",
+      "label_he": "בדיקת הצינור מהקווסט (קובייה סינתטית)",
+      "note_he": "3 מבטים (על / חזית / צד) של שתי קוביות סינתטיות ('wall' + 'table', 24 משולשים) שנשלחו כ-POST אמיתי אל https://127.0.0.1:8871/api/save-room עם הטוקן הנכון, עברו דרך mesh_io.save_room, ונשמרו כ-STL+OBJ+PNG תחת eran-brain/holobrain/einayim/quest-room/. זו הוכחה שהצינור השרת<->קבצים עובד -- לא נתון אמיתי מחדר.",
+      "source": "quest-drop/mesh_io.py + quest-drop/serve.py:/api/save-room; פלט: eran-brain/holobrain/einayim/quest-room/room-20260903-194423-3view.png"
+    }
+  ],
+  "missing_he": "מה שצריך ממך, עידו: וידאו של 20 שניות בטלפון, הליכה איטית סביב עצם אחד (לא סיבוב במקום), עם מטבע לידו לקנה מידה - ולהשליך אותו לקיצור הדרך EINAYIM-drop-video-here שעל שולחן העבודה. ובקשה שנייה: תבדוק אם סלפי הוידאו של 45 השניות מ-6.8 עדיין על הטלפון. לא צולם עדיין שום עצם אמיתי. כל המספרים כאן הם מול אמת מוחלטת שאנחנו מייצרים - זה חזק יותר מבנצ'מרק, אבל זו לא עדיין מציאות. מה שצריך ממך, עידו: וידאו של 20 שניות בטלפון, הליכה איטית סביב עצם אחד (לא סיבוב במקום), והשלכה של הקובץ לתוך eran-brain/holobrain/einayim/EINAYIM-drop. שים מטבע ליד העצם - צילומים לבדם לא יכולים לדעת גודל. פגם פתוח נוסף: הבידוד האוטומטי של העצם (RANSAC מישור) משאיר משטח מקוטע; הבידוד ביד נותן מש טוב בהרבה. רישיון (נבדק מול ה-Hub): VGGT-1B הוא cc-by-nc-4.0 וגם Research Materials של מטא - לא מסחרי. facebook/map-anything-apache הוא apache-2.0 אמיתי (1.23 מיליארד פרמטרים) - זו החלופה למוצר."
+}

@@ -1,0 +1,113 @@
+{
+  "alma": "0.1",
+  "weave": "L3_xor_hidden_layer",
+  "knots": [
+    {
+      "name": "x1"
+    },
+    {
+      "name": "x2"
+    },
+    {
+      "name": "hor_lin",
+      "verb": "sum",
+      "trigger": "count 2",
+      "bias": -0.5
+    },
+    {
+      "name": "hor",
+      "verb": "spell",
+      "spell": "sign"
+    },
+    {
+      "name": "hnand_lin",
+      "verb": "sum",
+      "trigger": "count 2",
+      "bias": 1.5
+    },
+    {
+      "name": "hnand",
+      "verb": "spell",
+      "spell": "sign"
+    },
+    {
+      "name": "y_lin",
+      "verb": "sum",
+      "trigger": "count 2",
+      "bias": -1.0
+    },
+    {
+      "name": "y_sign",
+      "verb": "spell",
+      "spell": "sign"
+    },
+    {
+      "name": "y",
+      "verb": "fringe"
+    }
+  ],
+  "threads": [
+    {
+      "from": "x1",
+      "to": "hor_lin"
+    },
+    {
+      "from": "x2",
+      "to": "hor_lin"
+    },
+    {
+      "from": "hor_lin",
+      "to": "hor"
+    },
+    {
+      "from": "x1",
+      "to": "hnand_lin",
+      "strands": [
+        {
+          "weight": -1.0,
+          "delay": 1
+        }
+      ]
+    },
+    {
+      "from": "x2",
+      "to": "hnand_lin",
+      "strands": [
+        {
+          "weight": -1.0,
+          "delay": 1
+        }
+      ]
+    },
+    {
+      "from": "hnand_lin",
+      "to": "hnand"
+    },
+    {
+      "from": "hor",
+      "to": "y_lin"
+    },
+    {
+      "from": "hnand",
+      "to": "y_lin"
+    },
+    {
+      "from": "y_lin",
+      "to": "y_sign"
+    },
+    {
+      "from": "y_sign",
+      "to": "y"
+    }
+  ],
+  "seeds": [
+    {
+      "to": "x1",
+      "value": 1.0
+    },
+    {
+      "to": "x2",
+      "value": 0.0
+    }
+  ]
+}

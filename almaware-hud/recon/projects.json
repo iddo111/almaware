@@ -1,0 +1,452 @@
+[
+  {
+    "id": "eran-live",
+    "name": "🟢 Eran (byte LM, live)",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\eran-live",
+    "next_action": "keep training on DGX + wire Grok-1 to know his current step/loss",
+    "priority": "north-star",
+    "notes": "44 files, logs/metrics.jsonl updated today; chat_server.py, supervisor.py, model.py all present; per MEMORY step ~7.74M as of 07-05"
+  },
+  {
+    "id": "eran-charter",
+    "name": "📜 ER\"N Charter (north-star doc)",
+    "status": "shipped",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE (memory doc project_eran_charter.md)",
+    "next_action": "no code — reference doc only; re-read before any Eran identity change",
+    "priority": "north-star",
+    "notes": "charter is stable; changes must go through Beit Din"
+  },
+  {
+    "id": "eran-robot-body",
+    "name": "🤖 Eran robot body",
+    "status": "planning",
+    "last_touched_days": 9,
+    "path": "D:\\CLAUDE\\rc-car-pico (closest existing build)",
+    "next_action": "consolidate rc-car-pico + eran-hardware into single embodiment plan",
+    "priority": "medium",
+    "notes": "no dedicated dir; rc-car-pico is the placeholder; Pinocchio/RC-Car dossiers exist in memory"
+  },
+  {
+    "id": "eran-playroom",
+    "name": "🎨 Eran playroom cortex",
+    "status": "planning",
+    "last_touched_days": null,
+    "path": "D:\\CLAUDE (no dedicated dir)",
+    "next_action": "spec sensory input/output surface before code",
+    "priority": "low",
+    "notes": "doc-only; part of Eran cortex family (playroom / cognitive map / third eye / imagination)"
+  },
+  {
+    "id": "eran-hardware",
+    "name": "🔧 Eran hardware (DGX Spark fleet)",
+    "status": "active",
+    "last_touched_days": 5,
+    "path": "D:\\CLAUDE\\eran-hardware",
+    "next_action": "confirm 3-node FSDP still green after last week's mesh work",
+    "priority": "high",
+    "notes": "3-node FSDP passed 07-05 per memory; star mesh via eran2, no bridge"
+  },
+  {
+    "id": "eran-grid",
+    "name": "⚡ ERAN-GRID (idle harvest)",
+    "status": "dormant",
+    "last_touched_days": 5,
+    "path": "D:\\CLAUDE\\eran-grid",
+    "next_action": "audit whether harvest is still worth wiring while DGX is busy",
+    "priority": "low",
+    "notes": "idle-cycle harvester; last touched during mesh work"
+  },
+  {
+    "id": "eran-cloud",
+    "name": "☁️ Eran cloud",
+    "status": "dormant",
+    "last_touched_days": 5,
+    "path": "D:\\CLAUDE\\eran-cloud",
+    "next_action": "decide overlap with alma-federation before continuing",
+    "priority": "low",
+    "notes": "possibly superseded by alma-federation direction"
+  },
+  {
+    "id": "eran-audio",
+    "name": "🔊 Eran audio",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\eran-audio",
+    "next_action": "confirm config.json edit today was intentional",
+    "priority": "medium",
+    "notes": "config.json has uncommitted change (git status)"
+  },
+  {
+    "id": "perceptron-movie",
+    "name": "🎬 Perceptron Movie",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\perceptron-movie",
+    "next_action": "execute v3 music/audio plan touched this session",
+    "priority": "high",
+    "notes": "music/v3_technical_plan.md fresh today; has scenes/, clips/, audio/, subs/, render/, script.md, GROK_IMAGINE_PROMPTS.md — real production shape"
+  },
+  {
+    "id": "shisha-brain",
+    "name": "🧠🌊 Shisha Brain (analog neuromorphic, לע\"נ שיפרה ז\"ל)",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\shisha-lab",
+    "next_action": "run reservoir training layer that was just committed; validate real signal",
+    "priority": "north-star",
+    "notes": "very active — last 8+ commits are all shisha-lab (grid-dashboard reservoir, 9-memristor crossbar, ALMA Perceptron build). 65 files."
+  },
+  {
+    "id": "memristor-pedal",
+    "name": "🎛️ Memristor pedal (guitar/effect)",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\alma-language\\memristor-pedal",
+    "next_action": "created ~1h ago — decide if standalone build or part of alma-language weave",
+    "priority": "high",
+    "notes": "brand-new subdir under alma-language; touched this session"
+  },
+  {
+    "id": "memristor-brain",
+    "name": "⚡🧲 Tunable memristor neuron / grid",
+    "status": "dormant",
+    "last_touched_days": 8,
+    "path": "D:\\CLAUDE\\memristor-grid",
+    "next_action": "fold into shisha-brain — memristor-grid is the older grid-only version; shisha-lab is where all recent work is happening",
+    "priority": "medium",
+    "notes": "superseded by shisha-lab; keep for historical grid experiments"
+  },
+  {
+    "id": "protoneuron",
+    "name": "⚡🔌 PROTONEURON (HW neuron core)",
+    "status": "dormant",
+    "last_touched_days": 9,
+    "path": "D:\\CLAUDE\\protoneuron",
+    "next_action": "revisit after shisha-brain reservoir results — decide fabric",
+    "priority": "medium",
+    "notes": "flagship HW-neuron dossier; last touched with the other neuron builds"
+  },
+  {
+    "id": "choshen",
+    "name": "🔯 The Choshen (optical neuromorphic)",
+    "status": "planning",
+    "last_touched_days": null,
+    "path": "D:\\CLAUDE (no dedicated dir; optical-nn is placeholder, 7d)",
+    "next_action": "spec-only until an optical prototype path clears",
+    "priority": "low",
+    "notes": "sacred embodiment doc; optical-nn/ is the closest existing scratch"
+  },
+  {
+    "id": "physical-weights-ai",
+    "name": "⚖️🏋️ Physical-Weights AI",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\shisha-lab (ALMA Perceptron / crossbar builds)",
+    "next_action": "the ALMA Perceptron (Mark I) build IS the first physical-weights demo — verify servo-driven weights actually train",
+    "priority": "high",
+    "notes": "materialized inside shisha-lab commits: photodiode retina + servo-driven physical weights + Mark I perceptron"
+  },
+  {
+    "id": "alma-language",
+    "name": "🧩 ALMA Language (3D / VR Lego weave)",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\alma-language",
+    "next_action": "the three live subprojects — perceptron3d, crossbar3d, memristor-pedal — are diverging; pick one weave target",
+    "priority": "high",
+    "notes": "crossbar3d deployed to func.iddoperez.ai; perceptron3d is bright historically-accurate viz; memristor-pedal fresh today"
+  },
+  {
+    "id": "alma-govern",
+    "name": "🏛️ ALMA-Govern (fleet health)",
+    "status": "active",
+    "last_touched_days": 1,
+    "path": "D:\\CLAUDE\\alma-govern",
+    "next_action": "commit or revert the uncommitted fleet_health_check.sh change",
+    "priority": "high",
+    "notes": "fleet_health_check.sh has pending uncommitted change per git status"
+  },
+  {
+    "id": "alma-os-jetson",
+    "name": "🖥️ ALMA-OS Jetson",
+    "status": "dormant",
+    "last_touched_days": 6,
+    "path": "D:\\CLAUDE\\jetson-lean-os",
+    "next_action": "confirm flash reference (L4T R36.5/JP6.2) still current",
+    "priority": "low",
+    "notes": "lean OS scratch dir; ALMA-OS GUI is the DEFAULT directive per memory"
+  },
+  {
+    "id": "alma-linux",
+    "name": "🐧 ALMA-Linux PC",
+    "status": "planning",
+    "last_touched_days": null,
+    "path": "D:\\CLAUDE (no dedicated dir yet)",
+    "next_action": "no code — remains a plan pending hardware pick",
+    "priority": "low",
+    "notes": "doc-only in memory"
+  },
+  {
+    "id": "grok1-private-stack",
+    "name": "🤖 Grok-1 private stack (314B via llama.cpp RPC)",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\grok1-chat + D:\\CLAUDE\\grok1_shim.py",
+    "next_action": "confirm shim swap (grok1_shim.py has a .bak from today) is the intended state",
+    "priority": "high",
+    "notes": "grok1_shim.py touched today with a .bak-20260711 alongside; grok1-chat has chat_grok.py + _chat.log; base model, ~3 tok/s"
+  },
+  {
+    "id": "grok-web-claws",
+    "name": "🐦 Grok web claws",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\grok-web-claws",
+    "next_action": "session-touched — verify what integration was added",
+    "priority": "high",
+    "notes": "part of the Grok coordination layer touched this session"
+  },
+  {
+    "id": "grok-coder",
+    "name": "💻 Grok coder",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\grok-coder",
+    "next_action": "session-touched — check whether it's part of the same shim change",
+    "priority": "high",
+    "notes": "session-touched alongside grok-web-claws + grok1_shim.py"
+  },
+  {
+    "id": "ram-tri-chat",
+    "name": "💬 RAM tri-chat (shm council)",
+    "status": "dormant",
+    "last_touched_days": 3,
+    "path": "D:\\CLAUDE\\ram-council",
+    "next_action": "verify 10MB shm channel still bound; else revive during next tri-brain session",
+    "priority": "medium",
+    "notes": "ram-council is the code home for the tri-chat / shm council idea"
+  },
+  {
+    "id": "wa-mcp",
+    "name": "📱 wa-mcp (WhatsApp MCP plugin)",
+    "status": "dormant",
+    "last_touched_days": 6,
+    "path": "D:\\CLAUDE\\wa-mcp",
+    "next_action": "run wa_status to confirm it's still receiving; not touched in nearly a week",
+    "priority": "medium",
+    "notes": "MCP tools available in this session (wa_recent/send/status) — bridge is likely still up"
+  },
+  {
+    "id": "cafe-claude",
+    "name": "☕ Café Claude",
+    "status": "planning",
+    "last_touched_days": null,
+    "path": "D:\\CLAUDE (no dedicated dir)",
+    "next_action": "no code yet — planning stage",
+    "priority": "low",
+    "notes": "no matching directory found on disk; concept-only"
+  },
+  {
+    "id": "iddoperez-web",
+    "name": "🌐 iddoperez.ai portal",
+    "status": "active",
+    "last_touched_days": 3,
+    "path": "D:\\CLAUDE\\iddoperez-portal",
+    "next_action": "check whether federation-site (1d) supersedes this dir",
+    "priority": "high",
+    "notes": "portal for iddoperez.ai; also federation-site/ and almaware-standard-site-en/ (0d) are active"
+  },
+  {
+    "id": "army-of-gamers",
+    "name": "🎮 Army of Gamers",
+    "status": "planning",
+    "last_touched_days": null,
+    "path": "D:\\CLAUDE (no dedicated dir)",
+    "next_action": "concept-only — no code home yet",
+    "priority": "low",
+    "notes": "referenced in ALMA apps section of memory"
+  },
+  {
+    "id": "project-noam",
+    "name": "🤍 Project Noam (drone-protection)",
+    "status": "planning",
+    "last_touched_days": null,
+    "path": "D:\\CLAUDE (no dedicated dir; mission doc only)",
+    "next_action": "keep as HOLD FIRE mission doc; do not code without spec",
+    "priority": "medium",
+    "notes": "sacred/mission project; strict boundary"
+  },
+  {
+    "id": "alma-mic",
+    "name": "🎙️ ALMA-MIC (private capture)",
+    "status": "active",
+    "last_touched_days": 1,
+    "path": "D:\\CLAUDE\\alma-mic",
+    "next_action": "verify owner-only capture guarantee before any wider rollout",
+    "priority": "high",
+    "notes": "reused Lego brick — do NOT duplicate. Also alma-mic-release/ (3d)."
+  },
+  {
+    "id": "alma-ozen",
+    "name": "👂 ALMA-Ozen (Hebrew ASR)",
+    "status": "dormant",
+    "last_touched_days": 9,
+    "path": "D:\\CLAUDE\\alma-ozen",
+    "next_action": "revive when memristor-pedal / heb-mic path needs live transcription",
+    "priority": "medium",
+    "notes": "Hebrew ASR home; sits at 9d"
+  },
+  {
+    "id": "alma-voice",
+    "name": "🤍 ALMA Voice + VR",
+    "status": "dormant",
+    "last_touched_days": 6,
+    "path": "D:\\CLAUDE\\voice-input",
+    "next_action": "decide whether voice-input, alma-mic, and alma-ozen collapse into one weave",
+    "priority": "medium",
+    "notes": "voice-input/ is the closest existing dir; SACRED per memory"
+  },
+  {
+    "id": "alma-smart-care",
+    "name": "🩺 ALMA Smart Care",
+    "status": "planning",
+    "last_touched_days": null,
+    "path": "D:\\CLAUDE (no dedicated dir)",
+    "next_action": "no code yet; keep on backlog",
+    "priority": "low",
+    "notes": "health product; concept-only"
+  },
+  {
+    "id": "rebbe-nachman-rag",
+    "name": "📖 Rabbi Nachman RAG (:8783)",
+    "status": "planning",
+    "last_touched_days": null,
+    "path": "D:\\CLAUDE (no dedicated dir; may live on iddoperez-portal)",
+    "next_action": "confirm whether service on :8783 is actually running; if not, no code home",
+    "priority": "medium",
+    "notes": "memory says port 8783 — status unknown from filesystem alone"
+  },
+  {
+    "id": "quorum",
+    "name": "🗳️ Quorum (AI council)",
+    "status": "dormant",
+    "last_touched_days": 3,
+    "path": "D:\\CLAUDE\\quorum",
+    "next_action": "audit fleet-quorum vs quorum vs ram-council overlap and pick one",
+    "priority": "medium",
+    "notes": "three parallel dirs: quorum/ (3d), fleet-quorum/ (8d), ram-council/ (3d) — reuse law violated"
+  },
+  {
+    "id": "master-whiteboard",
+    "name": "🗺️ Master Whiteboard / Master Modeler",
+    "status": "dormant",
+    "last_touched_days": 6,
+    "path": "D:\\CLAUDE\\master-modeler",
+    "next_action": "revive after Life-Consolidation triage — the whiteboard IS the WIP=1 tool",
+    "priority": "high",
+    "notes": "arguably the tool that would fix all the other overlaps; sitting at 6d"
+  },
+  {
+    "id": "alma-federation",
+    "name": "🌐 ALMA Federation",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\alma-federation",
+    "next_action": "confirm federation.iddoperez.ai target vs federation-site/ (1d)",
+    "priority": "high",
+    "notes": "control plane for running Eran/Yigael across free cloud"
+  },
+  {
+    "id": "alma-talmud",
+    "name": "🕯️ ALMA תלמוד (experiential Talmud)",
+    "status": "active",
+    "last_touched_days": 2,
+    "path": "D:\\CLAUDE\\alma-talmud",
+    "next_action": "paused per memory — first slice שניים אוחזין is built + verified",
+    "priority": "medium",
+    "notes": "explicitly paused; showcase target = סוכה"
+  },
+  {
+    "id": "alma-brain-sim",
+    "name": "🧬 ALMA-Brain-Sim (HH + STDP)",
+    "status": "dormant",
+    "last_touched_days": 7,
+    "path": "D:\\CLAUDE\\alma-brain-sim",
+    "next_action": "keep as reference sim while shisha-brain does the real analog work",
+    "priority": "low",
+    "notes": "digital sim; shisha-brain is the physical analog counterpart"
+  },
+  {
+    "id": "cave-wall-brain",
+    "name": "🏛️ Cave Wall Brain (LED / fiber neural wall)",
+    "status": "active",
+    "last_touched_days": 3,
+    "path": "D:\\CLAUDE\\cave-wall-brain-sim",
+    "next_action": "decide on BOM (~$229 target) and whether it lives with shisha-brain",
+    "priority": "medium",
+    "notes": "Steampunk-Ada aesthetic; sim dir exists"
+  },
+  {
+    "id": "fleet",
+    "name": "🖥️ Fleet (infrastructure)",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\fleet",
+    "next_action": "session-touched — see what health/scan changed",
+    "priority": "high",
+    "notes": "touched today alongside almaware-hud"
+  },
+  {
+    "id": "almaware-hud",
+    "name": "📊 ALMAWARE HUD (recon dashboard)",
+    "status": "active",
+    "last_touched_days": 0,
+    "path": "D:\\CLAUDE\\almaware-hud",
+    "next_action": "this is the caller — feed projects.json into the HUD render",
+    "priority": "high",
+    "notes": "recon/projects.json is the output of THIS run"
+  },
+  {
+    "id": "alma-iff",
+    "name": "🛡️ ALMA-IFF (HOLD FIRE)",
+    "status": "dormant",
+    "last_touched_days": 4,
+    "path": "D:\\CLAUDE\\alma-iff",
+    "next_action": "keep HOLD-FIRE guard doc; do not code capability",
+    "priority": "low",
+    "notes": "explicit HOLD FIRE per memory"
+  },
+  {
+    "id": "lora-mesh",
+    "name": "📡 LoRa T-Deck Mesh",
+    "status": "active",
+    "last_touched_days": 3,
+    "path": "D:\\CLAUDE\\lora-mesh",
+    "next_action": "sent/m1.txt has uncommitted change — decide what to do with it",
+    "priority": "medium",
+    "notes": "T-Deck mesh; git-status shows pending message file"
+  },
+  {
+    "id": "misc-dormant",
+    "name": "🧊 misc dormant bucket",
+    "status": "dormant",
+    "last_touched_days": 7,
+    "path": "D:\\CLAUDE (multiple)",
+    "next_action": "consolidate under Life-Consolidation — most should merge or be archived",
+    "priority": "low",
+    "notes": "amos/, beitdin-hw/, beyond-silicon/, electric-brain/, exoskeleton/, self-learning-neuron/, sunflower-neuron/, motor-neuron/, optical-nn/, pong-alma/, pong-real-models/, fab-machine-20k/, makers-israel/, gcp-deploy/, hermes-cloud/, dgx-cooling/, dgx-lean-os/, alma-lang/ (old), alma-sim/, alma-time/, alma-link/, alma-meta-selector/, almaos-site/, almaware-hub/, almaware-standard-site/, almaware-watchdog/, almaware-brain-lab/, perets/, perets-weave/, perez/, demut/, kesef/, unfuck-your-life/, usage-widget/, guitar-teacher-arch/, dispatch-fix/ (27d), rbshatz-private/ (59d), c_photorec_2026-05-14/"
+  },
+  {
+    "id": "misc-active",
+    "name": "🟢 misc active bucket (recently touched, unmapped)",
+    "status": "active",
+    "last_touched_days": 1,
+    "path": "D:\\CLAUDE (multiple)",
+    "next_action": "each of these was touched in the last ~2 days; place them or archive them",
+    "priority": "medium",
+    "notes": "alma-exo/ (0d), alma-agents/ (1d), federation-site/ (1d), nemesis-ai/ (1d), almaware-standard-site-en/ (0d), alma-webbrain/ (4d), inventory/ (2d), tools/ (3d), perets/ (3d), shiri-knowledge/ (3d), shiri-memory/ (3d), whatsapp-bridge/ (3d), ai-sensory-deprivation/ (3d), motor-neuron/ (3d), eran-recroom/ (3d), alma-mic-release/ (3d)"
+  }
+]

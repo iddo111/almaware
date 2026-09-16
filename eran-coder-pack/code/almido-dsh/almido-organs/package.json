@@ -1,0 +1,8 @@
+{
+  "name": "dsh-plugin-almido-organs",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.mjs",
+  "private": true,
+  "description": "AlmIdo organs for DeepSeek Harness: shamash_weave (read-only SHAMASH knot fetch, eran2:8850). alma_recall omitted 2026-08-31 (PC recall server loopback-bound); ramchat skipped (no HTTP path from eran3)."
+}

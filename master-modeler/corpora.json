@@ -1,0 +1,81 @@
+{
+  "_doc": "Corpus registry for the MODEH organ. Read-only descriptors: where a corpus lives, how a filename yields its LABEL and its GROUP (recording session / speaker / TTS seed), and which label pairs are the SAME PHONE and therefore must NOT be separable. Adding a corpus here is the only thing needed to judge it.",
+  "_expect": "'expect' is what the HUMAN record already says. It is written down so the organ can be scored against it, and it is NEVER read by the scoring code.",
+  "identical_phones_default": [
+    ["ta", "tha", "tav vs tet -- both /t/ in modern Hebrew"],
+    ["ka", "qa", "kaf vs qof -- both /k/ in modern Hebrew"],
+    ["aa", "ah", "alef vs ayin -- both a bare /a/ in modern Hebrew"]
+  ],
+  "corpora": [
+    {
+      "id": "tts-vault",
+      "what": "the 132-clip heldout EXAM ERAN was graded on for a month",
+      "root": "eran-brain/proof/heldout-vault",
+      "parse": "underscore",
+      "expect": "REJECT -- facebook/mms-tts-heb, two torch seeds, labels do not match audio (Iddo 0/10 blind)"
+    },
+    {
+      "id": "tts-food-train",
+      "what": "food/train -- what the organism actually ate",
+      "root": "eran-brain/food/train",
+      "parse": "underscore",
+      "expect": "REJECT -- same TTS generator, same niqqud-stripping bug, different seed range"
+    },
+    {
+      "id": "t06-starved",
+      "what": "Iddo's own mouth, the 19 units that got 3 clips each",
+      "root": "eran-brain/booth/staged/t06",
+      "parse": "underscore",
+      "max_per_unit": 3,
+      "expect": "STARVED -- human, but ~1 independent example per unit"
+    },
+    {
+      "id": "t06-rich",
+      "what": "Iddo's own mouth, the 6 units that got 100 clips each",
+      "root": "eran-brain/booth/staged/t06",
+      "parse": "underscore",
+      "min_per_unit": 50,
+      "expect": "ACCEPT -- human, many independent takes"
+    },
+    {
+      "id": "t07-iddo",
+      "what": "Iddo's second sitting, 11 units x ~12 clips",
+      "root": "eran-brain/booth/staged/t07",
+      "parse": "underscore",
+      "drop_labels": ["trash"],
+      "expect": "ACCEPT-ish -- human, thin but real"
+    },
+    {
+      "id": "words-derived",
+      "what": "food/words -- 12 words CONCATENATED from food/train clips",
+      "root": "eran-brain/food/words",
+      "parse": "underscore",
+      "held_out_validation": true,
+      "expect": "REJECT -- built from a rejected source; the cascade must carry"
+    },
+    {
+      "id": "antfarm-source",
+      "what": "voice-ant-farm/corpus-syllables/heldout -- the SAME clips as tts-vault but sitting next to the generator's own 624-record manifest",
+      "root": "voice-ant-farm/corpus-syllables/heldout",
+      "parse": "underscore",
+      "held_out_validation": true,
+      "expect": "REJECT on PROVENANCE alone -- tests that the manifest probe fires where the manifest actually lives"
+    },
+    {
+      "id": "human-dictation",
+      "what": "corpus-big/human/heldout -- Iddo's own dictation, label = the capture rig (kafe / vinput / almamic), NOT a phone task",
+      "root": "voice-ant-farm/corpus-big/human/heldout",
+      "parse": "dictation",
+      "cap_per_unit": 200,
+      "held_out_validation": true,
+      "expect": "ACCEPT -- real human audio with a real provenance README"
+    },
+    {
+      "id": "fleurs-human",
+      "what": "FLEURS he_il syllable cut, 1502 speaker ids, IPA-recognised labels (subsample pulled read-only from eran2:~/eran-food-human2)",
+      "root": "@SCRATCH@/fleurs-sample",
+      "parse": "fleurs",
+      "expect": "ACCEPT -- many real speakers, leave-speaker-out 34.6% vs 5.6% chance"
+    }
+  ]
+}

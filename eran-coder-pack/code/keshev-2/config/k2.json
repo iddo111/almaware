@@ -1,0 +1,11 @@
+{
+  "server_url": "http://<lan-ip>:8737",
+  "server_token_path": "D:\\CLAUDE\\mic-rebuild\\state\\stt-token",
+  "lang_hint_default": "he",
+  "armed_mode": false,
+  "enter_idle_limit_s": 120,
+  "type_idle_limit_s": 600,
+  "arm_timeout_s": 900,
+  "never_use_devices_extra": [],
+  "revision": 1
+}

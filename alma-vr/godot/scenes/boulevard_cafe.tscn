@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cboulevardcafe1"]
+
+; CAFE CLAUDE ON THE BOULEVARD -- the walkable scene.
+; A separate scene on purpose: scenes/tel_aviv_1933.tscn and its generator are
+; untouched, so the cheap 7x7-block city and this one dense 78 m both survive.
+
+[ext_resource type="Script" path="res://scripts/boulevard_cafe.gd" id="1_world"]
+[ext_resource type="Script" path="res://scripts/boulevard_walker.gd" id="2_walk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_walker"]
+radius = 0.32
+height = 1.72
+
+[node name="Boulevard" type="Node3D"]
+
+[node name="World" type="Node3D" parent="."]
+script = ExtResource("1_world")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+; South end of the median, on the paving west of the green ribbon, facing north
+; up the boulevard toward the kiosk. You start walking INTO the trees.
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 1.03, -30)
+script = ExtResource("2_walk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_walker")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78, 0)
+current = true
+fov = 62.0
+near = 0.05
+far = 400.0

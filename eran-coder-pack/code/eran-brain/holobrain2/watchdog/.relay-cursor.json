@@ -1,0 +1,7 @@
+{
+ "offset": 85757,
+ "note": "2026-09-05 17:4x: cursor advanced from %d to %d ON PURPOSE. The relay was never scheduled after it was written on 09-01, so 4 days of alarms had piled up -- ~100 lines, and RAMCHAT only holds 500. Replaying them would have flooded the council and pushed out live coordination, and they are not news: they are three STALL alarms repeating. ONE summary was posted instead. The backlog stays on eran3 (alarms.jsonl is append-only). Same reasoning as the original note below.",
+ "last_run": "2026-09-11 07:48:49",
+ "stale_cry": 1789084597.196601,
+ "superseded_note": "started here on purpose: everything before byte 7552 is the 13:33-13:45 proof run, including the deliberately planted symlink."
+}

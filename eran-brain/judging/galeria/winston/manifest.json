@@ -1,0 +1,111 @@
+{
+  "model": "WINSTON v2",
+  "status_line_he": "מחזור אימון 4 רץ מ-16:46 היום (כשעתיים עד כה) על 93 תמונות ב-256px; מחזור 3 הקודם הסתיים ב-16:46 עם MSE 0.00633 (מול BLANK 0.05173), GPU 96%, צעד נוכחי מוערך ~910/2000 (הלוג מתעדכן רק בסיום מחזור, אין קריאה חיה).",
+  "items": [
+    {
+      "file": "WINSTON-v2-paint-00.png",
+      "kind": "image",
+      "label_he": "וינסטון v2 — fam00_IMG_2409.JPG (מחזור 3, העדכני ביותר)",
+      "note_he": "ציור שנוצר במחזור האימון השלישי (הסתיים 16:46, 3/9), 800 מכחולים, רזולוציה 256px. MSE כולל למחזור: 0.00633 מול BLANK 0.05173 (פי 8 טוב יותר); כרומה צבע 1.22x המקור, 0.3% מהלוגיטים נעולים (בריא: מתחת ל-1%, קריסה: מעל 100%).",
+      "source": "eran4:~/winston/forever-v2/paint-00.png (train image fam00_IMG_2409.JPG)"
+    },
+    {
+      "file": "WINSTON-v2-paint-01.png",
+      "kind": "image",
+      "label_he": "וינסטון v2 — fam01_IMG_2418.JPG (מחזור 3, העדכני ביותר)",
+      "note_he": "ציור שנוצר במחזור האימון השלישי (הסתיים 16:46, 3/9), 800 מכחולים, רזולוציה 256px. MSE כולל למחזור: 0.00633 מול BLANK 0.05173 (פי 8 טוב יותר); כרומה צבע 1.22x המקור, 0.3% מהלוגיטים נעולים (בריא: מתחת ל-1%, קריסה: מעל 100%).",
+      "source": "eran4:~/winston/forever-v2/paint-01.png (train image fam01_IMG_2418.JPG)"
+    },
+    {
+      "file": "WINSTON-v2-paint-02.png",
+      "kind": "image",
+      "label_he": "וינסטון v2 — fam02_IMG_4018.JPG (מחזור 3, העדכני ביותר)",
+      "note_he": "ציור שנוצר במחזור האימון השלישי (הסתיים 16:46, 3/9), 800 מכחולים, רזולוציה 256px. MSE כולל למחזור: 0.00633 מול BLANK 0.05173 (פי 8 טוב יותר); כרומה צבע 1.22x המקור, 0.3% מהלוגיטים נעולים (בריא: מתחת ל-1%, קריסה: מעל 100%).",
+      "source": "eran4:~/winston/forever-v2/paint-02.png (train image fam02_IMG_4018.JPG)"
+    },
+    {
+      "file": "WINSTON-v2-paint-03.png",
+      "kind": "image",
+      "label_he": "וינסטון v2 — fam03_IMG_4023.JPG (מחזור 3, העדכני ביותר)",
+      "note_he": "ציור שנוצר במחזור האימון השלישי (הסתיים 16:46, 3/9), 800 מכחולים, רזולוציה 256px. MSE כולל למחזור: 0.00633 מול BLANK 0.05173 (פי 8 טוב יותר); כרומה צבע 1.22x המקור, 0.3% מהלוגיטים נעולים (בריא: מתחת ל-1%, קריסה: מעל 100%).",
+      "source": "eran4:~/winston/forever-v2/paint-03.png (train image fam03_IMG_4023.JPG)"
+    },
+    {
+      "file": "WINSTON-v2-paint-04.png",
+      "kind": "image",
+      "label_he": "וינסטון v2 — fam04_IMG_4075.JPG (מחזור 3, העדכני ביותר)",
+      "note_he": "ציור שנוצר במחזור האימון השלישי (הסתיים 16:46, 3/9), 800 מכחולים, רזולוציה 256px. MSE כולל למחזור: 0.00633 מול BLANK 0.05173 (פי 8 טוב יותר); כרומה צבע 1.22x המקור, 0.3% מהלוגיטים נעולים (בריא: מתחת ל-1%, קריסה: מעל 100%).",
+      "source": "eran4:~/winston/forever-v2/paint-04.png (train image fam04_IMG_4075.JPG)"
+    },
+    {
+      "file": "WINSTON-v2-paint-05.png",
+      "kind": "image",
+      "label_he": "וינסטון v2 — fam05_IMG_4153.JPG (מחזור 3, העדכני ביותר)",
+      "note_he": "ציור שנוצר במחזור האימון השלישי (הסתיים 16:46, 3/9), 800 מכחולים, רזולוציה 256px. MSE כולל למחזור: 0.00633 מול BLANK 0.05173 (פי 8 טוב יותר); כרומה צבע 1.22x המקור, 0.3% מהלוגיטים נעולים (בריא: מתחת ל-1%, קריסה: מעל 100%).",
+      "source": "eran4:~/winston/forever-v2/paint-05.png (train image fam05_IMG_4153.JPG)"
+    },
+    {
+      "file": "WINSTON-v2-paint-06.png",
+      "kind": "image",
+      "label_he": "וינסטון v2 — fam06_IMG_4173.JPG (מחזור 3, העדכני ביותר)",
+      "note_he": "ציור שנוצר במחזור האימון השלישי (הסתיים 16:46, 3/9), 800 מכחולים, רזולוציה 256px. MSE כולל למחזור: 0.00633 מול BLANK 0.05173 (פי 8 טוב יותר); כרומה צבע 1.22x המקור, 0.3% מהלוגיטים נעולים (בריא: מתחת ל-1%, קריסה: מעל 100%).",
+      "source": "eran4:~/winston/forever-v2/paint-06.png (train image fam06_IMG_4173.JPG)"
+    },
+    {
+      "file": "WINSTON-v2-paint-07.png",
+      "kind": "image",
+      "label_he": "וינסטון v2 — fam07_IMG_4212.JPG (מחזור 3, העדכני ביותר)",
+      "note_he": "ציור שנוצר במחזור האימון השלישי (הסתיים 16:46, 3/9), 800 מכחולים, רזולוציה 256px. MSE כולל למחזור: 0.00633 מול BLANK 0.05173 (פי 8 טוב יותר); כרומה צבע 1.22x המקור, 0.3% מהלוגיטים נעולים (בריא: מתחת ל-1%, קריסה: מעל 100%).",
+      "source": "eran4:~/winston/forever-v2/paint-07.png (train image fam07_IMG_4212.JPG)"
+    },
+    {
+      "file": "WINSTON-v2-sample-v2-20260903-0452.png",
+      "kind": "image",
+      "label_he": "וינסטון v2 — fam00, מחזור 2 (קודם)",
+      "note_he": "אותה תמונת מקור (fam00), שלב מוקדם יותר: סוף מחזור אימון 2 (10:49, 3/9). MSE אז: 0.00796.",
+      "source": "eran4:~/winston/daily/sample-v2-20260903-0452.png"
+    },
+    {
+      "file": "WINSTON-v2-sample-v2-20260902-2224.png",
+      "kind": "image",
+      "label_he": "וינסטון v2 — fam00, מחזור 1 (הראשון)",
+      "note_he": "אותה תמונת מקור (fam00), הציור הראשון של v2: סוף מחזור 1 (04:52, 3/9), מיד אחרי הזריעה מ-forever/painter.pt של v1. לוג הצעדים של המחזור הזה לא נשמר ב-journald.",
+      "source": "eran4:~/winston/daily/sample-v2-20260902-2224.png"
+    },
+    {
+      "file": "SOURCE-fam00_IMG_2409.jpg",
+      "kind": "image",
+      "label_he": "מקור — fam00_IMG_2409 (תמונה משפחתית)",
+      "note_he": "תמונת מקור שעליה וינסטון מאמן; הצטמצמה ל-800px לצורך התצוגה, EXIF orientation תוקן.",
+      "source": "eran4:~/winston/trainset-iddo-alma-v2/fam00_IMG_2409.JPG"
+    },
+    {
+      "file": "SOURCE-fam01_IMG_2418.jpg",
+      "kind": "image",
+      "label_he": "מקור — fam01_IMG_2418 (תמונה משפחתית)",
+      "note_he": "תמונת מקור שעליה וינסטון מאמן; הצטמצמה ל-800px לצורך התצוגה, EXIF orientation תוקן.",
+      "source": "eran4:~/winston/trainset-iddo-alma-v2/fam01_IMG_2418.JPG"
+    },
+    {
+      "file": "SOURCE-memorial00_0001-clean.jpg",
+      "kind": "image",
+      "label_he": "מקור — memorial00 (תמונת עלמה)",
+      "note_he": "אחת מ-4 תמונות המזכרת של עלמה שנוספו לקורפוס ה-v2 (93 תמונות, לעומת 19 ב-v1). הצטמצמה ל-800px לצורך התצוגה.",
+      "source": "eran4:~/winston/trainset-iddo-alma-v2/memorial00_0001-clean.jpg"
+    },
+    {
+      "file": "WINSTON-v1-collapse-outALMA4K-paint-00.png",
+      "kind": "image",
+      "label_he": "וינסטון v1 — קריסת קשת (לפני התיקון)",
+      "note_he": "הכשל שאובחן ב-2/9: לוגיטים לא חסומים (עד 24,000) הצמידו את כל הסיגמואידים לקצה, מה שהפיק פסים של צבע טהור ('קשת'). זה בדיוק מה שהדגלים logit-cap=12 ו-guard ב-v2 נועדו למנוע; מאז לא נרשמה אף קריסה (GUARD: 0 rollbacks בכל מחזור עד כה).",
+      "source": "eran4:~/winston/outALMA4K/paint-00.png (v1, before the 09-02 fix)"
+    },
+    {
+      "file": "WINSTON-v2-loss.png",
+      "kind": "image",
+      "label_he": "עקומת הפסד — v2, מחזורים 2-3",
+      "note_he": "MSE מהלוג האמיתי (journald) לשני המחזורים המלאים שנרשמו: מחזור 2 (0.0342 -> 0.00908) ומחזור 3 (0.02853 -> 0.00732). כל מחזור מחמם מחדש את לוח הלמידה (OneCycle) על הרשת שכבר אומנה, ומכאן צורת השן; המגמה הכוללת בין סוף-מחזורים יורדת. לוג מחזור 1 לא נשמר.",
+      "source": "eran4: journalctl --user -u winston-forever-v2 (parsed)"
+    }
+  ]
+}

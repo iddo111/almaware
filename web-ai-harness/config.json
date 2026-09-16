@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "allowed_verbs": [
+    "browser_launch",
+    "browser_goto",
+    "browser_type",
+    "browser_read",
+    "check_login"
+  ],
+  "allowed_hosts": [
+    "perplexity.ai",
+    "grok.com",
+    "x.com"
+  ],
+  "max_prompt_chars": 8000
+}

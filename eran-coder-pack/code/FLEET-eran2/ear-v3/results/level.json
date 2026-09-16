@@ -1,0 +1,25 @@
+{
+ "clip": "ah_t06_1.wav",
+ "raw_l2_minus6db": 7.319527244951491,
+ "judge_units_dist_minus6db": 1.3339815265858417,
+ "vs_ah_real_mean": 0.3367809241381006,
+ "block_moves": {
+  "legacy192": 1.1102157620688854e-06,
+  "level": 1.0011702384608565,
+  "cochleagram": 0.7251829438845059,
+  "pitch": 0.47815722937042,
+  "modulation": 0.15046670326386843
+ },
+ "top_new_block": "level",
+ "loo_clean": 0.695,
+ "loo_pert": 0.6983333333333334,
+ "bin_clean": 0.83,
+ "bin_pert": 0.825,
+ "lno_clean": 0.7566666666666667,
+ "lno_pert": 0.7533333333333333,
+ "lno_bin_clean": 0.855,
+ "lno_bin_pert": 0.855,
+ "cross_level_lno": 0.7266666666666667,
+ "tol": 0.03,
+ "pass": true
+}

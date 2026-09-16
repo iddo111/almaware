@@ -1,0 +1,206 @@
+[
+ {
+  "clip": "clip01",
+  "kind": "eran",
+  "truth": "pa-cv.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\pa-cv.wav"
+ },
+ {
+  "clip": "clip02",
+  "kind": "eran",
+  "truth": "ga.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\ga.wav"
+ },
+ {
+  "clip": "clip03",
+  "kind": "eran",
+  "truth": "ka.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\ka.wav"
+ },
+ {
+  "clip": "clip04",
+  "kind": "eran",
+  "truth": "na-nasal.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\na-nasal.wav"
+ },
+ {
+  "clip": "clip05",
+  "kind": "human",
+  "truth": "ih_t06_3.wav",
+  "src": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t06\\ih_t06_3.wav"
+ },
+ {
+  "clip": "clip06",
+  "kind": "eran",
+  "truth": "ra-free.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\ra-free.wav"
+ },
+ {
+  "clip": "clip07",
+  "kind": "human",
+  "truth": "la_t07_0.wav",
+  "src": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t07\\la_t07_0.wav"
+ },
+ {
+  "clip": "clip08",
+  "kind": "human",
+  "truth": "ta_t07_6.wav",
+  "src": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t07\\ta_t07_6.wav"
+ },
+ {
+  "clip": "clip09",
+  "kind": "human",
+  "truth": "aa_t07_7.wav",
+  "src": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t07\\aa_t07_7.wav"
+ },
+ {
+  "clip": "clip10",
+  "kind": "eran",
+  "truth": "ka-cv.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\ka-cv.wav"
+ },
+ {
+  "clip": "clip11",
+  "kind": "eran",
+  "truth": "aa.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\aa.wav"
+ },
+ {
+  "clip": "clip12",
+  "kind": "eran",
+  "truth": "na.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\na.wav"
+ },
+ {
+  "clip": "clip13",
+  "kind": "eran",
+  "truth": "ma.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\ma.wav"
+ },
+ {
+  "clip": "clip14",
+  "kind": "eran-repeat",
+  "truth": "ra-free.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\ra-free.wav"
+ },
+ {
+  "clip": "clip15",
+  "kind": "eran-repeat",
+  "truth": "pa.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\pa.wav"
+ },
+ {
+  "clip": "clip16",
+  "kind": "human",
+  "truth": "ba_t06_39.wav",
+  "src": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t06\\ba_t06_39.wav"
+ },
+ {
+  "clip": "clip17",
+  "kind": "human",
+  "truth": "ah_t06_34.wav",
+  "src": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t06\\ah_t06_34.wav"
+ },
+ {
+  "clip": "clip18",
+  "kind": "eran",
+  "truth": "ih.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\ih.wav"
+ },
+ {
+  "clip": "clip19",
+  "kind": "eran",
+  "truth": "ta-cv.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\ta-cv.wav"
+ },
+ {
+  "clip": "clip20",
+  "kind": "human",
+  "truth": "ka_t07_5.wav",
+  "src": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t07\\ka_t07_5.wav"
+ },
+ {
+  "clip": "clip21",
+  "kind": "eran",
+  "truth": "la.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\la.wav"
+ },
+ {
+  "clip": "clip22",
+  "kind": "eran",
+  "truth": "da.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\da.wav"
+ },
+ {
+  "clip": "clip23",
+  "kind": "eran",
+  "truth": "ra.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\ra.wav"
+ },
+ {
+  "clip": "clip24",
+  "kind": "eran",
+  "truth": "ga-cv.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\ga-cv.wav"
+ },
+ {
+  "clip": "clip25",
+  "kind": "eran",
+  "truth": "la-free.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\la-free.wav"
+ },
+ {
+  "clip": "clip26",
+  "kind": "eran-repeat",
+  "truth": "na.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\na.wav"
+ },
+ {
+  "clip": "clip27",
+  "kind": "eran-repeat",
+  "truth": "aa.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\aa.wav"
+ },
+ {
+  "clip": "clip28",
+  "kind": "eran-repeat",
+  "truth": "la-free.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\la-free.wav"
+ },
+ {
+  "clip": "clip29",
+  "kind": "human",
+  "truth": "ma_t06_83.wav",
+  "src": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t06\\ma_t06_83.wav"
+ },
+ {
+  "clip": "clip30",
+  "kind": "human",
+  "truth": "ga_t07_1.wav",
+  "src": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t07\\ga_t07_1.wav"
+ },
+ {
+  "clip": "clip31",
+  "kind": "eran",
+  "truth": "ah.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\ah.wav"
+ },
+ {
+  "clip": "clip32",
+  "kind": "eran",
+  "truth": "pa.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\pa.wav"
+ },
+ {
+  "clip": "clip33",
+  "kind": "eran",
+  "truth": "da-cv.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\da-cv.wav"
+ },
+ {
+  "clip": "clip34",
+  "kind": "eran",
+  "truth": "ma-nasal.wav",
+  "src": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\c46d21b2-04f0-4544-84f8-651b805d09c3\\scratchpad\\dowry\\ma-nasal.wav"
+ }
+]

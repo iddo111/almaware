@@ -1,0 +1,10 @@
+# standard hygiene for this sanitized snapshot
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+node_modules/
+.env
+.env.*
+*.key
+*.pem

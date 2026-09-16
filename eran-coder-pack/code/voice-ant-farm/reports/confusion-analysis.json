@@ -1,0 +1,533 @@
+{
+  "note": "confusion structure, judged against the ants' own feature space and against Hebrew phonetics",
+  "phonetics": {
+    "ah": [
+      "vowel-onset",
+      "glottal",
+      "voiced"
+    ],
+    "ba": [
+      "stop",
+      "bilabial",
+      "voiced"
+    ],
+    "ga": [
+      "stop",
+      "velar",
+      "voiced"
+    ],
+    "da": [
+      "stop",
+      "alveolar",
+      "voiced"
+    ],
+    "ha": [
+      "fricative",
+      "glottal",
+      "voiceless"
+    ],
+    "va": [
+      "fricative",
+      "labiodental",
+      "voiced"
+    ],
+    "za": [
+      "fricative",
+      "alveolar",
+      "voiced"
+    ],
+    "kha": [
+      "fricative",
+      "uvular",
+      "voiceless"
+    ],
+    "ta": [
+      "stop",
+      "alveolar",
+      "voiceless"
+    ],
+    "ya": [
+      "approximant",
+      "palatal",
+      "voiced"
+    ],
+    "ka": [
+      "stop",
+      "velar",
+      "voiceless"
+    ],
+    "la": [
+      "approximant",
+      "alveolar",
+      "voiced"
+    ],
+    "ma": [
+      "nasal",
+      "bilabial",
+      "voiced"
+    ],
+    "na": [
+      "nasal",
+      "alveolar",
+      "voiced"
+    ],
+    "sa": [
+      "fricative",
+      "alveolar",
+      "voiceless"
+    ],
+    "aa": [
+      "vowel-onset",
+      "pharyngeal",
+      "voiced"
+    ],
+    "pa": [
+      "stop",
+      "bilabial",
+      "voiceless"
+    ],
+    "tsa": [
+      "affricate",
+      "alveolar",
+      "voiceless"
+    ],
+    "qa": [
+      "stop",
+      "velar",
+      "voiceless"
+    ],
+    "ra": [
+      "approximant",
+      "uvular",
+      "voiced"
+    ],
+    "sha": [
+      "fricative",
+      "postalveolar",
+      "voiceless"
+    ],
+    "tha": [
+      "stop",
+      "alveolar",
+      "voiceless"
+    ]
+  },
+  "merged_in_modern_hebrew": [
+    "aa/ah",
+    "ka/qa",
+    "ta/tha"
+  ],
+  "acoustically_nearest_syllables": {
+    "aa": [
+      "ra",
+      "sa",
+      "ah"
+    ],
+    "ah": [
+      "pa",
+      "ba",
+      "aa"
+    ],
+    "ba": [
+      "qa",
+      "tsa",
+      "ah"
+    ],
+    "da": [
+      "ta",
+      "pa",
+      "qa"
+    ],
+    "ga": [
+      "kha",
+      "da",
+      "pa"
+    ],
+    "ha": [
+      "na",
+      "kha",
+      "ga"
+    ],
+    "ka": [
+      "sa",
+      "ra",
+      "aa"
+    ],
+    "kha": [
+      "ga",
+      "pa",
+      "va"
+    ],
+    "la": [
+      "qa",
+      "da",
+      "pa"
+    ],
+    "ma": [
+      "ka",
+      "va",
+      "kha"
+    ],
+    "na": [
+      "ha",
+      "kha",
+      "ga"
+    ],
+    "pa": [
+      "da",
+      "ah",
+      "ba"
+    ],
+    "qa": [
+      "la",
+      "ba",
+      "da"
+    ],
+    "ra": [
+      "aa",
+      "sa",
+      "ka"
+    ],
+    "sa": [
+      "ka",
+      "ra",
+      "aa"
+    ],
+    "sha": [
+      "qa",
+      "ba",
+      "za"
+    ],
+    "ta": [
+      "da",
+      "tha",
+      "ba"
+    ],
+    "tha": [
+      "ta",
+      "ba",
+      "da"
+    ],
+    "tsa": [
+      "ba",
+      "tha",
+      "qa"
+    ],
+    "va": [
+      "ta",
+      "da",
+      "pa"
+    ],
+    "ya": [
+      "za",
+      "la",
+      "qa"
+    ],
+    "za": [
+      "ya",
+      "qa",
+      "la"
+    ]
+  },
+  "closest_pairs": [
+    {
+      "pair": "aa/ra",
+      "distance": 1.3320467533555478
+    },
+    {
+      "pair": "ha/na",
+      "distance": 1.6668406202501502
+    },
+    {
+      "pair": "la/qa",
+      "distance": 1.7781162163067874
+    },
+    {
+      "pair": "da/ta",
+      "distance": 1.8597290685754835
+    },
+    {
+      "pair": "ka/sa",
+      "distance": 1.8857718714968392
+    },
+    {
+      "pair": "da/pa",
+      "distance": 1.976984092047217
+    },
+    {
+      "pair": "ra/sa",
+      "distance": 2.110510267617204
+    },
+    {
+      "pair": "ta/tha",
+      "distance": 2.182789886590426
+    },
+    {
+      "pair": "ba/qa",
+      "distance": 2.257450953152693
+    },
+    {
+      "pair": "da/qa",
+      "distance": 2.2796267480602563
+    },
+    {
+      "pair": "ba/tsa",
+      "distance": 2.367591614793899
+    },
+    {
+      "pair": "ah/pa",
+      "distance": 2.3907936163593093
+    }
+  ],
+  "confusion_structure": {
+    "128": {
+      "errors": 341,
+      "spearman_errors_vs_acoustic_distance": -0.5620079470059646,
+      "spearman_errors_vs_phonetic_overlap": 0.043172681711930484,
+      "mean_phonetic_overlap_of_confusions": 0.873900293255132,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 3.4806341405819934,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.22287390029325513,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    },
+    "256": {
+      "errors": 307,
+      "spearman_errors_vs_acoustic_distance": -0.49744152725856644,
+      "spearman_errors_vs_phonetic_overlap": 0.08686211544874137,
+      "mean_phonetic_overlap_of_confusions": 0.9869706840390879,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 3.4799543222838984,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.26058631921824105,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    },
+    "512": {
+      "errors": 306,
+      "spearman_errors_vs_acoustic_distance": -0.46134305447804774,
+      "spearman_errors_vs_phonetic_overlap": 0.02659695322004097,
+      "mean_phonetic_overlap_of_confusions": 0.9509803921568627,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 3.5752610846024746,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.24183006535947713,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    },
+    "64": {
+      "errors": 351,
+      "spearman_errors_vs_acoustic_distance": -0.5142857341641739,
+      "spearman_errors_vs_phonetic_overlap": 0.04552964570056595,
+      "mean_phonetic_overlap_of_confusions": 0.8717948717948718,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 3.589851850976957,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.2336182336182336,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    },
+    "baseline-human-only": {
+      "errors": 403,
+      "spearman_errors_vs_acoustic_distance": -0.3820045556622375,
+      "spearman_errors_vs_phonetic_overlap": 0.1055023696717454,
+      "mean_phonetic_overlap_of_confusions": 0.9106699751861043,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 4.3049541044297195,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.10173697270471464,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    },
+    "random-centres-128": {
+      "errors": 407,
+      "spearman_errors_vs_acoustic_distance": -0.4006438719519897,
+      "spearman_errors_vs_phonetic_overlap": 0.08071323075007113,
+      "mean_phonetic_overlap_of_confusions": 0.9262899262899262,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 4.203548310420174,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.13513513513513514,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    },
+    "random-centres-256": {
+      "errors": 392,
+      "spearman_errors_vs_acoustic_distance": -0.40176492629244515,
+      "spearman_errors_vs_phonetic_overlap": 0.1560712550429836,
+      "mean_phonetic_overlap_of_confusions": 0.9846938775510204,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 4.196630062381509,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.15051020408163265,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    },
+    "random-centres-512": {
+      "errors": 392,
+      "spearman_errors_vs_acoustic_distance": -0.4712289500710361,
+      "spearman_errors_vs_phonetic_overlap": 0.0604985007745719,
+      "mean_phonetic_overlap_of_confusions": 0.9362244897959183,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 4.051456874776605,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.16071428571428573,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    },
+    "random-centres-64": {
+      "errors": 410,
+      "spearman_errors_vs_acoustic_distance": -0.42637194558645614,
+      "spearman_errors_vs_phonetic_overlap": 0.004080849009011423,
+      "mean_phonetic_overlap_of_confusions": 0.8512195121951219,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 4.249952056356283,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.11707317073170732,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    },
+    "random-real-frames-128": {
+      "errors": 345,
+      "spearman_errors_vs_acoustic_distance": -0.5196643393656973,
+      "spearman_errors_vs_phonetic_overlap": 0.09860801977082874,
+      "mean_phonetic_overlap_of_confusions": 1.0405797101449274,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 3.622080456790706,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.22318840579710145,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    },
+    "random-real-frames-256": {
+      "errors": 315,
+      "spearman_errors_vs_acoustic_distance": -0.5292848730882215,
+      "spearman_errors_vs_phonetic_overlap": 0.10149106335795784,
+      "mean_phonetic_overlap_of_confusions": 0.9904761904761905,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 3.475527896651953,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.24444444444444444,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    },
+    "random-real-frames-512": {
+      "errors": 311,
+      "spearman_errors_vs_acoustic_distance": -0.5596925423995807,
+      "spearman_errors_vs_phonetic_overlap": 0.055677749851317744,
+      "mean_phonetic_overlap_of_confusions": 0.9485530546623794,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 3.491848614059028,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.22508038585209003,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    },
+    "random-real-frames-64": {
+      "errors": 356,
+      "spearman_errors_vs_acoustic_distance": -0.507421551062359,
+      "spearman_errors_vs_phonetic_overlap": 0.08221314265398903,
+      "mean_phonetic_overlap_of_confusions": 0.8735955056179775,
+      "mean_phonetic_overlap_all_pairs": 0.8441558441558441,
+      "mean_acoustic_distance_of_confusions": 3.79108186035976,
+      "mean_acoustic_distance_all_pairs": 5.1129675301485475,
+      "share_of_errors_on_the_10_closest_pairs": 0.19382022471910113,
+      "share_of_pairs_that_are_the_10_closest": 0.04329004329004329
+    }
+  },
+  "minimal_pairs": [
+    {
+      "pair": "ba/pa",
+      "raw_features_no_codebook_accuracy": 1.0,
+      "ant_accuracy": {
+        "64": 0.375,
+        "256": 0.22916666666666666,
+        "512": 0.3541666666666667,
+        "baseline-human-only": 0.43750000000000006
+      },
+      "acoustic_centroid_distance": 2.6086314302613083,
+      "phonetic_feature_overlap": 2,
+      "merged_in_modern_hebrew": false
+    },
+    {
+      "pair": "ga/ka",
+      "raw_features_no_codebook_accuracy": 1.0,
+      "ant_accuracy": {
+        "64": 1.0,
+        "256": 1.0,
+        "512": 1.0,
+        "baseline-human-only": 0.6875
+      },
+      "acoustic_centroid_distance": 6.35362009242395,
+      "phonetic_feature_overlap": 2,
+      "merged_in_modern_hebrew": false
+    },
+    {
+      "pair": "da/ta",
+      "raw_features_no_codebook_accuracy": 0.75,
+      "ant_accuracy": {
+        "64": 0.5,
+        "256": 0.5208333333333334,
+        "512": 0.5416666666666667,
+        "baseline-human-only": 0.5
+      },
+      "acoustic_centroid_distance": 1.8597290685754835,
+      "phonetic_feature_overlap": 2,
+      "merged_in_modern_hebrew": false
+    },
+    {
+      "pair": "sa/sha",
+      "raw_features_no_codebook_accuracy": 1.0,
+      "ant_accuracy": {
+        "64": 1.0,
+        "256": 1.0,
+        "512": 1.0,
+        "baseline-human-only": 0.9583333333333334
+      },
+      "acoustic_centroid_distance": 7.33936619736312,
+      "phonetic_feature_overlap": 2,
+      "merged_in_modern_hebrew": false
+    },
+    {
+      "pair": "ka/qa",
+      "raw_features_no_codebook_accuracy": 1.0,
+      "ant_accuracy": {
+        "64": 0.8125,
+        "256": 0.9583333333333334,
+        "512": 1.0,
+        "baseline-human-only": 0.4166666666666667
+      },
+      "acoustic_centroid_distance": 4.434645888323162,
+      "phonetic_feature_overlap": 3,
+      "merged_in_modern_hebrew": true
+    },
+    {
+      "pair": "ta/tha",
+      "raw_features_no_codebook_accuracy": 0.8333333333333334,
+      "ant_accuracy": {
+        "64": 0.7916666666666667,
+        "256": 0.625,
+        "512": 0.6874999999999999,
+        "baseline-human-only": 0.5833333333333334
+      },
+      "acoustic_centroid_distance": 2.182789886590426,
+      "phonetic_feature_overlap": 3,
+      "merged_in_modern_hebrew": true
+    },
+    {
+      "pair": "za/sa",
+      "raw_features_no_codebook_accuracy": 1.0,
+      "ant_accuracy": {
+        "64": 0.9791666666666666,
+        "256": 1.0,
+        "512": 1.0,
+        "baseline-human-only": 0.7291666666666667
+      },
+      "acoustic_centroid_distance": 5.541433174698916,
+      "phonetic_feature_overlap": 2,
+      "merged_in_modern_hebrew": false
+    },
+    {
+      "pair": "ah/aa",
+      "raw_features_no_codebook_accuracy": 1.0,
+      "ant_accuracy": {
+        "64": 0.375,
+        "256": 0.47916666666666674,
+        "512": 0.6875,
+        "baseline-human-only": 0.3958333333333333
+      },
+      "acoustic_centroid_distance": 2.564016051434908,
+      "phonetic_feature_overlap": 2,
+      "merged_in_modern_hebrew": true
+    }
+  ]
+}

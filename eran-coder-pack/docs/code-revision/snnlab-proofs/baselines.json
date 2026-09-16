@@ -1,0 +1,47 @@
+{
+  "_": "REV 2026-09-06 (SNN-9). These used to be frozen literals inside cochlea.py with no date and no corpus, and the GUI printed a win/lose verdict against them forever. A number is a baseline only for the corpus it was measured on, so every entry now carries WHEN it was measured, on WHAT, and by whom. cochlea.py falls back to the same literals if this file is unreadable, so nothing breaks if it is missing.",
+  "corpus": "corpus-syllables (train 396 + heldout 132)",
+  "corpus_sha256": "0f686233b86c917be70d7954c29676a21995784551eaeb61e9cb4dde43ee2d41",
+  "fingerprint_note": "Measured 2026-09-06 over the wavs as they sit on disk. Every one of the 528 files has an mtime between 2026-08-21 19:46:52 and 19:47:04 and none has been written since, so this fingerprint IS the corpus the 2026-08-21 numbers below were measured on. If a wav is ever re-recorded, added or relabelled, this sha changes and train.py refuses to print a win/lose against the organism until the baseline is re-measured.",
+  "corpus_provenance_warning": "The audio in this corpus is SYNTHETIC. Its own manifest.json states source.model = facebook/mms-tts-heb (a VITS TTS), generator D:/CLAUDE/ant-wall/make_curriculum.py, and labels_are_provenance_only = true. Iddo's ear ruled 0/10 on this heldout on 2026-09-03. Nothing here has been relabelled or re-pointed - that is his call (see _deliverables/code-revision/NEEDS-IDDO-snnlab.md).",
+  "entries": {
+    "chance": {
+      "kind": "baseline", "value": 0.045454545454545456,
+      "measured": "2026-08-21", "corpus_sha256": "0f686233b86c917be70d7954c29676a21995784551eaeb61e9cb4dde43ee2d41",
+      "source": "1/22 - arithmetic, not a measurement",
+      "note": "22 classes."
+    },
+    "duration_only_floor": {
+      "kind": "baseline", "value": 0.05303030303030303,
+      "measured": "2026-08-21", "corpus_sha256": "0f686233b86c917be70d7954c29676a21995784551eaeb61e9cb4dde43ee2d41",
+      "source": "eran-brain genome.BASELINES", "note": "132-item heldout."
+    },
+    "random_real_frames_codebook": {
+      "kind": "baseline", "value": 0.4621212121212121,
+      "measured": "2026-08-21", "corpus_sha256": "0f686233b86c917be70d7954c29676a21995784551eaeb61e9cb4dde43ee2d41",
+      "source": "eran-brain genome.BASELINES", "note": "132-item heldout."
+    },
+    "raw_features_speech_span": {
+      "kind": "baseline", "value": 0.5378787878787878,
+      "measured": "2026-08-21", "corpus_sha256": "0f686233b86c917be70d7954c29676a21995784551eaeb61e9cb4dde43ee2d41",
+      "source": "eran-brain genome.BASELINES", "note": "132-item heldout."
+    },
+    "raw_features_loudest60": {
+      "kind": "baseline", "value": 0.6893939393939394,
+      "measured": "2026-08-21", "corpus_sha256": "0f686233b86c917be70d7954c29676a21995784551eaeb61e9cb4dde43ee2d41",
+      "source": "eran-brain genome.BASELINES", "note": "132-item heldout."
+    },
+    "prototype_organism_heldout": {
+      "kind": "organism", "value": 0.6287878787878788,
+      "measured": "2026-08-21", "corpus_sha256": "0f686233b86c917be70d7954c29676a21995784551eaeb61e9cb4dde43ee2d41",
+      "source": "ERAN's prototype organism, 132-item heldout",
+      "note": "NOT re-measured since. eran1 serves the live mic and is off limits for load, so this figure is 16 days old as of 2026-09-06 - the GUI now prints that date beside every comparison instead of implying it is current."
+    },
+    "frozen_cochlea_nearest_centroid": {
+      "kind": "organism", "value": 0.7954545454545454,
+      "measured": "2026-08-21", "corpus_sha256": "0f686233b86c917be70d7954c29676a21995784551eaeb61e9cb4dde43ee2d41",
+      "source": "nearest-centroid on the frozen cochlea, same 132-item heldout",
+      "note": "No learning at all, and it beat every unsupervised arm in this lab."
+    }
+  }
+}

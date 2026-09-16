@@ -1,0 +1,12 @@
+{
+  "id": "search", "order": 60,
+  "title_he": "חיפוש", "title_en": "SEARCH",
+  "subtitle_he": "ריקול :8794 + שמש :8850",
+  "box_hint": "pc+eran2",
+  "want": ["pc/alma-recall", "eran2/shamash"],
+  "concede": [],
+  "note_he": "שניהם רצים עכשיו. אף אחד מהם לא ניתן להפעלה בלחיצה.",
+  "honesty": "מצב צפייה בלבד. לשמש אין יחידת systemd בכלל, ו-alma-recall מנוהל על ידי Scheduled Task. MATZAV יכול למדוד אותם, לא להרים אותם.",
+  "demonstrated": {"status": "watch-only", "evidence": "Both measured UP. Neither has a start verb in the registry — SHAMASH has no unit anywhere on eran2."},
+  "runnable": false
+}

@@ -1,0 +1,825 @@
+{
+ "_doc": "Starting gesture table for the 22 Hebrew letters + the /a/ vowel, MOUTH v2 adult tract (eran2:~/mouth-v2/mouth2.py, AGE_MONTHS 300, 17.60 cm, 23 sections). Written by claude-cli-PEH 2026-09-02 from measured probes (eran2:~/throat-one-sample/out/manual-probes/). Broken Windows: every range here is a MEASURED starting point, not a verified syllable -- signature_ok is false for all rows until a render is checked against its signature.",
+ "vowel_knots_AH": [
+  -0.6013,
+  -0.0092,
+  -0.631,
+  -1.4002,
+  1.6041,
+  -1.8558,
+  1.8504,
+  1.933
+ ],
+ "VOWEL_KF": {
+  "knots8": "AH",
+  "c_pos": 0.65,
+  "c_area": 2.0,
+  "velum": 0.0,
+  "tenseness": 0.6,
+  "voicing": 1.0,
+  "note": "mouth2.keyframe(AH) default. Measured in gesture space: F1 580 F2 1226 F3 2550, HNR 9.0 dB (NOT the 729/1276 of the say() fit -- the PCHIP-log spline + the 0.65/2.0 dilation make a different tube)."
+ },
+ "conventions": {
+  "c_pos": "0 = glottis, 1 = lips, on the 16.77 cm ladder (cm from lips = (1-c_pos)*16.77). Clipped [0.30, 1.00]. Nasal junction at 0.41; constrictions at 0.30-0.45 sit on or behind it.",
+  "c_area": "cm2 at the constriction centre (Gaussian sigma 0.75 cm). 0.0 = seal (pressure builds if voicing > 0 and velum < 0.05). 0.01-0.09 = DEAD ZONE (no seal, no noise). 0.10-0.25 = fricative channel (noise on, full). >= 0.49 = no noise. Clipped [0, 2].",
+  "velum": "nasal port cm2, clipped [0, 0.8]; a switch above 0.05.",
+  "voicing": "0..1, scales BOTH the pulse and the glottal aspiration; 10 ms one-pole. voicing 0 is not silence (turbulence is independent of it).",
+  "tenseness": "effective = utterance contour x keyframe/0.6, clipped [0.25, 0.95]. 0.25 breathy (H1-H2 +13 dB, centroid 270), 0.95 pressed (H1-H2 -3 dB, centroid 633, +5 dB louder).",
+  "f0": "fence 90-350 Hz; Iddo is 105.",
+  "seal_map_db_re_open_vowel": {
+   "0.46": -2,
+   "0.47": -13,
+   "0.48": -20,
+   "0.49": -24,
+   "0.50": -25,
+   "0.51": -22,
+   "0.52": -17.5,
+   "0.53": -14,
+   "0.54": -12,
+   "0.55": -8,
+   "0.56-0.65": "-1.6 to -4.4 (NO closure)",
+   "0.70": -9,
+   "0.75-0.92": "-8 to -12.5",
+   "0.93": -14,
+   "0.94": -16,
+   "0.95": -20,
+   "0.96": -26.5,
+   "0.97": -31,
+   "0.98": -32.6,
+   "0.99": -30.6,
+   "1.00": -25
+  },
+  "noise_place_map_centroid_hz_at_area_0.15": {
+   "0.30-0.40": "4460-4720",
+   "0.45": 3006,
+   "0.50": 2054,
+   "0.55": 2520,
+   "0.60-0.65": "4370-5010 (loudest)",
+   "0.70": 4395,
+   "0.75-0.80": "3440-3740 (sh)",
+   "0.85-0.90": "4910-5030 (s)",
+   "0.95": 3698,
+   "1.00": "1710 (weak, f)"
+  }
+ },
+ "rows": [
+  {
+   "letter": "א",
+   "name": "alef",
+   "syl": "a",
+   "place": "glottal (voicing onset; the tract has no glottal seal, c_pos floor is 0.30)",
+   "c_pos": [
+    0.65,
+    0.65
+   ],
+   "c_area": [
+    2.0,
+    2.0
+   ],
+   "velum": 0.0,
+   "voicing": "0 -> 1 step (glide 0.02)",
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "none (abrupt voicing onset)",
+   "signature": {
+    "pre": "silence <= -20 dB re vowel for >= 50 ms (measured -22.6)",
+    "onset": "voicing rises 10-90% in <= 70 ms (measured 70 ms with glide 0.02; 140 with 0.35)",
+    "then": "the /a/ vowel: F1 ~580 F2 ~1225 F3 ~2550, f0 105",
+    "no": "no burst, no noise band"
+   },
+   "recipe": "keyframes [keyframe(AH, c_pos=0.97, c_area=0.0, voicing=0.0), keyframe(AH, voicing=0.0), VOWEL_KF], durations [0.05, 0.05, 0.35], glide 0.02. The lip seal in the first keyframe kills the AH tube's own -16 dB hiss; voicing=0 alone is NOT silence.",
+   "note": "Israeli Hebrew: alef and ayin are the same onset. Alt for a Mizrahi ayin: c_pos 0.30-0.35 c_area 0.3-0.5 voiced 40 ms -- NOT probed (UNKNOWN)."
+  },
+  {
+   "letter": "ב",
+   "name": "bet",
+   "syl": "ba",
+   "place": "lips",
+   "c_pos": [
+    0.96,
+    0.99
+   ],
+   "c_area": [
+    0.0,
+    0.0
+   ],
+   "velum": 0.0,
+   "voicing": 1.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "seal (stop, voiced)",
+   "signature": {
+    "closure": "<= -25 dB re vowel for 40-100 ms (measured -30.9 at 0.97)",
+    "burst": "within 10 ms of release, +3 dB re vowel at gain 2.2 / +8 at gain 6; burst centroid 500-600 Hz (lowest of the places)",
+    "transition": "F1 rises 503 -> 582, F2 ~flat 1267 -> 1219, F3 2777 -> 2705 (measured)",
+    "voicing": "continuous through closure (voice bar at -31 dB)"
+   },
+   "recipe": "keyframes [kf_c, kf_c, VOWEL_KF], durations [0.06-0.10, 0.01-0.02, 0.30-0.40]; kf_c = keyframe(AH, c_pos, c_area=0.0, velum=0, voicing=1.0). Voicing MUST stay >0 during the closure (pressure builds from |source|; a voicing-0 closure makes NO burst -- measured). Release = the 35% glide of the vowel segment.",
+   "note": "Only the lips seal properly in this ladder (0.96-0.99: -26 to -33 dB). 1.00 is worse (-25). c_area 0.005 is NOT a seal for sound (+3 dB leak mid-tract, -18 at lips) -- use exactly 0.0."
+  },
+  {
+   "letter": "ב",
+   "name": "vet",
+   "syl": "va",
+   "place": "labiodental (lips, narrow)",
+   "c_pos": [
+    0.97,
+    1.0
+   ],
+   "c_area": [
+    0.12,
+    0.18
+   ],
+   "velum": 0.0,
+   "voicing": "0.3-0.5",
+   "tenseness": [
+    0.25,
+    0.4
+   ],
+   "manner": "narrow (fricative, voiced)",
+   "signature": {
+    "voicing": "f0 measurable (105 Hz), HNR 2-6 dB",
+    "noise": ">2 kHz fraction >= 0.10 (measured 0.195 at voicing 0.3 ten 0.25; 0.01 at voicing 1.0 = invisible)",
+    "level": "-10 to -25 dB re vowel (weak, flat: centroid ~2.2 kHz at 0.98 voiceless)",
+    "no": "no closure, no burst"
+   },
+   "recipe": "as the voiceless fricative but voicing 0.3-0.5 and tenseness 0.25-0.40 (at voicing 1.0 the noise is invisible: >2 kHz fraction 0.01 = the vowel's own; at voicing 0.3/ten 0.25 it is 0.195 with f0 still measurable).",
+   "note": "Same sound as vav in Israeli Hebrew."
+  },
+  {
+   "letter": "ג",
+   "name": "gimel",
+   "syl": "ga",
+   "place": "back of tongue -- the ONLY mid-tract seal that holds is 0.48-0.51",
+   "c_pos": [
+    0.48,
+    0.51
+   ],
+   "c_area": [
+    0.0,
+    0.0
+   ],
+   "velum": 0.0,
+   "voicing": 1.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "seal (stop, voiced)",
+   "signature": {
+    "closure": "<= -20 dB re vowel (measured -24.7 at 0.50; 0.56-0.65 does NOT close: -1.6 to -4.4 dB)",
+    "burst": "burst centroid 900-980 Hz (highest of the places)",
+    "transition": "F2 onset RAISED ~1515 falling to 1219 (velar pinch), F1 522 -> 582",
+    "voicing": "continuous"
+   },
+   "recipe": "keyframes [kf_c, kf_c, VOWEL_KF], durations [0.06-0.10, 0.01-0.02, 0.30-0.40]; kf_c = keyframe(AH, c_pos, c_area=0.0, velum=0, voicing=1.0). Voicing MUST stay >0 during the closure (pressure builds from |source|; a voicing-0 closure makes NO burst -- measured). Release = the 35% glide of the vowel segment.",
+   "note": "The 'velar' place 0.56-0.65 leaks through the Gaussian taper in this ladder; 0.50 is where the seal holds (three sections < 0.013 cm2). Treat 0.48-0.51 as k/g place."
+  },
+  {
+   "letter": "ד",
+   "name": "dalet",
+   "syl": "da",
+   "place": "tongue tip -- use 0.94-0.95 (the ridge 0.86-0.92 leaks -8 to -12 dB)",
+   "c_pos": [
+    0.94,
+    0.95
+   ],
+   "c_area": [
+    0.0,
+    0.0
+   ],
+   "velum": 0.0,
+   "voicing": 1.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "seal (stop, voiced)",
+   "signature": {
+    "closure": "<= -16 dB re vowel (measured -19.9 at 0.95, -13.7 at 0.93, -10.5 at 0.88)",
+    "burst": "centroid 550-750 Hz",
+    "transition": "F3 onset HIGH 2855-2890 falling to 2705; F1 502 -> 582; F2 ~flat 1248 -> 1219",
+    "voicing": "continuous"
+   },
+   "recipe": "keyframes [kf_c, kf_c, VOWEL_KF], durations [0.06-0.10, 0.01-0.02, 0.30-0.40]; kf_c = keyframe(AH, c_pos, c_area=0.0, velum=0, voicing=1.0). Voicing MUST stay >0 during the closure (pressure builds from |source|; a voicing-0 closure makes NO burst -- measured). Release = the 35% glide of the vowel segment.",
+   "note": "d vs b: F3 onset (2855 vs 2777) and burst centroid (740 vs 590 at gain 6). Weak cues -- expect ERAN to confuse d/b at first."
+  },
+  {
+   "letter": "ה",
+   "name": "he",
+   "syl": "ha",
+   "place": "pharynx / glottis (noise from c_pos 0.32-0.40; no closure)",
+   "c_pos": [
+    0.32,
+    0.4
+   ],
+   "c_area": [
+    0.15,
+    0.25
+   ],
+   "velum": 0.0,
+   "voicing": "0.0-0.2",
+   "tenseness": [
+    0.25,
+    0.25
+   ],
+   "manner": "narrow (aspiration noise)",
+   "signature": {
+    "noise": "50-90 ms, HNR < 0 dB (measured -8.7 at voicing 0, -3.7 at voicing 0.2 ten 0.25), centroid 3.7-5.1 kHz",
+    "level": "-8 to -13 dB re vowel",
+    "no": "no closure, no burst, no low-frequency murmur",
+    "then": "the vowel"
+   },
+   "recipe": "keyframes [kf_h, kf_h, VOWEL_KF], durations [0.06-0.08, 0.02-0.03, 0.30-0.40]; kf_h = keyframe(AH, c_pos=0.35, c_area=0.15, tenseness=0.25, voicing=0.2).",
+   "note": "Physically a [h] carries the following vowel's formants; this recipe's noise is pharyngeal-coloured (F 1106/1634). ALT 'breathy onset': VOWEL_KF with voicing 0.3 tenseness 0.25 for 70 ms -> HNR 2.4, centroid 1082, formants 565/1317/2543 = vowel colour, level -10.9 dB. Try both on Iddo's ear."
+  },
+  {
+   "letter": "ו",
+   "name": "vav",
+   "syl": "va",
+   "place": "labiodental",
+   "c_pos": [
+    0.97,
+    1.0
+   ],
+   "c_area": [
+    0.12,
+    0.18
+   ],
+   "velum": 0.0,
+   "voicing": "0.3-0.5",
+   "tenseness": [
+    0.25,
+    0.4
+   ],
+   "manner": "narrow (fricative, voiced)",
+   "signature": {
+    "same_as": "vet: f0 present + >2 kHz fraction >= 0.10, level -10 to -25 dB, no closure"
+   },
+   "recipe": "as the voiceless fricative but voicing 0.3-0.5 and tenseness 0.25-0.40 (at voicing 1.0 the noise is invisible: >2 kHz fraction 0.01 = the vowel's own; at voicing 0.3/ten 0.25 it is 0.195 with f0 still measurable).",
+   "note": "Identical to vet in Israeli Hebrew."
+  },
+  {
+   "letter": "ז",
+   "name": "zayin",
+   "syl": "za",
+   "place": "tongue tip / teeth",
+   "c_pos": [
+    0.9,
+    0.93
+   ],
+   "c_area": [
+    0.1,
+    0.15
+   ],
+   "velum": 0.0,
+   "voicing": "0.3-0.5",
+   "tenseness": [
+    0.25,
+    0.4
+   ],
+   "manner": "narrow (fricative, voiced)",
+   "signature": {
+    "voicing": "f0 105 measurable, HNR 2-6 dB",
+    "noise": ">2 kHz fraction >= 0.15, centroid ~3 kHz (measured 0.195 / 3069 Hz at 0.92/0.12/voicing 0.3/ten 0.25)",
+    "level": "-6 to -10 dB re vowel",
+    "no": "no closure, no burst"
+   },
+   "recipe": "as the voiceless fricative but voicing 0.3-0.5 and tenseness 0.25-0.40 (at voicing 1.0 the noise is invisible: >2 kHz fraction 0.01 = the vowel's own; at voicing 0.3/ten 0.25 it is 0.195 with f0 still measurable).",
+   "note": "The s/z pair: z = s + partial voicing. At voicing 1.0 it is just the vowel (HNR 8.4, >2k 0.01)."
+  },
+  {
+   "letter": "ח",
+   "name": "chet",
+   "syl": "cha",
+   "place": "uvular 0.50-0.53 (Israeli [x]); 0.60 is WRONG (4.4 kHz)",
+   "c_pos": [
+    0.5,
+    0.53
+   ],
+   "c_area": [
+    0.12,
+    0.2
+   ],
+   "velum": 0.0,
+   "voicing": 0.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "narrow (fricative, voiceless)",
+   "signature": {
+    "noise": ">= 80 ms, centroid 1.9-2.5 kHz, 1-3 kHz fraction >= 0.85 (measured 0.91-0.94 at 0.50-0.52), HNR <= 1 dB",
+    "level": "-4 to -8 dB re vowel (loud)",
+    "no": "no closure, no burst, no voicing"
+   },
+   "recipe": "keyframes [kf_f, kf_f, VOWEL_KF], durations [0.08-0.12, 0.01-0.02, 0.30-0.40]; kf_f = keyframe(AH, c_pos, c_area, velum=0, voicing=0.0). c_area must be 0.10-0.25 (below 0.09 there is NO noise at all -- measured dead zone).",
+   "note": "Same as khaf. The noise place map: 0.50-0.52 -> 2.0 kHz; 0.55 -> 2.5 kHz; 0.60-0.65 -> 4.4-5.0 kHz (loudest place, but too bright for chet)."
+  },
+  {
+   "letter": "ט",
+   "name": "tet",
+   "syl": "ta",
+   "place": "tongue tip 0.94-0.95",
+   "c_pos": [
+    0.94,
+    0.95
+   ],
+   "c_area": [
+    0.0,
+    0.0
+   ],
+   "velum": 0.0,
+   "voicing": "1.0 in closure, 0.0 in the 30-50 ms gap",
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "seal (stop, voiceless)",
+   "signature": {
+    "closure": "<= -16 dB (measured -19.6)",
+    "burst": "+5 dB re vowel at gain 2.2, +14 at gain 6, within 5 ms; centroid 850-950 Hz",
+    "gap": "30-50 ms VOT at -3 to -6 dB re vowel (noise + ring, not silence)",
+    "transition": "F3 onset high -> 2705"
+   },
+   "recipe": "keyframes [kf_c, kf_c, VOWEL_KF], durations [0.06-0.10, 0.01-0.02, 0.30-0.40]; kf_c = keyframe(AH, c_pos, c_area=0.0, velum=0, voicing=1.0). Voicing MUST stay >0 during the closure (pressure builds from |source|; a voicing-0 closure makes NO burst -- measured). Release = the 35% glide of the vowel segment. For the voiceless letter insert keyframe(AH, voicing=0.0) for 0.03-0.05 s between kf_c and VOWEL_KF (the VOT gap); backend='c' with g['burst']={'gain':6.0,'tau_s':0.003} for a real explosion (+14 to +18 dB re vowel measured; the default 2.2 gives only +3 to +8).",
+   "note": "Same sound as tav."
+  },
+  {
+   "letter": "י",
+   "name": "yod",
+   "syl": "ya",
+   "place": "palate (the /i/ tube, c_pos 0.75)",
+   "c_pos": [
+    0.7,
+    0.78
+   ],
+   "c_area": [
+    0.4,
+    0.6
+   ],
+   "velum": 0.0,
+   "voicing": 1.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "none (glide; no closure, no seal)",
+   "signature": {
+    "onset": "F1 <= 300, F2 >= 1900 (measured 288/2035/2759 with vowel_knots('i') + 0.75/0.5)",
+    "glide": "F2 slides 2035 -> 1871 (mid) -> 1205 over ~100-150 ms; F1 rises 288 -> 422 -> 564",
+    "voicing": "continuous, HNR ~6",
+    "no": "no burst, no noise band"
+   },
+   "recipe": "keyframes [kf_y, kf_y, VOWEL_KF], durations [0.06, 0.02, 0.32], glide 0.5-0.6; kf_y = keyframe(mouth2.vowel_knots('i'), c_pos=0.75, c_area=0.5, voicing=1.0). The knots CHANGE here (i-tube, not AH).",
+   "note": "vowel_knots('i') alone measures 299/1930/2692 -- the constriction is optional; 0.3 gives F1 245."
+  },
+  {
+   "letter": "כ",
+   "name": "kaf",
+   "syl": "ka",
+   "place": "back 0.48-0.51",
+   "c_pos": [
+    0.48,
+    0.51
+   ],
+   "c_area": [
+    0.0,
+    0.0
+   ],
+   "velum": 0.0,
+   "voicing": "1.0 in closure, 0.0 in the 30-50 ms gap",
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "seal (stop, voiceless)",
+   "signature": {
+    "closure": "<= -20 dB (measured -24.5)",
+    "burst": "+6.6 dB at gain 2.2, +14.3 at gain 6; centroid 800-900 Hz",
+    "gap": "30-50 ms at -3.5 to -5.5 dB",
+    "transition": "F2 onset raised ~1400-1500 falling to 1190"
+   },
+   "recipe": "keyframes [kf_c, kf_c, VOWEL_KF], durations [0.06-0.10, 0.01-0.02, 0.30-0.40]; kf_c = keyframe(AH, c_pos, c_area=0.0, velum=0, voicing=1.0). Voicing MUST stay >0 during the closure (pressure builds from |source|; a voicing-0 closure makes NO burst -- measured). Release = the 35% glide of the vowel segment. For the voiceless letter insert keyframe(AH, voicing=0.0) for 0.03-0.05 s between kf_c and VOWEL_KF (the VOT gap); backend='c' with g['burst']={'gain':6.0,'tau_s':0.003} for a real explosion (+14 to +18 dB re vowel measured; the default 2.2 gives only +3 to +8).",
+   "note": "Same as qof. khaf (the fricative) = chet row."
+  },
+  {
+   "letter": "כ",
+   "name": "khaf",
+   "syl": "cha",
+   "place": "uvular 0.50-0.53",
+   "c_pos": [
+    0.5,
+    0.53
+   ],
+   "c_area": [
+    0.12,
+    0.2
+   ],
+   "velum": 0.0,
+   "voicing": 0.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "narrow (fricative, voiceless)",
+   "signature": {
+    "same_as": "chet: centroid ~2 kHz, 1-3 kHz fraction >= 0.85, level -4 to -8 dB"
+   },
+   "recipe": "keyframes [kf_f, kf_f, VOWEL_KF], durations [0.08-0.12, 0.01-0.02, 0.30-0.40]; kf_f = keyframe(AH, c_pos, c_area, velum=0, voicing=0.0). c_area must be 0.10-0.25 (below 0.09 there is NO noise at all -- measured dead zone).",
+   "note": "Identical to chet."
+  },
+  {
+   "letter": "ל",
+   "name": "lamed",
+   "syl": "la",
+   "place": "tongue tip 0.86-0.90, NOT sealed",
+   "c_pos": [
+    0.86,
+    0.9
+   ],
+   "c_area": [
+    0.3,
+    0.5
+   ],
+   "velum": 0.0,
+   "voicing": 1.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "narrow-wide (voiced approximant; no lateral channel exists in a single tube)",
+   "signature": {
+    "voicing": "continuous, level within +-2 dB of the vowel (measured -0.1 to +0.2)",
+    "F1": "<= 470 during the consonant (measured 417 at 0.30, 466 at 0.50) vs ~580 in the vowel",
+    "no": "no burst (release peak +2 dB = vowel onset), no closure below -6 dB",
+    "noise": "HNR ~5 (the channel sits in the turbulence window; a real l has none)"
+   },
+   "recipe": "keyframes [kf_l, kf_l, VOWEL_KF], durations [0.07-0.10, 0.02, 0.30-0.40]; kf_l = keyframe(AH, c_pos=0.88, c_area=0.4, velum=0.0, voicing=1.0). Velum MUST be 0 (Iddo heard 'mwah' when la shared ma's nasal template).",
+   "note": "Weak contrast with the vowel; the F1 dip is the only cue. c_area >= 0.5 keeps it out of the turbulence window (thin -> 0 at 0.49) at the cost of F1 (466)."
+  },
+  {
+   "letter": "מ",
+   "name": "mem",
+   "syl": "ma",
+   "place": "lips 0.96-0.99",
+   "c_pos": [
+    0.96,
+    0.99
+   ],
+   "c_area": [
+    0.0,
+    0.0
+   ],
+   "velum": 0.75,
+   "voicing": 1.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "seal + nasal (murmur)",
+   "signature": {
+    "murmur": "80-200 ms, >= 95% of power below 500 Hz (measured 99.3%), nose/lip >= +30 dB (measured +35.9), level -2 dB re vowel (loud)",
+    "antiformant": "~1.66 kHz (measured 1664)",
+    "release": "NO burst (velum open = no pressure), F1 onset ~510 -> 580",
+    "murmur_F": "195 / 993 / 2156"
+   },
+   "recipe": "keyframes [kf_n, kf_n, VOWEL_KF], durations [0.08-0.15, 0.02, 0.30-0.40]; kf_n = keyframe(AH, c_pos, c_area=0.0, velum=0.75, voicing=1.0). Velum is a switch: anything above 0.05 is fully nasal (+33.8 dB at 0.05, +35.9 at 0.75 measured); with the velum open no pressure builds, so there is no burst -- that is the m/b difference.",
+   "note": "The m/n cue is the antiformant (1.66 kHz vs 2.0-2.5) and the F3 onset. train_syl2 found c_pos 0.90 velum 0.72-0.98 on IDDO-ma.wav."
+  },
+  {
+   "letter": "נ",
+   "name": "nun",
+   "syl": "na",
+   "place": "tongue tip 0.90-0.95",
+   "c_pos": [
+    0.9,
+    0.95
+   ],
+   "c_area": [
+    0.0,
+    0.0
+   ],
+   "velum": 0.75,
+   "voicing": 1.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "seal + nasal (murmur)",
+   "signature": {
+    "murmur": ">= 95% below 500 Hz (99.7%), nose/lip >= +20 dB (measured +24.5 at 0.93, +23.8 at 0.90)",
+    "antiformant": "2.0-2.5 kHz (measured 2000 at 0.93, 2523 at 0.90) -- higher than m",
+    "release": "NO burst; F3 onset high (2851)",
+    "murmur_F": "209 / 1034 / 2135"
+   },
+   "recipe": "keyframes [kf_n, kf_n, VOWEL_KF], durations [0.08-0.15, 0.02, 0.30-0.40]; kf_n = keyframe(AH, c_pos, c_area=0.0, velum=0.75, voicing=1.0). Velum is a switch: anything above 0.05 is fully nasal (+33.8 dB at 0.05, +35.9 at 0.75 measured); with the velum open no pressure builds, so there is no burst -- that is the m/b difference.",
+   "note": "For nun the seal need not be tight (the nose carries the sound), so 0.90 is fine here even though it leaks for d. A back nasal at 0.50 gives nose/lip +51 dB, antiformant 2945, F2 onset 1549 -- that is [ng], not nun."
+  },
+  {
+   "letter": "ס",
+   "name": "samekh",
+   "syl": "sa",
+   "place": "tongue tip / teeth 0.90-0.93",
+   "c_pos": [
+    0.9,
+    0.93
+   ],
+   "c_area": [
+    0.1,
+    0.15
+   ],
+   "velum": 0.0,
+   "voicing": 0.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "narrow (fricative, voiceless)",
+   "signature": {
+    "noise": ">= 80 ms, centroid >= 4.3 kHz (measured 4468 at 0.92/0.12; 4912-5027 at 0.85-0.90/0.15), >4 kHz fraction >= 0.5 (0.56-0.69), HNR < 0",
+    "level": "-12 to -16 dB re vowel (measured -14.8)",
+    "no": "no voicing, no closure, no burst"
+   },
+   "recipe": "keyframes [kf_f, kf_f, VOWEL_KF], durations [0.08-0.12, 0.01-0.02, 0.30-0.40]; kf_f = keyframe(AH, c_pos, c_area, velum=0, voicing=0.0). c_area must be 0.10-0.25 (below 0.09 there is NO noise at all -- measured dead zone).",
+   "note": "Same as sin. s vs sh: >4 kHz fraction 0.56 vs 0.23; centroid 4.5 vs 3.7 kHz. Nyquist is 8 kHz, so a real /s/ peak (5-8 kHz) is only half visible."
+  },
+  {
+   "letter": "ע",
+   "name": "ayin",
+   "syl": "a",
+   "place": "glottal onset (Israeli Hebrew = alef)",
+   "c_pos": [
+    0.65,
+    0.65
+   ],
+   "c_area": [
+    2.0,
+    2.0
+   ],
+   "velum": 0.0,
+   "voicing": "0 -> 1 step",
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "none (abrupt voicing onset)",
+   "signature": {
+    "same_as": "alef: >= 50 ms at <= -20 dB then a <= 70 ms rise into the vowel; no burst, no noise"
+   },
+   "recipe": "as alef.",
+   "note": "Pharyngeal ayin (Mizrahi) = c_pos 0.30-0.35 c_area 0.3-0.5 voiced 40 ms: NOT probed."
+  },
+  {
+   "letter": "פ",
+   "name": "pe",
+   "syl": "pa",
+   "place": "lips 0.96-0.99",
+   "c_pos": [
+    0.96,
+    0.99
+   ],
+   "c_area": [
+    0.0,
+    0.0
+   ],
+   "velum": 0.0,
+   "voicing": "1.0 in closure, 0.0 in the 30-50 ms gap",
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "seal (stop, voiceless)",
+   "signature": {
+    "closure": "<= -25 dB (measured -30.6)",
+    "burst": "+8 dB at gain 2.2, +17.9 at gain 6, within 5 ms; centroid 700-900 Hz",
+    "gap": "30-50 ms VOT at -2 to -6 dB",
+    "transition": "F1 rising into the vowel"
+   },
+   "recipe": "keyframes [kf_c, kf_c, VOWEL_KF], durations [0.06-0.10, 0.01-0.02, 0.30-0.40]; kf_c = keyframe(AH, c_pos, c_area=0.0, velum=0, voicing=1.0). Voicing MUST stay >0 during the closure (pressure builds from |source|; a voicing-0 closure makes NO burst -- measured). Release = the 35% glide of the vowel segment. For the voiceless letter insert keyframe(AH, voicing=0.0) for 0.03-0.05 s between kf_c and VOWEL_KF (the VOT gap); backend='c' with g['burst']={'gain':6.0,'tau_s':0.003} for a real explosion (+14 to +18 dB re vowel measured; the default 2.2 gives only +3 to +8).",
+   "note": "b vs p = the gap (VOT) and the burst size; the closure is identical."
+  },
+  {
+   "letter": "פ",
+   "name": "fe",
+   "syl": "fa",
+   "place": "labiodental 0.97-1.00",
+   "c_pos": [
+    0.97,
+    1.0
+   ],
+   "c_area": [
+    0.12,
+    0.18
+   ],
+   "velum": 0.0,
+   "voicing": 0.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "narrow (fricative, voiceless)",
+   "signature": {
+    "noise": "weak, flat: level -25 dB re vowel (measured -25.7), centroid ~2.2 kHz, HNR < 0",
+    "no": "no voicing, no closure, no burst"
+   },
+   "recipe": "keyframes [kf_f, kf_f, VOWEL_KF], durations [0.08-0.12, 0.01-0.02, 0.30-0.40]; kf_f = keyframe(AH, c_pos, c_area, velum=0, voicing=0.0). c_area must be 0.10-0.25 (below 0.09 there is NO noise at all -- measured dead zone).",
+   "note": "The weakest sound the mouth makes (rms 0.017 at 1.00 vs 0.059 at 0.90). May need more noise than the model has."
+  },
+  {
+   "letter": "צ",
+   "name": "tsadi",
+   "syl": "tza",
+   "place": "tongue tip: seal 0.95 then channel 0.90",
+   "c_pos": [
+    0.9,
+    0.95
+   ],
+   "c_area": [
+    0.0,
+    0.12
+   ],
+   "velum": 0.0,
+   "voicing": "1.0 in closure, 0.0 in the fricative",
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "seal then narrow (affricate)",
+   "signature": {
+    "closure": "<= -18 dB for 50-60 ms (measured -20.5)",
+    "fricative": "60-80 ms at -5 to -9 dB, centroid >= 3.5 kHz (3733), >4 kHz fraction >= 0.4",
+    "then": "the vowel; no separate gap"
+   },
+   "recipe": "keyframes [kf_t, kf_t, kf_s, VOWEL_KF], durations [0.06, 0.01, 0.08, 0.30]; kf_t = keyframe(AH, 0.95, 0.0, voicing=1.0); kf_s = keyframe(AH, 0.90, 0.12, voicing=0.0).",
+   "note": ""
+  },
+  {
+   "letter": "ק",
+   "name": "qof",
+   "syl": "ka",
+   "place": "back 0.48-0.51",
+   "c_pos": [
+    0.48,
+    0.51
+   ],
+   "c_area": [
+    0.0,
+    0.0
+   ],
+   "velum": 0.0,
+   "voicing": "1.0 in closure, 0.0 in the gap",
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "seal (stop, voiceless)",
+   "signature": {
+    "same_as": "kaf: closure <= -20 dB, burst +6.6/+14.3, gap 30-50 ms, F2 onset raised"
+   },
+   "recipe": "keyframes [kf_c, kf_c, VOWEL_KF], durations [0.06-0.10, 0.01-0.02, 0.30-0.40]; kf_c = keyframe(AH, c_pos, c_area=0.0, velum=0, voicing=1.0). Voicing MUST stay >0 during the closure (pressure builds from |source|; a voicing-0 closure makes NO burst -- measured). Release = the 35% glide of the vowel segment. For the voiceless letter insert keyframe(AH, voicing=0.0) for 0.03-0.05 s between kf_c and VOWEL_KF (the VOT gap); backend='c' with g['burst']={'gain':6.0,'tau_s':0.003} for a real explosion (+14 to +18 dB re vowel measured; the default 2.2 gives only +3 to +8).",
+   "note": "Identical to kaf in Israeli Hebrew."
+  },
+  {
+   "letter": "ר",
+   "name": "resh",
+   "syl": "ra",
+   "place": "uvular 0.48-0.53 (Israeli [R]); ALT alveolar tap 0.93-0.95",
+   "c_pos": [
+    0.48,
+    0.53
+   ],
+   "c_area": [
+    0.15,
+    0.25
+   ],
+   "velum": 0.0,
+   "voicing": 1.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "narrow (voiced approximant); alt: brief seal (tap)",
+   "signature": {
+    "primary": "50-80 ms continuous voicing, HNR ~6, F2 raised ~1470 falling to 1220, F1 ~420, centroid ~600 (measured 0.50/0.20)",
+    "alt_tap": "25-35 ms seal at 0.93-0.95: dip >= 10 dB for ~10 ms (measured -12 dB at 0.93/30 ms), no burst gap, voicing continuous",
+    "no": "no noise band above 2 kHz, no nasal"
+   },
+   "recipe": "primary: keyframes [kf_r, kf_r, VOWEL_KF], durations [0.05-0.08, 0.02, 0.30]; kf_r = keyframe(AH, 0.50, 0.20, voicing=1.0). tap: [VOWEL_KF?, keyframe(AH, 0.94, 0.0, voicing=1.0), VOWEL_KF] durations [.., 0.03, 0.35] glide 0.5.",
+   "note": "Iddo's resh is uvular, so IDDO-ra.wav will be the primary. The tap is what the brief asked to verify; 20 ms is too short (-5 dB only)."
+  },
+  {
+   "letter": "ש",
+   "name": "shin",
+   "syl": "sha",
+   "place": "palate 0.76-0.82",
+   "c_pos": [
+    0.76,
+    0.82
+   ],
+   "c_area": [
+    0.15,
+    0.2
+   ],
+   "velum": 0.0,
+   "voicing": 0.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "narrow (fricative, voiceless)",
+   "signature": {
+    "noise": ">= 80 ms, centroid 3.3-3.8 kHz (measured 3729 at 0.80/0.18), 2-4 kHz fraction >= 0.65 (0.73), >4 kHz fraction <= 0.3, HNR < 0",
+    "level": "-6 to -10 dB re vowel (measured -8.7; louder than s)",
+    "no": "no voicing, no closure"
+   },
+   "recipe": "keyframes [kf_f, kf_f, VOWEL_KF], durations [0.08-0.12, 0.01-0.02, 0.30-0.40]; kf_f = keyframe(AH, c_pos, c_area, velum=0, voicing=0.0). c_area must be 0.10-0.25 (below 0.09 there is NO noise at all -- measured dead zone).",
+   "note": "0.75-0.80 is the sh band in the place map (2-4 kHz fraction 0.68-0.76)."
+  },
+  {
+   "letter": "ש",
+   "name": "sin",
+   "syl": "sa",
+   "place": "tongue tip 0.90-0.93",
+   "c_pos": [
+    0.9,
+    0.93
+   ],
+   "c_area": [
+    0.1,
+    0.15
+   ],
+   "velum": 0.0,
+   "voicing": 0.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "narrow (fricative, voiceless)",
+   "signature": {
+    "same_as": "samekh: centroid >= 4.3 kHz, >4 kHz fraction >= 0.5"
+   },
+   "recipe": "keyframes [kf_f, kf_f, VOWEL_KF], durations [0.08-0.12, 0.01-0.02, 0.30-0.40]; kf_f = keyframe(AH, c_pos, c_area, velum=0, voicing=0.0). c_area must be 0.10-0.25 (below 0.09 there is NO noise at all -- measured dead zone).",
+   "note": "Identical to samekh."
+  },
+  {
+   "letter": "ת",
+   "name": "tav",
+   "syl": "ta",
+   "place": "tongue tip 0.94-0.95",
+   "c_pos": [
+    0.94,
+    0.95
+   ],
+   "c_area": [
+    0.0,
+    0.0
+   ],
+   "velum": 0.0,
+   "voicing": "1.0 in closure, 0.0 in the gap",
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "seal (stop, voiceless)",
+   "signature": {
+    "same_as": "tet: closure <= -16 dB, burst +5/+14 dB, gap 30-50 ms, F3 onset high"
+   },
+   "recipe": "keyframes [kf_c, kf_c, VOWEL_KF], durations [0.06-0.10, 0.01-0.02, 0.30-0.40]; kf_c = keyframe(AH, c_pos, c_area=0.0, velum=0, voicing=1.0). Voicing MUST stay >0 during the closure (pressure builds from |source|; a voicing-0 closure makes NO burst -- measured). Release = the 35% glide of the vowel segment. For the voiceless letter insert keyframe(AH, voicing=0.0) for 0.03-0.05 s between kf_c and VOWEL_KF (the VOT gap); backend='c' with g['burst']={'gain':6.0,'tau_s':0.003} for a real explosion (+14 to +18 dB re vowel measured; the default 2.2 gives only +3 to +8).",
+   "note": "Identical to tet."
+  },
+  {
+   "letter": "",
+   "name": "vowel",
+   "syl": "a",
+   "place": "none (the fitted /ah/ tube)",
+   "c_pos": [
+    0.65,
+    0.65
+   ],
+   "c_area": [
+    2.0,
+    2.0
+   ],
+   "velum": 0.0,
+   "voicing": 1.0,
+   "tenseness": [
+    0.6,
+    0.6
+   ],
+   "manner": "none (open vowel)",
+   "signature": {
+    "formants": "F1 ~580 F2 ~1225 F3 ~2550 in gesture space (measured 580/1226/2550; say() path gives 742/1288/2559 = the fit's own 729/1276/2571)",
+    "f0": "105 Hz (measured 104.6)",
+    "hnr": "~9 dB",
+    "no": "no transitions, no noise band, no nasal (nose -198 dB)"
+   },
+   "recipe": "keyframes [VOWEL_KF], durations [0.30-0.60], f0_knots [105,105,98], tenseness_knots [0.6,0.6,0.55].",
+   "note": "The AH tube has two natural narrowings inside the turbulence window (0.384 cm2 at 0.41, 0.277 at 0.717). The default keyframe dilates the second; the first hisses at -16.5 dB whenever voicing is 0. AH4 (knot 4 -> -0.9) is digitally silent at voicing 0 and measures 614/1303/2673."
+  }
+ ]
+}

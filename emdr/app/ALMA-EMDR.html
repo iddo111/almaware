@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ALMA · EMDR — גירוי דו-צדדי · עמותת המלאכים של ערן</title>
+<style>
+  :root{
+    --bg1:#16324a; --bg2:#0c1c2e; --bg3:#060e18;
+    --ink:#dfeaf3; --ink-dim:#9fb4c6; --ink-faint:#7f97ab;
+    --line:#2f5f86; --surface:#1d3d59; --surface-hi:#27547a;
+    --accent:#e08a44; --accent-hi:#f0a35c; --ok:#2e7d5b; --ok-hi:#43a97d;
+    --orb-a:#ffffff; --orb-b:#ffd9a0; --orb-c:#ff9d5c; --orb-d:#7a3b1e;
+    --orb-glow:255,180,110;
+    --orb-size:64px;
+  }
+  html[data-theme="light"]{
+    --bg1:#eaf2f8; --bg2:#dce9f2; --bg3:#cfe0ec;
+    --ink:#12222f; --ink-dim:#3c5a70; --ink-faint:#5b7789;
+    --line:#a8c4d8; --surface:#ffffff; --surface-hi:#eef5fa;
+    --accent:#c96a1e; --accent-hi:#e08a44;
+    --orb-a:#fff3d8; --orb-b:#ff9d5c; --orb-c:#d9541f; --orb-d:#7a2f0e;
+    --orb-glow:220,110,40;
+  }
+  html[data-theme="contrast"]{
+    --bg1:#000000; --bg2:#000000; --bg3:#000000;
+    --ink:#ffffff; --ink-dim:#c8d4dd; --ink-faint:#9aa8b2;
+    --line:#4a4a4a; --surface:#161616; --surface-hi:#242424;
+    --orb-a:#ffffff; --orb-b:#ffffff; --orb-c:#e8e8e8; --orb-d:#8a8a8a;
+    --orb-glow:255,255,255;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+  html,body{ height:100%; overflow:hidden;
+    font-family:"Assistant","Segoe UI","Noto Sans Hebrew",Arial,sans-serif; }
+  body{
+    background:radial-gradient(120% 90% at 50% 40%, var(--bg1) 0%, var(--bg2) 55%, var(--bg3) 100%);
+    color:var(--ink); display:flex; flex-direction:column;
+    -webkit-user-select:none; user-select:none;
+  }
+
+  /* ---------- gate ---------- */
+  #gate{ position:fixed; inset:0; z-index:50; display:flex; align-items:center; justify-content:center;
+         padding:20px; background:radial-gradient(120% 90% at 50% 40%, var(--bg1), var(--bg3)); overflow:auto; }
+  .card{ max-width:660px; width:100%; background:rgba(255,255,255,.045); border:1px solid var(--line);
+         border-radius:20px; padding:26px 28px; line-height:1.65; }
+  html[data-theme="light"] .card{ background:#fff; box-shadow:0 8px 32px rgba(20,50,80,.12); }
+  .card h1{ font-size:26px; margin-bottom:4px; }
+  .card .sub{ color:var(--ink-dim); font-size:14px; margin-bottom:18px; }
+  .warn{ border-inline-start:4px solid var(--accent); background:rgba(224,138,68,.10);
+         border-radius:10px; padding:12px 14px; margin:14px 0; font-size:14.5px; }
+  .warn b{ color:var(--accent-hi); }
+  html[data-theme="light"] .warn b{ color:var(--accent); }
+  .card ul{ margin:8px 22px 0; font-size:14.5px; color:var(--ink-dim); }
+  .card li{ margin-bottom:5px; }
+
+  /* ---------- stage ---------- */
+  .stage{ flex:1; position:relative; overflow:hidden; }
+  .orb{ position:absolute; top:50%; left:50%; width:var(--orb-size); height:var(--orb-size);
+        border-radius:50%; transform:translate(-50%,-50%); will-change:transform;
+        background:radial-gradient(circle at 38% 34%, var(--orb-a) 0%, var(--orb-b) 30%, var(--orb-c) 65%, var(--orb-d) 100%);
+        box-shadow:0 0 40px 14px rgba(var(--orb-glow),.55), 0 0 120px 40px rgba(var(--orb-glow),.22); }
+  .orb.flat{ box-shadow:none; }
+  .breath{ position:absolute; top:20%; inset-inline:0; text-align:center; font-size:30px; letter-spacing:3px;
+           color:var(--ink); opacity:0; transition:opacity 1s; pointer-events:none; }
+  .setnote{ position:absolute; bottom:16%; inset-inline:0; text-align:center; font-size:22px;
+            color:var(--ink-dim); opacity:0; transition:opacity .5s; pointer-events:none; }
+  .setnote.show{ opacity:1; }
+
+  /* ---------- chrome ---------- */
+  .top{ position:fixed; top:0; inset-inline:0; text-align:center; padding:7px 12px; font-size:12.5px;
+        color:var(--ink-dim); z-index:5; pointer-events:none; transition:opacity .4s; }
+  .top b{ color:var(--accent-hi); }
+  html[data-theme="light"] .top b{ color:var(--accent); }
+
+  .panel{ position:fixed; bottom:0; inset-inline:0; z-index:6; padding:12px 14px 16px;
+          background:linear-gradient(transparent, var(--bg3) 45%); transition:opacity .4s, transform .4s; }
+  html[data-theme="light"] .panel{ background:linear-gradient(transparent, var(--bg3) 45%); }
+  .row{ display:flex; gap:10px; align-items:center; justify-content:center; flex-wrap:wrap;
+        max-width:1000px; margin:0 auto; }
+  button{ font-family:inherit; font-size:15px; color:var(--ink); background:var(--surface);
+          border:1px solid var(--line); border-radius:12px; padding:10px 18px; cursor:pointer;
+          transition:.15s; white-space:nowrap; }
+  button:hover{ background:var(--surface-hi); }
+  button:disabled{ opacity:.45; cursor:default; }
+  button.primary{ background:var(--accent); border-color:var(--accent-hi); color:#20120a; font-weight:700; min-width:132px; }
+  button.on{ background:var(--ok); border-color:var(--ok-hi); color:#fff; }
+  button.big{ font-size:17px; padding:13px 26px; }
+  .ctl{ display:flex; flex-direction:column; gap:3px; align-items:center; font-size:11.5px; color:var(--ink-dim); }
+  input[type=range]{ width:130px; accent-color:var(--accent-hi); }
+  select{ font-family:inherit; background:var(--surface); color:var(--ink); border:1px solid var(--line);
+          border-radius:9px; padding:7px 9px; font-size:14px; }
+  .readout{ font-variant-numeric:tabular-nums; font-size:14px; color:var(--ink); min-width:56px; text-align:center; }
+  .hint{ text-align:center; font-size:11.5px; color:var(--ink-faint); margin-top:9px; }
+  .chips{ display:flex; gap:6px; justify-content:center; margin-bottom:9px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; padding:6px 13px; border-radius:999px; background:transparent;
+         border:1px solid var(--line); color:var(--ink-dim); cursor:pointer; }
+  .chip.sel{ background:var(--surface-hi); color:var(--ink); border-color:var(--accent); }
+  .dot{ display:inline-block; width:8px; height:8px; border-radius:50%; background:#77808a; margin-inline-end:6px; }
+  .dot.live{ background:#43a97d; box-shadow:0 0 8px #43a97d; }
+
+  /* ---------- drawer ---------- */
+  #drawer{ position:fixed; inset-block:0; inset-inline-end:0; width:min(400px,92vw); z-index:20;
+           background:var(--bg3); border-inline-start:1px solid var(--line); padding:20px;
+           overflow:auto; transform:translateX(-104%); transition:transform .28s; }
+  /* FIX 2026-09-01: the drawer is pinned to the inline-END edge, which in RTL is the
+     LEFT edge — so it must hide to the LEFT. The old +104% pushed it INTO the middle
+     of the screen, leaving it permanently visible on any viewport wider than ~800px. */
+  html[dir="rtl"] #drawer{ transform:translateX(-104%); }
+  #drawer.open{ transform:none !important; }
+  #drawer h2{ font-size:19px; margin-bottom:14px; }
+  #drawer h3{ font-size:14px; color:var(--accent-hi); margin:20px 0 8px; }
+  html[data-theme="light"] #drawer h3{ color:var(--accent); }
+  .field{ display:flex; justify-content:space-between; align-items:center; gap:10px;
+          padding:9px 0; border-bottom:1px solid rgba(128,150,170,.16); font-size:14px; }
+  .field label{ color:var(--ink-dim); }
+  .logbox{ font-size:12.5px; color:var(--ink-dim); background:rgba(128,150,170,.10);
+           border-radius:10px; padding:10px; max-height:190px; overflow:auto;
+           white-space:pre-wrap; line-height:1.55; font-variant-numeric:tabular-nums; }
+
+  /* ---------- SUD modal ---------- */
+  #sud{ position:fixed; inset:0; z-index:40; display:none; align-items:center; justify-content:center;
+        padding:20px; background:rgba(6,14,24,.90); }
+  html[data-theme="light"] #sud{ background:rgba(220,233,242,.94); }
+  #sud.show{ display:flex; }
+  .sud-scale{ display:flex; gap:7px; justify-content:center; flex-wrap:wrap; margin:18px 0 6px; }
+  .sud-scale button{ width:52px; height:52px; padding:0; font-size:18px; border-radius:14px; }
+  .sud-scale button.sel{ background:var(--accent); color:#20120a; border-color:var(--accent-hi); font-weight:700; }
+
+  .hidden{ display:none !important; }
+  .faded{ opacity:0; pointer-events:none; }
+  @media (max-width:640px){
+    .row{ gap:8px; } button{ font-size:14px; padding:9px 14px; } input[type=range]{ width:104px; }
+    .card{ padding:20px; } .card h1{ font-size:22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ GATE ══════════════ -->
+<div id="gate">
+  <div class="card">
+    <h1>ALMA · EMDR — גירוי דו-צדדי</h1>
+    <div class="sub">כלי חינמי לוויסות עצמי · נבנה לעמותת המלאכים של ערן · לע״נ שיפרה ז״ל</div>
+
+    <div class="warn">
+      <b>קראו לפני שמתחילים.</b> זהו <b>כלי עזר לוויסות עצמי</b> — גירוי דו-צדדי, נשימה והארקה.
+      <b>זה אינו טיפול EMDR</b> ואינו תחליף למטפל/ת מוסמך/ת. EMDR אמיתי הוא פרוטוקול בן 8 שלבים
+      שמבוצע על ידי מטפל/ת שהוכשר/ה לכך, ועיבוד זיכרון טראומטי לא נעשה לבד מול מסך.
+    </div>
+
+    <div class="warn">
+      <b>בטיחות.</b> אם יש רגישות לאור מהבהב או אפילפסיה פוטו-סנסיטיבית — אל תשתמשו בגירוי החזותי;
+      השתמשו בצליל או ברטט בלבד. עצרו מיד אם עולה מצוקה, סחרחורת, בחילה או ניתוק.
+      <b>במצוקה נפשית: ער״ן 1201</b> (24/7) · קו הסיוע של נט״ל 1-800-363-363.
+    </div>
+
+    <ul>
+      <li><b>עקבו בעיניים אחרי הכדור</b> — שמאל↔ימין, בלי להזיז את הראש.</li>
+      <li>סטים קצרים (ברירת מחדל 24 מעברים), ואז עצירה, נשימה, ו״מה עולה?״.</li>
+      <li>אפשר להוסיף <b>צליל בסטריאו</b> (אוזניות) ו<b>רטט</b> (קופסת הבאזרים).</li>
+      <li>למקרן: <b>מקש F</b> = מסך מלא, <b>רווח</b> = התחל/עצור, <b>←/→</b> = מהירות, <b>H</b> = הסתר תפריט.</li>
+    </ul>
+
+    <div class="row" style="margin-top:22px;">
+      <button class="primary big" id="gateGo">הבנתי — התחל</button>
+      <button id="gateTheme">🌓 ערכת צבע</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TOP ══════════════ -->
+<div class="top" id="topbar">
+  עקבו בעיניים אחרי הכדור, שמאל–ימין, ונשמו לאט &nbsp;·&nbsp;
+  <b>כלי לוויסות עצמי — לא תחליף למטפל/ת</b> &nbsp;·&nbsp; במצוקה: ער״ן 1201
+</div>
+
+<!-- ══════════════ STAGE ══════════════ -->
+<div class="stage" id="stage">
+  <div class="breath" id="breath">שאאאף</div>
+  <div class="orb" id="orb"></div>
+  <div class="setnote" id="setnote">קחו נשימה עמוקה. מה עולה עכשיו?</div>
+</div>
+
+<!-- ══════════════ PANEL ══════════════ -->
+<div class="panel" id="panel">
+  <div class="chips" id="chips">
+    <div class="chip" data-hz="0.25">איטי מאוד · 0.25Hz</div>
+    <div class="chip sel" data-hz="0.5">רגוע · 0.5Hz</div>
+    <div class="chip" data-hz="0.8">בינוני · 0.8Hz</div>
+    <div class="chip" data-hz="1.1">מהיר · 1.1Hz</div>
+  </div>
+  <div class="row">
+    <button class="primary" id="btnPlay">▶ התחל</button>
+    <div class="ctl"><span>מהירות</span><input type="range" id="speed" min="0.15" max="1.5" step="0.01" value="0.5"></div>
+    <div class="readout" id="hzOut">0.50Hz</div>
+    <button id="btnSound">🔈 צליל</button>
+    <button id="btnBuzz">📳 באזרים</button>
+    <button id="btnBreath">🫁 נשימה</button>
+    <div class="ctl"><span>סט</span>
+      <select id="setLen">
+        <option value="0">רצוף</option><option value="12">12 מעברים</option>
+        <option value="24" selected>24 מעברים</option><option value="30">30 מעברים</option>
+        <option value="40">40 מעברים</option>
+      </select>
+    </div>
+    <div class="readout" id="passOut">0/24</div>
+    <div class="readout" id="clock">0:00</div>
+    <button id="btnFull">⛶ מסך מלא</button>
+    <button id="btnMore">☰ הגדרות</button>
+  </div>
+  <div class="hint" id="hint">💛 אור עמום, ישיבה נוחה, נשימה איטית. עצרו בכל רגע. &nbsp;·&nbsp; לע״נ שיפרה ז״ל</div>
+</div>
+
+<!-- ══════════════ DRAWER ══════════════ -->
+<div id="drawer">
+  <h2>הגדרות</h2>
+
+  <h3>מראה — למקרן</h3>
+  <div class="field"><label>ערכת צבע</label>
+    <select id="theme"><option value="dark">כהה (מומלץ)</option><option value="light">בהיר</option>
+      <option value="contrast">ניגודיות מרבית</option></select></div>
+  <div class="field"><label>גודל הכדור</label><input type="range" id="orbSize" min="28" max="220" step="2" value="64"></div>
+  <div class="field"><label>הילה (זוהר)</label><input type="range" id="glow" min="0" max="1" step="1" value="1"></div>
+  <div class="field"><label>שוליים מהקצה</label><input type="range" id="margin" min="20" max="240" step="5" value="70"></div>
+
+  <h3>צליל</h3>
+  <div class="field"><label>סוג</label>
+    <select id="soundType"><option value="tone">צליל רך</option><option value="click">נקישה עדינה</option></select></div>
+  <div class="field"><label>עוצמה</label><input type="range" id="vol" min="0" max="0.30" step="0.005" value="0.06"></div>
+  <div class="field"><label>גובה הצליל</label><input type="range" id="freq" min="120" max="520" step="5" value="210"></div>
+
+  <h3>קופסת הבאזרים (USB)</h3>
+  <div class="field"><label><span class="dot" id="serDot"></span><span id="serTxt">לא מחוברת</span></label>
+    <button id="btnSerial">חיבור</button></div>
+  <div class="field"><label>עוצמת רטט</label><input type="range" id="buzzPow" min="40" max="255" step="5" value="200"></div>
+  <div class="field"><label>אורך פעימה (מ״ש)</label><input type="range" id="buzzMs" min="40" max="400" step="10" value="160"></div>
+  <div class="field"><label>בדיקה</label>
+    <span><button id="testL" style="padding:7px 13px;">שמאל</button>
+    <button id="testR" style="padding:7px 13px;">ימין</button></span></div>
+  <div style="font-size:12px;color:var(--ink-faint);margin-top:8px;line-height:1.6;">
+    דורש דפדפן Chrome או Edge. הקופסה תומכת עד <b>20 משתתפים</b> (2 כדורים לאדם).
+    כל השמאליים פועמים יחד, אחריהם כל הימניים — מסונכרן לכדור שעל המסך.
+  </div>
+
+  <h3>מדד המצוקה (SUD 0–10)</h3>
+  <div class="field"><label>שאל בין סטים</label>
+    <select id="askSud"><option value="1" selected>כן</option><option value="0">לא</option></select></div>
+  <div class="logbox" id="log">אין רישום עדיין.</div>
+  <div class="row" style="margin-top:10px;justify-content:flex-start;">
+    <button id="btnExport" style="padding:8px 14px;">💾 שמור רישום</button>
+    <button id="btnClear" style="padding:8px 14px;">נקה</button>
+  </div>
+
+  <h3>על הכלי</h3>
+  <div style="font-size:12.5px;color:var(--ink-faint);line-height:1.7;">
+    ALMA · EMDR — כלי חינמי, עובד ללא אינטרנט, לא אוסף שום מידע ולא שולח דבר לשום מקום.
+    כל הרישום נשאר במחשב הזה בלבד.<br><br>
+    <b>אינו מכשיר רפואי.</b> כלי לוויסות עצמי בלבד.<br>
+    במצוקה: <b>ער״ן 1201</b> · נט״ל 1-800-363-363.<br><br>
+    נבנה לעמותת המלאכים של ערן · לע״נ שיפרה ז״ל.
+  </div>
+  <div class="row" style="margin-top:18px;"><button id="btnCloseDrawer">סגור</button></div>
+</div>
+
+<!-- ══════════════ SUD ══════════════ -->
+<div id="sud">
+  <div class="card" style="max-width:560px;text-align:center;">
+    <h1 style="font-size:22px;" id="sudTitle">כמה מטריד זה עכשיו?</h1>
+    <div class="sub">0 = רגוע לגמרי &nbsp;·&nbsp; 10 = המצוקה הגדולה ביותר שאפשר לדמיין</div>
+    <div class="sud-scale" id="sudScale"></div>
+    <div class="row" style="margin-top:16px;">
+      <button class="primary" id="sudNext">המשך לסט הבא</button>
+      <button id="sudSkip">דלג</button>
+      <button id="sudEnd">סיים מפגש</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ═════════ elements ═════════ */
+const $ = id => document.getElementById(id);
+const stage=$('stage'), orb=$('orb'), breath=$('breath'), setnote=$('setnote');
+const btnPlay=$('btnPlay'), btnSound=$('btnSound'), btnBuzz=$('btnBuzz'), btnBreath=$('btnBreath'),
+      btnFull=$('btnFull'), btnMore=$('btnMore'), drawer=$('drawer');
+const speedEl=$('speed'), volEl=$('vol'), freqEl=$('freq'), soundTypeEl=$('soundType'),
+      setLenEl=$('setLen'), orbSizeEl=$('orbSize'), glowEl=$('glow'), marginEl=$('margin'),
+      themeEl=$('theme'), askSudEl=$('askSud'), buzzPowEl=$('buzzPow'), buzzMsEl=$('buzzMs');
+const hzOut=$('hzOut'), passOut=$('passOut'), clock=$('clock'), logBox=$('log'),
+      serDot=$('serDot'), serTxt=$('serTxt');
+
+/* ═════════ state ═════════ */
+let running=false, soundOn=false, buzzOn=false, breathOn=false;
+let phase=0, lastNow=0, t0=0, elapsed=0;
+let passes=0, sets=0, lastSide=0;      // lastSide: -1 left, +1 right
+let sessionLog=[], sessionStart=null, chromeHidden=false;
+
+/* ═════════ audio ═════════ */
+let AC=null, master=null, panner=null, tone=null, toneGain=null;
+function initAudio(){
+  if(AC) return;
+  const Ctor = window.AudioContext || window.webkitAudioContext;
+  if(!Ctor) return;
+  AC = new Ctor();
+  master = AC.createGain(); master.gain.value = 1;
+  panner = AC.createStereoPanner ? AC.createStereoPanner() : null;
+  if(panner){ master.connect(panner); panner.connect(AC.destination); }
+  else { master.connect(AC.destination); }
+  tone = AC.createOscillator(); tone.type='sine'; tone.frequency.value = +freqEl.value;
+  toneGain = AC.createGain(); toneGain.gain.value = 0;
+  tone.connect(toneGain); toneGain.connect(master); tone.start();
+}
+function resumeAudio(){ if(AC && AC.state==='suspended') AC.resume(); }
+function clickAt(pan){                       // short percussive click, panned
+  if(!AC) return;
+  const t=AC.currentTime;
+  const o=AC.createOscillator(), g=AC.createGain(),
+        p = AC.createStereoPanner ? AC.createStereoPanner() : null;
+  o.type='sine'; o.frequency.setValueAtTime(+freqEl.value*1.7, t);
+  o.frequency.exponentialRampToValueAtTime(Math.max(60,+freqEl.value*0.7), t+0.09);
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(+volEl.value*2.2, t+0.006);
+  g.gain.exponentialRampToValueAtTime(0.0001, t+0.13);
+  o.connect(g);
+  if(p){ p.pan.value=pan; g.connect(p); p.connect(AC.destination); } else { g.connect(AC.destination); }
+  o.start(t); o.stop(t+0.16);
+}
+
+/* ═════════ serial (the buzzer box) ═════════ */
+let port=null, writer=null;
+function serialSupported(){ return 'serial' in navigator; }
+async function connectSerial(){
+  if(!serialSupported()){
+    alert('חיבור לקופסה דורש דפדפן Chrome או Edge (ובגרסת ה-EXE זה עובד אוטומטית).\n\n' +
+          'הכלי עובד מצוין גם בלי הקופסה — עם כדור וצליל.');
+    return;
+  }
+  try{
+    port = await navigator.serial.requestPort();
+    await port.open({ baudRate:115200 });
+    writer = port.writable.getWriter();
+    await send('?');                                   // identify
+    await send('I'+buzzPowEl.value);
+    await send('P'+buzzMsEl.value);
+    serDot.classList.add('live'); serTxt.textContent='מחוברת';
+    $('btnSerial').textContent='נתק';
+    buzzOn=true; btnBuzz.classList.add('on');
+    logEvent('קופסת הבאזרים חוברה');
+  }catch(e){
+    serTxt.textContent='החיבור נכשל';
+    logEvent('חיבור לקופסה נכשל: '+e.message);
+  }
+}
+async function disconnectSerial(){
+  try{ if(writer){ await send('X'); writer.releaseLock(); } if(port) await port.close(); }catch(e){}
+  port=null; writer=null;
+  serDot.classList.remove('live'); serTxt.textContent='לא מחוברת';
+  $('btnSerial').textContent='חיבור';
+  buzzOn=false; btnBuzz.classList.remove('on');
+}
+async function send(cmd){
+  if(!writer) return;
+  try{ await writer.write(new TextEncoder().encode(cmd+'\n')); }catch(e){}
+}
+function pulse(side){                                   // side: -1 left, +1 right
+  if(buzzOn && writer) send(side<0 ? 'L' : 'R');
+  if(navigator.vibrate) { try{ navigator.vibrate(Math.min(200,+buzzMsEl.value)); }catch(e){} }
+}
+
+/* ═════════ the loop ═════════ */
+function fmt(s){ s=Math.max(0,Math.floor(s)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+
+function frame(now){
+  if(!running) return;
+  if(!lastNow) lastNow=now;
+  const dt=Math.min(0.1,(now-lastNow)/1000); lastNow=now;
+
+  const hz=+speedEl.value;
+  phase += dt*hz*Math.PI*2;
+  const pos = Math.sin(phase);                          // -1 .. 1
+  const amp = Math.max(40, stage.clientWidth/2 - (+marginEl.value));
+  orb.style.transform = 'translate(calc(-50% + '+(pos*amp).toFixed(1)+'px), -50%)';
+
+  /* continuous tone follows the orb */
+  if(soundOn && AC && soundTypeEl.value==='tone'){
+    if(panner) panner.pan.value = pos;
+    tone.frequency.value = +freqEl.value;
+    toneGain.gain.value = +volEl.value * (0.35 + 0.65*Math.abs(pos));
+  }
+
+  /* an "end" is reached each time |pos| peaks — that is one pass */
+  const side = Math.cos(phase) >= 0 ? 1 : -1;           // direction of travel
+  const atEnd = Math.abs(pos) > 0.985;
+  if(atEnd){
+    const nowSide = pos > 0 ? 1 : -1;
+    if(nowSide !== lastSide){
+      lastSide = nowSide;
+      passes++;
+      pulse(nowSide);
+      if(soundOn && AC && soundTypeEl.value==='click') clickAt(nowSide);
+      const lim = +setLenEl.value;
+      passOut.textContent = passes + (lim ? '/'+lim : '');
+      if(lim && passes >= lim){ endSet(); return; }
+    }
+  }
+
+  if(breathOn){
+    const bc=(now/1000)%11;
+    if(bc<4.5){ breath.textContent='שאאאף'; breath.style.opacity=Math.min(1,bc/1.2); }
+    else if(bc<5.4){ breath.style.opacity=1; }
+    else { breath.textContent='נשוווף'; breath.style.opacity=Math.max(0,1-(bc-5.4)/4.8); }
+  }
+
+  elapsed=(now-t0)/1000; clock.textContent=fmt(elapsed);
+  requestAnimationFrame(frame);
+}
+
+function start(){
+  running=true; lastNow=0; t0=performance.now()-elapsed*1000;
+  btnPlay.textContent='⏸ עצור'; btnPlay.classList.remove('primary');
+  setnote.classList.remove('show');
+  if(soundOn){ initAudio(); resumeAudio(); }
+  if(!sessionStart){ sessionStart=new Date(); logEvent('תחילת מפגש'); }
+  requestAnimationFrame(frame);
+}
+function pause(){
+  running=false;
+  btnPlay.textContent='▶ המשך'; btnPlay.classList.add('primary');
+  if(toneGain) toneGain.gain.value=0;
+  breath.style.opacity=0;
+  send('X');
+}
+function endSet(){
+  sets++; pause();
+  logEvent('סט '+sets+' הסתיים — '+passes+' מעברים');
+  passes=0; passOut.textContent='0/'+(setLenEl.value||'∞');
+  setnote.classList.add('show');
+  if(askSudEl.value==='1') setTimeout(openSud, 900);
+}
+function resetAll(){
+  pause(); elapsed=0; passes=0; sets=0; phase=0; lastSide=0;
+  clock.textContent='0:00'; passOut.textContent='0/'+(setLenEl.value||'∞');
+  btnPlay.textContent='▶ התחל';
+}
+
+/* ═════════ SUD ═════════ */
+let sudPick=null;
+(function buildSud(){
+  const wrap=$('sudScale');
+  for(let i=0;i<=10;i++){
+    const b=document.createElement('button'); b.textContent=i;
+    b.onclick=()=>{ sudPick=i; [...wrap.children].forEach(c=>c.classList.remove('sel')); b.classList.add('sel'); };
+    wrap.appendChild(b);
+  }
+})();
+function openSud(){ sudPick=null; [...$('sudScale').children].forEach(c=>c.classList.remove('sel')); $('sud').classList.add('show'); }
+function closeSud(){ $('sud').classList.remove('show'); }
+$('sudNext').onclick = ()=>{ if(sudPick!==null) logEvent('SUD = '+sudPick); closeSud(); start(); };
+$('sudSkip').onclick = ()=>{ closeSud(); };
+$('sudEnd').onclick  = ()=>{ if(sudPick!==null) logEvent('SUD בסיום = '+sudPick);
+                             logEvent('סוף מפגש — '+sets+' סטים, '+fmt(elapsed)); closeSud(); resetAll(); };
+
+/* ═════════ log ═════════ */
+function logEvent(text){
+  const stamp=new Date().toLocaleTimeString('he-IL',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  sessionLog.push(stamp+'  '+text);
+  logBox.textContent = sessionLog.slice(-40).join('\n');
+  logBox.scrollTop = logBox.scrollHeight;
+}
+$('btnExport').onclick = ()=>{
+  const head='ALMA · EMDR — רישום מפגש\n'+new Date().toLocaleString('he-IL')+
+             '\nכלי לוויסות עצמי — אינו מסמך רפואי.\n'+'-'.repeat(46)+'\n';
+  const blob=new Blob([head+sessionLog.join('\n')+'\n'],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='emdr-session-'+new Date().toISOString().slice(0,19).replace(/[:T]/g,'-')+'.txt';
+  a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+};
+$('btnClear').onclick = ()=>{ sessionLog=[]; logBox.textContent='אין רישום עדיין.'; };
+
+/* ═════════ controls ═════════ */
+btnPlay.onclick = ()=> running ? pause() : start();
+btnSound.onclick = ()=>{
+  soundOn=!soundOn; btnSound.classList.toggle('on',soundOn);
+  btnSound.textContent = soundOn ? '🔊 צליל דלוק' : '🔈 צליל';
+  if(soundOn){ initAudio(); resumeAudio(); } else if(toneGain){ toneGain.gain.value=0; }
+};
+btnBuzz.onclick = ()=>{
+  if(writer){ buzzOn=!buzzOn; btnBuzz.classList.toggle('on',buzzOn); if(!buzzOn) send('X'); }
+  else { drawer.classList.add('open'); }
+};
+btnBreath.onclick = ()=>{
+  breathOn=!breathOn; btnBreath.classList.toggle('on',breathOn);
+  if(!breathOn) breath.style.opacity=0;
+};
+btnFull.onclick = ()=>{
+  if(!document.fullscreenElement){ (document.documentElement.requestFullscreen||function(){}).call(document.documentElement); }
+  else { (document.exitFullscreen||function(){}).call(document); }
+};
+btnMore.onclick = ()=> drawer.classList.toggle('open');
+$('btnCloseDrawer').onclick = ()=> drawer.classList.remove('open');
+$('btnSerial').onclick = ()=> port ? disconnectSerial() : connectSerial();
+$('testL').onclick = ()=>{ send('I'+buzzPowEl.value); send('P'+buzzMsEl.value); send('L'); };
+$('testR').onclick = ()=>{ send('I'+buzzPowEl.value); send('P'+buzzMsEl.value); send('R'); };
+
+speedEl.oninput = ()=>{ hzOut.textContent = (+speedEl.value).toFixed(2)+'Hz';
+  [...$('chips').children].forEach(c=>c.classList.toggle('sel', Math.abs(+c.dataset.hz - +speedEl.value)<0.005)); };
+[...$('chips').children].forEach(c=> c.onclick = ()=>{ speedEl.value=c.dataset.hz; speedEl.oninput(); });
+setLenEl.onchange = ()=>{ passes=0; passOut.textContent='0/'+(setLenEl.value||'∞'); };
+orbSizeEl.oninput = ()=> document.documentElement.style.setProperty('--orb-size', orbSizeEl.value+'px');
+glowEl.oninput    = ()=> orb.classList.toggle('flat', glowEl.value==='0');
+buzzPowEl.onchange= ()=> send('I'+buzzPowEl.value);
+buzzMsEl.onchange = ()=> send('P'+buzzMsEl.value);
+themeEl.onchange  = ()=> document.documentElement.setAttribute('data-theme', themeEl.value);
+freqEl.oninput    = ()=>{ if(tone) tone.frequency.value=+freqEl.value; };
+
+/* ═════════ gate ═════════ */
+$('gateGo').onclick = ()=>{
+  $('gate').classList.add('hidden');
+  initAudio(); resumeAudio();
+  logEvent('הכלי נפתח');
+};
+$('gateTheme').onclick = ()=>{
+  const order=['dark','light','contrast'];
+  const cur=document.documentElement.getAttribute('data-theme')||'dark';
+  const next=order[(order.indexOf(cur)+1)%3];
+  document.documentElement.setAttribute('data-theme', next); themeEl.value=next;
+};
+
+/* ═════════ keyboard — for the facilitator at the projector ═════════ */
+window.addEventListener('keydown', e=>{
+  if($('gate').classList.contains('hidden')===false){
+    if(e.code==='Space'||e.code==='Enter'){ e.preventDefault(); $('gateGo').click(); }
+    return;
+  }
+  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT') return;
+  switch(e.code){
+    case 'Space':      e.preventDefault(); btnPlay.click(); break;
+    case 'ArrowRight': e.preventDefault(); speedEl.value=Math.min(1.5,+speedEl.value+0.05); speedEl.oninput(); break;
+    case 'ArrowLeft':  e.preventDefault(); speedEl.value=Math.max(0.15,+speedEl.value-0.05); speedEl.oninput(); break;
+    case 'ArrowUp':    e.preventDefault(); orbSizeEl.value=Math.min(220,+orbSizeEl.value+8); orbSizeEl.oninput(); break;
+    case 'ArrowDown':  e.preventDefault(); orbSizeEl.value=Math.max(28,+orbSizeEl.value-8); orbSizeEl.oninput(); break;
+    case 'KeyF':       btnFull.click(); break;
+    case 'KeyS':       btnSound.click(); break;
+    case 'KeyB':       btnBreath.click(); break;
+    case 'KeyR':       resetAll(); break;
+    case 'Escape':     drawer.classList.remove('open'); closeSud(); break;
+    case 'KeyH':
+      chromeHidden=!chromeHidden;
+      $('panel').classList.toggle('faded',chromeHidden);
+      $('topbar').classList.toggle('faded',chromeHidden);
+      break;
+  }
+});
+
+/* ═════════ init ═════════ */
+speedEl.oninput();
+passOut.textContent='0/'+setLenEl.value;
+if(!serialSupported()){ serTxt.textContent='לא נתמך בדפדפן זה'; }
+window.addEventListener('beforeunload', ()=>{ try{ send('X'); }catch(e){} });
+
+})();
+</script>
+</body>
+</html>

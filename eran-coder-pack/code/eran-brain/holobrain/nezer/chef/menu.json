@@ -1,0 +1,115 @@
+{
+ "_": "THE STANDING MENU — Iddo edits this file, never the code. chef.py re-reads it at the top of every tick, so a change takes effect within one tick with no restart. Set 'enabled': false to take a shelf off the menu; change 'weight' to change how much of each meal comes from where.",
+ "_laws": [
+  "A shelf with no 'license' is refused before anything moves — the nezer's provenance door would refuse it at the other end anyway.",
+  "The chef has no code path that can declare human:false. Synthetic material stays exam-negative and is placed by hand.",
+  "never_serve is checked by CONTENT (sha256) as well as by name, so renaming a held-out file does not smuggle it in."
+ ],
+
+ "nezer_root": "~/nezer",
+ "pantry_root": "~/nezer-food",
+ "larder_root": "~/nezer-chef/larder",
+
+ "target_depth": 40,
+ "serve_batch": 12,
+ "tick_seconds": 900,
+ "counter_cap_gb": 6.0,
+ "min_free_gb": 100.0,
+ "copy_pause_ms": 400,
+ "prune_eaten": true,
+ "prune_after_hours": 1.0,
+ "nice": 19,
+
+ "never_serve": {
+  "_": "The nezer's held-out exam session, 2026-07-04, and the two Café Claude eval days cafe_eval.py reserves verbatim: 'permanently excluded from any training pool'. Also the food eran3 has already been fed by hand, so it is never fed twice under a new source name.",
+  "_contains": "filename_contains matches ANYWHERE in the name, not just at the front. It exists because the first live tick (2026-09-01 08:24) found 26 files named iddo1__cafe-20260704__NNNNN.wav in the ant-farm train split — segments cut out of the nezer's own held-out exam, which a prefix rule cannot see and whose sha256 differs from the exam WAVs because they were resampled.",
+  "filename_prefixes": ["20260625", "20260701", "20260704"],
+  "filename_contains": ["20260625", "20260701", "20260704"],
+  "hash_dirs": [
+   "~/nezer-food/exam-20260704",
+   "~/nezer-food/cafe-claude",
+   "~/voice-ant-farm/recordings/train"
+  ],
+  "sha256": [
+   "48e8e69a6d0c6421aeecf31bd9d4830beb358cb714a278396c48761ccc64f93a",
+   "161c9914a2d784df5ee73f766bf8fa23db87bcf56520f36a46cbddb940375d40",
+   "b351c2509af733feedc9c721a949a883ad5de6859c2fed52485a59ec825e735d",
+   "64e071b1bf57d3714bae8bc449687fc04e2822cde95fec7d7a7cd498828f1baf",
+   "c6174b197f28f772cc63a8a86deb9a8e51979e22de3770f8e80bb7e0a3fe8a37",
+   "1491eed42c25828dc821ab0cc2867ae370efbab4a972a0575bdb6bdd7c01a079"
+  ]
+ },
+
+ "shelves": [
+  {
+   "name": "fleurs-he",
+   "enabled": true,
+   "weight": 5,
+   "larder": "~/nezer-chef/larder/fleurs-he",
+   "speaker": "fleurs-he-1502-speaker-ids",
+   "license": "FLEURS (Conneau et al. 2022), Google — CC BY 4.0. CC-BY permits derivatives WITH ATTRIBUTION; any syllable cut from this carries the line above and does not stop travelling because the clip got shorter. Origin: eran4:~/heb-corpus (SOURCE.json), he_il, 3242 utterances, 9.47 h, 1502 distinct speaker ids.",
+   "note": "THE STRATEGIC SHELF, and the reason its weight is the largest. Every other shelf is one mouth — Iddo's. This is the only food that answers the thing the shoot exists for: 'my ear trained on thousands of people'. More voices here than in all of tokenless Hebrew Common Voice put together."
+  },
+  {
+   "name": "keshev-iddo",
+   "enabled": true,
+   "weight": 2,
+   "larder": "~/nezer-chef/larder/keshev-iddo",
+   "speaker": "iddo",
+   "license": "Iddo's own KESHEV/LoRA mic corpus — his voice, his USB mic, his machine. Private, zero licensing question. Origin: eran4:~/lora-iddo/data/keshev_corpus, 17 sessions, 2260 clips, 1.92 h, 16 kHz mono; flattened for intake because nezer.py's _pantry_files uses a non-recursive os.listdir."
+  },
+  {
+   "name": "booth-iddo",
+   "enabled": true,
+   "weight": 1,
+   "larder": "~/nezer-chef/larder/booth-iddo",
+   "speaker": "iddo",
+   "license": "Iddo's own syllable-booth sittings t06 + t07 (PC: eran-brain/booth/staged). His own voice, deliberate syllables. The four takes he undid live in booth/staged/t07/trash/ and were never shipped here.",
+   "note": "785 clips, ~1.1 s each. The cleanest labelled syllables ERAN has."
+  },
+  {
+   "name": "antfarm-iddo",
+   "enabled": true,
+   "weight": 1,
+   "larder": "~/nezer-chef/larder/antfarm-iddo",
+   "speaker": "iddo",
+   "license": "Iddo's own voice-ant-farm recordings, TRAIN split only (eran4:~/voice-ant-farm/recordings/train, 405 clips). The heldout/ and evaluation/ splits are deliberately not shipped — recordings/README.md: 'A speaker/session may belong to only one split.'",
+   "note": "THE SHELF THAT WAS NOT WHAT ITS LABEL SAID. Measured from the ant-farm manifest on 2026-09-01: of its 405 'train' clips, 150 carry speaker_id 'head-sim' (ERAN's simulated mouth — not a human, and food only for the exam's negative side), and 26 are named iddo1__cafe-20260704__* — segments of the nezer's own held-out exam. allow_contains is therefore a whitelist, not a blacklist: only clips whose name says iddo1__ may pass, and the reserved sessions are denied on top of that. ~188 clips survive both gates.",
+   "allow_contains": ["iddo1__"],
+   "deny_contains": ["head-sim", "cafe-20260624", "cafe-20260626"],
+   "exclude_prefixes": [
+    "20260618_030226_624906_rec_20260618_060225.wav",
+    "20260618_030254_806407_rec_20260618_060253.wav",
+    "20260618_030323_337666_rec_20260618_060320.wav",
+    "20260618_030536_049066_rec_20260618_060534.wav",
+    "20260618_030602_054123_rec_20260618_060600.wav",
+    "20260618_030630_248211_rec_20260618_060628.wav",
+    "20260618_030659_510213_rec_20260618_060658.wav",
+    "20260618_030707_831710_rec_20260618_060706.wav"
+   ]
+  },
+  {
+   "name": "cafe-16k",
+   "enabled": true,
+   "weight": 1,
+   "larder": "~/nezer-chef/larder/cafe-16k",
+   "speaker": "iddo",
+   "license": "Iddo's own Café Claude recordings, resampled to 16 kHz mono (eran4:~/cafe-feed, 51 files, 10.55 h). Private. The reserved eval sessions 2026-06-25 and 2026-07-01 are excluded per lora-iddo/cafe_eval.py — 'permanently excluded from any training pool' — and 2026-07-04 is excluded because it IS the nezer's held-out exam.",
+   "note": "Long recordings, ~24 MB each: room noise, other people, real situations. The seven sessions eran3 was already fed by hand are listed below so the same audio is never fed twice under a new source name.",
+   "exclude_prefixes": [
+    "20260624061811", "20260624070723", "20260624100647",
+    "20260626141510", "20260626163549", "20260626171556", "20260626180512"
+   ]
+  },
+  {
+   "name": "almamic-iddo",
+   "enabled": false,
+   "weight": 1,
+   "larder": "~/nezer-chef/larder/almamic-iddo",
+   "speaker": "iddo",
+   "license": "Iddo's own alma-mic voice corpus (PC: D:/CLAUDE/alma-mic/voice_corpus, 15780 files, 16.94 h, 16 kHz mono, 2026-06-28 → 08-14). Private.",
+   "note": "OFF by design, not by oversight. It is one more hour of one more day of the same single mouth, and the shoot's whole deficit is mouths, not hours — the five shelves above already hold ~45 days of food at the nezer's simmer rate. To turn it on: deliver it to the larder (bash chef/deliver.sh almamic, from the PC) and flip enabled to true.",
+   "exclude_prefixes": ["20260625", "20260701", "20260704"]
+  }
+ ]
+}

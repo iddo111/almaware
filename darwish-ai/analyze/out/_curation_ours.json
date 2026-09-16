@@ -1,0 +1,32 @@
+{
+ "kind": "ours",
+ "n_input": 46,
+ "n_jobs": 46,
+ "excluded_by_filename": [],
+ "rules": [
+  {
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)",
+   "regex": "karim darwish|squash|\\bwsf 20|psa world|elshorbagy|shorbagy|gaultier vs darwish|rasooli|\\bt20i\\b|table tennis|cimb bu17|sheik darwish vs|muhd darwish vs|nickel city challenge"
+  },
+  {
+   "reason": "talk / podcast / news / lecture / corporate",
+   "regex": "b2b sales|episode #|\\bep \\d+ -|cutting edge|logo scandal|kan article|nonie darwish|women are better than men|where olive trees weep|activism for palestine|engineering"
+  },
+  {
+   "reason": "rap battle / rapper Al Darwish (Syria)",
+   "regex": "synaptik|the arena|\\bal darwish\\b|الدرويش|mr\\.mp-darwish"
+  },
+  {
+   "reason": "a different person named Darwish",
+   "regex": "ben darwish|omar darwish|bassel darwish|fouad darwish|wael darwish|kevin darwish|rush darwish|mikeydarwish|yinon darwish|ינון דרוויש|konsert darwish|moeen chraif|معين شريف|dario darwish|darwish-2003|cosmic darwish"
+  },
+  {
+   "reason": "another artist's set or track (Darwish not the author)",
+   "regex": "korolova|armin van buuren|captain hook @ ozora festival 2025|captain hook 🌀|some1 @ darwishland|multiverse - hypnotherapy|dekel @|dekel & golanski|libra @ ozora|pixel \\[2h set\\]|ace ventura set @|side effects @ darwishland|volcano on mars @|valentino khan|hilight tribe - the best|fight club rave|goa zero ⧸ out of orbit|pyc - modulated|nataraja3d|avaha - darwish"
+  },
+  {
+   "reason": "multi-artist compilation (Darwish one of several)",
+   "regex": "ozora festival 2026 [👽🔥]|psytrance mix 2024|psytrance set @ dbn|loop of the spirit|mix-126|psy-nation radio|com4trance"
+  }
+ ]
+}

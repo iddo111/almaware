@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c5460">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Galaxy A70 Bridge</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">GALAXY A70 · LOCAL PHONE CONSOLE</p>
+      <h1>מקום רגוע אחד לדבר, לשמוע ולשאול.</h1>
+      <p class="lead" dir="ltr">One calm place to talk, listen, and ask.</p>
+      <p class="muted">האפליקציה אינה מריצה פקודות מערכת. פעולות מרוחקות נשארות טיוטות עד לאישור מפורש.</p>
+    </header>
+
+    <nav class="jump-nav" aria-label="מעבר בין אזורים">
+      <a href="#music-relay">מוזיקה · Music Relay</a>
+      <a href="#local-ai">AI מקומי · Local AI</a>
+      <a href="#remote-drafts">טיוטות · Drafts</a>
+    </nav>
+
+    <section id="music-relay" class="console music-console" aria-labelledby="music-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">WINDOWS → WEBRTC OPUS → A70</p>
+          <h2 id="music-title">ממסר מוזיקה מקומי · Local Music Relay</h2>
+        </div>
+        <span class="local-badge">LAN ONLY</span>
+      </div>
+
+      <ol class="compact-steps">
+        <li>חבר את אוזניות ה‑Bluetooth ל‑A70.</li>
+        <li>הזן את קוד הצימוד שהופיע במחשב.</li>
+        <li>לחץ התחבר; Android בוחר את יציאת השמע.</li>
+      </ol>
+
+      <label for="pairingToken">קוד צימוד · Pairing token
+        <input id="pairingToken" type="password" inputmode="text" autocomplete="off" autocapitalize="characters" maxlength="64" placeholder="לדוגמה: A1B2C3D4E5F6">
+      </label>
+      <p class="microcopy">הקוד נשמר רק בזיכרון הדף ואינו נשלח ב‑URL. The token stays in page memory and is never placed in the URL.</p>
+
+      <div class="status" role="status">
+        <span id="musicDot" class="status-dot"></span>
+        <span id="musicHealth">הממסר טרם נבדק · Relay not checked</span>
+      </div>
+      <div class="actions">
+        <button id="musicCheck">בדוק · Check</button>
+        <button class="primary" id="musicConnect">התחבר למוזיקה · Connect</button>
+        <button id="musicStop" disabled>עצור · Stop</button>
+      </div>
+
+      <audio id="musicAudio" controls autoplay playsinline aria-label="Windows system audio"></audio>
+      <dl class="relay-stats" aria-label="WebRTC statistics">
+        <div><dt>Codec</dt><dd id="musicCodec">—</dd></div>
+        <div><dt>Rate</dt><dd id="musicRate">—</dd></div>
+        <div><dt>Packets lost</dt><dd id="musicLoss">—</dd></div>
+        <div><dt>Jitter</dt><dd id="musicJitter">—</dd></div>
+        <div><dt>Route</dt><dd id="musicRoute">—</dd></div>
+      </dl>
+      <pre id="musicLog" class="relay-log" aria-live="polite">מוכן לצימוד מקומי בלבד · Ready for local pairing only.</pre>
+      <p class="microcopy">אין כאן ענן, STUN או TURN. אם Android מנתב לרמקול הטלפון, בחר את אוזניות ה‑Bluetooth בממשק המדיה של הטלפון.</p>
+    </section>
+
+    <section id="local-ai" class="console" aria-labelledby="ai-title">
+      <h2 id="ai-title">AI מקומי · Local AI</h2>
+      <label>Model route
+        <select id="model" dir="ltr">
+          <option value="grokEnglish">Grok‑1 · English Agent (default)</option>
+          <option value="grokRaw">Grok‑1 · Exact Raw research mode</option>
+          <option value="shiri">Shiri voice relay · cloud token only</option>
+          <option value="manual">Manual / Remote task draft</option>
+        </select>
+      </label>
+      <label>שפת קול · Voice language
+        <select id="language">
+          <option value="he-IL">עברית</option>
+          <option value="en-US">English</option>
+        </select>
+      </label>
+      <div class="status">
+        <span id="dot" class="status-dot"></span>
+        <span id="health">Checking selected route…</span>
+        <button id="check">Check service</button>
+      </div>
+      <label>הודעה · Message
+        <textarea id="prompt" placeholder="דבר או כתוב מה צריך… · Speak or type what you need…"></textarea>
+      </label>
+      <div class="actions">
+        <button id="listen">Start voice input</button>
+        <button id="speak">Read draft aloud</button>
+        <button class="primary" id="generate">Generate</button>
+      </div>
+      <pre id="answer" aria-live="polite">Choose a model route, then generate.</pre>
+    </section>
+
+    <section id="remote-drafts">
+      <h2>פעולות מרוחקות דורשות אישור · Remote tasks need approval</h2>
+      <div class="task">
+        <strong>Open a shared Clod session</strong>
+        <p>Uses the existing A70 SSH/Tailscale path. This app does not embed credentials or open SSH itself.</p>
+        <a href="ssh://iddo1@<tailnet-ip>:22">Open SSH target</a>
+      </div>
+      <div class="task">
+        <strong>Send a phone notification</strong>
+        <p>Requires the existing Termux A70 bridge and an approved, configured URL. No endpoint is prefilled.</p>
+        <button id="copyTask">Copy reviewed task draft</button>
+      </div>
+    </section>
+
+    <footer>English Agent uses a plain completion scaffold and blocks Cyrillic. Exact Raw remains unmodified. Music Relay is a separate deterministic media path; no language model carries the audio.</footer>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

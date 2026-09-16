@@ -1,0 +1,18 @@
+{
+  "kind": "technical-finishing-canary",
+  "source": "ffmpeg-testsrc2-plus-ace-step-canary",
+  "width": 3840,
+  "height": 2160,
+  "fps": 24,
+  "duration_s": 2,
+  "pixel_format": "yuv420p10le",
+  "primaries": "bt2020",
+  "transfer": "smpte2084",
+  "matrix": "bt2020nc",
+  "mastering_display": "G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,50)",
+  "max_cll": 1000,
+  "max_fall": 400,
+  "audio": "pcm_s24le-48000-stereo",
+  "artifact_sha256": "ca6a1e6ef278e22ac9e5ec34448ed93ffb1c51dbabadcbd91a0ffb545dfb70a7",
+  "human_review": "not-recorded"
+}

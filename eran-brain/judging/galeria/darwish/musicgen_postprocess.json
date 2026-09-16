@@ -1,0 +1,35 @@
+[
+  {
+    "track": 1,
+    "wav": "DARWISH-musicgen-psy-20260821-1.wav",
+    "duration_s": 29.94,
+    "sr": 32000,
+    "wav_rms_dbfs": -17.17,
+    "wav_peak_dbfs": -1.0,
+    "lufs_integrated_estimate": -12.93,
+    "true_peak_dbfs": -0.99,
+    "estimated_bpm": 125.0
+  },
+  {
+    "track": 2,
+    "wav": "DARWISH-musicgen-psy-20260821-2.wav",
+    "duration_s": 29.94,
+    "sr": 32000,
+    "wav_rms_dbfs": -17.17,
+    "wav_peak_dbfs": -1.0,
+    "lufs_integrated_estimate": -12.93,
+    "true_peak_dbfs": -0.99,
+    "estimated_bpm": 125.0
+  },
+  {
+    "track": 3,
+    "wav": "DARWISH-musicgen-psy-20260821-3.wav",
+    "duration_s": 29.94,
+    "sr": 32000,
+    "wav_rms_dbfs": -17.17,
+    "wav_peak_dbfs": -1.0,
+    "lufs_integrated_estimate": -12.93,
+    "true_peak_dbfs": -0.99,
+    "estimated_bpm": 125.0
+  }
+]

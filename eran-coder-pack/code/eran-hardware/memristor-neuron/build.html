@@ -1,0 +1,477 @@
+<meta charset="utf-8">
+<title>נוירון-ממריסטור מכוונן חשמלית — מדריך בנייה</title>
+<style>
+  :root{
+    --ink:#111;
+    --line:#1a1a1a;
+    --accent:#0a58c2;
+    --accent2:#b8290a;
+    --green:#1a7a33;
+    --muted:#555;
+    --box:#f4f6f9;
+    --boxline:#c9d2de;
+    --wire:#111;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff;color:var(--ink);
+    font-family:"Segoe UI","Arial Hebrew",Arial,sans-serif;line-height:1.6;}
+  body{direction:rtl;}
+  .page{max-width:820px;margin:0 auto;padding:22px 30px 60px;}
+  h1{font-size:26px;margin:0 0 2px;letter-spacing:-.3px}
+  h1 .en{font-size:14px;color:var(--muted);font-weight:400;display:block;direction:ltr;text-align:right}
+  h2{font-size:19px;margin:30px 0 8px;padding-bottom:5px;border-bottom:2px solid var(--accent);color:#0b3b7a}
+  h3{font-size:15px;margin:16px 0 4px;color:#222}
+  p{margin:6px 0}
+  ul,ol{margin:6px 0;padding-inline-start:22px}
+  li{margin:3px 0}
+  code{font-family:"Consolas",monospace;background:#eef1f5;padding:1px 5px;border-radius:4px;font-size:13px;direction:ltr;display:inline-block}
+  .lead{font-size:15px;color:#333;background:var(--box);border:1px solid var(--boxline);border-inline-start:4px solid var(--accent);border-radius:8px;padding:12px 16px;margin:12px 0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{background:var(--box);border:1px solid var(--boxline);border-radius:10px;padding:12px 14px}
+  .card h3{margin-top:0}
+  .num{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-inline-end:6px}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;margin:8px 0}
+  th,td{border:1px solid var(--boxline);padding:6px 8px;text-align:right}
+  th{background:#eaf0f8}
+  .warn{background:#fff6ed;border:1px solid #f0c795;border-inline-start:4px solid var(--accent2);border-radius:8px;padding:10px 14px;margin:10px 0}
+  .ok{background:#eef8f0;border:1px solid #b6ddbf;border-inline-start:4px solid var(--green);border-radius:8px;padding:10px 14px;margin:10px 0}
+  .schematic{border:1px solid var(--boxline);border-radius:12px;padding:8px;background:#fff;overflow-x:auto}
+  .cap{font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px}
+  .formula{direction:ltr;text-align:center;font-family:"Cambria Math","Times New Roman",serif;font-size:16px;background:#f8f9fb;border:1px solid #e3e7ee;border-radius:8px;padding:8px 10px;margin:10px 0}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:1px 8px;border-radius:20px;background:#e7eefb;color:#0b3b7a;margin-inline-start:6px}
+  .tag.v{background:#ecece7;color:#555}
+  svg text{font-family:"Segoe UI",Arial,sans-serif}
+  @media print{
+    .page{max-width:none;padding:0 8mm}
+    h2{break-after:avoid}
+    .schematic,.card,table{break-inside:avoid}
+    a{color:var(--ink);text-decoration:none}
+  }
+  @page{size:A4;margin:14mm 12mm}
+</style>
+
+<div class="page">
+
+<h1>נוירון־ממריסטור מכוונן חשמלית
+  <span class="en">Electrically-Tunable Memristor-Neuron &mdash; Build Guide &nbsp;v1.0</span>
+</h1>
+<p style="color:var(--muted);font-size:13px;margin-top:2px">
+  משקלים = אלמנטים אנלוגיים שמתכווננים <b>פיזית וחשמלית</b> &nbsp;·&nbsp; פרספטרון מכני עם לולאת אימון סגורה &nbsp;·&nbsp; ALMAWARE
+</p>
+
+<div class="lead">
+  <b>הרעיון בשורה אחת:</b> נוירון שבו כל <b>משקל</b> אינו מספר בזיכרון אלא <b>גוף פיזי</b> —
+  קבל משתנה שמסובב סרוו, מוט גרפיט עם מגנט־טבעת, מגנט שנופל בצינור נחושת.
+  ערך המשקל נקבע חשמלית (PWM / זרם סליל), האותות מסוכמים במגבר־שרת, והפלט עובר הפעלה (activation).
+  <b>לולאת שגיאה סגורה</b> (target − output) מזיזה את המנועים ומכווננת את המשקלים — כך המערכת <b>לומדת</b>.
+</div>
+
+<!-- ================= עקרון ================= -->
+<h2>1 · עקרון</h2>
+<p>נוירון מלאכותי מחשב <span class="formula" style="display:inline;padding:2px 6px">y = φ( Σᵢ wᵢ·xᵢ + b )</span>.
+בנוירון הזה כל <b>wᵢ</b> הוא רכיב אנלוגי שערכו נשלט חשמלית ותלוי־היסטוריה (memristive):</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>(א) קבל משתנה מסובב־סרוו <span class="tag">משקל A</span></h3>
+    <p>שני מערכי לוחות אלומיניום (או שני גלילי רדיד) משולבים. סרוו הובי מסובב את הרוטור ומשנה את <b>שטח החפיפה</b> ⇒ הקיבול <b>C</b> נקבע ע"י זווית = <b>ערך משקל שנשמר מכנית</b> וניתן להגדרה חשמלית ב-PWM.</p>
+    <div class="formula" style="font-size:14px">C = ε₀·εᵣ·(N−1)·A(θ) / d</div>
+  </div>
+  <div class="card">
+    <h3>(ב) גרפיט + מגנט + צינור נחושת <span class="tag">משקל B</span></h3>
+    <p>מוט גרפיט בשרוול אלומיניום = נגד/אלקטרודה משתנה. מגנט־טבעת ניאודימיום הוא גם <b>מסה</b> (משקל פיזי) וגם קובע מגע/מיקום. כשהמגנט נע בצינור נחושת נוצר <b>בלימת זרמי־מערבולת</b> ⇒ תגובה תלוית־היסטוריה (memristor-like).</p>
+    <div class="formula" style="font-size:14px">R_graphite = ρ·ℓ(pos)/A &nbsp;;&nbsp; F_eddy ∝ −v</div>
+  </div>
+</div>
+
+<p style="margin-top:10px"><b>טופולוגיה:</b>
+כניסות <code>x1,x2</code> → משוקללות ע"י אלמנטים אלה → מסוכמות בצומת מסכם (op-amp) → הפעלה (משווה+דיודה) → פלט <code>y</code>.
+אות השגיאה <code>e = target − y</code> נכנס לנהג אקטואטורים שמסובב סרוו / מזיז מגנט ⇒ עדכון משקל.</p>
+
+<!-- ================= סכמה ================= -->
+<h2>2 · סכמה חשמלית</h2>
+<div class="schematic">
+<svg viewBox="0 0 1180 720" width="100%" xmlns="http://www.w3.org/2000/svg" font-size="13" fill="#111" stroke-linecap="round">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#111"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="10" refX="8" refY="3.2" orient="auto">
+      <path d="M0,0 L8,3.2 L0,6.4 Z" fill="#b8290a"/>
+    </marker>
+    <marker id="dot" markerWidth="6" markerHeight="6" refX="3" refY="3">
+      <circle cx="3" cy="3" r="2.6" fill="#111"/>
+    </marker>
+  </defs>
+
+  <!-- ====== title band ====== -->
+  <text x="590" y="22" text-anchor="middle" font-size="15" font-weight="700">Tunable Memristor-Neuron — full signal + learning loop</text>
+
+  <!-- =========================================================
+       INPUT COLUMN
+       ========================================================= -->
+  <!-- x1 source -->
+  <text x="40" y="120" font-weight="700">x1</text>
+  <circle cx="70" cy="140" r="14" fill="none" stroke="#111" stroke-width="1.6"/>
+  <text x="70" y="145" text-anchor="middle" font-size="12">+</text>
+  <line x1="70" y1="126" x2="70" y2="100" stroke="#111" stroke-width="1.4"/>
+  <line x1="70" y1="154" x2="70" y2="180" stroke="#111" stroke-width="1.4"/>
+  <!-- ground under x1 -->
+  <line x1="70" y1="180" x2="70" y2="188" stroke="#111" stroke-width="1.4"/>
+  <line x1="58" y1="188" x2="82" y2="188" stroke="#111" stroke-width="1.6"/>
+  <line x1="62" y1="192" x2="78" y2="192" stroke="#111" stroke-width="1.4"/>
+  <line x1="66" y1="196" x2="74" y2="196" stroke="#111" stroke-width="1.2"/>
+  <line x1="70" y1="100" x2="150" y2="100" stroke="#111" stroke-width="1.4"/>
+
+  <!-- ====== WEIGHT A : servo variable capacitor (in series w/ input resistor) ====== -->
+  <!-- variable capacitor symbol at x1 branch -->
+  <g>
+    <!-- cap plates -->
+    <line x1="150" y1="82" x2="150" y2="118" stroke="#111" stroke-width="2.4"/>
+    <path d="M166,80 q6,20 0,40" fill="none" stroke="#111" stroke-width="2.4"/>
+    <!-- variability arrow across cap -->
+    <line x1="138" y1="128" x2="180" y2="72" stroke="#b8290a" stroke-width="1.6" marker-end="url(#arrowB)"/>
+    <text x="150" y="60" text-anchor="middle" font-size="11.5" fill="#b8290a" font-weight="700">Cw1</text>
+    <line x1="166" y1="100" x2="205" y2="100" stroke="#111" stroke-width="1.4"/>
+  </g>
+  <!-- servo box driving Cw1 -->
+  <rect x="120" y="150" width="66" height="34" rx="4" fill="#eef3fb" stroke="#0a58c2" stroke-width="1.4"/>
+  <text x="153" y="171" text-anchor="middle" font-size="11.5" fill="#0a58c2" font-weight="700">SERVO</text>
+  <!-- mechanical link servo -> cap (dashed) -->
+  <line x1="153" y1="150" x2="153" y2="124" stroke="#0a58c2" stroke-width="1.3" stroke-dasharray="3 3"/>
+  <text x="196" y="167" font-size="10.5" fill="#0a58c2">θ ⇒ C</text>
+
+  <!-- input resistor R1 after cap -->
+  <text x="235" y="90" text-anchor="middle" font-size="11.5">R1 100k</text>
+  <path d="M205,100 l7,-8 l10,16 l10,-16 l10,16 l10,-16 l7,8" fill="none" stroke="#111" stroke-width="1.6"/>
+  <line x1="266" y1="100" x2="360" y2="100" stroke="#111" stroke-width="1.4"/>
+
+  <!-- x2 source -->
+  <text x="40" y="250" font-weight="700">x2</text>
+  <circle cx="70" cy="270" r="14" fill="none" stroke="#111" stroke-width="1.6"/>
+  <text x="70" y="275" text-anchor="middle" font-size="12">+</text>
+  <line x1="70" y1="256" x2="70" y2="230" stroke="#111" stroke-width="1.4"/>
+  <line x1="70" y1="284" x2="70" y2="308" stroke="#111" stroke-width="1.4"/>
+  <line x1="58" y1="308" x2="82" y2="308" stroke="#111" stroke-width="1.6"/>
+  <line x1="62" y1="312" x2="78" y2="312" stroke="#111" stroke-width="1.4"/>
+  <line x1="66" y1="316" x2="74" y2="316" stroke="#111" stroke-width="1.2"/>
+  <line x1="70" y1="230" x2="150" y2="230" stroke="#111" stroke-width="1.4"/>
+
+  <!-- ====== WEIGHT B : graphite rod + ring magnet in copper tube (variable R) ====== -->
+  <!-- graphite variable resistor symbol : resistor box with diagonal arrow -->
+  <rect x="150" y="216" width="70" height="28" fill="none" stroke="#111" stroke-width="1.6"/>
+  <text x="185" y="234" text-anchor="middle" font-size="10.5">GRAPHITE</text>
+  <line x1="142" y1="252" x2="228" y2="208" stroke="#b8290a" stroke-width="1.6" marker-end="url(#arrowB)"/>
+  <text x="185" y="200" text-anchor="middle" font-size="11.5" fill="#b8290a" font-weight="700">Rw2</text>
+  <line x1="220" y1="230" x2="360" y2="230" stroke="#111" stroke-width="1.4"/>
+
+  <!-- copper tube + coil (actuator that moves the magnet) -->
+  <rect x="120" y="272" width="14" height="70" rx="3" fill="#fbeee6" stroke="#b8290a" stroke-width="1.3"/>
+  <text x="127" y="360" text-anchor="middle" font-size="9.5" fill="#b8290a">Cu tube</text>
+  <!-- ring magnet inside -->
+  <rect x="120" y="300" width="14" height="9" fill="#b8290a" opacity="0.5"/>
+  <!-- coil around lower tube -->
+  <path d="M150,300 q8,-7 16,0 q8,7 16,0 q8,-7 16,0" fill="none" stroke="#111" stroke-width="1.6"/>
+  <text x="182" y="292" font-size="10.5">coil</text>
+  <!-- mechanical/force link coil -> magnet -->
+  <line x1="150" y1="300" x2="134" y2="304" stroke="#0a58c2" stroke-width="1.3" stroke-dasharray="3 3"/>
+  <line x1="198" y1="300" x2="360" y2="330" stroke="#111" stroke-width="1.4" opacity="0"/>
+
+  <!-- =========================================================
+       SUMMING / INTEGRATING OP-AMP  (U1)
+       ========================================================= -->
+  <!-- summing node -->
+  <circle cx="360" cy="100" r="3" fill="#111"/>
+  <line x1="360" y1="100" x2="360" y2="230" stroke="#111" stroke-width="1.4"/>
+  <circle cx="360" cy="230" r="3" fill="#111"/>
+  <line x1="360" y1="165" x2="420" y2="165" stroke="#111" stroke-width="1.4"/>
+  <text x="368" y="150" font-size="10.5">Σ (virtual gnd)</text>
+
+  <!-- bias b input -->
+  <text x="300" y="150" font-size="11" fill="#555">b</text>
+  <path d="M312,138 l5,-6 l7,12 l7,-12 l7,12 l7,-12 l5,6" fill="none" stroke="#555" stroke-width="1.3"/>
+  <line x1="350" y1="132" x2="360" y2="140" stroke="#555" stroke-width="1.2"/>
+
+  <!-- op-amp triangle U1 -->
+  <path d="M420,120 L420,210 L500,165 Z" fill="#fff" stroke="#111" stroke-width="1.8"/>
+  <text x="447" y="170" font-size="13" font-weight="700">U1</text>
+  <text x="430" y="140" font-size="12">−</text>
+  <text x="430" y="200" font-size="12">+</text>
+  <!-- + input to ground -->
+  <line x1="420" y1="195" x2="400" y2="195" stroke="#111" stroke-width="1.4"/>
+  <line x1="400" y1="195" x2="400" y2="215" stroke="#111" stroke-width="1.4"/>
+  <line x1="390" y1="215" x2="410" y2="215" stroke="#111" stroke-width="1.6"/>
+  <line x1="393" y1="219" x2="407" y2="219" stroke="#111" stroke-width="1.4"/>
+  <line x1="396" y1="223" x2="404" y2="223" stroke="#111" stroke-width="1.2"/>
+
+  <!-- feedback Rf + Cf (integrator) around U1 -->
+  <line x1="435" y1="120" x2="435" y2="70" stroke="#111" stroke-width="1.4"/>
+  <line x1="435" y1="70" x2="560" y2="70" stroke="#111" stroke-width="1.4"/>
+  <!-- Rf -->
+  <path d="M455,70 l0,0" />
+  <text x="497" y="60" text-anchor="middle" font-size="11">Rf 100k</text>
+  <path d="M470,70 l6,-7 l9,14 l9,-14 l9,14 l9,-14 l6,7" fill="none" stroke="#111" stroke-width="1.5" transform="translate(0,0)"/>
+  <!-- Cf parallel below Rf -->
+  <line x1="435" y1="88" x2="435" y2="95" stroke="#111" stroke-width="1.4"/>
+  <line x1="435" y1="95" x2="470" y2="95" stroke="#111" stroke-width="1.4"/>
+  <line x1="470" y1="86" x2="470" y2="104" stroke="#111" stroke-width="2.2"/>
+  <line x1="478" y1="86" x2="478" y2="104" stroke="#111" stroke-width="2.2"/>
+  <text x="474" y="118" text-anchor="middle" font-size="10.5">Cf 1n</text>
+  <line x1="478" y1="95" x2="560" y2="95" stroke="#111" stroke-width="1.4"/>
+  <line x1="560" y1="70" x2="560" y2="95" stroke="#111" stroke-width="1.4"/>
+
+  <!-- U1 output node -->
+  <line x1="500" y1="165" x2="560" y2="165" stroke="#111" stroke-width="1.4"/>
+  <line x1="560" y1="70" x2="560" y2="165" stroke="#111" stroke-width="1.4"/>
+  <circle cx="560" cy="165" r="3" fill="#111"/>
+  <text x="516" y="158" font-size="10.5">Σw·x</text>
+
+  <!-- =========================================================
+       ACTIVATION : comparator U2 + diode
+       ========================================================= -->
+  <line x1="560" y1="165" x2="610" y2="165" stroke="#111" stroke-width="1.4"/>
+  <!-- comparator triangle U2 -->
+  <path d="M610,130 L610,200 L680,165 Z" fill="#fff" stroke="#111" stroke-width="1.8"/>
+  <text x="632" y="170" font-size="12" font-weight="700">U2</text>
+  <text x="620" y="150" font-size="11">+</text>
+  <text x="620" y="192" font-size="11">−</text>
+  <!-- threshold ref on - input -->
+  <line x1="610" y1="188" x2="590" y2="188" stroke="#111" stroke-width="1.4"/>
+  <line x1="590" y1="188" x2="590" y2="205" stroke="#111" stroke-width="1.4"/>
+  <text x="556" y="212" font-size="10.5" fill="#555">Vθ ref</text>
+  <line x1="582" y1="205" x2="598" y2="205" stroke="#111" stroke-width="1.6"/>
+
+  <!-- diode after comparator -->
+  <line x1="680" y1="165" x2="708" y2="165" stroke="#111" stroke-width="1.4"/>
+  <path d="M708,153 L708,177 L728,165 Z" fill="#fff" stroke="#111" stroke-width="1.6"/>
+  <line x1="728" y1="153" x2="728" y2="177" stroke="#111" stroke-width="1.8"/>
+  <text x="716" y="148" text-anchor="middle" font-size="10.5">D1</text>
+  <line x1="728" y1="165" x2="790" y2="165" stroke="#111" stroke-width="1.4"/>
+
+  <!-- output node y -->
+  <circle cx="790" cy="165" r="3.5" fill="#111"/>
+  <text x="800" y="160" font-size="14" font-weight="700">y</text>
+  <text x="800" y="178" font-size="10.5" fill="#555">output / spike</text>
+  <!-- load R to gnd -->
+  <line x1="790" y1="165" x2="790" y2="200" stroke="#111" stroke-width="1.4"/>
+  <path d="M790,200 l-7,6 l14,10 l-14,10 l14,10 l-7,6" fill="none" stroke="#111" stroke-width="1.4" transform="translate(0,-6) rotate(0)"/>
+  <text x="812" y="230" font-size="10.5">RL 10k</text>
+  <line x1="790" y1="248" x2="790" y2="258" stroke="#111" stroke-width="1.4"/>
+  <line x1="778" y1="258" x2="802" y2="258" stroke="#111" stroke-width="1.6"/>
+  <line x1="782" y1="262" x2="798" y2="262" stroke="#111" stroke-width="1.4"/>
+  <line x1="786" y1="266" x2="794" y2="266" stroke="#111" stroke-width="1.2"/>
+
+  <!-- =========================================================
+       SELF-TRAINING LOOP  : error amp U3 -> MCU -> drivers
+       ========================================================= -->
+  <!-- y tapped down to error amp -->
+  <line x1="790" y1="165" x2="960" y2="165" stroke="#111" stroke-width="1.4"/>
+  <line x1="960" y1="165" x2="960" y2="360" stroke="#111" stroke-width="1.4"/>
+
+  <!-- error amplifier U3 (difference amp: target - y) -->
+  <path d="M900,360 L900,440 L985,400 Z" fill="#fff" stroke="#111" stroke-width="1.8"/>
+  <text x="924" y="405" font-size="12" font-weight="700">U3</text>
+  <text x="910" y="382" font-size="11">−</text>
+  <text x="910" y="425" font-size="11">+</text>
+  <!-- y into - input of U3 -->
+  <line x1="960" y1="360" x2="960" y2="375" stroke="#111" stroke-width="1.4"/>
+  <line x1="960" y1="375" x2="900" y2="375" stroke="#111" stroke-width="1.4"/>
+  <!-- target into + input -->
+  <text x="815" y="422" font-size="11" fill="#1a7a33" font-weight="700">target</text>
+  <line x1="860" y1="418" x2="900" y2="418" stroke="#1a7a33" stroke-width="1.4"/>
+  <!-- U3 output = e -->
+  <line x1="985" y1="400" x2="1030" y2="400" stroke="#b8290a" stroke-width="1.6"/>
+  <text x="998" y="392" font-size="11" fill="#b8290a" font-weight="700">e = t−y</text>
+
+  <!-- MCU box -->
+  <rect x="1030" y="360" width="120" height="80" rx="6" fill="#eef3fb" stroke="#0a58c2" stroke-width="1.6"/>
+  <text x="1090" y="392" text-anchor="middle" font-size="12" fill="#0a58c2" font-weight="700">MCU</text>
+  <text x="1090" y="408" text-anchor="middle" font-size="9.5" fill="#0a58c2">ADC → Δw</text>
+  <text x="1090" y="421" text-anchor="middle" font-size="9.5" fill="#0a58c2">PWM · coil</text>
+  <line x1="1030" y1="400" x2="1030" y2="400" stroke="#0a58c2"/>
+
+  <!-- MCU PWM out -> servo driver -->
+  <line x1="1090" y1="360" x2="1090" y2="300" stroke="#0a58c2" stroke-width="1.4"/>
+  <line x1="1090" y1="300" x2="153" y2="300" stroke="#0a58c2" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+  <text x="600" y="293" text-anchor="middle" font-size="11" fill="#0a58c2" font-weight="700">PWM → SERVO (adjust Cw1)</text>
+  <line x1="1090" y1="300" x2="1090" y2="300"/>
+
+  <!-- MCU coil-driver out -> coil (move magnet, adjust Rw2) -->
+  <line x1="1150" y1="400" x2="1170" y2="400" stroke="#b8290a" stroke-width="1.4"/>
+  <line x1="1170" y1="400" x2="1170" y2="640" stroke="#b8290a" stroke-width="1.4"/>
+  <line x1="1170" y1="640" x2="176" y2="640" stroke="#b8290a" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#arrowB)"/>
+  <line x1="176" y1="640" x2="176" y2="322" stroke="#b8290a" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#arrowB)"/>
+  <text x="640" y="633" text-anchor="middle" font-size="11" fill="#b8290a" font-weight="700">Idrive → COIL (move magnet, adjust Rw2)</text>
+
+  <!-- power rails note -->
+  <rect x="920" y="470" width="230" height="60" rx="6" fill="#f7f8fa" stroke="#c9d2de"/>
+  <text x="1035" y="490" text-anchor="middle" font-size="10.5" fill="#555">Rails: U1/U2/U3 = ±9V (TL072/LM358)</text>
+  <text x="1035" y="506" text-anchor="middle" font-size="10.5" fill="#555">Servo/coil driver = +5V logic, +6V motor</text>
+  <text x="1035" y="522" text-anchor="middle" font-size="10.5" fill="#555">All grounds common (star ground)</text>
+
+  <!-- legend -->
+  <g font-size="10.5">
+    <rect x="40" y="470" width="360" height="150" rx="8" fill="#fafbfc" stroke="#c9d2de"/>
+    <text x="52" y="490" font-weight="700" font-size="12">מקרא / Legend</text>
+    <line x1="55" y1="506" x2="90" y2="506" stroke="#111" stroke-width="1.6"/>
+    <text x="98" y="510">חוט אות אנלוגי (signal wire)</text>
+    <line x1="55" y1="526" x2="90" y2="526" stroke="#0a58c2" stroke-width="1.4" stroke-dasharray="6 4"/>
+    <text x="98" y="530" fill="#0a58c2">בקרת סרוו PWM (מכני θ⇒C)</text>
+    <line x1="55" y1="546" x2="90" y2="546" stroke="#b8290a" stroke-width="1.4" stroke-dasharray="6 4"/>
+    <text x="98" y="550" fill="#b8290a">נהג סליל — מזיז מגנט (⇒Rw2)</text>
+    <line x1="60" y1="566" x2="60" y2="574" stroke="#b8290a" stroke-width="1.6" marker-end="url(#arrowB)"/>
+    <text x="98" y="570" fill="#b8290a">חץ על רכיב = ערך מכוונן (variable)</text>
+    <text x="55" y="592">Σ = צומת מסכם · φ = הפעלה (comparator+diode)</text>
+    <text x="55" y="610">e = target − y מזין את לולאת האימון העצמי</text>
+  </g>
+</svg>
+</div>
+<div class="cap">איור 1 — הסכמה המלאה: שני משקלים אנלוגיים מכווננים (Cw1 סרוו, Rw2 גרפיט/מגנט) → מסכם U1 → הפעלה U2+D1 → פלט y → מגבר-שגיאה U3 → MCU → נהגי סרוו/סליל. הקווים המקווקווים הם לולאת האימון הסגורה.</div>
+
+<div class="formula">
+  y = φ( 1/C<sub>w1</sub>·∫x₁dt &nbsp;+&nbsp; (R<sub>f</sub>/R<sub>w2</sub>)·x₂ &nbsp;+&nbsp; b ) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Δw ∝ η·e·x &nbsp;(e = target − y)
+</div>
+
+<!-- ================= רכיבים ================= -->
+<h2>3 · רשימת רכיבים (תמצית)</h2>
+<p style="font-size:13px;color:var(--muted)">רשימה מלאה עם מק"טים וזמינות בישראל: קובץ <code>BOM.md</code> המצורף.</p>
+<table>
+  <tr><th>סימון</th><th>רכיב</th><th>ערך / דגם</th><th>תפקיד</th></tr>
+  <tr><td>U1</td><td>מגבר-שרת</td><td>TL072 / LM358</td><td>צומת מסכם-משלב (integrator)</td></tr>
+  <tr><td>U2</td><td>משווה</td><td>LM393 / חצי TL072</td><td>הפעלה (threshold)</td></tr>
+  <tr><td>U3</td><td>מגבר-הפרש</td><td>TL072</td><td>מחשב e = target − y</td></tr>
+  <tr><td>Cw1</td><td>קבל מסובב</td><td>לוחות Al + סרוו SG90</td><td><b>משקל A</b> מכני-חשמלי</td></tr>
+  <tr><td>Rw2</td><td>מוט גרפיט + מגנט</td><td>גרפיט 2–5mm, מגנט טבעת NdFeB</td><td><b>משקל B</b> memristive</td></tr>
+  <tr><td>—</td><td>צינור נחושת + סליל</td><td>Ø10mm, ~200 ליפופים 0.3mm</td><td>בלימת eddy + הזזת מגנט</td></tr>
+  <tr><td>MCU</td><td>בקר</td><td>Arduino Nano / RP2040</td><td>e→PWM/זרם (נהג האימון)</td></tr>
+  <tr><td>—</td><td>נהג מנוע</td><td>DRV8833 / L293D</td><td>מזרים לסליל דו-כיווני</td></tr>
+  <tr><td>D1</td><td>דיודה</td><td>1N4148</td><td>יישור/חצי-גל בהפעלה</td></tr>
+  <tr><td>—</td><td>וקטור אלטרנטיבי</td><td>וארקטור 1SV149</td><td>קבל מכוונן 100% חשמלי (ללא סרוו)</td></tr>
+</table>
+
+<!-- ================= הרכבה ================= -->
+<h2>4 · הרכבה שלב-אחר-שלב</h2>
+
+<h3><span class="num">1</span>משקל A — הקבל המסובב</h3>
+<ul>
+  <li>גזור 2 סטים של 5–7 לוחות אלומיניום חצי-עגולים (או גלגל 2 גלילי רדיד־אלומיניום על ציר משותף עם מפריד מיילר דק כדיאלקטרי).</li>
+  <li>הסט הקבוע = סטטור, הנע = רוטור על ציר הסרוו <code>SG90</code>. חפיפה מלאה ≈ 40–120pF, חפיפה 0 ≈ 5pF.</li>
+  <li>חבר את שני האלקטרודות לענף כניסת <code>x1</code> ולצומת המסכם דרך <code>R1</code>.</li>
+</ul>
+
+<h3><span class="num">2</span>משקל B — גרפיט + מגנט + צינור נחושת</h3>
+<ul>
+  <li>הכנס מוט גרפיט (מחוד עיפרון 2–5mm) לשרוול אלומיניום; קצה אחד קבוע = אלקטרודה, השני נוגע דרך <b>מגנט הטבעת</b> שמשמש גם מסה וגם מגע.</li>
+  <li>הצב את המגנט בתוך <b>צינור הנחושת</b> האנכי. תנועתו איטית (eddy) — זה נותן את ההיסטרזיס ה-memristive.</li>
+  <li>לפף את הסליל (<code>~200 ליפופים, חוט מגנט 0.3mm</code>) סביב קטע הצינור; זרם בסליל דוחף/מושך את המגנט ⇒ משנה מגע ⇒ משנה <code>Rw2</code>.</li>
+</ul>
+
+<h3><span class="num">3</span>הצומת המסכם (U1)</h3>
+<ul>
+  <li>כניסה הופכת (−) = צומת סיכום וירטואלי; כניסה (+) לאדמה. משוב <code>Rf 100k ∥ Cf 1nF</code> ⇒ מסכם-משלב.</li>
+  <li>הזרם מכל ענף משוקלל: ענף x2 לפי <code>Rf/Rw2</code>, ענף x1 לפי הקיבול <code>Cw1</code>. b = נגד קיבוע דרך מקור עזר.</li>
+</ul>
+
+<h3><span class="num">4</span>הפעלה (U2 + D1)</h3>
+<ul>
+  <li>מוצא U1 נכנס למשווה <code>U2</code> מול סף <code>Vθ</code>. מוצא U2 עובר דיודה <code>D1</code> ⇒ <code>y</code> חצי-גל (spike חיובי).</li>
+  <li>עומס <code>RL 10k</code> לאדמה מקבע את הפלט.</li>
+</ul>
+
+<h3><span class="num">5</span>לולאת השגיאה (U3 + MCU + נהגים)</h3>
+<ul>
+  <li>מגבר-הפרש <code>U3</code> מחשב <code>e = target − y</code>.</li>
+  <li>ה-MCU דוגם e ב-ADC ומחשב <code>Δw = η·e·x</code>; מפעיל PWM לסרוו (Cw1) וזרם לסליל (Rw2).</li>
+</ul>
+
+<div class="ok"><b>בדיקת שפיות בין שלבים:</b> הזרם 1V DC ל-x1/x2 ומדוד את מוצא U1 במולטימטר — עלייה/ירידה חלקה כשמסובבים ידנית את הסרוו / מזיזים את המגנט מוכיחה ששני המשקלים חיים <b>לפני</b> חיבור הלולאה.</div>
+
+<!-- ================= לולאת האימון ================= -->
+<h2>5 · לולאת האימון העצמי (Closed-loop)</h2>
+<p>הלולאה היא <b>פרספטרון מכני</b>: השגיאה מזיזה מסות פיזיות עד שהפלט תואם. פסאודו-קוד ה-MCU:</p>
+<div class="card" style="direction:ltr;font-family:Consolas,monospace;font-size:12.5px;line-height:1.5">
+<pre style="margin:0;white-space:pre-wrap">loop every 20 ms:
+  y      = analogRead(A0) * k         // measured neuron output
+  target = analogRead(A1) * k         // desired label
+  e      = target - y                 // error
+  // gradient step on each physical weight:
+  servoPos += ETA * e * x1            // Cw1  (rotate variable cap)
+  coilPWM   = clamp(coilPWM + ETA*e*x2, -255, 255)  // Rw2 (move magnet)
+  servo.write( clamp(servoPos, 0, 180) )
+  driveCoil( coilPWM )                // DRV8833 bipolar current
+  // convergence: |e| below tol for N steps  ->  learned</pre>
+</div>
+<p><b>עדכון Hebbian/perceptron:</b> <code>Δw ∝ η·e·x</code>. η (learning rate) נקבע ע"י גודל צעד הסרוו/זרם. התכנסות = <code>|e|</code> קטן מסף לאורך זמן.</p>
+
+<!-- ================= VANILLA ================= -->
+<h2>6 · בקרת VANILLA <span class="tag v">baseline חובה</span></h2>
+<div class="warn">
+<b>חוק אב:</b> כל חידוש נשלח עם ביקורת רגילה ומשעממת. כאן — נוירון־פרספטרון <b>סטנדרטי לגמרי</b> שבו המשקל הוא
+<b>פוטנציומטר דיגיטלי</b> <code>MCP41010</code>, שאותה לולאת שגיאה מכוונת ב-SPI. זו הדרך היחידה לדעת אם גרסת הגרפיט/מגנט
+באמת לומדת <b>טוב יותר</b> מטכנולוגיה פשוטה.
+</div>
+<table>
+  <tr><th>מרכיב</th><th>גרסה אקזוטית (memristive)</th><th>בקרת VANILLA</th></tr>
+  <tr><td>משקל</td><td>קבל-סרוו / גרפיט-מגנט</td><td>פוט' דיגיטלי MCP41010 (256 מדרגות)</td></tr>
+  <tr><td>עדכון</td><td>PWM לסרוו / זרם לסליל</td><td>פקודת SPI <code>wiper = w</code></td></tr>
+  <tr><td>מסכם/הפעלה</td><td>זהה (U1,U2,D1)</td><td>זהה (U1,U2,D1)</td></tr>
+  <tr><td>לולאת שגיאה</td><td>זהה (U3+MCU)</td><td>זהה (U3+MCU)</td></tr>
+</table>
+<p><b>ההשוואה ההוגנת:</b> אותו dataset, אותו η, אותה מטרה. מודדים: (1) מספר צעדים להתכנסות, (2) שגיאה סופית, (3) יציבות/רעש, (4) drift לאורך זמן. אם האקזוטי לא מנצח את הוניל — הוניל מנצח, ומדווחים ביושר.</p>
+
+<!-- ================= בטיחות ================= -->
+<h2>7 · בטיחות</h2>
+<ul>
+  <li><b>מתחים נמוכים בלבד</b> (≤ ±9V) — אין סכנת חשמל, אבל קצרים שורפים מגברים. בדוק קוטביות לפני הפעלה.</li>
+  <li><b>מגנטים חזקים (NdFeB):</b> הרחק מקוצבי-לב, כרטיסי אשראי, דיסקים. יכולים לצבוט אצבעות — טפל בזהירות.</li>
+  <li><b>גרפיט:</b> אבק גרפיט מוליך — נקה שאריות שלא יגרמו לקצרים על הלוח.</li>
+  <li><b>סליל/מנוע:</b> הוסף דיודת flyback (1N4148) על הסליל להגן על נהג המנוע מקפיצות מתח.</li>
+  <li><b>חום:</b> אל תעמיס — עבודה כבדה של אימון ארוך רצה על ה-MCU, לא על ה-PC.</li>
+</ul>
+
+<!-- ================= הוכחה ================= -->
+<h2>8 · מה מוכיח שזה עבד</h2>
+<div class="ok">
+<ol>
+  <li><b>למידת XOR/AND דו-כניסתי:</b> הזן טבלת אמת, הפעל את הלולאה, והראה ש-<code>|e|→0</code> וש-y מפריד נכון בין המחלקות.</li>
+  <li><b>גרף התכנסות:</b> תעד <code>servoPos</code>, <code>coilPWM</code> ו-<code>e</code> לאורך צעדים — ירידה מונוטונית של השגיאה = למידה אמיתית, לא מקרית.</li>
+  <li><b>מבחן החזקה (memristive):</b> נתק מתח לדקה; החזר. אם המשקל נשמר (הסרוו במקום, המגנט לא זז) — יש זיכרון פיזי. זה מה שמפריד ממריסטור מפוט' רגיל שמאבד מצב.</li>
+  <li><b>ניצחון על הוניל (או לא):</b> הרץ את שתי הגרסאות על אותה בעיה; דווח מי התכנס מהר יותר ובאיזו שגיאה סופית. <b>תוצאה שלילית = תוצאה כשרה.</b></li>
+  <li><b>יציבות שעה:</b> תן לנוירון המאומן לרוץ שעה על אותה כניסה; הפלט צריך להישאר יציב (זה מבחן ה-ALMA — עובד &gt;שעה, אמיתי לא הדגמה).</li>
+</ol>
+</div>
+
+<!-- ================= הוכחה בסימולציה ================= -->
+<h2>9 · הוכחה בפועל (סימולציה מאומתת) <span class="tag v">PASS</span></h2>
+<div class="ok">
+<p>הרצנו את <code>sim.py</code> — מודל טהור (100% שלנו, ללא תלויות) של הנוירון עם המשקלים ה<b>בדידים האמיתיים</b>: קבל מונע-סרבו (181 מצבים), MCP41010 (256 מצבים), ורעש גאוסי על צומת-הסיכום (ADC + סובלנות קבל). מול <b>בקרת vanilla</b> עם משקלים רציפים אידיאליים. אותה בעיה, אותו כלל עדכון.</p>
+<div style="text-align:center;margin:14px 0"><svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,Arial">
+<rect width="720" height="380" fill="#ffffff"/>
+<text x="360.0" y="24" text-anchor="middle" font-size="16" font-weight="700" fill="#0b3a63">
+נוירון POT+CAP — התכנסות אימון עצמי (דיוק על מבחן)</text>
+<line x1="60" y1="334.0" x2="696" y2="334.0" stroke="#e3ebf5"/><text x="50" y="338.0" text-anchor="end" font-size="12" fill="#64748b">0%</text><line x1="60" y1="275.2" x2="696" y2="275.2" stroke="#e3ebf5"/><text x="50" y="279.2" text-anchor="end" font-size="12" fill="#64748b">20%</text><line x1="60" y1="216.4" x2="696" y2="216.4" stroke="#e3ebf5"/><text x="50" y="220.4" text-anchor="end" font-size="12" fill="#64748b">40%</text><line x1="60" y1="157.6" x2="696" y2="157.6" stroke="#e3ebf5"/><text x="50" y="161.6" text-anchor="end" font-size="12" fill="#64748b">60%</text><line x1="60" y1="98.8" x2="696" y2="98.8" stroke="#e3ebf5"/><text x="50" y="102.8" text-anchor="end" font-size="12" fill="#64748b">80%</text><line x1="60" y1="40.0" x2="696" y2="40.0" stroke="#e3ebf5"/><text x="50" y="44.0" text-anchor="end" font-size="12" fill="#64748b">100%</text>
+<line x1="60" y1="40" x2="60" y2="334" stroke="#94a3b8"/>
+<line x1="60" y1="334" x2="696" y2="334" stroke="#94a3b8"/>
+<text x="360.0" y="370" text-anchor="middle" font-size="12" fill="#64748b">epoch (0..40)</text>
+<polyline fill="none" stroke="#94a3b8" stroke-width="3" points="60.0,240.9 75.9,59.6 91.8,59.6 107.7,49.8 123.6,54.7 139.5,59.6 155.4,69.4 171.3,69.4 187.2,64.5 203.1,44.9 219.0,74.3 234.9,49.8 250.8,54.7 266.7,64.5 282.6,40.0 298.5,40.0 314.4,40.0 330.3,40.0 346.2,40.0 362.1,40.0 378.0,40.0 393.9,40.0 409.8,40.0 425.7,40.0 441.6,40.0 457.5,40.0 473.4,40.0 489.3,40.0 505.2,40.0 521.1,40.0 537.0,40.0 552.9,40.0 568.8,40.0 584.7,40.0 600.6,40.0 616.5,40.0 632.4,40.0 648.3,40.0 664.2,40.0 680.1,40.0 696.0,40.0"/>
+<polyline fill="none" stroke="#0aa2e0" stroke-width="3" points="60.0,133.1 75.9,79.2 91.8,54.7 107.7,64.5 123.6,74.3 139.5,69.4 155.4,40.0 171.3,49.8 187.2,59.6 203.1,54.7 219.0,64.5 234.9,54.7 250.8,64.5 266.7,49.8 282.6,54.7 298.5,54.7 314.4,59.6 330.3,40.0 346.2,54.7 362.1,54.7 378.0,49.8 393.9,74.3 409.8,54.7 425.7,49.8 441.6,49.8 457.5,64.5 473.4,54.7 489.3,49.8 505.2,49.8 521.1,49.8 537.0,49.8 552.9,49.8 568.8,49.8 584.7,54.7 600.6,54.7 616.5,54.7 632.4,54.7 648.3,54.7 664.2,54.7 680.1,54.7 696.0,40.0"/>
+<rect x="481" y="48" width="205" height="52" rx="8" fill="#f7fbff" stroke="#d6e9f7"/>
+<line x1="491" y1="64" x2="521" y2="64" stroke="#0aa2e0" stroke-width="3"/>
+<text x="528" y="68" font-size="12" fill="#0b3a63">חומרה: סרבו-קבל + MCP41010 (בדיד)</text>
+<line x1="491" y1="84" x2="521" y2="84" stroke="#94a3b8" stroke-width="3"/>
+<text x="528" y="88" font-size="12" fill="#0b3a63">Vanilla: משקלים רציפים אידיאליים</text>
+</svg></div>
+<table>
+<tr><th>גרסה</th><th>דיוק התחלתי</th><th>דיוק סופי</th><th>משקלים שנלמדו (w1,w2,b)</th></tr>
+<tr><td><b>חומרה</b> — סרבו-קבל + 2×MCP41010 (בדיד+רעש)</td><td>68.3%</td><td><b>100%</b></td><td>+2.13, −1.36, +0.52</td></tr>
+<tr><td>Vanilla — רציף אידיאלי</td><td>32%</td><td>100%</td><td>+0.85, −0.55, +0.20</td></tr>
+</table>
+<p style="margin-top:8px"><b>המסקנה:</b> הנוירון הבדיד למד את גבול-ההחלטה במדויק (יחס המשקלים 1.55 = יחס גבול-האמת 1.7:1.1) והגיע ל<b>אותו דיוק כמו האידיאלי — פער 0.0</b>. הרזולוציה הפיזית של הסרבו והפוט' <u>מספיקה</u>. השחזור: <code>python sim.py</code> (seed=7, דטרמיניסטי).</p>
+<p style="margin-top:6px;font-size:12px;color:var(--muted)">קבצי הפרויקט: <code>build.html</code> (זה) · <code>BOM.md</code> · <code>sim.py</code> (ההוכחה) · <code>firmware.ino</code> (הלולאה על ה-MCU) · <code>WIRING.md</code> (חיווט) · <code>convergence.svg</code> (הגרף).</p>
+</div>
+
+<p style="margin-top:24px;font-size:12px;color:var(--muted);text-align:center;border-top:1px solid #ddd;padding-top:10px">
+ALMAWARE · נוירון-ממריסטור מכוונן חשמלית · מדריך בנייה v1.0 · כל חידוש עם בקרת וניל · self-contained
+</p>
+
+</div>

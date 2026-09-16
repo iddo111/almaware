@@ -1,0 +1,91 @@
+{
+ "mcnemar": {
+  "ear3 per-class spread": {
+   "delta_pts": -9.6,
+   "fixed": 39,
+   "broke": 77,
+   "p": 0.0005340946135287224
+  },
+  "NEW centroid": {
+   "delta_pts": 2.53,
+   "fixed": 40,
+   "broke": 30,
+   "p": 0.2819789217936561
+  },
+  "NEW WCCN lam=0.50": {
+   "delta_pts": 8.59,
+   "fixed": 54,
+   "broke": 20,
+   "p": 9.612986582365393e-05
+  }
+ },
+ "bootstrap_wccn_minus_old_pts": [
+  8.57,
+  4.29,
+  12.63
+ ],
+ "auc_ci": {
+  "OLD  nearest single clip  [vs 22-syl reference]": [
+   0.442,
+   0.315,
+   0.569
+  ],
+  "OLD  ear3 wdist (per-class spread)  [vs 22-syl reference]": [
+   0.524,
+   0.395,
+   0.653
+  ],
+  "NEW  syllable centroid  [vs 22-syl reference]": [
+   0.45,
+   0.322,
+   0.577
+  ],
+  "NEW  WCCN whiten + centroid  [vs 22-syl reference]": [
+   0.427,
+   0.301,
+   0.553
+  ],
+  "OLD  nearest single t06 clip  [vs t06, the real target]": [
+   0.504,
+   0.376,
+   0.633
+  ],
+  "OLD  ear3 wdist (per-class spread)  [vs t06, the real target]": [
+   0.431,
+   0.304,
+   0.557
+  ],
+  "NEW  t06 unit centroid  [vs t06, the real target]": [
+   0.429,
+   0.303,
+   0.555
+  ],
+  "NEW  WCCN + t06 centroid  [vs t06, the real target]": [
+   0.55,
+   0.422,
+   0.679
+  ]
+ },
+ "cross_corpus": {
+  "nearest single clip": {
+   "ref_to_t06_pct": 30.0,
+   "t06_to_ref_pct": 44.44,
+   "ref_self_loto_pct": 96.3
+  },
+  "ear3 per-class spread": {
+   "ref_to_t06_pct": 40.67,
+   "t06_to_ref_pct": 33.33,
+   "ref_self_loto_pct": 85.19
+  },
+  "centroid": {
+   "ref_to_t06_pct": 33.33,
+   "t06_to_ref_pct": 37.04,
+   "ref_self_loto_pct": 98.15
+  },
+  "WCCN lam=0.50": {
+   "ref_to_t06_pct": 32.0,
+   "t06_to_ref_pct": 22.22,
+   "ref_self_loto_pct": 92.59
+  }
+ }
+}

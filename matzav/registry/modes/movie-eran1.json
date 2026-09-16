@@ -1,0 +1,12 @@
+{
+  "id": "movie-eran1", "order": 10,
+  "title_he": "סרט", "title_en": "MOVIE",
+  "subtitle_he": "LTX על ערן1 — כבר חם",
+  "box_hint": "eran1",
+  "want": ["eran1/comfyui"],
+  "concede": [],
+  "note_he": "LTX 0.9.8-distilled (26.6 GB) + 0.9.7-dev + spatial-upscaler 0.9.8. הזיכרון כבר תפוס 34.8 GB — זה חם.",
+  "honesty": "הזיכרון של המודל נמדד. גרסת הדיסק היא 0.9.7/0.9.8 — לא 2.3 כמו שכתוב בזיכרון.",
+  "demonstrated": {"status": "verify-only", "evidence": "eran1/comfyui measured UP and WARM (34.8 GB GPU resident) 2026-09-04 06:47 and again at build time. The mode is already satisfied, so applying it starts nothing."},
+  "runnable": true
+}

@@ -1,0 +1,29 @@
+{
+  "session_id": "t07-20260824T031838Z",
+  "talker": "t07",
+  "person": "selftest-person",
+  "started_utc": "2026-08-24T03:18:38Z",
+  "sample_rate": 16000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "audio": "raw, NOT peak-normalised (the gain KESHEV would have applied is in each manifest row as would_be_gain)",
+  "dev_fold": false,
+  "dev_fold_rule": "int(digits) % 6 == 0 (proof/measure.py::is_dev)",
+  "one_session_per_talker": true,
+  "tool": "booth/dictionary.py",
+  "reuses": [
+    "mic-rebuild/client/devices.py",
+    "mic-rebuild/client/capture.py",
+    "mic-rebuild/client/resample.py",
+    "mic-rebuild/client/segmenter.py"
+  ],
+  "device": "SELFTEST synthetic stream",
+  "host_api": "none",
+  "capture_rate": 48000,
+  "capture_channels": 2,
+  "room_floor_rms": 0.0012,
+  "gate_rms": 0.008,
+  "prompt_list": "D:\\CLAUDE\\eran-brain\\booth\\lists\\core31.txt",
+  "takes_per_prompt": 1,
+  "selftest": true
+}

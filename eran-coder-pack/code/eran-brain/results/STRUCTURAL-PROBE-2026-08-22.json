@@ -1,0 +1,2952 @@
+{
+  "title": "Structural probe of the arena decode ranges",
+  "date": "2026-08-22",
+  "principle": "every number here comes from tasks.py / eran_agent.py / pong_env.py mechanics. No run accuracy is read.",
+  "task_constants": {
+    "rule": {
+      "n_actions": 3,
+      "CRIT_WINDOW": 10,
+      "CRIT_HITS": 8,
+      "BLOCK_MAX": 60,
+      "N_BLOCKS": 6,
+      "n_obs": 10
+    },
+    "dms": {
+      "n_actions": 2,
+      "N_ITEMS": 4,
+      "n_obs": 18,
+      "delays": [
+        0,
+        1,
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    "pong": {
+      "n_actions": 3,
+      "n_obs": 9,
+      "ticks": 200,
+      "ball_speed": 0.025,
+      "paddle_speed": 0.05,
+      "paddle_half": 0.1
+    }
+  },
+  "ctx_loudness": {
+    "rule": {
+      "obs_norm_mean": 1.9982,
+      "n_obs": 10,
+      "per_lam": {
+        "0.0": {
+          "ctx_over_obs": 1.000071,
+          "horizon_1_over_1_minus_lam": 1.0,
+          "share_at_gain": {
+            "0.1": 0.0995,
+            "0.5": 0.4472,
+            "1.0": 0.7071,
+            "2.0": 0.8944,
+            "3.0": 0.9487,
+            "4.0": 0.9701,
+            "8.1": 0.9925
+          }
+        },
+        "0.1": {
+          "ctx_over_obs": 0.931148,
+          "horizon_1_over_1_minus_lam": 1.111,
+          "share_at_gain": {
+            "0.1": 0.0927,
+            "0.5": 0.4221,
+            "1.0": 0.6815,
+            "2.0": 0.881,
+            "3.0": 0.9415,
+            "4.0": 0.9658,
+            "8.1": 0.9913
+          }
+        },
+        "0.2": {
+          "ctx_over_obs": 0.869007,
+          "horizon_1_over_1_minus_lam": 1.25,
+          "share_at_gain": {
+            "0.1": 0.0866,
+            "0.5": 0.3985,
+            "1.0": 0.6559,
+            "2.0": 0.8668,
+            "3.0": 0.9337,
+            "4.0": 0.961,
+            "8.1": 0.9901
+          }
+        },
+        "0.3": {
+          "ctx_over_obs": 0.812577,
+          "horizon_1_over_1_minus_lam": 1.429,
+          "share_at_gain": {
+            "0.1": 0.081,
+            "0.5": 0.3764,
+            "1.0": 0.6306,
+            "2.0": 0.8517,
+            "3.0": 0.9252,
+            "4.0": 0.9558,
+            "8.1": 0.9887
+          }
+        },
+        "0.4": {
+          "ctx_over_obs": 0.761067,
+          "horizon_1_over_1_minus_lam": 1.667,
+          "share_at_gain": {
+            "0.1": 0.0759,
+            "0.5": 0.3557,
+            "1.0": 0.6056,
+            "2.0": 0.8358,
+            "3.0": 0.916,
+            "4.0": 0.9501,
+            "8.1": 0.9871
+          }
+        },
+        "0.5": {
+          "ctx_over_obs": 0.713926,
+          "horizon_1_over_1_minus_lam": 2.0,
+          "share_at_gain": {
+            "0.1": 0.0712,
+            "0.5": 0.3362,
+            "1.0": 0.581,
+            "2.0": 0.8191,
+            "3.0": 0.9061,
+            "4.0": 0.9438,
+            "8.1": 0.9854
+          }
+        },
+        "0.6": {
+          "ctx_over_obs": 0.670468,
+          "horizon_1_over_1_minus_lam": 2.5,
+          "share_at_gain": {
+            "0.1": 0.0669,
+            "0.5": 0.3178,
+            "1.0": 0.5569,
+            "2.0": 0.8016,
+            "3.0": 0.8954,
+            "4.0": 0.937,
+            "8.1": 0.9835
+          }
+        },
+        "0.7": {
+          "ctx_over_obs": 0.62999,
+          "horizon_1_over_1_minus_lam": 3.333,
+          "share_at_gain": {
+            "0.1": 0.0629,
+            "0.5": 0.3004,
+            "1.0": 0.533,
+            "2.0": 0.7833,
+            "3.0": 0.8839,
+            "4.0": 0.9295,
+            "8.1": 0.9813
+          }
+        },
+        "0.8": {
+          "ctx_over_obs": 0.592166,
+          "horizon_1_over_1_minus_lam": 5.0,
+          "share_at_gain": {
+            "0.1": 0.0591,
+            "0.5": 0.2839,
+            "1.0": 0.5095,
+            "2.0": 0.7641,
+            "3.0": 0.8714,
+            "4.0": 0.9213,
+            "8.1": 0.979
+          }
+        },
+        "0.9": {
+          "ctx_over_obs": 0.556128,
+          "horizon_1_over_1_minus_lam": 10.0,
+          "share_at_gain": {
+            "0.1": 0.0555,
+            "0.5": 0.2679,
+            "1.0": 0.486,
+            "2.0": 0.7436,
+            "3.0": 0.8577,
+            "4.0": 0.9121,
+            "8.1": 0.9762
+          }
+        },
+        "0.95": {
+          "ctx_over_obs": 0.539527,
+          "horizon_1_over_1_minus_lam": 20.0,
+          "share_at_gain": {
+            "0.1": 0.0539,
+            "0.5": 0.2605,
+            "1.0": 0.4748,
+            "2.0": 0.7335,
+            "3.0": 0.8507,
+            "4.0": 0.9073,
+            "8.1": 0.9748
+          }
+        },
+        "0.99": {
+          "ctx_over_obs": 0.526892,
+          "horizon_1_over_1_minus_lam": 100.0,
+          "share_at_gain": {
+            "0.1": 0.0526,
+            "0.5": 0.2548,
+            "1.0": 0.4661,
+            "2.0": 0.7254,
+            "3.0": 0.8451,
+            "4.0": 0.9035,
+            "8.1": 0.9736
+          }
+        },
+        "0.999": {
+          "ctx_over_obs": 0.428769,
+          "horizon_1_over_1_minus_lam": 1000.0,
+          "share_at_gain": {
+            "0.1": 0.0428,
+            "0.5": 0.2096,
+            "1.0": 0.3941,
+            "2.0": 0.651,
+            "3.0": 0.7895,
+            "4.0": 0.8639,
+            "8.1": 0.961
+          }
+        },
+        "0.9999": {
+          "ctx_over_obs": 0.100993,
+          "horizon_1_over_1_minus_lam": 10000.0,
+          "share_at_gain": {
+            "0.1": 0.0101,
+            "0.5": 0.0504,
+            "1.0": 0.1005,
+            "2.0": 0.198,
+            "3.0": 0.29,
+            "4.0": 0.3746,
+            "8.1": 0.6332
+          }
+        }
+      }
+    },
+    "dms16": {
+      "obs_norm_mean": 1.0674,
+      "n_obs": 18,
+      "per_lam": {
+        "0.0": {
+          "ctx_over_obs": 1.000077,
+          "horizon_1_over_1_minus_lam": 1.0,
+          "share_at_gain": {
+            "0.1": 0.0995,
+            "0.5": 0.4472,
+            "1.0": 0.7071,
+            "2.0": 0.8944,
+            "3.0": 0.9487,
+            "4.0": 0.9701,
+            "8.1": 0.9925
+          }
+        },
+        "0.1": {
+          "ctx_over_obs": 0.977862,
+          "horizon_1_over_1_minus_lam": 1.111,
+          "share_at_gain": {
+            "0.1": 0.0973,
+            "0.5": 0.4392,
+            "1.0": 0.6991,
+            "2.0": 0.8904,
+            "3.0": 0.9465,
+            "4.0": 0.9688,
+            "8.1": 0.9921
+          }
+        },
+        "0.2": {
+          "ctx_over_obs": 0.956671,
+          "horizon_1_over_1_minus_lam": 1.25,
+          "share_at_gain": {
+            "0.1": 0.0952,
+            "0.5": 0.4315,
+            "1.0": 0.6913,
+            "2.0": 0.8863,
+            "3.0": 0.9443,
+            "4.0": 0.9675,
+            "8.1": 0.9918
+          }
+        },
+        "0.3": {
+          "ctx_over_obs": 0.936193,
+          "horizon_1_over_1_minus_lam": 1.429,
+          "share_at_gain": {
+            "0.1": 0.0932,
+            "0.5": 0.4239,
+            "1.0": 0.6834,
+            "2.0": 0.8821,
+            "3.0": 0.9421,
+            "4.0": 0.9661,
+            "8.1": 0.9914
+          }
+        },
+        "0.4": {
+          "ctx_over_obs": 0.916223,
+          "horizon_1_over_1_minus_lam": 1.667,
+          "share_at_gain": {
+            "0.1": 0.0912,
+            "0.5": 0.4165,
+            "1.0": 0.6755,
+            "2.0": 0.8778,
+            "3.0": 0.9397,
+            "4.0": 0.9647,
+            "8.1": 0.991
+          }
+        },
+        "0.5": {
+          "ctx_over_obs": 0.896843,
+          "horizon_1_over_1_minus_lam": 2.0,
+          "share_at_gain": {
+            "0.1": 0.0893,
+            "0.5": 0.4092,
+            "1.0": 0.6677,
+            "2.0": 0.8734,
+            "3.0": 0.9374,
+            "4.0": 0.9633,
+            "8.1": 0.9907
+          }
+        },
+        "0.6": {
+          "ctx_over_obs": 0.878194,
+          "horizon_1_over_1_minus_lam": 2.5,
+          "share_at_gain": {
+            "0.1": 0.0875,
+            "0.5": 0.402,
+            "1.0": 0.6599,
+            "2.0": 0.869,
+            "3.0": 0.9349,
+            "4.0": 0.9618,
+            "8.1": 0.9903
+          }
+        },
+        "0.7": {
+          "ctx_over_obs": 0.861008,
+          "horizon_1_over_1_minus_lam": 3.333,
+          "share_at_gain": {
+            "0.1": 0.0858,
+            "0.5": 0.3954,
+            "1.0": 0.6525,
+            "2.0": 0.8648,
+            "3.0": 0.9326,
+            "4.0": 0.9603,
+            "8.1": 0.9899
+          }
+        },
+        "0.8": {
+          "ctx_over_obs": 0.846883,
+          "horizon_1_over_1_minus_lam": 5.0,
+          "share_at_gain": {
+            "0.1": 0.0844,
+            "0.5": 0.3899,
+            "1.0": 0.6463,
+            "2.0": 0.8611,
+            "3.0": 0.9305,
+            "4.0": 0.9591,
+            "8.1": 0.9895
+          }
+        },
+        "0.9": {
+          "ctx_over_obs": 0.83705,
+          "horizon_1_over_1_minus_lam": 10.0,
+          "share_at_gain": {
+            "0.1": 0.0834,
+            "0.5": 0.3861,
+            "1.0": 0.6419,
+            "2.0": 0.8585,
+            "3.0": 0.929,
+            "4.0": 0.9582,
+            "8.1": 0.9893
+          }
+        },
+        "0.95": {
+          "ctx_over_obs": 0.83386,
+          "horizon_1_over_1_minus_lam": 20.0,
+          "share_at_gain": {
+            "0.1": 0.0831,
+            "0.5": 0.3848,
+            "1.0": 0.6404,
+            "2.0": 0.8576,
+            "3.0": 0.9286,
+            "4.0": 0.9579,
+            "8.1": 0.9892
+          }
+        },
+        "0.99": {
+          "ctx_over_obs": 0.831619,
+          "horizon_1_over_1_minus_lam": 100.0,
+          "share_at_gain": {
+            "0.1": 0.0829,
+            "0.5": 0.3839,
+            "1.0": 0.6394,
+            "2.0": 0.857,
+            "3.0": 0.9282,
+            "4.0": 0.9577,
+            "8.1": 0.9892
+          }
+        },
+        "0.999": {
+          "ctx_over_obs": 0.681094,
+          "horizon_1_over_1_minus_lam": 1000.0,
+          "share_at_gain": {
+            "0.1": 0.068,
+            "0.5": 0.3224,
+            "1.0": 0.5629,
+            "2.0": 0.8061,
+            "3.0": 0.8982,
+            "4.0": 0.9388,
+            "8.1": 0.984
+          }
+        },
+        "0.9999": {
+          "ctx_over_obs": 0.160604,
+          "horizon_1_over_1_minus_lam": 10000.0,
+          "share_at_gain": {
+            "0.1": 0.0161,
+            "0.5": 0.08,
+            "1.0": 0.1586,
+            "2.0": 0.3058,
+            "3.0": 0.4341,
+            "4.0": 0.5405,
+            "8.1": 0.7928
+          }
+        }
+      }
+    },
+    "pong": {
+      "obs_norm_mean": 1.3945,
+      "n_obs": 9,
+      "per_lam": {
+        "0.0": {
+          "ctx_over_obs": 1.000063,
+          "horizon_1_over_1_minus_lam": 1.0,
+          "share_at_gain": {
+            "0.1": 0.0995,
+            "0.5": 0.4472,
+            "1.0": 0.7071,
+            "2.0": 0.8944,
+            "3.0": 0.9487,
+            "4.0": 0.9701,
+            "8.1": 0.9925
+          }
+        },
+        "0.1": {
+          "ctx_over_obs": 0.966838,
+          "horizon_1_over_1_minus_lam": 1.111,
+          "share_at_gain": {
+            "0.1": 0.0962,
+            "0.5": 0.4352,
+            "1.0": 0.6951,
+            "2.0": 0.8883,
+            "3.0": 0.9454,
+            "4.0": 0.9682,
+            "8.1": 0.9919
+          }
+        },
+        "0.2": {
+          "ctx_over_obs": 0.937924,
+          "horizon_1_over_1_minus_lam": 1.25,
+          "share_at_gain": {
+            "0.1": 0.0934,
+            "0.5": 0.4246,
+            "1.0": 0.6841,
+            "2.0": 0.8824,
+            "3.0": 0.9423,
+            "4.0": 0.9663,
+            "8.1": 0.9914
+          }
+        },
+        "0.3": {
+          "ctx_over_obs": 0.912625,
+          "horizon_1_over_1_minus_lam": 1.429,
+          "share_at_gain": {
+            "0.1": 0.0909,
+            "0.5": 0.4151,
+            "1.0": 0.6741,
+            "2.0": 0.877,
+            "3.0": 0.9393,
+            "4.0": 0.9645,
+            "8.1": 0.991
+          }
+        },
+        "0.4": {
+          "ctx_over_obs": 0.890291,
+          "horizon_1_over_1_minus_lam": 1.667,
+          "share_at_gain": {
+            "0.1": 0.0887,
+            "0.5": 0.4067,
+            "1.0": 0.6649,
+            "2.0": 0.8719,
+            "3.0": 0.9365,
+            "4.0": 0.9628,
+            "8.1": 0.9905
+          }
+        },
+        "0.5": {
+          "ctx_over_obs": 0.870337,
+          "horizon_1_over_1_minus_lam": 2.0,
+          "share_at_gain": {
+            "0.1": 0.0867,
+            "0.5": 0.399,
+            "1.0": 0.6565,
+            "2.0": 0.8671,
+            "3.0": 0.9339,
+            "4.0": 0.9611,
+            "8.1": 0.9901
+          }
+        },
+        "0.6": {
+          "ctx_over_obs": 0.852223,
+          "horizon_1_over_1_minus_lam": 2.5,
+          "share_at_gain": {
+            "0.1": 0.0849,
+            "0.5": 0.392,
+            "1.0": 0.6486,
+            "2.0": 0.8625,
+            "3.0": 0.9313,
+            "4.0": 0.9596,
+            "8.1": 0.9897
+          }
+        },
+        "0.7": {
+          "ctx_over_obs": 0.835064,
+          "horizon_1_over_1_minus_lam": 3.333,
+          "share_at_gain": {
+            "0.1": 0.0832,
+            "0.5": 0.3853,
+            "1.0": 0.641,
+            "2.0": 0.858,
+            "3.0": 0.9287,
+            "4.0": 0.958,
+            "8.1": 0.9892
+          }
+        },
+        "0.8": {
+          "ctx_over_obs": 0.817575,
+          "horizon_1_over_1_minus_lam": 5.0,
+          "share_at_gain": {
+            "0.1": 0.0815,
+            "0.5": 0.3784,
+            "1.0": 0.633,
+            "2.0": 0.8531,
+            "3.0": 0.926,
+            "4.0": 0.9563,
+            "8.1": 0.9888
+          }
+        },
+        "0.9": {
+          "ctx_over_obs": 0.796123,
+          "horizon_1_over_1_minus_lam": 10.0,
+          "share_at_gain": {
+            "0.1": 0.0794,
+            "0.5": 0.3698,
+            "1.0": 0.6228,
+            "2.0": 0.8468,
+            "3.0": 0.9224,
+            "4.0": 0.9541,
+            "8.1": 0.9882
+          }
+        },
+        "0.95": {
+          "ctx_over_obs": 0.780754,
+          "horizon_1_over_1_minus_lam": 20.0,
+          "share_at_gain": {
+            "0.1": 0.0778,
+            "0.5": 0.3637,
+            "1.0": 0.6154,
+            "2.0": 0.8421,
+            "3.0": 0.9197,
+            "4.0": 0.9524,
+            "8.1": 0.9877
+          }
+        },
+        "0.99": {
+          "ctx_over_obs": 0.764676,
+          "horizon_1_over_1_minus_lam": 100.0,
+          "share_at_gain": {
+            "0.1": 0.0762,
+            "0.5": 0.3571,
+            "1.0": 0.6074,
+            "2.0": 0.837,
+            "3.0": 0.9167,
+            "4.0": 0.9505,
+            "8.1": 0.9872
+          }
+        },
+        "0.999": {
+          "ctx_over_obs": 0.626624,
+          "horizon_1_over_1_minus_lam": 1000.0,
+          "share_at_gain": {
+            "0.1": 0.0625,
+            "0.5": 0.299,
+            "1.0": 0.531,
+            "2.0": 0.7817,
+            "3.0": 0.8829,
+            "4.0": 0.9288,
+            "8.1": 0.9811
+          }
+        },
+        "0.9999": {
+          "ctx_over_obs": 0.147932,
+          "horizon_1_over_1_minus_lam": 10000.0,
+          "share_at_gain": {
+            "0.1": 0.0148,
+            "0.5": 0.0738,
+            "1.0": 0.1463,
+            "2.0": 0.2837,
+            "3.0": 0.4056,
+            "4.0": 0.5093,
+            "8.1": 0.7678
+          }
+        }
+      }
+    }
+  },
+  "dms_cue_survival": {
+    "1": {
+      "0.0": 1.0,
+      "0.3": 0.7,
+      "0.5": 0.5,
+      "0.7": 0.3,
+      "0.8": 0.2,
+      "0.9": 0.1,
+      "0.95": 0.05,
+      "0.99": 0.01
+    },
+    "2": {
+      "0.0": 0.0,
+      "0.3": 0.21,
+      "0.5": 0.25,
+      "0.7": 0.21,
+      "0.8": 0.16,
+      "0.9": 0.09,
+      "0.95": 0.0475,
+      "0.99": 0.0099
+    },
+    "4": {
+      "0.0": 0.0,
+      "0.3": 0.0189,
+      "0.5": 0.0625,
+      "0.7": 0.1029,
+      "0.8": 0.1024,
+      "0.9": 0.0729,
+      "0.95": 0.042869,
+      "0.99": 0.009703
+    },
+    "8": {
+      "0.0": 0.0,
+      "0.3": 0.000153,
+      "0.5": 0.003906,
+      "0.7": 0.024706,
+      "0.8": 0.041943,
+      "0.9": 0.04783,
+      "0.95": 0.034917,
+      "0.99": 0.009321
+    },
+    "16": {
+      "0.0": 0.0,
+      "0.3": 0.0,
+      "0.5": 1.5e-05,
+      "0.7": 0.001424,
+      "0.8": 0.007037,
+      "0.9": 0.020589,
+      "0.95": 0.023165,
+      "0.99": 0.008601
+    },
+    "_lam_matching_delay": {
+      "1": 0.0,
+      "2": 0.5,
+      "4": 0.75,
+      "8": 0.875,
+      "16": 0.9375
+    }
+  },
+  "credit_horizon": {
+    "rule": {
+      "action_to_reward_steps": 0,
+      "rule_lifetime_trials_random_policy": {
+        "mean": 57.6,
+        "min": 10,
+        "max": 60
+      },
+      "rule_lifetime_floor_CRIT_WINDOW": 10,
+      "rule_lifetime_ceiling_BLOCK_MAX": 60,
+      "traces_reset_between_rules": false,
+      "note": "elig is cleared only by reset_episode(); a rule EPISODE is all 6 blocks, so traces cross every silent switch."
+    },
+    "dms": {
+      "action_to_reward_steps_by_delay": {
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "4": 4,
+        "8": 8,
+        "16": 16
+      },
+      "episode_len_by_delay": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "4": 5,
+        "8": 9,
+        "16": 17
+      },
+      "traces_reset_between_episodes": true,
+      "note": "reset_episode() clears elig, so a tau longer than the episode cannot leak into the next trial; it only means 'every step of THIS episode is credited', which is what a single terminal reward requires."
+    },
+    "pong": {
+      "ball_full_crossing_ticks": 40.0,
+      "serve_to_left_paddle_ticks": 20.0,
+      "observed_ticks_between_reward_events": {
+        "mean": 42.63,
+        "p10": 20.0,
+        "p90": 80.0,
+        "min": 20,
+        "max": 140
+      },
+      "traces_reset_between_episodes": true,
+      "note": "the paddle moves that decide a hit happen while the ball crosses the field; credit shorter than that cannot reach them."
+    }
+  },
+  "eps_floor_vs_criterion": {
+    "rule": {
+      "0.0": {
+        "best_case_accuracy": 1.0,
+        "mean_ttc_perfect_policy": 10.0,
+        "frac_blocks_reaching_criterion": 1.0,
+        "passes_experiment_success_test_ttc_lt_20": true
+      },
+      "0.05": {
+        "best_case_accuracy": 0.9667,
+        "mean_ttc_perfect_policy": 10.01,
+        "frac_blocks_reaching_criterion": 1.0,
+        "passes_experiment_success_test_ttc_lt_20": true
+      },
+      "0.1": {
+        "best_case_accuracy": 0.9333,
+        "mean_ttc_perfect_policy": 10.08,
+        "frac_blocks_reaching_criterion": 1.0,
+        "passes_experiment_success_test_ttc_lt_20": true
+      },
+      "0.15": {
+        "best_case_accuracy": 0.9,
+        "mean_ttc_perfect_policy": 10.33,
+        "frac_blocks_reaching_criterion": 1.0,
+        "passes_experiment_success_test_ttc_lt_20": true
+      },
+      "0.2": {
+        "best_case_accuracy": 0.8667,
+        "mean_ttc_perfect_policy": 10.66,
+        "frac_blocks_reaching_criterion": 1.0,
+        "passes_experiment_success_test_ttc_lt_20": true
+      },
+      "0.25": {
+        "best_case_accuracy": 0.8333,
+        "mean_ttc_perfect_policy": 11.25,
+        "frac_blocks_reaching_criterion": 1.0,
+        "passes_experiment_success_test_ttc_lt_20": true
+      },
+      "0.3": {
+        "best_case_accuracy": 0.8,
+        "mean_ttc_perfect_policy": 12.12,
+        "frac_blocks_reaching_criterion": 1.0,
+        "passes_experiment_success_test_ttc_lt_20": true
+      },
+      "0.35": {
+        "best_case_accuracy": 0.7667,
+        "mean_ttc_perfect_policy": 13.33,
+        "frac_blocks_reaching_criterion": 0.9995,
+        "passes_experiment_success_test_ttc_lt_20": true
+      },
+      "0.4": {
+        "best_case_accuracy": 0.7333,
+        "mean_ttc_perfect_policy": 14.82,
+        "frac_blocks_reaching_criterion": 0.998,
+        "passes_experiment_success_test_ttc_lt_20": true
+      },
+      "0.45": {
+        "best_case_accuracy": 0.7,
+        "mean_ttc_perfect_policy": 16.83,
+        "frac_blocks_reaching_criterion": 0.9935,
+        "passes_experiment_success_test_ttc_lt_20": true
+      },
+      "0.5": {
+        "best_case_accuracy": 0.6667,
+        "mean_ttc_perfect_policy": 19.59,
+        "frac_blocks_reaching_criterion": 0.9828,
+        "passes_experiment_success_test_ttc_lt_20": true
+      }
+    },
+    "dms": {
+      "0.0": {
+        "best_case_accuracy": 1.0
+      },
+      "0.05": {
+        "best_case_accuracy": 0.975
+      },
+      "0.1": {
+        "best_case_accuracy": 0.95
+      },
+      "0.15": {
+        "best_case_accuracy": 0.925
+      },
+      "0.2": {
+        "best_case_accuracy": 0.9
+      },
+      "0.25": {
+        "best_case_accuracy": 0.875
+      },
+      "0.3": {
+        "best_case_accuracy": 0.85
+      },
+      "0.35": {
+        "best_case_accuracy": 0.825
+      },
+      "0.4": {
+        "best_case_accuracy": 0.8
+      },
+      "0.45": {
+        "best_case_accuracy": 0.775
+      },
+      "0.5": {
+        "best_case_accuracy": 0.75
+      }
+    },
+    "pong": {
+      "0.0": {
+        "best_case_accuracy": 1.0
+      },
+      "0.05": {
+        "best_case_accuracy": 0.9667
+      },
+      "0.1": {
+        "best_case_accuracy": 0.9333
+      },
+      "0.15": {
+        "best_case_accuracy": 0.9
+      },
+      "0.2": {
+        "best_case_accuracy": 0.8667
+      },
+      "0.25": {
+        "best_case_accuracy": 0.8333
+      },
+      "0.3": {
+        "best_case_accuracy": 0.8
+      },
+      "0.35": {
+        "best_case_accuracy": 0.7667
+      },
+      "0.4": {
+        "best_case_accuracy": 0.7333
+      },
+      "0.45": {
+        "best_case_accuracy": 0.7
+      },
+      "0.5": {
+        "best_case_accuracy": 0.6667
+      }
+    },
+    "_note": "success in bimodal.py is mean trials-to-criterion < 20. The rule rows are a BEST CASE: perfect greedy knowledge, only eps-noise. Where the best case already fails, the region is unusable regardless of learning."
+  },
+  "strictness": {
+    "rule": {
+      "n_prototypes": 256,
+      "absorbed_sim_mean_median": 0.92306,
+      "absorbed_sim_sd_median": 0.04144,
+      "sd_is_at_floor_frac": 0.012,
+      "cosine_between_distinct_keys": {
+        "min": -0.2528,
+        "p01": -0.14877,
+        "median": 0.33481
+      },
+      "k_at_which_spawn_dies_vs_min_cos": 28.449,
+      "k_at_which_spawn_dies_vs_p01_cos": 25.929,
+      "k_reachable_now": {
+        "infant": 1.6,
+        "adult": 9.6,
+        "adult_at_strict_scale_1_5": 4.5
+      }
+    },
+    "dms16": {
+      "n_prototypes": 28,
+      "absorbed_sim_mean_median": 0.99974,
+      "absorbed_sim_sd_median": 0.02,
+      "sd_is_at_floor_frac": 0.704,
+      "cosine_between_distinct_keys": {
+        "min": 0.0,
+        "p01": 0.0,
+        "median": 0.99784
+      },
+      "k_at_which_spawn_dies_vs_min_cos": 49.987,
+      "k_at_which_spawn_dies_vs_p01_cos": 49.987,
+      "k_reachable_now": {
+        "infant": 1.6,
+        "adult": 9.6,
+        "adult_at_strict_scale_1_5": 4.5
+      }
+    },
+    "pong": {
+      "n_prototypes": 256,
+      "absorbed_sim_mean_median": 0.98683,
+      "absorbed_sim_sd_median": 0.02,
+      "sd_is_at_floor_frac": 0.908,
+      "cosine_between_distinct_keys": {
+        "min": -0.02225,
+        "p01": 0.19986,
+        "median": 0.56794
+      },
+      "k_at_which_spawn_dies_vs_min_cos": 50.454,
+      "k_at_which_spawn_dies_vs_p01_cos": 39.349,
+      "k_reachable_now": {
+        "infant": 1.6,
+        "adult": 9.6,
+        "adult_at_strict_scale_1_5": 4.5
+      }
+    },
+    "_note": "k_at_which_spawn_dies is the effective strictness k where mean - k*sd falls below the lowest cosine the task can produce. Above it the organism can never spawn again, whatever it sees. Compare with k_reachable_now.adult."
+  },
+  "degenerate_regions": {
+    "sampling": "theta ~ N(0,1)^10, the ES init distribution",
+    "n_sampled": 20000,
+    "frac_eps0_below_eps_floor": 0.1628,
+    "note_eps0": "where eps0 < eps_floor the eps schedule clamps on step 1 and eps0 has NO effect: a dead search dimension.",
+    "frac_eps_settles_after_1e5_steps": 0.0,
+    "frac_trace_tau_gt_CRIT_WINDOW": 0.9946,
+    "frac_lam_horizon_gt_CRIT_WINDOW": 0.0143,
+    "frac_ctx_gain_gt_3": 0.7147,
+    "median_at_theta_zero": {
+      "lam": 0.5,
+      "eta_q": 0.3,
+      "eta_v": 0.3,
+      "eps0": 0.5,
+      "eps_decay": 0.001,
+      "eps_floor": 0.25,
+      "strict_scale": 1.7,
+      "trace_tau": 61.0,
+      "ne_gain": 1.0,
+      "ctx_gain": 4.1
+    },
+    "note_prior": "median_at_theta_zero is where EVERY ES search STARTS. A re-parameterisation moves this as well as the ceiling -- the two effects are not separable by a rescale-style variant."
+  },
+  "margin": {
+    "rule": {
+      "lam=0.0,gain=0.1": {
+        "within": 0.62163,
+        "between": 0.22444,
+        "margin": 0.39719
+      },
+      "lam=0.0,gain=0.5": {
+        "within": 0.55825,
+        "between": 0.23677,
+        "margin": 0.32149
+      },
+      "lam=0.0,gain=1.0": {
+        "within": 0.458,
+        "between": 0.25621,
+        "margin": 0.2018
+      },
+      "lam=0.0,gain=2.0": {
+        "within": 0.3572,
+        "between": 0.2756,
+        "margin": 0.0816
+      },
+      "lam=0.0,gain=3.0": {
+        "within": 0.3233,
+        "between": 0.28204,
+        "margin": 0.04127
+      },
+      "lam=0.0,gain=4.1": {
+        "within": 0.3083,
+        "between": 0.28484,
+        "margin": 0.02346
+      },
+      "lam=0.0,gain=8.1": {
+        "within": 0.29398,
+        "between": 0.28742,
+        "margin": 0.00656
+      },
+      "lam=0.3,gain=0.1": {
+        "within": 0.62365,
+        "between": 0.22517,
+        "margin": 0.39847
+      },
+      "lam=0.3,gain=0.5": {
+        "within": 0.59734,
+        "between": 0.25338,
+        "margin": 0.34397
+      },
+      "lam=0.3,gain=1.0": {
+        "within": 0.54793,
+        "between": 0.30633,
+        "margin": 0.2416
+      },
+      "lam=0.3,gain=2.0": {
+        "within": 0.4849,
+        "between": 0.37373,
+        "margin": 0.11117
+      },
+      "lam=0.3,gain=3.0": {
+        "within": 0.45955,
+        "between": 0.40064,
+        "margin": 0.05892
+      },
+      "lam=0.3,gain=4.1": {
+        "within": 0.44748,
+        "between": 0.41331,
+        "margin": 0.03417
+      },
+      "lam=0.3,gain=8.1": {
+        "within": 0.43537,
+        "between": 0.4257,
+        "margin": 0.00966
+      },
+      "lam=0.5,gain=0.1": {
+        "within": 0.62454,
+        "between": 0.22549,
+        "margin": 0.39905
+      },
+      "lam=0.5,gain=0.5": {
+        "within": 0.61637,
+        "between": 0.2614,
+        "margin": 0.35497
+      },
+      "lam=0.5,gain=1.0": {
+        "within": 0.59991,
+        "between": 0.33527,
+        "margin": 0.26465
+      },
+      "lam=0.5,gain=2.0": {
+        "within": 0.5765,
+        "between": 0.44416,
+        "margin": 0.13234
+      },
+      "lam=0.5,gain=3.0": {
+        "within": 0.56614,
+        "between": 0.49349,
+        "margin": 0.07266
+      },
+      "lam=0.5,gain=4.1": {
+        "within": 0.56095,
+        "between": 0.51813,
+        "margin": 0.04282
+      },
+      "lam=0.5,gain=8.1": {
+        "within": 0.55543,
+        "between": 0.54325,
+        "margin": 0.01218
+      },
+      "lam=0.7,gain=0.1": {
+        "within": 0.62522,
+        "between": 0.22573,
+        "margin": 0.39949
+      },
+      "lam=0.7,gain=0.5": {
+        "within": 0.63148,
+        "between": 0.26759,
+        "margin": 0.36389
+      },
+      "lam=0.7,gain=1.0": {
+        "within": 0.64559,
+        "between": 0.36033,
+        "margin": 0.28526
+      },
+      "lam=0.7,gain=2.0": {
+        "within": 0.66989,
+        "between": 0.51556,
+        "margin": 0.15433
+      },
+      "lam=0.7,gain=3.0": {
+        "within": 0.68245,
+        "between": 0.5944,
+        "margin": 0.08805
+      },
+      "lam=0.7,gain=4.1": {
+        "within": 0.68908,
+        "between": 0.63612,
+        "margin": 0.05295
+      },
+      "lam=0.7,gain=8.1": {
+        "within": 0.69592,
+        "between": 0.68053,
+        "margin": 0.01539
+      },
+      "lam=0.9,gain=0.1": {
+        "within": 0.62571,
+        "between": 0.22582,
+        "margin": 0.39988
+      },
+      "lam=0.9,gain=0.5": {
+        "within": 0.6429,
+        "between": 0.2708,
+        "margin": 0.3721
+      },
+      "lam=0.9,gain=1.0": {
+        "within": 0.68368,
+        "between": 0.3774,
+        "margin": 0.30629
+      },
+      "lam=0.9,gain=2.0": {
+        "within": 0.76135,
+        "between": 0.58011,
+        "margin": 0.18124
+      },
+      "lam=0.9,gain=3.0": {
+        "within": 0.80631,
+        "between": 0.69717,
+        "margin": 0.10914
+      },
+      "lam=0.9,gain=4.1": {
+        "within": 0.83213,
+        "between": 0.76416,
+        "margin": 0.06797
+      },
+      "lam=0.9,gain=8.1": {
+        "within": 0.86195,
+        "between": 0.84104,
+        "margin": 0.02091
+      },
+      "lam=0.95,gain=0.1": {
+        "within": 0.62572,
+        "between": 0.2257,
+        "margin": 0.40003
+      },
+      "lam=0.95,gain=0.5": {
+        "within": 0.64347,
+        "between": 0.26821,
+        "margin": 0.37527
+      },
+      "lam=0.95,gain=1.0": {
+        "within": 0.68655,
+        "between": 0.37138,
+        "margin": 0.31517
+      },
+      "lam=0.95,gain=2.0": {
+        "within": 0.77288,
+        "between": 0.57789,
+        "margin": 0.19499
+      },
+      "lam=0.95,gain=3.0": {
+        "within": 0.82627,
+        "between": 0.70474,
+        "margin": 0.12152
+      },
+      "lam=0.95,gain=4.1": {
+        "within": 0.85881,
+        "between": 0.78104,
+        "margin": 0.07777
+      },
+      "lam=0.95,gain=8.1": {
+        "within": 0.9003,
+        "between": 0.87501,
+        "margin": 0.02528
+      },
+      "lam=0.99,gain=0.1": {
+        "within": 0.62526,
+        "between": 0.2247,
+        "margin": 0.40056
+      },
+      "lam=0.99,gain=0.5": {
+        "within": 0.63279,
+        "between": 0.24532,
+        "margin": 0.38748
+      },
+      "lam=0.99,gain=1.0": {
+        "within": 0.6531,
+        "between": 0.30049,
+        "margin": 0.35261
+      },
+      "lam=0.99,gain=2.0": {
+        "within": 0.70589,
+        "between": 0.44046,
+        "margin": 0.26543
+      },
+      "lam=0.99,gain=3.0": {
+        "within": 0.75199,
+        "between": 0.55735,
+        "margin": 0.19465
+      },
+      "lam=0.99,gain=4.1": {
+        "within": 0.78948,
+        "between": 0.64747,
+        "margin": 0.14201
+      },
+      "lam=0.99,gain=8.1": {
+        "within": 0.85962,
+        "between": 0.79975,
+        "margin": 0.05988
+      }
+    },
+    "dms16": {
+      "lam=0.0,gain=0.1": {
+        "within": 1.0,
+        "between": 0.48085,
+        "margin": 0.51915
+      },
+      "lam=0.0,gain=0.5": {
+        "within": 1.0,
+        "between": 0.51918,
+        "margin": 0.48082
+      },
+      "lam=0.0,gain=1.0": {
+        "within": 1.0,
+        "between": 0.60934,
+        "margin": 0.39066
+      },
+      "lam=0.0,gain=2.0": {
+        "within": 1.0,
+        "between": 0.77676,
+        "margin": 0.22324
+      },
+      "lam=0.0,gain=3.0": {
+        "within": 1.0,
+        "between": 0.86978,
+        "margin": 0.13022
+      },
+      "lam=0.0,gain=4.1": {
+        "within": 1.0,
+        "between": 0.92112,
+        "margin": 0.07888
+      },
+      "lam=0.0,gain=8.1": {
+        "within": 1.0,
+        "between": 0.97722,
+        "margin": 0.02278
+      },
+      "lam=0.3,gain=0.1": {
+        "within": 1.0,
+        "between": 0.48085,
+        "margin": 0.51915
+      },
+      "lam=0.3,gain=0.5": {
+        "within": 1.0,
+        "between": 0.51918,
+        "margin": 0.48082
+      },
+      "lam=0.3,gain=1.0": {
+        "within": 1.0,
+        "between": 0.60934,
+        "margin": 0.39066
+      },
+      "lam=0.3,gain=2.0": {
+        "within": 1.0,
+        "between": 0.77676,
+        "margin": 0.22324
+      },
+      "lam=0.3,gain=3.0": {
+        "within": 1.0,
+        "between": 0.86978,
+        "margin": 0.13022
+      },
+      "lam=0.3,gain=4.1": {
+        "within": 1.0,
+        "between": 0.92112,
+        "margin": 0.07888
+      },
+      "lam=0.3,gain=8.1": {
+        "within": 1.0,
+        "between": 0.97722,
+        "margin": 0.02278
+      },
+      "lam=0.5,gain=0.1": {
+        "within": 1.0,
+        "between": 0.48085,
+        "margin": 0.51915
+      },
+      "lam=0.5,gain=0.5": {
+        "within": 1.0,
+        "between": 0.51918,
+        "margin": 0.48082
+      },
+      "lam=0.5,gain=1.0": {
+        "within": 1.0,
+        "between": 0.60933,
+        "margin": 0.39067
+      },
+      "lam=0.5,gain=2.0": {
+        "within": 1.0,
+        "between": 0.77676,
+        "margin": 0.22324
+      },
+      "lam=0.5,gain=3.0": {
+        "within": 1.0,
+        "between": 0.86977,
+        "margin": 0.13023
+      },
+      "lam=0.5,gain=4.1": {
+        "within": 1.0,
+        "between": 0.92111,
+        "margin": 0.07889
+      },
+      "lam=0.5,gain=8.1": {
+        "within": 1.0,
+        "between": 0.97722,
+        "margin": 0.02278
+      },
+      "lam=0.7,gain=0.1": {
+        "within": 1.0,
+        "between": 0.48083,
+        "margin": 0.51917
+      },
+      "lam=0.7,gain=0.5": {
+        "within": 1.0,
+        "between": 0.51883,
+        "margin": 0.48117
+      },
+      "lam=0.7,gain=1.0": {
+        "within": 1.0,
+        "between": 0.60841,
+        "margin": 0.39159
+      },
+      "lam=0.7,gain=2.0": {
+        "within": 1.0,
+        "between": 0.77555,
+        "margin": 0.22445
+      },
+      "lam=0.7,gain=3.0": {
+        "within": 1.0,
+        "between": 0.86885,
+        "margin": 0.13115
+      },
+      "lam=0.7,gain=4.1": {
+        "within": 1.0,
+        "between": 0.92048,
+        "margin": 0.07952
+      },
+      "lam=0.7,gain=8.1": {
+        "within": 1.0,
+        "between": 0.97701,
+        "margin": 0.02299
+      },
+      "lam=0.9,gain=0.1": {
+        "within": 1.0,
+        "between": 0.48021,
+        "margin": 0.51979
+      },
+      "lam=0.9,gain=0.5": {
+        "within": 1.0,
+        "between": 0.50513,
+        "margin": 0.49487
+      },
+      "lam=0.9,gain=1.0": {
+        "within": 1.0,
+        "between": 0.5696,
+        "margin": 0.4304
+      },
+      "lam=0.9,gain=2.0": {
+        "within": 1.0,
+        "between": 0.71697,
+        "margin": 0.28303
+      },
+      "lam=0.9,gain=3.0": {
+        "within": 1.0,
+        "between": 0.81969,
+        "margin": 0.18031
+      },
+      "lam=0.9,gain=4.1": {
+        "within": 1.0,
+        "between": 0.88482,
+        "margin": 0.11518
+      },
+      "lam=0.9,gain=8.1": {
+        "within": 1.0,
+        "between": 0.96434,
+        "margin": 0.03566
+      },
+      "lam=0.95,gain=0.1": {
+        "within": 1.0,
+        "between": 0.47962,
+        "margin": 0.52038
+      },
+      "lam=0.95,gain=0.5": {
+        "within": 1.0,
+        "between": 0.49134,
+        "margin": 0.50866
+      },
+      "lam=0.95,gain=1.0": {
+        "within": 1.0,
+        "between": 0.52478,
+        "margin": 0.47522
+      },
+      "lam=0.95,gain=2.0": {
+        "within": 1.0,
+        "between": 0.62365,
+        "margin": 0.37635
+      },
+      "lam=0.95,gain=3.0": {
+        "within": 1.0,
+        "between": 0.72039,
+        "margin": 0.27961
+      },
+      "lam=0.95,gain=4.1": {
+        "within": 1.0,
+        "between": 0.80031,
+        "margin": 0.19969
+      },
+      "lam=0.95,gain=8.1": {
+        "within": 1.0,
+        "between": 0.92763,
+        "margin": 0.07237
+      },
+      "lam=0.99,gain=0.1": {
+        "within": 1.0,
+        "between": 0.47915,
+        "margin": 0.52085
+      },
+      "lam=0.99,gain=0.5": {
+        "within": 1.0,
+        "between": 0.47997,
+        "margin": 0.52003
+      },
+      "lam=0.99,gain=1.0": {
+        "within": 1.0,
+        "between": 0.4825,
+        "margin": 0.5175
+      },
+      "lam=0.99,gain=2.0": {
+        "within": 1.0,
+        "between": 0.49239,
+        "margin": 0.50761
+      },
+      "lam=0.99,gain=3.0": {
+        "within": 1.0,
+        "between": 0.50806,
+        "margin": 0.49194
+      },
+      "lam=0.99,gain=4.1": {
+        "within": 1.0,
+        "between": 0.53068,
+        "margin": 0.46932
+      },
+      "lam=0.99,gain=8.1": {
+        "within": 1.0,
+        "between": 0.63526,
+        "margin": 0.36474
+      }
+    },
+    "pong": {
+      "lam=0.0,gain=0.1": {
+        "within": 0.61081,
+        "between": 0.57744,
+        "margin": 0.03337
+      },
+      "lam=0.0,gain=0.5": {
+        "within": 0.60952,
+        "between": 0.57655,
+        "margin": 0.03298
+      },
+      "lam=0.0,gain=1.0": {
+        "within": 0.60768,
+        "between": 0.57527,
+        "margin": 0.03241
+      },
+      "lam=0.0,gain=2.0": {
+        "within": 0.60579,
+        "between": 0.57382,
+        "margin": 0.03197
+      },
+      "lam=0.0,gain=3.0": {
+        "within": 0.60497,
+        "between": 0.57307,
+        "margin": 0.0319
+      },
+      "lam=0.0,gain=4.1": {
+        "within": 0.60448,
+        "between": 0.57258,
+        "margin": 0.0319
+      },
+      "lam=0.0,gain=8.1": {
+        "within": 0.60376,
+        "between": 0.57181,
+        "margin": 0.03195
+      },
+      "lam=0.3,gain=0.1": {
+        "within": 0.61177,
+        "between": 0.57838,
+        "margin": 0.03339
+      },
+      "lam=0.3,gain=0.5": {
+        "within": 0.62958,
+        "between": 0.59608,
+        "margin": 0.03349
+      },
+      "lam=0.3,gain=1.0": {
+        "within": 0.66063,
+        "between": 0.62708,
+        "margin": 0.03354
+      },
+      "lam=0.3,gain=2.0": {
+        "within": 0.69601,
+        "between": 0.66258,
+        "margin": 0.03343
+      },
+      "lam=0.3,gain=3.0": {
+        "within": 0.70888,
+        "between": 0.67552,
+        "margin": 0.03337
+      },
+      "lam=0.3,gain=4.1": {
+        "within": 0.71465,
+        "between": 0.68129,
+        "margin": 0.03336
+      },
+      "lam=0.3,gain=8.1": {
+        "within": 0.71993,
+        "between": 0.68654,
+        "margin": 0.0334
+      },
+      "lam=0.5,gain=0.1": {
+        "within": 0.61219,
+        "between": 0.57879,
+        "margin": 0.0334
+      },
+      "lam=0.5,gain=0.5": {
+        "within": 0.63872,
+        "between": 0.60521,
+        "margin": 0.03351
+      },
+      "lam=0.5,gain=1.0": {
+        "within": 0.68678,
+        "between": 0.65322,
+        "margin": 0.03356
+      },
+      "lam=0.5,gain=2.0": {
+        "within": 0.74485,
+        "between": 0.71153,
+        "margin": 0.03331
+      },
+      "lam=0.5,gain=3.0": {
+        "within": 0.76715,
+        "between": 0.73399,
+        "margin": 0.03316
+      },
+      "lam=0.5,gain=4.1": {
+        "within": 0.77749,
+        "between": 0.74439,
+        "margin": 0.03309
+      },
+      "lam=0.5,gain=8.1": {
+        "within": 0.78741,
+        "between": 0.75432,
+        "margin": 0.03308
+      },
+      "lam=0.7,gain=0.1": {
+        "within": 0.61248,
+        "between": 0.57911,
+        "margin": 0.03338
+      },
+      "lam=0.7,gain=0.5": {
+        "within": 0.64538,
+        "between": 0.61227,
+        "margin": 0.03311
+      },
+      "lam=0.7,gain=1.0": {
+        "within": 0.70689,
+        "between": 0.67447,
+        "margin": 0.03242
+      },
+      "lam=0.7,gain=2.0": {
+        "within": 0.785,
+        "between": 0.75397,
+        "margin": 0.03103
+      },
+      "lam=0.7,gain=3.0": {
+        "within": 0.81647,
+        "between": 0.78618,
+        "margin": 0.03029
+      },
+      "lam=0.7,gain=4.1": {
+        "within": 0.83158,
+        "between": 0.80165,
+        "margin": 0.02993
+      },
+      "lam=0.7,gain=8.1": {
+        "within": 0.84687,
+        "between": 0.81723,
+        "margin": 0.02963
+      },
+      "lam=0.9,gain=0.1": {
+        "within": 0.6126,
+        "between": 0.57929,
+        "margin": 0.03331
+      },
+      "lam=0.9,gain=0.5": {
+        "within": 0.6484,
+        "between": 0.61681,
+        "margin": 0.0316
+      },
+      "lam=0.9,gain=1.0": {
+        "within": 0.71834,
+        "between": 0.69025,
+        "margin": 0.0281
+      },
+      "lam=0.9,gain=2.0": {
+        "within": 0.81496,
+        "between": 0.79234,
+        "margin": 0.02261
+      },
+      "lam=0.9,gain=3.0": {
+        "within": 0.85799,
+        "between": 0.83829,
+        "margin": 0.0197
+      },
+      "lam=0.9,gain=4.1": {
+        "within": 0.8803,
+        "between": 0.86233,
+        "margin": 0.01797
+      },
+      "lam=0.9,gain=8.1": {
+        "within": 0.90578,
+        "between": 0.89005,
+        "margin": 0.01573
+      },
+      "lam=0.95,gain=0.1": {
+        "within": 0.61242,
+        "between": 0.57914,
+        "margin": 0.03328
+      },
+      "lam=0.95,gain=0.5": {
+        "within": 0.64481,
+        "between": 0.61375,
+        "margin": 0.03106
+      },
+      "lam=0.95,gain=1.0": {
+        "within": 0.71052,
+        "between": 0.68382,
+        "margin": 0.0267
+      },
+      "lam=0.95,gain=2.0": {
+        "within": 0.80858,
+        "between": 0.78839,
+        "margin": 0.02018
+      },
+      "lam=0.95,gain=3.0": {
+        "within": 0.85687,
+        "between": 0.84023,
+        "margin": 0.01664
+      },
+      "lam=0.95,gain=4.1": {
+        "within": 0.88409,
+        "between": 0.86973,
+        "margin": 0.01437
+      },
+      "lam=0.95,gain=8.1": {
+        "within": 0.91885,
+        "between": 0.90808,
+        "margin": 0.01077
+      },
+      "lam=0.99,gain=0.1": {
+        "within": 0.61131,
+        "between": 0.57799,
+        "margin": 0.03332
+      },
+      "lam=0.99,gain=0.5": {
+        "within": 0.62104,
+        "between": 0.58917,
+        "margin": 0.03187
+      },
+      "lam=0.99,gain=1.0": {
+        "within": 0.64569,
+        "between": 0.61719,
+        "margin": 0.0285
+      },
+      "lam=0.99,gain=2.0": {
+        "within": 0.70342,
+        "between": 0.68102,
+        "margin": 0.02241
+      },
+      "lam=0.99,gain=3.0": {
+        "within": 0.75049,
+        "between": 0.73129,
+        "margin": 0.0192
+      },
+      "lam=0.99,gain=4.1": {
+        "within": 0.78811,
+        "between": 0.77064,
+        "margin": 0.01747
+      },
+      "lam=0.99,gain=8.1": {
+        "within": 0.85925,
+        "between": 0.84475,
+        "margin": 0.01449
+      }
+    },
+    "_note": "margin = mean cosine(same class) - mean cosine(different class), on the L2-normalised key the organism actually matches on. margin -> 0 means the prototype memory is physically unable to separate the classes the task scores, whatever it learns."
+  },
+  "rule_tradeoff": {
+    "lam=0.0,gain=0.1": {
+      "card_margin": 0.39635,
+      "rule_margin": -0.00033,
+      "weaker_of_the_two": -0.00033
+    },
+    "lam=0.0,gain=0.25": {
+      "card_margin": 0.37687,
+      "rule_margin": -0.0002,
+      "weaker_of_the_two": -0.0002
+    },
+    "lam=0.0,gain=0.5": {
+      "card_margin": 0.32063,
+      "rule_margin": 0.00018,
+      "weaker_of_the_two": 0.00018
+    },
+    "lam=0.0,gain=0.8": {
+      "card_margin": 0.24476,
+      "rule_margin": 0.00068,
+      "weaker_of_the_two": 0.00068
+    },
+    "lam=0.0,gain=1.0": {
+      "card_margin": 0.20094,
+      "rule_margin": 0.00098,
+      "weaker_of_the_two": 0.00098
+    },
+    "lam=0.0,gain=1.5": {
+      "card_margin": 0.12402,
+      "rule_margin": 0.00149,
+      "weaker_of_the_two": 0.00149
+    },
+    "lam=0.0,gain=2.0": {
+      "card_margin": 0.08083,
+      "rule_margin": 0.00178,
+      "weaker_of_the_two": 0.00178
+    },
+    "lam=0.0,gain=3.0": {
+      "card_margin": 0.04059,
+      "rule_margin": 0.00205,
+      "weaker_of_the_two": 0.00205
+    },
+    "lam=0.0,gain=4.1": {
+      "card_margin": 0.02285,
+      "rule_margin": 0.00216,
+      "weaker_of_the_two": 0.00216
+    },
+    "lam=0.0,gain=8.1": {
+      "card_margin": 0.00606,
+      "rule_margin": 0.00227,
+      "weaker_of_the_two": 0.00227
+    },
+    "lam=0.1,gain=0.1": {
+      "card_margin": 0.39687,
+      "rule_margin": -0.00033,
+      "weaker_of_the_two": -0.00033
+    },
+    "lam=0.1,gain=0.25": {
+      "card_margin": 0.3798,
+      "rule_margin": -0.0002,
+      "weaker_of_the_two": -0.0002
+    },
+    "lam=0.1,gain=0.5": {
+      "card_margin": 0.32929,
+      "rule_margin": 0.00018,
+      "weaker_of_the_two": 0.00018
+    },
+    "lam=0.1,gain=0.8": {
+      "card_margin": 0.25805,
+      "rule_margin": 0.00072,
+      "weaker_of_the_two": 0.00072
+    },
+    "lam=0.1,gain=1.0": {
+      "card_margin": 0.21516,
+      "rule_margin": 0.00105,
+      "weaker_of_the_two": 0.00105
+    },
+    "lam=0.1,gain=1.5": {
+      "card_margin": 0.13654,
+      "rule_margin": 0.00166,
+      "weaker_of_the_two": 0.00166
+    },
+    "lam=0.1,gain=2.0": {
+      "card_margin": 0.09041,
+      "rule_margin": 0.00201,
+      "weaker_of_the_two": 0.00201
+    },
+    "lam=0.1,gain=3.0": {
+      "card_margin": 0.04605,
+      "rule_margin": 0.00236,
+      "weaker_of_the_two": 0.00236
+    },
+    "lam=0.1,gain=4.1": {
+      "card_margin": 0.02606,
+      "rule_margin": 0.00251,
+      "weaker_of_the_two": 0.00251
+    },
+    "lam=0.1,gain=8.1": {
+      "card_margin": 0.0069,
+      "rule_margin": 0.00264,
+      "weaker_of_the_two": 0.00264
+    },
+    "lam=0.3,gain=0.1": {
+      "card_margin": 0.39766,
+      "rule_margin": -0.00033,
+      "weaker_of_the_two": -0.00033
+    },
+    "lam=0.3,gain=0.25": {
+      "card_margin": 0.3844,
+      "rule_margin": -0.00021,
+      "weaker_of_the_two": -0.00021
+    },
+    "lam=0.3,gain=0.5": {
+      "card_margin": 0.34361,
+      "rule_margin": 0.00016,
+      "weaker_of_the_two": 0.00016
+    },
+    "lam=0.3,gain=0.8": {
+      "card_margin": 0.28174,
+      "rule_margin": 0.00072,
+      "weaker_of_the_two": 0.00072
+    },
+    "lam=0.3,gain=1.0": {
+      "card_margin": 0.24173,
+      "rule_margin": 0.00108,
+      "weaker_of_the_two": 0.00108
+    },
+    "lam=0.3,gain=1.5": {
+      "card_margin": 0.16217,
+      "rule_margin": 0.00182,
+      "weaker_of_the_two": 0.00182
+    },
+    "lam=0.3,gain=2.0": {
+      "card_margin": 0.11116,
+      "rule_margin": 0.00229,
+      "weaker_of_the_two": 0.00229
+    },
+    "lam=0.3,gain=3.0": {
+      "card_margin": 0.05861,
+      "rule_margin": 0.00277,
+      "weaker_of_the_two": 0.00277
+    },
+    "lam=0.3,gain=4.1": {
+      "card_margin": 0.03368,
+      "rule_margin": 0.003,
+      "weaker_of_the_two": 0.003
+    },
+    "lam=0.3,gain=8.1": {
+      "card_margin": 0.00901,
+      "rule_margin": 0.00322,
+      "weaker_of_the_two": 0.00322
+    },
+    "lam=0.5,gain=0.1": {
+      "card_margin": 0.39825,
+      "rule_margin": -0.00034,
+      "weaker_of_the_two": -0.00034
+    },
+    "lam=0.5,gain=0.25": {
+      "card_margin": 0.38786,
+      "rule_margin": -0.00023,
+      "weaker_of_the_two": -0.00023
+    },
+    "lam=0.5,gain=0.5": {
+      "card_margin": 0.35493,
+      "rule_margin": 9e-05,
+      "weaker_of_the_two": 9e-05
+    },
+    "lam=0.5,gain=0.8": {
+      "card_margin": 0.30198,
+      "rule_margin": 0.00061,
+      "weaker_of_the_two": 0.00061
+    },
+    "lam=0.5,gain=1.0": {
+      "card_margin": 0.26564,
+      "rule_margin": 0.00097,
+      "weaker_of_the_two": 0.00097
+    },
+    "lam=0.5,gain=1.5": {
+      "card_margin": 0.18778,
+      "rule_margin": 0.00173,
+      "weaker_of_the_two": 0.00173
+    },
+    "lam=0.5,gain=2.0": {
+      "card_margin": 0.13341,
+      "rule_margin": 0.00226,
+      "weaker_of_the_two": 0.00226
+    },
+    "lam=0.5,gain=3.0": {
+      "card_margin": 0.07317,
+      "rule_margin": 0.00284,
+      "weaker_of_the_two": 0.00284
+    },
+    "lam=0.5,gain=4.1": {
+      "card_margin": 0.04292,
+      "rule_margin": 0.00314,
+      "weaker_of_the_two": 0.00314
+    },
+    "lam=0.5,gain=8.1": {
+      "card_margin": 0.0118,
+      "rule_margin": 0.00343,
+      "weaker_of_the_two": 0.00343
+    },
+    "lam=0.7,gain=0.1": {
+      "card_margin": 0.39871,
+      "rule_margin": -0.00034,
+      "weaker_of_the_two": -0.00034
+    },
+    "lam=0.7,gain=0.25": {
+      "card_margin": 0.39061,
+      "rule_margin": -0.00026,
+      "weaker_of_the_two": -0.00026
+    },
+    "lam=0.7,gain=0.5": {
+      "card_margin": 0.36426,
+      "rule_margin": 2e-05,
+      "weaker_of_the_two": 2e-05
+    },
+    "lam=0.7,gain=0.8": {
+      "card_margin": 0.31969,
+      "rule_margin": 0.00047,
+      "weaker_of_the_two": 0.00047
+    },
+    "lam=0.7,gain=1.0": {
+      "card_margin": 0.28743,
+      "rule_margin": 0.0008,
+      "weaker_of_the_two": 0.0008
+    },
+    "lam=0.7,gain=1.5": {
+      "card_margin": 0.2133,
+      "rule_margin": 0.00153,
+      "weaker_of_the_two": 0.00153
+    },
+    "lam=0.7,gain=2.0": {
+      "card_margin": 0.15708,
+      "rule_margin": 0.00207,
+      "weaker_of_the_two": 0.00207
+    },
+    "lam=0.7,gain=3.0": {
+      "card_margin": 0.08993,
+      "rule_margin": 0.00272,
+      "weaker_of_the_two": 0.00272
+    },
+    "lam=0.7,gain=4.1": {
+      "card_margin": 0.05407,
+      "rule_margin": 0.00306,
+      "weaker_of_the_two": 0.00306
+    },
+    "lam=0.7,gain=8.1": {
+      "card_margin": 0.0155,
+      "rule_margin": 0.00344,
+      "weaker_of_the_two": 0.00344
+    },
+    "lam=0.8,gain=0.1": {
+      "card_margin": 0.39891,
+      "rule_margin": -0.00034,
+      "weaker_of_the_two": -0.00034
+    },
+    "lam=0.8,gain=0.25": {
+      "card_margin": 0.39181,
+      "rule_margin": -0.00026,
+      "weaker_of_the_two": -0.00026
+    },
+    "lam=0.8,gain=0.5": {
+      "card_margin": 0.36844,
+      "rule_margin": -0.0,
+      "weaker_of_the_two": -0.0
+    },
+    "lam=0.8,gain=0.8": {
+      "card_margin": 0.32797,
+      "rule_margin": 0.00044,
+      "weaker_of_the_two": 0.00044
+    },
+    "lam=0.8,gain=1.0": {
+      "card_margin": 0.29793,
+      "rule_margin": 0.00076,
+      "weaker_of_the_two": 0.00076
+    },
+    "lam=0.8,gain=1.5": {
+      "card_margin": 0.22648,
+      "rule_margin": 0.00151,
+      "weaker_of_the_two": 0.00151
+    },
+    "lam=0.8,gain=2.0": {
+      "card_margin": 0.16996,
+      "rule_margin": 0.0021,
+      "weaker_of_the_two": 0.0021
+    },
+    "lam=0.8,gain=3.0": {
+      "card_margin": 0.09969,
+      "rule_margin": 0.00282,
+      "weaker_of_the_two": 0.00282
+    },
+    "lam=0.8,gain=4.1": {
+      "card_margin": 0.06083,
+      "rule_margin": 0.00322,
+      "weaker_of_the_two": 0.00322
+    },
+    "lam=0.8,gain=8.1": {
+      "card_margin": 0.01788,
+      "rule_margin": 0.00369,
+      "weaker_of_the_two": 0.00369
+    },
+    "lam=0.9,gain=0.1": {
+      "card_margin": 0.39911,
+      "rule_margin": -0.00034,
+      "weaker_of_the_two": -0.00034
+    },
+    "lam=0.9,gain=0.25": {
+      "card_margin": 0.39299,
+      "rule_margin": -0.00027,
+      "weaker_of_the_two": -0.00027
+    },
+    "lam=0.9,gain=0.5": {
+      "card_margin": 0.37264,
+      "rule_margin": -3e-05,
+      "weaker_of_the_two": -3e-05
+    },
+    "lam=0.9,gain=0.8": {
+      "card_margin": 0.33657,
+      "rule_margin": 0.0004,
+      "weaker_of_the_two": 0.0004
+    },
+    "lam=0.9,gain=1.0": {
+      "card_margin": 0.30912,
+      "rule_margin": 0.00073,
+      "weaker_of_the_two": 0.00073
+    },
+    "lam=0.9,gain=1.5": {
+      "card_margin": 0.24141,
+      "rule_margin": 0.00151,
+      "weaker_of_the_two": 0.00151
+    },
+    "lam=0.9,gain=2.0": {
+      "card_margin": 0.18533,
+      "rule_margin": 0.00214,
+      "weaker_of_the_two": 0.00214
+    },
+    "lam=0.9,gain=3.0": {
+      "card_margin": 0.11221,
+      "rule_margin": 0.00294,
+      "weaker_of_the_two": 0.00294
+    },
+    "lam=0.9,gain=4.1": {
+      "card_margin": 0.06995,
+      "rule_margin": 0.00338,
+      "weaker_of_the_two": 0.00338
+    },
+    "lam=0.9,gain=8.1": {
+      "card_margin": 0.02134,
+      "rule_margin": 0.00389,
+      "weaker_of_the_two": 0.00389
+    },
+    "lam=0.95,gain=0.1": {
+      "card_margin": 0.39924,
+      "rule_margin": -0.00034,
+      "weaker_of_the_two": -0.00034
+    },
+    "lam=0.95,gain=0.25": {
+      "card_margin": 0.3938,
+      "rule_margin": -0.00028,
+      "weaker_of_the_two": -0.00028
+    },
+    "lam=0.95,gain=0.5": {
+      "card_margin": 0.37557,
+      "rule_margin": -7e-05,
+      "weaker_of_the_two": -7e-05
+    },
+    "lam=0.95,gain=0.8": {
+      "card_margin": 0.34281,
+      "rule_margin": 0.00032,
+      "weaker_of_the_two": 0.00032
+    },
+    "lam=0.95,gain=1.0": {
+      "card_margin": 0.31748,
+      "rule_margin": 0.00061,
+      "weaker_of_the_two": 0.00061
+    },
+    "lam=0.95,gain=1.5": {
+      "card_margin": 0.25343,
+      "rule_margin": 0.00134,
+      "weaker_of_the_two": 0.00134
+    },
+    "lam=0.95,gain=2.0": {
+      "card_margin": 0.19858,
+      "rule_margin": 0.00194,
+      "weaker_of_the_two": 0.00194
+    },
+    "lam=0.95,gain=3.0": {
+      "card_margin": 0.12422,
+      "rule_margin": 0.00264,
+      "weaker_of_the_two": 0.00264
+    },
+    "lam=0.95,gain=4.1": {
+      "card_margin": 0.07944,
+      "rule_margin": 0.00296,
+      "weaker_of_the_two": 0.00296
+    },
+    "lam=0.95,gain=8.1": {
+      "card_margin": 0.0255,
+      "rule_margin": 0.00312,
+      "weaker_of_the_two": 0.00312
+    },
+    "lam=0.99,gain=0.1": {
+      "card_margin": 0.39968,
+      "rule_margin": -0.00035,
+      "weaker_of_the_two": -0.00035
+    },
+    "lam=0.99,gain=0.25": {
+      "card_margin": 0.39652,
+      "rule_margin": -0.0003,
+      "weaker_of_the_two": -0.0003
+    },
+    "lam=0.99,gain=0.5": {
+      "card_margin": 0.38571,
+      "rule_margin": -0.00012,
+      "weaker_of_the_two": -0.00012
+    },
+    "lam=0.99,gain=0.8": {
+      "card_margin": 0.36539,
+      "rule_margin": 0.00021,
+      "weaker_of_the_two": 0.00021
+    },
+    "lam=0.99,gain=1.0": {
+      "card_margin": 0.34882,
+      "rule_margin": 0.00049,
+      "weaker_of_the_two": 0.00049
+    },
+    "lam=0.99,gain=1.5": {
+      "card_margin": 0.30308,
+      "rule_margin": 0.00128,
+      "weaker_of_the_two": 0.00128
+    },
+    "lam=0.99,gain=2.0": {
+      "card_margin": 0.25854,
+      "rule_margin": 0.00206,
+      "weaker_of_the_two": 0.00206
+    },
+    "lam=0.99,gain=3.0": {
+      "card_margin": 0.18716,
+      "rule_margin": 0.0033,
+      "weaker_of_the_two": 0.0033
+    },
+    "lam=0.99,gain=4.1": {
+      "card_margin": 0.13512,
+      "rule_margin": 0.00406,
+      "weaker_of_the_two": 0.00406
+    },
+    "lam=0.99,gain=8.1": {
+      "card_margin": 0.05573,
+      "rule_margin": 0.00424,
+      "weaker_of_the_two": 0.00424
+    },
+    "_note": "RuleSwitchTask needs BOTH margins positive at once: a key that cannot separate cards cannot act, and a key that cannot separate rules cannot switch. ctx_gain trades one against the other, so the structurally defensible band is where the weaker margin is largest -- a bound derived from the task, with no run accuracy consulted."
+  },
+  "rule_tradeoff_competent": {
+    "lam=0.0,gain=0.1": {
+      "card_margin": 0.40199,
+      "rule_margin": 0.0014,
+      "weaker_of_the_two": 0.0014
+    },
+    "lam=0.0,gain=0.25": {
+      "card_margin": 0.3828,
+      "rule_margin": 0.00145,
+      "weaker_of_the_two": 0.00145
+    },
+    "lam=0.0,gain=0.5": {
+      "card_margin": 0.32731,
+      "rule_margin": 0.00162,
+      "weaker_of_the_two": 0.00162
+    },
+    "lam=0.0,gain=0.8": {
+      "card_margin": 0.25214,
+      "rule_margin": 0.00186,
+      "weaker_of_the_two": 0.00186
+    },
+    "lam=0.0,gain=1.0": {
+      "card_margin": 0.20852,
+      "rule_margin": 0.00199,
+      "weaker_of_the_two": 0.00199
+    },
+    "lam=0.0,gain=1.5": {
+      "card_margin": 0.13143,
+      "rule_margin": 0.00224,
+      "weaker_of_the_two": 0.00224
+    },
+    "lam=0.0,gain=2.0": {
+      "card_margin": 0.08768,
+      "rule_margin": 0.00238,
+      "weaker_of_the_two": 0.00238
+    },
+    "lam=0.0,gain=3.0": {
+      "card_margin": 0.04635,
+      "rule_margin": 0.00253,
+      "weaker_of_the_two": 0.00253
+    },
+    "lam=0.0,gain=4.1": {
+      "card_margin": 0.02777,
+      "rule_margin": 0.00261,
+      "weaker_of_the_two": 0.00261
+    },
+    "lam=0.0,gain=8.1": {
+      "card_margin": 0.00956,
+      "rule_margin": 0.0027,
+      "weaker_of_the_two": 0.0027
+    },
+    "lam=0.1,gain=0.1": {
+      "card_margin": 0.40241,
+      "rule_margin": 0.00139,
+      "weaker_of_the_two": 0.00139
+    },
+    "lam=0.1,gain=0.25": {
+      "card_margin": 0.38521,
+      "rule_margin": 0.00145,
+      "weaker_of_the_two": 0.00145
+    },
+    "lam=0.1,gain=0.5": {
+      "card_margin": 0.3344,
+      "rule_margin": 0.0016,
+      "weaker_of_the_two": 0.0016
+    },
+    "lam=0.1,gain=0.8": {
+      "card_margin": 0.26303,
+      "rule_margin": 0.00183,
+      "weaker_of_the_two": 0.00183
+    },
+    "lam=0.1,gain=1.0": {
+      "card_margin": 0.22018,
+      "rule_margin": 0.00198,
+      "weaker_of_the_two": 0.00198
+    },
+    "lam=0.1,gain=1.5": {
+      "card_margin": 0.14175,
+      "rule_margin": 0.00225,
+      "weaker_of_the_two": 0.00225
+    },
+    "lam=0.1,gain=2.0": {
+      "card_margin": 0.09562,
+      "rule_margin": 0.00242,
+      "weaker_of_the_two": 0.00242
+    },
+    "lam=0.1,gain=3.0": {
+      "card_margin": 0.05093,
+      "rule_margin": 0.0026,
+      "weaker_of_the_two": 0.0026
+    },
+    "lam=0.1,gain=4.1": {
+      "card_margin": 0.03048,
+      "rule_margin": 0.00269,
+      "weaker_of_the_two": 0.00269
+    },
+    "lam=0.1,gain=8.1": {
+      "card_margin": 0.01027,
+      "rule_margin": 0.0028,
+      "weaker_of_the_two": 0.0028
+    },
+    "lam=0.3,gain=0.1": {
+      "card_margin": 0.40307,
+      "rule_margin": 0.00139,
+      "weaker_of_the_two": 0.00139
+    },
+    "lam=0.3,gain=0.25": {
+      "card_margin": 0.38901,
+      "rule_margin": 0.00143,
+      "weaker_of_the_two": 0.00143
+    },
+    "lam=0.3,gain=0.5": {
+      "card_margin": 0.34614,
+      "rule_margin": 0.00154,
+      "weaker_of_the_two": 0.00154
+    },
+    "lam=0.3,gain=0.8": {
+      "card_margin": 0.28222,
+      "rule_margin": 0.00172,
+      "weaker_of_the_two": 0.00172
+    },
+    "lam=0.3,gain=1.0": {
+      "card_margin": 0.24156,
+      "rule_margin": 0.00184,
+      "weaker_of_the_two": 0.00184
+    },
+    "lam=0.3,gain=1.5": {
+      "card_margin": 0.16215,
+      "rule_margin": 0.00208,
+      "weaker_of_the_two": 0.00208
+    },
+    "lam=0.3,gain=2.0": {
+      "card_margin": 0.11207,
+      "rule_margin": 0.00224,
+      "weaker_of_the_two": 0.00224
+    },
+    "lam=0.3,gain=3.0": {
+      "card_margin": 0.06088,
+      "rule_margin": 0.00241,
+      "weaker_of_the_two": 0.00241
+    },
+    "lam=0.3,gain=4.1": {
+      "card_margin": 0.03654,
+      "rule_margin": 0.0025,
+      "weaker_of_the_two": 0.0025
+    },
+    "lam=0.3,gain=8.1": {
+      "card_margin": 0.01191,
+      "rule_margin": 0.0026,
+      "weaker_of_the_two": 0.0026
+    },
+    "lam=0.5,gain=0.1": {
+      "card_margin": 0.40357,
+      "rule_margin": 0.00139,
+      "weaker_of_the_two": 0.00139
+    },
+    "lam=0.5,gain=0.25": {
+      "card_margin": 0.39192,
+      "rule_margin": 0.00142,
+      "weaker_of_the_two": 0.00142
+    },
+    "lam=0.5,gain=0.5": {
+      "card_margin": 0.35553,
+      "rule_margin": 0.00151,
+      "weaker_of_the_two": 0.00151
+    },
+    "lam=0.5,gain=0.8": {
+      "card_margin": 0.29863,
+      "rule_margin": 0.00165,
+      "weaker_of_the_two": 0.00165
+    },
+    "lam=0.5,gain=1.0": {
+      "card_margin": 0.26067,
+      "rule_margin": 0.00174,
+      "weaker_of_the_two": 0.00174
+    },
+    "lam=0.5,gain=1.5": {
+      "card_margin": 0.18208,
+      "rule_margin": 0.00192,
+      "weaker_of_the_two": 0.00192
+    },
+    "lam=0.5,gain=2.0": {
+      "card_margin": 0.12917,
+      "rule_margin": 0.00202,
+      "weaker_of_the_two": 0.00202
+    },
+    "lam=0.5,gain=3.0": {
+      "card_margin": 0.072,
+      "rule_margin": 0.00211,
+      "weaker_of_the_two": 0.00211
+    },
+    "lam=0.5,gain=4.1": {
+      "card_margin": 0.04359,
+      "rule_margin": 0.00214,
+      "weaker_of_the_two": 0.00214
+    },
+    "lam=0.5,gain=8.1": {
+      "card_margin": 0.01401,
+      "rule_margin": 0.00216,
+      "weaker_of_the_two": 0.00216
+    },
+    "lam=0.7,gain=0.1": {
+      "card_margin": 0.40398,
+      "rule_margin": 0.00139,
+      "weaker_of_the_two": 0.00139
+    },
+    "lam=0.7,gain=0.25": {
+      "card_margin": 0.39438,
+      "rule_margin": 0.00144,
+      "weaker_of_the_two": 0.00144
+    },
+    "lam=0.7,gain=0.5": {
+      "card_margin": 0.36374,
+      "rule_margin": 0.00158,
+      "weaker_of_the_two": 0.00158
+    },
+    "lam=0.7,gain=0.8": {
+      "card_margin": 0.31377,
+      "rule_margin": 0.00179,
+      "weaker_of_the_two": 0.00179
+    },
+    "lam=0.7,gain=1.0": {
+      "card_margin": 0.27896,
+      "rule_margin": 0.00192,
+      "weaker_of_the_two": 0.00192
+    },
+    "lam=0.7,gain=1.5": {
+      "card_margin": 0.20282,
+      "rule_margin": 0.00215,
+      "weaker_of_the_two": 0.00215
+    },
+    "lam=0.7,gain=2.0": {
+      "card_margin": 0.14813,
+      "rule_margin": 0.00225,
+      "weaker_of_the_two": 0.00225
+    },
+    "lam=0.7,gain=3.0": {
+      "card_margin": 0.08543,
+      "rule_margin": 0.00227,
+      "weaker_of_the_two": 0.00227
+    },
+    "lam=0.7,gain=4.1": {
+      "card_margin": 0.05263,
+      "rule_margin": 0.0022,
+      "weaker_of_the_two": 0.0022
+    },
+    "lam=0.7,gain=8.1": {
+      "card_margin": 0.01699,
+      "rule_margin": 0.00202,
+      "weaker_of_the_two": 0.00202
+    },
+    "lam=0.8,gain=0.1": {
+      "card_margin": 0.4042,
+      "rule_margin": 0.0014,
+      "weaker_of_the_two": 0.0014
+    },
+    "lam=0.8,gain=0.25": {
+      "card_margin": 0.39569,
+      "rule_margin": 0.00145,
+      "weaker_of_the_two": 0.00145
+    },
+    "lam=0.8,gain=0.5": {
+      "card_margin": 0.36822,
+      "rule_margin": 0.00163,
+      "weaker_of_the_two": 0.00163
+    },
+    "lam=0.8,gain=0.8": {
+      "card_margin": 0.32244,
+      "rule_margin": 0.00192,
+      "weaker_of_the_two": 0.00192
+    },
+    "lam=0.8,gain=1.0": {
+      "card_margin": 0.28979,
+      "rule_margin": 0.00211,
+      "weaker_of_the_two": 0.00211
+    },
+    "lam=0.8,gain=1.5": {
+      "card_margin": 0.21613,
+      "rule_margin": 0.00246,
+      "weaker_of_the_two": 0.00246
+    },
+    "lam=0.8,gain=2.0": {
+      "card_margin": 0.16112,
+      "rule_margin": 0.00264,
+      "weaker_of_the_two": 0.00264
+    },
+    "lam=0.8,gain=3.0": {
+      "card_margin": 0.09555,
+      "rule_margin": 0.00268,
+      "weaker_of_the_two": 0.00268
+    },
+    "lam=0.8,gain=4.1": {
+      "card_margin": 0.05995,
+      "rule_margin": 0.00256,
+      "weaker_of_the_two": 0.00256
+    },
+    "lam=0.8,gain=8.1": {
+      "card_margin": 0.01979,
+      "rule_margin": 0.00217,
+      "weaker_of_the_two": 0.00217
+    },
+    "lam=0.9,gain=0.1": {
+      "card_margin": 0.40454,
+      "rule_margin": 0.0014,
+      "weaker_of_the_two": 0.0014
+    },
+    "lam=0.9,gain=0.25": {
+      "card_margin": 0.39774,
+      "rule_margin": 0.00146,
+      "weaker_of_the_two": 0.00146
+    },
+    "lam=0.9,gain=0.5": {
+      "card_margin": 0.37543,
+      "rule_margin": 0.00165,
+      "weaker_of_the_two": 0.00165
+    },
+    "lam=0.9,gain=0.8": {
+      "card_margin": 0.33705,
+      "rule_margin": 0.00198,
+      "weaker_of_the_two": 0.00198
+    },
+    "lam=0.9,gain=1.0": {
+      "card_margin": 0.30869,
+      "rule_margin": 0.00222,
+      "weaker_of_the_two": 0.00222
+    },
+    "lam=0.9,gain=1.5": {
+      "card_margin": 0.24132,
+      "rule_margin": 0.00276,
+      "weaker_of_the_two": 0.00276
+    },
+    "lam=0.9,gain=2.0": {
+      "card_margin": 0.18749,
+      "rule_margin": 0.00314,
+      "weaker_of_the_two": 0.00314
+    },
+    "lam=0.9,gain=3.0": {
+      "card_margin": 0.1183,
+      "rule_margin": 0.00347,
+      "weaker_of_the_two": 0.00347
+    },
+    "lam=0.9,gain=4.1": {
+      "card_margin": 0.07765,
+      "rule_margin": 0.00346,
+      "weaker_of_the_two": 0.00346
+    },
+    "lam=0.9,gain=8.1": {
+      "card_margin": 0.0277,
+      "rule_margin": 0.00288,
+      "weaker_of_the_two": 0.00288
+    },
+    "lam=0.95,gain=0.1": {
+      "card_margin": 0.40496,
+      "rule_margin": 0.00139,
+      "weaker_of_the_two": 0.00139
+    },
+    "lam=0.95,gain=0.25": {
+      "card_margin": 0.40029,
+      "rule_margin": 0.00144,
+      "weaker_of_the_two": 0.00144
+    },
+    "lam=0.95,gain=0.5": {
+      "card_margin": 0.38467,
+      "rule_margin": 0.0016,
+      "weaker_of_the_two": 0.0016
+    },
+    "lam=0.95,gain=0.8": {
+      "card_margin": 0.35657,
+      "rule_margin": 0.00188,
+      "weaker_of_the_two": 0.00188
+    },
+    "lam=0.95,gain=1.0": {
+      "card_margin": 0.33475,
+      "rule_margin": 0.0021,
+      "weaker_of_the_two": 0.0021
+    },
+    "lam=0.95,gain=1.5": {
+      "card_margin": 0.27889,
+      "rule_margin": 0.00266,
+      "weaker_of_the_two": 0.00266
+    },
+    "lam=0.95,gain=2.0": {
+      "card_margin": 0.22952,
+      "rule_margin": 0.00316,
+      "weaker_of_the_two": 0.00316
+    },
+    "lam=0.95,gain=3.0": {
+      "card_margin": 0.15826,
+      "rule_margin": 0.00384,
+      "weaker_of_the_two": 0.00384
+    },
+    "lam=0.95,gain=4.1": {
+      "card_margin": 0.11101,
+      "rule_margin": 0.0042,
+      "weaker_of_the_two": 0.0042
+    },
+    "lam=0.95,gain=8.1": {
+      "card_margin": 0.04459,
+      "rule_margin": 0.0041,
+      "weaker_of_the_two": 0.0041
+    },
+    "lam=0.99,gain=0.1": {
+      "card_margin": 0.40574,
+      "rule_margin": 0.00139,
+      "weaker_of_the_two": 0.00139
+    },
+    "lam=0.99,gain=0.25": {
+      "card_margin": 0.40507,
+      "rule_margin": 0.00139,
+      "weaker_of_the_two": 0.00139
+    },
+    "lam=0.99,gain=0.5": {
+      "card_margin": 0.40271,
+      "rule_margin": 0.00142,
+      "weaker_of_the_two": 0.00142
+    },
+    "lam=0.99,gain=0.8": {
+      "card_margin": 0.39793,
+      "rule_margin": 0.00147,
+      "weaker_of_the_two": 0.00147
+    },
+    "lam=0.99,gain=1.0": {
+      "card_margin": 0.39367,
+      "rule_margin": 0.00152,
+      "weaker_of_the_two": 0.00152
+    },
+    "lam=0.99,gain=1.5": {
+      "card_margin": 0.37989,
+      "rule_margin": 0.00167,
+      "weaker_of_the_two": 0.00167
+    },
+    "lam=0.99,gain=2.0": {
+      "card_margin": 0.36283,
+      "rule_margin": 0.00186,
+      "weaker_of_the_two": 0.00186
+    },
+    "lam=0.99,gain=3.0": {
+      "card_margin": 0.32429,
+      "rule_margin": 0.00229,
+      "weaker_of_the_two": 0.00229
+    },
+    "lam=0.99,gain=4.1": {
+      "card_margin": 0.28238,
+      "rule_margin": 0.00277,
+      "weaker_of_the_two": 0.00277
+    },
+    "lam=0.99,gain=8.1": {
+      "card_margin": 0.17354,
+      "rule_margin": 0.00407,
+      "weaker_of_the_two": 0.00407
+    },
+    "_note": "RuleSwitchTask needs BOTH margins positive at once: a key that cannot separate cards cannot act, and a key that cannot separate rules cannot switch. ctx_gain trades one against the other, so the structurally defensible band is where the weaker margin is largest -- a bound derived from the task, with no run accuracy consulted."
+  },
+  "key_drift": {
+    "gain=1.0": {
+      "0.0": {
+        "same_card_cos_early_vs_late": 0.56658,
+        "horizon": 1.0
+      },
+      "0.3": {
+        "same_card_cos_early_vs_late": 0.65241,
+        "horizon": 1.4
+      },
+      "0.5": {
+        "same_card_cos_early_vs_late": 0.69829,
+        "horizon": 2.0
+      },
+      "0.7": {
+        "same_card_cos_early_vs_late": 0.73271,
+        "horizon": 3.3
+      },
+      "0.8": {
+        "same_card_cos_early_vs_late": 0.7422,
+        "horizon": 5.0
+      },
+      "0.9": {
+        "same_card_cos_early_vs_late": 0.73621,
+        "horizon": 10.0
+      },
+      "0.95": {
+        "same_card_cos_early_vs_late": 0.7211,
+        "horizon": 20.0
+      },
+      "0.99": {
+        "same_card_cos_early_vs_late": 0.72728,
+        "horizon": 100.0
+      },
+      "0.999": {
+        "same_card_cos_early_vs_late": 0.73404,
+        "horizon": 1000.0
+      },
+      "_episode_len_mean": 62.1
+    },
+    "gain=3.0": {
+      "0.0": {
+        "same_card_cos_early_vs_late": 0.42424,
+        "horizon": 1.0
+      },
+      "0.3": {
+        "same_card_cos_early_vs_late": 0.5551,
+        "horizon": 1.4
+      },
+      "0.5": {
+        "same_card_cos_early_vs_late": 0.6453,
+        "horizon": 2.0
+      },
+      "0.7": {
+        "same_card_cos_early_vs_late": 0.72727,
+        "horizon": 3.3
+      },
+      "0.8": {
+        "same_card_cos_early_vs_late": 0.75688,
+        "horizon": 5.0
+      },
+      "0.9": {
+        "same_card_cos_early_vs_late": 0.75641,
+        "horizon": 10.0
+      },
+      "0.95": {
+        "same_card_cos_early_vs_late": 0.71623,
+        "horizon": 20.0
+      },
+      "0.99": {
+        "same_card_cos_early_vs_late": 0.69129,
+        "horizon": 100.0
+      },
+      "0.999": {
+        "same_card_cos_early_vs_late": 0.73306,
+        "horizon": 1000.0
+      },
+      "_episode_len_mean": 62.1
+    },
+    "_note": "cos between keys for the SAME card seen in the first 20 trials vs the last 40 of the SAME episode. 1.0 = the key is stationary and one prototype serves the whole episode; well below 1.0 = the context is still ramping and the organism must re-spawn the same card as if it were new."
+  },
+  "switch_recovery": {
+    "0.0": {
+      "horizon_1_over_1_minus_lam": 1.0,
+      "cos_to_settled_address_by_trials_since_switch": [
+        0.76585,
+        0.7599,
+        0.75605,
+        0.75283,
+        0.74365,
+        0.74299,
+        0.74882,
+        0.74984,
+        0.74987,
+        0.75514,
+        0.60915,
+        0.63606,
+        0.71715,
+        0.72221,
+        0.70806,
+        0.62905,
+        0.71456,
+        0.67194,
+        0.59606,
+        0.57045,
+        0.59006,
+        0.80936,
+        0.74049,
+        0.79207,
+        0.80554
+      ],
+      "trials_to_recover_addressing": 21,
+      "outlasts_CRIT_WINDOW": true
+    },
+    "0.1": {
+      "horizon_1_over_1_minus_lam": 1.1,
+      "cos_to_settled_address_by_trials_since_switch": [
+        0.7862,
+        0.77985,
+        0.7769,
+        0.77367,
+        0.76396,
+        0.76476,
+        0.76967,
+        0.77132,
+        0.77113,
+        0.77716,
+        0.63638,
+        0.67156,
+        0.73835,
+        0.74591,
+        0.72786,
+        0.66094,
+        0.7512,
+        0.68252,
+        0.64998,
+        0.57291,
+        0.64015,
+        0.82574,
+        0.77262,
+        0.82223,
+        0.82498
+      ],
+      "trials_to_recover_addressing": 21,
+      "outlasts_CRIT_WINDOW": true
+    },
+    "0.3": {
+      "horizon_1_over_1_minus_lam": 1.4,
+      "cos_to_settled_address_by_trials_since_switch": [
+        0.82016,
+        0.81378,
+        0.81204,
+        0.80857,
+        0.79904,
+        0.80216,
+        0.80545,
+        0.8084,
+        0.80739,
+        0.81468,
+        0.6862,
+        0.73762,
+        0.77442,
+        0.79389,
+        0.75725,
+        0.71302,
+        0.81058,
+        0.7011,
+        0.73675,
+        0.57463,
+        0.72063,
+        0.85039,
+        0.82182,
+        0.86974,
+        0.85718
+      ],
+      "trials_to_recover_addressing": 21,
+      "outlasts_CRIT_WINDOW": true
+    },
+    "0.5": {
+      "horizon_1_over_1_minus_lam": 2.0,
+      "cos_to_settled_address_by_trials_since_switch": [
+        0.84595,
+        0.8399,
+        0.83837,
+        0.8346,
+        0.82647,
+        0.83101,
+        0.83342,
+        0.83709,
+        0.83523,
+        0.84316,
+        0.72759,
+        0.7921,
+        0.80409,
+        0.84285,
+        0.77569,
+        0.74143,
+        0.85216,
+        0.71475,
+        0.7993,
+        0.57261,
+        0.78311,
+        0.86618,
+        0.85134,
+        0.90027,
+        0.88625
+      ],
+      "trials_to_recover_addressing": 23,
+      "outlasts_CRIT_WINDOW": true
+    },
+    "0.7": {
+      "horizon_1_over_1_minus_lam": 3.3,
+      "cos_to_settled_address_by_trials_since_switch": [
+        0.86011,
+        0.8545,
+        0.85257,
+        0.84796,
+        0.84156,
+        0.84682,
+        0.84926,
+        0.85273,
+        0.85063,
+        0.85861,
+        0.75347,
+        0.82857,
+        0.82662,
+        0.88231,
+        0.7863,
+        0.74486,
+        0.87753,
+        0.7177,
+        0.84735,
+        0.56542,
+        0.83631,
+        0.87669,
+        0.86757,
+        0.90632,
+        0.9061
+      ],
+      "trials_to_recover_addressing": 23,
+      "outlasts_CRIT_WINDOW": true
+    },
+    "0.8": {
+      "horizon_1_over_1_minus_lam": 5.0,
+      "cos_to_settled_address_by_trials_since_switch": [
+        0.85747,
+        0.85198,
+        0.8498,
+        0.84437,
+        0.83838,
+        0.84366,
+        0.84636,
+        0.84935,
+        0.84728,
+        0.85545,
+        0.75375,
+        0.83495,
+        0.83026,
+        0.89024,
+        0.78288,
+        0.73713,
+        0.88125,
+        0.71014,
+        0.86607,
+        0.55642,
+        0.85844,
+        0.87885,
+        0.87122,
+        0.89803,
+        0.90666
+      ],
+      "trials_to_recover_addressing": 23,
+      "outlasts_CRIT_WINDOW": true
+    },
+    "0.9": {
+      "horizon_1_over_1_minus_lam": 10.0,
+      "cos_to_settled_address_by_trials_since_switch": [
+        0.841,
+        0.83511,
+        0.83262,
+        0.82567,
+        0.81912,
+        0.8238,
+        0.82655,
+        0.82866,
+        0.82596,
+        0.83451,
+        0.73396,
+        0.82095,
+        0.81691,
+        0.87782,
+        0.75959,
+        0.71166,
+        0.86718,
+        0.68611,
+        0.86957,
+        0.53287,
+        0.86726,
+        0.87072,
+        0.8645,
+        0.87788,
+        0.89382
+      ],
+      "trials_to_recover_addressing": 24,
+      "outlasts_CRIT_WINDOW": true
+    },
+    "0.95": {
+      "horizon_1_over_1_minus_lam": 20.0,
+      "cos_to_settled_address_by_trials_since_switch": [
+        0.83376,
+        0.82757,
+        0.82474,
+        0.81678,
+        0.80922,
+        0.8134,
+        0.81589,
+        0.81729,
+        0.81358,
+        0.82235,
+        0.71763,
+        0.80677,
+        0.80655,
+        0.86381,
+        0.73867,
+        0.68424,
+        0.84861,
+        0.66505,
+        0.8504,
+        0.50302,
+        0.85292,
+        0.85057,
+        0.84721,
+        0.85447,
+        0.87389
+      ],
+      "trials_to_recover_addressing": 24,
+      "outlasts_CRIT_WINDOW": true
+    },
+    "0.99": {
+      "horizon_1_over_1_minus_lam": 100.0,
+      "cos_to_settled_address_by_trials_since_switch": [
+        0.86179,
+        0.85647,
+        0.85398,
+        0.84663,
+        0.83877,
+        0.84435,
+        0.84727,
+        0.84969,
+        0.8465,
+        0.85721,
+        0.72675,
+        0.82792,
+        0.82544,
+        0.89163,
+        0.75381,
+        0.69144,
+        0.87948,
+        0.6749,
+        0.86882,
+        0.48958,
+        0.8727,
+        0.86772,
+        0.8729,
+        0.87185,
+        0.89604
+      ],
+      "trials_to_recover_addressing": 13,
+      "outlasts_CRIT_WINDOW": true
+    },
+    "_note": "trials_to_recover_addressing is how long after a silent rule flip the organism keeps looking up a displaced prototype for the same card. Compare with CRIT_WINDOW=10: a displacement that outlasts the window means the block cannot be re-learned before the next flip.",
+    "_gain_used": 1.0
+  }
+}

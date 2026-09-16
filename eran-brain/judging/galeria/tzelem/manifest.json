@@ -1,0 +1,92 @@
+{
+ "model": "TZELEM",
+ "status_line_he": "GATE 2 עבר (2026-09-03): אותן 1800 משיכות מצוירות ב-480x270 וב-4K -- הסכמת בעלות על הפיקסל 98.83% (סף 95%), ונאמנות ב-4K 0.02061 מול 0.02062 ב-480p (יחס 0.999, סף 1.10). זמני ציור מדודים על ה-PC: 1080p 3.0 שניות, 4K 11.6 שניות, 8K 58.5 שניות (2.0 GB). אין אפסקייל: גודל המשיכה הוא בעולם, לא בפיקסלים. GATE 1 נמדד מחדש ב-1920x1080 עם המשיכות הציוריות: פי 4.09 יציב יותר מהרצפה.",
+ "status_line_en": "Gate 2 PASSED (2026-09-03): the SAME 1800 strokes painted at 480x270 and at 4K -- per-pixel stroke-ownership agreement 98.83% (threshold 95%), fidelity at 4K 0.02061 vs 0.02062 at 480p (ratio 0.999, threshold 1.10). Measured on this PC: 1080p 3.0s, 4K 11.6s, 8K 58.5s (2.0 GB peak). No upscale anywhere: a stroke's size is in the world, not in pixels.",
+ "items": [
+  {
+   "file": "TZELEM-gate2-8K-crop1000.png",
+   "kind": "image",
+   "label_he": "GATE 2 -- חיתוך 1000x1000 מתוך ה-8K (ללא הגדלה)",
+   "note_he": "ההוכחה ש-8K הוא אמיתי: פיקסלים שנחתכו ישירות מתוך פריים 7680x4320. כל משיכה ברוחב ~90 פיקסלים והשפה שלה עדיין אליפסה נקייה -- כי המשיכה מעולם לא הייתה פיקסל, היא גודל בעולם. 1800 משיכות בלבד, אותן משיכות כמו ב-480p.",
+   "source": "eran-brain/holobrain/tzelem/out8k/TZELEM-gate2-8K-crop1000.png"
+  },
+  {
+   "file": "TZELEM-gate2-4K.png",
+   "kind": "image",
+   "label_he": "GATE 2 -- הסטיל המלא ב-4K",
+   "note_he": "נושא אמיתי: הצורה הראשונה של KAV + תבנית הסיליקון של הגרון (85,964 פאות -> 1630 באשכול-קודקודים) + רצפה ואור אחד. צויר ישירות ב-3840x2160 מ-2400 משיכות. ללא אפסקייל.",
+   "source": "eran-brain/holobrain/tzelem/out8k/TZELEM-gate2-4K.png"
+  },
+  {
+   "file": "TZELEM-gate2-8K-preview.jpg",
+   "kind": "image",
+   "label_he": "GATE 2 -- תצוגה מקדימה 1920 (JPEG)",
+   "note_he": "אותה תמונה, מוקטנת ל-1920 לצפייה מהירה. 4K = 0.6 MB PNG.",
+   "source": "eran-brain/holobrain/tzelem/out8k/TZELEM-gate2-8K-preview.jpg"
+  },
+  {
+   "file": "TZELEM-gate2-gate1-1080p-tz_b.png",
+   "kind": "image",
+   "label_he": "GATE 1 @1080p -- שיטת צלם (משיכות ציוריות)",
+   "note_he": "קוהרנטיות 0.01840 מול רצפה 0.07531 = פי 4.09 יציב יותר (ממוצע על 6 פריימים, סיבוב 4 מעלות).",
+   "source": "eran-brain/holobrain/tzelem/out1080/TZELEM-gate1-tz_b.png"
+  },
+  {
+   "file": "TZELEM-gate2-gate1-1080p-fl_b.png",
+   "kind": "image",
+   "label_he": "GATE 1 @1080p -- רצפה: ציור מחדש כל פריים",
+   "note_he": "מה שצייר 2D רגיל היה עושה. זו הרצפה שצלם צריך לנצח בקוהרנטיות.",
+   "source": "eran-brain/holobrain/tzelem/out1080/TZELEM-gate1-fl_b.png"
+  },
+  {
+   "file": "TZELEM-gate2-gate1-1080p-truth_b.png",
+   "kind": "image",
+   "label_he": "GATE 1 @1080p -- האמת",
+   "note_he": "התמונה שממנה נמדדת הנאמנות. צלם 0.02339 מול צבע שטוח 0.05134.",
+   "source": "eran-brain/holobrain/tzelem/out1080/TZELEM-gate1-truth_b.png"
+  },
+  {
+   "file": "TZELEM-birth-of-a-painting.gif",
+   "kind": "image",
+   "label_he": "לידתו של ציור",
+   "note_he": "רצף פריימים (GIF) מ-out/frames/ -- הציור נבנה משיכה אחר משיכה, נעוצות בעולם, ללא באפר עומק.",
+   "source": "eran-brain/holobrain/tzelem/out/TZELEM-birth-of-a-painting.gif (from out/frames/)"
+  },
+  {
+   "file": "TZELEM-paints-the-clip.jpg",
+   "kind": "image",
+   "label_he": "צלם מצייר את הקליפ",
+   "note_he": "התמונה החדשה ביותר ב-out/ -- תוצר רינדור-בזמן-אמת של TZELEM.",
+   "source": "eran-brain/holobrain/tzelem/out/TZELEM-paints-the-clip.jpg"
+  },
+  {
+   "file": "TZELEM-KAV-and-TZELEM.png",
+   "kind": "image",
+   "label_he": "קו וצלם יחד",
+   "note_he": "אינטגרציה: מש של KAV מרונדר דרך אורגן TZELEM (meshstage.py).",
+   "source": "eran-brain/holobrain/tzelem/out/KAV-and-TZELEM.png"
+  },
+  {
+   "file": "TZELEM-gate1-tz_b-480p.png",
+   "kind": "image",
+   "label_he": "GATE 1 -- שיטת צלם (480p)",
+   "note_he": "משיכות נעוצות בעולם -- קוהרנטיות 0.0168, נאמנות 0.0240 (1,200 משיכות).",
+   "source": "eran-brain/holobrain/tzelem/out480/TZELEM-gate1-tz_b.png"
+  },
+  {
+   "file": "TZELEM-gate1-truth_b-480p.png",
+   "kind": "image",
+   "label_he": "GATE 1 -- האמת (480p)",
+   "note_he": "התמונה שממנה נמדדת הנאמנות -- הבסיס להשוואה.",
+   "source": "eran-brain/holobrain/tzelem/out480/TZELEM-gate1-truth_b.png"
+  },
+  {
+   "file": "TZELEM-gate1-floor_b-480p.png",
+   "kind": "image",
+   "label_he": "GATE 1 -- רצפה: ציור מחדש כל פריים (480p)",
+   "note_he": "מה שצייר 2D רגיל היה עושה -- הרצפה שצלם צריך לנצח בקוהרנטיות. קוהרנטיות 0.0779 (פי 4.64 פחות יציב מצלם).",
+   "source": "eran-brain/holobrain/tzelem/out480/TZELEM-gate1-fl_b.png"
+  }
+ ],
+ "measured_source_files_he": "המספרים ×4.64 נלקחו מ-eran-brain/holobrain/tzelem/out480/gate1.json (1,200 משיכות); PLAN-tzelem-20260901.md מרכז 'חוק הצפיפות' וכולל גם מדידות ב-2,400 וב-4,800 משיכות (יתרון פוחת ל-×2.74 ו-×2.23 בהתאמה)."
+}

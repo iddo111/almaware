@@ -1,0 +1,505 @@
+<title>ALMAWARE · FoxAlien XE-PRO Rewire (DM542 / GRBL / 48V)</title>
+<style>
+  :root{
+    --ink:#141414; --paper:#ffffff; --muted:#5a5a5a;
+    --pw:#e11d1d;        /* 48V power red */
+    --pwlite:#b30000;    /* +5V logic red thin */
+    --gnd:#111111;       /* GND black */
+    --step:#1565ff;      /* STEP blue */
+    --dir:#12a150;       /* DIR green */
+    --ena:#ff8c00;       /* ENABLE orange */
+    --usb:#8e44ad;       /* USB purple */
+    --earth:#2e9e3f;     /* protective earth green */
+    --estop:#d10000;     /* e-stop hero red */
+    --grey:#9aa0a6;      /* spindle greyed */
+    --amberfill:#fff7e6; --bluefill:#eef4ff; --greenfill:#eefaf1; --redfill:#fff0f0;
+    --box:#cfd4da;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#eceff3;color:var(--ink);
+    font-family:"Segoe UI",Arial,Helvetica,sans-serif;}
+  .page{max-width:1180px;margin:0 auto;padding:14px 16px 30px;}
+  .titlebar{background:linear-gradient(90deg,#0b3d91,#1565ff);color:#fff;border-radius:10px 10px 0 0;
+    padding:12px 18px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;}
+  .titlebar h1{font-size:20px;margin:0;letter-spacing:.2px;}
+  .titlebar .sub{font-size:12.5px;opacity:.92;}
+  .ribbon{background:#111;color:#ffd54a;font-size:12px;font-weight:700;letter-spacing:.6px;
+    text-transform:uppercase;padding:5px 18px;text-align:center;}
+  .sheet{background:var(--paper);border:1px solid #d6dbe1;border-top:none;border-radius:0 0 10px 10px;
+    box-shadow:0 6px 22px rgba(0,0,0,.10);padding:10px 12px 16px;}
+  .svgwrap{width:100%;overflow-x:auto;}
+  svg{width:100%;height:auto;display:block;background:#fff;border:1px solid #eef0f3;border-radius:8px;}
+  .callouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-top:14px;}
+  .co{border:1.5px solid var(--box);border-radius:10px;padding:11px 13px;background:#fbfcfe;}
+  .co h3{margin:0 0 7px;font-size:14px;display:flex;align-items:center;gap:7px;}
+  .co h3 .dot{width:11px;height:11px;border-radius:3px;display:inline-block;}
+  .co p,.co li{font-size:12.6px;line-height:1.5;margin:5px 0;color:#26292e;}
+  .co ul{margin:5px 0;padding-left:18px;}
+  .co.warn{background:var(--redfill);border-color:#f2b8b8;}
+  .co.calc{background:var(--bluefill);border-color:#bcd2ff;}
+  .co.info{background:var(--greenfill);border-color:#bfe6cc;}
+  .co.dip{background:var(--amberfill);border-color:#f2d79a;}
+  code{background:#eef1f5;border-radius:4px;padding:1px 5px;font-size:12px;}
+  table.dt{border-collapse:collapse;width:100%;font-size:11.6px;margin-top:5px;}
+  table.dt th,table.dt td{border:1px solid #d9dee4;padding:3px 5px;text-align:center;}
+  table.dt th{background:#f0f3f7;}
+  .big{font-size:20px;font-weight:800;color:#0b3d91;}
+  .footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    margin-top:12px;font-size:12px;color:var(--muted);border-top:1px dashed #cfd4da;padding-top:8px;}
+  .footer .crit{color:#b30000;font-weight:700;}
+  @media print{
+    @page{size:A4 landscape;margin:6mm;}
+    html,body{background:#fff;}
+    .page{max-width:none;padding:0;}
+    .sheet{box-shadow:none;border:none;}
+    .callouts{grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+
+<div class="page">
+  <div class="titlebar">
+    <h1>ALMAWARE · FoxAlien XE-PRO — Rewire (DM542 / GRBL / 48V)</h1>
+    <span class="sub">Open-loop retrofit · 4× DM542 · dual-Y gantry · NymoLabs OC-7T pendant</span>
+  </div>
+  <div class="ribbon">if it's not working, fix it IMMEDIATELY</div>
+
+  <div class="sheet">
+    <div class="svgwrap">
+    <svg viewBox="0 0 1123 794" xmlns="http://www.w3.org/2000/svg" role="img"
+         aria-label="FoxAlien XE-PRO rewire wiring diagram">
+      <defs>
+        <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L7,3 L0,6 Z" fill="#333"/>
+        </marker>
+        <marker id="arrR" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L7,3 L0,6 Z" fill="var(--pw)"/>
+        </marker>
+        <style>
+          .lbl{font:600 11px "Segoe UI",Arial;fill:#1a1a1a;}
+          .lblS{font:600 9.5px "Segoe UI",Arial;fill:#1a1a1a;}
+          .tiny{font:500 8.6px "Segoe UI",Arial;fill:#333;}
+          .box{fill:#fff;stroke:#333;stroke-width:1.4;}
+          .hd{font:700 12px "Segoe UI",Arial;fill:#111;}
+          .term{font:600 8.4px "Segoe UI",Arial;fill:#222;}
+          .wpw{stroke:var(--pw);stroke-width:4.5;fill:none;}
+          .wgnd{stroke:var(--gnd);stroke-width:4.5;fill:none;}
+          .w5v{stroke:var(--pwlite);stroke-width:2;fill:none;}
+          .wstep{stroke:var(--step);stroke-width:2.4;fill:none;}
+          .wdir{stroke:var(--dir);stroke-width:2.4;fill:none;}
+          .wena{stroke:var(--ena);stroke-width:2.2;fill:none;stroke-dasharray:5 3;}
+          .wusb{stroke:var(--usb);stroke-width:4.5;fill:none;}
+          .wearth{stroke:var(--earth);stroke-width:3;fill:none;stroke-dasharray:2 3;}
+          .dot{fill:#111;}
+          .dotR{fill:var(--pw);}
+        </style>
+      </defs>
+
+      <!-- ================= TOP SIGNAL BAND ================= -->
+      <!-- Pendant -->
+      <rect class="box" x="18" y="18" width="132" height="78" rx="6" fill="#f6f0ff" stroke="#8e44ad"/>
+      <text class="hd" x="84" y="40" text-anchor="middle" fill="#5b2a86">NymoLabs</text>
+      <text class="lblS" x="84" y="55" text-anchor="middle">OC-7T-4TH 7"</text>
+      <text class="tiny" x="84" y="69" text-anchor="middle">pendant / SCREEN only</text>
+      <text class="tiny" x="84" y="81" text-anchor="middle">CH340 USB · 115200</text>
+      <text class="tiny" x="84" y="92" text-anchor="middle">not a motion brain</text>
+
+      <!-- USB -->
+      <line class="wusb" x1="150" y1="57" x2="200" y2="57" marker-end="url(#arr)"/>
+      <text class="lblS" x="175" y="50" text-anchor="middle" fill="#5b2a86">USB</text>
+
+      <!-- GRBL breakout -->
+      <rect class="box" x="200" y="18" width="500" height="94" rx="6" fill="#eef4ff" stroke="#0b3d91"/>
+      <text class="hd" x="210" y="36" fill="#0b3d91">GRBL 1.1 BREAKOUT — Arduino Uno + CNC-Shield v3 class (5V logic)</text>
+      <text class="tiny" x="210" y="51">STEP: X=D2  Y=D3  Z=D4   ·   DIR: X=D5  Y=D6  Z=D7   ·   common EN=D8 (active-LOW)</text>
+      <text class="tiny" x="210" y="63">Reset/Abort=A0 · Spindle PWM=D11 · Spindle-EN=D12 · Limits X=D9 Y=D10 Z=D11(→D12)</text>
+      <text class="tiny" x="210" y="79" fill="#b30000">4th / A-axis (Y2): CNC-Shield → JUMPER A-STEP=D3, A-DIR=D6 (clone Y)  ·  grblHAL/FluidNC → often D12/D13. CONFIRM.</text>
+      <text class="tiny" x="210" y="91">Board GND ⭑ = common star reference (tie to PSU 0V).  Host PC/Jetson shares this USB serial.</text>
+      <!-- exit ticks along GRBL bottom (y=112) -->
+      <!-- +5V -->
+      <line class="w5v" x1="330" y1="112" x2="330" y2="120"/><text class="tiny" x="330" y="110" text-anchor="middle">+5V</text>
+      <!-- EN -->
+      <line class="wena" x1="346" y1="112" x2="346" y2="120"/>
+      <!-- X step/dir -->
+      <line class="wstep" x1="372" y1="112" x2="372" y2="120"/>
+      <line class="wdir"  x1="386" y1="112" x2="386" y2="120"/>
+      <!-- Y step/dir -->
+      <line class="wstep" x1="400" y1="112" x2="400" y2="120"/>
+      <line class="wdir"  x1="414" y1="112" x2="414" y2="120"/>
+      <!-- Z step/dir -->
+      <line class="wstep" x1="428" y1="112" x2="428" y2="120"/>
+      <line class="wdir"  x1="442" y1="112" x2="442" y2="120"/>
+      <!-- A0 to estop -->
+      <line class="wgnd" x1="520" y1="112" x2="520" y2="120" stroke-dasharray="4 3" stroke-width="2"/>
+      <text class="tiny" x="520" y="110" text-anchor="middle">A0</text>
+      <!-- spindle pwm -->
+      <line x1="640" y1="112" x2="640" y2="120" stroke="var(--grey)" stroke-width="2.4" stroke-dasharray="4 3"/>
+      <text class="tiny" x="640" y="110" text-anchor="middle">D11/D12</text>
+
+      <!-- Legend -->
+      <rect class="box" x="712" y="18" width="393" height="94" rx="6" fill="#fbfcfe"/>
+      <text class="hd" x="722" y="34">LEGEND</text>
+      <g transform="translate(722,44)">
+        <line class="wpw"  x1="0" y1="4" x2="26" y2="4"/><text class="tiny" x="30" y="7">48V power (+)</text>
+        <line class="wgnd" x1="130" y1="4" x2="156" y2="4"/><text class="tiny" x="160" y="7">GND / 0V (−)</text>
+        <line class="w5v"  x1="270" y1="4" x2="296" y2="4"/><text class="tiny" x="300" y="7">+5V (common-anode)</text>
+        <line class="wstep" x1="0" y1="20" x2="26" y2="20"/><text class="tiny" x="30" y="23">STEP / PUL</text>
+        <line class="wdir"  x1="130" y1="20" x2="156" y2="20"/><text class="tiny" x="160" y="23">DIR</text>
+        <line class="wena"  x1="270" y1="20" x2="296" y2="20"/><text class="tiny" x="300" y="23">ENABLE (optional)</text>
+        <line class="wusb"  x1="0" y1="36" x2="26" y2="36"/><text class="tiny" x="30" y="39">USB</text>
+        <line class="wearth" x1="130" y1="36" x2="156" y2="36"/><text class="tiny" x="160" y="39">protective earth</text>
+        <circle class="dot" cx="278" cy="36" r="3"/><text class="tiny" x="286" y="39">= junction (dot)</text>
+        <text class="tiny" x="0" y="54" fill="#b30000">Wires that cross WITHOUT a dot are NOT connected.</text>
+      </g>
+
+      <!-- ================= LEFT: MAINS + PSU ================= -->
+      <rect class="box" x="18" y="132" width="184" height="52" rx="6" fill="#fff0f0" stroke="#b30000"/>
+      <text class="hd" x="110" y="152" text-anchor="middle" fill="#b30000">110 V AC MAINS</text>
+      <text class="tiny" x="110" y="167" text-anchor="middle">FUSED at inlet · enclosed · bonded to PE</text>
+      <text class="tiny" x="110" y="179" text-anchor="middle" fill="#b30000">old 110V box SMOKED — remove &amp; isolate</text>
+
+      <rect class="box" x="18" y="196" width="184" height="150" rx="6" fill="#fbfcfe"/>
+      <text class="hd" x="110" y="214" text-anchor="middle">DC POWER SUPPLIES</text>
+      <!-- 48V rail -->
+      <rect x="30" y="224" width="160" height="30" rx="4" fill="#fff0f0" stroke="var(--pw)"/>
+      <text class="lblS" x="40" y="243" fill="#b30000">48 V PSU</text>
+      <text class="tiny" x="150" y="243" text-anchor="end">→ DM542 motor bus</text>
+      <!-- 24V rail -->
+      <rect x="30" y="258" width="160" height="30" rx="4" fill="#eef4ff" stroke="#0b3d91"/>
+      <text class="lblS" x="40" y="277" fill="#0b3d91">24 V PSU</text>
+      <text class="tiny" x="150" y="277" text-anchor="end">→ GRBL / relay logic</text>
+      <!-- 12V rail -->
+      <rect x="30" y="292" width="160" height="30" rx="4" fill="#eefaf1" stroke="#12a150"/>
+      <text class="lblS" x="40" y="311" fill="#0a7a38">12 V PSU</text>
+      <text class="tiny" x="150" y="311" text-anchor="end">→ cooling fans</text>
+      <text class="tiny" x="110" y="337" text-anchor="middle" fill="#b30000">Fuse the 48V output. 0V = star ground ⭑</text>
+
+      <!-- 48V feed down far-left to E-STOP -->
+      <path class="wpw" d="M40,254 L40,738 L318,738"/>
+      <!-- GND feed to bus (not switched, common) -->
+      <path class="wgnd" d="M52,254 L52,700 L300,700 L300,660"/>
+      <!-- 24V to GRBL logic (short indicative) -->
+      <path d="M62,288 L62,300 L200,300 L200,300" stroke="#0b3d91" stroke-width="2.4" fill="none"/>
+      <text class="tiny" x="150" y="296" fill="#0b3d91">24V→logic</text>
+
+      <!-- ================= COMMON-ANODE DETAIL INSET ================= -->
+      <rect class="box" x="18" y="360" width="230" height="300" rx="8" fill="#f7faff" stroke="#0b3d91" stroke-dasharray="4 3"/>
+      <text class="hd" x="133" y="380" text-anchor="middle" fill="#0b3d91">COMMON-ANODE DETAIL</text>
+      <text class="tiny" x="133" y="394" text-anchor="middle">identical on all 4 drivers · 5V logic → R = 0Ω</text>
+      <!-- mini driver -->
+      <rect x="120" y="404" width="110" height="176" rx="5" fill="#fff" stroke="#333"/>
+      <text class="term" x="175" y="420" text-anchor="middle" fill="#0b3d91">DM542 P1 inputs</text>
+      <!-- +5V rail to the three + -->
+      <line class="w5v" x1="40" y1="440" x2="120" y2="440"/>
+      <text class="tiny" x="42" y="434">+5V</text>
+      <line class="w5v" x1="60" y1="440" x2="60" y2="500"/>
+      <line class="w5v" x1="60" y1="460" x2="120" y2="460"/>
+      <line class="w5v" x1="60" y1="480" x2="120" y2="480"/>
+      <line class="w5v" x1="60" y1="500" x2="120" y2="500"/>
+      <circle class="dotR" cx="60" cy="460" r="2.6"/><circle class="dotR" cx="60" cy="480" r="2.6"/>
+      <text class="term" x="123" y="443">PUL+</text>
+      <text class="term" x="123" y="463">DIR+</text>
+      <text class="term" x="123" y="483">ENA+</text>
+      <!-- minus lines from controller -->
+      <line class="wstep" x1="40" y1="522" x2="120" y2="522"/><text class="term" x="123" y="525">PUL−</text><text class="tiny" x="42" y="516">STEP</text>
+      <line class="wdir"  x1="40" y1="542" x2="120" y2="542"/><text class="term" x="123" y="545">DIR−</text><text class="tiny" x="42" y="536">DIR</text>
+      <line class="wena"  x1="40" y1="562" x2="120" y2="562"/><text class="term" x="123" y="565">ENA−</text><text class="tiny" x="42" y="556">EN(opt)</text>
+      <text class="tiny" x="133" y="600" text-anchor="middle">Tie PUL+/DIR+/ENA+ → +5V.</text>
+      <text class="tiny" x="133" y="613" text-anchor="middle">Controller SINKS PUL−/DIR−/ENA−.</text>
+      <text class="tiny" x="133" y="629" text-anchor="middle" fill="#b30000">12V logic → 1kΩ · 24V → 2kΩ in each line.</text>
+      <text class="tiny" x="133" y="645" text-anchor="middle">ENA usually LEFT OPEN = always enabled.</text>
+
+      <!-- ================= 48V DC BUS (switched) ================= -->
+      <!-- vertical switched 48V (x300) + GND (x314) -->
+      <line class="wpw"  x1="300" y1="150" x2="300" y2="700"/>
+      <line class="wgnd" x1="314" y1="160" x2="314" y2="660"/>
+      <text class="lblS" x="286" y="150" text-anchor="middle" fill="#b30000">48V</text>
+      <text class="lblS" x="322" y="150" fill="#111">GND</text>
+      <!-- estop output up into bus -->
+      <path class="wpw" d="M340,706 L300,706 L300,700"/>
+
+      <!-- ================= 4× DM542 DRIVERS ================= -->
+      <!-- generic driver renderer positions:
+           X  top=152  center~200
+           Y1 top=282
+           Y2 top=412
+           Z  top=542  -->
+
+      <!-- ---- helper: each block drawn explicitly ---- -->
+      <!-- ============ DRIVER X ============ -->
+      <g>
+        <rect class="box" x="470" y="152" width="220" height="96" rx="6" fill="#fff"/>
+        <text class="hd" x="480" y="171">DM542 #1 — X</text>
+        <text class="tiny" x="480" y="184">open-loop digital · 20–50VDC · ≤4.2A pk</text>
+        <text class="term" x="478" y="200" fill="#0b3d91">P1 signal</text>
+        <text class="term" x="612" y="171" text-anchor="end" fill="#b30000">P2 pwr+motor</text>
+        <!-- left terminal labels -->
+        <text class="term" x="474" y="212">PUL+/DIR+/ENA+ (COM)</text>
+        <text class="term" x="474" y="224">PUL−  DIR−  ENA−</text>
+        <text class="term" x="474" y="240">+V      GND</text>
+        <!-- right motor terminals -->
+        <text class="term" x="686" y="200" text-anchor="end">A+  A−</text>
+        <text class="term" x="686" y="236" text-anchor="end">B+  B−</text>
+        <!-- signal attach points on left edge -->
+        <!-- COM +5V -->
+        <line class="w5v" x1="330" y1="166" x2="470" y2="166"/>
+        <circle class="dotR" cx="330" cy="166" r="2.6"/>
+        <!-- STEP -->
+        <line class="wstep" x1="372" y1="182" x2="470" y2="182"/>
+        <!-- DIR -->
+        <line class="wdir" x1="386" y1="198" x2="470" y2="198"/>
+        <!-- EN -->
+        <line class="wena" x1="346" y1="214" x2="470" y2="214"/>
+        <!-- power +V / GND from bus -->
+        <line class="wpw" x1="300" y1="232" x2="470" y2="232"/><circle class="dotR" cx="300" cy="232" r="2.6"/>
+        <line class="wgnd" x1="314" y1="242" x2="470" y2="242"/><circle class="dot" cx="314" cy="242" r="2.6"/>
+      </g>
+      <!-- lane verticals to X (short) -->
+      <line class="wstep" x1="372" y1="120" x2="372" y2="182"/>
+      <line class="wdir"  x1="386" y1="120" x2="386" y2="198"/>
+      <line class="wena"  x1="346" y1="120" x2="346" y2="214"/>
+      <line class="w5v"   x1="330" y1="120" x2="330" y2="166"/>
+
+      <!-- ============ DRIVER Y1 ============ -->
+      <g>
+        <rect class="box" x="470" y="282" width="220" height="96" rx="6" fill="#fff"/>
+        <text class="hd" x="480" y="301">DM542 #2 — Y1 (left gantry)</text>
+        <text class="tiny" x="480" y="314">open-loop digital · 20–50VDC · ≤4.2A pk</text>
+        <text class="term" x="474" y="342">PUL+/DIR+/ENA+ (COM)</text>
+        <text class="term" x="474" y="354">PUL−  DIR−  ENA−</text>
+        <text class="term" x="474" y="370">+V      GND</text>
+        <text class="term" x="686" y="330" text-anchor="end">A+  A−</text>
+        <text class="term" x="686" y="366" text-anchor="end">B+  B−</text>
+        <line class="w5v"  x1="330" y1="296" x2="470" y2="296"/><circle class="dotR" cx="330" cy="296" r="2.6"/>
+        <line class="wstep" x1="400" y1="312" x2="470" y2="312"/><circle class="dot" cx="400" cy="312" r="2.6" fill="var(--step)"/>
+        <line class="wdir"  x1="414" y1="328" x2="470" y2="328"/><circle cx="414" cy="328" r="2.6" fill="var(--dir)"/>
+        <line class="wena"  x1="346" y1="344" x2="470" y2="344"/>
+        <line class="wpw"  x1="300" y1="362" x2="470" y2="362"/><circle class="dotR" cx="300" cy="362" r="2.6"/>
+        <line class="wgnd" x1="314" y1="372" x2="470" y2="372"/><circle class="dot" cx="314" cy="372" r="2.6"/>
+      </g>
+
+      <!-- ============ DRIVER Y2 ============ -->
+      <g>
+        <rect class="box" x="470" y="412" width="220" height="96" rx="6" fill="#fff"/>
+        <text class="hd" x="480" y="431">DM542 #3 — Y2 (right gantry)</text>
+        <text class="tiny" x="480" y="444">open-loop digital · 20–50VDC · ≤4.2A pk</text>
+        <text class="term" x="474" y="472">PUL+/DIR+/ENA+ (COM)</text>
+        <text class="term" x="474" y="484">PUL−  DIR−  ENA−</text>
+        <text class="term" x="474" y="500">+V      GND</text>
+        <text class="term" x="686" y="460" text-anchor="end">A+  A−</text>
+        <text class="term" x="686" y="496" text-anchor="end">B+  B−</text>
+        <line class="w5v"  x1="330" y1="426" x2="470" y2="426"/><circle class="dotR" cx="330" cy="426" r="2.6"/>
+        <line class="wstep" x1="400" y1="442" x2="470" y2="442"/><circle cx="400" cy="442" r="2.6" fill="var(--step)"/>
+        <line class="wdir"  x1="414" y1="458" x2="470" y2="458"/><circle cx="414" cy="458" r="2.6" fill="var(--dir)"/>
+        <line class="wena"  x1="346" y1="474" x2="470" y2="474"/>
+        <line class="wpw"  x1="300" y1="492" x2="470" y2="492"/><circle class="dotR" cx="300" cy="492" r="2.6"/>
+        <line class="wgnd" x1="314" y1="502" x2="470" y2="502"/><circle class="dot" cx="314" cy="502" r="2.6"/>
+      </g>
+
+      <!-- ============ DRIVER Z ============ -->
+      <g>
+        <rect class="box" x="470" y="542" width="220" height="96" rx="6" fill="#fff"/>
+        <text class="hd" x="480" y="561">DM542 #4 — Z</text>
+        <text class="tiny" x="480" y="574">open-loop digital · 20–50VDC · ≤4.2A pk</text>
+        <text class="term" x="474" y="602">PUL+/DIR+/ENA+ (COM)</text>
+        <text class="term" x="474" y="614">PUL−  DIR−  ENA−</text>
+        <text class="term" x="474" y="630">+V      GND</text>
+        <text class="term" x="686" y="590" text-anchor="end">A+  A−</text>
+        <text class="term" x="686" y="626" text-anchor="end">B+  B−</text>
+        <line class="w5v"  x1="330" y1="556" x2="470" y2="556"/><circle class="dotR" cx="330" cy="556" r="2.6"/>
+        <line class="wstep" x1="428" y1="572" x2="470" y2="572"/>
+        <line class="wdir"  x1="442" y1="588" x2="470" y2="588"/>
+        <line class="wena"  x1="346" y1="604" x2="470" y2="604"/>
+        <line class="wpw"  x1="300" y1="622" x2="470" y2="622"/><circle class="dotR" cx="300" cy="622" r="2.6"/>
+        <line class="wgnd" x1="314" y1="632" x2="470" y2="632"/><circle class="dot" cx="314" cy="632" r="2.6"/>
+      </g>
+
+      <!-- lane verticals: +5V rail down to all COMs -->
+      <line class="w5v" x1="330" y1="166" x2="330" y2="556"/>
+      <!-- EN rail down to all ENA- -->
+      <line class="wena" x1="346" y1="120" x2="346" y2="604"/>
+      <!-- Y step/dir lanes: from GRBL down, branch to Y1 and Y2 -->
+      <line class="wstep" x1="400" y1="120" x2="400" y2="442"/>
+      <line class="wdir"  x1="414" y1="120" x2="414" y2="458"/>
+      <!-- Z step/dir lanes -->
+      <line class="wstep" x1="428" y1="120" x2="428" y2="572"/>
+      <line class="wdir"  x1="442" y1="120" x2="442" y2="588"/>
+
+      <!-- dual-Y note -->
+      <text class="tiny" x="360" y="398" fill="#b30000" transform="rotate(0)">Y-STEP/Y-DIR feed BOTH Y1 &amp; Y2 (paralleled)</text>
+      <text class="tiny" x="360" y="409" fill="#b30000">— or drive Y2 from 4th/A output. CONFIRM.</text>
+
+      <!-- ================= MOTORS ================= -->
+      <!-- motor colors: A+ magenta, A- brown, B+ teal, B- amber -->
+      <!-- X motor -->
+      <g>
+        <rect class="box" x="828" y="160" width="180" height="80" rx="8" fill="#f4f7ff"/>
+        <circle cx="852" cy="200" r="15" fill="#dbe6ff" stroke="#0b3d91"/>
+        <text class="hd" x="878" y="188">NEMA 23 · X</text>
+        <text class="tiny" x="878" y="202">76mm closed-loop, 2.2 Nm</text>
+        <text class="tiny" x="878" y="215" fill="#b30000">encoder cable → N/C (open-loop)</text>
+        <text class="tiny" x="878" y="230">coil A→A+/A−  ·  coil B→B+/B−</text>
+      </g>
+      <line stroke="#d81b60" stroke-width="2.6" x1="690" y1="194" x2="828" y2="188"/>
+      <line stroke="#6d4c41" stroke-width="2.6" x1="690" y1="200" x2="828" y2="196"/>
+      <line stroke="#00897b" stroke-width="2.6" x1="690" y1="230" x2="828" y2="212"/>
+      <line stroke="#f9a825" stroke-width="2.6" x1="690" y1="236" x2="828" y2="220"/>
+
+      <!-- Y1 motor -->
+      <g>
+        <rect class="box" x="828" y="290" width="180" height="80" rx="8" fill="#f4f7ff"/>
+        <circle cx="852" cy="330" r="15" fill="#dbe6ff" stroke="#0b3d91"/>
+        <text class="hd" x="878" y="318">NEMA 23 · Y1</text>
+        <text class="tiny" x="878" y="332">left gantry side</text>
+        <text class="tiny" x="878" y="345" fill="#b30000">encoder cable → N/C</text>
+        <text class="tiny" x="878" y="360" fill="#b30000">verify Y1 dir vs Y2!</text>
+      </g>
+      <line stroke="#d81b60" stroke-width="2.6" x1="690" y1="324" x2="828" y2="318"/>
+      <line stroke="#6d4c41" stroke-width="2.6" x1="690" y1="330" x2="828" y2="326"/>
+      <line stroke="#00897b" stroke-width="2.6" x1="690" y1="360" x2="828" y2="342"/>
+      <line stroke="#f9a825" stroke-width="2.6" x1="690" y1="366" x2="828" y2="350"/>
+
+      <!-- Y2 motor -->
+      <g>
+        <rect class="box" x="828" y="420" width="180" height="80" rx="8" fill="#f4f7ff"/>
+        <circle cx="852" cy="460" r="15" fill="#dbe6ff" stroke="#0b3d91"/>
+        <text class="hd" x="878" y="448">NEMA 23 · Y2</text>
+        <text class="tiny" x="878" y="462">right gantry side</text>
+        <text class="tiny" x="878" y="475" fill="#b30000">encoder cable → N/C</text>
+        <text class="tiny" x="878" y="490" fill="#b30000">wrong dir = gantry rack!</text>
+      </g>
+      <line stroke="#d81b60" stroke-width="2.6" x1="690" y1="454" x2="828" y2="448"/>
+      <line stroke="#6d4c41" stroke-width="2.6" x1="690" y1="460" x2="828" y2="456"/>
+      <line stroke="#00897b" stroke-width="2.6" x1="690" y1="490" x2="828" y2="472"/>
+      <line stroke="#f9a825" stroke-width="2.6" x1="690" y1="496" x2="828" y2="480"/>
+
+      <!-- Z motor -->
+      <g>
+        <rect class="box" x="828" y="550" width="180" height="80" rx="8" fill="#f4f7ff"/>
+        <circle cx="852" cy="590" r="15" fill="#dbe6ff" stroke="#0b3d91"/>
+        <text class="hd" x="878" y="578">NEMA 23 · Z</text>
+        <text class="tiny" x="878" y="592">1204 ballscrew, 4mm lead</text>
+        <text class="tiny" x="878" y="605" fill="#b30000">encoder cable → N/C</text>
+        <text class="tiny" x="878" y="620">swap A+↔A− to flip axis</text>
+      </g>
+      <line stroke="#d81b60" stroke-width="2.6" x1="690" y1="584" x2="828" y2="578"/>
+      <line stroke="#6d4c41" stroke-width="2.6" x1="690" y1="590" x2="828" y2="586"/>
+      <line stroke="#00897b" stroke-width="2.6" x1="690" y1="620" x2="828" y2="602"/>
+      <line stroke="#f9a825" stroke-width="2.6" x1="690" y1="626" x2="828" y2="610"/>
+
+      <!-- motor wire mini-legend -->
+      <g transform="translate(1012,300)">
+        <text class="tiny" x="0" y="0" fill="#111">motor leads:</text>
+        <line stroke="#d81b60" stroke-width="3" x1="0" y1="10" x2="16" y2="10"/><text class="tiny" x="20" y="13">A+</text>
+        <line stroke="#6d4c41" stroke-width="3" x1="0" y1="22" x2="16" y2="22"/><text class="tiny" x="20" y="25">A−</text>
+        <line stroke="#00897b" stroke-width="3" x1="0" y1="34" x2="16" y2="34"/><text class="tiny" x="20" y="37">B+</text>
+        <line stroke="#f9a825" stroke-width="3" x1="0" y1="46" x2="16" y2="46"/><text class="tiny" x="20" y="49">B−</text>
+      </g>
+
+      <!-- ================= E-STOP HERO ================= -->
+      <rect x="318" y="700" width="392" height="74" rx="9" fill="#ffecec" stroke="var(--estop)" stroke-width="3"/>
+      <circle cx="352" cy="737" r="20" fill="var(--estop)"/>
+      <circle cx="352" cy="737" r="12" fill="#fff"/>
+      <circle cx="352" cy="737" r="7" fill="var(--estop)"/>
+      <text class="hd" x="384" y="722" fill="#b30000">E-STOP CONTACTOR (latching, NC)</text>
+      <text class="tiny" x="384" y="737">Physically REMOVES 48V motor bus + spindle power.</text>
+      <text class="tiny" x="384" y="750" fill="#b30000">Independent of Jetson / GRBL / app. Software feed-hold is NOT an E-stop.</text>
+      <text class="tiny" x="384" y="763">2nd NC contact → GRBL A0 (signal abort, second layer only).</text>
+      <!-- estop signal to A0 -->
+      <path d="M520,700 L520,120" stroke="#b30000" stroke-width="1.8" fill="none" stroke-dasharray="4 3"/>
+      <text class="tiny" x="524" y="690" fill="#b30000">→ A0 abort</text>
+
+      <!-- ================= SPINDLE (greyed / disconnected) ================= -->
+      <rect x="720" y="660" width="388" height="86" rx="9" fill="#f2f3f5" stroke="var(--grey)" stroke-width="2" stroke-dasharray="6 4"/>
+      <text class="hd" x="730" y="680" fill="#6b7176">400 W BRUSHED DC SPINDLE — DISCONNECTED</text>
+      <text class="tiny" x="730" y="695" fill="#6b7176">PWM brush speed controller · its OWN 12–48V DC supply (not the motor bus).</text>
+      <text class="tiny" x="730" y="708" fill="#6b7176">GRBL D11(PWM)/D12(EN) → controller signal (3.5–12V, 1–10kHz).</text>
+      <text class="tiny" x="730" y="726" fill="#b30000">CONNECT + POWER ONLY AFTER MOTION IS FULLY COMMISSIONED (repo SAFETY_ACCEPTANCE.md).</text>
+      <text class="tiny" x="730" y="740" fill="#6b7176">Its mains/DC feed also passes through the E-STOP contactor.</text>
+      <!-- greyed pwm line from GRBL -->
+      <path d="M640,120 L640,650 L720,672" stroke="var(--grey)" stroke-width="2.2" fill="none" stroke-dasharray="4 3"/>
+      <!-- greyed power from estop -->
+      <path d="M710,720 L720,703" stroke="var(--grey)" stroke-width="2.6" fill="none" stroke-dasharray="4 3"/>
+
+      <!-- ================= EARTH BOND ================= -->
+      <path class="wearth" d="M110,184 L110,784 L1090,784"/>
+      <text class="lbl" x="560" y="780" fill="#0a7a38">PROTECTIVE EARTH (green/yellow): bond mains PE + PSU chassis + machine FRAME (single point)</text>
+      <!-- earth symbol -->
+      <g transform="translate(1090,776)">
+        <line x1="0" y1="0" x2="0" y2="8" class="wearth" stroke-dasharray="0"/>
+        <line x1="-9" y1="8" x2="9" y2="8" stroke="var(--earth)" stroke-width="3"/>
+        <line x1="-6" y1="12" x2="6" y2="12" stroke="var(--earth)" stroke-width="3"/>
+        <line x1="-3" y1="16" x2="3" y2="16" stroke="var(--earth)" stroke-width="3"/>
+      </g>
+
+      <!-- section captions -->
+      <text class="tiny" x="300" y="138" fill="#888">— switched 48V DC bus →</text>
+    </svg>
+    </div>
+
+    <!-- ================= CALLOUT BOXES ================= -->
+    <div class="callouts">
+      <div class="co warn">
+        <h3><span class="dot" style="background:#d10000"></span>BEFORE POWER — 3 multimeter checks (everything unplugged)</h3>
+        <ul>
+          <li><b>1. Coil resistance:</b> the two wires of ONE phase read LOW (~1–3 Ω for a NEMA 23). A wire from the other coil reads OPEN. Group the low-together pair → A+/A−, the other → B+/B−.</li>
+          <li><b>2. Coil-to-frame isolation:</b> every motor wire → motor body / machine frame must read <b>infinite (OL)</b>. Any continuity = insulation fault, do not power.</li>
+          <li><b>3. DC vs mains:</b> confirm the 48V terminals are DC and the mains side is fully isolated. The old 110V box was seen smoking — never probe energized equipment.</li>
+        </ul>
+      </div>
+
+      <div class="co dip">
+        <h3><span class="dot" style="background:#ff8c00"></span>DM542 DIP — read YOUR driver's label</h3>
+        <p><b>Set CURRENT (SW1–SW3) to your NEMA 23's rated amps OR JUST BELOW</b> — read the amp rating off the <b>MOTOR</b> label (FoxAlien does not publish it; a 76mm/2.2Nm class is <i>typically</i> ~2.8–3.0A but treat as unverified). If unsure, pick the next LOWER step. Match PEAK vs RMS to whatever column the motor uses.</p>
+        <table class="dt">
+          <tr><th>SW1-3 step</th><th>Peak A</th><th>RMS A</th></tr>
+          <tr><td>1</td><td>1.00</td><td>0.71</td></tr>
+          <tr><td>4</td><td>2.37</td><td>1.69</td></tr>
+          <tr><td>5</td><td>2.84</td><td>2.03</td></tr>
+          <tr><td>8</td><td>4.20</td><td>3.00</td></tr>
+        </table>
+        <p><b>MICROSTEP (SW5–SW8):</b> 1600/rev = ON,OFF,ON,ON · 3200/rev = OFF,OFF,ON,ON. <b>SW4</b> = idle-current reduction, not a 4th bit. <span style="color:#b30000"><b>Genuine Leadshine table shown — CLONES differ. The label on YOUR driver is the authority.</b></span></p>
+      </div>
+
+      <div class="co calc">
+        <h3><span class="dot" style="background:#1565ff"></span>GRBL steps/mm — 1204 screw, 4 mm lead</h3>
+        <p>steps/mm = steps-per-rev ÷ 4 mm. All three axes share the 4 mm lead, so <code>$100 = $101 = $102</code> (X=Y=Z equal).</p>
+        <p>1600 steps/rev (8×) → <span class="big">$100=$101=$102 = 400</span></p>
+        <p>3200 steps/rev (16×) → <span class="big">$100=$101=$102 = 800</span></p>
+        <p class="tiny">Speed check: 5000 mm/min at 800 steps/mm = 66.7 kHz — well inside DM542's 200 kHz limit. Dual-Y: Y1 &amp; Y2 both follow the Y step/dir.</p>
+      </div>
+
+      <div class="co info">
+        <h3><span class="dot" style="background:#12a150"></span>OPEN-LOOP note</h3>
+        <p>The DM542 is an <b>open-loop</b> driver: it ignores the XE-PRO's closed-loop encoders. Tape off and secure each encoder cable — it lands on <b>neither</b> the driver nor the GRBL board.</p>
+        <p><b>You lose stall / loss-of-step detection.</b> If a motor stalls it silently loses position and can drive the tool into the work/fixture. Acceptable for a hobby router — use conservative accel, keep the physical E-stop in reach. For true closed-loop you'd need CL57 / 2HSS drivers instead.</p>
+      </div>
+
+      <div class="co">
+        <h3><span class="dot" style="background:#0b3d91"></span>CONFIRM ON YOUR MACHINE</h3>
+        <ul>
+          <li><b>Breakout board?</b> You need a real GRBL breakout exposing STEP/DIR/EN headers (Uno+CNC-Shield v3 / grblHAL). The little all-in-one integrated-driver GRBL board CANNOT drive external DM542s.</li>
+          <li><b>4th / A axis source:</b> CNC-Shield → jumper A to Y (D3/D6); grblHAL/FluidNC → often D12/D13. Or parallel Y2 off the Y output.</li>
+          <li><b>Motor rated current</b> (amps) off each motor's own label — sets the current DIP.</li>
+          <li><b>Motor wires:</b> 4-wire bipolar assumed; a closed-loop NEMA 23 also carries a separate encoder cable. Confirm wire count + coil pairing with a meter.</li>
+          <li><b>Dual-Y:</b> confirm Y1/Y2 and that they turn the SAME way before any Y move.</li>
+          <li><b>Spindle type:</b> brushed DC + PWM controller assumed (not a VFD/brushless). Confirm on the spindle label.</li>
+          <li><b>Driver voltage rating:</b> read it off the label. If it says <b>48V max</b> (many clones), do NOT run 48V — drop to 36V.</li>
+        </ul>
+      </div>
+
+      <div class="co warn">
+        <h3><span class="dot" style="background:#d10000"></span>Power &amp; sequencing safety</h3>
+        <ul>
+          <li><b>48V is only ~2V under the 50V ceiling.</b> Regen back-EMF from hard decel can spike the bus above 50V and kill a driver. Run the PSU trimmed low, short leads, limit accel; consider a bus clamp/TVS on a heavy machine. 36V is the safer supply.</li>
+          <li><b>NEVER hot-plug a motor.</b> Disconnecting a coil under 48V generates a back-EMF spike that destroys the DM542 output stage. Power down, wait for LEDs off, then touch motor wiring.</li>
+          <li><b>Commission ONE axis at a time</b> at low current: 0.1 mm jog, 100 mm/min. Spindle stays physically unplugged until motion is proven. Tuning tip: if steps look doubled/erratic, set GRBL <code>$2</code> (step invert) and a wide <code>$0</code> pulse (3–10 µs) — that's tuning, not rewiring.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>ALMAWARE · FoxAlien XE-PRO rewire · 2026-08-13 · <code>D:\CLAUDE\foxalien-xe-pro-jetson-control\wiring\XE-PRO-rewire.html</code></span>
+      <span class="crit">Safety-critical: verify against your own hardware before applying power.</span>
+    </div>
+  </div>
+</div>

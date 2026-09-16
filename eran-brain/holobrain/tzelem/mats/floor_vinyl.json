@@ -1,0 +1,41 @@
+{
+ "name": "floor_vinyl",
+ "kind": "floor",
+ "size": 512,
+ "mm_per_texel": 1.5,
+ "physical_size_mm": 768.0,
+ "source": "room3d/frames/f0071.jpg",
+ "source_crop_xyxy": [
+  520,
+  1340,
+  1032,
+  1852
+ ],
+ "source_px": [
+  512,
+  512
+ ],
+ "provenance": "Iddo Perez, room_20260905.mp4, filmed 2026-09-05, his own desk",
+ "licence": "Iddo's own footage - no third-party licence",
+ "scale_basis": "assumed",
+ "mm_per_px_source": 1.5,
+ "roughness_base_authored": 0.55,
+ "metallic_authored": 0.0,
+ "relief_mm_authored": 0.5,
+ "albedo_is": "mean-normalised DETAIL, stored as sRGB with 1.0 at mid-grey",
+ "measured": [
+  "albedo",
+  "-"
+ ],
+ "derived": [
+  "height",
+  "normal",
+  "roughness-variation",
+  "ao"
+ ],
+ "authored": [
+  "roughness-base",
+  "metallic",
+  "relief_mm"
+ ]
+}

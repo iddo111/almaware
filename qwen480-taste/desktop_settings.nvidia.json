@@ -1,0 +1,17 @@
+{
+  "theme": "tan",
+  "font_size": 14,
+  "temperature": 0.3,
+  "max_tokens": 1500,
+  "stream": true,
+  "rag_recall": true,
+  "rag_standard": true,
+  "rag_project": true,
+  "rag_ramchat": true,
+  "rag_quorum": true,
+  "recall_limit": 4,
+  "door": "http://<tailnet-ip>:8010/v1/chat/completions",
+  "model": "moonshotai/kimi-k3",
+  "sidebar_width": 367,
+  "send_on_enter": true
+}

@@ -1,0 +1,41 @@
+{
+ "name": "steel_brushed",
+ "kind": "metal",
+ "size": 64,
+ "mm_per_texel": 0.1833950938144503,
+ "physical_size_mm": 11.737286004124819,
+ "source": "room3d/frames/f0008.jpg",
+ "source_crop_xyxy": [
+  300,
+  905,
+  370,
+  975
+ ],
+ "source_px": [
+  70,
+  70
+ ],
+ "provenance": "Iddo Perez, room_20260905.mp4, filmed 2026-09-05, his own desk",
+ "licence": "Iddo's own footage - no third-party licence",
+ "scale_basis": "measured",
+ "mm_per_px_source": 0.16767551434464026,
+ "roughness_base_authored": 0.34,
+ "metallic_authored": 1.0,
+ "relief_mm_authored": 0.06,
+ "albedo_is": "mean-normalised DETAIL, stored as sRGB with 1.0 at mid-grey",
+ "measured": [
+  "albedo",
+  "scale"
+ ],
+ "derived": [
+  "height",
+  "normal",
+  "roughness-variation",
+  "ao"
+ ],
+ "authored": [
+  "roughness-base",
+  "metallic",
+  "relief_mm"
+ ]
+}

@@ -1,0 +1,129 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "da",
+ "letter": "dalet",
+ "hebrew": "ד",
+ "facts": {
+  "place": "tip",
+  "manner": "stop",
+  "nasal": 0,
+  "voiced": 1
+ },
+ "decisions": {
+  "knots": "AH",
+  "constr": "seal",
+  "nasal": 0,
+  "voice": "on",
+  "release": "plain",
+  "burst": 1,
+  "pre": 0
+ },
+ "amounts": {
+  "c_pos": 0.9447866503143196,
+  "c_area": 2.0,
+  "velum": 0.0,
+  "ten": 0.6,
+  "voi": 1.0,
+  "d_pre": 0.0,
+  "d_cons": 0.07371330899199026,
+  "d_trans": 0.019028715157365872,
+  "d_gap": 0.04,
+  "gap_pos": 0.65,
+  "gap_area": 2.0,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.0,
+  "d_vowel": 0.3159223504482013,
+  "glide": 0.3597735573036824,
+  "gain": 9.63277628597561,
+  "f0": 103.64963979012374,
+  "trans_voi": null
+ },
+ "live_amounts": [
+  "c_pos",
+  "d_cons",
+  "d_trans",
+  "d_vowel",
+  "f0",
+  "gain",
+  "glide",
+  "ten",
+  "trans_voi",
+  "voi"
+ ],
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9448,
+    0.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9448,
+    0.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.0737,
+   0.019,
+   0.3159
+  ],
+  "f0_knots": [
+   103.64963979012374,
+   103.64963979012374,
+   96.39416500481508
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.3597735573036824,
+  "burst": {
+   "gain": 9.63277628597561,
+   "tau_s": 0.003
+  },
+  "backend": "c",
+  "seed": 0
+ },
+ "ruler": "school-v2/ruler.py (09-02 family rulers + verifiers' objections)",
+ "brief": "ok   closure -17.5 dB <= -16; ok   burst jump 27.2 dB > 15 within 20 ms; ok   voiced closure f0 105 hnr 7.0; ok   F3 onset 2827 high (>=2780) -> 2567; ok   F1 onset 483 rising -> 576",
+ "attempt": 33
+}

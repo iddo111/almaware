@@ -1,0 +1,357 @@
+{
+ "kind": "darwish",
+ "n_input": 314,
+ "n_jobs": 233,
+ "excluded_by_filename": [
+  {
+   "file": "2011 - Karim Darwish vs Aaron Frankcomb Game3.mp3",
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)"
+  },
+  {
+   "file": "2011 - Karim Darwish vs Gregoire Marche Game1.mp3",
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)"
+  },
+  {
+   "file": "2012 - WSF 2012 Semi Gaultier vs Darwish Game1.mp3",
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)"
+  },
+  {
+   "file": "2012 - ralenti shorbagy VS darwish.mp3",
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)"
+  },
+  {
+   "file": "2013 - Ras Sinai - ＂Mactub＂ -  Yinon Darwish.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2013 - Squash ： Qatar Classic 2013 - Semi-Final Roundup Elshorbagy v Darwish.mp3",
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)"
+  },
+  {
+   "file": "2015 - MIX-126 -DJ HELMIC,Cabal, Darwish,Day.Din,Vibrasphere u.v.a.(SET BY DJ HELMIC - 03.04.2015).mp3",
+   "reason": "multi-artist compilation (Darwish one of several)"
+  },
+  {
+   "file": "2016 - ＂כל כולי אור＂- Yinon Darwish.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2017 - ARMIN VAN BUUREN x VINI VICI x HILIGHT TRIBE - Great Spirit (Live at Transmission Prague 2016) [4K].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2017 - Nataraja3D - Darwishezm.mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2018 - Avaha - Darwish.mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2018 - The Arena - Synaptik (Jordan) Vs Al Darwish (Syria) - مدح# - باتل مجاملة.mp3",
+   "reason": "rap battle / rapper Al Darwish (Syria)"
+  },
+  {
+   "file": "2018 - Yinon Darwish in Unite in Babylon.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2018 - ינון דרוויש - שחר⧸⧸Yinon Darwish - Shachar.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2019 - Avaha - Darwish.mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2019 - BPF GROUP AS B2B WITH AL DARWISH ENGINEERING.mp3",
+   "reason": "talk / podcast / news / lecture / corporate"
+  },
+  {
+   "file": "2019 - Com4Trance Israel Trance Live Event @ Darwish, Rising Dust & New Born Sets ＊Highlights＊ 2019.mp3",
+   "reason": "multi-artist compilation (Darwish one of several)"
+  },
+  {
+   "file": "2019 - Darwish - KAN ARTICLE,  כאן דוקותיים על טראנס עם דרוויש.mp3",
+   "reason": "talk / podcast / news / lecture / corporate"
+  },
+  {
+   "file": "2019 - Pyc - Modulated Modulation (deep prog trance mix) [4k 48fps].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2019 - The Arena -  Kalash (Lebanon) VS Al Darwish (Syria).mp3",
+   "reason": "rap battle / rapper Al Darwish (Syria)"
+  },
+  {
+   "file": "2019 - Yinon Darwish - ינון דרוויש - כל כולי אור.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2019 - יינון דרוויש - שחר Yinon Darwish - Shahar (קליפ ב- 360 מעלות).mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2019 - רות - ינון דרוויש   Ruth -Yinon darwish.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2020 - Al Darwish (Full Concert) ｜ Live at The Grand Factory, Beirut.mp3",
+   "reason": "rap battle / rapper Al Darwish (Syria)"
+  },
+  {
+   "file": "2020 - Neesh x Mr.MP-DarWish(Live Performance).mp3",
+   "reason": "rap battle / rapper Al Darwish (Syria)"
+  },
+  {
+   "file": "2020 - Yinon Darwish - ינון דרוויש - עלמא - איילה.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2020 - الدرويشVSكلش باتل رابThe Arena - Kalash (Lebanon) VS Al Darwish (Syria).mp3",
+   "reason": "rap battle / rapper Al Darwish (Syria)"
+  },
+  {
+   "file": "2021 - Ace Ventura set @ Darwishland at the desert.mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2021 - Darwish - Sari Ft. Moeen Chraif by Special K live for Cafe De Anatolia  معين شريف من يوم من يومين.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2021 - SOME1 @ Darwishland ⧸ June 2021 in the desert of Israel!.mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2021 - Side Effects @ Darwishland 2021 (Desert party in Israel).mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2021 - Valentino Khan - Deep Down Low  (Trampsta Edit) ◉ [PSYTRANCE].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2021 - Volcano On Mars @ Darwishland - Kfar Hanokdim.mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2021 - כל כולי אור - ינון דרוויש (קאבר) or - yinon darwish cover I.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2022 - DEKEL @ Ozora Festival 2022 [ Full Set ].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2022 - Libra @ Ozora Festival 2022 [FULL SET].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2022 - Pixel [2h set] @ Desert Adventure 2021.mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2022 - Psy-Nation Radio #057 - incl. Darwish Mix [Liquid Soul & Ace Ventura].mp3",
+   "reason": "multi-artist compilation (Darwish one of several)"
+  },
+  {
+   "file": "2022 - Ramy Ashour v Karim Darwish ｜ 2008 PSA World Championships Final ｜ #ThrowbackThursday HIGHLIGHTS!.mp3",
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)"
+  },
+  {
+   "file": "2022 - ＂Women Are Better Than Men：＂ Womanhood Reimagined ｜ Ustadha Dr. Amina Darwish.mp3",
+   "reason": "talk / podcast / news / lecture / corporate"
+  },
+  {
+   "file": "2023 - DEKEL @ Universo Paralello 2023 [ Full Set ].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2023 - Darwish-2003⧸درويش-٢٠٠٣(official audio).mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2023 - Hilight Tribe - The Best of Hilight Tribe (Japanese Edition) [Full album⧸Psytrance].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2023 - Loop of the spirit ⧸⧸ Mix Psytrance ⧸⧸ GMS Pixel Freedom Fighters Darwish Ekanta Ace Ventura....mp3",
+   "reason": "multi-artist compilation (Darwish one of several)"
+  },
+  {
+   "file": "2024 - 'Where Olive Trees Weep'： A 21 Day Journey Begins： Ashira Darwish, Maurizio & Zaya Benazzo.mp3",
+   "reason": "talk / podcast / news / lecture / corporate"
+  },
+  {
+   "file": "2024 - Activism for Palestine： Brenneman, Arraf, Abusalama, Hilo, Darwish.mp3",
+   "reason": "talk / podcast / news / lecture / corporate"
+  },
+  {
+   "file": "2024 - Avaha - Darwish (STRDW093⧸Geomagnetic Records⧸Psytrance)：：Full Album.mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2024 - DEKEL & GOLANSKI @ Ozora Festival 2024 ⧸ PUMPUI [ Full Video ].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2024 - Fight Club Rave [David Löhlein - Snake Selection #5].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2024 - Nickel City Challenge, November 23, 2024, Omar Darwish vs. Divine Gramling.mp3",
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)"
+  },
+  {
+   "file": "2024 - Ozora Festival 2024 ⧸ Goa Zero ⧸ Out of Orbit [ Full Video ].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2024 - PSYTRANCE MIX 2024 ｜ 'ASTRIX, DARWISH, INFECTED MUSHROOM, PETRA, HI PROFILE' 🔥  This is Psytrance!.mp3",
+   "reason": "multi-artist compilation (Darwish one of several)"
+  },
+  {
+   "file": "2024 - PSYTRANCE SET @ DBN Hallowen 2024 'ASTRIX, PETTRA, RISING DUST,  DARWISH, VEGAS, ELETRIC UNIVERSE' 🎃.mp3",
+   "reason": "multi-artist compilation (Darwish one of several)"
+  },
+  {
+   "file": "2025 - Al Darwish - الدرويش Live at RAqS (Amsterdam).mp3",
+   "reason": "rap battle / rapper Al Darwish (Syria)"
+  },
+  {
+   "file": "2025 - Captain Hook @ Ozora Festival 2025 [Full Set Movie].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2025 - Fouad Darwish at Jad Maq studio - set.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2025 - Insights on After Lunch - Tactics to win B2B Sales - by Wael Darwish - Episode #1.mp3",
+   "reason": "talk / podcast / news / lecture / corporate"
+  },
+  {
+   "file": "2025 - Just Like Seasons by Omar Darwish.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2025 - KOROLOVA - Live @ Zamna Pyramids, Egypt [Melodic Techno & Progressive House Mix].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2025 - Sheik Darwish vs Haris Daniel (Deng T'ganu) Gfinal Quarterfinal CIMB BU17 2025.mp3",
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)"
+  },
+  {
+   "file": "2025 - THE BEDLER ROOM 007 ｜ B2B @MikeyDarwish  ｜ TECHNO , HARDSTYLE AND HIGH ENERGY VIBES.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2025 - bout 14   Muhd Darwish vs Muhd Calif Hairi.mp3",
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)"
+  },
+  {
+   "file": "2025 - ❤️🌹＂ Cosmic Darwish ” Denis W. ❤️🌹Vibrant Oriental Arabic Psy Trance Track+++ You must hear it !🌹.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2026 - Ben Darwish - Live Ambient and Downtempo.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2026 - Ben Darwish - Live at Salon Palomilla 4⧸5⧸26 - Part 1.1.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2026 - Ben Darwish - Live at Salon Palomilla 4⧸5⧸26 - Part 1.2.mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2026 - Captain Hook 🌀 Ozora Festival 2026 [full video ⧸4K].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2026 - Darwish - Jangan Putus Asa (LIVE KONSERT DARWISH 14 TAHUN KISAH KITA).mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2026 - Darwish - Syahadah Yang Tertangguh (LIVE KONSERT DARWISH 14 TAHUN KISAH KITA).mp3",
+   "reason": "a different person named Darwish"
+  },
+  {
+   "file": "2026 - Darwish Rasooli's Incredible 101-Run Knock ｜ Speenghar vs Amo ｜ Final ｜ e& List a Tournament ｜ 341T.mp3",
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)"
+  },
+  {
+   "file": "2026 - Darwish Rasooli's Match-Winning 84 Runs ｜ Afghanistan vs West Indies ｜ 1st T20I 2026 ｜ 321T.mp3",
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)"
+  },
+  {
+   "file": "2026 - Ep 305 - The Cutting Edge： Chasing The Dream (GUEST： Kevin Darwish).mp3",
+   "reason": "talk / podcast / news / lecture / corporate"
+  },
+  {
+   "file": "2026 - Final Single Enstek Table Tennis ｜ Darwish vs Lye Jude ｜ 19⧸4⧸2026 ｜.mp3",
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)"
+  },
+  {
+   "file": "2026 - Multiverse - Hypnotherapy [Stomping Ground Compilation].mp3",
+   "reason": "another artist's set or track (Darwish not the author)"
+  },
+  {
+   "file": "2026 - OZORA FESTIVAL 2026 👽 Tribal & Cosmic Set： Vegas, Captain Hook, Raja Ram, GroundBass, Skazi, Darwish.mp3",
+   "reason": "multi-artist compilation (Darwish one of several)"
+  },
+  {
+   "file": "2026 - OZORA FESTIVAL 2026 🔥 Cosmic Night Vibes — Captain Hook, Mandragora, Darwish, Robert Miles.mp3",
+   "reason": "multi-artist compilation (Darwish one of several)"
+  },
+  {
+   "file": "2026 - OZORA FESTIVAL 2026 🔥 Tribal & Cosmic — Vegas, Captain Hook, Raja Ram, GroundBass, Skazi, Darwish #.mp3",
+   "reason": "multi-artist compilation (Darwish one of several)"
+  },
+  {
+   "file": "2026 - OZORA FESTIVAL 2026 🔥 Tribal & Cosmic — Vegas, Captain Hook, Raja Ram, GroundBass, Skazi, Darwish #2.mp3",
+   "reason": "multi-artist compilation (Darwish one of several)"
+  },
+  {
+   "file": "2026 - OZORA FESTIVAL 2026 🔥 Tribal & Cosmic — Vegas, Captain Hook, Raja Ram, GroundBass, Skazi, Darwish.mp3",
+   "reason": "multi-artist compilation (Darwish one of several)"
+  },
+  {
+   "file": "2026 - The Little Palestine Logo Scandal： Laila vs. Rush Darwish.mp3",
+   "reason": "talk / podcast / news / lecture / corporate"
+  },
+  {
+   "file": "2026 - ＊＊Arabic Flamenco Oud ｜ Mediterranean Soul – Dario Darwish＊＊.mp3",
+   "reason": "a different person named Darwish"
+  }
+ ],
+ "rules": [
+  {
+   "reason": "sport (squash / cricket / table tennis / badminton / combat)",
+   "regex": "karim darwish|squash|\\bwsf 20|psa world|elshorbagy|shorbagy|gaultier vs darwish|rasooli|\\bt20i\\b|table tennis|cimb bu17|sheik darwish vs|muhd darwish vs|nickel city challenge"
+  },
+  {
+   "reason": "talk / podcast / news / lecture / corporate",
+   "regex": "b2b sales|episode #|\\bep \\d+ -|cutting edge|logo scandal|kan article|nonie darwish|women are better than men|where olive trees weep|activism for palestine|engineering"
+  },
+  {
+   "reason": "rap battle / rapper Al Darwish (Syria)",
+   "regex": "synaptik|the arena|\\bal darwish\\b|الدرويش|mr\\.mp-darwish"
+  },
+  {
+   "reason": "a different person named Darwish",
+   "regex": "ben darwish|omar darwish|bassel darwish|fouad darwish|wael darwish|kevin darwish|rush darwish|mikeydarwish|yinon darwish|ינון דרוויש|konsert darwish|moeen chraif|معين شريف|dario darwish|darwish-2003|cosmic darwish"
+  },
+  {
+   "reason": "another artist's set or track (Darwish not the author)",
+   "regex": "korolova|armin van buuren|captain hook @ ozora festival 2025|captain hook 🌀|some1 @ darwishland|multiverse - hypnotherapy|dekel @|dekel & golanski|libra @ ozora|pixel \\[2h set\\]|ace ventura set @|side effects @ darwishland|volcano on mars @|valentino khan|hilight tribe - the best|fight club rave|goa zero ⧸ out of orbit|pyc - modulated|nataraja3d|avaha - darwish"
+  },
+  {
+   "reason": "multi-artist compilation (Darwish one of several)",
+   "regex": "ozora festival 2026 [👽🔥]|psytrance mix 2024|psytrance set @ dbn|loop of the spirit|mix-126|psy-nation radio|com4trance"
+  }
+ ]
+}

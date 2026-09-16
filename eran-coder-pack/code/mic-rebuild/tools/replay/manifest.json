@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "notes": "KESHEV replay corpus manifest (K0 skeleton). Manifest lives in git; WAV files live locally under tools/replay/wavs/ and are git-ignored. Categories and known failing clips per PHASE2-DESIGN.md section 2 (tools/replay) and PHASE1-INQUIRY.md criterion 10. WAVs are collected/imported from the mic-debug-vm corpus in later milestones; at K0 entries may be MISSING on disk — the rig reports presence honestly.",
+  "sample_rate": 16000,
+  "corpus": [
+    {"id": "silence-room", "category": "silence", "file": "wavs/silence-room.wav", "lang": null, "expect": {"typed_text": ""}},
+    {"id": "noise-ambient", "category": "noise", "file": "wavs/noise-ambient.wav", "lang": null, "expect": {"typed_text": ""}},
+    {"id": "faint-he-1", "category": "faint", "file": "wavs/faint-he-1.wav", "lang": "he", "expect": {"transcribed": true, "rms_band": [0.002, 0.005]}},
+    {"id": "he-clean-1", "category": "he", "file": "wavs/he-clean-1.wav", "lang": "he", "expect": {"transcribed": true}},
+    {"id": "en-clean-1", "category": "en", "file": "wavs/en-clean-1.wav", "lang": "en", "expect": {"transcribed": true, "latin_script": true}},
+    {"id": "code-switch-1", "category": "code_switch", "file": "wavs/code-switch-1.wav", "lang": "mixed", "expect": {"transcribed": true}},
+    {"id": "laughter-blob", "category": "laughter", "file": "wavs/laughter-blob.wav", "lang": null, "expect": {"typed_text": ""}},
+    {"id": "failing-wifi", "category": "failing", "file": "wavs/failing-wifi.wav", "lang": "he", "expect": {"transcribed": true, "note": "ווי פאי — must route he, not transliterate"}},
+    {"id": "failing-flying-corals", "category": "failing", "file": "wavs/failing-flying-corals.wav", "lang": "en", "expect": {"transcribed": true, "latin_script": true, "note": "flying corals — en must come out in Latin script"}},
+    {"id": "failing-talking-english", "category": "failing", "file": "wavs/failing-talking-english.wav", "lang": "mixed", "expect": {"transcribed": true, "note": "טוקינג אינגליש — code-switch routing"}}
+  ]
+}

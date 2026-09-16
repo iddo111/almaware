@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cboulevardshots1"]
+
+; THE ACCEPTANCE SCENE. No player, no camera in the main window -- the Shots node
+; makes its own 4K SubViewport and photographs the world through that. The visible
+; window therefore renders nothing but the clear colour and costs nothing, and no
+; pixel outside this process is ever read.
+
+[ext_resource type="Script" path="res://scripts/boulevard_cafe.gd" id="1_world"]
+[ext_resource type="Script" path="res://scripts/boulevard_shots.gd" id="2_shots"]
+
+[node name="Boulevard" type="Node3D"]
+
+[node name="World" type="Node3D" parent="."]
+script = ExtResource("1_world")
+
+[node name="Shots" type="Node" parent="."]
+script = ExtResource("2_shots")

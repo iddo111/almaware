@@ -1,0 +1,121 @@
+{
+  "question": "which part of the segment descriptor is doing the work",
+  "protocol": "leave-one-base-out inside train, four seeds, heldout untouched",
+  "config": "seg-m30h2.0-k128",
+  "units": 128,
+  "chance_top1": 0.045454545454545456,
+  "results": [
+    {
+      "variant": "selected (parts=3, delta, duration x2)",
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 2.0
+      },
+      "dim": 67,
+      "top1_cosine": 0.6875,
+      "sd_over_seeds": 0.019096570028098652,
+      "top1_edit": 0.6477272727272727,
+      "all_pairs_pooled": 0.8758680555555556
+    },
+    {
+      "variant": "duration weight 1 instead of 2",
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "dim": 67,
+      "top1_cosine": 0.6546717171717171,
+      "sd_over_seeds": 0.024377190121600816,
+      "top1_edit": 0.6388888888888888,
+      "all_pairs_pooled": 0.8758680555555556
+    },
+    {
+      "variant": "NO duration",
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": false,
+        "duration_weight": 1.0
+      },
+      "dim": 66,
+      "top1_cosine": 0.6483585858585859,
+      "sd_over_seeds": 0.010916424536483926,
+      "top1_edit": 0.6363636363636362,
+      "all_pairs_pooled": 0.8576388888888888
+    },
+    {
+      "variant": "NO trajectory (parts=1)",
+      "descriptor": {
+        "parts": 1,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 2.0
+      },
+      "dim": 27,
+      "top1_cosine": 0.615530303030303,
+      "sd_over_seeds": 0.027394916608266564,
+      "top1_edit": 0.6123737373737373,
+      "all_pairs_pooled": 0.8333333333333334
+    },
+    {
+      "variant": "NO trajectory, NO duration",
+      "descriptor": {
+        "parts": 1,
+        "use_delta": true,
+        "use_duration": false,
+        "duration_weight": 1.0
+      },
+      "dim": 26,
+      "top1_cosine": 0.6508838383838383,
+      "sd_over_seeds": 0.00785978509974036,
+      "top1_edit": 0.6376262626262625,
+      "all_pairs_pooled": 0.8784722222222222
+    },
+    {
+      "variant": "NO delta block",
+      "descriptor": {
+        "parts": 3,
+        "use_delta": false,
+        "use_duration": true,
+        "duration_weight": 2.0
+      },
+      "dim": 61,
+      "top1_cosine": 0.6464646464646464,
+      "sd_over_seeds": 0.014615955685341173,
+      "top1_edit": 0.6186868686868686,
+      "all_pairs_pooled": 0.8567708333333334
+    },
+    {
+      "variant": "duration ONLY (parts=1, no cepstra is impossible; parts=1+dur)",
+      "descriptor": {
+        "parts": 1,
+        "use_delta": false,
+        "use_duration": true,
+        "duration_weight": 2.0
+      },
+      "dim": 21,
+      "top1_cosine": 0.6193181818181818,
+      "sd_over_seeds": 0.023981590799523455,
+      "top1_edit": 0.5959595959595959,
+      "all_pairs_pooled": 0.8723958333333333
+    },
+    {
+      "variant": "parts=5",
+      "descriptor": {
+        "parts": 5,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 2.0
+      },
+      "dim": 107,
+      "top1_cosine": 0.6534090909090908,
+      "sd_over_seeds": 0.03166021191444406,
+      "top1_edit": 0.6130050505050505,
+      "all_pairs_pooled": 0.8619791666666666
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+ "birth/FROZEN/correct|stuck@3.000000": {
+  "last": 1789086528.4330883,
+  "msg": "correct = 3.0000 unchanged for 11 rounds (9.6d, since 2026-09-01T12:56:48) AND every learnable sub-score is still too (none measurable). It is eating and learning nothing -- this is the nezer's shape.",
+  "first_seen": "2026-09-01T14:25:21"
+ },
+ "birth/DEAD/correct|dead@3.000000": {
+  "last": 1789086528.4330883,
+  "msg": "correct = 3.000000 in ALL 11 rounds on record (9.6d). It has never moved once. A dead wire, not a stable number -- the LayerNorm(1) scar.",
+  "first_seen": "2026-09-01T14:25:21"
+ },
+ "birth/STALL/-|unit-inactive": {
+  "last": 1789086528.4330883,
+  "msg": "systemd unit sibling.service is inactive (sub=dead, 0 restarts). It is not running.",
+  "first_seen": "2026-09-01T17:16:01"
+ },
+ "birth/STALL/-|round-overdue": {
+  "last": 1789086528.4330883,
+  "msg": "no round for 9.4d. Expected one every 30m (tolerance x2.5).",
+  "first_seen": "2026-09-01T18:12:51"
+ },
+ "ear/DIVERGE/exam|backwards@0.9722": {
+  "last": 1789086528.4330883,
+  "msg": "exam peaked at 0.9722 and has not been within 0.050 of it for 5 rounds (recent best 0.8333). It is going backwards.",
+  "first_seen": "2026-09-09T09:38:13"
+ },
+ "ear/DIVERGE/exam|below-born@0.6944": {
+  "last": 1789097348.4514246,
+  "msg": "exam = 0.6944 is BELOW the value it was BORN with (0.8889). Everything it has learned made it worse.",
+  "first_seen": "2026-09-11T06:29:08"
+ }
+}

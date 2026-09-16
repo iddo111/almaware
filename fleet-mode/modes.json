@@ -1,0 +1,348 @@
+{
+  "_comment": [
+    "FLEET MODES - edit this file, that is the whole configuration.",
+    "Every unit named here was MEASURED with `systemctl --user list-units --all` plus",
+    "`systemctl show -p LoadState -p ActiveState` on 2026-09-06. User scope is the only",
+    "correct scope on this fleet - system scope answers 'not-found' for services that",
+    "are running perfectly.",
+    "",
+    "=== REWRITTEN 2026-09-06 by claude-cli-ARK2, on Iddo's 2026-09-05 23:58 order ===",
+    "  'אני רוצה שיהיה לי תמיד גם כל האימונים ... כולם ללא הפסקה, ומה שנשאר מקום שם",
+    "   נשחק - תיבת נח. כלומר תכניס גם את הקודר אימון משקולות לתיבת נח.'",
+    "  (every training run is permanent and never stopped; whatever capacity is left",
+    "   over is the play space. Put the coder's weight-training in the ark too.)",
+    "",
+    "THAT CHANGES WHAT A MODE IS. A mode used to trade training against work. It no",
+    "longer can: EVERY mode below starts every training unit and NO mode stops one.",
+    "A mode now decides one thing only - what the LEFTOVER capacity is used for.",
+    "",
+    "TWO CLASSES OF REFUSAL, and they behave differently on purpose:",
+    "  PROTECTED - naming any of these makes THIS WHOLE FILE FAIL TO LOAD:",
+    "    eran1/eranb-life.service   (ERAN himself, alive since 2026-08-13)",
+    "    eran2/eran-senses.service  (his ears and vocal tract)",
+    "    eran4/dmidi-life.service   (DARWISH)",
+    "    eran1/keshev-stt.service   (Iddo's microphone)",
+    "    anything matching *-life* or core system plumbing",
+    "  PERMANENT TRAINING + THE ARK - these CAN be named, and are refused when acted",
+    "    on, with result=REFUSED. That is deliberate: it is the only way the gate can",
+    "    be demonstrated rather than asserted. See the mode 'prove-permanent' below,",
+    "    which exists for no other purpose than to be refused.",
+    "",
+    "QWEN3-CODER-480B WAS REMOVED 2026-09-06. It held eran1+eran2+eran3 (~94 GB each)",
+    "to deliver 5.04 tok/s single-stream - a pipeline runs at its slowest stage - and",
+    "it is what forced the coder's continued-pretraining to pause on 09-05 19:11.",
+    "84.4 GB (coder) + 94 GB (480B) = 178 GB on a 121 GB box; they could never share",
+    "eran3. Iddo chose the training. The play space is now gpt-oss-120b on eran4",
+    "(measured 12.9 tok/s WHILE WINSTON trained on the same GPU - it demonstrably",
+    "coexists with training, which is the whole requirement) plus the onboard coder",
+    "qwen3-coder-next-eran4 (79.7B Q4) served by ollama on eran4.",
+    "",
+    "OLLAMA IS NOT LISTED HERE ON PURPOSE. eran4's ollama.service is SYSTEM scope",
+    "(measured: `systemctl is-enabled ollama.service` -> enabled), and this program",
+    "only ever runs `systemctl --user`. It is always on and survives reboot on its",
+    "own, so no mode needs an opinion about it. Both models are reached through the",
+    "EXISTING alma_router on eran1:8010 - no new door was invented."
+  ],
+  "modes": {
+    "training": {
+      "label": "TRAINING · אימונים",
+      "description": "The play space is EMPTY - every spare GB and every spare watt goes to the learning loops. This is also what used to be called 'idle': with training permanent, an empty play space IS the training mode.",
+      "units": [
+        {
+          "host": "eran3",
+          "unit": "coder-train.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "winston-forever-v2.service",
+          "want": "start"
+        },
+        {
+          "host": "eran2",
+          "unit": "voice-ant-farm.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "voice-ant-farm.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "chef.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "nezer.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "sarid.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "snnlab.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "gptoss-120b.service",
+          "want": "stop"
+        },
+        {
+          "host": "eran3",
+          "unit": "almido-ide.service",
+          "want": "stop"
+        },
+        {
+          "host": "eran4",
+          "unit": "glm-coder-harness.service",
+          "want": "stop"
+        },
+        {
+          "host": "eran4",
+          "unit": "alma-glm-qwen-ui.service",
+          "want": "stop"
+        },
+        {
+          "host": "eran1",
+          "unit": "comfyui.service",
+          "want": "stop"
+        }
+      ]
+    },
+    "code": {
+      "label": "CODE · קוד",
+      "description": "The leftover capacity serves code: gpt-oss-120b on eran4, the ALMIDO IDE on eran3, the GLM harness and window. The render box stands down. Training keeps running underneath, as it does in every mode.",
+      "units": [
+        {
+          "host": "eran3",
+          "unit": "coder-train.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "winston-forever-v2.service",
+          "want": "start"
+        },
+        {
+          "host": "eran2",
+          "unit": "voice-ant-farm.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "voice-ant-farm.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "chef.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "nezer.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "sarid.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "snnlab.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "gptoss-120b.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "almido-ide.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "glm-coder-harness.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "alma-glm-qwen-ui.service",
+          "want": "start"
+        },
+        {
+          "host": "eran1",
+          "unit": "comfyui.service",
+          "want": "stop"
+        }
+      ]
+    },
+    "film": {
+      "label": "FILM · הפקת סרטים",
+      "description": "The leftover capacity serves rendering: ComfyUI on eran1. The coding models and IDE stand down. Training keeps running underneath.",
+      "units": [
+        {
+          "host": "eran3",
+          "unit": "coder-train.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "winston-forever-v2.service",
+          "want": "start"
+        },
+        {
+          "host": "eran2",
+          "unit": "voice-ant-farm.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "voice-ant-farm.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "chef.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "nezer.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "sarid.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "snnlab.service",
+          "want": "start"
+        },
+        {
+          "host": "eran1",
+          "unit": "comfyui.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "gptoss-120b.service",
+          "want": "stop"
+        },
+        {
+          "host": "eran3",
+          "unit": "almido-ide.service",
+          "want": "stop"
+        },
+        {
+          "host": "eran4",
+          "unit": "glm-coder-harness.service",
+          "want": "stop"
+        },
+        {
+          "host": "eran4",
+          "unit": "alma-glm-qwen-ui.service",
+          "want": "stop"
+        }
+      ]
+    },
+    "models": {
+      "label": "BIG MODELS · המודלים הגדולים",
+      "description": "Just the models, no IDE and no harness: gpt-oss-120b on eran4, answering through alma_router on eran1:8010 alongside the onboard coder qwen3-coder-next-eran4. For talking to a model without a workspace attached.",
+      "units": [
+        {
+          "host": "eran3",
+          "unit": "coder-train.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "winston-forever-v2.service",
+          "want": "start"
+        },
+        {
+          "host": "eran2",
+          "unit": "voice-ant-farm.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "voice-ant-farm.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "chef.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "nezer.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "sarid.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "snnlab.service",
+          "want": "start"
+        },
+        {
+          "host": "eran4",
+          "unit": "gptoss-120b.service",
+          "want": "start"
+        },
+        {
+          "host": "eran3",
+          "unit": "almido-ide.service",
+          "want": "stop"
+        },
+        {
+          "host": "eran4",
+          "unit": "glm-coder-harness.service",
+          "want": "stop"
+        },
+        {
+          "host": "eran4",
+          "unit": "alma-glm-qwen-ui.service",
+          "want": "stop"
+        },
+        {
+          "host": "eran1",
+          "unit": "comfyui.service",
+          "want": "stop"
+        }
+      ]
+    },
+    "prove-permanent": {
+      "label": "PROVE THE GATE · הוכחת השער (designed to be REFUSED)",
+      "description": "This mode exists to be refused. It asks to STOP the coder's continued-pretraining - the single largest process on the fleet, 84.4 GB, the one thing Iddo named first on 2026-09-05 23:58. Applying it must plan zero executable actions and log result=REFUSED with coder-train.service still active afterwards. Iddo, 2026-09-05: 'a gate that has never refused anything has not been demonstrated.' Clicking this is safe - that is the point.",
+      "units": [
+        {
+          "host": "eran3",
+          "unit": "coder-train.service",
+          "want": "stop"
+        },
+        {
+          "host": "eran4",
+          "unit": "winston-forever-v2.service",
+          "want": "stop"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,197 @@
+{
+ "ts": "2026-09-11T08:19:58",
+ "host": "edgexpert-01e6",
+ "verdict": "ALARM",
+ "n_alarm": 6,
+ "n_warn": 1,
+ "findings": [
+  {
+   "level": "ALARM",
+   "code": "DIVERGE",
+   "organ": "ear",
+   "series": "exam",
+   "msg": "exam = 0.6944 is BELOW the value it was BORN with (0.8889). Everything it has learned made it worse.",
+   "nums": {
+    "value": 0.6944,
+    "born": 0.8889
+   }
+  },
+  {
+   "level": "ALARM",
+   "code": "DIVERGE",
+   "organ": "ear",
+   "series": "exam",
+   "msg": "exam peaked at 0.9722 and has not been within 0.050 of it for 5 rounds (recent best 0.8056). It is going backwards.",
+   "nums": {
+    "best": 0.9722,
+    "recent_best": 0.8056,
+    "drop": 0.16659999999999997,
+    "window": 5
+   }
+  },
+  {
+   "level": "ALARM",
+   "code": "STALL",
+   "organ": "birth",
+   "series": null,
+   "msg": "no round for 9.6d. Expected one every 30m (tolerance x2.5).",
+   "nums": {
+    "age_s": 833110.447471,
+    "period_s": 1800
+   }
+  },
+  {
+   "level": "ALARM",
+   "code": "STALL",
+   "organ": "birth",
+   "series": null,
+   "msg": "systemd unit sibling.service is inactive (sub=dead, 0 restarts). It is not running.",
+   "nums": {
+    "ActiveState": "inactive",
+    "unit": "sibling.service"
+   }
+  },
+  {
+   "level": "ALARM",
+   "code": "FROZEN",
+   "organ": "birth",
+   "series": "correct",
+   "msg": "correct = 3.0000 unchanged for 11 rounds (9.8d, since 2026-09-01T12:56:48) AND every learnable sub-score is still too (none measurable). It is eating and learning nothing -- this is the nezer's shape.",
+   "nums": {
+    "objective": "correct",
+    "value": 3.0,
+    "rounds_held": 11,
+    "window": 6,
+    "still_inside": [],
+    "moving_inside": [],
+    "it_says_of_itself": {}
+   }
+  },
+  {
+   "level": "ALARM",
+   "code": "DEAD",
+   "organ": "birth",
+   "series": "correct",
+   "msg": "correct = 3.000000 in ALL 11 rounds on record (9.8d). It has never moved once. A dead wire, not a stable number -- the LayerNorm(1) scar.",
+   "nums": {
+    "value": 3.0,
+    "history": 11,
+    "span": "9.8d"
+   }
+  },
+  {
+   "level": "WARN",
+   "code": "STALL",
+   "organ": "ear",
+   "series": null,
+   "msg": "its code /home/eran3/sibling_ear.py CHANGED under the running process (sha 1b66337d0920 -> 071d344edd71). The numbers before and after are not comparable.",
+   "nums": {
+    "sha_now": "071d344edd7168ef2d3de2b484c1989376473e71025ab0f9117f86aa51bf1150",
+    "sha_baseline": "1b66337d09202d34e8d19dc06a45548e65e70c9975f485ad0d9a2812fafbdb29"
+   }
+  }
+ ],
+ "organs": {
+  "ear": {
+   "what": "the sibling's learning loop -- naming human syllables",
+   "root": "/home/eran3/sibling-ear",
+   "unit": "sibling-ear.service",
+   "unit_active": "active",
+   "pid": 2479,
+   "rounds": 135,
+   "last_round_at": "2026-09-11T07:27:29",
+   "last_round_age": "52m",
+   "objective": "exam",
+   "objective_now": 0.6944,
+   "objective_best": 0.9722,
+   "files": 54,
+   "bytes": 1401183,
+   "seal": "intact",
+   "series_moving": [
+    "bias_move",
+    "dev",
+    "exam",
+    "g_move",
+    "gate_move",
+    "ruler",
+    "tau",
+    "theta"
+   ],
+   "series_still": [],
+   "series_constant_by_design": [
+    "born=0.8889 (MOVED!)",
+    "hushed=0.0 (MOVED!)"
+   ],
+   "stop_file": false,
+   "it_says_of_itself": {
+    "stall": "moving",
+    "verdict": "stands",
+    "murphy": "sound",
+    "seal": "intact"
+   }
+  },
+  "birth": {
+   "what": "the sibling itself -- the second whole holobrain",
+   "root": "/home/eran3/sibling",
+   "unit": "sibling.service",
+   "unit_active": "inactive",
+   "pid": 0,
+   "rounds": 11,
+   "last_round_at": "2026-09-01T16:54:48",
+   "last_round_age": "9.6d",
+   "objective": "correct",
+   "objective_now": 3.0,
+   "objective_best": 3.0,
+   "files": 157,
+   "bytes": 52589148,
+   "seal": "intact",
+   "series_moving": [],
+   "series_still": [
+    "correct"
+   ],
+   "series_constant_by_design": [
+    "n=12.0"
+   ],
+   "stop_file": false,
+   "it_says_of_itself": {}
+  }
+ },
+ "disk": {
+  "used_pct": 84.7,
+  "free_gb": 402.0
+ },
+ "self_audit": {
+  "detectors": {
+   "fd_allowlist": {
+    "refused": 3,
+    "kept": 2
+   },
+   "frozen": {
+    "fired_on_sick": 1,
+    "fired_on_well": 0
+   },
+   "dead": {
+    "fired_on_sick": 2,
+    "fired_on_well": 0
+   },
+   "diverge": {
+    "fired_on_sick": 2,
+    "fired_on_well": 0
+   },
+   "stall": {
+    "fired_on_sick": 3,
+    "fired_on_well": 0
+   },
+   "seal": {
+    "fired_on_sick": 4,
+    "fired_on_well": 0
+   }
+  },
+  "source": {
+   "patterns_checked": 6,
+   "hits": {}
+  },
+  "blinded_on_purpose": []
+ },
+ "interval_s": null
+}

@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://emdr_main"]
+
+[ext_resource type="Script" path="res://scripts/emdr_main.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/emdr_orb.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/emdr_ui.gd" id="3"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1")
+
+; ── XR Origin (HTC Vive tracking origin) ─────────────────────────────────────
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(1,0,0, 0,1,0, 0,0,1, 0,0,0)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1,0,0, 0,1,0, 0,0,1, 0,1.7,0)
+
+; ── Vive Controllers ──────────────────────────────────────────────────────────
+[node name="LeftController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+pose = &"default"
+
+[node name="LeftHaptic" type="AudioStreamPlayer3D" parent="XROrigin3D/LeftController"]
+max_distance = 5.0
+attenuation_model = 2
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+pose = &"default"
+
+[node name="RightHaptic" type="AudioStreamPlayer3D" parent="XROrigin3D/RightController"]
+max_distance = 5.0
+attenuation_model = 2
+
+; ── Environment ───────────────────────────────────────────────────────────────
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_calm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866,-0.354,0.354, 0,0.707,0.707, -0.5,-0.612,0.612, 0,5,0)
+light_energy = 0.6
+
+; ── EMDR Orb ──────────────────────────────────────────────────────────────────
+[node name="EMDROrb" type="Node3D" parent="."]
+script = ExtResource("2")
+
+[node name="OrbMesh" type="MeshInstance3D" parent="EMDROrb"]
+[node name="OrbGlow" type="OmniLight3D" parent="EMDROrb"]
+light_color = Color(0.4, 0.8, 1.0, 1.0)
+light_energy = 3.0
+omni_range = 1.5
+
+[node name="OrbTrail" type="GPUParticles3D" parent="EMDROrb"]
+
+; ── Bilateral Audio Players (spatial, panned left/right) ─────────────────────
+[node name="AudioLeft" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1,0,0, 0,1,0, 0,0,1, -3,1.7,-2)
+max_distance = 8.0
+attenuation_model = 2
+
+[node name="AudioRight" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1,0,0, 0,1,0, 0,0,1, 3,1.7,-2)
+max_distance = 8.0
+attenuation_model = 2
+
+; ── Control Panel (floating in front of user) ─────────────────────────────────
+[node name="UIAnchor" type="Node3D" parent="."]
+transform = Transform3D(1,0,0, 0,1,0, 0,0,1, 0,1.4,-1.2)
+script = ExtResource("3")
+
+[node name="ControlPanel" type="SubViewport" parent="UIAnchor"]
+size = Vector2i(600, 400)
+
+[node name="PanelMesh" type="MeshInstance3D" parent="UIAnchor"]
+
+; ── Sub-resources ─────────────────────────────────────────────────────────────
+[sub_resource type="Environment" id="Environment_calm"]
+background_mode = 1
+background_color = Color(0.04, 0.06, 0.12, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.3, 0.4, 0.6, 1)
+ambient_light_energy = 0.4
+glow_enabled = true
+glow_intensity = 0.6
+glow_bloom = 0.15
+glow_blend_mode = 2

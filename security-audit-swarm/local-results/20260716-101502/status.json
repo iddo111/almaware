@@ -1,0 +1,17 @@
+﻿{
+    "started":  "2026-07-16T10:15:02.8231249+03:00",
+    "roots":  [
+                  "C:\\",
+                  "D:\\",
+                  "E:\\"
+              ],
+    "files_seen":  22000,
+    "text_files_scanned":  633,
+    "bytes_text_scanned":  42076549,
+    "findings":  11,
+    "target_artifacts":  68,
+    "git_repositories":  0,
+    "errors":  151,
+    "current_path":  "C:\\Windows.old\\Users\\iddo1\\go\\pkg\\mod\\google.golang.org\\api@v0.284.0\\jobs",
+    "completed":  false
+}

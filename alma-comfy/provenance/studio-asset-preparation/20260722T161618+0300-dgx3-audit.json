@@ -1,0 +1,224 @@
+{
+  "activation_attempted": false,
+  "assets": [
+    {
+      "bytes": 4079392379,
+      "completed_at": "2026-07-22T13:16:28.779485+00:00",
+      "critical_hashes": 1,
+      "files": 7,
+      "hash_scope": "critical-files-and-cached-etags",
+      "id": "flux2-klein-fp8",
+      "node": "dgx3",
+      "revision": "5b4408e59397a4a37ccb46afe426d8ed86379441",
+      "revision_metadata": {
+        "absent": 0,
+        "matched": 7
+      },
+      "started_at": "2026-07-22T13:16:26.970266+00:00",
+      "status": "VERIFIED_SHAPE_REVISION_CRITICAL_HASHES"
+    },
+    {
+      "bytes": 8044982048,
+      "completed_at": "2026-07-22T13:16:32.465520+00:00",
+      "critical_hashes": 1,
+      "files": 1,
+      "hash_scope": "critical-files-and-cached-etags",
+      "id": "flux2-qwen-text-encoder",
+      "node": "dgx3",
+      "revision": "d24c4cf2a0cd98a42f23467e27e3d76ee9438b8e",
+      "revision_metadata": {
+        "absent": 0,
+        "matched": 1
+      },
+      "started_at": "2026-07-22T13:16:28.970390+00:00",
+      "status": "VERIFIED_SHAPE_REVISION_CRITICAL_HASHES"
+    },
+    {
+      "bytes": 336213556,
+      "completed_at": "2026-07-22T13:16:32.812483+00:00",
+      "critical_hashes": 1,
+      "files": 1,
+      "hash_scope": "critical-files-and-cached-etags",
+      "id": "flux2-vae",
+      "node": "dgx3",
+      "revision": "03d6521e6f6a47396b3f951cbea50f7e6c2f482e",
+      "revision_metadata": {
+        "absent": 0,
+        "matched": 1
+      },
+      "started_at": "2026-07-22T13:16:32.659817+00:00",
+      "status": "VERIFIED_SHAPE_REVISION_CRITICAL_HASHES"
+    },
+    {
+      "bytes": 57704595735,
+      "completed_at": "2026-07-22T13:16:32.995277+00:00",
+      "critical_hashes": 0,
+      "files": 30,
+      "hash_scope": "critical-files-and-cached-etags",
+      "id": "qwen-image-2512",
+      "node": "dgx3",
+      "revision": "25468b98e3276ca6700de15c6628e51b7de54a26",
+      "revision_metadata": {
+        "absent": 0,
+        "matched": 30
+      },
+      "started_at": "2026-07-22T13:16:32.994463+00:00",
+      "status": "VERIFIED_SHAPE_REVISION_CRITICAL_HASHES"
+    },
+    {
+      "bytes": 157004895857,
+      "completed_at": "2026-07-22T13:16:33.182952+00:00",
+      "critical_hashes": 0,
+      "files": 13,
+      "hash_scope": "critical-files-and-cached-etags",
+      "id": "ltx-2.3",
+      "node": "dgx3",
+      "revision": "4229404625088d21c4f112eb640fb04a0900ee25",
+      "revision_metadata": {
+        "absent": 0,
+        "matched": 13
+      },
+      "started_at": "2026-07-22T13:16:33.182551+00:00",
+      "status": "VERIFIED_SHAPE_REVISION_CRITICAL_HASHES"
+    },
+    {
+      "bytes": 34203021834,
+      "completed_at": "2026-07-22T13:16:33.375861+00:00",
+      "critical_hashes": 0,
+      "files": 29,
+      "hash_scope": "critical-files-and-cached-etags",
+      "id": "wan2.2-ti2v-5b",
+      "node": "dgx3",
+      "revision": "b8fff7315c768468a5333511427288870b2e9635",
+      "revision_metadata": {
+        "absent": 0,
+        "matched": 29
+      },
+      "started_at": "2026-07-22T13:16:33.375075+00:00",
+      "status": "VERIFIED_SHAPE_REVISION_CRITICAL_HASHES"
+    },
+    {
+      "bytes": 126204155463,
+      "completed_at": "2026-07-22T13:16:33.582428+00:00",
+      "critical_hashes": 0,
+      "files": 50,
+      "hash_scope": "critical-files-and-cached-etags",
+      "id": "wan2.2-i2v-a14b",
+      "node": "dgx3",
+      "revision": "596658fd9ca6b7b71d5057529bbf319ecbc61d74",
+      "revision_metadata": {
+        "absent": 0,
+        "matched": 50
+      },
+      "started_at": "2026-07-22T13:16:33.581168+00:00",
+      "status": "VERIFIED_SHAPE_REVISION_CRITICAL_HASHES"
+    }
+  ],
+  "comfy_links": [
+    {
+      "created": false,
+      "id": "flux2-transformer",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "flux2-text-encoder",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "flux2-vae-link",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "qwen-image-diffusers",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "wan-ti2v-diffusers",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "wan-i2v-diffusers",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "ltx-dev-model",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "ltx-distilled-model",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "ltx-distilled-lora",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "ltx-spatial-upscaler",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "ltx-temporal-upscaler",
+      "status": "VERIFIED"
+    }
+  ],
+  "completed_at": "2026-07-22T13:16:33.720685+00:00",
+  "environments": [
+    {
+      "id": "dgx3-visual-core",
+      "packages": {
+        "accelerate": "1.14.0",
+        "diffusers": "0.40.0.dev0",
+        "huggingface-hub": "1.24.0",
+        "imageio-ffmpeg": "0.6.0",
+        "numpy": "2.4.4",
+        "safetensors": "0.8.0",
+        "torch": "2.10.0+cu130",
+        "torchvision": "0.25.0+cu130",
+        "transformers": "5.14.1"
+      },
+      "policy": "preserve-and-verify",
+      "python": "3.12.3",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "dgx3-comfy-overlay",
+      "packages": {
+        "av": "18.0.0",
+        "comfy-kitchen": "0.2.22",
+        "comfyui-frontend-package": "1.45.21",
+        "numpy": "2.5.1"
+      },
+      "policy": "preserve-and-verify",
+      "python": "3.12.3",
+      "status": "VERIFIED"
+    }
+  ],
+  "lock_id": "alma-studio-assets-20260722-v1",
+  "lock_sha256": "ebf93263cceef756e250e6ee65c817d68c43711069ec098bb6d6dfc0a03a2ef3",
+  "mode": "audit",
+  "node": "dgx3",
+  "remote_code_executed": false,
+  "runtime_bindings": [],
+  "schema_version": 1,
+  "sources": [
+    {
+      "commit": "947c2749dd04c51ef0e21b069544d8b0b4f9b411",
+      "id": "comfyui",
+      "origin": "https://github.com/Comfy-Org/ComfyUI.git",
+      "status": "VERIFIED"
+    }
+  ],
+  "started_at": "2026-07-22T13:16:26.576957+00:00",
+  "status": "VERIFIED",
+  "system_tools": []
+}

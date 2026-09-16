@@ -1,0 +1,51 @@
+{
+  "alma": {
+    "passed": 154,
+    "failed": 0,
+    "skipped": 0,
+    "xfailed": 0,
+    "exit": 0,
+    "green": true
+  },
+  "tzelem": {
+    "passed": 49,
+    "failed": 0,
+    "skipped": 0,
+    "xfailed": 0,
+    "exit": 0,
+    "green": true
+  },
+  "winston": {
+    "passed": 14,
+    "failed": 0,
+    "skipped": 2,
+    "xfailed": 0,
+    "exit": 0,
+    "green": true
+  },
+  "moreh": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "xfailed": 1,
+    "exit": 0,
+    "green": true
+  },
+  "safa-achat": {
+    "passed": 22,
+    "failed": 0,
+    "skipped": 0,
+    "xfailed": 0,
+    "exit": 0,
+    "green": true
+  },
+  "kav": {
+    "passed": 19,
+    "failed": 3,
+    "skipped": 1,
+    "xfailed": 1,
+    "exit": 1,
+    "green": false
+  },
+  "all_green": false
+}

@@ -1,0 +1,126 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "ha",
+ "letter": "he",
+ "hebrew": "ה",
+ "facts": {
+  "place": "glottal",
+  "manner": "fricative",
+  "nasal": 0,
+  "voiced": 0
+ },
+ "decisions": {
+  "knots": "AH",
+  "constr": "narrow",
+  "nasal": 0,
+  "voice": "part",
+  "release": "plain",
+  "burst": 0,
+  "pre": 0
+ },
+ "amounts": {
+  "c_pos": 0.3435988854181109,
+  "c_area": 0.236346406249396,
+  "velum": 0.0,
+  "ten": 0.25,
+  "voi": 0.15705054662676318,
+  "d_pre": 0.0,
+  "d_cons": 0.05694838595031322,
+  "d_trans": 0.029677835441042806,
+  "d_gap": 0.04,
+  "gap_pos": 0.65,
+  "gap_area": 2.0,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.0,
+  "d_vowel": 0.3900754879090794,
+  "glide": 0.3698720642785711,
+  "gain": 6.0,
+  "f0": 101.04271193870106,
+  "trans_voi": null
+ },
+ "live_amounts": [
+  "c_area",
+  "c_pos",
+  "d_cons",
+  "d_trans",
+  "d_vowel",
+  "f0",
+  "glide",
+  "ten",
+  "trans_voi",
+  "voi"
+ ],
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.3436,
+    0.2363,
+    0.0,
+    0.25,
+    0.1571
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.3436,
+    0.2363,
+    0.0,
+    0.25,
+    0.1571
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.0569,
+   0.0297,
+   0.3901
+  ],
+  "f0_knots": [
+   101.04271193870106,
+   101.04271193870106,
+   93.969722102992
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.3698720642785711,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "ruler": "school-v2/ruler.py (09-02 family rulers + verifiers' objections)",
+ "brief": "{\"noise_ms\": 87, \"centroid_hz\": 4449, \"hnr_db\": -2.5, \"level_db_re_vowel\": -11.9, \"frac_lt500\": 0.232, \"burst\": {\"max_jump_db\": 5.9, \"at_ms\": 95.0, \"burst\": false}, \"vowel_F\": [566, 1188, 2612]}",
+ "attempt": 11
+}

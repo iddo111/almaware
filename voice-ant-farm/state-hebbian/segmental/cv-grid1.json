@@ -1,0 +1,1415 @@
+{
+  "question": "segmental hyper-parameters, chosen without touching heldout",
+  "protocol": "leave-one-base-rendering-out over the train split; the codebook is refitted inside every fold; the held-out split is not read",
+  "chance_top1": 0.045454545454545456,
+  "results": [
+    {
+      "tag": "frame-km-r26-256",
+      "units": 256,
+      "segmenter": null,
+      "descriptor": null,
+      "folds": 6,
+      "top1_cosine": 0.7348484848484849,
+      "top1_cosine_std": 0.04079670308435229,
+      "top1_edit": 0.6843434343434343,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8055555555555556,
+        "ga/ka": 1.0,
+        "da/ta": 0.6944444444444444,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9444444444444444,
+        "ta/tha": 0.8055555555555556,
+        "za/sa": 1.0,
+        "ah/aa": 1.0
+      },
+      "all_pairs_pooled": 0.90625,
+      "mean_dead_units": 5.833333333333333,
+      "mean_segments_per_item": 44.93939393939394
+    },
+    {
+      "tag": "frame-km-r26-128",
+      "units": 128,
+      "segmenter": null,
+      "descriptor": null,
+      "folds": 6,
+      "top1_cosine": 0.6767676767676768,
+      "top1_cosine_std": 0.047646369353821244,
+      "top1_edit": 0.6666666666666666,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.75,
+        "ga/ka": 1.0,
+        "da/ta": 0.6111111111111112,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9166666666666666,
+        "ta/tha": 0.6388888888888888,
+        "za/sa": 1.0,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.8611111111111112,
+      "mean_dead_units": 0.8333333333333334,
+      "mean_segments_per_item": 44.93939393939394
+    },
+    {
+      "tag": "high2.0",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 2.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.2,
+      "folds": 6,
+      "top1_cosine": 0.6742424242424242,
+      "top1_cosine_std": 0.042631169232661956,
+      "top1_edit": 0.6515151515151515,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8333333333333334,
+        "ga/ka": 0.9722222222222222,
+        "da/ta": 0.6944444444444444,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.7777777777777778,
+        "za/sa": 1.0,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.8888888888888888,
+      "mean_dead_units": 57.833333333333336,
+      "mean_segments_per_item": 2.6565656565656566
+    },
+    {
+      "tag": "frame-rand-r26-128",
+      "units": 128,
+      "segmenter": null,
+      "descriptor": null,
+      "folds": 6,
+      "top1_cosine": 0.664141414141414,
+      "top1_cosine_std": 0.05056814241035551,
+      "top1_edit": 0.6565656565656566,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8055555555555556,
+        "ga/ka": 1.0,
+        "da/ta": 0.6666666666666666,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9722222222222222,
+        "ta/tha": 0.75,
+        "za/sa": 1.0,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.8958333333333334,
+      "mean_dead_units": 1.8333333333333333,
+      "mean_segments_per_item": 44.93939393939394
+    },
+    {
+      "tag": "smooth2",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 2,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 3.8,
+      "folds": 6,
+      "top1_cosine": 0.6590909090909092,
+      "top1_cosine_std": 0.07762841489363333,
+      "top1_edit": 0.6338383838383838,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.9444444444444444,
+        "ga/ka": 0.9444444444444444,
+        "da/ta": 0.8333333333333334,
+        "sa/sha": 0.9444444444444444,
+        "ka/qa": 0.9166666666666666,
+        "ta/tha": 0.8055555555555556,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.9166666666666666,
+      "mean_dead_units": 55.333333333333336,
+      "mean_segments_per_item": 2.914141414141414
+    },
+    {
+      "tag": "frame-rand-r26-256",
+      "units": 256,
+      "segmenter": null,
+      "descriptor": null,
+      "folds": 6,
+      "top1_cosine": 0.6565656565656565,
+      "top1_cosine_std": 0.0335012605086404,
+      "top1_edit": 0.6313131313131312,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8611111111111112,
+        "ga/ka": 1.0,
+        "da/ta": 0.6666666666666666,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9444444444444444,
+        "ta/tha": 0.8055555555555556,
+        "za/sa": 1.0,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.90625,
+      "mean_dead_units": 13.5,
+      "mean_segments_per_item": 44.93939393939394
+    },
+    {
+      "tag": "high1.5",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.5,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.2,
+      "folds": 6,
+      "top1_cosine": 0.654040404040404,
+      "top1_cosine_std": 0.026843802557410704,
+      "top1_edit": 0.6691919191919192,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8611111111111112,
+        "ga/ka": 0.9722222222222222,
+        "da/ta": 0.6944444444444444,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.6944444444444444,
+        "za/sa": 1.0,
+        "ah/aa": 1.0
+      },
+      "all_pairs_pooled": 0.8854166666666666,
+      "mean_dead_units": 58.0,
+      "mean_segments_per_item": 2.8661616161616164
+    },
+    {
+      "tag": "max12",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 12
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 4.8,
+      "folds": 6,
+      "top1_cosine": 0.6515151515151515,
+      "top1_cosine_std": 0.04460485286024165,
+      "top1_edit": 0.6717171717171717,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8333333333333334,
+        "ga/ka": 1.0,
+        "da/ta": 0.6666666666666666,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9166666666666666,
+        "ta/tha": 0.7777777777777778,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.8333333333333334
+      },
+      "all_pairs_pooled": 0.875,
+      "mean_dead_units": 36.666666666666664,
+      "mean_segments_per_item": 5.186868686868688
+    },
+    {
+      "tag": "low0.9",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.9,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.3,
+      "folds": 6,
+      "top1_cosine": 0.6464646464646464,
+      "top1_cosine_std": 0.03676823176404303,
+      "top1_edit": 0.6691919191919192,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8055555555555556,
+        "ga/ka": 1.0,
+        "da/ta": 0.5833333333333334,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9166666666666666,
+        "ta/tha": 0.8055555555555556,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.8819444444444444,
+      "mean_dead_units": 54.666666666666664,
+      "mean_segments_per_item": 3.2247474747474745
+    },
+    {
+      "tag": "min8",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 8,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.4,
+      "folds": 6,
+      "top1_cosine": 0.6464646464646464,
+      "top1_cosine_std": 0.061025484715124104,
+      "top1_edit": 0.6161616161616161,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.7222222222222222,
+        "ga/ka": 1.0,
+        "da/ta": 0.7222222222222222,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.8611111111111112,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9166666666666666
+      },
+      "all_pairs_pooled": 0.8854166666666666,
+      "mean_dead_units": 62.833333333333336,
+      "mean_segments_per_item": 2.391414141414141
+    },
+    {
+      "tag": "durw2.0",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 2.0
+      },
+      "seconds": 4.1,
+      "folds": 6,
+      "top1_cosine": 0.6464646464646464,
+      "top1_cosine_std": 0.022586545227270584,
+      "top1_edit": 0.6515151515151515,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8611111111111112,
+        "ga/ka": 1.0,
+        "da/ta": 0.6666666666666666,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.9444444444444444,
+        "ta/tha": 0.7222222222222222,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9444444444444444
+      },
+      "all_pairs_pooled": 0.8854166666666666,
+      "mean_dead_units": 55.666666666666664,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "parts1",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 1,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.3,
+      "folds": 6,
+      "top1_cosine": 0.6388888888888888,
+      "top1_cosine_std": 0.029557323006867753,
+      "top1_edit": 0.6464646464646464,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.9166666666666666,
+        "ga/ka": 0.9722222222222222,
+        "da/ta": 0.6666666666666666,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.9166666666666666,
+        "ta/tha": 0.6944444444444444,
+        "za/sa": 1.0,
+        "ah/aa": 1.0
+      },
+      "all_pairs_pooled": 0.8923611111111112,
+      "mean_dead_units": 53.166666666666664,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "win7",
+      "units": 128,
+      "segmenter": {
+        "window": 7,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.2,
+      "folds": 6,
+      "top1_cosine": 0.6313131313131314,
+      "top1_cosine_std": 0.057139941914064435,
+      "top1_edit": 0.606060606060606,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8611111111111112,
+        "ga/ka": 1.0,
+        "da/ta": 0.6944444444444444,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9722222222222222,
+        "ta/tha": 0.6944444444444444,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.8958333333333334,
+      "mean_dead_units": 61.166666666666664,
+      "mean_segments_per_item": 2.5075757575757573
+    },
+    {
+      "tag": "durw4.0",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 4.0
+      },
+      "seconds": 3.7,
+      "folds": 6,
+      "top1_cosine": 0.6313131313131313,
+      "top1_cosine_std": 0.06813503819814161,
+      "top1_edit": 0.6363636363636364,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.9166666666666666,
+        "ga/ka": 1.0,
+        "da/ta": 0.6666666666666666,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.7222222222222222,
+        "za/sa": 1.0,
+        "ah/aa": 1.0
+      },
+      "all_pairs_pooled": 0.8993055555555556,
+      "mean_dead_units": 52.333333333333336,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "k256",
+      "units": 256,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 3.8,
+      "folds": 6,
+      "top1_cosine": 0.6287878787878788,
+      "top1_cosine_std": 0.02868135528181954,
+      "top1_edit": 0.6186868686868686,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8055555555555556,
+        "ga/ka": 1.0,
+        "da/ta": 0.75,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8333333333333334,
+        "ta/tha": 0.7777777777777778,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.8888888888888888,
+      "mean_dead_units": 158.16666666666666,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "k128",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 3.3,
+      "folds": 6,
+      "top1_cosine": 0.6262626262626262,
+      "top1_cosine_std": 0.08511262397147837,
+      "top1_edit": 0.6388888888888888,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8333333333333334,
+        "ga/ka": 1.0,
+        "da/ta": 0.5555555555555556,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.9722222222222222,
+        "ta/tha": 0.6944444444444444,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9166666666666666
+      },
+      "all_pairs_pooled": 0.8645833333333334,
+      "mean_dead_units": 55.0,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "min2",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 2,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.4,
+      "folds": 6,
+      "top1_cosine": 0.6262626262626262,
+      "top1_cosine_std": 0.08511262397147837,
+      "top1_edit": 0.6388888888888888,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8333333333333334,
+        "ga/ka": 1.0,
+        "da/ta": 0.5555555555555556,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.9722222222222222,
+        "ta/tha": 0.6944444444444444,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9166666666666666
+      },
+      "all_pairs_pooled": 0.8645833333333334,
+      "mean_dead_units": 55.0,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "min3",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 3,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.3,
+      "folds": 6,
+      "top1_cosine": 0.6262626262626262,
+      "top1_cosine_std": 0.08511262397147837,
+      "top1_edit": 0.6388888888888888,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8333333333333334,
+        "ga/ka": 1.0,
+        "da/ta": 0.5555555555555556,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.9722222222222222,
+        "ta/tha": 0.6944444444444444,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9166666666666666
+      },
+      "all_pairs_pooled": 0.8645833333333334,
+      "mean_dead_units": 55.0,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "high0.5",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 0.5,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 3.1,
+      "folds": 6,
+      "top1_cosine": 0.6237373737373737,
+      "top1_cosine_std": 0.06272597145643544,
+      "top1_edit": 0.6035353535353535,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.7777777777777778,
+        "ga/ka": 1.0,
+        "da/ta": 0.7222222222222222,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9166666666666666,
+        "ta/tha": 0.75,
+        "za/sa": 1.0,
+        "ah/aa": 0.9166666666666666
+      },
+      "all_pairs_pooled": 0.8854166666666666,
+      "mean_dead_units": 51.0,
+      "mean_segments_per_item": 3.616161616161616
+    },
+    {
+      "tag": "win2",
+      "units": 128,
+      "segmenter": {
+        "window": 2,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.2,
+      "folds": 6,
+      "top1_cosine": 0.6212121212121212,
+      "top1_cosine_std": 0.043738656756789826,
+      "top1_edit": 0.6111111111111112,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.7777777777777778,
+        "ga/ka": 1.0,
+        "da/ta": 0.6666666666666666,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9444444444444444,
+        "ta/tha": 0.6388888888888888,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.8715277777777778,
+      "mean_dead_units": 58.0,
+      "mean_segments_per_item": 2.984848484848485
+    },
+    {
+      "tag": "high0.75",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 0.75,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.9,
+      "folds": 6,
+      "top1_cosine": 0.6186868686868686,
+      "top1_cosine_std": 0.04233094599555608,
+      "top1_edit": 0.6338383838383838,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.7777777777777778,
+        "ga/ka": 1.0,
+        "da/ta": 0.6944444444444444,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.9722222222222222,
+        "ta/tha": 0.7222222222222222,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9444444444444444
+      },
+      "all_pairs_pooled": 0.8819444444444444,
+      "mean_dead_units": 54.166666666666664,
+      "mean_segments_per_item": 3.3030303030303028
+    },
+    {
+      "tag": "durw0.5",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 0.5
+      },
+      "seconds": 4.4,
+      "folds": 6,
+      "top1_cosine": 0.6186868686868686,
+      "top1_cosine_std": 0.0651201866577153,
+      "top1_edit": 0.6717171717171717,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.7222222222222222,
+        "ga/ka": 1.0,
+        "da/ta": 0.5833333333333334,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.6944444444444444,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9166666666666666
+      },
+      "all_pairs_pooled": 0.8472222222222222,
+      "mean_dead_units": 56.333333333333336,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "max20",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 20
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 4.1,
+      "folds": 6,
+      "top1_cosine": 0.6161616161616161,
+      "top1_cosine_std": 0.052242830468629306,
+      "top1_edit": 0.6060606060606061,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8333333333333334,
+        "ga/ka": 1.0,
+        "da/ta": 0.6111111111111112,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9166666666666666,
+        "ta/tha": 0.7222222222222222,
+        "za/sa": 1.0,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.8819444444444444,
+      "mean_dead_units": 49.166666666666664,
+      "mean_segments_per_item": 3.8409090909090913
+    },
+    {
+      "tag": "max50",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 50
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 3.5,
+      "folds": 6,
+      "top1_cosine": 0.6136363636363636,
+      "top1_cosine_std": 0.07563120773672698,
+      "top1_edit": 0.6388888888888888,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8333333333333334,
+        "ga/ka": 1.0,
+        "da/ta": 0.75,
+        "sa/sha": 0.9444444444444444,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.7777777777777778,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9444444444444444
+      },
+      "all_pairs_pooled": 0.8888888888888888,
+      "mean_dead_units": 58.0,
+      "mean_segments_per_item": 2.997474747474748
+    },
+    {
+      "tag": "win5",
+      "units": 128,
+      "segmenter": {
+        "window": 5,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.2,
+      "folds": 6,
+      "top1_cosine": 0.611111111111111,
+      "top1_cosine_std": 0.03976771653541319,
+      "top1_edit": 0.6287878787878788,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8611111111111112,
+        "ga/ka": 0.9444444444444444,
+        "da/ta": 0.6666666666666666,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.7777777777777778,
+        "ta/tha": 0.8611111111111112,
+        "za/sa": 0.9444444444444444,
+        "ah/aa": 0.8611111111111112
+      },
+      "all_pairs_pooled": 0.8611111111111112,
+      "mean_dead_units": 60.0,
+      "mean_segments_per_item": 2.679292929292929
+    },
+    {
+      "tag": "dur0",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": false,
+        "duration_weight": 1.0
+      },
+      "seconds": 4.4,
+      "folds": 6,
+      "top1_cosine": 0.6060606060606061,
+      "top1_cosine_std": 0.06487491201346027,
+      "top1_edit": 0.6035353535353535,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.7777777777777778,
+        "ga/ka": 1.0,
+        "da/ta": 0.6388888888888888,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9166666666666666,
+        "ta/tha": 0.7777777777777778,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 1.0
+      },
+      "all_pairs_pooled": 0.8854166666666666,
+      "mean_dead_units": 55.5,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "durw0.0",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 0.0
+      },
+      "seconds": 4.1,
+      "folds": 6,
+      "top1_cosine": 0.6060606060606061,
+      "top1_cosine_std": 0.06487491201346027,
+      "top1_edit": 0.6035353535353535,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.7777777777777778,
+        "ga/ka": 1.0,
+        "da/ta": 0.6388888888888888,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9166666666666666,
+        "ta/tha": 0.7777777777777778,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 1.0
+      },
+      "all_pairs_pooled": 0.8854166666666666,
+      "mean_dead_units": 55.5,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "k64",
+      "units": 64,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 4.3,
+      "folds": 6,
+      "top1_cosine": 0.6035353535353535,
+      "top1_cosine_std": 0.05205941446486944,
+      "top1_edit": 0.6186868686868686,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8333333333333334,
+        "ga/ka": 1.0,
+        "da/ta": 0.6388888888888888,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.5,
+        "za/sa": 1.0,
+        "ah/aa": 0.8611111111111112
+      },
+      "all_pairs_pooled": 0.8402777777777778,
+      "mean_dead_units": 14.5,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "k512",
+      "units": 512,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 3.7,
+      "folds": 6,
+      "top1_cosine": 0.6035353535353535,
+      "top1_cosine_std": 0.06086853935956543,
+      "top1_edit": 0.5505050505050505,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.7777777777777778,
+        "ga/ka": 1.0,
+        "da/ta": 0.6944444444444444,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8611111111111112,
+        "ta/tha": 0.8888888888888888,
+        "za/sa": 1.0,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.8993055555555556,
+      "mean_dead_units": 382.3333333333333,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "parts4",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 4,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.7,
+      "folds": 6,
+      "top1_cosine": 0.5984848484848485,
+      "top1_cosine_std": 0.03685484727102633,
+      "top1_edit": 0.6313131313131313,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.9722222222222222,
+        "ga/ka": 1.0,
+        "da/ta": 0.6388888888888888,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8611111111111112,
+        "ta/tha": 0.5,
+        "za/sa": 1.0,
+        "ah/aa": 0.9444444444444444
+      },
+      "all_pairs_pooled": 0.8645833333333334,
+      "mean_dead_units": 55.333333333333336,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "low0.0",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.0,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.2,
+      "folds": 6,
+      "top1_cosine": 0.5959595959595959,
+      "top1_cosine_std": 0.08689217441457198,
+      "top1_edit": 0.6212121212121212,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.9444444444444444,
+        "ga/ka": 1.0,
+        "da/ta": 0.5,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.8333333333333334,
+        "ta/tha": 0.6944444444444444,
+        "za/sa": 1.0,
+        "ah/aa": 0.9444444444444444
+      },
+      "all_pairs_pooled": 0.8611111111111112,
+      "mean_dead_units": 58.833333333333336,
+      "mean_segments_per_item": 3.1010101010101008
+    },
+    {
+      "tag": "smooth0",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 0,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 4.6,
+      "folds": 6,
+      "top1_cosine": 0.5959595959595959,
+      "top1_cosine_std": 0.06757115232454369,
+      "top1_edit": 0.601010101010101,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8333333333333334,
+        "ga/ka": 1.0,
+        "da/ta": 0.6388888888888888,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9444444444444444,
+        "ta/tha": 0.4722222222222222,
+        "za/sa": 1.0,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.8576388888888888,
+      "mean_dead_units": 57.166666666666664,
+      "mean_segments_per_item": 3.20959595959596
+    },
+    {
+      "tag": "parts2",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 2,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.4,
+      "folds": 6,
+      "top1_cosine": 0.5934343434343434,
+      "top1_cosine_std": 0.06272597145643545,
+      "top1_edit": 0.6515151515151515,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8611111111111112,
+        "ga/ka": 1.0,
+        "da/ta": 0.6944444444444444,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.6666666666666666,
+        "za/sa": 1.0,
+        "ah/aa": 0.9722222222222222
+      },
+      "all_pairs_pooled": 0.8854166666666666,
+      "mean_dead_units": 52.833333333333336,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "min6",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 6,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.2,
+      "folds": 6,
+      "top1_cosine": 0.5934343434343433,
+      "top1_cosine_std": 0.047445187444585694,
+      "top1_edit": 0.6237373737373737,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.6944444444444444,
+        "ga/ka": 1.0,
+        "da/ta": 0.5,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.5555555555555556,
+        "za/sa": 1.0,
+        "ah/aa": 0.9444444444444444
+      },
+      "all_pairs_pooled": 0.8194444444444444,
+      "mean_dead_units": 62.333333333333336,
+      "mean_segments_per_item": 2.522727272727273
+    },
+    {
+      "tag": "parts5",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 5,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.9,
+      "folds": 6,
+      "top1_cosine": 0.5833333333333334,
+      "top1_cosine_std": 0.06761832241917114,
+      "top1_edit": 0.6540404040404041,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.7777777777777778,
+        "ga/ka": 1.0,
+        "da/ta": 0.5833333333333334,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8611111111111112,
+        "ta/tha": 0.5833333333333334,
+        "za/sa": 0.9166666666666666,
+        "ah/aa": 0.9444444444444444
+      },
+      "all_pairs_pooled": 0.8333333333333334,
+      "mean_dead_units": 58.166666666666664,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "low0.6",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.6,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.3,
+      "folds": 6,
+      "top1_cosine": 0.5732323232323232,
+      "top1_cosine_std": 0.023823184676910646,
+      "top1_edit": 0.6641414141414143,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.8055555555555556,
+        "ga/ka": 1.0,
+        "da/ta": 0.5555555555555556,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.9166666666666666,
+        "ta/tha": 0.6666666666666666,
+        "za/sa": 1.0,
+        "ah/aa": 0.9444444444444444
+      },
+      "all_pairs_pooled": 0.8576388888888888,
+      "mean_dead_units": 55.333333333333336,
+      "mean_segments_per_item": 3.1717171717171717
+    },
+    {
+      "tag": "delta0",
+      "units": 128,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": false,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 3.2,
+      "folds": 6,
+      "top1_cosine": 0.5732323232323232,
+      "top1_cosine_std": 0.07696843764711195,
+      "top1_edit": 0.5909090909090908,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.7222222222222222,
+        "ga/ka": 1.0,
+        "da/ta": 0.7222222222222222,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.5833333333333334,
+        "za/sa": 1.0,
+        "ah/aa": 0.9444444444444444
+      },
+      "all_pairs_pooled": 0.8576388888888888,
+      "mean_dead_units": 55.166666666666664,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "k32",
+      "units": 32,
+      "segmenter": {
+        "window": 3,
+        "smooth": 1,
+        "high": 1.0,
+        "low": 0.3,
+        "min_frames": 4,
+        "max_frames": 30
+      },
+      "descriptor": {
+        "parts": 3,
+        "use_delta": true,
+        "use_duration": true,
+        "duration_weight": 1.0
+      },
+      "seconds": 2.8,
+      "folds": 6,
+      "top1_cosine": 0.5227272727272727,
+      "top1_cosine_std": 0.07357980951683568,
+      "top1_edit": 0.48989898989898983,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.7222222222222222,
+        "ga/ka": 1.0,
+        "da/ta": 0.4722222222222222,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9444444444444444,
+        "ta/tha": 0.3888888888888889,
+        "za/sa": 1.0,
+        "ah/aa": 0.9444444444444444
+      },
+      "all_pairs_pooled": 0.8090277777777778,
+      "mean_dead_units": 3.3333333333333335,
+      "mean_segments_per_item": 3.138888888888889
+    },
+    {
+      "tag": "frame-rand-legacy-256",
+      "units": 256,
+      "segmenter": null,
+      "descriptor": null,
+      "folds": 6,
+      "top1_cosine": 0.4595959595959596,
+      "top1_cosine_std": 0.040718473476255304,
+      "top1_edit": 0.4873737373737374,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.6944444444444444,
+        "ga/ka": 1.0,
+        "da/ta": 0.5833333333333334,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.6111111111111112,
+        "za/sa": 1.0,
+        "ah/aa": 0.8611111111111112
+      },
+      "all_pairs_pooled": 0.8298611111111112,
+      "mean_dead_units": 15.166666666666666,
+      "mean_segments_per_item": 44.93939393939394
+    },
+    {
+      "tag": "frame-rand-legacy-128",
+      "units": 128,
+      "segmenter": null,
+      "descriptor": null,
+      "folds": 6,
+      "top1_cosine": 0.4444444444444445,
+      "top1_cosine_std": 0.03779451905832263,
+      "top1_edit": 0.44949494949494956,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.5277777777777778,
+        "ga/ka": 0.9722222222222222,
+        "da/ta": 0.5833333333333334,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8333333333333334,
+        "ta/tha": 0.5833333333333334,
+        "za/sa": 0.9444444444444444,
+        "ah/aa": 0.8055555555555556
+      },
+      "all_pairs_pooled": 0.78125,
+      "mean_dead_units": 1.0,
+      "mean_segments_per_item": 44.93939393939394
+    },
+    {
+      "tag": "frame-km-legacy-256",
+      "units": 256,
+      "segmenter": null,
+      "descriptor": null,
+      "folds": 6,
+      "top1_cosine": 0.4292929292929293,
+      "top1_cosine_std": 0.04999744917480639,
+      "top1_edit": 0.4873737373737374,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.6666666666666666,
+        "ga/ka": 0.9722222222222222,
+        "da/ta": 0.4166666666666667,
+        "sa/sha": 1.0,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.5833333333333334,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.9166666666666666
+      },
+      "all_pairs_pooled": 0.8020833333333334,
+      "mean_dead_units": 7.166666666666667,
+      "mean_segments_per_item": 44.93939393939394
+    },
+    {
+      "tag": "frame-km-legacy-128",
+      "units": 128,
+      "segmenter": null,
+      "descriptor": null,
+      "folds": 6,
+      "top1_cosine": 0.4090909090909091,
+      "top1_cosine_std": 0.05868156585162753,
+      "top1_edit": 0.45202020202020204,
+      "minimal_pairs_cosine": {
+        "ba/pa": 0.6111111111111112,
+        "ga/ka": 1.0,
+        "da/ta": 0.5555555555555556,
+        "sa/sha": 0.9722222222222222,
+        "ka/qa": 0.8888888888888888,
+        "ta/tha": 0.6111111111111112,
+        "za/sa": 0.9722222222222222,
+        "ah/aa": 0.8055555555555556
+      },
+      "all_pairs_pooled": 0.8020833333333334,
+      "mean_dead_units": 1.3333333333333333,
+      "mean_segments_per_item": 44.93939393939394
+    }
+  ]
+}

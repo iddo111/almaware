@@ -1,0 +1,40 @@
+{
+  "alma": "0.1",
+  "weave": "L4_relu",
+  "knots": [
+    {
+      "name": "x"
+    },
+    {
+      "name": "relu",
+      "verb": "spell",
+      "trigger": "count 2",
+      "spell": "max"
+    },
+    {
+      "name": "y",
+      "verb": "fringe"
+    }
+  ],
+  "threads": [
+    {
+      "from": "x",
+      "to": "relu"
+    },
+    {
+      "from": "relu",
+      "to": "y"
+    }
+  ],
+  "seeds": [
+    {
+      "to": "relu",
+      "value": 0.0,
+      "beat": 2
+    },
+    {
+      "to": "x",
+      "value": -3.0
+    }
+  ]
+}

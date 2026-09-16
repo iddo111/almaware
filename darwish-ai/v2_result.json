@@ -1,0 +1,57 @@
+{
+ "best_heldout_ce": 2.0588286072015762,
+ "unigram_nats": 3.293195794555287,
+ "tokens_per_second": 32.7034415379955,
+ "vocab": 138,
+ "n_params": 1366016,
+ "history": [
+  {
+   "step": 250,
+   "train_ce": 2.6602197885513306,
+   "heldout_ce": 2.57438725233078,
+   "heldout_ppl": 13.123273439144176,
+   "bits_per_second": 121.46240418196355,
+   "nats_below_unigram": 0.7188085422245072
+  },
+  {
+   "step": 500,
+   "train_ce": 2.2285763919353485,
+   "heldout_ce": 2.300838202238083,
+   "heldout_ppl": 9.982546341696052,
+   "bits_per_second": 108.55606102948347,
+   "nats_below_unigram": 0.9923575923172043
+  },
+  {
+   "step": 750,
+   "train_ce": 2.2547639310359955,
+   "heldout_ce": 2.19042432308197,
+   "heldout_ppl": 8.939005336372333,
+   "bits_per_second": 103.34661353660292,
+   "nats_below_unigram": 1.102771471473317
+  },
+  {
+   "step": 1000,
+   "train_ce": 2.07166750729084,
+   "heldout_ce": 2.127973794937134,
+   "heldout_ppl": 8.39783382768982,
+   "bits_per_second": 100.40012936486939,
+   "nats_below_unigram": 1.1652219996181534
+  },
+  {
+   "step": 1250,
+   "train_ce": 2.0272845178842545,
+   "heldout_ce": 2.0974900871515274,
+   "heldout_ppl": 8.145699238331954,
+   "bits_per_second": 98.96187471508118,
+   "nats_below_unigram": 1.1957057074037598
+  },
+  {
+   "step": 1500,
+   "train_ce": 2.0971165746450424,
+   "heldout_ce": 2.0588286072015762,
+   "heldout_ppl": 7.836784478651987,
+   "bits_per_second": 97.13778383687229,
+   "nats_below_unigram": 1.234367187353711
+  }
+ ]
+}

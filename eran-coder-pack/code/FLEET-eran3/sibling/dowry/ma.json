@@ -1,0 +1,187 @@
+{
+  "wdist": 4.28443332009087,
+  "gate_pass": true,
+  "gate_detail": {
+    "G1_dip": true,
+    "G2_voiced": true,
+    "G3_f0": true,
+    "G4_occupancy": true,
+    "G5_hnr": true,
+    "G6_duration": true,
+    "G7_clean_tail": true,
+    "G8_voiced_dominance": true
+  },
+  "gate_stats": {
+    "humps": 8,
+    "dip": 0.059850106777469714,
+    "voiced_frac": 0.8,
+    "median_f0": 125.0,
+    "occupancy": 0.9983862291554598,
+    "hnr": 14.418012976435898,
+    "span_s": 0.58,
+    "core_s": 0.292,
+    "tail_rms_ratio": 0.480074847694462,
+    "tail_max_ratio": 1.0146800316888744,
+    "voiced_energy_share": 0.9642128805988724
+  },
+  "review_flagged": true,
+  "real_wdist_mean": 3.904435471065226,
+  "real_wdist_min": 2.595234998568347,
+  "real_wdist_max": 7.18070066513804,
+  "win_bar_1p3x_mean": 5.075766112384794,
+  "multi_glottis_seed": {
+    "n": 5,
+    "mean": 4.326855319728024,
+    "sd": 0.04088613898785125
+  },
+  "nearest": [
+    {
+      "unit": "ba",
+      "wdist": 13.9247
+    },
+    {
+      "unit": "ta",
+      "wdist": 14.2043
+    },
+    {
+      "unit": "na",
+      "wdist": 14.2187
+    },
+    {
+      "unit": "ga",
+      "wdist": 14.4209
+    },
+    {
+      "unit": "la",
+      "wdist": 14.5636
+    },
+    {
+      "unit": "da",
+      "wdist": 14.5672
+    },
+    {
+      "unit": "ah",
+      "wdist": 14.6012
+    },
+    {
+      "unit": "ka",
+      "wdist": 14.9177
+    },
+    {
+      "unit": "pa",
+      "wdist": 15.2288
+    },
+    {
+      "unit": "ra",
+      "wdist": 16.4729
+    },
+    {
+      "unit": "aa",
+      "wdist": 16.6766
+    },
+    {
+      "unit": "ma",
+      "wdist": 16.8854
+    }
+  ],
+  "gesture": {
+    "keyframes": [
+      [
+        0.33897,
+        -1.92247,
+        0.31584,
+        -2.17932,
+        -2.64958,
+        0.16945,
+        -0.42857,
+        1.99591,
+        1.0,
+        0.06164,
+        0.44276,
+        0.83343,
+        0.80288
+      ],
+      [
+        -2.1842,
+        -2.48811,
+        -2.67323,
+        -2.73697,
+        2.0,
+        -2.73697,
+        2.0,
+        -2.05052,
+        1.0,
+        0.43419,
+        0.8,
+        0.8347,
+        0.00278
+      ]
+    ],
+    "durations": [
+      0.0809,
+      0.5
+    ],
+    "f0_knots": [
+      121.36,
+      141.52,
+      90.0
+    ],
+    "glide": 0.1519596830942087,
+    "burst": null
+  },
+  "organs": {
+    "ear3_spec_hash": "4a6864faab1a86d925012f1b49b1438778a10dcbe1f6b400d0752df5db8e4170",
+    "carfac_sha": "4cdb95ee",
+    "patch_id": "0001-jax-5tap-agc",
+    "cortex": "none-v0 (Judge B pending)",
+    "mouth2_sha256": "c7360cad7df3316d416a80d229a321b65d795542fbc3188ed65ec36e6626f100",
+    "libvoc_sha256": "149e324cc371f6e08caee2324338c985dfcfc3c20b5a33be8db7d2b3c84b6bc1",
+    "geometry": "story-bunton-child-60mo",
+    "backend": "c",
+    "sanity_file": "SANITY0-V3-20260901T013120Z.json"
+  },
+  "arm": "ma-nasal",
+  "seed": 20,
+  "unit": "ma",
+  "guided": true,
+  "evals": 182526,
+  "restarts": 2,
+  "utc": "2026-09-01T05:00:12Z",
+  "best_f_with_penalty": 4.2844570166447085,
+  "x": [
+    0.3389741937585546,
+    -1.922466510918678,
+    0.31583731820111655,
+    -2.1793177509470376,
+    -2.6495838590815834,
+    0.16945232334182472,
+    -0.42857357126867174,
+    1.9959099977318773,
+    0.9999997632541373,
+    0.061644306846652945,
+    0.4427623924570242,
+    0.8334299911172739,
+    0.8028830710099379,
+    -2.1841973669975503,
+    -2.48810945502687,
+    -2.673226834023279,
+    -2.739605796752344,
+    2.000617568748261,
+    -2.7393980321120615,
+    2.004174734161687,
+    -2.050523929456481,
+    1.0000995891540765,
+    0.43418591456252265,
+    0.8006899545805165,
+    0.8347028269914596,
+    0.002779936417987417,
+    0.08091554319955728,
+    0.500131871632377,
+    121.36223482570729,
+    141.51894154588072,
+    89.92744279410346,
+    0.1519596830942087
+  ],
+  "nearest_ruler": "R5-WCCN",
+  "nearest_ruler_note": "Rebuilt 2026-09-07 from sibling-ear's corrected R5-WCCN whitener (fit_whitener/build_refs_flat/wdist_matrix, lam=0.7, train takes t00-t04, EXAM_TAKE=5 never touched). Targets limited to the 12 CORPUS_UNITS the human corpus actually has (abba/ima/ih dropped as TARGETS -- NO_HUMAN_MATERIAL in sibling_ear.py -- same honesty rule the dowry already applies to itself."
+}

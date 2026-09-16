@@ -1,0 +1,95 @@
+{
+  "alma": "0.1",
+  "weave": "council",
+  "knots": [
+    {
+      "name": "judge",
+      "verb": "sum",
+      "trigger": "rise 2"
+    },
+    {
+      "name": "verdict",
+      "verb": "fringe"
+    }
+  ],
+  "threads": [
+    {
+      "from": "judge",
+      "to": "verdict"
+    }
+  ],
+  "seeds": [
+    {
+      "to": "judge",
+      "value": 0.9
+    },
+    {
+      "to": "judge",
+      "value": 0.8,
+      "beat": 2
+    },
+    {
+      "to": "judge",
+      "value": 0.6,
+      "beat": 3
+    },
+    {
+      "to": "judge",
+      "value": 0.5,
+      "beat": 6
+    }
+  ],
+  "run": 10,
+  "scene": {
+    "seed": 1337,
+    "layout": "bfs-layer",
+    "positions": {
+      "judge": [
+        0.0824,
+        3.0233,
+        0.0
+      ],
+      "verdict": [
+        -0.0939,
+        3.0601,
+        6.0
+      ]
+    }
+  },
+  "trace": {
+    "beats": 6,
+    "finished": true,
+    "fires": [
+      {
+        "beat": 3,
+        "knot": "judge",
+        "spoke": 2.3
+      },
+      {
+        "beat": 4,
+        "knot": "verdict",
+        "spoke": 2.3
+      }
+    ],
+    "fringes": {
+      "verdict": [
+        [
+          4,
+          2.3
+        ]
+      ]
+    },
+    "sparks": [
+      {
+        "from": "judge",
+        "to": "verdict",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 3,
+        "arrival_beat": 4,
+        "value": 2.3
+      }
+    ]
+  }
+}

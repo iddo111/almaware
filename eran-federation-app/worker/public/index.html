@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ERAN Federation — סטטוס ציבורי | Public Status</title>
+<style>
+  :root{
+    --bg:#0b1020; --panel:#131a2e; --panel2:#1a2340; --line:#26304f;
+    --text:#e8ecf6; --dim:#93a0bd;
+    --green:#22c55e; --red:#ef4444; --gray:#6b7280; --amber:#f59e0b;
+    --accent:#7aa2ff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,Arial,sans-serif;min-height:100vh;padding:0 0 48px}
+  header{padding:28px 24px 12px;text-align:center}
+  header h1{font-size:1.6rem;letter-spacing:.02em}
+  header .sub{color:var(--dim);font-size:.95rem;margin-top:6px}
+  .banner{margin:16px auto 8px;max-width:900px;border-radius:12px;padding:14px 20px;text-align:center;
+    font-size:1.05rem;font-weight:600;border:1px solid var(--line);background:var(--panel)}
+  .banner.fresh{border-color:var(--green);color:var(--green)}
+  .banner.stale{border-color:var(--gray);background:#20242e;color:#aab2c5}
+  .banner.error{border-color:var(--red);color:var(--red)}
+  .banner .age{font-variant-numeric:tabular-nums}
+  .banner .small{display:block;font-weight:400;font-size:.85rem;color:var(--dim);margin-top:4px}
+  main{max-width:1100px;margin:0 auto;padding:0 20px}
+  h2{font-size:1.05rem;color:var(--accent);margin:26px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+  h2 .en{color:var(--dim);font-weight:400;font-size:.9rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  .card .row{display:flex;align-items:center;gap:8px}
+  .dot{width:12px;height:12px;border-radius:50%;flex:0 0 12px}
+  .dot.green{background:var(--green);box-shadow:0 0 8px rgba(34,197,94,.6)}
+  .dot.red{background:var(--red);box-shadow:0 0 8px rgba(239,68,68,.5)}
+  .dot.gray{background:var(--gray)}
+  .card .name{font-weight:600;font-size:.95rem}
+  .card .he{color:var(--dim);font-size:.85rem;margin-top:2px}
+  .card .detail{color:var(--dim);font-size:.8rem;margin-top:6px;word-break:break-word;direction:ltr;text-align:left}
+  .kv{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.85rem;color:var(--text)}
+  .chip b{color:var(--accent)}
+  .stale-wash .dot{background:var(--gray)!important;box-shadow:none!important}
+  footer{margin-top:40px;text-align:center;color:var(--dim);font-size:.8rem;padding:0 20px}
+  .empty{color:var(--dim);font-size:.9rem;padding:8px 2px}
+  #err{display:none}
+</style>
+</head>
+<body>
+<header>
+  <h1>🕸️ ERAN Federation — פדרציית ערן</h1>
+  <div class="sub">סטטוס ציבורי לקריאה בלבד · Read-only public status · לע״נ עלמה ז״ל</div>
+</header>
+
+<div id="banner" class="banner stale">
+  טוען תמונת מצב… · Loading snapshot…
+</div>
+
+<main id="main">
+  <div id="err" class="banner error"></div>
+  <section id="summarySec" style="display:none">
+    <h2>תמצית <span class="en">· Summary</span></h2>
+    <div class="kv" id="summary"></div>
+  </section>
+  <section id="nodesSec" style="display:none">
+    <h2>צמתים <span class="en">· Nodes</span></h2>
+    <div class="grid" id="nodes"></div>
+  </section>
+</main>
+
+<footer>
+  הנתונים נדחפים מהמעבדה כל דקה; אם התמונה ישנה מ־3 דקות היא מוצגת באפור — לא ירוק מזויף.<br>
+  Snapshot is pushed from the lab every minute; older than 3 minutes renders gray — never fake green.
+</footer>
+
+<script>
+"use strict";
+const STALE_S = 180;
+
+function el(tag, cls, text){
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+
+function fmtAge(s){
+  if (s == null) return "—";
+  if (s < 60) return s + "s";
+  if (s < 3600) return Math.floor(s/60) + "m " + (s%60) + "s";
+  return Math.floor(s/3600) + "h " + Math.floor((s%3600)/60) + "m";
+}
+
+function normState(s){
+  s = String(s || "").toLowerCase();
+  if (s === "green" || s === "up" || s === "ok" || s === "alive") return "green";
+  if (s === "red" || s === "down" || s === "dead") return "red";
+  return "gray";
+}
+
+function nodeList(nodes){
+  if (!nodes) return [];
+  if (Array.isArray(nodes)) return nodes;
+  if (typeof nodes === "object"){
+    return Object.entries(nodes).map(([k,v]) =>
+      (v && typeof v === "object") ? Object.assign({id:k}, v) : {id:k, state:v});
+  }
+  return [];
+}
+
+function renderBanner(data, stale){
+  const b = document.getElementById("banner");
+  b.classList.remove("fresh","stale","error");
+  if (!data || data.ok === false){
+    b.classList.add("stale");
+    b.innerHTML = "";
+    b.append("אין עדיין תמונת מצב · No snapshot yet");
+    const s = el("span","small","הדוחף המקומי עוד לא שלח נתונים · the local pusher has not sent data yet");
+    b.append(s);
+    return;
+  }
+  const age = data.age_s;
+  b.innerHTML = "";
+  if (stale){
+    b.classList.add("stale");
+    const strong = el("span",null,"SNAPSHOT STALE · תמונת מצב לא עדכנית — ");
+    const ageSpan = el("span","age","גיל · age: " + fmtAge(age));
+    b.append(strong, ageSpan);
+    b.append(el("span","small","הצבעים הושבתו לאפור עד שיגיע עדכון · lights grayed out until a fresh push arrives"));
+  } else {
+    b.classList.add("fresh");
+    b.append("עדכני · LIVE — ");
+    b.append(el("span","age","גיל התמונה · snapshot age: " + fmtAge(age)));
+    if (data.generated_at)
+      b.append(el("span","small","נוצר · generated: " + String(data.generated_at)));
+  }
+}
+
+function renderSummary(data){
+  const wrap = document.getElementById("summary");
+  wrap.innerHTML = "";
+  const chips = [];
+  function chip(he, en, val){
+    if (val === undefined || val === null) return;
+    const c = el("span","chip");
+    const b = el("b", null, String(val));
+    c.append(he + " · " + en + ": ");
+    c.append(b);
+    chips.push(c);
+  }
+  const fleet = data.fleet;
+  if (fleet && typeof fleet === "object"){
+    const list = nodeList(fleet.nodes || fleet);
+    const up = list.filter(n => normState(n.state || (n.reachable ? "green":"red")) === "green").length;
+    if (list.length) chip("צי DGX","DGX fleet", up + "/" + list.length + " up");
+  }
+  const q = data.quorum;
+  if (q && typeof q === "object"){
+    chip("קוורום","QUORUM", normState(q.state) === "green" ? "up" : (normState(q.state)==="red" ? "down" : "unknown"));
+    if (q.models_up !== undefined && q.models_total !== undefined)
+      chip("מודלים","models", q.models_up + "/" + q.models_total);
+  }
+  const r = data.ramchat;
+  if (r && typeof r === "object"){
+    if (r.members_alive !== undefined && r.members_total !== undefined)
+      chip("מועצה","council", r.members_alive + "/" + r.members_total + " alive");
+    if (r.queue_open !== undefined) chip("משימות פתוחות","open tasks", r.queue_open);
+  }
+  const af = data.alma_federation;
+  if (af && typeof af === "object"){
+    let v = normState(af.state)==="green" ? "polling (DRY-RUN)" : (normState(af.state)==="red" ? "down" : "unknown");
+    chip("רשת אלמה","ALMA grid", v);
+  }
+  const sec = document.getElementById("summarySec");
+  if (chips.length){ sec.style.display=""; chips.forEach(c => wrap.append(c)); }
+  else sec.style.display = "none";
+}
+
+function renderNodes(data, stale){
+  const wrap = document.getElementById("nodes");
+  const sec = document.getElementById("nodesSec");
+  wrap.innerHTML = "";
+  const list = nodeList(data.nodes);
+  if (!list.length){ sec.style.display="none"; return; }
+  sec.style.display = "";
+  wrap.classList.toggle("stale-wash", stale);
+  for (const n of list){
+    if (n && n.public === false) continue;
+    const card = el("div","card");
+    const row = el("div","row");
+    row.append(el("span","dot " + (stale ? "gray" : normState(n.state))));
+    row.append(el("span","name", String(n.name || n.id || "?")));
+    card.append(row);
+    if (n.name_he) card.append(el("div","he", String(n.name_he)));
+    const bits = [];
+    if (n.kind) bits.push(String(n.kind));
+    if (typeof n.latency_ms === "number") bits.push(n.latency_ms + "ms");
+    if (n.detail) bits.push(String(n.detail).slice(0,140));
+    if (bits.length) card.append(el("div","detail", bits.join(" · ")));
+    wrap.append(card);
+  }
+}
+
+async function refresh(){
+  const err = document.getElementById("err");
+  err.style.display = "none";
+  let data = null;
+  try {
+    const res = await fetch("/api/federation.json", {cache:"no-store"});
+    data = await res.json();
+  } catch(e){
+    const b = document.getElementById("banner");
+    b.classList.remove("fresh","stale"); b.classList.add("error");
+    b.textContent = "שגיאת רשת · network error fetching /api/federation.json";
+    return;
+  }
+  const stale = !data || data.ok === false || data.age_s == null || data.age_s > STALE_S;
+  renderBanner(data, stale && data && data.ok !== false);
+  if (data && data.ok !== false){
+    renderSummary(data);
+    renderNodes(data, stale);
+  }
+}
+
+refresh();
+setInterval(refresh, 30000);
+</script>
+</body>
+</html>

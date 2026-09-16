@@ -1,0 +1,1 @@
+{"service": "eran-live", "host": "IDDO1", "device": "NVIDIA GeForce RTX 3070 Ti", "world_size": 1, "step": 626430, "loss": 0.34, "ema_loss": 0.3664, "lr": 3e-05, "steps_per_s": 8.03, "tokens_per_s": 16441.3, "vram_mb": 285.0, "updated": "2026-07-11T22:57:16"}

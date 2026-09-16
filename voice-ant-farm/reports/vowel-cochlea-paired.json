@@ -1,0 +1,208 @@
+{
+  "paired": {
+    "edit": {
+      "scaled_512_pooled": 0.634469696969697,
+      "legacy_512_pooled": 0.42424242424242425,
+      "mcnemar": {
+        "a_only": 155,
+        "b_only": 44,
+        "p_value": 1.0692982222738588e-15
+      },
+      "decisions": 528,
+      "seed_matched_wins": 4
+    },
+    "cosine": {
+      "scaled_512_pooled": 0.7083333333333334,
+      "legacy_512_pooled": 0.4109848484848485,
+      "mcnemar": {
+        "a_only": 194,
+        "b_only": 37,
+        "p_value": 6.995307753004884e-27
+      },
+      "decisions": 528,
+      "seed_matched_wins": 4
+    }
+  },
+  "per_syllable_pooled_4ants": {
+    "edit": {
+      "aa": {
+        "before": "2/24",
+        "after": "13/24"
+      },
+      "ah": {
+        "before": "7/24",
+        "after": "11/24"
+      },
+      "ba": {
+        "before": "0/24",
+        "after": "12/24"
+      },
+      "da": {
+        "before": "2/24",
+        "after": "8/24"
+      },
+      "ga": {
+        "before": "5/24",
+        "after": "5/24"
+      },
+      "ha": {
+        "before": "14/24",
+        "after": "15/24"
+      },
+      "ka": {
+        "before": "11/24",
+        "after": "17/24"
+      },
+      "kha": {
+        "before": "20/24",
+        "after": "23/24"
+      },
+      "la": {
+        "before": "9/24",
+        "after": "8/24"
+      },
+      "ma": {
+        "before": "4/24",
+        "after": "17/24"
+      },
+      "na": {
+        "before": "20/24",
+        "after": "23/24"
+      },
+      "pa": {
+        "before": "4/24",
+        "after": "6/24"
+      },
+      "qa": {
+        "before": "3/24",
+        "after": "8/24"
+      },
+      "ra": {
+        "before": "10/24",
+        "after": "16/24"
+      },
+      "sa": {
+        "before": "15/24",
+        "after": "20/24"
+      },
+      "sha": {
+        "before": "19/24",
+        "after": "24/24"
+      },
+      "ta": {
+        "before": "3/24",
+        "after": "12/24"
+      },
+      "tha": {
+        "before": "7/24",
+        "after": "7/24"
+      },
+      "tsa": {
+        "before": "16/24",
+        "after": "24/24"
+      },
+      "va": {
+        "before": "11/24",
+        "after": "19/24"
+      },
+      "ya": {
+        "before": "21/24",
+        "after": "23/24"
+      },
+      "za": {
+        "before": "21/24",
+        "after": "24/24"
+      }
+    },
+    "cosine": {
+      "aa": {
+        "before": "1/24",
+        "after": "9/24"
+      },
+      "ah": {
+        "before": "7/24",
+        "after": "21/24"
+      },
+      "ba": {
+        "before": "0/24",
+        "after": "12/24"
+      },
+      "da": {
+        "before": "4/24",
+        "after": "10/24"
+      },
+      "ga": {
+        "before": "6/24",
+        "after": "2/24"
+      },
+      "ha": {
+        "before": "8/24",
+        "after": "13/24"
+      },
+      "ka": {
+        "before": "9/24",
+        "after": "17/24"
+      },
+      "kha": {
+        "before": "11/24",
+        "after": "23/24"
+      },
+      "la": {
+        "before": "11/24",
+        "after": "5/24"
+      },
+      "ma": {
+        "before": "4/24",
+        "after": "20/24"
+      },
+      "na": {
+        "before": "18/24",
+        "after": "24/24"
+      },
+      "pa": {
+        "before": "0/24",
+        "after": "11/24"
+      },
+      "qa": {
+        "before": "6/24",
+        "after": "22/24"
+      },
+      "ra": {
+        "before": "8/24",
+        "after": "22/24"
+      },
+      "sa": {
+        "before": "13/24",
+        "after": "23/24"
+      },
+      "sha": {
+        "before": "24/24",
+        "after": "24/24"
+      },
+      "ta": {
+        "before": "5/24",
+        "after": "12/24"
+      },
+      "tha": {
+        "before": "14/24",
+        "after": "10/24"
+      },
+      "tsa": {
+        "before": "17/24",
+        "after": "23/24"
+      },
+      "va": {
+        "before": "7/24",
+        "after": "23/24"
+      },
+      "ya": {
+        "before": "22/24",
+        "after": "24/24"
+      },
+      "za": {
+        "before": "22/24",
+        "after": "24/24"
+      }
+    }
+  }
+}

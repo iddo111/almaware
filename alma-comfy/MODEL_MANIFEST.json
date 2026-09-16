@@ -1,0 +1,168 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-07-22T15:10:21+03:00",
+  "studio": "ALMA Studio",
+  "policy": {
+    "default_mode": "2d-first",
+    "commercial_core_only": true,
+    "worker_allocation": "DGX3-DGX4-only",
+    "runtime_claim": "brain-video-music-tts-and-finishing-technical-canaries-verified-human-review-pending",
+    "completion_gate": "real artifact plus technical checks plus human review"
+  },
+  "brain": {
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
+    "service": "http://127.0.0.1:8095/v1",
+    "topology": "one PP2 model across DGX1 and DGX2",
+    "status": "verified-exact-marker-generation"
+  },
+  "nodes": [
+    {
+      "id": "dgx3",
+      "ssh": "eran3@<lan-ip>",
+      "role": "image-video-and-upscale",
+      "primary_model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "state": "video-canary-verified-image-models-local-human-review-pending",
+      "model_root": "/home/eran3/models/alma-studio",
+      "log_root": "/home/eran3/logs/alma-studio"
+    },
+    {
+      "id": "dgx4",
+      "ssh": "eran4@<lan-ip>",
+      "role": "music-tts-and-finishing",
+      "primary_model": "ACE-Step/Ace-Step1.5",
+      "state": "music-tts-and-finishing-canaries-verified-human-review-pending",
+      "model_root": "/home/eran4/models/alma-studio",
+      "log_root": "/home/eran4/logs/alma-studio"
+    }
+  ],
+  "models": [
+    {
+      "id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
+      "lane": "brain",
+      "node": "dgx1+dgx2-pp2",
+      "license": "NVIDIA Nemotron Open Model License",
+      "expected_bytes": 80317948856,
+      "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
+      "status": "verified-local-pp2-generation"
+    },
+    {
+      "id": "black-forest-labs/FLUX.2-klein-4B-fp8",
+      "lane": "image-fast",
+      "node": "dgx3",
+      "license": "Apache-2.0",
+      "revision": "5b4408e59397a4a37ccb46afe426d8ed86379441",
+      "expected_bytes": 4079373355,
+      "source": "https://huggingface.co/black-forest-labs/FLUX.2-klein-4B-fp8",
+      "status": "verified-on-dgx3-sha256-tree-match"
+    },
+    {
+      "id": "Qwen/Qwen-Image-2512",
+      "lane": "image-quality-and-text",
+      "node": "dgx3",
+      "license": "Apache-2.0",
+      "revision": "25468b98e3276ca6700de15c6628e51b7de54a26",
+      "expected_bytes": 57699249390,
+      "source": "https://huggingface.co/Qwen/Qwen-Image-2512",
+      "status": "verified-on-dgx3-93-file-sha256-tree-match-dgx2-source-removed"
+    },
+    {
+      "id": "Lightricks/LTX-2.3",
+      "lane": "audio-video-primary",
+      "node": "dgx3",
+      "license": "LTX-2 Community License; paid license for entities at or above USD 10M annual revenue",
+      "revision": "4229404625088d21c4f112eb640fb04a0900ee25",
+      "expected_bytes": 157004895857,
+      "source": "https://huggingface.co/Lightricks/LTX-2.3",
+      "status": "verified-full-snapshot-integrity-runtime-canary-pending"
+    },
+    {
+      "id": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "lane": "video-fast-fallback",
+      "node": "dgx3",
+      "license": "Apache-2.0",
+      "revision": "b8fff7315c768468a5333511427288870b2e9635",
+      "expected_bytes": 34202702139,
+      "source": "https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "status": "verified-fixed-seed-video-canary-arm64-cuda13"
+    },
+    {
+      "id": "Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "lane": "video-quality-fallback",
+      "node": "dgx3",
+      "license": "Apache-2.0",
+      "revision": "596658fd9ca6b7b71d5057529bbf319ecbc61d74",
+      "expected_bytes": 126204155463,
+      "source": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "status": "verified-full-snapshot-integrity-runtime-canary-pending"
+    },
+    {
+      "id": "ACE-Step/Ace-Step1.5",
+      "lane": "music",
+      "node": "dgx4",
+      "license": "MIT",
+      "revision": "19671f406d603126926c1b7e2adc169acbcade22",
+      "expected_bytes": 10079024720,
+      "source": "https://huggingface.co/ACE-Step/Ace-Step1.5",
+      "status": "verified-fixed-seed-audio-canary"
+    },
+    {
+      "id": "ResembleAI/chatterbox",
+      "lane": "tts-and-voice",
+      "node": "dgx4",
+      "license": "MIT; voice use still requires rights and consent",
+      "revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+      "expected_bytes": 13864117584,
+      "source": "https://huggingface.co/ResembleAI/chatterbox",
+      "status": "weights-preserved-runtime-blocked-unmodified-dependency-chain"
+    },
+    {
+      "id": "notmax123/blue-onnx-v2",
+      "lane": "tts-and-voice",
+      "node": "dgx4",
+      "license": "MIT",
+      "revision": "45dc85f1ac045ea62458a7492c5ae387610ac0af",
+      "expected_bytes": 390623556,
+      "source": "https://huggingface.co/notmax123/blue-onnx-v2",
+      "status": "verified-fixed-seed-hebrew-wav-cpu-canary"
+    },
+    {
+      "id": "thewh1teagle/renikud",
+      "lane": "hebrew-g2p",
+      "node": "dgx4",
+      "license": "CC-BY-4.0",
+      "revision": "b80cab616c972b6a87de86044f50b597ee2c53fd",
+      "expected_bytes": 20622700,
+      "source": "https://huggingface.co/thewh1teagle/renikud",
+      "status": "verified-pinned-revision-used-by-hebrew-tts-canary"
+    }
+  ],
+  "preparation": {
+    "asset_lock": "studio_assets.lock.json",
+    "asset_lock_id": "alma-studio-assets-20260722-v1",
+    "asset_lock_sha256": "ebf93263cceef756e250e6ee65c817d68c43711069ec098bb6d6dfc0a03a2ef3",
+    "activation": "forbidden",
+    "lora_policy": "per-project-human-approved-pinned-safetensors-only",
+    "dgx3_audit": "verified-2026-07-22T16:11-IDT",
+    "dgx4_audit": "verified-2026-07-22T16:11-IDT",
+    "comfy_model_links": "verified-idempotent",
+    "services_started_by_preparer": false
+  },
+  "finishing": {
+    "status": "verified-4k-main10-hdr10-pq-plus-24bit-48khz-audio-technical-canary",
+    "canary": "/home/eran4/alma-studio/canaries/hdr-master-20260722T1458-IDT/alma-hdr10-4k-2s.mov",
+    "canary_sha256": "ca6a1e6ef278e22ac9e5ec34448ed93ffb1c51dbabadcbd91a0ffb545dfb70a7",
+    "human_review": "not-recorded",
+    "engine": "FFmpeg",
+    "engine_revision": "6.1.1",
+    "engine_license": "LGPL-2.1-or-later with enabled GPL components",
+    "tools": ["ComfyUI", "OpenTimelineIO", "OpenColorIO", "ACES", "FFmpeg", "OpenEXR"],
+    "master": {
+      "width": 3840,
+      "height": 2160,
+      "pixel_depth": "10-bit minimum",
+      "primaries": "BT.2020",
+      "transfer": ["PQ", "HLG"],
+      "audio": "48kHz"
+    }
+  }
+}

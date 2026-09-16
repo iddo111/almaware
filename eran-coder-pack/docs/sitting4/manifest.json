@@ -1,0 +1,62 @@
+[
+ {
+  "i": 0,
+  "truth": "P",
+  "src": "P/P__fleurs-1270__u00844__00136.wav"
+ },
+ {
+  "i": 1,
+  "truth": "G",
+  "src": "G/G__fleurs-116__u00319__00117.wav"
+ },
+ {
+  "i": 2,
+  "truth": "S",
+  "src": "S/S__fleurs-676__u01138__00248.wav"
+ },
+ {
+  "i": 3,
+  "truth": "V",
+  "src": "V/V__fleurs-1421__u00397__00776.wav"
+ },
+ {
+  "i": 4,
+  "truth": "N",
+  "src": "N/N__fleurs-107__u00102__00139.wav"
+ },
+ {
+  "i": 5,
+  "truth": "D",
+  "src": "D/D__fleurs-797__u00212__00232.wav"
+ },
+ {
+  "i": 6,
+  "truth": "SH",
+  "src": "SH/SH__fleurs-101__u00751__00070.wav"
+ },
+ {
+  "i": 7,
+  "truth": "X",
+  "src": "X/X__fleurs-1434__u00658__00428.wav"
+ },
+ {
+  "i": 8,
+  "truth": "H",
+  "src": "H/H__fleurs-534__u01516__00299.wav"
+ },
+ {
+  "i": 9,
+  "truth": "B",
+  "src": "B/B__fleurs-797__u00212__00399.wav"
+ },
+ {
+  "i": 10,
+  "truth": "K",
+  "src": "K/K__fleurs-703__u00182__00378.wav"
+ },
+ {
+  "i": 11,
+  "truth": "T",
+  "src": "T/T__fleurs-1366__u00354__00051.wav"
+ }
+]

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "dataset_id": "REPLACE_ME",
+  "version": "REPLACE_ME",
+  "modality": "image_text",
+  "license": {
+    "identifier": "REPLACE_ME",
+    "training_allowed": true,
+    "evidence": "REPLACE_WITH_LOCAL_EVIDENCE"
+  },
+  "consent": {
+    "basis": "REPLACE_ME",
+    "sensitive_data_reviewed": true,
+    "evidence": "REPLACE_WITH_LOCAL_EVIDENCE"
+  },
+  "assets": [
+    {
+      "path": "/REPLACE/image-0001.png",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "bytes": 1
+    }
+  ],
+  "splits": {
+    "train": [
+      {
+        "path": "/REPLACE/train-image-text.jsonl",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "bytes": 1,
+        "records": 1,
+        "format": "jsonl"
+      }
+    ],
+    "validation": [
+      {
+        "path": "/REPLACE/validation-image-text.jsonl",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "bytes": 1,
+        "records": 1,
+        "format": "jsonl"
+      }
+    ]
+  }
+}

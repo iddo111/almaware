@@ -1,0 +1,366 @@
+{
+  "question": "does competitive Hebbian learning beat random real frames",
+  "metric_policy": "quantisation error is not computed in this file",
+  "chance_top1": 0.045454545454545456,
+  "units": 256,
+  "feature_set": "recommended26",
+  "heldout_items": 132,
+  "train_items": 396,
+  "classes": [
+    "aa",
+    "ah",
+    "ba",
+    "da",
+    "ga",
+    "ha",
+    "ka",
+    "kha",
+    "la",
+    "ma",
+    "na",
+    "pa",
+    "qa",
+    "ra",
+    "sa",
+    "sha",
+    "ta",
+    "tha",
+    "tsa",
+    "va",
+    "ya",
+    "za"
+  ],
+  "baselines_published_legacy14": {
+    "trained_kmeans_256_cosine_top1": 0.419,
+    "random_real_frames_256_cosine_top1": 0.403,
+    "random_gaussian_256_cosine_top1": 0.258,
+    "raw_features_no_codebook_top1": 0.538,
+    "kmeans_256_units_used_heldout": 172
+  },
+  "rows": [
+    {
+      "config": {
+        "name": "random-real-frames",
+        "kind": "random-real-frames"
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.6679292929292928,
+      "cv_top1_std": 0.06530353808578662,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.8611111111111112,
+        "ga/ka": 1.0,
+        "da/ta": 0.5972222222222222,
+        "sa/sha": 0.9861111111111112,
+        "ka/qa": 0.9722222222222222,
+        "ta/tha": 0.763888888888889,
+        "za/sa": 1.0,
+        "ah/aa": 0.9166666666666669
+      },
+      "cv_dead_units_mean": 78.33333333333333,
+      "seconds": 4.8
+    },
+    {
+      "config": {
+        "name": "random-gaussian",
+        "kind": "random-gaussian"
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.45075757575757575,
+      "cv_top1_std": 0.07502805311487667,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.6944444444444445,
+        "ga/ka": 0.9583333333333335,
+        "da/ta": 0.486111111111111,
+        "sa/sha": 0.9722222222222223,
+        "ka/qa": 0.6944444444444445,
+        "ta/tha": 0.6527777777777778,
+        "za/sa": 1.0,
+        "ah/aa": 0.8194444444444443
+      },
+      "cv_dead_units_mean": 108.91666666666667,
+      "seconds": 4.5
+    },
+    {
+      "config": {
+        "name": "kmeans-scaled",
+        "kind": "kmeans",
+        "scaled": true
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.7815656565656566,
+      "cv_top1_std": 0.06137714445826584,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.9166666666666666,
+        "ga/ka": 1.0,
+        "da/ta": 0.736111111111111,
+        "sa/sha": 1.0,
+        "ka/qa": 1.0,
+        "ta/tha": 0.7222222222222222,
+        "za/sa": 1.0,
+        "ah/aa": 0.9722222222222222
+      },
+      "cv_dead_units_mean": 99.25,
+      "seconds": 110.7
+    },
+    {
+      "config": {
+        "name": "kmeans-unscaled",
+        "kind": "kmeans",
+        "scaled": false
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.6856060606060606,
+      "cv_top1_std": 0.03819314005619743,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.7916666666666666,
+        "ga/ka": 1.0,
+        "da/ta": 0.6666666666666666,
+        "sa/sha": 1.0,
+        "ka/qa": 0.9583333333333334,
+        "ta/tha": 0.5972222222222223,
+        "za/sa": 1.0,
+        "ah/aa": 1.0
+      },
+      "cv_dead_units_mean": 97.91666666666667,
+      "seconds": 101.3
+    },
+    {
+      "config": {
+        "name": "hebbian-default",
+        "kind": "hebbian",
+        "epochs": 20,
+        "scaled": true
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.7613636363636364,
+      "cv_top1_std": 0.029745502498458948,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.875,
+        "ga/ka": 1.0,
+        "da/ta": 0.6805555555555557,
+        "sa/sha": 1.0,
+        "ka/qa": 1.0,
+        "ta/tha": 0.7083333333333334,
+        "za/sa": 1.0,
+        "ah/aa": 1.0
+      },
+      "cv_dead_units_mean": 62.416666666666664,
+      "seconds": 196.0
+    },
+    {
+      "config": {
+        "name": "hebbian-unscaled",
+        "kind": "hebbian",
+        "epochs": 20,
+        "scaled": false
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.6843434343434344,
+      "cv_top1_std": 0.044533313354920195,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.75,
+        "ga/ka": 1.0,
+        "da/ta": 0.6805555555555557,
+        "sa/sha": 1.0,
+        "ka/qa": 0.986111111111111,
+        "ta/tha": 0.6805555555555555,
+        "za/sa": 1.0,
+        "ah/aa": 0.9722222222222222
+      },
+      "cv_dead_units_mean": 76.41666666666667,
+      "seconds": 183.4
+    },
+    {
+      "config": {
+        "name": "hebbian-no-conscience",
+        "kind": "hebbian",
+        "epochs": 20,
+        "scaled": true,
+        "conscience": 0.0
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.7651515151515151,
+      "cv_top1_std": 0.04481878623560314,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.8194444444444445,
+        "ga/ka": 1.0,
+        "da/ta": 0.6805555555555555,
+        "sa/sha": 1.0,
+        "ka/qa": 1.0,
+        "ta/tha": 0.638888888888889,
+        "za/sa": 1.0,
+        "ah/aa": 1.0
+      },
+      "cv_dead_units_mean": 65.08333333333333,
+      "seconds": 153.4
+    },
+    {
+      "config": {
+        "name": "hebbian-conscience-0.5",
+        "kind": "hebbian",
+        "epochs": 20,
+        "scaled": true,
+        "conscience": 0.5
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.7638888888888888,
+      "cv_top1_std": 0.0426124672492076,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.8472222222222222,
+        "ga/ka": 1.0,
+        "da/ta": 0.75,
+        "sa/sha": 1.0,
+        "ka/qa": 1.0,
+        "ta/tha": 0.7361111111111112,
+        "za/sa": 1.0,
+        "ah/aa": 1.0
+      },
+      "cv_dead_units_mean": 59.25,
+      "seconds": 185.8
+    },
+    {
+      "config": {
+        "name": "hebbian-sigma-min-1.0",
+        "kind": "hebbian",
+        "epochs": 20,
+        "scaled": true,
+        "sigma_min": 1.0
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.6792929292929292,
+      "cv_top1_std": 0.06149391748427234,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.8055555555555557,
+        "ga/ka": 1.0,
+        "da/ta": 0.6944444444444445,
+        "sa/sha": 1.0,
+        "ka/qa": 1.0,
+        "ta/tha": 0.5416666666666666,
+        "za/sa": 1.0,
+        "ah/aa": 0.9861111111111112
+      },
+      "cv_dead_units_mean": 49.916666666666664,
+      "seconds": 238.0
+    },
+    {
+      "config": {
+        "name": "hebbian-sigma-min-0.25",
+        "kind": "hebbian",
+        "epochs": 20,
+        "scaled": true,
+        "sigma_min": 0.25
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.8068181818181818,
+      "cv_top1_std": 0.038690791530415575,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.875,
+        "ga/ka": 1.0,
+        "da/ta": 0.8333333333333335,
+        "sa/sha": 1.0,
+        "ka/qa": 1.0,
+        "ta/tha": 0.7777777777777778,
+        "za/sa": 1.0,
+        "ah/aa": 1.0
+      },
+      "cv_dead_units_mean": 70.41666666666667,
+      "seconds": 255.5
+    },
+    {
+      "config": {
+        "name": "hebbian-snap",
+        "kind": "hebbian",
+        "epochs": 20,
+        "scaled": true,
+        "snap": true
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.7260101010101011,
+      "cv_top1_std": 0.05947760461269636,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.7499999999999999,
+        "ga/ka": 1.0,
+        "da/ta": 0.8055555555555557,
+        "sa/sha": 1.0,
+        "ka/qa": 1.0,
+        "ta/tha": 0.7777777777777777,
+        "za/sa": 1.0,
+        "ah/aa": 0.9722222222222223
+      },
+      "cv_dead_units_mean": 77.58333333333333,
+      "seconds": 207.3
+    },
+    {
+      "config": {
+        "name": "hebbian-epochs-5",
+        "kind": "hebbian",
+        "epochs": 5,
+        "scaled": true
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.7689393939393939,
+      "cv_top1_std": 0.04796318159904691,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.8472222222222222,
+        "ga/ka": 1.0,
+        "da/ta": 0.6666666666666666,
+        "sa/sha": 1.0,
+        "ka/qa": 1.0,
+        "ta/tha": 0.7222222222222222,
+        "za/sa": 1.0,
+        "ah/aa": 1.0
+      },
+      "cv_dead_units_mean": 56.666666666666664,
+      "seconds": 55.9
+    },
+    {
+      "config": {
+        "name": "hebbian-epochs-40",
+        "kind": "hebbian",
+        "epochs": 40,
+        "scaled": true
+      },
+      "feature_set": "recommended26",
+      "units": 256,
+      "folds": 12,
+      "cv_top1_cosine": 0.7727272727272726,
+      "cv_top1_std": 0.0344398527701663,
+      "cv_minimal_pairs": {
+        "ba/pa": 0.7916666666666669,
+        "ga/ka": 1.0,
+        "da/ta": 0.7777777777777778,
+        "sa/sha": 1.0,
+        "ka/qa": 1.0,
+        "ta/tha": 0.7777777777777778,
+        "za/sa": 1.0,
+        "ah/aa": 0.9861111111111112
+      },
+      "cv_dead_units_mean": 62.666666666666664,
+      "seconds": 260.1
+    }
+  ]
+}

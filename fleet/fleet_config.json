@@ -1,0 +1,135 @@
+{
+  "_header": "לזכרה של עלמה ז\"ל",
+  "_about": "ALMAWARE multi-AI fleet registry. The router reads this file to pick the right model per task. Add a model by appending an entry to \"models\" — no router code change needed.",
+  "version": "1.1.0",
+  "defaults": {
+    "fallback_chain": ["gemma2:2b", "haiku", "gemini-flash"],
+    "timeout_seconds": 60,
+    "max_retries": 2
+  },
+  "task_routing": {
+    "simple_reply":    "gemma2:2b",
+    "whatsapp":        "gemma2:2b",
+    "fast":            "gemma2:2b",
+    "code":            "sonnet",
+    "code_simple":     "gemini-pro",
+    "document":        "gemini-pro",
+    "long_context":    "gemini-pro",
+    "realtime":        "grok-web",
+    "news":            "grok-web",
+    "web_search":      "grok-web",
+    "reasoning":       "grok",
+    "hebrew":          "eran-local",
+    "hebrew_nlp":      "eran-local",
+    "creative":        "eran-local",
+    "almaware":        "eran-local",
+    "eran":            "eran-local",
+    "batch":           "haiku",
+    "high_volume":     "gemma2:2b",
+    "default":         "haiku"
+  },
+  "_routing_note": "Hebrew/creative/ALMAWARE/eran route to our OWN model (Eran). Eran v1 is a from-scratch byte-LM PROTOTYPE trained only on Iddo's voice -- each Eran route declares fallback_to [eran-dgx4, sonnet] so when Eran is offline OR returns empty, the request escalates to a real capable model (sonnet = best Hebrew). To send Hebrew NLP straight to sonnet instead, point hebrew/hebrew_nlp back at 'sonnet'.",
+  "models": {
+    "gemma2:2b": {
+      "provider": "ollama",
+      "model_id": "gemma2:2b",
+      "endpoint_env": "OLLAMA_URL",
+      "endpoint_default": "http://localhost:11434",
+      "cost_tier": "free",
+      "free": true,
+      "best_for": ["simple_reply", "whatsapp", "fast", "high_volume"],
+      "notes": "Runs on Cloud Run (deploy_ollama_cloudrun.sh) or local. No API cost. ~2B params, fits free tier."
+    },
+    "phi3": {
+      "provider": "ollama",
+      "model_id": "phi3",
+      "endpoint_env": "OLLAMA_URL",
+      "endpoint_default": "http://localhost:11434",
+      "cost_tier": "free",
+      "free": true,
+      "best_for": ["fast", "reasoning"],
+      "notes": "Alternate lightweight Ollama model. Slightly stronger reasoning than gemma2:2b."
+    },
+    "haiku": {
+      "provider": "anthropic",
+      "model_id": "claude-haiku-4-5",
+      "secret": "ANTHROPIC_API_KEY",
+      "cost_tier": "cheap",
+      "free": false,
+      "best_for": ["batch", "high_volume", "hebrew"],
+      "notes": "Cheapest/fastest Claude. Routine + high-volume work. Strong Hebrew."
+    },
+    "sonnet": {
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-4-6",
+      "secret": "ANTHROPIC_API_KEY",
+      "cost_tier": "mid",
+      "free": false,
+      "best_for": ["code", "hebrew_nlp", "complex"],
+      "notes": "Complex tasks, code generation, best-in-class Hebrew NLP."
+    },
+    "gemini-flash": {
+      "provider": "gemini",
+      "model_id": "gemini-2.0-flash",
+      "secret": "GEMINI_API_KEY",
+      "cost_tier": "free",
+      "free": true,
+      "best_for": ["fast", "document"],
+      "notes": "Google AI Studio free tier. Fast, generous free quota."
+    },
+    "gemini-pro": {
+      "provider": "gemini",
+      "model_id": "gemini-2.5-pro",
+      "secret": "GEMINI_API_KEY",
+      "cost_tier": "free",
+      "free": true,
+      "best_for": ["document", "long_context", "code_simple"],
+      "notes": "Long context, document analysis, Google integrations. Free tier on AI Studio."
+    },
+    "grok": {
+      "provider": "xai",
+      "model_id": "grok-3",
+      "secret": "XAI_API_KEY",
+      "cost_tier": "mid",
+      "free": false,
+      "best_for": ["reasoning", "realtime"],
+      "notes": "Plain Grok (no live web). Reasoning + training-cutoff knowledge. xAI API."
+    },
+    "grok-web": {
+      "provider": "xai",
+      "model_id": "grok-3",
+      "secret": "XAI_API_KEY",
+      "cost_tier": "mid",
+      "free": false,
+      "best_for": ["web_search", "realtime", "news"],
+      "extra_body": {
+        "search_parameters": { "mode": "auto", "return_citations": true }
+      },
+      "notes": "Grok with xAI Live Search ENABLED (real-time web). Use for web-search / current-events tasks. mode=auto lets Grok decide when to search."
+    },
+    "eran-local": {
+      "provider": "eran",
+      "model_id": "eran-v1",
+      "endpoint_env": "ERAN_LOCAL_URL",
+      "endpoint_default": "http://localhost:7800",
+      "token_env": "ERAN_TOKEN",
+      "cost_tier": "free",
+      "free": true,
+      "best_for": ["eran", "almaware", "creative", "hebrew"],
+      "fallback_to": ["eran-dgx4", "sonnet"],
+      "notes": "ALMAWARE's OWN from-scratch byte-LM (eran/chat_server.py on :7800). Loopback is trusted tokenless. PROTOTYPE (4-layer, voice-only corpus) -> fallback_to escalates to DGX Eran then sonnet. Start: python D:/CLAUDE/eran/chat_server.py"
+    },
+    "eran-dgx4": {
+      "provider": "eran",
+      "model_id": "eran-v1",
+      "endpoint_env": "ERAN_DGX4_URL",
+      "endpoint_default": "http://localhost:7801",
+      "token_env": "ERAN_TOKEN",
+      "cost_tier": "free",
+      "free": true,
+      "best_for": ["eran", "almaware", "creative", "hebrew"],
+      "fallback_to": ["sonnet"],
+      "notes": "Eran chat server on DGX-4 (eran4 / edgexpert-3636), reached over an SSH tunnel. Open it first: ssh -N -L 7801:localhost:7800 eran4  (key ~/.ssh/id_ed25519). The tunnel makes the DGX server appear on local :7801; over the tunnel it sees loopback, so no token needed."
+    }
+  }
+}

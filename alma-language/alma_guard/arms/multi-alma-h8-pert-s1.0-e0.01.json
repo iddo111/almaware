@@ -1,0 +1,17 @@
+{
+ "kind": "alma",
+ "task": "multi",
+ "width": 1024,
+ "drift": 0.05,
+ "init": 0.02,
+ "r_ok": 0.1,
+ "r_fa": 1.0,
+ "epochs": 15,
+ "name": "multi-alma-h8-pert-s1.0-e0.01",
+ "r_miss": 4.0,
+ "hidden": 8,
+ "rule": "perturbation",
+ "sigma": 1.0,
+ "eta": 0.01,
+ "skip": true
+}

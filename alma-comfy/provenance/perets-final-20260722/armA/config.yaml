@@ -1,0 +1,52 @@
+# PERETS STAGE-1 PROOF - spec v0.1 - all hyperparams
+# (one GB10, minutes, honest A/B)
+
+base_model: Qwen/Qwen2.5-0.5B-Instruct      # (a) 494M, Apache-2.0, bf16 ~1.0 GB
+fallback_model: Qwen/Qwen2.5-1.5B-Instruct  # only if frozen-feature quality too weak
+dataset: PolyAI/banking77                    # (c) 77 intents, 10,003 train / 3,080 test
+dataset_fallback: mteb/banking77             # same data, plain-parquet mirror
+n_classes: 77
+hidden_size: 896
+tap_layers: [4, 9, 14, 19, 24]               # 5 frames = 5 reference views of the SAME input
+frame_proj: 256
+vanilla_proj: 1284                            # param-matches Arm A within 0.07%
+max_param_mismatch: 0.005                     # hard assert
+
+# ---- RUN-2 Phase 1: feature extraction (frozen backbone, no_grad) ----
+extract_batch_size: 64
+extract_seq_len: 64
+cache_dir: cache                              # ~45 MB fp16 feature cache
+
+# ---- RUN-2 Phase 2: head training ----
+batch_size: 32
+lr: 1.0e-3
+weight_decay: 0.01
+warmup_steps: 50
+epochs: 3                                     # ~940 steps on banking77 train
+log_every: 20                                 # loss -> stdout + logs/<run>.log
+seeds: [1, 2, 3]                              # Clean-Experiments: mean+/-std over 3 seeds
+
+# ---- RUN-3 GATE-COLLAPSE FIX (Arm A only; pure loss terms, 0 extra params) ----
+# RUN-2 collapse: mean w/frame ~ [0.002, 0.014, 0.14, 0.0001, 0.977], 93.6%
+# inquorate -> voting never engaged. These knobs keep multiple frames seated.
+gate_balance_coeff: 0.5                       # KL(mean gate dist || uniform) penalty (MoE-style load balancer)
+gate_entropy_coeff: 0.0                       # optional per-sample gate-entropy BONUS (0 = off; try 0.01-0.1)
+aux_frame_ce_coeff: 0.2                       # aux per-frame CE: each frame classifies on its own (no dead frames)
+
+# ---- Beit-Din quorum preview (eval-time only in Stage-1) ----
+seat_threshold: 0.2                           # frame "seated" if w_f >= 0.2 (RUN-3: was 0.5; quorum>=2 reachable)
+quorum: 2                                     # inquorate if < 2 frames seated
+
+# ---- RUN-1: LoRA pipeline smoke (SFT shape the 30B will use) ----
+run1:
+  dataset: yahma/alpaca-cleaned
+  n_samples: 2000
+  seq_len: 512
+  batch_size: 8
+  grad_accum: 2
+  lr: 2.0e-4
+  warmup_steps: 20
+  max_steps: 200
+  lora_r: 8
+  lora_alpha: 16
+  target_modules: [q_proj, k_proj, v_proj, o_proj]

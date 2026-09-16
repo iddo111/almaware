@@ -1,0 +1,44 @@
+[
+ {
+  "id": "b12_L02",
+  "block": 12,
+  "k": 51,
+  "prompt": "Extreme close-up, documentary, shallow depth of field. Hand-soldered copper wires and small brass potentiometers on a dark phenolic circuit board, each joint catching a warm tungsten highlight, slow rack focus across the rows like neurons in a cortex. Amber and grey, film grain, photorealistic, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9918330
+ },
+ {
+  "id": "b07_L05",
+  "block": 7,
+  "k": 54,
+  "prompt": "Macro bio-cinema, glowing. A single neuron firing in slow motion, electric blue signal traveling down a branching dendrite against deep black, soft bokeh of other neurons pulsing behind, hyper-detailed, wet organic sheen, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9941481
+ },
+ {
+  "id": "b19_L08",
+  "block": 19,
+  "k": 57,
+  "prompt": "Modern documentary, sleek. Rows of GPU server racks glowing with green and blue status LEDs in a dark data center, cool reflections on polished floor, slow tracking shot down the aisle, photoreal, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9964632
+ },
+ {
+  "id": "b27_L11",
+  "block": 27,
+  "k": 60,
+  "prompt": "futuristic. Beams of laser light routing through a holographic optical computing chip, refracting into rainbow interference patterns in a dark lab, slow orbit around the chip, elegant, photoreal, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9987783
+ },
+ {
+  "id": "b25_L14",
+  "block": 25,
+  "k": 63,
+  "prompt": "Maker documentary, warm. Close-up of a soldering iron touching a joint on a small robot circuit board, a curl of solder smoke rising through a work-lamp beam, tools scattered, hands out of frame, cozy amber light, photoreal, grain, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 10010934
+ },
+ {
+  "id": "b21_L17",
+  "block": 21,
+  "k": 66,
+  "prompt": "Extreme macro, documentary, deep black background. A clear glass bulb whose filament is not a wire but a fine lattice of dark memristor crossbars; the junctions glow white-hot one after another, small flares erupting and dying along the lattice, molten light crawling between the crossings, thin smoke curling inside the glass. Ember orange, white-hot cores, photorealistic, film grain, no people, no text, no logo, no subtitles., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 10034085
+ }
+]

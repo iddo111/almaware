@@ -1,0 +1,17 @@
+{
+ "watchdog/BLIND/frozen": {
+  "last": 1788259438.817675,
+  "msg": "detector 'frozen' did NOT fire on a fixture built to set it off. The instrument is blind -- every OK it printed is worthless until this is fixed.",
+  "first_seen": "2026-09-01T13:43:58"
+ },
+ "watchdog/BLIND/dead": {
+  "last": 1788259438.817675,
+  "msg": "detector 'dead' did NOT fire on a fixture built to set it off. The instrument is blind -- every OK it printed is worthless until this is fixed.",
+  "first_seen": "2026-09-01T13:43:58"
+ },
+ "watchdog/BLIND/diverge": {
+  "last": 1788259438.817675,
+  "msg": "detector 'diverge' did NOT fire on a fixture built to set it off. The instrument is blind -- every OK it printed is worthless until this is fixed.",
+  "first_seen": "2026-09-01T13:43:58"
+ }
+}

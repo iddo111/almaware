@@ -1,0 +1,89 @@
+{
+ "feats": "trim",
+ "set": "matched",
+ "K": 8,
+ "fleurs_mode": "test",
+ "n": 2319,
+ "n_human": 389,
+ "n_eran": 1930,
+ "floors": {
+  "chance": 0.5,
+  "duration_only": 0.5835269123699668,
+  "rms_only": 0.7643219627848742,
+  "nezer_live": 0.7282616513712588,
+  "nezer_ceiling": 0.569
+ },
+ "models": {
+  "logreg 996 (all blocks)": {
+   "d": 996,
+   "balacc": 0.965853057527605,
+   "auc": 0.9945149646363067,
+   "human_recall": 0.987146529562982,
+   "eran_recall": 0.944559585492228
+  },
+  "logreg 994 (no duration dims)": {
+   "d": 994,
+   "balacc": 0.95251142160715,
+   "auc": 0.9945509277142134,
+   "human_recall": 0.9537275064267352,
+   "eran_recall": 0.9512953367875647
+  },
+  "logreg 986 (no level, no duration)": {
+   "d": 986,
+   "balacc": 0.9619970163964996,
+   "auc": 0.9957457010802243,
+   "human_recall": 0.9794344473007712,
+   "eran_recall": 0.944559585492228
+  },
+  "logreg onset only (lvl+coch0+ons0)": {
+   "d": 86,
+   "balacc": 0.9173688346630793,
+   "auc": 0.9753439801803482,
+   "human_recall": 0.8637532133676092,
+   "eran_recall": 0.9709844559585492
+  },
+  "logreg 855 (no pitch, level, dur)": {
+   "d": 855,
+   "balacc": 0.9623060324733275,
+   "auc": 0.9878990902673256,
+   "human_recall": 0.9665809768637532,
+   "eran_recall": 0.9580310880829016
+  }
+ },
+ "ablation": {
+  "RAMP60 (honest)": {
+   "n": 389,
+   "p_intact": 0.8717042571256741,
+   "p_amp": 0.8506359824447507,
+   "called_intact": 0.987146529562982,
+   "called_amp": 0.9794344473007712,
+   "paired_auc": 0.4997786163189511
+  },
+  "CUT60 (splice)": {
+   "n": 389,
+   "p_intact": 0.8717042571256741,
+   "p_amp": 0.7902577997960955,
+   "called_intact": 0.987146529562982,
+   "called_amp": 0.9562982005141388,
+   "paired_auc": 0.5056931952604067
+  }
+ },
+ "fleurs": {
+  "n": 495,
+  "speakers": 495,
+  "mean_p": 0.42196153122915814,
+  "thr": 0.032350000000000004,
+  "called_human": 0.602020202020202
+ },
+ "lam": 0.001,
+ "thresholds": [
+  0.0073,
+  0.0162,
+  0.0176,
+  0.9783,
+  0.0873,
+  0.9897,
+  0.0267,
+  0.038
+ ]
+}

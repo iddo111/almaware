@@ -1,0 +1,22 @@
+{
+  "revision": 6,
+  "mic_name": "Logitech BRIO",
+  "server_url": "http://127.0.0.1:8737/",
+  "lang_hint": "auto",
+  "auth_token_file": "state\\stt-token",
+  "gate_rms": {
+    "value": 0.008,
+    "calibrated_at": "2026-08-14T12:22:00+03:00",
+    "method": "measured from 854 live segments of session c36702e2 (real use, BRIO, his room): speech population n=232 median 0.0276 p10 0.0122; sub-speech population n=622 median 0.0031 p90 0.0060. Gate set in the gap between the two populations.",
+    "measured_floor": 0.0031,
+    "measured_speech": 0.0276,
+    "author": "claude-cli"
+  },
+  "stale_sec": 25,
+  "hotkey_pause": "ctrl+alt+m",
+  "auto_enter": true,
+  "clipboard_restore": false,
+  "extra_avoid": [],
+  "corpus_capture": true,
+  "owner_gate_typing": false
+}

@@ -1,0 +1,13 @@
+{
+  "wer": 0.6203389830508474,
+  "cer": 0.6531065088757396,
+  "word_errors": 366,
+  "words": 590,
+  "utterances": 120,
+  "model": "deepdml/faster-whisper-large-v3-turbo-ct2",
+  "split": "eval_voice.jsonl",
+  "beam": 1,
+  "tag": "champion-beam1",
+  "seconds": 54.2,
+  "when": "2026-08-06T03:06:26"
+}

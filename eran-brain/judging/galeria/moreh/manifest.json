@@ -1,0 +1,286 @@
+{
+ "model": "MOREH (teacher) + student",
+ "status_line_he": "המורה (קלוד): 24/24 הברות עברו את הסרגל, 668 שיעורים מנוסים, 333 מאומתים; התלמיד (MOREH, gate 2 leave-one-out): 5/24 הברות לא-נראות עברו (דא, קא, חא, פא, פ'א); פסיקת na מול ma עדיין ממתינה לעידו",
+ "items": [
+  {
+   "file": "CLAUDE-a-20260903.wav",
+   "spectrogram": "CLAUDE-a-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — אַ (a)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/14 מאומתים בסך הכל, שיעור הצלחה 100%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-a-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-ba-20260903.wav",
+   "spectrogram": "CLAUDE-ba-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — בַּ (ba)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/39 מאומתים בסך הכל, שיעור הצלחה 36%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-ba-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-ma-20260903.wav",
+   "spectrogram": "CLAUDE-ma-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — מַ (ma)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/16 מאומתים בסך הכל, שיעור הצלחה 88%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-ma-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-na-20260903.wav",
+   "spectrogram": "CLAUDE-na-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — נַ (na)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/17 מאומתים בסך הכל, שיעור הצלחה 82%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-na-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-pa-20260903.wav",
+   "spectrogram": "CLAUDE-pa-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — פַּ (pa)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/14 מאומתים בסך הכל, שיעור הצלחה 100%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-pa-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-ta-20260903.wav",
+   "spectrogram": "CLAUDE-ta-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — תַ (ta)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/122 מאומתים בסך הכל, שיעור הצלחה 12%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-ta-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-da-20260903.wav",
+   "spectrogram": "CLAUDE-da-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — דַ (da)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/33 מאומתים בסך הכל, שיעור הצלחה 42%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-da-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-ka-20260903.wav",
+   "spectrogram": "CLAUDE-ka-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — כַּ (ka)",
+   "note_he": "שיעור אחרון (v11) שעבר את הסרגל; 12/90 מאומתים בסך הכל, שיעור הצלחה 13%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-ka-v11.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-qa-20260903.wav",
+   "spectrogram": "CLAUDE-qa-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — קַ (qa)",
+   "note_he": "שיעור אחרון (v12) שעבר את הסרגל; 13/160 מאומתים בסך הכל, שיעור הצלחה 8%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-qa-v12.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-ga-20260903.wav",
+   "spectrogram": "CLAUDE-ga-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — גַ (ga)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/82 מאומתים בסך הכל, שיעור הצלחה 17%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-ga-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-la-20260903.wav",
+   "spectrogram": "CLAUDE-la-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — לַ (la)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/14 מאומתים בסך הכל, שיעור הצלחה 100%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-la-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-ra-20260903.wav",
+   "spectrogram": "CLAUDE-ra-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — רַ (ra)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/20 מאומתים בסך הכל, שיעור הצלחה 70%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-ra-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-sa-20260903.wav",
+   "spectrogram": "CLAUDE-sa-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — סַ (sa)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/20 מאומתים בסך הכל, שיעור הצלחה 70%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-sa-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-sha-20260903.wav",
+   "spectrogram": "CLAUDE-sha-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — שַׁ (sha)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/24 מאומתים בסך הכל, שיעור הצלחה 58%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-sha-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-za-20260903.wav",
+   "spectrogram": "CLAUDE-za-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — זַ (za)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/35 מאומתים בסך הכל, שיעור הצלחה 40%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-za-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-tza-20260903.wav",
+   "spectrogram": "CLAUDE-tza-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — צַ (tza)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/62 מאומתים בסך הכל, שיעור הצלחה 23%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-tza-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-va-20260903.wav",
+   "spectrogram": "CLAUDE-va-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — בַ (va)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/77 מאומתים בסך הכל, שיעור הצלחה 18%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-va-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-wa-20260903.wav",
+   "spectrogram": "CLAUDE-wa-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — וַ (wa)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/19 מאומתים בסך הכל, שיעור הצלחה 74%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-wa-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-fa-20260903.wav",
+   "spectrogram": "CLAUDE-fa-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — פַ (fa)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/19 מאומתים בסך הכל, שיעור הצלחה 74%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-fa-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-ha-20260903.wav",
+   "spectrogram": "CLAUDE-ha-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — הַ (ha)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/32 מאומתים בסך הכל, שיעור הצלחה 44%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-ha-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-kha-20260903.wav",
+   "spectrogram": "CLAUDE-kha-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — כַ (kha)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/22 מאומתים בסך הכל, שיעור הצלחה 64%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-kha-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-cha-20260903.wav",
+   "spectrogram": "CLAUDE-cha-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — חַ (cha)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/22 מאומתים בסך הכל, שיעור הצלחה 64%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-cha-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-ya-20260903.wav",
+   "spectrogram": "CLAUDE-ya-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — יַ (ya)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/27 מאומתים בסך הכל, שיעור הצלחה 52%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-ya-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "CLAUDE-aya-20260903.wav",
+   "spectrogram": "CLAUDE-aya-20260903.png",
+   "kind": "audio",
+   "label_he": "המורה (קלוד) — אַיָה (aya)",
+   "note_he": "שיעור אחרון (v13) שעבר את הסרגל; 14/14 מאומתים בסך הכל, שיעור הצלחה 100%",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-aya-v13.wav (verified by school-v2/ruler.py)"
+  },
+  {
+   "file": "IDDO-ma.wav",
+   "spectrogram": "IDDO-ma.png",
+   "kind": "audio",
+   "label_he": "עידו עצמו — מַ (ma)",
+   "note_he": "ההקלטה המקורית של עידו, המטרה שהמורה מתאמן מולה",
+   "source": "throat-one-sample/LISTEN/IDDO-ma.wav"
+  },
+  {
+   "file": "IDDO-na.wav",
+   "spectrogram": "IDDO-na.png",
+   "kind": "audio",
+   "label_he": "עידו עצמו — נַ (na)",
+   "note_he": "ההקלטה המקורית של עידו, המטרה שהמורה מתאמן מולה",
+   "source": "throat-one-sample/LISTEN/IDDO-na.wav"
+  },
+  {
+   "file": "IDDO-la.wav",
+   "spectrogram": "IDDO-la.png",
+   "kind": "audio",
+   "label_he": "עידו עצמו — לַ (la)",
+   "note_he": "ההקלטה המקורית של עידו, המטרה שהמורה מתאמן מולה",
+   "source": "throat-one-sample/LISTEN/IDDO-la.wav"
+  },
+  {
+   "file": "IDDO-ya.wav",
+   "spectrogram": "IDDO-ya.png",
+   "kind": "audio",
+   "label_he": "עידו עצמו — יַ (ya)",
+   "note_he": "ההקלטה המקורית של עידו, המטרה שהמורה מתאמן מולה",
+   "source": "throat-one-sample/LISTEN/IDDO-ya.wav"
+  },
+  {
+   "file": "ERAN-moreh-student-da.wav",
+   "spectrogram": "ERAN-moreh-student-da.png",
+   "kind": "audio",
+   "label_he": "התלמיד (MOREH), הברה שלא נראתה — דַ (da)",
+   "note_he": "leave-one-out: ההברה הוצאה מהאימון, MOREH ניחש את המחוות, עבר את הסרגל (ok=True)",
+   "source": "holobrain/moreh/loo/ERAN-da-loo.wav (gate 2: 5/24 unseen syllables pass)"
+  },
+  {
+   "file": "ERAN-moreh-student-ka.wav",
+   "spectrogram": "ERAN-moreh-student-ka.png",
+   "kind": "audio",
+   "label_he": "התלמיד (MOREH), הברה שלא נראתה — כַּ (ka)",
+   "note_he": "leave-one-out: ההברה הוצאה מהאימון, MOREH ניחש את המחוות, עבר את הסרגל (ok=True)",
+   "source": "holobrain/moreh/loo/ERAN-ka-loo.wav (gate 2: 5/24 unseen syllables pass)"
+  },
+  {
+   "file": "ERAN-moreh-student-kha.wav",
+   "spectrogram": "ERAN-moreh-student-kha.png",
+   "kind": "audio",
+   "label_he": "התלמיד (MOREH), הברה שלא נראתה — כַ (kha)",
+   "note_he": "leave-one-out: ההברה הוצאה מהאימון, MOREH ניחש את המחוות, עבר את הסרגל (ok=True)",
+   "source": "holobrain/moreh/loo/ERAN-kha-loo.wav (gate 2: 5/24 unseen syllables pass)"
+  },
+  {
+   "file": "ERAN-moreh-student-pa.wav",
+   "spectrogram": "ERAN-moreh-student-pa.png",
+   "kind": "audio",
+   "label_he": "התלמיד (MOREH), הברה שלא נראתה — פַּ (pa)",
+   "note_he": "leave-one-out: ההברה הוצאה מהאימון, MOREH ניחש את המחוות, עבר את הסרגל (ok=True)",
+   "source": "holobrain/moreh/loo/ERAN-pa-loo.wav (gate 2: 5/24 unseen syllables pass)"
+  },
+  {
+   "file": "ERAN-moreh-student-fa.wav",
+   "spectrogram": "ERAN-moreh-student-fa.png",
+   "kind": "audio",
+   "label_he": "התלמיד (MOREH), הברה שלא נראתה — פַ (fa)",
+   "note_he": "leave-one-out: ההברה הוצאה מהאימון, MOREH ניחש את המחוות, עבר את הסרגל (ok=True)",
+   "source": "holobrain/moreh/loo/ERAN-fa-loo.wav (gate 2: 5/24 unseen syllables pass)"
+  },
+  {
+   "file": "CLAUDE-na-cand-D.wav",
+   "spectrogram": "CLAUDE-na-cand-D.png",
+   "kind": "audio",
+   "label_he": "מועמד סיבוב 2 ל-נַ — אות ד",
+   "note_he": "בירור na=ma: הלשון זזה, ממתין לפסיקת עידו (hear_claude.py :8859)",
+   "source": "throat-one-sample/school-v2/candidates/CLAUDE-na-cand-D.wav"
+  },
+  {
+   "file": "CLAUDE-na-cand-E.wav",
+   "spectrogram": "CLAUDE-na-cand-E.png",
+   "kind": "audio",
+   "label_he": "מועמד סיבוב 2 ל-נַ — אות ה",
+   "note_he": "בירור na=ma: הלשון זזה, ממתין לפסיקת עידו (hear_claude.py :8859)",
+   "source": "throat-one-sample/school-v2/candidates/CLAUDE-na-cand-E.wav"
+  }
+ ]
+}

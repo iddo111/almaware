@@ -1,0 +1,151 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "pa",
+ "letter": "pe",
+ "hebrew": "פ",
+ "facts": {
+  "place": "lips",
+  "manner": "stop",
+  "nasal": 0,
+  "voiced": 0
+ },
+ "decisions": {
+  "knots": "AH",
+  "constr": "seal",
+  "nasal": 0,
+  "voice": "on",
+  "release": "gap",
+  "burst": 1,
+  "pre": 0
+ },
+ "amounts": {
+  "c_pos": 0.9813408424443828,
+  "c_area": 2.0,
+  "velum": 0.0,
+  "ten": 0.6,
+  "voi": 1.0,
+  "d_pre": 0.0,
+  "d_cons": 0.07986157068796168,
+  "d_trans": 0.010768457091627295,
+  "d_gap": 0.042449716568397106,
+  "gap_pos": 0.65,
+  "gap_area": 2.0,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.0,
+  "d_vowel": 0.31884703465974723,
+  "glide": 0.3086715897025807,
+  "gain": 8.602023847194504,
+  "f0": 109.91329831361843,
+  "trans_voi": null
+ },
+ "live_amounts": [
+  "c_pos",
+  "d_bridge",
+  "d_cons",
+  "d_gap",
+  "d_trans",
+  "d_vowel",
+  "f0",
+  "gain",
+  "gap_area",
+  "gap_pos",
+  "gap_ten",
+  "gap_voi",
+  "glide",
+  "ten",
+  "trans_voi",
+  "voi"
+ ],
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9813,
+    0.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9813,
+    0.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    0.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.0799,
+   0.0108,
+   0.0424,
+   0.3188
+  ],
+  "f0_knots": [
+   109.91329831361843,
+   109.91329831361843,
+   102.21936743166515
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.3086715897025807,
+  "burst": {
+   "gain": 8.602023847194504,
+   "tau_s": 0.003
+  },
+  "backend": "c",
+  "seed": 0
+ },
+ "ruler": "school-v2/ruler.py (09-02 family rulers + verifiers' objections)",
+ "brief": "cons lvl -32.7 dB cen 296 hnr 8.9 f0 110 low500 0.99 >2k 0.00 F [148, 880, 1450] | close min -34.5 (<=-25: 70 ms) | burst 21.6 dB @1.5 ms jump 53.1 cen 599 | on [611, 1309, 2500] -> vowel [571, 1210, 2646] | gap 42 ms -14.6 dB",
+ "attempt": 8
+}

@@ -1,0 +1,1827 @@
+{
+  "question": "which segmental configuration, decided on 1584 CV decisions",
+  "protocol": "leave-one-base-rendering-out inside train, codebook refitted per fold, repeated under all four ant seeds; heldout not read",
+  "chance_top1": 0.045454545454545456,
+  "results": [
+    {
+      "tag": "frame-km-r26-256",
+      "kind": "frame-trained",
+      "units": 256,
+      "top1_cosine": 0.7196969696969697,
+      "top1_cosine_sd_over_seeds": 0.009941929133853297,
+      "top1_edit": 0.7026515151515152,
+      "ba_pa": 0.8125000000000001,
+      "da_ta": 0.7361111111111112,
+      "all_pairs_pooled": 0.9105902777777777,
+      "mean_dead_units": 6.25,
+      "segments_per_item": 44.93939393939394,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.7348484848484849,
+          "top1_cosine_std": 0.04079670308435229,
+          "top1_edit": 0.6843434343434343,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 1.0,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.8055555555555556,
+            "za/sa": 1.0,
+            "ah/aa": 1.0
+          },
+          "all_pairs_pooled": 0.90625,
+          "mean_dead_units": 5.833333333333333,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.7196969696969698,
+          "top1_cosine_std": 0.024352653436850905,
+          "top1_edit": 0.7095959595959597,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 1.0,
+            "da/ta": 0.7777777777777778,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.8055555555555556,
+            "za/sa": 1.0,
+            "ah/aa": 1.0
+          },
+          "all_pairs_pooled": 0.9166666666666666,
+          "mean_dead_units": 6.333333333333333,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.7171717171717172,
+          "top1_cosine_std": 0.03462451818384365,
+          "top1_edit": 0.7222222222222223,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 1.0,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.8055555555555556,
+            "za/sa": 1.0,
+            "ah/aa": 1.0
+          },
+          "all_pairs_pooled": 0.90625,
+          "mean_dead_units": 6.333333333333333,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.7070707070707071,
+          "top1_cosine_std": 0.024221371329862247,
+          "top1_edit": 0.6944444444444445,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8333333333333334,
+            "ga/ka": 1.0,
+            "da/ta": 0.7777777777777778,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.8055555555555556,
+            "za/sa": 1.0,
+            "ah/aa": 1.0
+          },
+          "all_pairs_pooled": 0.9131944444444444,
+          "mean_dead_units": 6.5,
+          "mean_segments_per_item": 44.93939393939394
+        }
+      ]
+    },
+    {
+      "tag": "seg-m30h2.0-k128",
+      "kind": "segmental-trained",
+      "units": 128,
+      "top1_cosine": 0.6875,
+      "top1_cosine_sd_over_seeds": 0.019096570028098652,
+      "top1_edit": 0.6477272727272727,
+      "ba_pa": 0.8611111111111112,
+      "da_ta": 0.6874999999999999,
+      "all_pairs_pooled": 0.8758680555555556,
+      "mean_dead_units": 62.916666666666664,
+      "segments_per_item": 2.474747474747475,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.7146464646464645,
+          "top1_cosine_std": 0.05492061406800897,
+          "top1_edit": 0.664141414141414,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.9444444444444444,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.7222222222222222,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.8333333333333334,
+            "ta/tha": 0.6944444444444444,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 1.0
+          },
+          "all_pairs_pooled": 0.8888888888888888,
+          "mean_dead_units": 62.666666666666664,
+          "mean_segments_per_item": 2.474747474747475
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6818181818181818,
+          "top1_cosine_std": 0.03912104390108503,
+          "top1_edit": 0.6338383838383838,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8611111111111112,
+            "ga/ka": 1.0,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.6111111111111112,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8645833333333334,
+          "mean_dead_units": 61.666666666666664,
+          "mean_segments_per_item": 2.474747474747475
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6919191919191919,
+          "top1_cosine_std": 0.0468364570479581,
+          "top1_edit": 0.6515151515151515,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7777777777777778,
+            "ga/ka": 1.0,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.6666666666666666,
+            "za/sa": 0.9166666666666666,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8611111111111112,
+          "mean_dead_units": 64.66666666666667,
+          "mean_segments_per_item": 2.474747474747475
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6616161616161617,
+          "top1_cosine_std": 0.07301430451919677,
+          "top1_edit": 0.6414141414141413,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8611111111111112,
+            "ga/ka": 1.0,
+            "da/ta": 0.6388888888888888,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.8611111111111112,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.9444444444444444
+          },
+          "all_pairs_pooled": 0.8888888888888888,
+          "mean_dead_units": 62.666666666666664,
+          "mean_segments_per_item": 2.474747474747475
+        }
+      ]
+    },
+    {
+      "tag": "frame-rand-r26-256",
+      "kind": "frame-random-real",
+      "units": 256,
+      "top1_cosine": 0.6805555555555556,
+      "top1_cosine_sd_over_seeds": 0.026873480623475658,
+      "top1_edit": 0.6767676767676767,
+      "ba_pa": 0.8333333333333334,
+      "da_ta": 0.6805555555555555,
+      "all_pairs_pooled": 0.8993055555555556,
+      "mean_dead_units": 12.666666666666668,
+      "segments_per_item": 44.93939393939394,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.6565656565656565,
+          "top1_cosine_std": 0.0335012605086404,
+          "top1_edit": 0.6313131313131312,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8611111111111112,
+            "ga/ka": 1.0,
+            "da/ta": 0.6666666666666666,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.8055555555555556,
+            "za/sa": 1.0,
+            "ah/aa": 0.9722222222222222
+          },
+          "all_pairs_pooled": 0.90625,
+          "mean_dead_units": 13.5,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.7247474747474746,
+          "top1_cosine_std": 0.06911076860305053,
+          "top1_edit": 0.6818181818181818,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8611111111111112,
+            "ga/ka": 1.0,
+            "da/ta": 0.6111111111111112,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.75,
+            "za/sa": 1.0,
+            "ah/aa": 0.9444444444444444
+          },
+          "all_pairs_pooled": 0.8854166666666666,
+          "mean_dead_units": 12.0,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6792929292929294,
+          "top1_cosine_std": 0.049805764957868745,
+          "top1_edit": 0.7070707070707071,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8611111111111112,
+            "ga/ka": 1.0,
+            "da/ta": 0.6666666666666666,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.75,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9722222222222222
+          },
+          "all_pairs_pooled": 0.8958333333333334,
+          "mean_dead_units": 12.833333333333334,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6616161616161617,
+          "top1_cosine_std": 0.05297014384697735,
+          "top1_edit": 0.6868686868686869,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.75,
+            "ga/ka": 1.0,
+            "da/ta": 0.7777777777777778,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9722222222222222,
+            "ta/tha": 0.8333333333333334,
+            "za/sa": 1.0,
+            "ah/aa": 0.9444444444444444
+          },
+          "all_pairs_pooled": 0.9097222222222222,
+          "mean_dead_units": 12.333333333333334,
+          "mean_segments_per_item": 44.93939393939394
+        }
+      ]
+    },
+    {
+      "tag": "frame-km-r26-128",
+      "kind": "frame-trained",
+      "units": 128,
+      "top1_cosine": 0.6717171717171717,
+      "top1_cosine_sd_over_seeds": 0.007362312998542074,
+      "top1_edit": 0.6458333333333333,
+      "ba_pa": 0.7638888888888888,
+      "da_ta": 0.6875,
+      "all_pairs_pooled": 0.881076388888889,
+      "mean_dead_units": 0.41666666666666674,
+      "segments_per_item": 44.93939393939394,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.6767676767676768,
+          "top1_cosine_std": 0.047646369353821244,
+          "top1_edit": 0.6666666666666666,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.75,
+            "ga/ka": 1.0,
+            "da/ta": 0.6111111111111112,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.6388888888888888,
+            "za/sa": 1.0,
+            "ah/aa": 0.9722222222222222
+          },
+          "all_pairs_pooled": 0.8611111111111112,
+          "mean_dead_units": 0.8333333333333334,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6767676767676768,
+          "top1_cosine_std": 0.05439560411246974,
+          "top1_edit": 0.6464646464646464,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 1.0,
+            "da/ta": 0.7777777777777778,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.6944444444444444,
+            "za/sa": 1.0,
+            "ah/aa": 1.0
+          },
+          "all_pairs_pooled": 0.8958333333333334,
+          "mean_dead_units": 0.5,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6742424242424243,
+          "top1_cosine_std": 0.033596299736490094,
+          "top1_edit": 0.6363636363636364,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.75,
+            "ga/ka": 1.0,
+            "da/ta": 0.7222222222222222,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.6944444444444444,
+            "za/sa": 1.0,
+            "ah/aa": 1.0
+          },
+          "all_pairs_pooled": 0.8888888888888888,
+          "mean_dead_units": 0.16666666666666666,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6590909090909091,
+          "top1_cosine_std": 0.04438988846274482,
+          "top1_edit": 0.6338383838383838,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.75,
+            "ga/ka": 1.0,
+            "da/ta": 0.6388888888888888,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.6944444444444444,
+            "za/sa": 1.0,
+            "ah/aa": 1.0
+          },
+          "all_pairs_pooled": 0.8784722222222222,
+          "mean_dead_units": 0.16666666666666666,
+          "mean_segments_per_item": 44.93939393939394
+        }
+      ]
+    },
+    {
+      "tag": "seg-m30h1.5-k256",
+      "kind": "segmental-trained",
+      "units": 256,
+      "top1_cosine": 0.6660353535353535,
+      "top1_cosine_sd_over_seeds": 0.014326774896351296,
+      "top1_edit": 0.615530303030303,
+      "ba_pa": 0.826388888888889,
+      "da_ta": 0.6388888888888888,
+      "all_pairs_pooled": 0.859375,
+      "mean_dead_units": 165.54166666666669,
+      "segments_per_item": 2.6742424242424243,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.6717171717171717,
+          "top1_cosine_std": 0.045173090454541216,
+          "top1_edit": 0.6035353535353535,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 0.9444444444444444,
+            "da/ta": 0.5833333333333334,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8333333333333334,
+            "ta/tha": 0.7222222222222222,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.84375,
+          "mean_dead_units": 164.0,
+          "mean_segments_per_item": 2.6742424242424243
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6868686868686869,
+          "top1_cosine_std": 0.04844274265972445,
+          "top1_edit": 0.6287878787878788,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 1.0,
+            "da/ta": 0.7777777777777778,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8333333333333334,
+            "ta/tha": 0.8055555555555556,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.8611111111111112
+          },
+          "all_pairs_pooled": 0.8784722222222222,
+          "mean_dead_units": 167.5,
+          "mean_segments_per_item": 2.6742424242424243
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6515151515151515,
+          "top1_cosine_std": 0.04103049699311091,
+          "top1_edit": 0.6186868686868686,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8333333333333334,
+            "ga/ka": 1.0,
+            "da/ta": 0.5555555555555556,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.8055555555555556,
+            "ta/tha": 0.8888888888888888,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.8888888888888888
+          },
+          "all_pairs_pooled": 0.8645833333333334,
+          "mean_dead_units": 165.33333333333334,
+          "mean_segments_per_item": 2.6742424242424243
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.654040404040404,
+          "top1_cosine_std": 0.04048287763101361,
+          "top1_edit": 0.611111111111111,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8611111111111112,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.6388888888888888,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8055555555555556,
+            "ta/tha": 0.6944444444444444,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.8611111111111112
+          },
+          "all_pairs_pooled": 0.8506944444444444,
+          "mean_dead_units": 165.33333333333334,
+          "mean_segments_per_item": 2.6742424242424243
+        }
+      ]
+    },
+    {
+      "tag": "frame-rand-r26-128",
+      "kind": "frame-random-real",
+      "units": 128,
+      "top1_cosine": 0.640151515151515,
+      "top1_cosine_sd_over_seeds": 0.026151913102535312,
+      "top1_edit": 0.6338383838383838,
+      "ba_pa": 0.7986111111111112,
+      "da_ta": 0.6944444444444444,
+      "all_pairs_pooled": 0.8784722222222223,
+      "mean_dead_units": 2.291666666666667,
+      "segments_per_item": 44.93939393939394,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.664141414141414,
+          "top1_cosine_std": 0.05056814241035551,
+          "top1_edit": 0.6565656565656566,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 1.0,
+            "da/ta": 0.6666666666666666,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9722222222222222,
+            "ta/tha": 0.75,
+            "za/sa": 1.0,
+            "ah/aa": 0.9722222222222222
+          },
+          "all_pairs_pooled": 0.8958333333333334,
+          "mean_dead_units": 1.8333333333333333,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5959595959595959,
+          "top1_cosine_std": 0.06408372495176524,
+          "top1_edit": 0.611111111111111,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.7222222222222222,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.6388888888888888,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9444444444444444
+          },
+          "all_pairs_pooled": 0.8715277777777778,
+          "mean_dead_units": 2.3333333333333335,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6515151515151515,
+          "top1_cosine_std": 0.03273101362832252,
+          "top1_edit": 0.6338383838383838,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.75,
+            "ga/ka": 1.0,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.5555555555555556,
+            "za/sa": 1.0,
+            "ah/aa": 1.0
+          },
+          "all_pairs_pooled": 0.8645833333333334,
+          "mean_dead_units": 2.1666666666666665,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6489898989898989,
+          "top1_cosine_std": 0.029557323006867715,
+          "top1_edit": 0.6338383838383838,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8333333333333334,
+            "ga/ka": 1.0,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.7222222222222222,
+            "za/sa": 1.0,
+            "ah/aa": 0.8611111111111112
+          },
+          "all_pairs_pooled": 0.8819444444444444,
+          "mean_dead_units": 2.8333333333333335,
+          "mean_segments_per_item": 44.93939393939394
+        }
+      ]
+    },
+    {
+      "tag": "seg-m10h1.0-k256",
+      "kind": "segmental-trained",
+      "units": 256,
+      "top1_cosine": 0.6369949494949494,
+      "top1_cosine_sd_over_seeds": 0.022185963877279745,
+      "top1_edit": 0.63510101010101,
+      "ba_pa": 0.7847222222222223,
+      "da_ta": 0.736111111111111,
+      "all_pairs_pooled": 0.876736111111111,
+      "mean_dead_units": 111.625,
+      "segments_per_item": 5.734848484848484,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.6616161616161615,
+          "top1_cosine_std": 0.05509450562947329,
+          "top1_edit": 0.6515151515151515,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 1.0,
+            "da/ta": 0.7777777777777778,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8333333333333334,
+            "ta/tha": 0.6111111111111112,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 1.0
+          },
+          "all_pairs_pooled": 0.875,
+          "mean_dead_units": 114.66666666666667,
+          "mean_segments_per_item": 5.734848484848484
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6262626262626262,
+          "top1_cosine_std": 0.05224283046862929,
+          "top1_edit": 0.6287878787878788,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8611111111111112,
+            "ta/tha": 0.6944444444444444,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9444444444444444
+          },
+          "all_pairs_pooled": 0.8680555555555556,
+          "mean_dead_units": 112.0,
+          "mean_segments_per_item": 5.734848484848484
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.654040404040404,
+          "top1_cosine_std": 0.07392566246618408,
+          "top1_edit": 0.6414141414141414,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 1.0,
+            "da/ta": 0.8055555555555556,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.8055555555555556,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9444444444444444
+          },
+          "all_pairs_pooled": 0.90625,
+          "mean_dead_units": 109.83333333333333,
+          "mean_segments_per_item": 5.734848484848484
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6060606060606061,
+          "top1_cosine_std": 0.029012942659282948,
+          "top1_edit": 0.6186868686868686,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7222222222222222,
+            "ga/ka": 1.0,
+            "da/ta": 0.6666666666666666,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.6388888888888888,
+            "za/sa": 1.0,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8576388888888888,
+          "mean_dead_units": 110.0,
+          "mean_segments_per_item": 5.734848484848484
+        }
+      ]
+    },
+    {
+      "tag": "seg-default-k128",
+      "kind": "segmental-trained",
+      "units": 128,
+      "top1_cosine": 0.634469696969697,
+      "top1_cosine_sd_over_seeds": 0.007859785099740403,
+      "top1_edit": 0.6565656565656565,
+      "ba_pa": 0.8541666666666667,
+      "da_ta": 0.6458333333333334,
+      "all_pairs_pooled": 0.8776041666666666,
+      "mean_dead_units": 56.25,
+      "segments_per_item": 3.138888888888889,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.6262626262626262,
+          "top1_cosine_std": 0.08511262397147837,
+          "top1_edit": 0.6388888888888888,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8333333333333334,
+            "ga/ka": 1.0,
+            "da/ta": 0.5555555555555556,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.9722222222222222,
+            "ta/tha": 0.6944444444444444,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8645833333333334,
+          "mean_dead_units": 55.0,
+          "mean_segments_per_item": 3.138888888888889
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6363636363636364,
+          "top1_cosine_std": 0.06123411945950577,
+          "top1_edit": 0.6388888888888888,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.9444444444444444,
+            "ga/ka": 1.0,
+            "da/ta": 0.6111111111111112,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.6944444444444444,
+            "za/sa": 1.0,
+            "ah/aa": 1.0
+          },
+          "all_pairs_pooled": 0.8958333333333334,
+          "mean_dead_units": 59.0,
+          "mean_segments_per_item": 3.138888888888889
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6464646464646465,
+          "top1_cosine_std": 0.08283444175180163,
+          "top1_edit": 0.6818181818181818,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8333333333333334,
+            "ga/ka": 1.0,
+            "da/ta": 0.75,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.6388888888888888,
+            "za/sa": 1.0,
+            "ah/aa": 0.8611111111111112
+          },
+          "all_pairs_pooled": 0.8784722222222222,
+          "mean_dead_units": 56.833333333333336,
+          "mean_segments_per_item": 3.138888888888889
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6287878787878788,
+          "top1_cosine_std": 0.06472730110089041,
+          "top1_edit": 0.6666666666666666,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 1.0,
+            "da/ta": 0.6666666666666666,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8611111111111112,
+            "ta/tha": 0.6666666666666666,
+            "za/sa": 1.0,
+            "ah/aa": 0.9722222222222222
+          },
+          "all_pairs_pooled": 0.8715277777777778,
+          "mean_dead_units": 54.166666666666664,
+          "mean_segments_per_item": 3.138888888888889
+        }
+      ]
+    },
+    {
+      "tag": "seg-m10h1.5-k256",
+      "kind": "segmental-trained",
+      "units": 256,
+      "top1_cosine": 0.6294191919191919,
+      "top1_cosine_sd_over_seeds": 0.02984582488275962,
+      "top1_edit": 0.6477272727272727,
+      "ba_pa": 0.75,
+      "da_ta": 0.6388888888888888,
+      "all_pairs_pooled": 0.8637152777777778,
+      "mean_dead_units": 115.16666666666666,
+      "segments_per_item": 5.588383838383838,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.6666666666666666,
+          "top1_cosine_std": 0.046288643383392315,
+          "top1_edit": 0.6868686868686869,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.75,
+            "ga/ka": 1.0,
+            "da/ta": 0.7222222222222222,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.8055555555555556,
+            "za/sa": 1.0,
+            "ah/aa": 0.9444444444444444
+          },
+          "all_pairs_pooled": 0.8854166666666666,
+          "mean_dead_units": 116.0,
+          "mean_segments_per_item": 5.588383838383838
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5858585858585859,
+          "top1_cosine_std": 0.02575262380602419,
+          "top1_edit": 0.5984848484848485,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7222222222222222,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.5833333333333334,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8333333333333334,
+            "ta/tha": 0.5277777777777778,
+            "za/sa": 1.0,
+            "ah/aa": 0.9444444444444444
+          },
+          "all_pairs_pooled": 0.8229166666666666,
+          "mean_dead_units": 116.33333333333333,
+          "mean_segments_per_item": 5.588383838383838
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6439393939393939,
+          "top1_cosine_std": 0.051567115799651876,
+          "top1_edit": 0.6515151515151515,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7222222222222222,
+            "ga/ka": 1.0,
+            "da/ta": 0.5833333333333334,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.7222222222222222,
+            "za/sa": 1.0,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8611111111111112,
+          "mean_dead_units": 113.33333333333333,
+          "mean_segments_per_item": 5.588383838383838
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6212121212121212,
+          "top1_cosine_std": 0.05462956477975744,
+          "top1_edit": 0.654040404040404,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 1.0,
+            "da/ta": 0.6666666666666666,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.7777777777777778,
+            "za/sa": 1.0,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8854166666666666,
+          "mean_dead_units": 115.0,
+          "mean_segments_per_item": 5.588383838383838
+        }
+      ]
+    },
+    {
+      "tag": "seg-m10h1.0-k128",
+      "kind": "segmental-trained",
+      "units": 128,
+      "top1_cosine": 0.6243686868686867,
+      "top1_cosine_sd_over_seeds": 0.02925235565202802,
+      "top1_edit": 0.6439393939393939,
+      "ba_pa": 0.7013888888888888,
+      "da_ta": 0.7152777777777779,
+      "all_pairs_pooled": 0.8611111111111112,
+      "mean_dead_units": 30.875,
+      "segments_per_item": 5.734848484848484,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.6590909090909091,
+          "top1_cosine_std": 0.03685484727102633,
+          "top1_edit": 0.7045454545454545,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6944444444444444,
+            "ga/ka": 1.0,
+            "da/ta": 0.75,
+            "sa/sha": 0.9166666666666666,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.75,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9722222222222222
+          },
+          "all_pairs_pooled": 0.8680555555555556,
+          "mean_dead_units": 31.333333333333332,
+          "mean_segments_per_item": 5.734848484848484
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6464646464646464,
+          "top1_cosine_std": 0.0387936653932758,
+          "top1_edit": 0.611111111111111,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6944444444444444,
+            "ga/ka": 1.0,
+            "da/ta": 0.7222222222222222,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.75,
+            "za/sa": 1.0,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.875,
+          "mean_dead_units": 30.666666666666668,
+          "mean_segments_per_item": 5.734848484848484
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6035353535353535,
+          "top1_cosine_std": 0.04980576495786874,
+          "top1_edit": 0.6212121212121212,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.75,
+            "ga/ka": 1.0,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.5555555555555556,
+            "za/sa": 1.0,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8506944444444444,
+          "mean_dead_units": 29.833333333333332,
+          "mean_segments_per_item": 5.734848484848484
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5883838383838383,
+          "top1_cosine_std": 0.013598901028117423,
+          "top1_edit": 0.6388888888888888,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6666666666666666,
+            "ga/ka": 1.0,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.5833333333333334,
+            "za/sa": 1.0,
+            "ah/aa": 0.9444444444444444
+          },
+          "all_pairs_pooled": 0.8506944444444444,
+          "mean_dead_units": 31.666666666666668,
+          "mean_segments_per_item": 5.734848484848484
+        }
+      ]
+    },
+    {
+      "tag": "randseg-m30h1.5-k256",
+      "kind": "segmental-random-real",
+      "units": 256,
+      "top1_cosine": 0.6180555555555556,
+      "top1_cosine_sd_over_seeds": 0.01669104048788165,
+      "top1_edit": 0.577020202020202,
+      "ba_pa": 0.7430555555555555,
+      "da_ta": 0.6805555555555556,
+      "all_pairs_pooled": 0.849826388888889,
+      "mean_dead_units": 156.08333333333334,
+      "segments_per_item": 2.6742424242424243,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.6035353535353535,
+          "top1_cosine_std": 0.08589571389744924,
+          "top1_edit": 0.5883838383838383,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7222222222222222,
+            "ga/ka": 0.9444444444444444,
+            "da/ta": 0.6111111111111112,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8055555555555556,
+            "ta/tha": 0.7777777777777778,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.8888888888888888
+          },
+          "all_pairs_pooled": 0.8368055555555556,
+          "mean_dead_units": 156.83333333333334,
+          "mean_segments_per_item": 2.6742424242424243
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6262626262626262,
+          "top1_cosine_std": 0.03233901130016587,
+          "top1_edit": 0.5656565656565656,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7222222222222222,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.7222222222222222,
+            "sa/sha": 1.0,
+            "ka/qa": 0.75,
+            "ta/tha": 0.6944444444444444,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8402777777777778,
+          "mean_dead_units": 153.33333333333334,
+          "mean_segments_per_item": 2.6742424242424243
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.6414141414141413,
+          "top1_cosine_std": 0.03879366539327579,
+          "top1_edit": 0.5984848484848485,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8611111111111112,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.7777777777777778,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8333333333333334,
+            "ta/tha": 0.8333333333333334,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.9722222222222222
+          },
+          "all_pairs_pooled": 0.8993055555555556,
+          "mean_dead_units": 158.0,
+          "mean_segments_per_item": 2.6742424242424243
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.601010101010101,
+          "top1_cosine_std": 0.06164927078653384,
+          "top1_edit": 0.5555555555555555,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6666666666666666,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.6111111111111112,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8333333333333334,
+            "ta/tha": 0.75,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.8055555555555556
+          },
+          "all_pairs_pooled": 0.8229166666666666,
+          "mean_dead_units": 156.16666666666666,
+          "mean_segments_per_item": 2.6742424242424243
+        }
+      ]
+    },
+    {
+      "tag": "randseg-m30h2.0-k128",
+      "kind": "segmental-random-real",
+      "units": 128,
+      "top1_cosine": 0.5808080808080808,
+      "top1_cosine_sd_over_seeds": 0.026060312424937178,
+      "top1_edit": 0.5574494949494949,
+      "ba_pa": 0.8402777777777778,
+      "da_ta": 0.7083333333333334,
+      "all_pairs_pooled": 0.8480902777777778,
+      "mean_dead_units": 55.291666666666664,
+      "segments_per_item": 2.474747474747475,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.5959595959595959,
+          "top1_cosine_std": 0.06164927078653385,
+          "top1_edit": 0.563131313131313,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8888888888888888,
+            "ga/ka": 1.0,
+            "da/ta": 0.8055555555555556,
+            "sa/sha": 1.0,
+            "ka/qa": 0.75,
+            "ta/tha": 0.6111111111111112,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9444444444444444
+          },
+          "all_pairs_pooled": 0.8715277777777778,
+          "mean_dead_units": 57.666666666666664,
+          "mean_segments_per_item": 2.474747474747475
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.537878787878788,
+          "top1_cosine_std": 0.10116780618186934,
+          "top1_edit": 0.5353535353535354,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8333333333333334,
+            "ga/ka": 1.0,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 0.9444444444444444,
+            "ka/qa": 0.8333333333333334,
+            "ta/tha": 0.6944444444444444,
+            "za/sa": 0.8888888888888888,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8506944444444444,
+          "mean_dead_units": 55.0,
+          "mean_segments_per_item": 2.474747474747475
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5833333333333334,
+          "top1_cosine_std": 0.07253235664820745,
+          "top1_edit": 0.5580808080808081,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.6111111111111112,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8333333333333334,
+            "ta/tha": 0.75,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.8333333333333334
+          },
+          "all_pairs_pooled": 0.84375,
+          "mean_dead_units": 55.333333333333336,
+          "mean_segments_per_item": 2.474747474747475
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.606060606060606,
+          "top1_cosine_std": 0.027662755429553848,
+          "top1_edit": 0.5732323232323232,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8333333333333334,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.7222222222222222,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.8611111111111112,
+            "ta/tha": 0.5,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.8055555555555556
+          },
+          "all_pairs_pooled": 0.8263888888888888,
+          "mean_dead_units": 53.166666666666664,
+          "mean_segments_per_item": 2.474747474747475
+        }
+      ]
+    },
+    {
+      "tag": "randseg-m10h1.5-k256",
+      "kind": "segmental-random-real",
+      "units": 256,
+      "top1_cosine": 0.5744949494949495,
+      "top1_cosine_sd_over_seeds": 0.012562972690740153,
+      "top1_edit": 0.6085858585858585,
+      "ba_pa": 0.638888888888889,
+      "da_ta": 0.5833333333333333,
+      "all_pairs_pooled": 0.8307291666666666,
+      "mean_dead_units": 100.91666666666667,
+      "segments_per_item": 5.588383838383838,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.5580808080808081,
+          "top1_cosine_std": 0.053509141667719945,
+          "top1_edit": 0.5959595959595959,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6111111111111112,
+            "ga/ka": 1.0,
+            "da/ta": 0.6111111111111112,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8611111111111112,
+            "ta/tha": 0.6388888888888888,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8263888888888888,
+          "mean_dead_units": 105.66666666666667,
+          "mean_segments_per_item": 5.588383838383838
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5732323232323232,
+          "top1_cosine_std": 0.05131919553763024,
+          "top1_edit": 0.601010101010101,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6111111111111112,
+            "ga/ka": 1.0,
+            "da/ta": 0.6666666666666666,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.6388888888888888,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9444444444444444
+          },
+          "all_pairs_pooled": 0.84375,
+          "mean_dead_units": 102.5,
+          "mean_segments_per_item": 5.588383838383838
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5934343434343434,
+          "top1_cosine_std": 0.02215900097826294,
+          "top1_edit": 0.616161616161616,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6111111111111112,
+            "ga/ka": 1.0,
+            "da/ta": 0.5555555555555556,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.75,
+            "za/sa": 1.0,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.84375,
+          "mean_dead_units": 97.33333333333333,
+          "mean_segments_per_item": 5.588383838383838
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5732323232323232,
+          "top1_cosine_std": 0.0365071522595984,
+          "top1_edit": 0.6212121212121212,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7222222222222222,
+            "ga/ka": 1.0,
+            "da/ta": 0.5,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.4444444444444444,
+            "za/sa": 1.0,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8090277777777778,
+          "mean_dead_units": 98.16666666666667,
+          "mean_segments_per_item": 5.588383838383838
+        }
+      ]
+    },
+    {
+      "tag": "randseg-m10h1.0-k256",
+      "kind": "segmental-random-real",
+      "units": 256,
+      "top1_cosine": 0.5738636363636364,
+      "top1_cosine_sd_over_seeds": 0.01841660624471571,
+      "top1_edit": 0.595959595959596,
+      "ba_pa": 0.75,
+      "da_ta": 0.625,
+      "all_pairs_pooled": 0.8550347222222222,
+      "mean_dead_units": 99.83333333333333,
+      "segments_per_item": 5.734848484848484,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.5505050505050505,
+          "top1_cosine_std": 0.09326356218494643,
+          "top1_edit": 0.5808080808080808,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7222222222222222,
+            "ga/ka": 1.0,
+            "da/ta": 0.6388888888888888,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.6111111111111112,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8506944444444444,
+          "mean_dead_units": 102.33333333333333,
+          "mean_segments_per_item": 5.734848484848484
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5833333333333334,
+          "top1_cosine_std": 0.05981171354710613,
+          "top1_edit": 0.6085858585858586,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7777777777777778,
+            "ga/ka": 1.0,
+            "da/ta": 0.5833333333333334,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.6111111111111112,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.8611111111111112
+          },
+          "all_pairs_pooled": 0.8402777777777778,
+          "mean_dead_units": 101.0,
+          "mean_segments_per_item": 5.734848484848484
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5984848484848485,
+          "top1_cosine_std": 0.0500611808121187,
+          "top1_edit": 0.6186868686868687,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7777777777777778,
+            "ga/ka": 1.0,
+            "da/ta": 0.5555555555555556,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.9722222222222222,
+            "ta/tha": 0.7222222222222222,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8576388888888888,
+          "mean_dead_units": 101.83333333333333,
+          "mean_segments_per_item": 5.734848484848484
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.563131313131313,
+          "top1_cosine_std": 0.025378473790709347,
+          "top1_edit": 0.5757575757575757,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7222222222222222,
+            "ga/ka": 1.0,
+            "da/ta": 0.7222222222222222,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.9722222222222222,
+            "ta/tha": 0.7222222222222222,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.8888888888888888
+          },
+          "all_pairs_pooled": 0.8715277777777778,
+          "mean_dead_units": 94.16666666666667,
+          "mean_segments_per_item": 5.734848484848484
+        }
+      ]
+    },
+    {
+      "tag": "randseg-m10h1.0-k128",
+      "kind": "segmental-random-real",
+      "units": 128,
+      "top1_cosine": 0.5593434343434344,
+      "top1_cosine_sd_over_seeds": 0.019763227073861793,
+      "top1_edit": 0.5669191919191919,
+      "ba_pa": 0.7499999999999999,
+      "da_ta": 0.7083333333333333,
+      "all_pairs_pooled": 0.8585069444444444,
+      "mean_dead_units": 28.5,
+      "segments_per_item": 5.734848484848484,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.5934343434343434,
+          "top1_cosine_std": 0.03204186247588262,
+          "top1_edit": 0.5934343434343434,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7777777777777778,
+            "ga/ka": 1.0,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9722222222222222,
+            "ta/tha": 0.6111111111111112,
+            "za/sa": 1.0,
+            "ah/aa": 0.8055555555555556
+          },
+          "all_pairs_pooled": 0.8576388888888888,
+          "mean_dead_units": 29.666666666666668,
+          "mean_segments_per_item": 5.734848484848484
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5479797979797979,
+          "top1_cosine_std": 0.05492061406800895,
+          "top1_edit": 0.5530303030303031,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.75,
+            "ga/ka": 1.0,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 0.9444444444444444,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.6666666666666666,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.8611111111111112
+          },
+          "all_pairs_pooled": 0.8506944444444444,
+          "mean_dead_units": 27.333333333333332,
+          "mean_segments_per_item": 5.734848484848484
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5505050505050505,
+          "top1_cosine_std": 0.05646636306817652,
+          "top1_edit": 0.5277777777777778,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 1.0,
+            "da/ta": 0.7777777777777778,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.6666666666666666,
+            "za/sa": 1.0,
+            "ah/aa": 0.8888888888888888
+          },
+          "all_pairs_pooled": 0.8819444444444444,
+          "mean_dead_units": 26.666666666666668,
+          "mean_segments_per_item": 5.734848484848484
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5454545454545454,
+          "top1_cosine_std": 0.056691778587483976,
+          "top1_edit": 0.5934343434343433,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6666666666666666,
+            "ga/ka": 1.0,
+            "da/ta": 0.6666666666666666,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.6666666666666666,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.84375,
+          "mean_dead_units": 30.333333333333332,
+          "mean_segments_per_item": 5.734848484848484
+        }
+      ]
+    },
+    {
+      "tag": "randseg-default-k128",
+      "kind": "segmental-random-real",
+      "units": 128,
+      "top1_cosine": 0.548611111111111,
+      "top1_cosine_sd_over_seeds": 0.008060066499244796,
+      "top1_edit": 0.5505050505050505,
+      "ba_pa": 0.7569444444444444,
+      "da_ta": 0.6319444444444444,
+      "all_pairs_pooled": 0.8567708333333333,
+      "mean_dead_units": 49.25,
+      "segments_per_item": 3.138888888888889,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.5606060606060607,
+          "top1_cosine_std": 0.0606060606060606,
+          "top1_edit": 0.5378787878787878,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8333333333333334,
+            "ga/ka": 0.9444444444444444,
+            "da/ta": 0.6944444444444444,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.7777777777777778,
+            "za/sa": 1.0,
+            "ah/aa": 0.8888888888888888
+          },
+          "all_pairs_pooled": 0.8819444444444444,
+          "mean_dead_units": 47.666666666666664,
+          "mean_segments_per_item": 3.138888888888889
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.547979797979798,
+          "top1_cosine_std": 0.10028146288719587,
+          "top1_edit": 0.5505050505050505,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.8055555555555556,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.6388888888888888,
+            "sa/sha": 0.9444444444444444,
+            "ka/qa": 0.9444444444444444,
+            "ta/tha": 0.8055555555555556,
+            "za/sa": 0.9166666666666666,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8680555555555556,
+          "mean_dead_units": 50.0,
+          "mean_segments_per_item": 3.138888888888889
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5378787878787878,
+          "top1_cosine_std": 0.03984781272237247,
+          "top1_edit": 0.5505050505050505,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.75,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.5833333333333334,
+            "sa/sha": 1.0,
+            "ka/qa": 0.9722222222222222,
+            "ta/tha": 0.5,
+            "za/sa": 1.0,
+            "ah/aa": 0.9444444444444444
+          },
+          "all_pairs_pooled": 0.8402777777777778,
+          "mean_dead_units": 50.0,
+          "mean_segments_per_item": 3.138888888888889
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.5479797979797979,
+          "top1_cosine_std": 0.08454883354941015,
+          "top1_edit": 0.563131313131313,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6388888888888888,
+            "ga/ka": 0.9444444444444444,
+            "da/ta": 0.6111111111111112,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8611111111111112,
+            "ta/tha": 0.6666666666666666,
+            "za/sa": 1.0,
+            "ah/aa": 0.9722222222222222
+          },
+          "all_pairs_pooled": 0.8368055555555556,
+          "mean_dead_units": 49.333333333333336,
+          "mean_segments_per_item": 3.138888888888889
+        }
+      ]
+    },
+    {
+      "tag": "frame-rand-legacy14-256",
+      "kind": "frame-random-real",
+      "units": 256,
+      "top1_cosine": 0.4570707070707071,
+      "top1_cosine_sd_over_seeds": 0.008375315127160084,
+      "top1_edit": 0.48611111111111116,
+      "ba_pa": 0.6388888888888888,
+      "da_ta": 0.5277777777777779,
+      "all_pairs_pooled": 0.8177083333333334,
+      "mean_dead_units": 13.083333333333334,
+      "segments_per_item": 44.93939393939394,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.4595959595959596,
+          "top1_cosine_std": 0.040718473476255304,
+          "top1_edit": 0.4873737373737374,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6944444444444444,
+            "ga/ka": 1.0,
+            "da/ta": 0.5833333333333334,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.6111111111111112,
+            "za/sa": 1.0,
+            "ah/aa": 0.8611111111111112
+          },
+          "all_pairs_pooled": 0.8298611111111112,
+          "mean_dead_units": 15.166666666666666,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.4696969696969697,
+          "top1_cosine_std": 0.05462956477975739,
+          "top1_edit": 0.4898989898989899,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.5833333333333334,
+            "ga/ka": 1.0,
+            "da/ta": 0.6111111111111112,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.6111111111111112,
+            "za/sa": 1.0,
+            "ah/aa": 0.9722222222222222
+          },
+          "all_pairs_pooled": 0.8333333333333334,
+          "mean_dead_units": 13.5,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.44949494949494956,
+          "top1_cosine_std": 0.03462451818384367,
+          "top1_edit": 0.51010101010101,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6111111111111112,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.4722222222222222,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8055555555555556,
+            "ta/tha": 0.6111111111111112,
+            "za/sa": 1.0,
+            "ah/aa": 0.8611111111111112
+          },
+          "all_pairs_pooled": 0.7916666666666666,
+          "mean_dead_units": 11.833333333333334,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.44949494949494956,
+          "top1_cosine_std": 0.04764636935382122,
+          "top1_edit": 0.4570707070707071,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6666666666666666,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.4444444444444444,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.7222222222222222,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.8611111111111112
+          },
+          "all_pairs_pooled": 0.8159722222222222,
+          "mean_dead_units": 11.833333333333334,
+          "mean_segments_per_item": 44.93939393939394
+        }
+      ]
+    },
+    {
+      "tag": "frame-rand-legacy14-128",
+      "kind": "frame-random-real",
+      "units": 128,
+      "top1_cosine": 0.4349747474747475,
+      "top1_cosine_sd_over_seeds": 0.0072257090544568196,
+      "top1_edit": 0.4457070707070707,
+      "ba_pa": 0.611111111111111,
+      "da_ta": 0.47916666666666663,
+      "all_pairs_pooled": 0.78125,
+      "mean_dead_units": 2.083333333333333,
+      "segments_per_item": 44.93939393939394,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.4444444444444445,
+          "top1_cosine_std": 0.03779451905832263,
+          "top1_edit": 0.44949494949494956,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.5277777777777778,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.5833333333333334,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8333333333333334,
+            "ta/tha": 0.5833333333333334,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.8055555555555556
+          },
+          "all_pairs_pooled": 0.78125,
+          "mean_dead_units": 1.0,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.42424242424242425,
+          "top1_cosine_std": 0.04710797501560008,
+          "top1_edit": 0.4444444444444445,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6388888888888888,
+            "ga/ka": 1.0,
+            "da/ta": 0.4444444444444444,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.8055555555555556,
+            "ta/tha": 0.6944444444444444,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.8055555555555556
+          },
+          "all_pairs_pooled": 0.7916666666666666,
+          "mean_dead_units": 2.6666666666666665,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.43686868686868685,
+          "top1_cosine_std": 0.03204186247588264,
+          "top1_edit": 0.43939393939393945,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.5555555555555556,
+            "ga/ka": 1.0,
+            "da/ta": 0.4444444444444444,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8611111111111112,
+            "ta/tha": 0.4722222222222222,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.7777777777777778,
+          "mean_dead_units": 2.0,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.4343434343434344,
+          "top1_cosine_std": 0.058463822741364774,
+          "top1_edit": 0.44949494949494945,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.7222222222222222,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.4444444444444444,
+            "sa/sha": 0.9444444444444444,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.4444444444444444,
+            "za/sa": 0.9166666666666666,
+            "ah/aa": 0.8611111111111112
+          },
+          "all_pairs_pooled": 0.7743055555555556,
+          "mean_dead_units": 2.6666666666666665,
+          "mean_segments_per_item": 44.93939393939394
+        }
+      ]
+    },
+    {
+      "tag": "frame-km-legacy14-256",
+      "kind": "frame-trained",
+      "units": 256,
+      "top1_cosine": 0.42234848484848486,
+      "top1_cosine_sd_over_seeds": 0.011623707474445692,
+      "top1_edit": 0.4981060606060606,
+      "ba_pa": 0.6180555555555556,
+      "da_ta": 0.4791666666666667,
+      "all_pairs_pooled": 0.7960069444444445,
+      "mean_dead_units": 7.75,
+      "segments_per_item": 44.93939393939394,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.4292929292929293,
+          "top1_cosine_std": 0.04999744917480639,
+          "top1_edit": 0.4873737373737374,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6666666666666666,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.4166666666666667,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.5833333333333334,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8020833333333334,
+          "mean_dead_units": 7.166666666666667,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.4368686868686869,
+          "top1_cosine_std": 0.03544360820105606,
+          "top1_edit": 0.494949494949495,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6111111111111112,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.5555555555555556,
+            "sa/sha": 1.0,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.5555555555555556,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.9166666666666666
+          },
+          "all_pairs_pooled": 0.8090277777777778,
+          "mean_dead_units": 8.666666666666666,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.4065656565656566,
+          "top1_cosine_std": 0.042330945995556084,
+          "top1_edit": 0.5202020202020202,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.5555555555555556,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.4444444444444444,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.8611111111111112,
+            "ta/tha": 0.5277777777777778,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.8888888888888888
+          },
+          "all_pairs_pooled": 0.7708333333333334,
+          "mean_dead_units": 6.5,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.4166666666666667,
+          "top1_cosine_std": 0.020976322886156754,
+          "top1_edit": 0.4898989898989899,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6388888888888888,
+            "ga/ka": 1.0,
+            "da/ta": 0.5,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.5833333333333334,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.8888888888888888
+          },
+          "all_pairs_pooled": 0.8020833333333334,
+          "mean_dead_units": 8.666666666666666,
+          "mean_segments_per_item": 44.93939393939394
+        }
+      ]
+    },
+    {
+      "tag": "frame-km-legacy14-128",
+      "kind": "frame-trained",
+      "units": 128,
+      "top1_cosine": 0.39330808080808083,
+      "top1_cosine_sd_over_seeds": 0.010469143908950134,
+      "top1_edit": 0.4696969696969697,
+      "ba_pa": 0.6458333333333333,
+      "da_ta": 0.5208333333333334,
+      "all_pairs_pooled": 0.7847222222222222,
+      "mean_dead_units": 1.125,
+      "segments_per_item": 44.93939393939394,
+      "per_seed": [
+        {
+          "folds": 6,
+          "top1_cosine": 0.4090909090909091,
+          "top1_cosine_std": 0.05868156585162753,
+          "top1_edit": 0.45202020202020204,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6111111111111112,
+            "ga/ka": 1.0,
+            "da/ta": 0.5555555555555556,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.8888888888888888,
+            "ta/tha": 0.6111111111111112,
+            "za/sa": 0.9722222222222222,
+            "ah/aa": 0.8055555555555556
+          },
+          "all_pairs_pooled": 0.8020833333333334,
+          "mean_dead_units": 1.3333333333333333,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.38383838383838387,
+          "top1_cosine_std": 0.035712463696290296,
+          "top1_edit": 0.4570707070707071,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6666666666666666,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.5277777777777778,
+            "sa/sha": 0.9444444444444444,
+            "ka/qa": 0.8611111111111112,
+            "ta/tha": 0.4166666666666667,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.8333333333333334
+          },
+          "all_pairs_pooled": 0.7708333333333334,
+          "mean_dead_units": 0.6666666666666666,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.3838383838383838,
+          "top1_cosine_std": 0.0387936653932758,
+          "top1_edit": 0.49242424242424243,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6944444444444444,
+            "ga/ka": 1.0,
+            "da/ta": 0.5277777777777778,
+            "sa/sha": 0.9722222222222222,
+            "ka/qa": 0.9166666666666666,
+            "ta/tha": 0.5555555555555556,
+            "za/sa": 0.9166666666666666,
+            "ah/aa": 0.8055555555555556
+          },
+          "all_pairs_pooled": 0.7986111111111112,
+          "mean_dead_units": 1.0,
+          "mean_segments_per_item": 44.93939393939394
+        },
+        {
+          "folds": 6,
+          "top1_cosine": 0.39646464646464646,
+          "top1_cosine_std": 0.02035923673812766,
+          "top1_edit": 0.4772727272727273,
+          "minimal_pairs_cosine": {
+            "ba/pa": 0.6111111111111112,
+            "ga/ka": 0.9722222222222222,
+            "da/ta": 0.4722222222222222,
+            "sa/sha": 0.9444444444444444,
+            "ka/qa": 0.8611111111111112,
+            "ta/tha": 0.4722222222222222,
+            "za/sa": 0.9444444444444444,
+            "ah/aa": 0.8611111111111112
+          },
+          "all_pairs_pooled": 0.7673611111111112,
+          "mean_dead_units": 1.5,
+          "mean_segments_per_item": 44.93939393939394
+        }
+      ]
+    }
+  ]
+}

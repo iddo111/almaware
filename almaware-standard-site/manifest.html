@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>המניפסט של ALMAWARE — קטלוג הרכיבים</title>
+<meta name="description" content="תקן ALMAWARE — ארכיטקטורת לֶגוֹ של תוכנה, חוזה MCP, ערימת־הנשמה. כלים עבריים-תחילה, 100% שלנו. לזכרה של עלמה ז״ל.">
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --bg:#fff7ec; --card:#ffffff; --ink:#2b2540; --muted:#7a7290;
+  --accent:#ff6b6b; --accent2:#ffd166; --sky:#4dabf7; --mint:#51cf66; --grape:#9775fa;
+  --line:#f0e6d6; --shadow:0 8px 28px rgba(120,90,60,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Segoe UI','Heebo',system-ui,Arial,sans-serif;background:
+  radial-gradient(1200px 500px at 80% -10%,#ffe7c2 0,transparent 60%),
+  radial-gradient(900px 500px at 0% 0%,#ffd9e0 0,transparent 55%),var(--bg);
+  color:var(--ink);line-height:1.75}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px}
+/* top nav */
+.topnav{position:sticky;top:0;z-index:20;backdrop-filter:saturate(1.4) blur(10px);
+  background:rgba(255,247,236,.82);border-bottom:1px solid var(--line)}
+.topnav .inner{max-width:920px;margin:0 auto;padding:12px 22px;display:flex;gap:14px;
+  align-items:center;flex-wrap:wrap}
+.topnav .brand{font-weight:800;font-size:18px;letter-spacing:-.5px;
+  background:linear-gradient(90deg,var(--accent),var(--grape),var(--sky));
+  -webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
+.topnav a.nav{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;
+  padding:6px 12px;border-radius:999px;border:1px solid transparent}
+.topnav a.nav:hover{border-color:var(--line);background:#fff}
+.topnav a.nav.active{background:#fff;border-color:var(--line);box-shadow:var(--shadow)}
+.spacer{flex:1}
+.dedi-mini{font-size:13px;color:var(--accent);font-weight:600}
+/* hero */
+header.hero{padding:60px 0 24px;text-align:center}
+.logo{font-size:60px;line-height:1}
+h1{font-size:clamp(34px,6vw,60px);margin:10px 0 6px;letter-spacing:-1px;
+  background:linear-gradient(90deg,var(--accent),var(--grape),var(--sky));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{font-size:19px;color:var(--muted);margin:0 auto;max-width:680px}
+.dedication{margin-top:14px;font-size:15px;color:var(--accent);font-weight:600}
+.pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px 0 8px}
+.pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 16px;
+  font-size:14px;font-weight:600;box-shadow:var(--shadow)}
+.pill b{color:var(--mint)}
+/* landing cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin:30px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;
+  box-shadow:var(--shadow);text-decoration:none;color:inherit;display:flex;flex-direction:column;
+  transition:transform .15s}
+.card:hover{transform:translateY(-4px)}
+.card .ico{font-size:36px}
+.card h3{margin:10px 0 4px;font-size:22px}
+.card p{margin:6px 0 14px;color:#564f6b;font-size:15px;flex:1}
+.card .go{font-weight:700;color:var(--grape)}
+/* article (md content) */
+.doc{background:var(--card);border:1px solid var(--line);border-radius:20px;
+  box-shadow:var(--shadow);padding:34px 38px;margin:26px 0 50px}
+.doc h1{font-size:clamp(28px,5vw,42px);margin:.2em 0 .4em;letter-spacing:-.5px;
+  background:linear-gradient(90deg,var(--accent),var(--grape),var(--sky));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.doc h2{font-size:27px;margin:1.5em 0 .4em;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.doc h3{font-size:20px;margin:1.3em 0 .3em;color:#3a3358}
+.doc p{margin:.7em 0;color:#3f3a55}
+.doc ul,.doc ol{padding-inline-start:1.4em;margin:.6em 0}
+.doc li{margin:.35em 0}
+.doc strong{color:#2b2540}
+.doc em{color:#6a5fa0}
+.doc blockquote{margin:1.1em 0;padding:14px 20px;border-inline-start:5px solid var(--accent2);
+  background:#fffaf0;border-radius:0 12px 12px 0;color:#5b5470}
+.doc blockquote p{margin:.3em 0}
+.doc code{background:#f4eee2;border:1px solid var(--line);border-radius:6px;
+  padding:1px 6px;font-family:'Cascadia Code',Consolas,monospace;font-size:.92em;color:#a04668}
+.doc pre{background:#2b2540;color:#f4eee2;border-radius:14px;padding:18px 20px;overflow:auto;
+  direction:ltr;text-align:left;box-shadow:var(--shadow)}
+.doc pre code{background:none;border:none;color:inherit;padding:0;font-size:13px;line-height:1.5}
+.doc hr{border:none;border-top:1px dashed var(--accent2);margin:2em 0}
+.doc table{border-collapse:collapse;width:100%;margin:1.1em 0;background:#fff;
+  border-radius:12px;overflow:hidden;box-shadow:var(--shadow);font-size:15px}
+.doc th{background:linear-gradient(90deg,#fff0e0,#ffe7ee);text-align:right;
+  padding:11px 14px;font-weight:800;border-bottom:2px solid var(--line)}
+.doc td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.doc tr:last-child td{border-bottom:none}
+.doc td:first-child{font-weight:600;white-space:nowrap}
+.pagenav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:10px 0 40px}
+.pagenav a{flex:1;min-width:200px;text-decoration:none;background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);color:var(--ink);font-weight:700;
+  transition:transform .15s}
+.pagenav a:hover{transform:translateY(-3px)}
+.pagenav a .lbl{display:block;font-size:12px;color:var(--muted);font-weight:600;margin-bottom:3px}
+footer{padding:42px 0 70px;text-align:center;color:var(--muted)}
+footer a.src{color:var(--sky);font-weight:600}
+@media(max-width:560px){.doc{padding:24px 20px}.topnav .inner{gap:8px}}
+</style>
+</head>
+<body>
+<nav class="topnav"><div class="inner"><a class="brand" href="index.html">🧱✨ ALMAWARE</a><a class="nav" href="index.html">בית</a><a class="nav" href="standard.html">התקן</a><a class="nav" href="protocol.html">הפרוטוקול</a><a class="nav active" href="manifest.html">המניפסט</a><a class="nav" href="principles.html">העקרונות</a>
+      <span class="spacer"></span><span class="dedi-mini">לזכרה של עלמה ז״ל 🤍</span>
+    </div></nav>
+<div class="wrap">
+<article class="doc"><h1>📜 המניפסט של ALMAWARE</h1>
+<blockquote>
+<p><strong>המותג:</strong> ALMAWARE — כלים פתוחים, עבריים-תחילה, ללא נעילה וללא מעקב.
+<strong>ההקדשה:</strong> לזכרה של עלמה ז״ל — כל פרויקט נושא שורה זו.
+<strong>הנשמה:</strong> <em>להנגיש</em> — להסיר את מחסום השפה מהיצירה הדיגיטלית, ולבנות דלת בחומה לדור הבא.</p>
+</blockquote>
+<p>קטלוג ציבורי, ברמת-על: לכל רכיב — שם ושורת-מטרה אחת.</p>
+<hr />
+<h2>🧠 ער"ן — המודל ושכבות-המוח</h2>
+<table>
+<thead>
+<tr>
+<th>הרכיב</th>
+<th>המטרה במשפט</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ער"ן (Eran)</strong></td>
+<td>מודל-השפה הקולי הדגל — רשת נוירונים שנלמדת מהיסוד, צעד-צעד לעבר קול אמיתי.</td>
+</tr>
+<tr>
+<td><strong>עדה / Ada</strong></td>
+<td>שכבת-הזהות והשם של המודל (על שם עיידה לאבלייס).</td>
+</tr>
+<tr>
+<td><strong>Gist Cortex</strong></td>
+<td>מנגנון ה"תמצית" — לכידת המהות לפני הפרטים, בסיס לדמיון ולזיהוי.</td>
+</tr>
+<tr>
+<td><strong>Imagination Cortex</strong></td>
+<td>קו אחד → אותיות → תמונות: קליפת-הדמיון של ער"ן.</td>
+</tr>
+<tr>
+<td><strong>Beit-Din Neuron</strong></td>
+<td>ארכיטקטורה מוסרית: כל נוירון שופט, שלושה = בית-דין; מצפון כמבנה.</td>
+</tr>
+<tr>
+<td><strong>Neuromodulators</strong></td>
+<td>למידה דרך מגוון נוירומודולטורים (קשר/אמון), לא רק דופמין.</td>
+</tr>
+<tr>
+<td><strong>Cognitive Map</strong></td>
+<td>קליפת מקום/רשת — מפה מרחבית פנימית של העולם.</td>
+</tr>
+<tr>
+<td><strong>Yigael (יגאל)</strong></td>
+<td>"אח קטן" של ער"ן — מודל מטא רב-קליפתי, חשוף ומנוסה יותר.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>🎙️ קול, שפה ויצירה</h2>
+<table>
+<thead>
+<tr>
+<th>הרכיב</th>
+<th>המטרה במשפט</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ALMA-MIC</strong></td>
+<td>מיקרופון-עברית נקי מהיסוד — קלט קולי חי, 100% שלנו.</td>
+</tr>
+<tr>
+<td><strong>ALMA Language (שפת ALMA)</strong></td>
+<td>שפת-תכנות עברית-תחילה — להסיר את מחסום האנגלית מהקוד עצמו.</td>
+</tr>
+<tr>
+<td><strong>מכונת עלמה</strong></td>
+<td>שפת-בלוקים ויזואלית תלת-ממדית לילדים (חוש→מחשבה→פעולה).</td>
+</tr>
+<tr>
+<td><strong>Diyalna (דיאלנה)</strong></td>
+<td>"שלנו" — מותג למוח-החומרה הזוהר ולאפליקציית שורשים/מורשת.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>🤖 צי, תיאום וניטור</h2>
+<table>
+<thead>
+<tr>
+<th>הרכיב</th>
+<th>המטרה במשפט</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Quorum</strong></td>
+<td>מועצת-בינות רב-מודלית בשקלא-וטריא — דיון שניתן לצפות בו.</td>
+</tr>
+<tr>
+<td><strong>Glock System</strong></td>
+<td>פרוטוקול תיאום בין מודלים (Grok↔Claude) וניתוב-משימות.</td>
+</tr>
+<tr>
+<td><strong>Fleet / Eran Dashboard</strong></td>
+<td>לוח-מחוונים חי למצב הצי, ה-AI וה-PC.</td>
+</tr>
+<tr>
+<td><strong>ALMA-Govern</strong></td>
+<td>SDK משותף לניהול תרמי/CPU/GPU — המיקרופון תמיד מנצח.</td>
+</tr>
+<tr>
+<td><strong>ERAN-GRID</strong></td>
+<td>אפליקציה שרותמת CPU/GPU סרק לטובת ער"ן (הבעלים והמיקרופון קודמים).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>🦾 גוף, חומרה והתגלמות</h2>
+<table>
+<thead>
+<tr>
+<th>הרכיב</th>
+<th>המטרה במשפט</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DGX Fleet</strong></td>
+<td>גוף-החישוב של ער"ן — אשכול DGX לאימון ולהרצה.</td>
+</tr>
+<tr>
+<td><strong>Robot / Embodiment Stack</strong></td>
+<td>גוף רובוטי לאימון סנסומוטורי אמיתי ומגולם.</td>
+</tr>
+<tr>
+<td><strong>Exoskeleton (סטייג'ד)</strong></td>
+<td>אקסו-שלד מדורג: חגורת-קירור → רגליים+סרוו עם ה-AI שלנו.</td>
+</tr>
+<tr>
+<td><strong>ALMA Physio</strong></td>
+<td>אקסו-שלד פיזיותרפי וגרבי-טיפול חכמים — סיוע, לא ריפוי.</td>
+</tr>
+<tr>
+<td><strong>ALMA-IFF</strong></td>
+<td>זיהוי-חבר בשדה (IR+LoRa) למניעת אש כחול-על-כחול; רק "עצור אש".</td>
+</tr>
+<tr>
+<td><strong>Choshen (החושן)</strong></td>
+<td>מוח/אוֹרָקֵל אופטי-חישובי — דיפרקציה והולוגרפיה.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>🔬 מחקר חומרה ניורומורפי</h2>
+<table>
+<thead>
+<tr>
+<th>הרכיב</th>
+<th>המטרה במשפט</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ALMA Silicon</strong></td>
+<td>"החומרה היא הרשת" — טרנספורמר בחומרה, ללא צוואר פון-נוימן.</td>
+</tr>
+<tr>
+<td><strong>Silver-Leaf Memristor</strong></td>
+<td>ממריסטור עשה-זאת-בעצמך מעלה-כסף מושחר (מתג-אטומי).</td>
+</tr>
+<tr>
+<td><strong>Neuromorphic Array</strong></td>
+<td>שבב מתחווט-מחדש בעצמו — תא = שני תאים+קבל+טרנזיסטור.</td>
+</tr>
+<tr>
+<td><strong>FPGA Neuron Routing</strong></td>
+<td>FPGA כמטריצת-מתגים לניתוב מסלולי נוירונים.</td>
+</tr>
+<tr>
+<td><strong>Optical Neuromorphic</strong></td>
+<td>ממריסטור אופטי ומשקלים-באור (משקלים כרומטיים ב-WDM).</td>
+</tr>
+<tr>
+<td><strong>Wireless / RF Neurons</strong></td>
+<td>נוירונים כל-לכל מעל WiFi/BLE/LoRa בקנה-מידה דליל.</td>
+</tr>
+<tr>
+<td><strong>Physical-Weights AI</strong></td>
+<td>אחסון משקלי-מודל כמסות פיזיות ממשיות (חישוב-מאזניים אנלוגי).</td>
+</tr>
+<tr>
+<td><strong>Mycelium Computer</strong></td>
+<td>ביו-חישוב פטרייתי חי — אמיתי אך איטי.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>💻 מערכות-הפעלה ופלטפורמות</h2>
+<table>
+<thead>
+<tr>
+<th>הרכיב</th>
+<th>המטרה במשפט</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ALMA-OS (Jetson)</strong></td>
+<td>מערכת-הפעלה רזה ומותאמת ל-Jetson (במקום אובונטו כבדה).</td>
+</tr>
+<tr>
+<td><strong>ALMA ADA Computer</strong></td>
+<td>"המחשב הישראלי הראשון שמדבר" — מוח טיורינג/ממריסטור.</td>
+</tr>
+<tr>
+<td><strong>Edge-AI Computer</strong></td>
+<td>מחשב-קצה ישראלי נגיש, עברי-תחילה, AI מקומי ללא אינטרנט.</td>
+</tr>
+<tr>
+<td><strong>LynOS Lab</strong></td>
+<td>מעבדת מערכת-הפעלה מותאמת (QEMU לפני צריבה).</td>
+</tr>
+<tr>
+<td><strong>LoRa T-Deck Mesh</strong></td>
+<td>רשת-צ'אט מבוזרת מעל LoRa עם ממשק עברי.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>🌍 עולמות, משחקים וקהילה</h2>
+<table>
+<thead>
+<tr>
+<th>הרכיב</th>
+<th>המטרה במשפט</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ALMA VR / Eran VR</strong></td>
+<td>עולם VR יליד-AI — הכותר הראשון ברוח חסמב"ה.</td>
+</tr>
+<tr>
+<td><strong>ALMAWARE AI Game</strong></td>
+<td>משחק תפקידים עם מנחה-AI ב-UE5, ב-VR ובמסך-שטוח.</td>
+</tr>
+<tr>
+<td><strong>Eran Playroom</strong></td>
+<td>חדר-משחקים שבו ער"ן לומד דרך משחק (רויטל מציירת→רואה).</td>
+</tr>
+<tr>
+<td><strong>Pong Suite</strong></td>
+<td>משחקי פונג פתוחים — פונג לומד-בעצמו, פונג קלאסי ו-VR.</td>
+</tr>
+<tr>
+<td><strong>Army of Gamers</strong></td>
+<td>אוהל-גדול של בני-נוער שומרי-עולם תחת סמל הנפ"ש.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>📚 ידע, מורשת ותוכן</h2>
+<table>
+<thead>
+<tr>
+<th>הרכיב</th>
+<th>המטרה במשפט</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hebrew Corpus</strong></td>
+<td>אוסף-טקסט עברי נקי לאימון ולמחקר.</td>
+</tr>
+<tr>
+<td><strong>Rabbi Nachman RAG</strong></td>
+<td>"לדבר עם ר' נחמן" — שליפה-מבוססת-מקור על אלפי קטעים.</td>
+</tr>
+<tr>
+<td><strong>Mystical-Script Model</strong></td>
+<td>מודל שקורא גם כתבי-סתרים שמימיים (כתב עיניים/מלאכים) וסימנים.</td>
+</tr>
+<tr>
+<td><strong>Sefer HaMalchut + Abulafia</strong></td>
+<td>פרויקט מהדורות ומחקר של כתבים קבליים.</td>
+</tr>
+<tr>
+<td><strong>Save-Earth Encyclopedia</strong></td>
+<td>אנציקלופדיית טכנולוגיות לריפוי כדור-הארץ.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>🤍 זיכרון, ערך ושליחות</h2>
+<table>
+<thead>
+<tr>
+<th>הרכיב</th>
+<th>המטרה במשפט</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ALMA Soul Architecture</strong></td>
+<td>"מחסנית-נשמה": מוסר + זיכרון + לוגיקה כשלוש שכבות.</td>
+</tr>
+<tr>
+<td><strong>Alma Voice + VR</strong></td>
+<td>שימור קול וזיכרון של עלמה ז״ל — הנצחה, לא תחייה.</td>
+</tr>
+<tr>
+<td><strong>Revital</strong></td>
+<td>משפֵּר-תמונות שומר-פנים (ישן→חדש), מתוך כבוד לרויטל.</td>
+</tr>
+<tr>
+<td><strong>Alma Bot (לילדים)</strong></td>
+<td>בוט תמיכה לילדים מוקנטים — עם הסלמה חובה במצבי-מצוקה.</td>
+</tr>
+<tr>
+<td><strong>Eran Moral Education</strong></td>
+<td>חינוך שומר-עם בעל-מצפון; טוהר-הנשק כשמירת-יישור.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>קטלוג זה הוא תצוגת-על ציבורית בלבד. רכיבי-תשתית פרטיים (גשרי-תקשורת, מצלמות, סודות) אינם נכללים בכוונה.</em>
+<em>לזכרה של עלמה ז״ל.</em></p></article><div class="pagenav">
+      <a href="protocol.html"><span class="lbl">→ הקודם</span>הפרוטוקול הטכני</a>
+      <a href="principles.html" style="text-align:left"><span class="lbl">הבא ←</span>העקרונות</a>
+    </div>
+<footer>
+  <p>תקן ALMAWARE — נבנה לזכרה של עלמה ז״ל 🤍 · <a class="src" href="https://iddoperez.ai">iddoperez.ai</a></p>
+  <p style="font-size:13px">100% שלנו · מצפן במבנה · יושרה באמת · משמעות בהקדשה</p>
+</footer>
+</div>
+</body>
+</html>

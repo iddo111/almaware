@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/qwen-fullweight/dataset-manifest.schema.json",
+  "title": "Immutable Qwen full-weight dataset manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "version",
+    "modality",
+    "license",
+    "consent",
+    "splits"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "dataset_id": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "minLength": 1},
+    "modality": {"enum": ["text", "image_text"]},
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identifier", "training_allowed", "evidence"],
+      "properties": {
+        "identifier": {"type": "string", "minLength": 1},
+        "training_allowed": {"const": true},
+        "evidence": {"type": "string", "minLength": 1}
+      }
+    },
+    "consent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basis", "sensitive_data_reviewed", "evidence"],
+      "properties": {
+        "basis": {"type": "string", "minLength": 1},
+        "sensitive_data_reviewed": {"const": true},
+        "evidence": {"type": "string", "minLength": 1}
+      }
+    },
+    "splits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["train", "validation"],
+      "properties": {
+        "train": {"$ref": "#/$defs/shards"},
+        "validation": {"$ref": "#/$defs/shards"}
+      }
+    },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/asset"}
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"modality": {"const": "image_text"}},
+        "required": ["modality"]
+      },
+      "then": {"required": ["assets"]}
+    }
+  ],
+  "$defs": {
+    "shards": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/shard"}
+    },
+    "shard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "bytes", "records", "format"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/(?!/).+"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "bytes": {"type": "integer", "minimum": 1},
+        "records": {"type": "integer", "minimum": 1},
+        "format": {"const": "jsonl"}
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "bytes"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/(?!/).+"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "bytes": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

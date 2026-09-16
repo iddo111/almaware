@@ -1,0 +1,109 @@
+{
+  "version": 2,
+  "default_bindings": [
+    {
+      "interaction_profile": "/interaction_profiles/htc/vive_controller",
+      "bindings": {
+        "haptic": {
+          "paths": [
+            "/user/hand/left/output/haptic",
+            "/user/hand/right/output/haptic"
+          ]
+        },
+        "/user/hand/left/input/trigger/value": {
+          "action": "trigger"
+        },
+        "/user/hand/right/input/trigger/value": {
+          "action": "trigger"
+        },
+        "/user/hand/left/input/grip/click": {
+          "action": "grip"
+        },
+        "/user/hand/right/input/grip/click": {
+          "action": "grip"
+        },
+        "/user/hand/left/input/trackpad": {
+          "action": "primary"
+        },
+        "/user/hand/right/input/trackpad": {
+          "action": "primary"
+        },
+        "/user/hand/left/input/menu/click": {
+          "action": "menu"
+        },
+        "/user/hand/right/input/menu/click": {
+          "action": "menu"
+        },
+        "/user/hand/left/input/aim/pose": {
+          "action": "default"
+        },
+        "/user/hand/right/input/aim/pose": {
+          "action": "default"
+        }
+      }
+    }
+  ],
+  "action_sets": [
+    {
+      "name": "godot_action_set",
+      "localised_name": "EMDR VR Actions",
+      "priority": 0,
+      "actions": [
+        {
+          "name": "haptic",
+          "localised_name": "Haptic Pulse",
+          "type": "vibration",
+          "toplevel_paths": [
+            "/user/hand/left",
+            "/user/hand/right"
+          ]
+        },
+        {
+          "name": "trigger",
+          "localised_name": "Trigger",
+          "type": "float",
+          "toplevel_paths": [
+            "/user/hand/left",
+            "/user/hand/right"
+          ]
+        },
+        {
+          "name": "grip",
+          "localised_name": "Grip",
+          "type": "bool",
+          "toplevel_paths": [
+            "/user/hand/left",
+            "/user/hand/right"
+          ]
+        },
+        {
+          "name": "primary",
+          "localised_name": "Trackpad",
+          "type": "vector2",
+          "toplevel_paths": [
+            "/user/hand/left",
+            "/user/hand/right"
+          ]
+        },
+        {
+          "name": "menu",
+          "localised_name": "Menu Button",
+          "type": "bool",
+          "toplevel_paths": [
+            "/user/hand/left",
+            "/user/hand/right"
+          ]
+        },
+        {
+          "name": "default",
+          "localised_name": "Controller Pose",
+          "type": "pose",
+          "toplevel_paths": [
+            "/user/hand/left",
+            "/user/hand/right"
+          ]
+        }
+      ]
+    }
+  ]
+}

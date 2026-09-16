@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "conversations": [
+    {
+      "id": "New-conversation",
+      "title": "תעלה את הפרויקט של הפקת פסייטראנס",
+      "workspace": "general",
+      "created": "2026-09-11T21:36:09.159488+00:00",
+      "updated": "2026-09-12T01:19:37.279051+00:00",
+      "n": 12,
+      "pinned": false
+    }
+  ],
+  "last": "New-conversation"
+}

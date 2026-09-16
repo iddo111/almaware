@@ -1,0 +1,18 @@
+{
+  "_comment": "ALMAWARE fleet dispatcher node config. IPs drift (DHCP) - edit here. Delete a field to fall back to built-in defaults? No: this file, when present, is the source of truth.",
+  "ssh_key": "C:\\Users\\iddo1\\.ssh\\id_ed25519",
+  "connect_timeout_s": 8,
+  "task_timeout_s": 120,
+  "nodes": [
+    { "name": "eran1", "host": "<lan-ip>",   "user": "eran1" },
+    { "name": "eran2", "host": "<tailnet-ip>",   "user": "eran2", "_note": "2026-09-11 WAVE A2: address came from D:/CLAUDE/fleet_inventory.json (tailnet = stable; the LAN lease moved on 09-10)." },
+    { "name": "eran3", "host": "<fabric-ip>",         "user": "eran3", "proxy_via": "eran1@<lan-ip>" },
+    { "name": "eran4", "host": "<tailnet-host>", "user": "eran4" },
+    { "name": "laptop", "host": "<tailnet-ip>", "user": "iddo1",
+      "blocked": "key-exchange not completed yet; Claude may not be installed there" },
+    { "name": "grok", "host": null, "user": null,
+      "blocked": "no xAI credits; Grok OIDC login will not transfer headless. Only the LOCAL Grok-1 rpc-server runs as an inference model (not a CLI agent)." },
+    { "name": "gemini", "host": null, "user": null,
+      "blocked": "no Gemini API key" }
+  ]
+}

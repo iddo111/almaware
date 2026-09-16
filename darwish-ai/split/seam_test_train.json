@@ -1,0 +1,27 @@
+{
+ "n_pitch_onsets(0..4)": {
+  "I(D;Y|pos)_bits_per_sixteenth": 0.04542,
+  "shuffle_floor_bits": 0.00013,
+  "shuffle_floor_sd": 1e-05,
+  "REAL_bits_per_sixteenth": 0.0453,
+  "H(Y|pos)_bits": 1.9606,
+  "fraction_of_H(Y|pos)_explained_by_drums": 0.0231,
+  "n_distinct_Y": 5
+ },
+ "pitch_class_set(12-bit)": {
+  "I(D;Y|pos)_bits_per_sixteenth": 0.08234,
+  "shuffle_floor_bits": 0.03075,
+  "shuffle_floor_sd": 0.000136,
+  "REAL_bits_per_sixteenth": 0.05159,
+  "H(Y|pos)_bits": 4.8359,
+  "fraction_of_H(Y|pos)_explained_by_drums": 0.01067,
+  "n_distinct_Y": 1564
+ },
+ "_headline": {
+  "sixteenths": 2500000,
+  "seconds": 264937.3,
+  "sixteenths_per_second": 9.436,
+  "upper_bound_bits_per_second_lost_by_factorising": 0.4868,
+  "note": "This is an UPPER BOUND on what the split throws away by not letting the pitch model see the drums, measured with no model at all. It is same-step only: a leak across steps would add to it. Compare it against the measured bits/second gap in split_report.py - if the gap is much larger than this, the gap is not caused by the factorisation but by the duplicated clock or by the training budget."
+ }
+}

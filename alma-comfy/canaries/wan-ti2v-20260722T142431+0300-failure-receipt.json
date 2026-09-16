@@ -1,0 +1,49 @@
+{
+  "status": "BLOCKED_BEFORE_MODEL_LOAD",
+  "checked_at": "2026-07-22T14:47:25+03:00",
+  "host": "edgexpert-01e6",
+  "run_directory": "/home/eran3/alma-studio/canaries/wan-ti2v-20260722T142431+0300",
+  "environment": "/home/eran3/.venvs/alma-visual",
+  "model": "/home/eran3/models/alma-studio/Wan2.2-TI2V-5B-Diffusers",
+  "model_integrity": {
+    "complete": true,
+    "model_index_present": true,
+    "noncache_file_count": 29,
+    "noncache_bytes": 34203021834,
+    "missing_indexed_shards": [],
+    "incomplete_files": []
+  },
+  "planned_canary": {
+    "prompt": "A single small brass robot walks across a quiet sunlit workbench, cinematic natural light, stable camera, realistic materials, clean background.",
+    "negative_prompt": "text, subtitles, watermark, logo, duplicate subject, deformed limbs, flicker, camera shake, low detail, overexposure",
+    "seed": 20260722,
+    "width": 832,
+    "height": 480,
+    "frames": 17,
+    "steps": 8,
+    "guidance_scale": 5.0,
+    "fps": 24
+  },
+  "diagnostics": [
+    {
+      "check": "bf16_cuda_matmul",
+      "result": "PASSED",
+      "detail": "1024x1024 BF16 CUDA matrix multiplication completed with finite output."
+    },
+    {
+      "check": "torch_cuda_arch_support",
+      "result": "BLOCKED",
+      "detail": "NVIDIA GB10 reports compute capability 12.1. torch 2.10.0+cu130 reports supported architectures through sm_120/compute_120 only and emits a runtime warning that its supported maximum is 12.0."
+    },
+    {
+      "check": "pip_check",
+      "result": "FAILED",
+      "exit_code": 1,
+      "detail": "nvidia-cusparselt-cu13 0.8.0 is not supported on this platform"
+    }
+  ],
+  "decision": "Stopped at the first real compatibility failure before importing model weights. No model load, generation, retry, package removal, or version churn was attempted.",
+  "output_video": null,
+  "ffprobe": null,
+  "output_sha256": null
+}

@@ -1,0 +1,164 @@
+{
+ "take_retrieval_unseen_syllable_pct": 18.94,
+ "take_retrieval_floor_pct": 16.67,
+ "syllable_retrieval_unseen_take_pct": 80.81,
+ "var_take_pct": 1.34,
+ "var_syllable_pct": 59.22,
+ "t06_takes": [
+  "t06"
+ ],
+ "t06_n": 657,
+ "unit_ba": {
+  "t06_spread": 0.4827,
+  "ref_spread": 0.3502,
+  "centre_gap": 1.2776
+ },
+ "unit_ma": {
+  "t06_spread": 0.5504,
+  "ref_spread": 0.3563,
+  "centre_gap": 1.4123
+ },
+ "unit_ah": {
+  "t06_spread": 0.3858,
+  "ref_spread": 0.3376,
+  "centre_gap": 1.3034
+ },
+ "cand_rows": [
+  {
+   "arm": "ah-1kf-2",
+   "want": "ah",
+   "t06_says": "ah",
+   "ref22_says": "sha"
+  },
+  {
+   "arm": "ah-1kf-3",
+   "want": "ah",
+   "t06_says": "ih",
+   "ref22_says": "za"
+  },
+  {
+   "arm": "ah-free-0",
+   "want": "ah",
+   "t06_says": "ah",
+   "ref22_says": "ha"
+  },
+  {
+   "arm": "ah-free-1",
+   "want": "ah",
+   "t06_says": "ah",
+   "ref22_says": "ha"
+  },
+  {
+   "arm": "ba-cv-10",
+   "want": "ba",
+   "t06_says": "ba",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "ba-cv-11",
+   "want": "ba",
+   "t06_says": "ba",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "ba-cv-12",
+   "want": "ba",
+   "t06_says": "ba",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "ba-cv-13",
+   "want": "ba",
+   "t06_says": "ba",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "ba-cv-3",
+   "want": "ba",
+   "t06_says": "abba",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "ba-cv-4",
+   "want": "ba",
+   "t06_says": "ba",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "ba-free-4",
+   "want": "ba",
+   "t06_says": "ah",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "ba-free-5",
+   "want": "ba",
+   "t06_says": "ah",
+   "ref22_says": "sha"
+  },
+  {
+   "arm": "ba-free-6",
+   "want": "ba",
+   "t06_says": "abba",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "ba-free-7",
+   "want": "ba",
+   "t06_says": "abba",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "control-ah-1kf-0",
+   "want": "ah",
+   "t06_says": "ah",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "control-ba-cv-2",
+   "want": "ba",
+   "t06_says": "ba",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "control-ba-free-0",
+   "want": "ba",
+   "t06_says": "ba",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "control-ih-1kf-0",
+   "want": "ih",
+   "t06_says": "ah",
+   "ref22_says": "sha"
+  },
+  {
+   "arm": "ih-1kf-2",
+   "want": "ih",
+   "t06_says": "ima",
+   "ref22_says": "sha"
+  },
+  {
+   "arm": "ih-1kf-3",
+   "want": "ih",
+   "t06_says": "ih",
+   "ref22_says": "za"
+  },
+  {
+   "arm": "ma-nasal-3",
+   "want": "ma",
+   "t06_says": "ba",
+   "ref22_says": "na"
+  },
+  {
+   "arm": "ma-nasal-4",
+   "want": "ma",
+   "t06_says": "ah",
+   "ref22_says": "na"
+  }
+ ],
+ "cand_t06_correct": [
+  12,
+  22
+ ]
+}

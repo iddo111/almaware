@@ -1,0 +1,12 @@
+{
+ "open": {
+  "frac_surprise_below_1e-6_whole_run": 0.59787,
+  "frac_surprise_below_1e-6_second_half": 0.64026,
+  "frac_below_0.001_second_half": 0.64881
+ },
+ "closed": {
+  "frac_surprise_below_1e-6_whole_run": 0.0,
+  "frac_surprise_below_1e-6_second_half": 0.0,
+  "frac_below_0.001_second_half": 0.00037
+ }
+}

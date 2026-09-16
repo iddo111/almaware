@@ -1,0 +1,43 @@
+{
+  "when": "2026-09-05T19:26:53",
+  "strokes": 14000,
+  "size": 0.011,
+  "plant": [
+    960,
+    540
+  ],
+  "tiles": 56,
+  "made": {
+    "loom": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out-night\\TZELEM-night-LOOM.png",
+    "4K": {
+      "path": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out-night\\TZELEM-night-4K.png",
+      "seconds": 14.3,
+      "mb": 1.09,
+      "rss_mb": 201
+    },
+    "8K": {
+      "path": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out-night\\TZELEM-night-8K.png",
+      "seconds": 64.7,
+      "mb": 2.88,
+      "rss_mb": 500
+    },
+    "crop": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out-night\\TZELEM-night-CROP1000-1to1.png",
+    "view": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out-night\\TZELEM-night-VIEW-1920.jpg"
+  },
+  "counts": {
+    "ground": 2,
+    "mouth_ah": 1346,
+    "fold_mould": 1630,
+    "kav_cube": 12,
+    "mouth_ooh": 1662,
+    "throat_a": 72
+  },
+  "plant_seconds": 307.1,
+  "loom_seconds": 4.6,
+  "loom_pinned_to_numpy": true,
+  "loom_tiles_painted": 2127,
+  "loom_tiles_total": 3136,
+  "loom_distinct_colours": 365,
+  "peak_rss_mb": 499,
+  "total_seconds": 395.9
+}

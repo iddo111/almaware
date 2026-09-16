@@ -1,0 +1,63 @@
+{
+ "feats": "trim",
+ "set": "matched",
+ "K": 8,
+ "n": 2319,
+ "n_human": 389,
+ "n_eran": 1930,
+ "floors": {
+  "chance": 0.5,
+  "duration_only": 0.6586437923731636,
+  "rms_only": 0.7622887169172983,
+  "nezer_live": 0.7894701439855083,
+  "nezer_ceiling": 0.569
+ },
+ "models": {
+  "logreg 996 (all blocks)": {
+   "d": 996,
+   "balacc": 0.7724835835209185,
+   "auc": 0.9895507279193362,
+   "human_recall": 0.5475578406169666,
+   "eran_recall": 0.9974093264248705
+  },
+  "logreg 994 (no duration dims)": {
+   "d": 994,
+   "balacc": 0.7711982364772167,
+   "auc": 0.989418863300345,
+   "human_recall": 0.5449871465295629,
+   "eran_recall": 0.9974093264248705
+  },
+  "logreg onset only (lvl+coch0+ons0)": {
+   "d": 86,
+   "balacc": 0.9615787791201034,
+   "auc": 0.9866337227113496,
+   "human_recall": 0.9537275064267352,
+   "eran_recall": 0.9694300518134715
+  }
+ },
+ "ablation": {
+  "RAMP60 (honest)": {
+   "n": 389,
+   "p_intact": 0.5676855077599555,
+   "p_amp": 0.8514867761859692,
+   "called_intact": 0.5475578406169666,
+   "called_amp": 0.8791773778920309,
+   "paired_auc": 0.21059866112436476
+  },
+  "CUT60 (splice)": {
+   "n": 389,
+   "p_intact": 0.5676855077599555,
+   "p_amp": 0.7925996828554576,
+   "called_intact": 0.5475578406169666,
+   "called_amp": 0.7994858611825193,
+   "paired_auc": 0.26883909041045195
+  }
+ },
+ "fleurs": {
+  "n": 495,
+  "speakers": 495,
+  "mean_p": 0.42835410327522366,
+  "called_human": 0.4262626262626263
+ },
+ "lam": 0.002
+}

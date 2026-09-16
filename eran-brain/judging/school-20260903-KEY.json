@@ -1,0 +1,251 @@
+{
+ "what": "judging/school-20260903: per syllable A/B = hand-made ERAN-<syl>.wav vs ERAN's OWN leave-one-out prediction (class-only MLP, trained without that syllable). Shuffled with seed 20260903.",
+ "measured_loo": {
+  "mlp": 0,
+  "mlpc": 3,
+  "ridge": 2,
+  "nn": 2
+ },
+ "pairs": {
+  "ba": {
+   "A": "hand",
+   "B": "eran-loo-mlpc",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ba.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-ba-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "closure_shallow",
+    "closure_short",
+    "burst_weak",
+    "burst_no_jump",
+    "burst_late",
+    "burst_centroid"
+   ]
+  },
+  "va": {
+   "A": "hand",
+   "B": "eran-loo-mlpc",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-va.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-va-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "hnr_out_high",
+    "noise_weak"
+   ]
+  },
+  "ma": {
+   "A": "eran-loo-mlpc",
+   "B": "hand",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ma.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-ma-loo-mlpc.wav",
+   "eran_signature_ok": true,
+   "eran_fails": []
+  },
+  "pa": {
+   "A": "eran-loo-mlpc",
+   "B": "hand",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-pa.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-pa-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "closure_shallow",
+    "closure_short",
+    "burst_weak",
+    "burst_no_jump",
+    "burst_centroid",
+    "gap_length"
+   ]
+  },
+  "fa": {
+   "A": "hand",
+   "B": "eran-loo-mlpc",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-fa.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-fa-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "level_quiet",
+    "centroid_low",
+    "noise_not_broad"
+   ]
+  },
+  "wa": {
+   "A": "hand",
+   "B": "eran-loo-mlpc",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-wa.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-wa-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "F1_high",
+    "F2_high",
+    "F2_not_rising"
+   ]
+  },
+  "da": {
+   "A": "eran-loo-mlpc",
+   "B": "hand",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-da.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-da-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "FAIL closure -1.0 dB <= -16",
+    "FAIL burst jump 6.3 dB > 15 within 20 ms",
+    "FAIL F3 onset 2717 high (>=2780) -> 2674",
+    "FAIL F1 onset 581 rising -> 568"
+   ]
+  },
+  "ta": {
+   "A": "hand",
+   "B": "eran-loo-mlpc",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ta.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-ta-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "FAIL closure -1.4 dB <= -16",
+    "FAIL burst jump 6.5 dB > 15",
+    "FAIL burst peak 1.0 dB re vowel >= +5",
+    "FAIL VOT gap 33 ms at -11.8 dB (-8..0) hnr -5.5 < 3",
+    "FAIL F3 high (2600 >= 2780) in the aspirated transition +10..+40 ms; F3 at voicing onset 2501 (t 202 ms)",
+    "FAIL voicing starts within 40 ms after the gap (at 202 ms)"
+   ]
+  },
+  "na": {
+   "A": "hand",
+   "B": "eran-loo-mlpc",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-na.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-na-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "FAIL nose/lip -4.4 dB >= +20",
+    "FAIL antiformant 2906 in 1.9-2.6 kHz"
+   ]
+  },
+  "la": {
+   "A": "eran-loo-mlpc",
+   "B": "hand",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-la.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-la-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "FAIL no closure (min -7.7 dB > -6)"
+   ]
+  },
+  "sa": {
+   "A": "eran-loo-mlpc",
+   "B": "hand",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-sa.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-sa-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "FAIL centroid 1644 >= 4300",
+    "FAIL >4k frac 0.09 >= 0.5",
+    "FAIL hnr 4.3 < 0"
+   ]
+  },
+  "za": {
+   "A": "eran-loo-mlpc",
+   "B": "hand",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-za.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-za-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "FAIL voiced f0 106 hnr 9.8 (1.5-7)",
+    "FAIL >2k frac 0.00 >= 0.15",
+    "FAIL centroid 216 ~3 kHz",
+    "FAIL level -13.0 (-12..-4)"
+   ]
+  },
+  "sha": {
+   "A": "eran-loo-mlpc",
+   "B": "hand",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-sha.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-sha-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "FAIL noise 76 ms >= 80",
+    "FAIL centroid 219 in 3300-3900",
+    "FAIL 2-4k frac 0.00 >= 0.65",
+    "FAIL hnr 8.9 < 0",
+    "FAIL level -17.8 (-12..-4)"
+   ]
+  },
+  "ra": {
+   "A": "hand",
+   "B": "eran-loo-mlpc",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ra.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-ra-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "FAIL voicing continuous around (hnr -9.7 / 8.9)"
+   ]
+  },
+  "ga": {
+   "A": "eran-loo-mlpc",
+   "B": "hand",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ga.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-ga-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "closure -0.8 dB > -20",
+    "burst jump 3.1 dB < 15",
+    "burst peak at 55 ms (want 0-15)",
+    "F2 after release max 1342 < 1400 (velar pinch)"
+   ]
+  },
+  "kha": {
+   "A": "hand",
+   "B": "eran-loo-mlpc",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-kha.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-kha-loo-mlpc.wav",
+   "eran_signature_ok": true,
+   "eran_fails": []
+  },
+  "a": {
+   "A": "hand",
+   "B": "eran-loo-mlpc",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-a.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-a-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "FAIL predicted a consonant for the bare vowel"
+   ]
+  },
+  "ha": {
+   "A": "hand",
+   "B": "eran-loo-mlpc",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ha.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-ha-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "FAIL noise 50-90 ms, HNR < 0, centroid 3700-5100, level -8..-13 dB, no burst, <500 Hz frac < 0.3, then vowel 580/1226"
+   ]
+  },
+  "ya": {
+   "A": "eran-loo-mlpc",
+   "B": "hand",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ya.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-ya-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "FAIL onset F1<=300 F2>=1900; F2 slides to ~1205 over 100-150 ms (arrive 60-180 ms); HNR>=4 continuous; no burst; vowel 580/1226"
+   ]
+  },
+  "cha": {
+   "A": "eran-loo-mlpc",
+   "B": "hand",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-cha.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-cha-loo-mlpc.wav",
+   "eran_signature_ok": true,
+   "eran_fails": []
+  },
+  "aya": {
+   "A": "hand",
+   "B": "eran-loo-mlpc",
+   "hand_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-aya.wav",
+   "eran_wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\loo\\ERAN-aya-loo-mlpc.wav",
+   "eran_signature_ok": false,
+   "eran_fails": [
+    "FAIL no vowel before the glottal stop (d_pre 0.000)"
+   ]
+  }
+ }
+}

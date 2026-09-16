@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIKO — מיקו</title>
+<meta name="description" content="MIKO — ERAN's future search organ. A specification and research rulings. The crawler is not yet built.">
+<style>
+  :root{
+    --bg:#FDF9F1;          /* warm cream */
+    --panel:#FFFFFF;
+    --ink:#2B2118;         /* warm near-black */
+    --soft:#6E5F51;        /* warm grey-brown */
+    --accent:#C05621;      /* terracotta */
+    --accent-soft:#F6E4D5;
+    --gold:#B7791F;
+    --gold-soft:#FBF0DA;
+    --line:#EADFCE;
+    --green:#2F6B3A;
+    --green-soft:#E4F0E2;
+    --red:#9B2C2C;
+    --red-soft:#F9E4E2;
+    --blue:#2C5282;
+    --blue-soft:#E2ECF6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Segoe UI","Noto Sans Hebrew",Arial,"Helvetica Neue",sans-serif;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+
+  /* header */
+  header{
+    padding:64px 0 40px;
+    text-align:center;
+    border-bottom:3px solid var(--accent);
+    background:linear-gradient(180deg,#FFFDF8 0%,var(--bg) 100%);
+  }
+  header h1{
+    font-size:56px;
+    letter-spacing:.04em;
+    font-weight:800;
+    color:var(--ink);
+  }
+  header h1 .he{color:var(--accent)}
+  header .tagline{margin-top:10px;font-size:20px;color:var(--soft)}
+  header .tagline-he{direction:rtl;font-size:20px;color:var(--soft);margin-top:2px}
+
+  .status{
+    display:inline-block;margin-top:24px;
+    background:var(--gold-soft);border:1.5px solid var(--gold);
+    color:#7B5410;border-radius:999px;
+    padding:8px 20px;font-weight:700;font-size:14.5px;letter-spacing:.02em;
+  }
+
+  /* sections */
+  main{padding:16px 0 40px}
+  section{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:32px 34px;
+    margin:28px 0;
+    box-shadow:0 1px 4px rgba(90,60,20,.05);
+  }
+  section h2{
+    font-size:26px;font-weight:800;margin-bottom:4px;color:var(--ink);
+  }
+  section h2 .he{color:var(--accent);font-weight:700}
+  .rule{height:3px;width:56px;background:var(--accent);border-radius:2px;margin:12px 0 18px}
+
+  .en p, .he-block p{margin:0 0 12px}
+  .he-block{
+    direction:rtl;text-align:right;
+    background:var(--accent-soft);
+    border-inline-start:4px solid var(--accent);
+    border-radius:10px;
+    padding:16px 20px;
+    margin-top:18px;
+    color:#4A382A;
+  }
+  .he-block p{margin:0 0 10px}
+  .he-block p:last-child{margin-bottom:0}
+
+  em{font-style:italic}
+  strong{font-weight:700}
+  .contested{
+    background:var(--gold-soft);border:1px dashed var(--gold);
+    border-radius:8px;padding:2px 8px;font-weight:700;color:#7B5410;white-space:nowrap;
+  }
+
+  /* cards for the four new things */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .card{
+    background:#FFFDF8;border:1px solid var(--line);border-radius:10px;
+    padding:18px 20px;
+  }
+  .card h3{font-size:17px;margin-bottom:6px;color:var(--accent)}
+  .card h3 .he{color:var(--ink);font-weight:600;font-size:15px}
+  .card p{font-size:15px;color:var(--soft);margin:0}
+  .card .note{margin-top:8px;font-size:13.5px;color:var(--gold);font-weight:600}
+
+  /* court */
+  .seats{display:flex;gap:14px;margin:18px 0;flex-wrap:wrap}
+  .seat{
+    flex:1;min-width:180px;
+    background:var(--blue-soft);border:1px solid #B9CFE4;border-radius:10px;
+    padding:14px 16px;text-align:center;
+  }
+  .seat .t{font-weight:800;color:var(--blue)}
+  .seat .d{font-size:14px;color:var(--soft);margin-top:4px}
+
+  /* metrics table */
+  table{width:100%;border-collapse:collapse;margin-top:16px;font-size:15.5px}
+  th,td{padding:10px 12px;border:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:var(--accent-soft);color:#7A3C12;font-weight:700}
+  td .m{font-weight:800;color:var(--accent)}
+  .tablewrap{overflow-x:auto}
+
+  ul{margin:10px 0 12px 22px}
+  ul li{margin:6px 0}
+  .he-block ul{margin:10px 22px 0 0}
+
+  /* scars */
+  .scar{
+    background:var(--red-soft);border:1px solid #E4B6B2;border-radius:10px;
+    padding:16px 20px;margin-top:14px;
+  }
+  .scar .num{font-size:30px;font-weight:800;color:var(--red)}
+  .scar p{margin:6px 0 0;font-size:15.5px}
+
+  .honest{
+    background:var(--green-soft);border:1px solid #BBD8B8;border-radius:10px;
+    padding:14px 18px;margin-top:16px;font-size:15.5px;
+  }
+  .honest strong{color:var(--green)}
+
+  /* footer */
+  footer{
+    border-top:3px solid var(--accent);
+    background:#FFFDF8;
+    padding:36px 0 48px;text-align:center;color:var(--soft);font-size:15.5px;
+  }
+  footer .memorial{
+    direction:rtl;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:8px;
+  }
+  footer a{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:2px solid var(--accent-soft)}
+  footer a:hover{border-bottom-color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>MIKO <span class="he">· מיקו</span></h1>
+    <p class="tagline">ERAN's future search organ — a worm that takes her time.</p>
+    <p class="tagline-he">איבר החיפוש העתידי של ערן — תולעת שלוקחת את הזמן שלה.</p>
+    <div class="status">SPECIFICATION &amp; RESEARCH RULINGS — the crawler is NOT yet built · מפרט ופסיקות מחקר — הזחלן עוד לא נבנה</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- WHAT MIKO IS -->
+  <section>
+    <h2>What MIKO is <span class="he">· מה זאת מיקו</span></h2>
+    <div class="rule"></div>
+    <div class="en">
+      <p>MIKO is a worm that is given a question, <strong>takes her time</strong>, burrows through the public web, and comes back with <strong>judged findings — with the disagreement left visible.</strong> Slowness is a design property, not a cost: she runs slowly on one DGX, you ask and come back. <strong>Speed is never a scoring criterion.</strong></p>
+      <p>Every finding arrives with a ruling — relevant / not relevant — plus the dissent that produced it. And when the judges disagree, the finding ships marked <span class="contested">contested · במחלוקת</span>. For subjective questions, that marking is not a weakness of the answer; <strong>it is the answer.</strong> No Google result ever tells you it is contested. MIKO's will.</p>
+      <p>She is not a product. She is the organ ERAN will search the world with when he grows up. Named by Iddo after the Israeli films (צ'רלי וחצי / חגיגה בסנוקר).</p>
+    </div>
+    <div class="he-block">
+      <p>מיקו היא תולעת שמקבלת שאלה, <strong>לוקחת את הזמן שלה</strong>, חופרת ברשת הציבורית וחוזרת עם <strong>ממצאים שפוטים — כשהמחלוקת נשארת גלויה.</strong> האיטיות היא תכונת עיצוב, לא מחיר: היא רצה לאט על DGX אחד — שואלים וחוזרים. <strong>מהירות לעולם אינה קריטריון ניקוד.</strong></p>
+      <p>כל ממצא מגיע עם הכרעה — רלוונטי / לא רלוונטי — יחד עם המחלוקת שהולידה אותה. כשהמושבים חלוקים, הממצא יוצא מסומן <strong>"במחלוקת"</strong>. בשאלות סובייקטיביות הסימון הזה אינו חולשה של התשובה — <strong>הוא התשובה.</strong></p>
+      <p>היא לא מוצר. היא האיבר שבו ערן יחפש את העולם כשיגדל.</p>
+    </div>
+  </section>
+
+  <!-- NORTH STAR -->
+  <section>
+    <h2>The north star <span class="he">· כוכב הצפון</span></h2>
+    <div class="rule"></div>
+    <div class="en">
+      <p><em>"מיקו זה התולעת — יום מן הימים תרוץ על פטרייה חכמה"</em> — one day, MIKO runs on a living mushroom. A mycelium already is the machine this page describes, and has been for 400 million years: slow by nature, 3-D with a metabolic price on distance, event-driven, many channels per connection, no central chief — a ruling emerges from local agreement.</p>
+      <p><strong>But — corrected by Iddo, and the correction stands:</strong> the mushroom is <strong>inspiration, not specification.</strong> A law like "never adopt a mechanism that could not run on mycelium" was written here once, and it was struck out — it would have banned mechanisms for being insufficiently fungal, which is how a project ends up elegant and useless. The actual goal, in his order: <strong>it works; it brings real, useful information; it beats Google and Perplexity on questions that matter; it may take as long as it takes; and it is a small, smart, strong engine.</strong> The only test a mechanism must pass is the metrics below.</p>
+    </div>
+    <div class="he-block">
+      <p>יום מן הימים מיקו תרוץ על פטרייה חיה. מיצליום כבר <strong>הוא</strong> המכונה שהדף הזה מתאר, כבר 400 מיליון שנה: איטי מטבעו, תלת-ממדי עם מחיר מטבולי למרחק, מונע-אירועים, ריבוי ערוצים בחיבור אחד, בלי מנהל מרכזי.</p>
+      <p><strong>אבל — תיקון של עידו, והוא עומד:</strong> הפטרייה היא <strong>השראה, לא מפרט.</strong> <em>"היא לא חייבת להיות כמו פטריה... זה רק השראה. מה שחשוב שזה יעבוד ויביא מידע אמיתי, בעל תועלת."</em> המטרה בפועל: שזה יעבוד; שיביא מידע אמיתי ומועיל; שינצח חיפוש גוגל ופרפלקסיטי בשאלות שחשובות; מותר לזה לקחת זמן; ומנוע קטן וחכם. המבחן היחיד שמנגנון צריך לעבור הוא המדדים שלמטה.</p>
+    </div>
+  </section>
+
+  <!-- FOUR NEW THINGS -->
+  <section>
+    <h2>The four new things <span class="he">· ארבעת הדברים החדשים</span></h2>
+    <div class="rule"></div>
+    <div class="en">
+      <p>Four mechanisms that do not exist together in any net yet. In Iddo's words: <em>"ריבוי משקלים — ריבוי הקשרים — 3D — נוירומורפי."</em> Each is a design to be tested, not a thing that exists.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Multi-weight <span class="he">· ריבוי משקלים</span></h3>
+        <p>A connection today is one scalar. In MIKO a connection carries k weights with different time constants and roles — same total weight budget, fewer neurons, each richer.</p>
+        <p class="note">Designed in July, never yet executed. MIKO runs the experiment before adopting it.</p>
+      </div>
+      <div class="card">
+        <h3>Multi-context <span class="he">· ריבוי הקשרים</span></h3>
+        <p>The same byte means different things in different contexts. A unit holds several context channels at once — the word's meaning, its neighbourhood's gist, the question asked — and the court rules per context.</p>
+        <p class="note">Dissent can then mean: "relevant to your question, but not to its own paragraph."</p>
+      </div>
+      <div class="card">
+        <h3>3-D, with distance cost <span class="he">· תלת-ממד</span></h3>
+        <p>Units live at coordinates in a 3-D volume, and connection cost grows with distance. This forces locality and makes the network inspectable — you can look at which region lit up for a question.</p>
+        <p class="note">The 3-D is in the weights; the existing visualiser becomes its eye.</p>
+      </div>
+      <div class="card">
+        <h3>Neuromorphic <span class="he">· נוירומורפי</span></h3>
+        <p>Event-driven, not frame-driven: a unit emits only when it has something to say, and the cost model counts events, not FLOPs.</p>
+        <p class="note">This is what makes future physical substrates reachable from the same code.</p>
+      </div>
+    </div>
+    <div class="he-block">
+      <p>ארבעה מנגנונים שלא קיימים יחד באף רשת: <strong>ריבוי משקלים</strong> (חיבור נושא k משקלים בקבועי-זמן שונים, באותו תקציב), <strong>ריבוי הקשרים</strong> (בית הדין פוסק לכל הקשר בנפרד), <strong>תלת-ממד</strong> (ליחידות יש מיקום, ומחיר החיבור גדל עם המרחק), ו<strong>נוירומורפי</strong> (מונע-אירועים — יחידה פולטת רק כשיש לה מה לומר). כל אחד מהם הוא תכנון שיימדד — לא דבר שקיים.</p>
+    </div>
+  </section>
+
+  <!-- BEIT DIN -->
+  <section>
+    <h2>The Beit-Din court <span class="he">· בית הדין</span></h2>
+    <div class="rule"></div>
+    <div class="en">
+      <p>Judgement in MIKO is a court, not a chief. Three seats look at the same evidence; the ruling is the <strong>median</strong> — 2-of-3, so one corrupted seat cannot drag it — and the <strong>dissent (max − min) is carried forward</strong> and emitted with every score, never averaged away.</p>
+    </div>
+    <div class="seats">
+      <div class="seat"><div class="t">Seat 1 · מושב א</div><div class="d">one reading of the evidence</div></div>
+      <div class="seat"><div class="t">Seat 2 · מושב ב</div><div class="d">a second, independent reading</div></div>
+      <div class="seat"><div class="t">Seat 3 · מושב ג</div><div class="d">a third — the median rules</div></div>
+    </div>
+    <div class="en">
+      <p>The measurements to date drew a split, and MIKO honours it: on the <strong>perception floor</strong> (reading bytes, forming gists, predicting) the court lost its controlled comparisons — one good reader beats three that vote, so <strong>GIST perceives</strong>. On the <strong>ruling floor</strong> (useful / not useful, follow / drop, trust / doubt) there is often no single right answer, and three perspectives with visible disagreement is the native structure — <strong>the court rules.</strong> Curiosity itself is defined as high dissent: a page is worth following where the seats disagree, because that is where she does not yet know.</p>
+    </div>
+    <div class="he-block">
+      <p>השיפוט במיקו הוא בית דין, לא מנהל: שלושה מושבים, ההכרעה היא ה<strong>חציון</strong> (2 מתוך 3 — מושב מושחת אחד לא גורר אותה), וה<strong>מחלוקת (מקסימום פחות מינימום) נישאת קדימה</strong> ונפלטת עם כל ציון. המדידות חילקו קומות: בקומת התפיסה בית הדין הפסיד בהשוואות מבוקרות — GIST תופס; בקומת ההכרעות — שם בית הדין בביתו. הסקרנות עצמה מוגדרת כמחלוקת גבוהה: כדאי ללכת לאן שהמושבים חלוקים, כי שם היא עוד לא יודעת.</p>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section>
+    <h2>Metrics decided before training <span class="he">· המדדים נקבעו לפני האימון</span></h2>
+    <div class="rule"></div>
+    <div class="en">
+      <p>A model is not "good"; it is good <em>at a stated thing</em>. MIKO's three metrics were fixed before any training run, in this order:</p>
+    </div>
+    <div class="tablewrap">
+    <table>
+      <tr><th>#</th><th>Metric · מדד</th><th>The question it answers</th></tr>
+      <tr>
+        <td><span class="m">1</span></td>
+        <td><strong>Relevance · רלוונטיות</strong></td>
+        <td>Given a question and a page, reproduce the fleet's 0–1 relevance judgement from raw bytes. 156 scored pairs exist; the set must grow to ≥ 2,000 before it counts. Baseline to beat: a vanilla net of identical parameter count.</td>
+      </tr>
+      <tr>
+        <td><span class="m">2</span></td>
+        <td><strong>Calibration · כיול</strong></td>
+        <td>Does <strong>dissent predict error</strong>? Bucket predictions by dissent; if the high-dissent bucket is not measurably less accurate, the whole Beit-Din idea has failed its own thesis — and we say so out loud.</td>
+      </tr>
+      <tr>
+        <td><span class="m">3</span></td>
+        <td><strong>Robustness · עמידות</strong></td>
+        <td>Corrupt one seat (zero it, invert it, saturate it) and measure the drop. The claim: a median barely moves, a mean loses a third. A one-hour experiment that has never yet been run.</td>
+      </tr>
+    </table>
+    </div>
+    <div class="en">
+      <p style="margin-top:14px">Speed is <strong>not</strong> a criterion. Parameter counts are matched within 1% in every comparison, seeds ≥ 3, and every number is reported next to its vanilla control — including the ones that lose. The ultimate judge is simpler still: every finding shown to Iddo carries one tap — הועיל 👍 / לא הועיל 👎 — and agreement with that stream is the benchmark that counts.</p>
+    </div>
+    <div class="he-block">
+      <p>מודל אינו "טוב"; הוא טוב <strong>בדבר מוצהר</strong>. שלושה מדדים, נקבעו לפני כל אימון: <strong>רלוונטיות</strong> (לשחזר מבייטים גולמיים את ציון הרלוונטיות של הצי), <strong>כיול</strong> (האם מחלוקת מנבאת טעות? אם לא — הרעיון כולו נכשל בתזה של עצמו, ואומרים זאת בקול), ו<strong>עמידות</strong> (משחיתים מושב אחד ומודדים את הנפילה — הטענה: חציון כמעט לא זז). מהירות אינה קריטריון. כל מספר מדווח ליד ביקורת וניל תואמת-גודל — כולל המספרים שמפסידים. והשופט האמיתי: הקשה אחת של עידו על כל ממצא — הועיל / לא הועיל.</p>
+    </div>
+  </section>
+
+  <!-- POLITENESS -->
+  <section>
+    <h2>Politeness rules <span class="he">· חוקי נימוס</span></h2>
+    <div class="rule"></div>
+    <div class="en">
+      <p>Politeness is a hard constraint, not a nicety. When the crawler is built, it will obey these from its first request:</p>
+      <ul>
+        <li><strong>robots.txt is obeyed.</strong> Always.</li>
+        <li><strong>Public web servers only</strong> — server to server, exactly like a search engine's bot. Never a private machine, a home network, or anything behind a login. No port scanning, no credentials, no intranet. If a page needs a password, it is not MIKO's page.</li>
+        <li><strong>One request at a time per host</strong>, with a real delay, and a truthful user-agent.</li>
+        <li><strong>A site that says no is never fetched again.</strong></li>
+        <li>Nothing private ever enters her archive — only public pages she fetched herself, plus her own judgements. The archive is append-only: a changed mind is a new entry that cites the old one.</li>
+      </ul>
+      <p>A worm that gets her home address banned is a worm that stops working.</p>
+    </div>
+    <div class="he-block">
+      <p>הנימוס הוא אילוץ קשיח, לא ג'סטה. כשהזחלן ייבנה, הוא יציית לכללים האלה מהבקשה הראשונה: <strong>ציות מלא ל-robots.txt</strong>; <strong>שרתים ציבוריים בלבד</strong> — "שרת שרת, לא מחשבים פרטיים" — לעולם לא מכונה פרטית, רשת ביתית או משהו מאחורי סיסמה; בקשה אחת בכל רגע לכל שרת, עם השהיה אמיתית וזהות אמיתית; <strong>אתר שאמר לא — לא ניגשים אליו שוב.</strong> שום דבר פרטי לא נכנס לארכיון שלה. תולעת שמחטיפה חסימה לכתובת של הבית — היא תולעת שמפסיקה לעבוד.</p>
+    </div>
+  </section>
+
+  <!-- HONESTY SCARS -->
+  <section>
+    <h2>The honesty scars <span class="he">· צלקות היושר</span></h2>
+    <div class="rule"></div>
+    <div class="en">
+      <p>MIKO exists because of two failures that must never repeat — so they are published here, plainly, the way a win would be:</p>
+    </div>
+    <div class="scar">
+      <div class="num">48.2%</div>
+      <p><strong>Below the 50% coin flip.</strong> The previous worm's logic model trained 30 epochs on Ramchal inference forms and scored 48.2% on unseen forms — worse than chance. Train loss sat at 0.666 against a chance level of 0.693: it learned nothing. Per-form scores of 0% and 100% side by side revealed the truth — one fixed answer per form, not inference. <strong>That last log line sat unread for a day while memory recorded an achievement.</strong> Now the rule stands: the last line of every training log is read out loud before anything is written to memory.</p>
+    </div>
+    <div class="scar">
+      <p><strong>Months with no control.</strong> The "neuron is a court" architecture ran for months without ever being compared against a vanilla baseline. The first controlled run (parameter counts matched to 0.02%, same data, steps, seed): vanilla 2.5646 vs court 2.6506 heldout. <strong>The court lost.</strong> That test was on the wrong task — but the failure to test at all was the real scar. Now: every experiment has a matched-size vanilla control, or it does not count.</p>
+    </div>
+    <div class="honest">
+      <p><strong>Standing rule:</strong> failed results are published exactly like wins. The 48.2% is the baseline the new logic curriculum must beat, and the acceptance bar was stated before training: ≥ 75% on unseen inference forms, with no form scoring 0% or 100%. A README may state what code <em>does</em>, never what it <em>achieves</em> — achievements live in results files with numbers in them. No step is written up as "BUILT" until its number exists. This page contains no such claim, because none exists yet.</p>
+    </div>
+    <div class="he-block">
+      <p>מיקו קיימת בגלל שתי צלקות: <strong>48.2% — מתחת למטבע.</strong> מודל הלוגיקה הקודם אומן 30 עידנים והשיג 48.2% על צורות היקש שלא ראה — גרוע ממקרי. שורת הלוג האחרונה אמרה שהוא נכשל, והיא נרשמה בזיכרון כהישג. <strong>וחודשים בלי ביקורת</strong> — הארכיטקטורה רצה חודשים בלי השוואה לרשת וניל, ובריצה המבוקרת הראשונה בית הדין הפסיד. מכאן שני חוקים: שורת הלוג האחרונה נקראת בקול לפני שכותבים לזיכרון, וכל ניסוי חייב ביקורת וניל תואמת-גודל — או שהוא לא נחשב. תוצאות כושלות מתפרסמות בדיוק כמו ניצחונות. שום צעד לא נרשם כ"נבנה" עד שהמספר שלו קיים — ובדף הזה אין טענה כזאת, כי עוד אין.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="memorial">לזכרה של עלמה ז״ל</p>
+    <p><a href="https://iddoperez.ai">iddoperez.ai</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

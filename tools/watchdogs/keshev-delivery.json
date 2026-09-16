@@ -1,0 +1,41 @@
+{
+ "ts": 1789557320.6627083,
+ "iso": "2026-09-16T14:15:20+03:00",
+ "verdict": "OK",
+ "alarms": [],
+ "warnings": [
+  "RECEIPTS RECEIPT CHECK FAILED — 20 violation(s), 4 clean",
+  "SLEEPING WATCHDOG KESHEV-Watchdog is disabled AS INTENDED (superseded 2026-09-10/11 by keshev_guard.py -- ONE supervisor replacing this task's DOWN/DEAF/STUCK_DEVICE/MUTE checks plus three other half-supervisors (see keshev_guard.py's own header). Confirmed 2026-09-15: keshev_guard.py covers the same failure modes and was live and running at the time this was verified. Re-enabling this task risks the exact 'four half-supervisors, nobody owns the boot' bug keshev_guard.py was built to end.)",
+  "SLEEPING WATCHDOG KESHEV-STT-PC is disabled AS INTENDED (disabled 2026-09-05 19:22 on purpose -- it relaunched the unused 3.2 GB PC decoder at logon and undid the VRAM saving; re-enable with schtasks /change /enable)"
+ ],
+ "counts": {
+  "typed": 1256,
+  "guarded": 0,
+  "blocked": 0,
+  "empty": 5537,
+  "fail": 3,
+  "skip": 8331
+ },
+ "delivery_rate": 0.1848,
+ "baseline": {
+  "median_rate": 0.1789,
+  "n": 1650,
+  "span_h": 24.0
+ },
+ "facts": {
+  "paused": true,
+  "paused_signed": true,
+  "paused_by_iddo": true,
+  "paused_who": "iddo (pause button in KESHEV 6)",
+  "paused_for_min": 455.4,
+  "heartbeat_age_min": 0.1,
+  "log_age_min": 0.3
+ },
+ "last_typed_text": "For you!",
+ "repaired": null,
+ "receipts": {
+  "ok": false,
+  "msg": "RECEIPT CHECK FAILED — 20 violation(s), 4 clean"
+ },
+ "window": "recent tail of trial.log (3000 KB), not a wall-clock window"
+}

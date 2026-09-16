@@ -1,0 +1,12 @@
+{
+  "id": "music", "order": 30,
+  "title_he": "מוזיקה", "title_en": "MUSIC",
+  "subtitle_he": "דרוויש על ערן4 :8806",
+  "box_hint": "eran4",
+  "want": ["eran4/dmidi-life", "eran4/dmidi-tap"],
+  "concede": [],
+  "note_he": "חַי הזמיר — לולאת החיים + הדף. זול: חצי ג'יגה.",
+  "honesty": "fluidsynth על ערן4 נכשל מאז 01/09 — סינתזת MIDI לא זמינה שם. MATZAV לא יפעיל דמון אודיו: חוק השמע הקדוש.",
+  "demonstrated": {"status": "verify-only", "evidence": "Both units measured UP 2026-09-04 06:48 (HTTP 200, title 'חַי הזמיר') and re-verified at build time. Already satisfied."},
+  "runnable": true
+}

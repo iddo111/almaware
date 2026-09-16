@@ -1,0 +1,61 @@
+{
+ "duration_only": 0.6057,
+ "nodur_ALL 996": 0.9836,
+ "nodur_legacy192": 0.9747,
+ "nodur_level": 0.817,
+ "nodur_coch_slice0": 0.9481,
+ "nodur_onset_slice0": 0.7751,
+ "nodur_pitch": 0.9372,
+ "ramp_legacy192": {
+  "ba": 0.6613,
+  "ah": 0.5924
+ },
+ "ramp_level": {
+  "ba": 0.6431,
+  "ah": 0.5968
+ },
+ "ramp_coch_slice0": {
+  "ba": 0.71425,
+  "ah": 0.6484
+ },
+ "ramp_coch_slice1": {
+  "ba": 0.5289,
+  "ah": 0.6315
+ },
+ "ramp_coch_slice2-7": {
+  "ba": 0.5166,
+  "ah": 0.5438
+ },
+ "ramp_pitch": {
+  "ba": 0.5605,
+  "ah": 0.5833
+ },
+ "ramp_mod_energy": {
+  "ba": 0.669,
+  "ah": 0.6869
+ },
+ "ramp_onset_slice0": {
+  "ba": 0.61555,
+  "ah": 0.55185
+ },
+ "ramp_onset_slice1": {
+  "ba": 0.5456,
+  "ah": 0.6329
+ },
+ "ramp_onset_slice2-7": {
+  "ba": 0.5181,
+  "ah": 0.5323
+ },
+ "ramp_ALL 996": {
+  "ba": 0.8172,
+  "ah": 0.7691
+ },
+ "ramp_192:996 no legacy": {
+  "ba": 0.7659,
+  "ah": 0.761
+ },
+ "ramp_first-slice 192:267": {
+  "ba": 0.7164,
+  "ah": 0.6565
+ }
+}

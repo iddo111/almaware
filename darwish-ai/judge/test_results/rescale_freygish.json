@@ -1,0 +1,58 @@
+{
+ "meta": {
+  "scale": "freygish",
+  "midi": null,
+  "audio": "D:/CLAUDE/_deliverables/psytrance/darwish-rescale-excerpt-freygish-20260912-025146.wav",
+  "audio_sr": 22050,
+  "audio_s_analysed": 60.98
+ },
+ "components": {
+  "kick_bass_energy": {
+   "kick_band_hz": [
+    20.0,
+    100.0
+   ],
+   "bass_band_hz": [
+    100.0,
+    300.0
+   ],
+   "frac_energy_kick": 0.2365,
+   "frac_energy_bass": 0.6529,
+   "frac_energy_low_20_300hz": 0.8894,
+   "score": 1.0
+  },
+  "loudness": {
+   "integrated_lufs": -14.56,
+   "target_lufs": -8.0,
+   "score": 0.3444
+  },
+  "similarity_to_reference": {
+   "basis": "STFT pitch-class-energy cosine similarity vs mean of human1/2/3.mp3 (_deliverables/darwish-ab/clips2)",
+   "cosine_vs_reference": 0.7088,
+   "score": 0.7088
+  },
+  "scale_fit": {
+   "estimated_from_audio": true,
+   "method": "STFT pitch-class energy (this file's chroma_vector()) outside the chosen scale's pitch classes, rooted at A (project convention)",
+   "frac_energy_outside_scale": 0.2849,
+   "score": 0.7151
+  }
+ },
+ "overall_score_0to100": 72.1,
+ "components_used": [
+  "kick_bass_energy",
+  "loudness",
+  "scale_fit",
+  "similarity_to_reference"
+ ],
+ "components_unavailable": [
+  "independent_voice",
+  "rhythm_regularity"
+ ],
+ "weights_renormalised": {
+  "scale_fit": 0.4,
+  "kick_bass_energy": 0.2,
+  "loudness": 0.133,
+  "similarity_to_reference": 0.267
+ }
+}

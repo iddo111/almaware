@@ -1,0 +1,20 @@
+{
+  "total": 9424,
+  "usable": 8952,
+  "hours_all": 7.468258333333316,
+  "hours_usable": 7.33970833333332,
+  "unique_usable": 8126,
+  "rejected": {
+    "stock phrase over short audio (hallucination)": 423,
+    "audio under 0.35 s": 4,
+    "impossible speech rate (>28 chars/s)": 23,
+    "no letters in transcript": 22
+  },
+  "langs": {
+    "he": 6072,
+    "en": 3345,
+    "es": 1,
+    "ar": 2,
+    "pt": 4
+  }
+}

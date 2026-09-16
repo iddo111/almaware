@@ -1,0 +1,91 @@
+{
+ "spl": {
+  "target_rms": 0.05,
+  "spl_db": 65.0,
+  "median_span_rms": 0.02529986485758213,
+  "gain": 1.9762951415535122,
+  "n_clips": 600,
+  "convention": "median t06 big-unit speech-span RMS -> RMS 0.05 == 65 dB SPL equivalent (full-scale RMS 1.0 == 91 dB SPL)"
+ },
+ "gates": {
+  "ah": {
+   "min_dip": 0.0,
+   "min_voiced_frac": 0.21717046138785367,
+   "g3_lo": 74.4401685898008,
+   "g3_hi": 450.0,
+   "min_occupancy": 0.9724454125907035,
+   "quantile_pct": 2.0,
+   "joint_real_pass": 0.95,
+   "g3_lo_deviation": true,
+   "real_dip_median": 0.1463,
+   "real_f0_median": 112.68,
+   "real_f0_p2_5": 78.62
+  },
+  "ba": {
+   "min_dip": 0.0,
+   "min_voiced_frac": 0.21739130334782608,
+   "g3_lo": 68.01500613421612,
+   "g3_hi": 450.0,
+   "min_occupancy": 0.9782829962426765,
+   "quantile_pct": 2.0,
+   "joint_real_pass": 0.97,
+   "g3_lo_deviation": true,
+   "real_dip_median": 0.1919,
+   "real_f0_median": 90.91,
+   "real_f0_p2_5": 72.14
+  },
+  "ih": {
+   "min_dip": 0.07778704265802688,
+   "min_voiced_frac": 0.2318840569710145,
+   "g3_lo": 75.01639200075785,
+   "g3_hi": 450.0,
+   "min_occupancy": 0.9920189236290816,
+   "quantile_pct": 2.0,
+   "joint_real_pass": 0.95,
+   "g3_lo_deviation": true,
+   "real_dip_median": 0.1821,
+   "real_f0_median": 154.54,
+   "real_f0_p2_5": 79.49
+  },
+  "ma": {
+   "min_dip": 0.009023108442663054,
+   "min_voiced_frac": 0.27478260769565216,
+   "g3_lo": 75.96727272627271,
+   "g3_hi": 450.0,
+   "min_occupancy": 0.9666849657219622,
+   "quantile_pct": 1.0,
+   "joint_real_pass": 0.97,
+   "g3_lo_deviation": true,
+   "real_dip_median": 0.1497,
+   "real_f0_median": 105.79,
+   "real_f0_p2_5": 80.7
+  },
+  "abba": {
+   "min_dip": 0.044997815951854654,
+   "min_voiced_frac": 0.17391304247826087,
+   "g3_lo": 64.08543311372787,
+   "g3_hi": 450.0,
+   "min_occupancy": 0.9636441587173229,
+   "quantile_pct": 1.0,
+   "joint_real_pass": 0.97,
+   "g3_lo_deviation": true,
+   "real_dip_median": 0.3667,
+   "real_f0_median": 94.4,
+   "real_f0_p2_5": 68.71
+  },
+  "ima": {
+   "min_dip": 0.12182747270489973,
+   "min_voiced_frac": 0.2028985497246377,
+   "g3_lo": 66.80040860526955,
+   "g3_hi": 450.0,
+   "min_occupancy": 0.992753622188406,
+   "quantile_pct": 3.0,
+   "joint_real_pass": 0.95,
+   "g3_lo_deviation": true,
+   "real_dip_median": 0.173,
+   "real_f0_median": 86.54,
+   "real_f0_p2_5": 70.09
+  }
+ },
+ "gate_penalty": 50.0
+}

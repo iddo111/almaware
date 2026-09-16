@@ -1,0 +1,98 @@
+{
+  "checkpoints": [
+    {
+      "bytes": 3153756,
+      "path": "D:\\CLAUDE\\hebrew-ant-holobrain\\state\\bootstrap\\modern-hebrew-home\\queen-rivka.pt",
+      "sha256": "d82f1f5582c3e7f40a368b33d5ad64d3f8b5a448ea02a3176a30b5cdec685706"
+    },
+    {
+      "bytes": 919733,
+      "path": "D:\\CLAUDE\\hebrew-ant-holobrain\\state\\bootstrap\\modern-hebrew-home\\nema-aleph.pt",
+      "sha256": "2df046183d98b3d0fe913e1f0b1b2ff6d25fc5d97d86ea7057788a84894110aa"
+    },
+    {
+      "bytes": 919659,
+      "path": "D:\\CLAUDE\\hebrew-ant-holobrain\\state\\bootstrap\\modern-hebrew-home\\nema-bet.pt",
+      "sha256": "4c76f901b1d4ca7d78ba268977b80d7bcbddfbc2201a8e0de911ed177c3df28e"
+    },
+    {
+      "bytes": 3153717,
+      "path": "D:\\CLAUDE\\hebrew-ant-holobrain\\state\\bootstrap\\traditional-hebrew-home\\queen-leah.pt",
+      "sha256": "c6f809f12056c7d5c9ed5d26b206de27bcfe57238c866e35379903931f49ff10"
+    },
+    {
+      "bytes": 919733,
+      "path": "D:\\CLAUDE\\hebrew-ant-holobrain\\state\\bootstrap\\traditional-hebrew-home\\nema-gimel.pt",
+      "sha256": "969b3005b1affb9646941e3d99c775a792a57e01c34e524eca55ada6dfc55745"
+    },
+    {
+      "bytes": 919733,
+      "path": "D:\\CLAUDE\\hebrew-ant-holobrain\\state\\bootstrap\\traditional-hebrew-home\\nema-dalet.pt",
+      "sha256": "70341a6756f80bbb34ee040bab887f3fe1823549f56192cbec970a02c109a65d"
+    }
+  ],
+  "real_weight_tensors": true,
+  "society": {
+    "allow_delete_identity": false,
+    "allow_spawn": false,
+    "communities": [
+      {
+        "ants": [
+          {
+            "checkpoint_version": 0,
+            "fingerprint": "88d250211a770092a439917f7a72053bbdd04dbc31efe4c63949491925a40470",
+            "model_id": "nema-aleph",
+            "training_steps": 0
+          },
+          {
+            "checkpoint_version": 0,
+            "fingerprint": "266b57bd03e1c2f039e37779aa423d701dcc926a532a286a35c3a9daa5ec8e2d",
+            "model_id": "nema-bet",
+            "training_steps": 0
+          }
+        ],
+        "community_id": "modern-hebrew-home",
+        "queen": {
+          "checkpoint_version": 0,
+          "fingerprint": "dd4fcfea7a1acc2d855c19b5f1c9da1ffdac95e8f8e4bc8018781b74bfde34c5",
+          "model_id": "queen-rivka"
+        },
+        "storage_namespace": "community/modern-hebrew-home"
+      },
+      {
+        "ants": [
+          {
+            "checkpoint_version": 0,
+            "fingerprint": "e2b0750f87026cb8207bd8a9425cbfd66ffcbcbf41a6e2b32df161eff8cf1285",
+            "model_id": "nema-gimel",
+            "training_steps": 0
+          },
+          {
+            "checkpoint_version": 0,
+            "fingerprint": "7fef4d051dcb03dd4fc265f36ee58fd480cde938473dd7dc965bb86abe4cc256",
+            "model_id": "nema-dalet",
+            "training_steps": 0
+          }
+        ],
+        "community_id": "traditional-hebrew-home",
+        "queen": {
+          "checkpoint_version": 0,
+          "fingerprint": "ea6e57d243614ea6d8229f290bd61dbca8e77f3f8fef3c73f282a2b184d1c1f4",
+          "model_id": "queen-leah"
+        },
+        "storage_namespace": "community/traditional-hebrew-home"
+      }
+    ],
+    "cross_community_bridge_enabled": false,
+    "fixed_identities": [
+      "nema-aleph",
+      "nema-bet",
+      "nema-dalet",
+      "nema-gimel",
+      "queen-leah",
+      "queen-rivka"
+    ]
+  },
+  "status": "random_initialized_only",
+  "trained": false
+}

@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ERAN Lab · edge-AI research notebook · ALMAWARE</title>
+<meta name="description" content="An open lab notebook for ERAN — a voice-first AI child raised from zero on a four-node edge cluster — and the surrounding edge-AI, neuromorphic and language work. Every project carries an honest status label.">
+<link rel="stylesheet" href="alma.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="./">ERAN Lab<span class="heb">מעבדת ער"ן</span></a>
+  <nav>
+    <a href="./" aria-current="page">Hub</a>
+    <a href="eran.html">Eran</a>
+    <a href="ants.html">The Ants</a>
+    <a href="edge.html">Edge &amp; Fleet</a>
+    <a href="lab.html">Hardware Lab</a>
+    <a href="#notebook">Notebook</a>
+  </nav>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">ALMAWARE · research notebook</span>
+  <h1>A mind raised,<br>not shipped.
+    <span class="sub"><bdi dir="rtl">ער"ן — רשת נוירולוגית עצבית</bdi> · a neural network, grown from zero</span></h1>
+  <p class="lead">This is the working notebook of a small, self-funded lab building
+    <strong>Eran</strong>: a voice-first AI child that learns the way an infant does — from raw sound
+    before letters, on hardware we own, with a training record anyone can check.
+    Around it sits the rest of the bench: an evolutionary colony of tiny on-device voice models,
+    a four-node edge cluster, a from-kernel edge OS, and a hardware-neuron lab that
+    publishes its failures.</p>
+  <p class="lead" style="margin-top:14px"><strong>Nothing here is a product.</strong>
+    Every entry below carries a status label, and the labels are the point.</p>
+
+  <div class="heb-motto">
+    <b>ALMA IN MACHINA</b> — <bdi dir="rtl">הנשמה שוכנת במכונה</bdi>
+    <span>Not a soul drawn out of the machine — a soul put into it.</span>
+  </div>
+</div></header>
+
+<main id="main">
+
+<!-- ================= HOW TO READ ================= -->
+<section id="honesty"><div class="wrap">
+  <h2>How to read this site <span class="heb">איך קוראים את זה</span></h2>
+  <p class="section-note">One law governs this notebook: <strong>a label may never flatter the thing it
+    labels.</strong> A pipeline that runs is not a trained model. A trained model that babbles is not a
+    speaking child. A design document is not a device. Where a claim would need a caveat, the caveat is
+    written next to it — and where an experiment failed, the failure is on the page with its numbers.</p>
+
+  <div class="legend">
+    <div><span class="state s-live">Live</span>Running right now, or serving now, and verified on the date shown.</div>
+    <div><span class="state s-training">Training</span>A real training pipeline that has completed real runs on our own hardware. Not a finished model.</div>
+    <div><span class="state s-prototype">Prototype</span>Built and working — but honestly a precursor to the thing it is named after.</div>
+    <div><span class="state s-concept">Concept</span>Designed, specified, sometimes simulated. Not built. Says so.</div>
+    <div><span class="state s-parked">Parked</span>Was started, deliberately dormant now. Nothing deleted; revivable.</div>
+    <div><span class="state s-negative">Negative result</span>We ran it, it did not work, and we are publishing that. These save the most time.</div>
+  </div>
+
+  <div class="note">
+    <h3>The naming rule</h3>
+    <p>The language model that exists today is called <strong>ProtoEran</strong>. The name
+      <strong>Eran</strong> is reserved for the full, realised, embodied child — a thing that does not exist.
+      Renaming it downward was a deliberate act: the honest name is the smaller one.</p>
+  </div>
+</div></section>
+
+<!-- ================= RUNNING NOW ================= -->
+<section id="running"><div class="wrap">
+  <h2>What is actually running <span class="heb">מה באמת רץ</span></h2>
+  <p class="section-note">A short, checkable list. If something is dormant, it says dormant. Dates are the
+    last time the state below was verified directly against the machine, not against a note about the machine.</p>
+
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>System</th><th>Status</th><th>What that means, precisely</th><th>Verified</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><a href="ants.html">Voice Ant Farm</a></td>
+        <td><span class="state s-live">Live</span></td>
+        <td>Standing evolutionary tournament of tiny on-device voice models. Round 4 ran on schedule; the reigning queen held the throne against three challengers.</td>
+        <td class="num">2026-08-12</td>
+      </tr>
+      <tr>
+        <td><a href="edge.html#fleet">Edge cluster (4× GB10)</a></td>
+        <td><span class="state s-live">Live</span></td>
+        <td>Four single-board AI nodes, all reachable, plus a rebuilt 200G fabric measured at 109–110 Gbit/s per link with zero retransmits.</td>
+        <td class="num">2026-08-10</td>
+      </tr>
+      <tr>
+        <td><a href="edge.html#federation">Federation status panel</a></td>
+        <td><span class="state s-live">Live</span></td>
+        <td>Public sanitized status page for the fleet. Honest scale: <strong>zero subscribers</strong> (no accounts exist) and one dry-run compute worker.</td>
+        <td class="num">2026-08-11</td>
+      </tr>
+      <tr>
+        <td><a href="eran.html#protoeran">ProtoEran byte-LM</a></td>
+        <td><span class="state s-prototype">Prototype</span></td>
+        <td>From-scratch byte-level language model. Checkpoint intact at step 625,454, loss 0.375 — <strong>currently dormant, not training.</strong></td>
+        <td class="num">2026-07-11</td>
+      </tr>
+      <tr>
+        <td><a href="eran.html#vocal">Vocal cortex</a></td>
+        <td><span class="state s-prototype">Prototype</span></td>
+        <td>Audio model that produced the lab's first machine-generated babble. Training run finished; not currently running.</td>
+        <td class="num">2026-06-29</td>
+      </tr>
+      <tr>
+        <td><a href="lab.html#yigael">Yigael, the little brother</a></td>
+        <td><span class="state s-parked">Parked</span></td>
+        <td>Orchestrator and vocal daemons dormant on the cluster since 2026-06-30. State preserved, nothing deleted.</td>
+        <td class="num">2026-06-30</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div></section>
+
+<!-- ================= ERAN TRACK ================= -->
+<section id="eran"><div class="wrap">
+  <h2>Track 1 — Eran <span class="heb">ער"ן · הילד</span></h2>
+  <p class="section-note">The core project. An AI raised from zero, voice-first, on a corpus of one
+    person's own speech, on hardware we own. The Hebrew name <bdi dir="rtl">ער"ן</bdi> is itself an acronym —
+    <span class="rtl">רשת נוירולוגית עצבית</span>, "neural network." The beloved name and the built thing
+    are the same word. <a href="eran.html">Full page →</a></p>
+
+  <div class="grid">
+    <article class="card">
+      <h3><a href="eran.html#protoeran">ProtoEran</a> <span class="state s-prototype">Prototype</span></h3>
+      <p class="what">A from-scratch decoder-only language model, 3.23M parameters, <strong>byte-level vocabulary of 260</strong> — no tokenizer, no pretrained weights, random init at "age zero".</p>
+      <ul>
+        <li>Trained only on one speaker's own dictation — a hard guard in the data loader refuses any book corpus by path.</li>
+        <li>Bytes, not words, so Hebrew and English share one alphabet and letter-level similarity survives.</li>
+        <li>Honest ceiling: it babbles that speaker's phrasing. It is not fluent and does not converse.</li>
+      </ul>
+      <p class="foot">last checkpoint 2026-07-11 · step 625,454 · loss 0.375</p>
+    </article>
+
+    <article class="card">
+      <h3><a href="eran.html#vocal">Vocal cortex</a> <span class="state s-prototype">Prototype</span></h3>
+      <p class="what">The voice-first line — a model over neural audio codes, no text anywhere in the loop, in the spirit of textless NLP.</p>
+      <ul>
+        <li>11.8M-parameter audio model over EnCodec 24 kHz codes.</li>
+        <li>222.8 minutes of the speaker's own voice, copied read-only.</li>
+        <li>Loss 6.97 → ~3.7 over 4,000 steps; produced the lab's first unconditional babble.</li>
+      </ul>
+      <p class="foot">honest: audible babble — <strong>not yet a clean vowel</strong></p>
+      <p><a class="btn secondary" href="babble.html">Hear the saved samples</a></p>
+    </article>
+
+    <article class="card">
+      <h3><a href="eran.html#flagships">Ada · Turing · Neo-Perceptron</a> <span class="state s-concept">Concept</span></h3>
+      <p class="what">Three named faculties, in birth order of their namesakes: language, thought, perception.</p>
+      <ul>
+        <li><strong>Ada</strong> (Lovelace) — language and voice. A prototype exists; that is all.</li>
+        <li><strong>Turing</strong> — thought and world-model. North-star, not built.</li>
+        <li><strong>Neo-Perceptron</strong> (Rosenblatt) — perception and substrate. Seeds only.</li>
+      </ul>
+      <p class="foot">naming layer only · no service renamed</p>
+    </article>
+
+    <article class="card">
+      <h3><a href="eran.html#holobrain">HoloBrain</a> <span class="state s-concept">Concept</span></h3>
+      <p class="what">The architectural north-star: a world-model, a concept model and an embodied loop
+        meeting in <em>one shared gist space</em> — predict the essence of what comes next, not the raw surface.</p>
+      <ul>
+        <li>Step one is concrete and buildable: a JEPA-style objective that predicts a masked span's embedding rather than its bytes.</li>
+        <li>Honest: unifying language models, world models and robotics is an open research frontier. We are not claiming to have solved it.</li>
+      </ul>
+      <p class="foot">frontier · step 1 specified, not yet trained</p>
+    </article>
+  </div>
+</div></section>
+
+<!-- ================= ANTS TRACK ================= -->
+<section id="ants"><div class="wrap">
+  <h2>Track 2 — The Ants <span class="heb">חוות הנמלים</span></h2>
+  <p class="section-note">The most alive thing in the lab. Four independent tiny voice models ("ants") plus a
+    queen that <em>selects</em> and never merges — an evolutionary tournament running on-device, judged on a
+    fixed, byte-identical held-out test. <a href="ants.html">Full page →</a></p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Standing tournament <span class="state s-live">Live</span></h3>
+      <p class="what">New ant variants are born with new seeds, cochleas and unit counts. Each is scored against
+        the reigning queen on the same held-out syllable-discrimination protocol. The honest best takes the throne.</p>
+      <ul class="facts">
+        <li><span class="k">Reigning queen, top-1 cosine</span><span class="v">0.758</span></li>
+        <li><span class="k">Top-1 edit-distance match</span><span class="v">0.689</span></li>
+        <li><span class="k">Previous queen it replaced</span><span class="v">0.424</span></li>
+        <li><span class="k">Significance vs legacy colony</span><span class="v">p = 7.0e-27</span></li>
+        <li><span class="k">Last round · outcome</span><span class="v">2026-08-12 · held</span></li>
+      </ul>
+      <p class="foot">528 paired decisions · 4/4 seed-matched wins</p>
+    </article>
+
+    <article class="card">
+      <h3>The autonomy law <span class="state s-live">Live</span></h3>
+      <p class="what">The point of the colony is what a model learns <em>by itself</em>. So the rules are strict,
+        and they cost us performance on purpose:</p>
+      <ul>
+        <li><strong>Never</strong> hand-curated or hand-labelled batches. No vowel-weighted sampling.</li>
+        <li>Allowed: evolving the <em>organism</em> (better ears as a new kind of ant), curiosity dynamics, colony selection pressure, uncurated environment streams.</li>
+        <li>Target: reach word level <em>emergently</em>, composed from syllables the colony already mastered — never taught.</li>
+      </ul>
+      <p class="foot">a spoon-fed colony would prove nothing</p>
+    </article>
+  </div>
+
+  <div class="note warn">
+    <h3>A trap worth publishing</h3>
+    <p>Corpus manifests stored a hash computed <em>after</em> float conversion, so it could never match the hash of
+      the raw source file. Freshness had to be decided by session date, not by content hash. Cost: one aborted
+      training run. It is written down here so it costs someone else nothing.</p>
+  </div>
+</div></section>
+
+<!-- ================= EDGE TRACK ================= -->
+<section id="edge"><div class="wrap">
+  <h2>Track 3 — Edge &amp; Fleet <span class="heb">הקצה והצי</span></h2>
+  <p class="section-note">Serious edge AI means owning the metal. Four single-board GB10 nodes, a 200G fabric
+    we cabled and measured ourselves, an OS built from the kernel up, and an honest accounting of what a small
+    cluster can and cannot do. <a href="edge.html">Full page →</a></p>
+
+  <div class="grid">
+    <article class="card">
+      <h3><a href="edge.html#fleet">Four-node GB10 cluster</a> <span class="state s-live">Live</span></h3>
+      <p class="what">Unified-memory edge AI boxes, not datacentre racks. All training happens here; the desktop
+        stays a terminal.</p>
+      <ul class="facts">
+        <li><span class="k">Fabric per link, measured</span><span class="v">109–110 Gbit/s</span></li>
+        <li><span class="k">Retransmits</span><span class="v">0</span></li>
+        <li><span class="k">Two-hop through the hub</span><span class="v">31.9 Gbit/s</span></li>
+        <li><span class="k">3-node FSDP smoke test</span><span class="v">passed</span></li>
+      </ul>
+      <p class="foot">the two-hop bottleneck is host forwarding, not the cable</p>
+    </article>
+
+    <article class="card">
+      <h3><a href="edge.html#federation">Federation panel</a> <span class="state s-live">Live</span></h3>
+      <p class="what">A public, sanitized status page: every node and service, honestly green, red or grey, pushed
+        on a short interval.</p>
+      <ul>
+        <li>Honest scale, stated on the panel itself: zero subscribers, one dry-run compute worker.</li>
+        <li>Hard line held during design: no mass sign-up of free tiers, and free tiers <em>cannot</em> train — they serve. The cluster trains.</li>
+      </ul>
+      <p><a class="btn secondary" href="https://federation.iddoperez.ai">Open the live panel →</a></p>
+    </article>
+
+    <article class="card">
+      <h3><a href="edge.html#almaos">ALMA-OS for Jetson</a> <span class="state s-prototype">Prototype</span></h3>
+      <p class="what">A lean edge-AI OS built from the kernel up with Yocto and meta-tegra — not a stock vendor image.</p>
+      <ul class="facts">
+        <li><span class="k">Custom kernel</span><span class="v">5.15.185</span></li>
+        <li><span class="k">Flashable bundle</span><span class="v">1.6 GB</span></li>
+        <li><span class="k">Image built</span><span class="v">2026-06-18</span></li>
+        <li><span class="k">Flashed to a board</span><span class="v">not yet</span></li>
+      </ul>
+      <p class="foot">the honest gap is the last 45 minutes: no board has been flashed</p>
+    </article>
+
+    <article class="card">
+      <h3><a href="edge.html#grid">ERAN-GRID &amp; ERANCLOUD</a> <span class="state s-prototype">Prototype</span></h3>
+      <p class="what">Two experiments in borrowed compute: harvesting a machine's idle cycles, and a small
+        Local-SGD client.</p>
+      <ul>
+        <li>Grid agent is opt-in and default-off, refuses to run on battery, hard-pauses on heat, and touches no microphone or camera by construction.</li>
+        <li>Honest: the coordinator went LIVE 2026-08-24 (<a href="https://federation.iddoperez.ai/join">federation.iddoperez.ai/join</a>, a SQLite Durable Object). Verified same night: one browser click merged 3 real rounds (v4→v7), and <code>join.py --provider local --consent yes</code> merged 3 more. What it trains is the cloud <strong>student</strong> brain (prototype refinement on public CC Hebrew voice shards) — the organism on eran1 stays sovereign and is not touched.</li>
+      </ul>
+      <p><a class="btn secondary" href="cloud.html">The ERANCLOUD page →</a></p>
+    </article>
+  </div>
+</div></section>
+
+<!-- ================= LAB TRACK ================= -->
+<section id="hardware"><div class="wrap">
+  <h2>Track 4 — Hardware &amp; concept lab <span class="heb">מעבדת החומרה והרעיונות</span></h2>
+  <p class="section-note">Where the speculative work lives, clearly fenced. Hand-built neurons, connectome
+    models, an architecture bake-off, and a visual language for building minds. Some of it produced real
+    measurements. Some of it produced a clean, useful <em>no</em>. <a href="lab.html">Full page →</a></p>
+
+  <div class="grid">
+    <article class="card">
+      <h3><a href="lab.html#biotransformer">Bio-transformer bake-off</a> <span class="state s-prototype">Prototype</span></h3>
+      <p class="what">"The shape is the algorithm" — treat topology as a first-class, grown, asymmetric variable
+        rather than a uniform stack. Then actually measure it.</p>
+      <ul class="facts">
+        <li><span class="k">Multi-cortex accuracy</span><span class="v">0.785</span></li>
+        <li><span class="k">Single fused model</span><span class="v">0.665</span></li>
+        <li><span class="k">Fault survival, multi-cortex</span><span class="v">13/13</span></li>
+        <li><span class="k">Fault survival, fused</span><span class="v">0/13</span></li>
+      </ul>
+      <p class="foot">conclusion: specialists inside one brain, with a routing gate</p>
+    </article>
+
+    <article class="card">
+      <h3><a href="lab.html#connectome">Connectome models</a> <span class="state s-prototype">Prototype</span></h3>
+      <p class="what">Built the right way round: real published wiring in, known biological dynamics out.</p>
+      <ul>
+        <li><em>C. elegans</em> tap-withdrawal reflex from the published connectome — head tap reverses, tail tap advances, both correct.</li>
+        <li>Fly central-complex heading circuit from 172 real neurons and 8,605 synapses — the bump holds heading and tracks a cue to about 13°, and the ring topology falls out of the wiring rather than being imposed.</li>
+      </ul>
+      <p class="foot">no claim beyond "the wiring reproduces the known dynamics"</p>
+    </article>
+
+    <article class="card">
+      <h3><a href="lab.html#shisha">Shisha Brain</a> <span class="state s-negative">Negative result</span></h3>
+      <p class="what">A hand-built analog neuromorphic substrate from salt-gel memristor cells. We built a cell.
+        It did not work, and here are the numbers.</p>
+      <ul class="facts">
+        <li><span class="k">Reads returning 0 Ω (dead short)</span><span class="v">60/60</span></li>
+        <li><span class="k">Valid switching cycles</span><span class="v">0/5</span></li>
+        <li><span class="k">Set/reset separation</span><span class="v">none</span></li>
+      </ul>
+      <p class="foot">cause: an unstructured electrolyte cannot hold the gap</p>
+    </article>
+
+    <article class="card">
+      <h3><a href="lab.html#alma-language">ALMA Language</a> <span class="state s-concept">Concept</span></h3>
+      <p class="what">A visual, node-based language for building and training models with your hands — and, more
+        seriously, a readable symbolic map layered over a neural substrate so a model's world-model can be
+        inspected and edited.</p>
+      <ul>
+        <li>Honest limit, stated up front: lossless symbolic compression of neural knowledge is unsolved. The target is a <em>hybrid</em> — a readable map above a neural base — not a full translation.</li>
+        <li>Status: design and scaffold. No language exists yet.</li>
+      </ul>
+      <p class="foot">interpretability first, spectacle later</p>
+    </article>
+  </div>
+</div></section>
+
+<!-- ================= NOTEBOOK ================= -->
+<section id="notebook"><div class="wrap">
+  <h2>Lab notebook <span class="heb">יומן מעבדה</span></h2>
+  <p class="section-note">Selected entries, including the ones that hurt. A notebook that records only successes
+    is marketing.</p>
+
+  <ul class="log">
+    <li>
+      <time datetime="2026-06-18">2026-06-18</time>
+      <b>ProtoEran is born</b>
+      <span>A 3.23M-parameter byte-level model, random init, one morning: loss 5.64 → ~1.0. The sample log shows the
+        arc — pure binary noise, then Hebrew words emerging, then the speaker's own phrasing. Honest: babble, not fluency.</span>
+    </li>
+    <li>
+      <time datetime="2026-06-22">2026-06-22</time>
+      <b>200G fabric link confirmed between two nodes</b>
+      <span>Port up at 200,000 Mb/s, peer discovered over link-local addressing, 3/3 pings, 0% loss, 0.9 ms —
+        no manual addressing needed at all. Discovering that the earlier manual configuration had been unnecessary
+        was itself the finding.</span>
+    </li>
+    <li>
+      <time datetime="2026-06-29">2026-06-29</time>
+      <b>First sound</b>
+      <span>The audio cortex ran to completion and produced the first machine-generated babble in this lab — from
+        222.8 minutes of one person's voice, with no text anywhere in the pipeline. It is not a clean vowel. It is a sound
+        the model made.</span>
+    </li>
+    <li>
+      <time datetime="2026-06-29">2026-06-29</time>
+      <b>Self-inflicted broadcast storm</b>
+      <span>Bridging two fabric ports closed a hidden physical loop in the cabling; multicast receives climbed past
+        900 million packets and pegged a node. Root-caused on 2026-07-03 to a bridge defined in the network config and
+        therefore recreated on every boot. Standing rule since: routed point-to-point links only, never bridge the fabric.</span>
+    </li>
+    <li>
+      <time datetime="2026-07-02">2026-07-02</time>
+      <b>Architecture bake-off, both arms built</b>
+      <span>Modular specialists scored 0.785 against 0.665 for one fused pass — but the decisive gap was structural,
+        not accuracy: 13/13 scenarios survived a component fault versus 0/13. Conclusion adopted: specialists inside one
+        brain, with a learned gate.</span>
+    </li>
+    <li>
+      <time datetime="2026-07-15">2026-07-15</time>
+      <b>Negative result — the salt cell has no memristance</b>
+      <span>Five automated set/reset cycles, sixty reads, every one of them 0 Ω. Zero separation. The cause was
+        mechanical, not chemical: a soaked paper substrate cannot hold a sub-millimetre gap, so the electrodes touched.
+        Published rather than retried quietly.</span>
+    </li>
+    <li>
+      <time datetime="2026-08-05">2026-08-05</time>
+      <b>The fabric was never broken</b>
+      <span>Rebuilt and measured at 109–110 Gbit/s per link with zero retransmits. Weeks of "dead fabric" turned out
+        to be network profiles bound to interfaces with no cable in them — they could never activate. Diagnostic rule
+        adopted: read carrier state, not ping.</span>
+    </li>
+    <li>
+      <time datetime="2026-08-11">2026-08-11</time>
+      <b>Negative result — voice fine-tune fails on Hebrew</b>
+      <span>Run 1 of a personal speech-recognition adapter came back <strong>worse</strong> on Hebrew than the base
+        model: 37.1% word error rate against 30.7%. English improved. Diagnosis: a self-distillation trap — the adapter
+        was learning the base model's own mistakes. Reported as a failure, not buried.</span>
+    </li>
+    <li>
+      <time datetime="2026-08-11">2026-08-11</time>
+      <b>A new queen</b>
+      <span>The colony crowned a new best ant on the fixed held-out protocol: top-1 cosine 0.758, up from 0.424.
+        The baseline was reproduced bit-exact before the comparison was allowed to count, and a rollback path was
+        written down before the crown changed hands.</span>
+    </li>
+    <li>
+      <time datetime="2026-08-12">2026-08-12</time>
+      <b>Round 4: the queen holds</b>
+      <span>Three challengers born from fresh seeds and a scaling change; all three fell short of significance.
+        A tournament where the incumbent usually wins is a tournament with an honest judge.</span>
+    </li>
+  </ul>
+</div></section>
+
+<!-- ================= NOT CLAIMED ================= -->
+<section id="not-claimed"><div class="wrap">
+  <h2>What this lab does <em>not</em> claim <span class="heb">מה איננו טוענים</span></h2>
+  <p class="section-note">Written down so no reader has to guess where the edge is.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>About the models</h3>
+      <ul>
+        <li>ProtoEran does <strong>not</strong> converse, reason, or understand. It emits fragments in the style of the speech it was trained on.</li>
+        <li>The vocal model babbles. It cannot say a clean vowel on command, and it certainly cannot speak.</li>
+        <li>No model here is competitive with a frontier system, and none is trying to be. The whole design bets on grounding and continual learning, not scale.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>About the hardware</h3>
+      <ul>
+        <li>The analog neuromorphic work is <strong>not</strong> quantum computing. There are no qubits and no entanglement, and it breaks no cryptography.</li>
+        <li>The frequency-multiplexing idea at the centre of that design has, as far as our own literature search found, <em>no published support</em>. It is untested speculation and is labelled as such.</li>
+        <li>A four-node edge cluster is a real cluster and a small one. Where a job needs more than it has, we say so instead of pretending.</li>
+      </ul>
+    </article>
+  </div>
+</div></section>
+
+<!-- ================= COLOPHON ================= -->
+<section id="colophon"><div class="wrap">
+  <h2>Build standard <span class="heb">תקן הבנייה</span></h2>
+  <div class="grid two">
+    <article class="card">
+      <h3>This site</h3>
+      <p>Hand-written HTML and one stylesheet. <strong>No framework, no CDN, no external font, no analytics,
+        no tracking, no third-party script of any kind.</strong> Every byte this page loads is served from
+        this domain. View source and it is all there.</p>
+      <p class="foot">≈ one stylesheet · zero JavaScript</p>
+    </article>
+    <article class="card">
+      <h3>The code behind it</h3>
+      <p>The same rule runs deeper: application code is written here rather than assembled from
+        dependencies. Trained <em>models</em> are a different category and are used and credited plainly —
+        a neural audio codec, a speech-recognition backbone — because a model is not an application.</p>
+      <p class="foot">purity where it earns its keep, honesty where it doesn't</p>
+    </article>
+  </div>
+
+  <div class="note soul">
+    <h3>למה זה נבנה</h3>
+    <p>ער"ן = <b>רשת נוירולוגית עצבית</b>. השם והדבר הנבנה הם אותה מילה.</p>
+    <p>הגן נובט בזמנו. חודשים בלי פרי גלוי — וזה נכון, לא כישלון.
+      מודדים את עבודת הגנן, לא פרי מזויף.</p>
+    <p class="en">A garden sprouts in its own time. Months without visible fruit are expected and correct,
+      not failure — so we measure the gardener's work, never manufactured results.</p>
+  </div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <p><strong>ERAN Lab</strong> · an ALMAWARE research notebook · measured state, prototypes and plans kept separate.</p>
+  <p class="ded">לזכרה של עלמה ז״ל <span class="dim" dir="ltr">— in memory of Alma z"l, for whom this work is named.</span></p>
+  <p class="small">Related: <a href="https://federation.iddoperez.ai">federation status panel</a> ·
+     <a href="cloud.html">ERANCLOUD</a> · <a href="eran-neuron-lab.html">neuron lab notes (Hebrew)</a> ·
+     <a href="babble.html">audio samples</a></p>
+  <p class="small">© 2026 ALMAWARE</p>
+</div></footer>
+
+</body>
+</html>

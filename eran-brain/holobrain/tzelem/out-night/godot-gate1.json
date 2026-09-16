@@ -1,0 +1,114 @@
+{
+  "when": "2026-09-05T19:39:12",
+  "source": "Godot 4.3 export of alma-vr boulevard_cafe, one run",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "input_frames": [
+    {
+      "file": "frame_00.tzg",
+      "bytes": 58060820,
+      "mtime": "2026-09-05T19:30:54",
+      "sha256": "27fc92cb785a64e1"
+    },
+    {
+      "file": "frame_01.tzg",
+      "bytes": 58060820,
+      "mtime": "2026-09-05T19:31:05",
+      "sha256": "d6044961d38abadd"
+    },
+    {
+      "file": "frame_02.tzg",
+      "bytes": 58060820,
+      "mtime": "2026-09-05T19:31:17",
+      "sha256": "0162297462447c0e"
+    },
+    {
+      "file": "frame_03.tzg",
+      "bytes": 58060820,
+      "mtime": "2026-09-05T19:31:24",
+      "sha256": "eecc826b1cd4501a"
+    }
+  ],
+  "poses": 4,
+  "strokes": 30000,
+  "size": 0.006,
+  "pairs": [
+    {
+      "strokes": 30000,
+      "valid_px": 1421831,
+      "total_px": 2073600,
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.09027966271659359,
+        "TZELEM_world_anchored": 0.014726508757402917,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.06510184934747214,
+        "FLOOR_repaint_every_frame": 0.012642664302128022,
+        "TZELEM_world_anchored": 0.025182090045150506,
+        "CEILING_warp_only": 0.13076989754484752
+      },
+      "step_m": 0.427
+    },
+    {
+      "strokes": 30000,
+      "valid_px": 1438383,
+      "total_px": 2073600,
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.04792263677602295,
+        "TZELEM_world_anchored": 0.01359222823033761,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.06586583989513321,
+        "FLOOR_repaint_every_frame": 0.012882668650455346,
+        "TZELEM_world_anchored": 0.01687084954953444,
+        "CEILING_warp_only": 0.11957336769682568
+      },
+      "step_m": 0.427
+    },
+    {
+      "strokes": 30000,
+      "valid_px": 1396877,
+      "total_px": 2073600,
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.05095781576708897,
+        "TZELEM_world_anchored": 0.013283996987952452,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.06569383282262989,
+        "FLOOR_repaint_every_frame": 0.013276895197653474,
+        "TZELEM_world_anchored": 0.017454135112149726,
+        "CEILING_warp_only": 0.14181123758648362
+      },
+      "step_m": 0.427
+    }
+  ],
+  "coherence": {
+    "FLOOR_repaint_every_frame": 0.06305337175323517,
+    "TZELEM_world_anchored": 0.013867577991897658,
+    "CEILING_warp_only": 0.0
+  },
+  "fidelity_mse": {
+    "BLANK_best_flat_colour": 0.06555384068841175,
+    "FLOOR_repaint_every_frame": 0.012934076050078949,
+    "TZELEM_world_anchored": 0.01983569156894489,
+    "CEILING_warp_only": 0.13071816760938562
+  },
+  "pass": true,
+  "verdict": [
+    "PASS  coherence: TZELEM 0.01387 vs floor 0.06305 = x4.55 steadier",
+    "PASS  fidelity: TZELEM 0.01984 beats BLANK 0.06555 = x3.30",
+    "PASS  the cheat is caught: warp-only is perfectly coherent (0.00000) and tears on fidelity (0.13072)"
+  ],
+  "seconds": 89.3,
+  "made": {
+    "truth_b": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out-night\\GODOT-gate1-truth_b.jpg",
+    "tz_b": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out-night\\GODOT-gate1-tz_b.jpg",
+    "fl_b": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out-night\\GODOT-gate1-fl_b.jpg",
+    "ce_b": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out-night\\GODOT-gate1-ce_b.jpg"
+  }
+}

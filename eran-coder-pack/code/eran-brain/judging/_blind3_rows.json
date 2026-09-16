@@ -1,0 +1,1 @@
+[["A", "ERAN-v4-seed14.wav", 5.79, "v4 candidate"], ["B", "ERAN-v4-seed12.wav", 5.66, "v4 candidate"], ["C", "ERAN-v4-seed10.wav", 4.52, "v4 candidate"], ["X", "ERAN-v4-zz-control.wav", 6.01, "CONTROL - v4 with NO learning. If X scores as well as the others, the learning bought nothing."]]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctzelemcube3601"]
+
+; THE 360 CUBEMAP SCENE. Same shape as tzelem_gbuffer.tscn and boulevard_shots.tscn:
+; the world builds itself, the exporter makes its own SQUARE SubViewport and
+; photographs the world through that, and the visible window renders nothing but the
+; clear colour -- so no pixel outside this process is ever read.
+
+[ext_resource type="Script" path="res://scripts/boulevard_cafe.gd" id="1_world"]
+[ext_resource type="Script" path="res://scripts/tzelem_cube360.gd" id="2_cube"]
+
+[node name="TzelemCube360" type="Node3D"]
+
+[node name="World" type="Node3D" parent="."]
+script = ExtResource("1_world")
+
+[node name="Export" type="Node" parent="."]
+script = ExtResource("2_cube")

@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ALMAWARE Cockpit</title>
+<meta name="viewport" content="width=1920">
+<style>
+  /* ============================================================
+     ALMAWARE Cockpit — self-contained, zero external assets.
+     Reads ./status.json (produced by collector.py).
+     Layout: 1920x1080 primary; degrades to 1366x768.
+     ============================================================ */
+
+  :root {
+    --bg:          #0d0a1a;
+    --panel:       #141028;
+    --panel-2:     #1a1533;
+    --panel-edge:  #221a3a;
+    --text:        #e8edf4;
+    --muted:       #8a8172;
+    --muted-dim:   #5a5262;
+    --gold:        #f4d06a;
+    --gold-dim:    #b89b4c;
+    --green:       #3ad07a;
+    --orange:      #ffb43a;
+    --red:         #ff5a5a;
+    --purple:      #8e44ad;
+    --blue:        #4aa8ff;
+    --link-hover:  #ffd680;
+
+    --status-active:   var(--green);
+    --status-shipped:  var(--gold);
+    --status-planning: var(--blue);
+    --status-dormant:  var(--muted);
+    --status-critical: var(--red);
+    --status-warn:     var(--orange);
+
+    --font-ui:   "Segoe UI", system-ui, -apple-system, sans-serif;
+    --font-mono: "Consolas", "JetBrains Mono", ui-monospace, monospace;
+
+    --fs-hd:  20px;
+    --fs-h1:  15px;
+    --fs-h2:  11px;
+    --fs-body:13px;
+    --fs-mono:12px;
+    --fs-tile:10.5px;
+    --fs-num: 22px;
+
+    --radius:    10px;
+    --radius-sm: 6px;
+    --pad-panel: 14px;
+    --gap:       12px;
+    --row-gap:   12px;
+    --header-h:  56px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--fs-body);
+    overflow: hidden;
+    line-height: 1.35;
+  }
+
+  #app {
+    display: grid;
+    /* The four evidence rows share the space left below the fixed header.
+       minmax(0, …) is deliberate: every row stays inside 100vh instead of
+       silently clipping the workflow row below a 1080p viewport. */
+    grid-template-rows: var(--header-h) minmax(0, 1.15fr) minmax(0, 1.05fr) minmax(0, 1.3fr) minmax(0, 1fr);
+    grid-gap: var(--row-gap);
+    padding: 20px;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ============ Panels ============ */
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    border-radius: var(--radius);
+    padding: var(--pad-panel);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    min-width: 0;
+  }
+  .panel-title {
+    font-size: var(--fs-h2);
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin: 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+  }
+  .panel-title .subtitle {
+    color: var(--muted-dim);
+    font-weight: normal;
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 10px;
+    margin-left: auto;
+  }
+  .panel-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ============ Header ============ */
+  .header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 18px;
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    border-radius: var(--radius);
+    padding: 0 18px;
+    height: var(--header-h);
+  }
+  .header .logo {
+    font-size: var(--fs-hd);
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: .04em;
+  }
+  .header .logo .hex { font-size: 22px; margin-right: 8px; }
+  .header .meta {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .header .meta .branch { color: var(--gold-dim); }
+  .header .meta .sha { color: var(--blue); }
+  .header .right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: right;
+  }
+  .header .clock {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    color: var(--text);
+  }
+  .header .stale {
+    font-size: 11px;
+    color: var(--muted);
+    display: block;
+  }
+  .header.is-stale .stale { color: var(--red); }
+
+  /* ============ Dot ============ */
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    display: inline-block; vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .dot--green  { background: var(--green);  box-shadow: 0 0 6px var(--green); }
+  .dot--red    { background: var(--red);    box-shadow: 0 0 6px var(--red); animation: pulse 2s ease-in-out infinite; }
+  .dot--orange { background: var(--orange); box-shadow: 0 0 6px var(--orange); }
+  .dot--gold   { background: var(--gold);   box-shadow: 0 0 6px var(--gold); }
+  .dot--blue   { background: var(--blue);   box-shadow: 0 0 6px var(--blue); }
+  .dot--muted  { background: var(--muted); }
+
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+  @keyframes pulse-gold { 0%,100%{opacity:1} 50%{opacity:.55} }
+
+  /* ============ Row A ============ */
+  .row-a { display: grid; grid-template-columns: 480px 1fr; gap: var(--gap); min-height: 0; }
+
+  /* Eran tile */
+  .eran-tile { cursor: pointer; }
+  .eran-tile:hover { border-color: var(--gold-dim); }
+  .eran-numbers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px 22px;
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    margin-bottom: 10px;
+  }
+  .eran-numbers .kv { display: flex; align-items: baseline; gap: 6px; }
+  .eran-numbers .k { color: var(--muted); width: 42px; }
+  .eran-numbers .v { color: var(--text); font-size: var(--fs-body); font-weight: 500; }
+  .eran-numbers .v.big { color: var(--gold); font-size: 16px; }
+
+  .eran-chat-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px;
+    background: var(--panel-2);
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  .babble-title {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin: 6px 0 4px;
+  }
+  .babble-box {
+    background: var(--panel-2);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text);
+    max-height: 88px;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.4;
+  }
+  .babble-box .arrow { color: var(--gold); }
+  .babble-box .step { color: var(--muted); font-size: 10px; display:block; margin-top:4px; text-align:right; }
+
+  /* Fleet */
+  .fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    flex: 1;
+    min-height: 0;
+  }
+  .fleet-card {
+    background: var(--panel-2);
+    border: 1px solid var(--panel-edge);
+    border-radius: var(--radius-sm);
+    padding: 10px;
+    display: flex; flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    transition: border-color .15s;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    min-width: 0;
+  }
+  .fleet-card:hover { border-color: var(--gold-dim); }
+  .fleet-card .name {
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 600;
+    font-family: var(--font-ui);
+  }
+  .fleet-card .state { display: flex; align-items: center; gap: 6px; }
+  .fleet-card .state .txt { color: var(--text); }
+  .fleet-card .row { display: flex; justify-content: space-between; color: var(--muted); }
+  .fleet-card .row .v { color: var(--text); }
+  .fleet-card .procs {
+    color: var(--muted); font-size: 10px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .fleet-card .warning { color: var(--orange); font-size: 10px; }
+  .fleet-card .gpu-bar {
+    height: 4px; background: var(--panel); border-radius: 2px; overflow: hidden;
+    margin-top: 2px;
+  }
+  .fleet-card .gpu-bar > span {
+    display: block; height: 100%;
+    background: var(--green);
+    transition: width .3s;
+  }
+  .fleet-card.warn .gpu-bar > span { background: var(--orange); }
+  .fleet-card.crit .gpu-bar > span { background: var(--red); }
+  .fleet-hint {
+    color: var(--muted-dim); font-size: 10px; margin-top: 6px; text-align: center;
+  }
+
+  /* ============ Row B ============ */
+  .row-b { display: grid; grid-template-columns: 1fr 460px; gap: var(--gap); min-height: 0; }
+
+  /* Fabric SVG */
+  .fabric-svg-wrap {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    min-height: 0;
+  }
+  svg.fabric { width: 100%; max-width: 100%; height: 100%; max-height: 200px; }
+  .fabric-legend {
+    font-size: 10px; color: var(--muted-dim); text-align: center; margin-top: 4px;
+    font-family: var(--font-mono);
+    display: flex; gap: 14px; justify-content: center;
+  }
+  .fabric-legend span { display: inline-flex; align-items: center; gap: 4px; }
+  .legend-swatch { display: inline-block; width: 16px; height: 2px; }
+
+  /* Services */
+  .services-list {
+    display: flex; flex-direction: column; gap: 4px;
+    flex: 1; min-height: 0;
+    overflow-y: auto;
+  }
+  .services-list::-webkit-scrollbar { width: 4px; }
+  .services-list::-webkit-scrollbar-thumb { background: var(--panel-edge); border-radius: 2px; }
+  .service-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 8px;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    background: var(--panel-2);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    cursor: default;
+  }
+  .service-row.clickable { cursor: pointer; }
+  .service-row.clickable:hover { background: var(--panel-edge); }
+  .service-row .label { color: var(--text); font-family: var(--font-ui); font-size: 12px; }
+  .service-row .port  { color: var(--gold-dim); }
+  .service-row .state { color: var(--muted); }
+  .service-row.down .state { color: var(--red); }
+  .service-row.up   .state { color: var(--green); }
+
+  /* ============ Row C — Projects ============ */
+  .projects-panel .panel-title { justify-content: space-between; }
+  .projects-tabs {
+    display: flex; gap: 6px; margin-left: 10px;
+  }
+  .projects-tabs .tab {
+    padding: 2px 10px;
+    background: var(--panel-2);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 10px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .projects-tabs .tab.active {
+    color: var(--gold);
+    border-color: var(--gold-dim);
+    background: var(--panel);
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: 55px;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .project-tile {
+    background: var(--panel-2);
+    border: 1px solid var(--panel-edge);
+    border-radius: var(--radius-sm);
+    padding: 6px 8px;
+    cursor: pointer;
+    display: flex; flex-direction: column; justify-content: center;
+    min-width: 0;
+    overflow: hidden;
+    transition: border-color .15s, background .15s;
+  }
+  .project-tile:hover { border-color: var(--gold-dim); background: var(--panel-edge); }
+  .project-tile .row1 { display: flex; align-items: center; gap: 4px; font-size: var(--fs-tile); font-weight: 600; }
+  .project-tile .row1 .emoji { font-size: 11px; }
+  .project-tile .name {
+    color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    flex: 1;
+  }
+  .project-tile .row2 {
+    display: flex; justify-content: space-between;
+    font-size: 9.5px; color: var(--muted); font-family: var(--font-mono);
+    margin-top: 2px;
+  }
+  .project-tile.priority-north .name { color: var(--gold); }
+  .project-tile .row2 .prio { text-transform: uppercase; letter-spacing: .04em; }
+  .project-tile .row2 .prio.north { color: var(--gold); }
+  .project-tile .row2 .prio.high  { color: var(--text); }
+  .project-tile .row2 .prio.med   { color: var(--muted); }
+  .project-tile .row2 .prio.low   { color: var(--muted-dim); }
+  .project-tile.plus {
+    align-items: center; justify-content: center;
+    color: var(--gold);
+    font-family: var(--font-mono);
+    font-size: 11px;
+  }
+  .projects-hint {
+    color: var(--muted-dim); font-size: 10px; margin-top: 6px; text-align: center;
+    flex: 0 0 auto;
+  }
+
+  /* ============ Row D ============ */
+  .row-d {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: var(--gap);
+    min-height: 0;
+  }
+  .todo-list {
+    display: flex; flex-direction: column; gap: 4px;
+    flex: 1; overflow-y: auto; min-height: 0;
+  }
+  .todo-list::-webkit-scrollbar { width: 4px; }
+  .todo-list::-webkit-scrollbar-thumb { background: var(--panel-edge); border-radius: 2px; }
+  .todo-row {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 8px;
+    align-items: center;
+    padding: 4px 8px;
+    background: var(--panel-2);
+    border-radius: var(--radius-sm);
+    font-size: 11.5px;
+    cursor: pointer;
+  }
+  .todo-row .box {
+    width: 12px; height: 12px;
+    border: 1px solid var(--muted);
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .todo-row.done .box::after {
+    content: "✓";
+    color: var(--gold);
+    font-size: 12px;
+    line-height: 10px;
+    display: block;
+    text-align: center;
+  }
+  .todo-row.done .text { text-decoration: line-through; color: var(--muted); }
+  .todo-row .text { color: var(--text); }
+
+  .git-panel .git-branch {
+    font-family: var(--font-mono); font-size: 12px; color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .git-counters {
+    display: grid; grid-template-columns: auto 1fr; gap: 3px 10px;
+    font-family: var(--font-mono); font-size: 11.5px;
+    margin-bottom: 10px;
+  }
+  .git-counters .k { color: var(--muted); }
+  .git-counters .v { color: var(--text); }
+  .git-counters .v.red    { color: var(--red); animation: pulse 2s ease-in-out infinite; }
+  .git-counters .v.orange { color: var(--orange); }
+  .git-recent {
+    font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em;
+    margin-bottom: 4px;
+  }
+  .commit-row {
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 8px; align-items: center;
+    padding: 3px 0;
+    font-family: var(--font-mono); font-size: 11px;
+    cursor: pointer;
+  }
+  .commit-row .sha { color: var(--blue); }
+  .commit-row .subj { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .commit-row:hover .sha { color: var(--link-hover); }
+
+  .workflow-header {
+    font-family: var(--font-mono); font-size: 11px; color: var(--muted);
+  }
+  .workflow-name { color: var(--gold); font-size: 12px; margin-bottom: 6px; }
+  .workflow-progress-wrap {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 11px;
+    margin: 8px 0;
+  }
+  .workflow-bar {
+    flex: 1; height: 6px; background: var(--panel-2); border-radius: 3px; overflow: hidden;
+  }
+  .workflow-bar > span {
+    display: block; height: 100%; background: var(--gold);
+    transition: width .3s;
+  }
+  .agent-list { display: flex; flex-direction: column; gap: 3px; overflow-y: auto; flex: 1; min-height: 0; }
+  .agent-list::-webkit-scrollbar { width: 4px; }
+  .agent-list::-webkit-scrollbar-thumb { background: var(--panel-edge); border-radius: 2px; }
+  .agent-row {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 6px; align-items: center;
+    font-size: 11px; padding: 2px 0;
+  }
+  .agent-row .glyph.running { color: var(--gold); animation: pulse-gold 2s ease-in-out infinite; }
+  .agent-row .glyph.done    { color: var(--green); }
+  .agent-row .role { color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .agent-row .status-txt { color: var(--muted); font-size: 10px; font-family: var(--font-mono); }
+
+  /* ============ Toast ============ */
+  #toast {
+    position: fixed;
+    left: 50%; bottom: 24px;
+    transform: translateX(-50%);
+    background: var(--panel-2);
+    color: var(--gold);
+    padding: 10px 18px;
+    border: 1px solid var(--gold-dim);
+    border-radius: var(--radius);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+    z-index: 1000;
+  }
+  #toast.show { opacity: 1; }
+
+  /* ============ Reduced motion ============ */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  /* ============ Smaller viewport ============ */
+  @media (max-height: 900px) {
+    #app {
+      grid-template-rows: var(--header-h) minmax(0, 1.15fr) minmax(0, 1.05fr) minmax(0, 1.3fr) minmax(0, 1fr);
+      grid-gap: 8px;
+      padding: 12px;
+    }
+    .panel { padding: 10px; }
+    .row-d { grid-template-columns: 1fr 1fr 1fr; }
+    .row-d .panel-body { overflow-y: auto; }
+  }
+  @media (max-width: 1600px) {
+    .row-a { grid-template-columns: minmax(320px, 390px) minmax(0, 1fr); }
+    .row-b { grid-template-columns: minmax(0, 1fr) 360px; }
+    .projects-grid { grid-template-columns: repeat(6, 1fr); grid-auto-rows: clamp(48px, 6vh, 60px); }
+    .fleet-grid { grid-template-columns: repeat(4, 1fr); }
+    .eran-numbers { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div id="app">
+  <div class="header" id="hdr">
+    <div class="logo"><span class="hex">⬢</span> ALMAWARE COCKPIT</div>
+    <div class="meta">
+      <span class="branch" id="hdr-branch">—</span>
+      <span class="sep">·</span>
+      <span class="sha" id="hdr-sha">—</span>
+    </div>
+    <div class="right">
+      <div>
+        <div class="clock" id="hdr-clock">--:--:--</div>
+        <div class="stale" id="hdr-stale">waiting for collector…</div>
+      </div>
+      <span class="dot dot--muted" id="hdr-dot"></span>
+    </div>
+  </div>
+
+  <div class="row-a">
+    <div class="panel eran-tile" id="eran-panel">
+      <div class="panel-title">🧠 ERAN — byte-LM <span class="subtitle" id="eran-state">—</span></div>
+      <div class="panel-body">
+        <div class="eran-numbers">
+          <div class="kv"><span class="k">step</span><span class="v big" id="eran-step">—</span></div>
+          <div class="kv"><span class="k">loss</span><span class="v big" id="eran-loss">—</span></div>
+          <div class="kv"><span class="k">ema</span><span class="v" id="eran-ema">—</span></div>
+          <div class="kv"><span class="k">sps</span><span class="v" id="eran-sps">—</span></div>
+          <div class="kv"><span class="k">tok/s</span><span class="v" id="eran-tps">—</span></div>
+          <div class="kv"><span class="k">vram</span><span class="v" id="eran-vram">—</span></div>
+        </div>
+        <div class="eran-chat-pill">
+          <span class="dot dot--muted" id="eran-chat-dot"></span>
+          <span id="eran-chat-txt">chat —</span>
+        </div>
+        <div class="babble-title">— LATEST BABBLE —</div>
+        <div class="babble-box" id="babble-box" dir="auto">
+          <span class="arrow">▸</span> <span id="babble-text">waiting…</span>
+          <span class="step" id="babble-step">step —</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">🖧 FLEET <span class="subtitle" id="fleet-age">—</span></div>
+      <div class="panel-body">
+        <div class="fleet-grid" id="fleet-grid"></div>
+        <div class="fleet-hint">click card → copies <code>ssh &lt;host&gt;</code></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-b">
+    <div class="panel">
+      <div class="panel-title">🕸 QSFP FABRIC <span class="subtitle" id="fabric-age">—</span></div>
+      <div class="panel-body">
+        <div class="fabric-svg-wrap" id="fabric-svg-wrap">
+          <svg class="fabric" viewBox="0 0 700 200" preserveAspectRatio="xMidYMid meet" id="fabric-svg"></svg>
+        </div>
+        <div class="fabric-legend">
+          <span><span class="legend-swatch" style="background:var(--green)"></span>UP+IP</span>
+          <span><span class="legend-swatch" style="background:var(--gold-dim)"></span>UP+no-IP (spare)</span>
+          <span><span class="legend-swatch" style="background:var(--red)"></span>DOWN</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">🛠 SERVICES</div>
+      <div class="panel-body">
+        <div class="services-list" id="services-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel projects-panel">
+    <div class="panel-title">
+      🧩 PROJECTS
+      <div class="projects-tabs" id="projects-tabs">
+        <div class="tab active" data-filter="all">all</div>
+        <div class="tab" data-filter="active">active</div>
+        <div class="tab" data-filter="dormant">dormant</div>
+      </div>
+      <span class="subtitle" id="projects-age">—</span>
+    </div>
+    <div class="panel-body">
+      <div class="projects-grid" id="projects-grid"></div>
+      <div class="projects-hint">click tile → open project folder in Explorer</div>
+    </div>
+  </div>
+
+  <div class="row-d">
+    <div class="panel">
+      <div class="panel-title">✅ TODO / NEXT ACTIONS</div>
+      <div class="panel-body">
+        <div class="todo-list" id="todo-list"></div>
+      </div>
+    </div>
+
+    <div class="panel git-panel">
+      <div class="panel-title">📁 GIT STATUS <span class="subtitle" id="git-age">—</span></div>
+      <div class="panel-body">
+        <div class="git-branch" id="git-branch">—</div>
+        <div class="git-counters" id="git-counters"></div>
+        <div class="git-recent">recent commits</div>
+        <div id="git-recent-list"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">🔄 WORKFLOW <span class="subtitle" id="workflow-age">—</span></div>
+      <div class="panel-body">
+        <div class="workflow-header" id="workflow-id">—</div>
+        <div class="workflow-name" id="workflow-name">—</div>
+        <div class="workflow-progress-wrap">
+          <div class="workflow-bar"><span id="workflow-bar-fill" style="width:0%"></span></div>
+          <div id="workflow-progress">0 / 0</div>
+        </div>
+        <div class="agent-list" id="agent-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+"use strict";
+/* ============================================================
+   ALMAWARE Cockpit — client script.
+   Reads ./status.json every 3s.
+   Vanilla ES2019+. No modules, no deps.
+   ============================================================ */
+
+const REFRESH_MS = 3000;
+const STALE_S_DEFAULT = 30;
+const PROJECT_TILES_MAX = 32;
+
+let lastGoodStatus = null;
+let lastFetchOk = null;
+let projectFilter = "all";
+
+/* ------- utilities ------- */
+function q(id) { return document.getElementById(id); }
+function fmtInt(n) {
+  if (n === null || n === undefined || Number.isNaN(n)) return "—";
+  return Number(n).toLocaleString("en-US");
+}
+function fmtF(n, d) {
+  if (n === null || n === undefined || Number.isNaN(n)) return "—";
+  return Number(n).toFixed(d);
+}
+function fmtAge(sec) {
+  if (sec === null || sec === undefined) return "—";
+  const s = Math.max(0, sec);
+  if (s < 60) return Math.round(s) + "s ago";
+  if (s < 3600) return Math.round(s / 60) + "m ago";
+  if (s < 86400) return Math.round(s / 3600) + "h ago";
+  return Math.round(s / 86400) + "d ago";
+}
+function esc(str) {
+  if (str === null || str === undefined) return "—";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function dotFor(up) {
+  if (up === true) return '<span class="dot dot--green"></span>';
+  if (up === false) return '<span class="dot dot--red"></span>';
+  return '<span class="dot dot--muted"></span>';
+}
+function toast(msg) {
+  const t = q("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => t.classList.remove("show"), 1200);
+}
+function copy(text, label) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(
+      () => toast(label || "copied"),
+      () => toast("copy failed")
+    );
+  } else {
+    const ta = document.createElement("textarea");
+    ta.value = text; document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); toast(label || "copied"); }
+    catch (e) { toast("copy failed"); }
+    document.body.removeChild(ta);
+  }
+}
+function openUrl(url) {
+  try { window.open(url, "_blank", "noopener"); }
+  catch (e) { toast("open blocked"); }
+}
+function get(obj, path, dflt) {
+  try {
+    let cur = obj;
+    for (const k of path.split(".")) {
+      if (cur === null || cur === undefined) return dflt;
+      cur = cur[k];
+    }
+    return (cur === null || cur === undefined) ? dflt : cur;
+  } catch (e) { return dflt; }
+}
+
+/* ------- Wall clock (independent of fetch) ------- */
+function tickClock() {
+  const now = new Date();
+  const hh = String(now.getHours()).padStart(2, "0");
+  const mm = String(now.getMinutes()).padStart(2, "0");
+  const ss = String(now.getSeconds()).padStart(2, "0");
+  q("hdr-clock").textContent = hh + ":" + mm + ":" + ss;
+}
+setInterval(tickClock, 1000);
+tickClock();
+
+/* ------- Header ------- */
+function renderHeader(s) {
+  const meta = s.meta || {};
+  const git  = s.git || {};
+
+  q("hdr-branch").textContent = git.branch || "—";
+  const sha = get(git, "last_commit.sha", null) || get(git, "recent_commits.0.sha", "—");
+  q("hdr-sha").textContent = sha;
+
+  const now = Date.now() / 1000;
+  const ts = meta.ts || 0;
+  const ageS = ts ? (now - ts) : null;
+  const staleAfter = meta.stale_after_s || STALE_S_DEFAULT;
+  const isStale = meta.stale === true || (ageS !== null && ageS > staleAfter);
+
+  const hdr = q("hdr");
+  hdr.classList.toggle("is-stale", isStale);
+
+  const dot = q("hdr-dot");
+  dot.className = "dot " + (isStale ? "dot--red" : "dot--green");
+
+  const stale = q("hdr-stale");
+  if (!ts) {
+    stale.textContent = "waiting for collector…";
+  } else if (isStale) {
+    stale.textContent = "STALE " + fmtAge(ageS);
+  } else {
+    stale.textContent = "last status " + fmtAge(ageS);
+  }
+}
+
+function markFetchFailed(err) {
+  const hdr = q("hdr");
+  hdr.classList.add("is-stale");
+  q("hdr-dot").className = "dot dot--red";
+  const msg = lastFetchOk
+    ? "fetch fail — last ok " + fmtAge((Date.now() - lastFetchOk) / 1000)
+    : "no status.json — waiting…";
+  q("hdr-stale").textContent = msg;
+}
+
+/* ------- Eran tile ------- */
+function renderEran(s) {
+  const e = s.eran || {};
+  const state = e.state || "unknown";
+  q("eran-state").textContent = state;
+
+  q("eran-step").textContent = fmtInt(e.step);
+  q("eran-loss").textContent = fmtF(e.loss, 4);
+  q("eran-ema" ).textContent = fmtF(e.ema, 4);
+  q("eran-sps" ).textContent = fmtF(e.sps, 1);
+
+  const tps = (e.tok_s !== undefined && e.tok_s !== null)
+    ? fmtInt(e.tok_s)
+    : (e.tps_k !== undefined && e.tps_k !== null ? (e.tps_k + "k") : "—");
+  q("eran-tps").textContent = tps;
+
+  let vram = "—";
+  if (e.vram_mb !== undefined && e.vram_mb !== null) vram = e.vram_mb + " MB";
+  else if (e.vram_gb !== undefined && e.vram_gb !== null) vram = fmtF(e.vram_gb, 1) + " GB";
+  q("eran-vram").textContent = vram;
+
+  const httpUp = get(e, "http.up", null) !== null ? e.http.up : e.chat_up;
+  const chatPort = get(e, "http.port", null) || e.chat_port || 8792;
+  const chatUrl = e.chat_url || ("http://127.0.0.1:" + chatPort + "/");
+  q("eran-chat-dot").className = "dot " + (httpUp === true ? "dot--green" : httpUp === false ? "dot--red" : "dot--muted");
+  q("eran-chat-txt").textContent = "chat " + (httpUp === true ? "online" : httpUp === false ? "offline" : "—") + " (:" + chatPort + ")";
+
+  q("eran-panel").onclick = () => openUrl(chatUrl);
+
+  /* Babble: prefer eran.babble, fallback to last log line */
+  let babbleText = get(e, "babble.text", null);
+  let babbleStep = get(e, "babble.step", null);
+  if (!babbleText) {
+    const lines = get(e, "log_tail.recent_lines", []);
+    if (lines && lines.length) babbleText = lines[lines.length - 1];
+    else babbleText = get(e, "log_tail.last_line", null);
+  }
+  q("babble-text").textContent = babbleText || "—";
+  q("babble-step").textContent = babbleStep ? ("step " + fmtInt(babbleStep)) : "";
+}
+
+/* ------- Fleet ------- */
+function fleetCardHTML(id, node) {
+  if (!node) {
+    return `<div class="fleet-card"><div class="name">${esc(id)}</div>
+      <div class="state">${dotFor(null)}<span class="txt">no data</span></div></div>`;
+  }
+  const up = node.reachable === true || node.up === true;
+  const down = node.reachable === false || node.up === false;
+  const err = node.error;
+
+  /* GPU picks first entry if array present */
+  let gpuTemp = null, gpuUtil = null;
+  if (Array.isArray(node.gpu) && node.gpu.length) {
+    gpuTemp = node.gpu[0].temp_c;
+    gpuUtil = node.gpu[0].util_pct;
+  } else {
+    gpuTemp = node.gpu_temp_c !== undefined ? node.gpu_temp_c : null;
+    gpuUtil = node.gpu_util_pct !== undefined ? node.gpu_util_pct : null;
+  }
+
+  const uptime = node.uptime_s !== undefined
+    ? Math.round(node.uptime_s / 3600) + "h"
+    : (node.uptime_h !== undefined ? node.uptime_h + "h" : "—");
+
+  const mem = node.mem
+    ? Math.round(node.mem.used_gb || 0) + "/" + Math.round(node.mem.total_gb || 0) + "G"
+    : (node.mem_used_g !== undefined ? (node.mem_used_g + "/" + (node.mem_total_g || "—") + "G") : "—");
+
+  const procs = Array.isArray(node.procs) ? node.procs.join(",") : (node.procs || "");
+
+  let cls = "fleet-card";
+  let dotCls = "green";
+  let stateTxt = "UP";
+  if (down) { cls += " crit"; dotCls = "red"; stateTxt = "DOWN"; }
+  else if (gpuTemp !== null && gpuTemp > 80) { cls += " crit"; dotCls = "red"; stateTxt = "HOT"; }
+  else if (gpuTemp !== null && gpuTemp > 70) { cls += " warn"; dotCls = "orange"; stateTxt = "WARM"; }
+  else if (node.warning) { cls += " warn"; dotCls = "orange"; stateTxt = "WARN"; }
+
+  const util = (gpuUtil !== null && gpuUtil !== undefined) ? Math.min(100, Math.max(0, gpuUtil)) : 0;
+  const tempTxt = (gpuTemp !== null && gpuTemp !== undefined) ? (gpuTemp + "°C") : "—";
+  const utilTxt = (gpuUtil !== null && gpuUtil !== undefined) ? (gpuUtil + "%") : "—";
+
+  const warn = node.warning ? `<div class="warning">${esc(node.warning)}</div>` : "";
+  const errRow = err ? `<div class="warning">${esc(String(err).slice(0,40))}</div>` : "";
+
+  return `<div class="${cls}" data-host="${esc(id)}" title="ssh ${esc(id)}">
+    <div class="name">${esc(id)}</div>
+    <div class="state"><span class="dot dot--${dotCls}"></span><span class="txt">${stateTxt}</span></div>
+    <div class="row"><span>GPU</span><span class="v">${tempTxt} ${utilTxt}</span></div>
+    <div class="gpu-bar"><span style="width:${util}%"></span></div>
+    <div class="row"><span>up</span><span class="v">${uptime}</span></div>
+    <div class="row"><span>mem</span><span class="v">${mem}</span></div>
+    <div class="procs" title="${esc(procs)}">${esc(procs) || "—"}</div>
+    ${warn}${errRow}
+  </div>`;
+}
+
+function renderFleet(s) {
+  const fleet = s.fleet || {};
+
+  /* Accept both schemas: fleet.nodes (array) OR fleet.eran1..N */
+  let hosts = [];
+  if (Array.isArray(fleet.nodes)) {
+    hosts = fleet.nodes.map(n => [n.id || n.hostname, n]);
+  } else {
+    hosts = Object.keys(fleet)
+      .filter(k => !k.startsWith("_") && k !== "cached_at" && k !== "cache_age_s"
+                && k !== "error" && k !== "stale" && k !== "pending"
+                && fleet[k] && typeof fleet[k] === "object")
+      .sort()
+      .map(k => [k, fleet[k]]);
+  }
+  if (hosts.length === 0) {
+    q("fleet-grid").innerHTML = '<div class="fleet-card"><div class="name">—</div><div>no data</div></div>';
+  } else {
+    q("fleet-grid").innerHTML = hosts.map(([id, n]) => fleetCardHTML(id, n)).join("");
+  }
+
+  /* Wire clicks */
+  document.querySelectorAll(".fleet-card[data-host]").forEach(card => {
+    card.onclick = () => {
+      const host = card.getAttribute("data-host");
+      copy("ssh " + host, "ssh " + host + " copied");
+    };
+  });
+
+  const age = fleet.cache_age_s;
+  q("fleet-age").textContent = age !== undefined && age !== null ? "cache " + fmtAge(age) : "";
+}
+
+/* ------- Fabric SVG ------- */
+function renderFabric(s) {
+  const fabric = s.fabric || {};
+  q("fabric-age").textContent = fabric.cache_age_s !== undefined && fabric.cache_age_s !== null
+    ? "cache " + fmtAge(fabric.cache_age_s) : "";
+
+  /* Build edges list */
+  let edges = [];
+  if (Array.isArray(fabric.edges)) {
+    edges = fabric.edges;
+  } else if (fabric.links && typeof fabric.links === "object") {
+    for (const key of Object.keys(fabric.links)) {
+      const link = fabric.links[key];
+      const m = key.match(/^(.+?)<->(.+)$/);
+      if (!m) continue;
+      const carrier = (link.state === "up") || (link.state === "spare");
+      const ip = link.state === "up";
+      edges.push({
+        from: m[1], to: m[2],
+        speed_mbps: (link.speed_gbps || 0) * 1000,
+        speed_gbps: link.speed_gbps,
+        medium: (link.speed_gbps >= 200 ? "QSFP DAC" : "RJ45"),
+        ip_configured: ip,
+        carrier: carrier,
+        role: link.state === "spare" ? "spare" : "active",
+        kind: (link.speed_gbps >= 100 ? "qsfp" : "rj45"),
+        state: link.state,
+        note: link.note
+      });
+    }
+  }
+
+  /* Collect all nodes from edges */
+  const nodeSet = new Set();
+  edges.forEach(e => { nodeSet.add(e.from); nodeSet.add(e.to); });
+  /* Include fleet nodes so isolated hosts still show */
+  const fleet = s.fleet || {};
+  if (Array.isArray(fleet.nodes)) fleet.nodes.forEach(n => nodeSet.add(n.id || n.hostname));
+  else Object.keys(fleet).filter(k => k.startsWith("eran")).forEach(k => nodeSet.add(k));
+
+  const nodes = [...nodeSet].sort();
+  const hub = fabric.hub || "eran2";
+
+  const svg = q("fabric-svg");
+  if (nodes.length === 0) {
+    svg.innerHTML = '<text x="350" y="100" text-anchor="middle" fill="#8a8172" font-family="Consolas" font-size="13">no fabric data</text>';
+    return;
+  }
+
+  /* Layout: hub in centre, others arranged around (horizontal bias) */
+  const W = 700, H = 200;
+  const cx = W / 2, cy = H / 2;
+  const positions = {};
+  const others = nodes.filter(n => n !== hub);
+  if (nodes.includes(hub) && others.length > 0) {
+    positions[hub] = [cx, cy];
+    if (others.length === 1) {
+      positions[others[0]] = [cx + 200, cy];
+    } else if (others.length === 2) {
+      positions[others[0]] = [cx - 220, cy];
+      positions[others[1]] = [cx + 220, cy];
+    } else if (others.length === 3) {
+      positions[others[0]] = [cx - 240, cy - 55];
+      positions[others[1]] = [cx + 240, cy - 55];
+      positions[others[2]] = [cx + 240, cy + 55];
+    } else {
+      const radius = 130;
+      const step = 2 * Math.PI / others.length;
+      others.forEach((n, i) => {
+        const ang = i * step;
+        positions[n] = [cx + radius * Math.cos(ang) * 1.9, cy + radius * Math.sin(ang) * 0.65];
+      });
+    }
+  } else {
+    nodes.forEach((n, i) => {
+      const x = 100 + (W - 200) * (i / Math.max(1, nodes.length - 1));
+      positions[n] = [x, cy];
+    });
+  }
+
+  /* Draw */
+  let out = "";
+
+  /* Edges */
+  edges.forEach((e, i) => {
+    const p1 = positions[e.from];
+    const p2 = positions[e.to];
+    if (!p1 || !p2) return;
+    const carrier = e.carrier === true || e.state === "up" || e.state === "spare";
+    const ipUp = e.ip_configured === true || e.state === "up";
+    let color = "var(--red)", dash = "6,4", width = 2;
+    if (carrier && ipUp) { color = "var(--green)"; dash = ""; }
+    else if (carrier && !ipUp) { color = "var(--gold-dim)"; dash = "8,4"; }
+    if (e.kind === "rj45") width = 1;
+
+    const mx = (p1[0] + p2[0]) / 2, my = (p1[1] + p2[1]) / 2 - 8;
+    const speed = e.speed_gbps
+      ? (e.speed_gbps + "G")
+      : (e.speed_mbps ? (e.speed_mbps >= 1000 ? (e.speed_mbps / 1000 + "G") : (e.speed_mbps + "M")) : "");
+    const label = speed || (e.medium || "");
+    const tooltip = (e.medium || "") + " · " + speed + " · " + (e.role || e.state || "");
+
+    out += `<g><title>${esc(tooltip)}${e.note ? " — " + esc(e.note) : ""}</title>
+      <line x1="${p1[0]}" y1="${p1[1]}" x2="${p2[0]}" y2="${p2[1]}"
+        stroke="${color}" stroke-width="${width}"
+        ${dash ? `stroke-dasharray="${dash}"` : ""}
+        opacity="0.85"/>
+      <rect x="${mx - 20}" y="${my - 10}" width="40" height="14" rx="3"
+        fill="#141028" stroke="#221a3a"/>
+      <text x="${mx}" y="${my + 1}" text-anchor="middle" fill="${color}"
+        font-family="Consolas" font-size="10" dominant-baseline="middle">${esc(label)}</text>
+    </g>`;
+  });
+
+  /* Nodes */
+  nodes.forEach(n => {
+    const [x, y] = positions[n];
+    const isHub = n === hub;
+    const r = isHub ? 26 : 22;
+    const fill = "#1a1533";
+    const stroke = isHub ? "var(--gold)" : "var(--gold-dim)";
+    out += `<g>
+      <circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" stroke="${stroke}" stroke-width="2"/>
+      <text x="${x}" y="${y + 4}" text-anchor="middle" fill="var(--text)"
+        font-family="Segoe UI" font-size="12" font-weight="600">${esc(n)}</text>
+      ${isHub ? `<text x="${x}" y="${y + r + 12}" text-anchor="middle" fill="var(--gold-dim)"
+        font-family="Consolas" font-size="9">HUB</text>` : ""}
+    </g>`;
+  });
+
+  svg.innerHTML = out;
+}
+
+/* ------- Services ------- */
+function renderServices(s) {
+  const svc = s.services || {};
+  let list = [];
+  if (Array.isArray(svc)) {
+    list = svc;
+  } else {
+    for (const key of Object.keys(svc)) {
+      const v = svc[key];
+      if (!v || typeof v !== "object") continue;
+      list.push({
+        id: key,
+        label: v.label || key.replace(/_/g, " "),
+        port: v.port || (v.target && (v.target.match(/:(\d+)/) || [])[1]) || "",
+        url: v.click_url || (v.kind === "http" ? v.target : null),
+        up: v.up,
+        state_text: v.state_text || (v.up ? (v.latency_ms ? v.latency_ms + "ms" : "up") : (v.error || "down")),
+        host: v.host || ""
+      });
+    }
+  }
+
+  const target = q("services-list");
+  if (list.length === 0) {
+    target.innerHTML = '<div class="service-row"><span class="dot dot--muted"></span><span class="label">no services</span><span></span><span></span></div>';
+    return;
+  }
+
+  target.innerHTML = list.map((svc, i) => {
+    const upCls = svc.up === true ? "up" : svc.up === false ? "down" : "";
+    const clickCls = svc.url ? "clickable" : "";
+    const dotCls = svc.up === true ? "dot--green" : svc.up === false ? "dot--red" : "dot--muted";
+    const port = svc.port ? (":" + svc.port) : "";
+    return `<div class="service-row ${upCls} ${clickCls}" data-idx="${i}">
+      <span class="dot ${dotCls}"></span>
+      <span class="label">${esc(svc.label)}</span>
+      <span class="port">${esc(port)}</span>
+      <span class="state">${esc(svc.state_text)}</span>
+    </div>`;
+  }).join("");
+
+  target.querySelectorAll(".service-row.clickable").forEach(row => {
+    const idx = parseInt(row.getAttribute("data-idx"), 10);
+    row.onclick = () => openUrl(list[idx].url);
+  });
+}
+
+/* ------- Projects ------- */
+function projectStatus(p) {
+  if (p.status) return p.status;
+  if (p.active === true) return "active";
+  if (p.active === false) return "dormant";
+  return "unknown";
+}
+function statusRank(st) {
+  return ({ "active": 0, "shipped": 0, "planning": 2, "dormant": 3 })[st] ?? 4;
+}
+function priorityRank(p) {
+  return ({ "north-star": 0, "high": 1, "medium": 2, "low": 3 })[p] ?? 5;
+}
+function emojiForStatus(st) {
+  return ({ "active": "🟢", "shipped": "🟡", "planning": "🔵", "dormant": "⚪" })[st] || "⚫";
+}
+function ageDays(p) {
+  if (p.last_touched_days !== undefined && p.last_touched_days !== null) return p.last_touched_days;
+  if (p.age_s !== undefined && p.age_s !== null) return Math.round(p.age_s / 86400);
+  return null;
+}
+
+function renderProjects(s) {
+  const proj = s.projects || {};
+  let items = [];
+  if (Array.isArray(proj)) items = proj;
+  else if (Array.isArray(proj.items)) items = proj.items;
+  else if (proj.items && typeof proj.items === "object") {
+    items = Object.keys(proj.items).map(k => {
+      const v = proj.items[k] || {};
+      return Object.assign({ id: k, name: k }, v);
+    });
+  }
+
+  q("projects-age").textContent = proj.cache_age_s !== undefined && proj.cache_age_s !== null
+    ? "cache " + fmtAge(proj.cache_age_s) : "";
+
+  /* Filter */
+  let filtered = items.slice();
+  if (projectFilter !== "all") {
+    filtered = filtered.filter(p => projectStatus(p) === projectFilter);
+  }
+
+  /* Sort */
+  filtered.sort((a, b) => {
+    const sa = statusRank(projectStatus(a)), sb = statusRank(projectStatus(b));
+    if (sa !== sb) return sa - sb;
+    const pa = priorityRank(a.priority), pb = priorityRank(b.priority);
+    if (pa !== pb) return pa - pb;
+    const da = ageDays(a) ?? 9999, db = ageDays(b) ?? 9999;
+    return da - db;
+  });
+
+  const MAX = PROJECT_TILES_MAX;
+  const overflowN = Math.max(0, filtered.length - MAX + (filtered.length > MAX ? 1 : 0));
+  const shown = filtered.slice(0, filtered.length > MAX ? MAX - 1 : MAX);
+
+  const grid = q("projects-grid");
+  let html = shown.map(p => {
+    const st = projectStatus(p);
+    const emj = p.emoji || emojiForStatus(st);
+    const nm = p.name || p.id || "—";
+    const prio = p.priority || "";
+    const d = ageDays(p);
+    const dTxt = d !== null ? (d + "d") : "—";
+    const clsPrio = (prio === "north-star") ? "north" : (prio === "high" ? "high" : (prio === "medium" ? "med" : "low"));
+    const clsN = (prio === "north-star") ? "priority-north" : "";
+    const nextAction = p.next_action || p.notes || "";
+    const path = p.path || "";
+    const title = (nextAction || nm) + (path ? "\n" + path : "");
+    return `<div class="project-tile ${clsN}" data-path="${esc(path)}" title="${esc(title)}">
+      <div class="row1"><span class="emoji">${emj}</span><span class="name">${esc(nm)}</span></div>
+      <div class="row2"><span class="prio ${clsPrio}">${esc(prio || "—")}</span><span>${esc(dTxt)}</span></div>
+    </div>`;
+  }).join("");
+
+  if (overflowN > 0 && filtered.length > MAX) {
+    html += `<div class="project-tile plus" title="${overflowN} more not shown">+${overflowN} more</div>`;
+  }
+
+  grid.innerHTML = html;
+
+  grid.querySelectorAll(".project-tile[data-path]").forEach(tile => {
+    const p = tile.getAttribute("data-path");
+    if (!p) return;
+    tile.onclick = () => {
+      const url = "file:///" + p.replace(/\\/g, "/");
+      openUrl(url);
+    };
+  });
+}
+
+/* Tab wiring */
+document.querySelectorAll("#projects-tabs .tab").forEach(tab => {
+  tab.onclick = () => {
+    projectFilter = tab.getAttribute("data-filter");
+    document.querySelectorAll("#projects-tabs .tab").forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    if (lastGoodStatus) renderProjects(lastGoodStatus);
+  };
+});
+
+/* ------- Todo ------- */
+function renderTodo(s) {
+  const t = s.todo || {};
+  let items = Array.isArray(t) ? t : (Array.isArray(t.items) ? t.items : []);
+
+  const target = q("todo-list");
+  if (items.length === 0) {
+    target.innerHTML = '<div class="todo-row"><span class="box"></span><span class="dot dot--muted"></span><span class="text">no todos</span></div>';
+    return;
+  }
+
+  target.innerHTML = items.map((it, i) => {
+    let sev = it.severity || "";
+    let dotCls = "dot--muted";
+    if (it.priority !== undefined) {
+      if (it.priority === 1) { sev = sev || "critical"; }
+      else if (it.priority === 2) { sev = sev || "warn"; }
+      else if (it.priority === 3) { sev = sev || "review"; }
+    }
+    if (sev === "critical") dotCls = "dot--red";
+    else if (sev === "warn") dotCls = "dot--orange";
+    else if (sev === "review") dotCls = "dot--gold";
+    else if (sev === "decide") dotCls = "dot--blue";
+
+    const projTag = it.project ? `[${esc(it.project)}] ` : "";
+    return `<div class="todo-row" data-i="${i}">
+      <span class="box"></span>
+      <span class="dot ${dotCls}"></span>
+      <span class="text" dir="auto"><span style="color:var(--muted-dim);font-size:10px">${projTag}</span>${esc(it.text)}</span>
+    </div>`;
+  }).join("");
+
+  target.querySelectorAll(".todo-row").forEach(row => {
+    row.onclick = () => row.classList.toggle("done");
+  });
+}
+
+/* ------- Git ------- */
+function renderGit(s) {
+  const g = s.git || {};
+  q("git-age").textContent = g.cache_age_s !== undefined && g.cache_age_s !== null
+    ? "cache " + fmtAge(g.cache_age_s) : "";
+
+  const ahead  = g.ahead !== undefined ? g.ahead  : g.commits_ahead_of_main;
+  const behind = g.behind !== undefined ? g.behind : null;
+  const dirty  = g.modified_unstaged !== undefined ? g.modified_unstaged : (g.dirty_count || 0);
+  const staged = g.staged || g.staged_count || 0;
+  const untracked = g.untracked !== undefined ? g.untracked : (g.untracked_count || 0);
+  const subDirty = g.submodule_dirty || 0;
+  const untrackedThresh = g.untracked_warn_threshold || 500;
+
+  const branchLine = `branch ${g.branch || "—"} → ${g.main_branch || "main"}` +
+    (ahead !== null && ahead !== undefined ? ` · +${ahead}` : "") +
+    (behind !== null && behind !== undefined ? ` · -${behind}` : "");
+  q("git-branch").textContent = branchLine;
+
+  const rows = [
+    { k: "● modified", v: dirty,     cls: dirty > 0 ? "red" : "" },
+    { k: "● staged",   v: staged,     cls: "" },
+    { k: "● submodule dirty", v: subDirty, cls: subDirty > 0 ? "orange" : "" },
+    { k: "● untracked", v: untracked, cls: untracked > untrackedThresh ? "orange" : "" }
+  ];
+  q("git-counters").innerHTML = rows.map(r =>
+    `<span class="k">${esc(r.k)}</span><span class="v ${r.cls}">${esc(r.v)}</span>`
+  ).join("");
+
+  const commits = Array.isArray(g.recent_commits) ? g.recent_commits.slice(0, 4) : [];
+  q("git-recent-list").innerHTML = commits.length === 0
+    ? '<div class="commit-row"><span class="subj">—</span></div>'
+    : commits.map(c => `<div class="commit-row" data-sha="${esc(c.sha)}">
+        <span class="sha">${esc(c.sha)}</span>
+        <span class="subj" title="${esc(c.subject)}">${esc(c.subject)}</span>
+      </div>`).join("");
+
+  q("git-recent-list").querySelectorAll(".commit-row").forEach(row => {
+    const sha = row.getAttribute("data-sha");
+    row.onclick = () => copy(sha, "sha " + sha + " copied");
+  });
+}
+
+/* ------- Workflow ------- */
+function renderWorkflow(s) {
+  const wf = s.workflow || {};
+  let obj = null;
+  if (Array.isArray(wf.agents) || wf.id) {
+    obj = wf;
+  } else {
+    /* collector schema keyed by workflow id */
+    const keys = Object.keys(wf).filter(k => wf[k] && typeof wf[k] === "object" && (wf[k].counts || wf[k].recent_events || wf[k].last_event));
+    if (keys.length) {
+      const k = keys[0];
+      const w = wf[k];
+      const counts = w.counts || { queued: 0, running: 0, done: 0, failed: 0 };
+      const total = (counts.queued || 0) + (counts.running || 0) + (counts.done || 0) + (counts.failed || 0);
+      obj = {
+        id: k,
+        name: k.replace(/_/g, "-"),
+        phases_total: total || 1,
+        phases_done: counts.done || 0,
+        phases_running: counts.running || 0,
+        cache_age_s: w.cache_age_s,
+        recent_events: w.recent_events || (w.last_event ? [w.last_event] : [])
+      };
+    }
+  }
+
+  q("workflow-age").textContent = (obj && obj.cache_age_s !== undefined && obj.cache_age_s !== null)
+    ? "cache " + fmtAge(obj.cache_age_s) : "";
+
+  if (!obj) {
+    q("workflow-id").textContent = "—";
+    q("workflow-name").textContent = "—";
+    q("workflow-progress").textContent = "0 / 0";
+    q("workflow-bar-fill").style.width = "0%";
+    q("agent-list").innerHTML = '<div class="agent-row"><span class="glyph">·</span><span class="role">no workflow</span><span></span></div>';
+    return;
+  }
+
+  q("workflow-id").textContent = obj.id || "—";
+  q("workflow-name").textContent = obj.name || "—";
+  const done = obj.phases_done || 0;
+  const total = obj.phases_total || 0;
+  q("workflow-progress").textContent = done + " / " + total;
+  const pct = total > 0 ? (done / total * 100) : 0;
+  q("workflow-bar-fill").style.width = pct + "%";
+
+  let agents = obj.agents;
+  if (!Array.isArray(agents)) {
+    /* fallback: derive from recent_events */
+    agents = (obj.recent_events || []).slice(0, 6).map(ev => ({
+      id: ev.agent || "?",
+      role: ev.message || ev.phase || ev.agent || "—",
+      status: ev.status || "?",
+      started_ts: ev.ts
+    }));
+  }
+
+  if (agents.length === 0) {
+    q("agent-list").innerHTML = '<div class="agent-row"><span class="glyph">·</span><span class="role">no agents</span><span></span></div>';
+    return;
+  }
+
+  q("agent-list").innerHTML = agents.map(a => {
+    let glyph = "·", cls = "";
+    if (a.status === "completed" || a.status === "done") { glyph = "✓"; cls = "done"; }
+    else if (a.status === "running" || a.status === "in_progress") { glyph = "⟳"; cls = "running"; }
+    else if (a.status === "failed") { glyph = "✗"; cls = "failed"; }
+    return `<div class="agent-row">
+      <span class="glyph ${cls}">${glyph}</span>
+      <span class="role" title="${esc(a.role)}">${esc(a.role)}</span>
+      <span class="status-txt">${esc(a.status || "")}</span>
+    </div>`;
+  }).join("");
+}
+
+/* ------- Main render ------- */
+function render(s) {
+  try { renderHeader(s); }    catch (e) { console.error("header", e); }
+  try { renderEran(s); }      catch (e) { console.error("eran", e); }
+  try { renderFleet(s); }     catch (e) { console.error("fleet", e); }
+  try { renderFabric(s); }    catch (e) { console.error("fabric", e); }
+  try { renderServices(s); }  catch (e) { console.error("services", e); }
+  try { renderProjects(s); }  catch (e) { console.error("projects", e); }
+  try { renderTodo(s); }      catch (e) { console.error("todo", e); }
+  try { renderGit(s); }       catch (e) { console.error("git", e); }
+  try { renderWorkflow(s); }  catch (e) { console.error("workflow", e); }
+}
+
+/* ------- Fetch loop ------- */
+async function tick() {
+  try {
+    const r = await fetch("status.json?t=" + Date.now(), { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const s = await r.json();
+    lastGoodStatus = s;
+    lastFetchOk = Date.now();
+    render(s);
+  } catch (e) {
+    if (lastGoodStatus) render(lastGoodStatus);
+    markFetchFailed(e);
+  } finally {
+    setTimeout(tick, REFRESH_MS);
+  }
+}
+
+/* Boot */
+tick();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+[
+ {
+  "id": "b01_L01",
+  "block": 1,
+  "k": 50,
+  "prompt": "Documentary real archival texture, Dust motes drifting slowly through a shaft of warm late-afternoon light in an empty 1950s laboratory, rows of dark equipment in soft focus, the camera drifting slowly right. Warm amber and deep brown, subtle film grain, photorealistic, no people, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9910613
+ },
+ {
+  "id": "b11_L04",
+  "block": 11,
+  "k": 53,
+  "prompt": "Documentary, museum lighting. A room-sized 1950s analog computer with panels of dials and patch cables, cool grey steel, one operator's chair empty, slow wide dolly revealing its scale. photoreal, faint dust in the air, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9933764
+ },
+ {
+  "id": "b17_L07",
+  "block": 17,
+  "k": 56,
+  "prompt": "desolate. Snow falling slowly over a shuttered research building at dusk, one lit window, cold blue palette, the long AI winter, slow static shot with drifting snow, photoreal, grain, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9956915
+ },
+ {
+  "id": "b23_L10",
+  "block": 23,
+  "k": 59,
+  "prompt": "Macro documentary, physical AI. A silicon memristor crossbar array under a microscope, grid of tiny metal junctions glinting, faint current shimmering along the wires, cool clinical light with warm accents, slow pan, hyper-detailed, photoreal, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9980066
+ },
+ {
+  "id": "b30_L13",
+  "block": 30,
+  "k": 62,
+  "prompt": "landscape, golden hour. The Negev desert at dawn, red-gold dunes and distant acacia trees, long shadows, a single solar panel catching first light on a ridge, slow aerial drift, warm and vast, photoreal, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 10003217
+ },
+ {
+  "id": "b29_L16",
+  "block": 29,
+  "k": 65,
+  "prompt": "Documentary, night. A large campfire in the desert with sparks rising like beacons into a star-filled sky, warm orange light, silhouettes of people gathered around at the edges of frame, slow gentle handheld, photoreal, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 10026368
+ }
+]

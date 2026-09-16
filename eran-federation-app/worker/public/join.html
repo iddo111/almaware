@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>הצטרפו לערן · Join ERAN's Grid</title>
+<meta name="description" content="קליק אחד — והדפדפן שלכם עוזר לאמן את המוח־תלמיד של ערן בענן. One click — your browser helps train ERAN's cloud student brain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Heebo:wght@400;600;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f9fb; --card:#ffffff; --ink:#101820; --muted:#5a6b78;
+    --wafer1:#0e93a8; --wafer2:#6d4fe0; --copper:#b4622d; --edge:#dfe7ec;
+    --ok:#177a45; --warn:#a8620a; --bad:#b3261e; --link:#0a6f80;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Heebo,"Segoe UI",Arial,sans-serif;line-height:1.6}
+  .wrap{max-width:880px;margin:0 auto;padding:40px 20px 80px}
+  .crumb{font-size:13px}
+  .crumb a{color:var(--link);text-decoration:none;font-weight:600}
+  h1{font-family:"Frank Ruhl Libre",Georgia,serif;font-weight:900;font-size:clamp(30px,6vw,48px);margin:14px 0 4px}
+  h1 .en{display:block;font-size:.42em;color:var(--muted);font-weight:700}
+  .rule{height:4px;width:120px;border-radius:2px;margin:16px 0 22px;
+    background:linear-gradient(90deg,var(--wafer1),var(--wafer2),var(--copper))}
+  .truth{background:var(--card);border:1px solid var(--edge);border-radius:14px;padding:18px 20px;font-size:15px}
+  .truth b{color:var(--copper)}
+  .truth .en{color:var(--muted);font-size:13.5px;margin-top:8px;direction:ltr;text-align:left}
+  .joinrow{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:26px 0 10px}
+  button{font-family:Heebo,sans-serif;font-weight:800;font-size:19px;border:none;border-radius:12px;
+    padding:16px 34px;cursor:pointer;color:#fff;background:linear-gradient(120deg,var(--wafer1),var(--wafer2));
+    box-shadow:0 6px 18px rgba(14,147,168,.25)}
+  button:hover{filter:brightness(1.06)}
+  button:disabled{opacity:.45;cursor:default;box-shadow:none}
+  #stopBtn{background:var(--card);color:var(--bad);border:1.5px solid var(--bad);box-shadow:none;font-size:15px;padding:12px 22px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0}
+  .stat{background:var(--card);border:1px solid var(--edge);border-radius:12px;padding:12px 14px}
+  .stat .k{font-size:12px;color:var(--muted);font-weight:600}
+  .stat .v{font-family:"IBM Plex Mono",monospace;font-size:20px;margin-top:3px;direction:ltr;text-align:left}
+  #log{background:#0d1b22;color:#bfe3d9;border-radius:12px;padding:14px 16px;font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;min-height:120px;max-height:300px;overflow-y:auto;direction:ltr;text-align:left;white-space:pre-wrap}
+  .foot{color:var(--muted);font-size:13px;margin-top:26px}
+  .foot a{color:var(--link)}
+  @media (prefers-reduced-motion: no-preference){
+    .pulse{animation:pulse 1.4s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="https://iddoperez.ai">iddoperez.ai</a> ← <a href="/">federation</a></div>
+  <h1>הצטרפו לרשת של ערן<span class="en">Join ERAN's Grid — one click, real training</span></h1>
+  <div class="rule"></div>
+
+  <div class="truth">
+    <b>מה זה עושה, באמת:</b> קליק אחד רושם אתכם כחברים, והלשונית הזאת מושכת את <b>מוח־התלמיד</b> של ערן
+    (העתק־ענן של אבות־הטיפוס שלו) + פיסת קול אנושי אמיתי שכבר פורסם, מריצה כמה מאות צעדי עדינון אצלכם במעבד,
+    ומחזירה את הדלתא. הקואורדינטור ממזג בשערי־בטיחות. <b>ערן עצמו — האורגניזם על eran1 — נשאר ריבוני</b>:
+    התלמיד הוא הצעה שהצי רשאי לאמץ, לא ערן שני. אפשר לעצור בכל רגע — פשוט סוגרים את הלשונית.
+    <div class="en">One click registers you as a member. This tab pulls ERAN's <b>student brain</b> (a cloud copy of his
+    prototypes) plus a shard of already-public real human voice, runs a few hundred refinement steps on your CPU,
+    and pushes the delta back. The coordinator merges behind safety gates. The organism on eran1 stays sovereign —
+    the student is a proposal, not a second ERAN. Stop anytime by closing the tab.</div>
+  </div>
+
+  <div class="joinrow">
+    <button id="joinBtn">🧬 הצטרפו ותתחילו לאמן · Join &amp; start training</button>
+    <button id="stopBtn" hidden>עצור · Stop</button>
+    <span id="state" class="pulse" style="color:var(--muted);font-weight:600"></span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="k">חבר/ה · member</div><div class="v" id="sMember">—</div></div>
+    <div class="stat"><div class="k">גרסת התלמיד · student v</div><div class="v" id="sVersion">—</div></div>
+    <div class="stat"><div class="k">סבבים שתרמתם · your rounds</div><div class="v" id="sRounds">0</div></div>
+    <div class="stat"><div class="k">אבות־טיפוס שהוזזו · protos moved</div><div class="v" id="sMoved">0</div></div>
+    <div class="stat"><div class="k">הדופק של ערן · ERAN's beat</div><div class="v" id="sBeat">—</div></div>
+    <div class="stat"><div class="k">חברים ברשת · members</div><div class="v" id="sMembers">—</div></div>
+  </div>
+
+  <div id="log">ER"N-GRID · waiting for your click…</div>
+
+  <div class="foot">
+    מעדיפים טרמינל? <span dir="ltr" style="font-family:'IBM Plex Mono',monospace">python join.py --provider gcloud --coordinator https://federation.iddoperez.ai --consent yes</span>
+    · הקוד פתוח: <a href="https://eran.iddoperez.ai">eran.iddoperez.ai</a>
+    · הנתונים: קול אנושי אמיתי שכבר פורסם בלבד — בלי סינתטי (הצלקת של 08-23), בלי הקלטות פרטיות.
+  </div>
+</div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const log = (m) => { const el = $("log"); el.textContent += "\n" + m; el.scrollTop = el.scrollHeight; };
+  const API = "";   // same origin
+  let running = false, member = localStorage.getItem("erngrid-member") || null;
+  let secret = localStorage.getItem("erngrid-secret") || null;
+  let myRounds = 0, myMoved = 0;
+
+  // mulberry32 — deterministic per (member, version) so contributions differ.
+  function rng(seed){ return function(){ let t = seed += 0x6D2B79F5;
+    t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+    return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function fnv(s){ let h = 0x811c9dc5;
+    for (let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; }
+    return h >>> 0; }
+  const l2 = (v) => Math.sqrt(v.reduce((a,x)=>a+x*x,0));
+
+  async function j(path, opts){ const r = await fetch(API + path, opts); return r.json(); }
+
+  async function beatPoll(){
+    try{ const h = await j("/api/eran/health");
+      if (h.beat != null) $("sBeat").textContent = h.beat.toLocaleString("en-US");
+    }catch{}
+    try{ const s = await j("/api/grid/status");
+      if (s.ok){ $("sMembers").textContent = s.n_members; if (s.student) $("sVersion").textContent = s.student.version; }
+    }catch{}
+  }
+  beatPoll(); setInterval(beatPoll, 7000);
+
+  function innerTrain(task){
+    const dim = task.dim, protos = task.protos.map(v => v.slice());
+    const X = task.shard.vecs, eta = task.eta, H = task.H;
+    const rand = rng(fnv((member||"m") + ":" + task.version));
+    const perm = X.map((_,i)=>i);
+    for (let i = perm.length-1; i > 0; i--){ const k = Math.floor(rand()*(i+1)); [perm[i],perm[k]]=[perm[k],perm[i]]; }
+    let touched = new Set();
+    for (let t = 0; t < H; t++){
+      const x = X[perm[t % perm.length]];
+      let best = -Infinity, bi = 0;
+      for (let p = 0; p < protos.length; p++){
+        let s = 0; const pv = protos[p];
+        for (let d = 0; d < dim; d++) s += pv[d]*x[d];
+        if (s > best){ best = s; bi = p; }
+      }
+      const pv = protos[bi];
+      for (let d = 0; d < dim; d++) pv[d] = (1-eta)*pv[d] + eta*x[d];
+      const n = l2(pv) || 1;
+      for (let d = 0; d < dim; d++) pv[d] /= n;
+      touched.add(bi);
+    }
+    const deltas = [];
+    for (const i of touched){
+      const dv = new Array(dim);
+      let nz = false;
+      for (let d = 0; d < dim; d++){ dv[d] = protos[i][d] - task.protos[i][d]; if (dv[d] !== 0) nz = true; }
+      if (nz) deltas.push({ i, dv: dv.map(x => Math.round(x*1e6)/1e6) });
+    }
+    return deltas;
+  }
+
+  async function round(){
+    const task = await j(`/api/grid/task?member=${encodeURIComponent(member)}`);
+    if (!task.ok){ log("· coordinator: " + task.error); $("state").textContent = "ממתין לנתונים · waiting for shards"; return "wait"; }
+    $("sVersion").textContent = task.version;
+    const t0 = performance.now();
+    const deltas = innerTrain(task);
+    const ms = Math.round(performance.now() - t0);
+    const res = await j("/api/grid/delta", {
+      method: "POST", headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({ member_id: member, member_secret: secret, base_version: task.version, deltas }),
+    });
+    if (res.accepted){
+      myRounds++; myMoved += res.moved;
+      $("sRounds").textContent = myRounds; $("sMoved").textContent = myMoved;
+      $("sVersion").textContent = res.new_version;
+      log(`✓ round merged: v${task.version}→v${res.new_version} · ${deltas.length} deltas, ${res.moved} moved, ${res.gated} gated · ${ms}ms compute on shard ${task.shard_id}`);
+    } else {
+      log(`· not merged (${res.reason || res.error}) — will re-pull`);
+    }
+    return "ok";
+  }
+
+  async function loop(){
+    while (running){
+      try{
+        const r = await round();
+        await new Promise(res => setTimeout(res, r === "wait" ? 20000 : 8000));
+      }catch(e){
+        log("! " + e.message + " — retrying in 15s");
+        await new Promise(res => setTimeout(res, 15000));
+      }
+    }
+  }
+
+  $("joinBtn").onclick = async () => {
+    $("joinBtn").disabled = true;
+    try{
+      if (!member || !secret){
+        const reg = await j("/api/grid/register", { method:"POST",
+          headers: {"Content-Type":"application/json"}, body: JSON.stringify({ provider:"web" }) });
+        if (!reg.ok) throw new Error(reg.error || "register failed");
+        member = reg.member_id; secret = reg.member_secret;
+        localStorage.setItem("erngrid-member", member);
+        localStorage.setItem("erngrid-secret", secret);
+        log("✓ registered: " + member + " — " + (reg.note || ""));
+      } else {
+        log("· returning member: " + member);
+      }
+      $("sMember").textContent = member;
+      running = true;
+      $("stopBtn").hidden = false;
+      $("state").textContent = "מאמנים · training";
+      loop();
+    }catch(e){
+      log("! " + e.message);
+      $("joinBtn").disabled = false;
+    }
+  };
+  $("stopBtn").onclick = () => {
+    running = false;
+    $("state").textContent = "נעצר · stopped";
+    $("stopBtn").hidden = true;
+    $("joinBtn").disabled = false;
+    log("· stopped by you. הקליק הבא ממשיך מאותו חבר.");
+  };
+  if (member){ $("sMember").textContent = member; log("· known member: " + member + " (click to resume)"); }
+})();
+</script>
+</body>
+</html>

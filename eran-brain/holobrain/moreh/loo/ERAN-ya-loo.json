@@ -1,0 +1,116 @@
+{
+ "speaker": "ERAN",
+ "syl": "ya",
+ "how": "leave-one-syllable-out prediction of holobrain/moreh (fit on the other 23 syllables' lessons)",
+ "spec": {
+  "knots": "AH",
+  "constr": "narrow",
+  "nasal": 0,
+  "voice": "on",
+  "release": "plain",
+  "burst": 0,
+  "pre": 0,
+  "c_pos": 0.796271467499823,
+  "c_area": 0.19841947918576608,
+  "velum": 0.6499808491325959,
+  "ten": 0.6107592921952643,
+  "voi": 1.0,
+  "d_pre": 0.12671169540620345,
+  "d_cons": 0.09244736197997151,
+  "d_trans": 0.019304154623319504,
+  "d_gap": 0.0558884891651079,
+  "gap_pos": 0.6425089795455807,
+  "gap_area": 0.7172265264823142,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6000000000082748,
+  "d_bridge": 0.009505164549787422,
+  "d_vowel": 0.37829584574084935,
+  "glide": 0.5281521464182165,
+  "gain": 7.755121490813438,
+  "f0": 104.50619298320338,
+  "trans_voi": null
+ },
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.7963,
+    0.1984,
+    0.0,
+    0.6108,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.7963,
+    0.1984,
+    0.0,
+    0.6108,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.0924,
+   0.0193,
+   0.3783
+  ],
+  "f0_knots": [
+   104.50619298320338,
+   104.50619298320338,
+   97.19075947437915
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.5281521464182165,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "verifier_ok": false,
+ "fails": [
+  "FAIL onset F1<=300 F2>=1900; F2 slides to ~1205 over 100-150 ms (arrive 60-180 ms); HNR>=4 continuous; no burst; vowel 580/1226"
+ ],
+ "wrong_decisions": {
+  "knots": [
+   "AH",
+   "I"
+  ],
+  "constr": [
+   "narrow",
+   "wide"
+  ]
+ }
+}

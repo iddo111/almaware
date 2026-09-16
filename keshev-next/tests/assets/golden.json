@@ -1,0 +1,7 @@
+{
+  "hebrew-accept-20260911.wav": {
+    "text": "ובאופן אוטומטי, תגרום לטלפון לחבר Wi-Fi דיבאג.",
+    "blessed_at": "2026-09-11T07:28:33",
+    "door": "http://<lan-ip>:8739/v1/transcribe"
+  }
+}

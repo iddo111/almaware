@@ -1,0 +1,6 @@
+{
+ "repr": "cochlea",
+ "n_bands": 24,
+ "pooling": "loudest60",
+ "dim": 192
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "workflow_id": "alma-2d-first-v1",
+  "mode": "2d-first",
+  "allocation": {
+    "brain": "DGX1+DGX2 PP2",
+    "image_video": "DGX3",
+    "music_tts_finishing": "DGX4"
+  },
+  "stages": [
+    {
+      "id": "bible",
+      "requires": ["rights_receipts", "continuity_rules", "delivery_spec"]
+    },
+    {
+      "id": "boards",
+      "requires": ["shot_id", "version", "camera_intent"]
+    },
+    {
+      "id": "keyframes",
+      "worker_class": "image-fast",
+      "acceptance": ["artifact-opens", "dimensions-match", "visual-review", "provenance-complete"]
+    },
+    {
+      "id": "motion",
+      "worker_class": "video-fast-fallback",
+      "acceptance": ["artifact-opens", "frame-count-match", "full-decode", "continuity-review", "provenance-complete"]
+    },
+    {
+      "id": "sound",
+      "worker_classes": ["music", "tts-and-voice"],
+      "acceptance": ["artifact-opens", "non-silent", "no-clipping", "listening-review", "provenance-complete"]
+    },
+    {
+      "id": "master",
+      "worker_class": "finishing",
+      "acceptance": ["3840x2160", "10-bit", "bt2020", "pq-or-hlg", "audio-48khz", "full-decode", "human-review", "provenance-complete"]
+    }
+  ],
+  "immutable_fields": [
+    "project_id",
+    "shot_id",
+    "version",
+    "model_id",
+    "model_revision",
+    "model_license",
+    "workflow_sha256",
+    "seed"
+  ],
+  "completion_rule": "artifact exists, opens, passes technical checks, and receives human review"
+}

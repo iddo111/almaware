@@ -1,0 +1,229 @@
+{
+  "inventory_date": "2026-08-10",
+  "scope": "Codex AI agent work products across C:\\Users\\iddo1\\.codex and D:\\CLAUDE",
+  "total_items_found": 25,
+  "note": "Capped at 25 most significant items. Excluded: caches, temp dirs, logs, database files, auto-generated state.",
+  "worktrees": [
+    {
+      "name": "gpt-oss-full-20260731",
+      "path": "C:\\Users\\iddo1\\.codex\\worktrees\\gpt-oss-full-20260731",
+      "what": "GPT-OSS-20B full-parameter training harness with fixed acceptance contract and bounded memory metrics",
+      "status": "planned",
+      "last_modified": "2026-07-31T09:07:47",
+      "file_count": 49,
+      "run_or_url": "python -m gpt_oss_full_canary --config configs\\canary.example.json (dry-run), dashboard.py --port 18120",
+      "notes": "Fail-closed canary for two-rank NCCL training. Status=PLANNED (no live execution yet). Dashboard at http://127.0.0.1:18120 shows read-only status and test results."
+    },
+    {
+      "name": "iddo-harness-pr4",
+      "path": "C:\\Users\\iddo1\\.codex\\worktrees\\iddo-harness-pr4",
+      "what": "Iddo Harness with AMP v1.0 envelope module integration (41/41 tests passing)",
+      "status": "working",
+      "last_modified": "2026-07-31T23:34:28",
+      "file_count": 302,
+      "run_or_url": "python -m pytest tests/test_amp.py -v (run 41 AMP envelope tests)",
+      "notes": "Complete AMP envelope module for harness_task/harness_result payloads. Backward compatible with legacy task packets. No regressions in pre-existing test suite."
+    },
+    {
+      "name": "iddo-harness-v3.1-transports",
+      "path": "C:\\Users\\iddo1\\.codex\\worktrees\\iddo-harness-v3.1-transports",
+      "what": "Iddo Harness v3.1 with transport layer improvements and connectivity enhancements",
+      "status": "working",
+      "last_modified": "2026-08-01T00:10:12",
+      "file_count": 311,
+      "run_or_url": "Check executor.py and transport implementations; review AMP_WORK_SUMMARY.md",
+      "notes": "Latest transport improvements for distributed agent coordination. Part of broader harness v3.1 roadmap."
+    },
+    {
+      "name": "voice-ant-farm-20260731",
+      "path": "C:\\Users\\iddo1\\.codex\\worktrees\\voice-ant-farm-20260731",
+      "what": "Hebrew voice ant farm - acoustic unit learning without text (4 independent ants on DGX)",
+      "status": "working",
+      "last_modified": "2026-07-31T01:10:43",
+      "file_count": 10,
+      "run_or_url": "python acoustic_units.py train --ant ant-a --train recordings/train --heldout recordings/heldout",
+      "notes": "Voice-first design, no ASR/text/TTS as learning signal. Acoustic codebook learning with held-out evaluation. Real ALMA Mic corpus integration via prepare_real_corpus.py. Conversation server (conversation_server.py) bridges to GLM-5.2 Colibri."
+    },
+    {
+      "name": "gptoss-dense-adafactor-contract-v1",
+      "path": "C:\\Users\\iddo1\\.codex\\worktrees\\gptoss-dense-adafactor-contract-v1",
+      "what": "GPT-OSS dense model variant with Adafactor optimizer (contract specification version)",
+      "status": "working",
+      "last_modified": "2026-08-03T02:58:36",
+      "file_count": 58,
+      "run_or_url": "Check dataset_contract.py and AGENTS.md for configuration and specification",
+      "notes": "Dense model implementation with Adafactor optimization. Part of GPT-OSS training pipeline variants."
+    },
+    {
+      "name": "gptoss-dense-adafactor-reference-v1",
+      "path": "C:\\Users\\iddo1\\.codex\\worktrees\\gptoss-dense-adafactor-reference-v1",
+      "what": "GPT-OSS dense model variant with Adafactor optimizer (reference implementation version)",
+      "status": "working",
+      "last_modified": "2026-08-03T03:07:33",
+      "file_count": 52,
+      "run_or_url": "Check dataset_contract.py for reference model specification",
+      "notes": "Reference implementation of dense model with Adafactor. Baseline for contract comparison."
+    },
+    {
+      "name": "gptoss-dense-store-v1",
+      "path": "C:\\Users\\iddo1\\.codex\\worktrees\\gptoss-dense-store-v1",
+      "what": "GPT-OSS dense model variant with Adafactor optimizer (storage-optimized version)",
+      "status": "working",
+      "last_modified": "2026-08-03T02:44:31",
+      "file_count": 83,
+      "run_or_url": "Check dataset_contract.py and training pipeline configuration",
+      "notes": "Storage-optimized variant of dense Adafactor model. Likely used for long-term model checkpoint management."
+    },
+    {
+      "name": "gptoss-handoff-refresh-20260803-0252",
+      "path": "C:\\Users\\iddo1\\.codex\\worktrees\\gptoss-handoff-refresh-20260803-0252",
+      "what": "GPT-OSS handoff refresh with updated agent configuration and training state",
+      "status": "working",
+      "last_modified": "2026-08-03T02:52:17",
+      "file_count": 46,
+      "run_or_url": "Review AGENTS.md for agent configuration and state handoff",
+      "notes": "Handoff refresh dated 2026-08-03 at 02:52. Coordinates multi-agent training state and checkpoints."
+    },
+    {
+      "name": "historical-research-triad-20260803",
+      "path": "C:\\Users\\iddo1\\.codex\\worktrees\\historical-research-triad-20260803",
+      "what": "Historical research triads - document analysis and archival system for research coordination",
+      "status": "working",
+      "last_modified": "2026-08-03T06:23:56",
+      "file_count": 11,
+      "run_or_url": "python server.py (check ARCHITECTURE.md for system design)",
+      "notes": "Triadic research coordination system. Likely used for managing document analysis workflows across multiple agents."
+    }
+  ],
+  "projects": [
+    {
+      "name": "codex-perplexity-usage",
+      "path": "C:\\Users\\iddo1\\.codex\\projects\\codex-perplexity-usage",
+      "what": "Read-only dashboard for Codex rate limits and Perplexity API credit snapshots",
+      "status": "working",
+      "last_modified": "2026-07-31T21:39:54",
+      "file_count": 10,
+      "run_or_url": "http://127.0.0.1:8777 (run: python -m http.server 8777 --bind 127.0.0.1)",
+      "notes": "Monitors token usage and Perplexity credits without scraping or auto-purchase. Refresh via: python collect_usage.py"
+    },
+    {
+      "name": "semicom-listener",
+      "path": "C:\\Users\\iddo1\\.codex\\projects\\semicom-listener",
+      "what": "Passive listener for Semicom device via Windows ARP cache and UDP announcements (read-only)",
+      "status": "working",
+      "last_modified": "2026-08-02T21:11:08",
+      "file_count": 7,
+      "run_or_url": "python listener.py (outputs to status.json and events.jsonl)",
+      "notes": "Monitors UDP 3702, 6666, 6667, 7000. Stores state atomically. Does not send packets or control device."
+    },
+    {
+      "name": "model-operations-console",
+      "path": "C:\\Users\\iddo1\\.codex\\projects\\model-operations-console",
+      "what": "GPT-OSS tool-use and Arduino curriculum with Flask operations console",
+      "status": "working",
+      "last_modified": "2026-08-02T22:57:52",
+      "file_count": 24,
+      "run_or_url": "python app.py (web dashboard for model operations and Arduino control)",
+      "notes": "Curriculum-driven model evaluation with strict acceptance gates. 4 lanes: repo work, harness work, Arduino software, Arduino electrical. See CURRICULUM.md for gates."
+    },
+    {
+      "name": "airllm-preflight",
+      "path": "C:\\Users\\iddo1\\.codex\\projects\\airllm-preflight",
+      "what": "Anima 33B QLoRA fine-tuned LLM - Japanese/Chinese language model documentation",
+      "status": "stale",
+      "last_modified": "2026-08-01T22:29:25",
+      "file_count": 88,
+      "run_or_url": "HuggingFace (lyogavin/Anima33B) - documentation/reference only",
+      "notes": "Documentation and funding info for external QLoRA model. No live training on this PC."
+    },
+    {
+      "name": "eran-exoskeleton-films",
+      "path": "C:\\Users\\iddo1\\.codex\\projects\\eran-exoskeleton-films",
+      "what": "Film storyboards and continuity bible for exoskeleton medical/rescue narrative content",
+      "status": "working",
+      "last_modified": "2026-08-01T00:49:37",
+      "file_count": 9,
+      "run_or_url": "Review storyboards: FILM_01_WINGS_OF_RETURN.md, FILM_02_SECOND_MOTION.md",
+      "notes": "Two films planned: Wings of Return (rescue scenario) and Second Motion (medical/athletic recovery). Full continuity bible maintained."
+    },
+    {
+      "name": "philips-10ff2-listener",
+      "path": "C:\\Users\\iddo1\\.codex\\projects\\philips-10ff2-listener",
+      "what": "Philips device listener with ALMA synchronization and automated photo/media backup",
+      "status": "unknown",
+      "last_modified": "2026-08-05T20:54:24",
+      "file_count": 608,
+      "run_or_url": "Check alma-sync-status.json for sync state; review alma-manifest.json",
+      "notes": "Most recent activity 2026-08-05. Contains large photo archive (alma-photos-20260801.zip). Sync state tracked in JSON manifest."
+    },
+    {
+      "name": "tiny-bird-poc",
+      "path": "C:\\Users\\iddo1\\.codex\\projects\\tiny-bird-poc",
+      "what": "3D-printed tiny bird proof-of-concept model for K2 Plus printer",
+      "status": "working",
+      "last_modified": "2026-07-31T08:01:06",
+      "file_count": 22,
+      "run_or_url": "3D printer files (.3mf) - use K2 Plus with Safe PLA 0.12mm settings",
+      "notes": "Flying Pants design. Printer profile and slicing parameters stored in JSON config files."
+    }
+  ],
+  "other_major_projects": [
+    {
+      "name": "QUORUM-Talmudic-Debate",
+      "path": "D:\\CLAUDE-codex-quorum-fix-20260717",
+      "what": "QUORUM - Talmudic AI debate system with council of models debating in Hebrew (Shakla v'Tarya form)",
+      "status": "working",
+      "last_modified": "2026-07-18T08:47:01",
+      "file_count": 19,
+      "run_or_url": "http://127.0.0.1:8099 (run: .\\run-quorum.ps1 -Enable; inert by default)",
+      "notes": "Models (Claude/Grok/Gemini/Ollama) state positions, argue קושיא/תירוץ, reach מסקנה. Stdlib HTTP only, Hebrew-first RTL. See QUORUM_AUDIT_2026-07-01.md for migration notes."
+    },
+    {
+      "name": "ALMA-Local-Gateway",
+      "path": "D:\\CLAUDE-codex-quorum-fix-20260717",
+      "what": "ALMA Local gateway - intelligent router between Grok-1 Q6 (DGX1-3) and Gemma 31B (DGX4)",
+      "status": "working",
+      "last_modified": "2026-07-18T08:47:01",
+      "file_count": 19,
+      "run_or_url": "https://<tailnet-host>:8447 (Tailscale), gateway.py on 127.0.0.1:8105",
+      "notes": "Explicit model selection UI. No auto-routing from UI. DGX4 training was reversibly paused 2026-07-18 to free GPU for Gemma; resume with: kill -CONT 7067 on eran4@dgx4"
+    }
+  ],
+  "summary": {
+    "total_worktrees": 9,
+    "total_projects": 7,
+    "total_other": 2,
+    "breakdown": {
+      "working": 16,
+      "planned": 1,
+      "stale": 1,
+      "unknown": 1
+    },
+    "key_technologies": [
+      "GPT-OSS-20B (full-parameter training harness)",
+      "Adafactor optimizer variants",
+      "Iddo Harness (AMP v1.0 envelope protocol)",
+      "Voice ant farm (Hebrew acoustic units)",
+      "QUORUM (Talmudic debate system)",
+      "ALMA Local gateway (model routing)",
+      "Anima 33B QLoRA LLM",
+      "3D printing (K2 Plus)",
+      "Device listeners (Semicom, Philips)"
+    ],
+    "data_locations": [
+      "C:\\Users\\iddo1\\.codex\\worktrees (active development)",
+      "C:\\Users\\iddo1\\.codex\\projects (deployed/running projects)",
+      "D:\\CLAUDE-codex-quorum-fix-20260717 (QUORUM + ALMA Local Gateway)"
+    ]
+  },
+  "skipped_items": [
+    "Cache directories (.codex/cache)",
+    "Temporary files (.tmp, .tmp-glm-fix, .sandbox-bin)",
+    "Database files (*.sqlite and WAL files)",
+    "Archived sessions and sessions directories",
+    "Log files (*.log)",
+    "Auto-generated state files (.codex-global-state.json)",
+    "Plugin and vendor import directories",
+    "Computer-use and automation state files"
+  ]
+}

@@ -1,0 +1,97 @@
+:root {
+  color-scheme: light;
+  font-family: ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #13242b;
+  background: #eff4f7;
+  scroll-behavior: smooth;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-y: auto;
+  background: radial-gradient(circle at 90% 0, #c9ece7, transparent 30%), #eff4f7;
+}
+main { max-width: 720px; margin: auto; padding: 24px 16px 64px; }
+.eyebrow { letter-spacing: .12em; color: #0c5460; font-size: .72rem; font-weight: 800; }
+h1 { font-size: clamp(2.1rem, 9vw, 3.8rem); line-height: .98; margin: .25rem 0 .35rem; letter-spacing: -.05em; }
+h2 { margin: 0 0 1rem; line-height: 1.15; }
+.lead { margin: 0 0 1rem; color: #24454e; font-weight: 750; }
+.muted, footer, .microcopy { color: #58717a; }
+
+.jump-nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin: 20px -4px;
+  padding: 8px 4px;
+  background: color-mix(in srgb, #eff4f7 88%, transparent);
+  backdrop-filter: blur(10px);
+  scrollbar-width: thin;
+}
+.jump-nav a {
+  flex: 0 0 auto;
+  border: 1px solid #b8ced3;
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: #0c5460;
+  background: #ffffffd9;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.console, .task {
+  background: #fff;
+  border: 1px solid #d8e3e6;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 12px 28px #35535b12;
+}
+.console { margin: 18px 0; scroll-margin-top: 72px; }
+.music-console { border-color: #9ecdc7; box-shadow: 0 18px 40px #0c546019; }
+.section-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.section-heading .eyebrow { margin-top: 0; }
+.local-badge { direction: ltr; padding: 6px 9px; border-radius: 999px; background: #dff6f2; color: #0c5460; font-size: .7rem; font-weight: 900; white-space: nowrap; }
+.compact-steps { margin: .5rem 0 1.2rem; padding-inline-start: 1.35rem; color: #294b54; }
+.compact-steps li { margin: .35rem 0; }
+
+label { display: grid; gap: 8px; margin-top: 14px; font-weight: 700; }
+select, textarea, input, button, audio { width: 100%; font: inherit; }
+select, textarea, input, button { border-radius: 12px; border: 1px solid #aec1c6; padding: 12px; }
+textarea { min-height: 110px; resize: vertical; }
+button { background: #fff; color: #123; cursor: pointer; font-weight: 750; }
+button:disabled { cursor: not-allowed; opacity: .5; }
+.actions, .status { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 14px 0; }
+.actions button { width: auto; flex: 1 1 150px; }
+.actions .primary { background: #0c5460; color: #fff; border-color: #0c5460; }
+.status button { margin-inline-start: auto; width: auto; padding: 8px 10px; }
+.status-dot { width: 11px; height: 11px; flex: 0 0 11px; border-radius: 99px; background: #e39a4b; }
+.status-dot.ok { background: #26a269; box-shadow: 0 0 0 5px #26a2691a; }
+.status-dot.bad { background: #c43b3b; }
+
+audio { display: block; margin: 12px 0; min-height: 46px; }
+.relay-stats { direction: ltr; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 12px 0; }
+.relay-stats div { min-width: 0; padding: 10px; border: 1px solid #deeaec; border-radius: 12px; background: #f7fbfb; }
+.relay-stats dt { color: #58717a; font-size: .72rem; font-weight: 800; text-transform: uppercase; }
+.relay-stats dd { overflow: hidden; margin: 3px 0 0; font-weight: 850; text-overflow: ellipsis; white-space: nowrap; }
+pre { direction: ltr; text-align: left; white-space: pre-wrap; overflow-wrap: anywhere; background: #10272e; color: #dff6f2; border-radius: 14px; padding: 15px; min-height: 72px; }
+.relay-log { max-height: 150px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.microcopy { margin: 8px 0; font-size: .78rem; line-height: 1.5; }
+.task { margin: 12px 0; }
+.task p { margin: .4rem 0 1rem; }
+.task a { color: #0c5460; font-weight: 800; }
+.task button { width: auto; }
+footer { font-size: .82rem; margin-top: 2rem; line-height: 1.5; }
+button:focus-visible, a:focus-visible, select:focus-visible, textarea:focus-visible, input:focus-visible, audio:focus-visible { outline: 3px solid #e07c3e; outline-offset: 2px; }
+
+@media (min-width: 560px) {
+  .relay-stats { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
+}

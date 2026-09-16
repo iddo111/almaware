@@ -1,0 +1,126 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "na",
+ "letter": "nun",
+ "hebrew": "נ",
+ "facts": {
+  "place": "tip",
+  "manner": "nasal",
+  "nasal": 1,
+  "voiced": 1
+ },
+ "decisions": {
+  "knots": "AH",
+  "constr": "seal",
+  "nasal": 1,
+  "voice": "on",
+  "release": "plain",
+  "burst": 0,
+  "pre": 0
+ },
+ "amounts": {
+  "c_pos": 0.9136291206613679,
+  "c_area": 2.0,
+  "velum": 0.6185589488902743,
+  "ten": 0.6,
+  "voi": 1.0,
+  "d_pre": 0.0,
+  "d_cons": 0.19992081703807807,
+  "d_trans": 0.023886859143189852,
+  "d_gap": 0.04,
+  "gap_pos": 0.65,
+  "gap_area": 2.0,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.0,
+  "d_vowel": 0.3526425495944625,
+  "glide": 0.33480183289468174,
+  "gain": 6.0,
+  "f0": 104.85530518697293,
+  "trans_voi": null
+ },
+ "live_amounts": [
+  "c_pos",
+  "d_cons",
+  "d_trans",
+  "d_vowel",
+  "f0",
+  "glide",
+  "ten",
+  "trans_voi",
+  "velum",
+  "voi"
+ ],
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9136,
+    0.0,
+    0.6186,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9136,
+    0.0,
+    0.6186,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.1999,
+   0.0239,
+   0.3526
+  ],
+  "f0_knots": [
+   104.85530518697293,
+   104.85530518697293,
+   97.51543382388483
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.33480183289468174,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "ruler": "school-v2/ruler.py (09-02 family rulers + verifiers' objections)",
+ "brief": "ok   murmur <500 Hz 0.998 >= 0.95; ok   nose/lip 22.0 dB >= +20; ok   antiformant 2281 in 1.9-2.6 kHz; ok   no burst (jump 6.5 < 15); ok   murmur voiced hnr 12.5 f0 105; ok   murmur level -1.0 dB (-8..+2)",
+ "attempt": 9
+}

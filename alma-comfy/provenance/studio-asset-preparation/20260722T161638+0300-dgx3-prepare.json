@@ -1,0 +1,92 @@
+{
+  "activation_attempted": false,
+  "assets": [
+    {
+      "bytes": 4079392379,
+      "completed_at": "2026-07-22T13:16:51.088883+00:00",
+      "critical_hashes": 1,
+      "downloaded": [],
+      "files": 7,
+      "hash_scope": "all-official-files",
+      "id": "flux2-klein-fp8",
+      "node": "dgx3",
+      "revision": "5b4408e59397a4a37ccb46afe426d8ed86379441",
+      "revision_metadata": {
+        "absent": 0,
+        "matched": 7
+      },
+      "started_at": "2026-07-22T13:16:47.471069+00:00",
+      "status": "VERIFIED"
+    }
+  ],
+  "comfy_links": [
+    {
+      "created": false,
+      "id": "flux2-transformer",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "flux2-text-encoder",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "flux2-vae-link",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "qwen-image-diffusers",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "wan-ti2v-diffusers",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "wan-i2v-diffusers",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "ltx-dev-model",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "ltx-distilled-model",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "ltx-distilled-lora",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "ltx-spatial-upscaler",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "id": "ltx-temporal-upscaler",
+      "status": "VERIFIED"
+    }
+  ],
+  "completed_at": "2026-07-22T13:16:51.089449+00:00",
+  "environments": [],
+  "lock_id": "alma-studio-assets-20260722-v1",
+  "lock_sha256": "ebf93263cceef756e250e6ee65c817d68c43711069ec098bb6d6dfc0a03a2ef3",
+  "mode": "prepare",
+  "node": "dgx3",
+  "remote_code_executed": false,
+  "runtime_bindings": [],
+  "schema_version": 1,
+  "sources": [],
+  "started_at": "2026-07-22T13:16:45.273501+00:00",
+  "status": "VERIFIED",
+  "system_tools": []
+}

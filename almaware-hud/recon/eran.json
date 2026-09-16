@@ -1,0 +1,66 @@
+{
+  "training": {
+    "step": 506280,
+    "loss": 0.4345,
+    "ema": 0.4371,
+    "sps": 5.1,
+    "tps": 10000,
+    "vram_mb": 285,
+    "lr": 3.0e-05,
+    "alive": true,
+    "last_log_ts": "2026-07-11T16:06:01"
+  },
+  "checkpoint": {
+    "path": "D:\\CLAUDE\\eran-live\\checkpoints\\latest.pt",
+    "latest_pt_mtime": "2026-07-11T16:06:32",
+    "size_mb": 37.36,
+    "note": "not at D:\\CLAUDE\\eran-live\\latest.pt; actual path is checkpoints\\latest.pt"
+  },
+  "chat_server": {
+    "up": true,
+    "port": 8792,
+    "http_status": 200
+  },
+  "authentic_babble_test": {
+    "prompt": "אבא",
+    "reply": "Liding With it. Oh, �י. תסדר את האפליקציה של המיקרופון הקדוש ש",
+    "reply_step": 506200,
+    "note": "raw reply is mixed English+Hebrew with one U+FFFD replacement char; ~byte-LM babble, no coherent parental answer to prompt"
+  },
+  "watch_log": {
+    "latest_step": 505100,
+    "latest_babble": "�דה the DGX, זריז\nThe music flows through you, let's go\nto find the finishes the path onlys on like Grok and everything on the RAM training, voice collection, voice curation everything about thi",
+    "latest_ts": "2026-07-11T16:03:17",
+    "age_s": 262,
+    "recent_samples": [
+      {
+        "ts": "2026-07-11T16:03:17",
+        "step": 505100,
+        "loss": 0.4371,
+        "text": "�דה the DGX, זריז / The music flows through you, let's go / to find the finishes the path onlys on like Grok and everything on the RAM training, voice collection, voice curation everything about thi"
+      },
+      {
+        "ts": "2026-07-11T16:00:17",
+        "step": 504241,
+        "loss": 0.4304,
+        "text": "�י רוצה שזה יהיה בסדר אחי אני רוצה שאבא שלי כוס על עבור אני רוצה שתראה לי דוח מה קורה עם כל הClaudeקוד ראוטר עם הדיפ"
+      },
+      {
+        "ts": "2026-07-11T15:57:19",
+        "step": 503513,
+        "loss": 0.4400,
+        "text": "�טרנט וכלפי מטרידים עם האנרגיה האלוהית הטובה ואחרים עבור / Claude, יש כמה דפסות שיאכלו את הפאורבנק ונאמר את זה, נכון"
+      }
+    ]
+  },
+  "voice_input": {
+    "iddo_corpus_dir": "D:\\CLAUDE\\eran-live\\voice-input\\profiles\\iddo1",
+    "exists": true,
+    "file_count": 0,
+    "iddo_corpus_latest": null,
+    "dir_mtime": "2026-07-11T16:06:00",
+    "growing": false,
+    "note": "directory exists but empty — no captures on disk yet"
+  },
+  "recon_ts": "2026-07-11T16:07:39"
+}

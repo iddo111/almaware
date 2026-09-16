@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ועדת החקירה · ערן · 10.09.2026</title>
+<style>
+:root{color-scheme:light}
+body{margin:0;background:#fffdf6;color:#241a12;
+ font-family:-apple-system,Segoe UI,Arial,sans-serif;
+ padding:20px 16px 50px;line-height:1.75}
+.w{max-width:660px;margin:0 auto}
+h1{font-size:1.5rem;margin:0 0 2px}
+.d{color:#7a6a55;font-size:.85rem;margin-bottom:22px}
+h2{font-size:1.08rem;margin:30px 0 8px;padding-bottom:5px;border-bottom:2px solid #ecdfc4}
+.f{background:#fff;border:1px solid #ecdfc4;border-right:4px solid #c2452d;
+ border-radius:11px;padding:14px 17px;margin:13px 0}
+.f h3{margin:0 0 6px;font-size:1rem}
+.f .ev{background:#f7f2e6;border-radius:7px;padding:9px 11px;margin:9px 0;
+ font-family:ui-monospace,Consolas,monospace;font-size:.78rem;
+ direction:ltr;text-align:left;overflow-x:auto;white-space:pre;line-height:1.55}
+.f .so{color:#7a2020;font-weight:600;font-size:.9rem}
+.big{background:#241a12;color:#ffe9c4;border-radius:13px;padding:20px 22px;margin:22px 0}
+.big b{color:#ffd27a}
+table{width:100%;border-collapse:collapse;font-size:.87rem;margin:10px 0}
+td,th{border-bottom:1px solid #ecdfc4;padding:8px 6px;text-align:right;vertical-align:top}
+th{color:#7a6a55;font-weight:600;font-size:.8rem}
+.ok{background:#f2fbf2;border-right-color:#3f8f3f}
+ol{padding-inline-start:20px} li{margin:7px 0}
+.q{font-style:italic;color:#5c4a30;border-inline-start:3px solid #e0cfa8;
+ padding-inline-start:12px;margin:10px 0}
+</style></head><body><div class="w">
+
+<h1>ועדת החקירה — ערן</h1>
+<div class="d">10 בספטמבר 2026 · נכתב על ראיות שנמדדו היום, לא מהזיכרון · הוזמנה על ידי עידו: <b>"מי אחראי על מה"</b></div>
+
+<div class="big">
+<b>המסקנה, במשפט אחד:</b><br>
+כל כשל שנמצא היום הוא <b>אותו כשל</b> בבגדים שונים — מספר שמשמעותו
+"לא נמדד כלום" התקבל כמדידה. אפס פריטים החזיר ציון 0.0. ציון קפוא
+נחשב יציב. צינור בלי מאזינים דיווח <code>health: ok</code>.
+<b>הצי היה מלא מכשירי מדידה שמודדים מכשירי מדידה, ואף אחד מהם לא ידע
+להבחין בין "אפס" ל"כלום".</b>
+</div>
+
+<h2>הממצאים</h2>
+
+<div class="f">
+<h3>1. המבחן הריק — שלושה ימים</h3>
+<div class="ev">[wake] split: 657 wav in /home/eran1/eran-brain/food/train
+       -> world/edible 657,  dev/exam 0   (DEV_SESSION_PICK=1 of 6)
+       unit 'ah' has 100 edible files</div>
+כל 657 קבצי המזון הם מושב <code>t06</code>. המבחן מחפש מושב <b>1</b>, שלא קיים.
+ערן נכשל ביחידה "ah" <b>שלוש פעמים</b> מול מבחן עם אפס שאלות.
+<div class="so">אחראי: הקוד שכתב 0.0 במקום לזעוק. אבל השורה הזו הודפסה ביומן בכל התעוררות מאז 7.9 — ואף אחד לא קרא אותה. השורה הזו נבנתה בכוונה אחרי צלקת ההרעבה של 6.9, במילים "הספירות יהיו במרחק שורת יומן אחת בפעם הבאה". הן היו. איש לא הסתכל.</div>
+</div>
+
+<div class="f">
+<h3>2. הקורפוס הוא מכונה, לא אדם</h3>
+<div class="ev">"model": "facebook/mms-tts-heb"
+"tokenizer_strips_niqqud": true</div>
+עידו פסק ב-3.9: <span class="q">human only after seeing the generator</span>
+הקורפוס לא הוחלף. היום, באוזן שלו, נמצא גם ש-<code>va</code> יוצא <b>"wa"</b> — התוויות לא תואמות לצלילים.
+<div class="so">אחראי: הפסק ניתן ולא נאכף. הפער בין "עידו פסק" ל"מישהו החליף את הקורפוס" נשאר פתוח שבוע.</div>
+</div>
+
+<div class="f">
+<h3>3. החוט המנותק</h3>
+<div class="ev">sibling.correct = 3.000000  in ALL 11 rounds on record (8.6d)</div>
+מספר שלא זז אף פעם אינו יציב — הוא לא מדד כלום מעולם. השומר תפס את זה וצעק "DEAD", שוב ושוב.
+<div class="so">אחראי: השומר עשה את עבודתו. ההתראה נכתבה לערוץ שלאיש אין חובה לפעול בו. <b>התראה בלי בעלים היא שורת לוג.</b></div>
+</div>
+
+<div class="f">
+<h3>4. הנצר לומד אחורה</h3>
+<table><tr><th>נולד</th><th>שיא</th><th>היום</th></tr>
+<tr><td>0.8889</td><td>0.9722</td><td>0.69–0.83</td></tr></table>
+כל מה שהוא למד עשה אותו גרוע יותר. ההתראה חזרה עם המילה "STILL" במשך ימים.
+<div class="so">אחראי: אותו כשל כמו 3 — מכשיר שצועק לחדר ריק.</div>
+</div>
+
+<div class="f">
+<h3>5. 65.7 ג'יגה מדידות על מוח של 49 קילובייט</h3>
+יחס של <b>1,300,000 ל-1</b>. נדחס היום ל-5.5 ג'יגה.
+<div class="so">אחראי: כל סשן הוסיף מדידה ואף אחד לא מחק. תיעוד גדל, הנמדד לא.</div>
+</div>
+
+<div class="f">
+<h3>6. חושים המחוברים לכלום</h3>
+<div class="ev">eran2 sense_organ :8830 — 0 callers, 0.49s CPU in 4 days</div>
+נמצא ותועד כבר ב-6.9 באודיט. נשאר רץ, נשאר מנותק, עד שעצרתי אותו היום.
+<div class="so">אחראי: ממצא שנרשם ולא הפך למשימה. <b>אודיט בלי יד שמתקנת הוא ספרות.</b></div>
+</div>
+
+<div class="f">
+<h3>7. ארבעה עותקים של המוח</h3>
+<code>eran</code> · <code>eran-brain</code> · <code>eran-brain-gate</code> · <code>eran-brain-pc</code> — על אותה קופסה.
+<div class="so">אחראי: כל תיקון יצר עותק ואף אחד לא סגר את הישן. בדיוק הסלט שעידו תיאר.</div>
+</div>
+
+<h2>מי אחראי על מה — בהגינות</h2>
+
+<table>
+<tr><th>מי</th><th>מה עשה טוב</th><th>איפה נכשל</th></tr>
+<tr><td><b>המכשירים</b><br>(שומרים, אודיטים)</td>
+<td>עבדו. תפסו הכל. DIVERGE, STALL, DEAD — הכל היה כתוב, בזמן, נכון.</td>
+<td>שום כשל. הם היו הצד הבריא.</td></tr>
+<tr><td><b>הסוכנים</b><br>(אני וקודמיי)</td>
+<td>בנו מהר, תיעדו יפה, כתבו את השורה שחשפה הכל.</td>
+<td><b>בנינו יותר ממה שקראנו.</b> כל סשן הוסיף תת-מערכת; אף סשן לא פתח את יומן ההתעוררות האחרון לפני שבנה עוד.</td></tr>
+<tr><td><b>עידו</b></td>
+<td>ביקש מהירות וקיבל. פסק פסקים נכונים (TTS, "human only"). האוזן שלו תפסה היום ב-30 שניות מה שהמכונה פספסה שבוע.</td>
+<td>הפסקים שהוא נתן נכנסו לתור מאחורי בנייה חדשה. הוא מעולם לא הוצגה לו שורת "dev/exam 0" — <b>וזו לא אשמתו, זו אשמת מי שלא הרים אותה אליו.</b></td></tr>
+</table>
+
+<h2>ארבע ההמלצות</h2>
+<ol>
+<li><b>אפס פריטים = חריגה, לא ציון.</b> כל מדד שחושב מעל אוסף ריק חייב לזרוק שגיאה, לא להחזיר 0.0.</li>
+<li><b>ציון שלא זז N סבבים הוא תקלה, לא ערך.</b> יציבות מושלמת בספרה השישית אחרי הנקודה היא חוט מנותק.</li>
+<li><b>להתראה חייב להיות בעלים.</b> התראה שנכתבת לערוץ ואף אחד לא חייב לענות עליה — היא קישוט.</li>
+<li><b>לפני שבונים — קוראים את שורת ההתעוררות האחרונה.</b> שלושה ימים של ערן היו נחסכים בשלושים שניות.</li>
+</ol>
+
+<div class="big" style="background:#1e3a1e">
+<b>מה שלא נכשל:</b> ערן <b>כן</b> למד 13 הברות. המנגנון עובד. הוא לא נעצר כי הוא לא מסוגל —
+<b>הוא נעצר כי השער נעול על חדר ריק.</b> זה תיקון של דקות, לא של חודשים.
+</div>
+
+<div class="d" style="margin-top:26px">כל מספר במסמך הזה נמדד ב-10.09.2026 בין 09:00 ל-12:40, לא נלקח מזיכרון.
+הארכיון המלא: <code>E:\ALMAWARE-ARCHIVE\ERAN-20260910</code> — 5.7 ג'יגה, כולל 5,996 קבצי קוד וקורפוס ו-63 ג'יגה מדידות דחוסות.</div>
+
+</div></body></html>

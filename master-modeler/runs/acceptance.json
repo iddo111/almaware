@@ -1,0 +1,65 @@
+[
+  {
+    "corpus": "tts-vault",
+    "set": "tuned",
+    "record": "REJECT",
+    "modeh": "REJECT",
+    "state": "PASS"
+  },
+  {
+    "corpus": "tts-food-train",
+    "set": "tuned",
+    "record": "REJECT",
+    "modeh": "REJECT",
+    "state": "PASS"
+  },
+  {
+    "corpus": "t06-starved",
+    "set": "tuned",
+    "record": "STARVED",
+    "modeh": "STARVED",
+    "state": "PASS"
+  },
+  {
+    "corpus": "t06-rich",
+    "set": "tuned",
+    "record": "ACCEPT",
+    "modeh": "ACCEPT",
+    "state": "PASS"
+  },
+  {
+    "corpus": "t07-iddo",
+    "set": "tuned",
+    "record": "ACCEPT-ISH",
+    "modeh": "WEAK",
+    "state": "PASS"
+  },
+  {
+    "corpus": "words-derived",
+    "set": "held-out",
+    "record": "REJECT",
+    "modeh": "REJECT",
+    "state": "PASS"
+  },
+  {
+    "corpus": "antfarm-source",
+    "set": "held-out",
+    "record": "REJECT",
+    "modeh": "REJECT",
+    "state": "PASS"
+  },
+  {
+    "corpus": "human-dictation",
+    "set": "held-out",
+    "record": "ACCEPT",
+    "modeh": "ACCEPT",
+    "state": "PASS"
+  },
+  {
+    "corpus": "fleurs-human",
+    "set": "tuned",
+    "record": "ACCEPT",
+    "modeh": "ACCEPT",
+    "state": "PASS"
+  }
+]

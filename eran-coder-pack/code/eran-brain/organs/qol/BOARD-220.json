@@ -1,0 +1,1549 @@
+{
+ "n_units": 220,
+ "n_distinct_sounds": 140,
+ "letters": 22,
+ "nekudot": 10,
+ "order": "read row by row, letter by letter",
+ "units": [
+  {
+   "unit": "alef_kamats",
+   "hebrew": "אָ",
+   "letter": "alef",
+   "nekuda": "kamats",
+   "sound": "'/a"
+  },
+  {
+   "unit": "alef_patah",
+   "hebrew": "אַ",
+   "letter": "alef",
+   "nekuda": "patah",
+   "sound": "'/a"
+  },
+  {
+   "unit": "alef_tsere",
+   "hebrew": "אֵ",
+   "letter": "alef",
+   "nekuda": "tsere",
+   "sound": "'/e"
+  },
+  {
+   "unit": "alef_segol",
+   "hebrew": "אֶ",
+   "letter": "alef",
+   "nekuda": "segol",
+   "sound": "'/e"
+  },
+  {
+   "unit": "alef_hiriq",
+   "hebrew": "אִ",
+   "letter": "alef",
+   "nekuda": "hiriq",
+   "sound": "'/i"
+  },
+  {
+   "unit": "alef_holam",
+   "hebrew": "אֹ",
+   "letter": "alef",
+   "nekuda": "holam",
+   "sound": "'/o"
+  },
+  {
+   "unit": "alef_qubuts",
+   "hebrew": "אֻ",
+   "letter": "alef",
+   "nekuda": "qubuts",
+   "sound": "'/u"
+  },
+  {
+   "unit": "alef_shuruq",
+   "hebrew": "אוּ",
+   "letter": "alef",
+   "nekuda": "shuruq",
+   "sound": "'/u"
+  },
+  {
+   "unit": "alef_shva",
+   "hebrew": "אְ",
+   "letter": "alef",
+   "nekuda": "shva",
+   "sound": "'/@"
+  },
+  {
+   "unit": "alef_hataf",
+   "hebrew": "אֲ",
+   "letter": "alef",
+   "nekuda": "hataf",
+   "sound": "'/a:"
+  },
+  {
+   "unit": "bet_kamats",
+   "hebrew": "בָ",
+   "letter": "bet",
+   "nekuda": "kamats",
+   "sound": "b/a"
+  },
+  {
+   "unit": "bet_patah",
+   "hebrew": "בַ",
+   "letter": "bet",
+   "nekuda": "patah",
+   "sound": "b/a"
+  },
+  {
+   "unit": "bet_tsere",
+   "hebrew": "בֵ",
+   "letter": "bet",
+   "nekuda": "tsere",
+   "sound": "b/e"
+  },
+  {
+   "unit": "bet_segol",
+   "hebrew": "בֶ",
+   "letter": "bet",
+   "nekuda": "segol",
+   "sound": "b/e"
+  },
+  {
+   "unit": "bet_hiriq",
+   "hebrew": "בִ",
+   "letter": "bet",
+   "nekuda": "hiriq",
+   "sound": "b/i"
+  },
+  {
+   "unit": "bet_holam",
+   "hebrew": "בֹ",
+   "letter": "bet",
+   "nekuda": "holam",
+   "sound": "b/o"
+  },
+  {
+   "unit": "bet_qubuts",
+   "hebrew": "בֻ",
+   "letter": "bet",
+   "nekuda": "qubuts",
+   "sound": "b/u"
+  },
+  {
+   "unit": "bet_shuruq",
+   "hebrew": "בוּ",
+   "letter": "bet",
+   "nekuda": "shuruq",
+   "sound": "b/u"
+  },
+  {
+   "unit": "bet_shva",
+   "hebrew": "בְ",
+   "letter": "bet",
+   "nekuda": "shva",
+   "sound": "b/@"
+  },
+  {
+   "unit": "bet_hataf",
+   "hebrew": "בֲ",
+   "letter": "bet",
+   "nekuda": "hataf",
+   "sound": "b/a:"
+  },
+  {
+   "unit": "gimel_kamats",
+   "hebrew": "גָ",
+   "letter": "gimel",
+   "nekuda": "kamats",
+   "sound": "g/a"
+  },
+  {
+   "unit": "gimel_patah",
+   "hebrew": "גַ",
+   "letter": "gimel",
+   "nekuda": "patah",
+   "sound": "g/a"
+  },
+  {
+   "unit": "gimel_tsere",
+   "hebrew": "גֵ",
+   "letter": "gimel",
+   "nekuda": "tsere",
+   "sound": "g/e"
+  },
+  {
+   "unit": "gimel_segol",
+   "hebrew": "גֶ",
+   "letter": "gimel",
+   "nekuda": "segol",
+   "sound": "g/e"
+  },
+  {
+   "unit": "gimel_hiriq",
+   "hebrew": "גִ",
+   "letter": "gimel",
+   "nekuda": "hiriq",
+   "sound": "g/i"
+  },
+  {
+   "unit": "gimel_holam",
+   "hebrew": "גֹ",
+   "letter": "gimel",
+   "nekuda": "holam",
+   "sound": "g/o"
+  },
+  {
+   "unit": "gimel_qubuts",
+   "hebrew": "גֻ",
+   "letter": "gimel",
+   "nekuda": "qubuts",
+   "sound": "g/u"
+  },
+  {
+   "unit": "gimel_shuruq",
+   "hebrew": "גוּ",
+   "letter": "gimel",
+   "nekuda": "shuruq",
+   "sound": "g/u"
+  },
+  {
+   "unit": "gimel_shva",
+   "hebrew": "גְ",
+   "letter": "gimel",
+   "nekuda": "shva",
+   "sound": "g/@"
+  },
+  {
+   "unit": "gimel_hataf",
+   "hebrew": "גֲ",
+   "letter": "gimel",
+   "nekuda": "hataf",
+   "sound": "g/a:"
+  },
+  {
+   "unit": "dalet_kamats",
+   "hebrew": "דָ",
+   "letter": "dalet",
+   "nekuda": "kamats",
+   "sound": "d/a"
+  },
+  {
+   "unit": "dalet_patah",
+   "hebrew": "דַ",
+   "letter": "dalet",
+   "nekuda": "patah",
+   "sound": "d/a"
+  },
+  {
+   "unit": "dalet_tsere",
+   "hebrew": "דֵ",
+   "letter": "dalet",
+   "nekuda": "tsere",
+   "sound": "d/e"
+  },
+  {
+   "unit": "dalet_segol",
+   "hebrew": "דֶ",
+   "letter": "dalet",
+   "nekuda": "segol",
+   "sound": "d/e"
+  },
+  {
+   "unit": "dalet_hiriq",
+   "hebrew": "דִ",
+   "letter": "dalet",
+   "nekuda": "hiriq",
+   "sound": "d/i"
+  },
+  {
+   "unit": "dalet_holam",
+   "hebrew": "דֹ",
+   "letter": "dalet",
+   "nekuda": "holam",
+   "sound": "d/o"
+  },
+  {
+   "unit": "dalet_qubuts",
+   "hebrew": "דֻ",
+   "letter": "dalet",
+   "nekuda": "qubuts",
+   "sound": "d/u"
+  },
+  {
+   "unit": "dalet_shuruq",
+   "hebrew": "דוּ",
+   "letter": "dalet",
+   "nekuda": "shuruq",
+   "sound": "d/u"
+  },
+  {
+   "unit": "dalet_shva",
+   "hebrew": "דְ",
+   "letter": "dalet",
+   "nekuda": "shva",
+   "sound": "d/@"
+  },
+  {
+   "unit": "dalet_hataf",
+   "hebrew": "דֲ",
+   "letter": "dalet",
+   "nekuda": "hataf",
+   "sound": "d/a:"
+  },
+  {
+   "unit": "he_kamats",
+   "hebrew": "הָ",
+   "letter": "he",
+   "nekuda": "kamats",
+   "sound": "h/a"
+  },
+  {
+   "unit": "he_patah",
+   "hebrew": "הַ",
+   "letter": "he",
+   "nekuda": "patah",
+   "sound": "h/a"
+  },
+  {
+   "unit": "he_tsere",
+   "hebrew": "הֵ",
+   "letter": "he",
+   "nekuda": "tsere",
+   "sound": "h/e"
+  },
+  {
+   "unit": "he_segol",
+   "hebrew": "הֶ",
+   "letter": "he",
+   "nekuda": "segol",
+   "sound": "h/e"
+  },
+  {
+   "unit": "he_hiriq",
+   "hebrew": "הִ",
+   "letter": "he",
+   "nekuda": "hiriq",
+   "sound": "h/i"
+  },
+  {
+   "unit": "he_holam",
+   "hebrew": "הֹ",
+   "letter": "he",
+   "nekuda": "holam",
+   "sound": "h/o"
+  },
+  {
+   "unit": "he_qubuts",
+   "hebrew": "הֻ",
+   "letter": "he",
+   "nekuda": "qubuts",
+   "sound": "h/u"
+  },
+  {
+   "unit": "he_shuruq",
+   "hebrew": "הוּ",
+   "letter": "he",
+   "nekuda": "shuruq",
+   "sound": "h/u"
+  },
+  {
+   "unit": "he_shva",
+   "hebrew": "הְ",
+   "letter": "he",
+   "nekuda": "shva",
+   "sound": "h/@"
+  },
+  {
+   "unit": "he_hataf",
+   "hebrew": "הֲ",
+   "letter": "he",
+   "nekuda": "hataf",
+   "sound": "h/a:"
+  },
+  {
+   "unit": "vav_kamats",
+   "hebrew": "וָ",
+   "letter": "vav",
+   "nekuda": "kamats",
+   "sound": "v/a"
+  },
+  {
+   "unit": "vav_patah",
+   "hebrew": "וַ",
+   "letter": "vav",
+   "nekuda": "patah",
+   "sound": "v/a"
+  },
+  {
+   "unit": "vav_tsere",
+   "hebrew": "וֵ",
+   "letter": "vav",
+   "nekuda": "tsere",
+   "sound": "v/e"
+  },
+  {
+   "unit": "vav_segol",
+   "hebrew": "וֶ",
+   "letter": "vav",
+   "nekuda": "segol",
+   "sound": "v/e"
+  },
+  {
+   "unit": "vav_hiriq",
+   "hebrew": "וִ",
+   "letter": "vav",
+   "nekuda": "hiriq",
+   "sound": "v/i"
+  },
+  {
+   "unit": "vav_holam",
+   "hebrew": "וֹ",
+   "letter": "vav",
+   "nekuda": "holam",
+   "sound": "v/o"
+  },
+  {
+   "unit": "vav_qubuts",
+   "hebrew": "וֻ",
+   "letter": "vav",
+   "nekuda": "qubuts",
+   "sound": "v/u"
+  },
+  {
+   "unit": "vav_shuruq",
+   "hebrew": "ווּ",
+   "letter": "vav",
+   "nekuda": "shuruq",
+   "sound": "v/u"
+  },
+  {
+   "unit": "vav_shva",
+   "hebrew": "וְ",
+   "letter": "vav",
+   "nekuda": "shva",
+   "sound": "v/@"
+  },
+  {
+   "unit": "vav_hataf",
+   "hebrew": "וֲ",
+   "letter": "vav",
+   "nekuda": "hataf",
+   "sound": "v/a:"
+  },
+  {
+   "unit": "zayin_kamats",
+   "hebrew": "זָ",
+   "letter": "zayin",
+   "nekuda": "kamats",
+   "sound": "z/a"
+  },
+  {
+   "unit": "zayin_patah",
+   "hebrew": "זַ",
+   "letter": "zayin",
+   "nekuda": "patah",
+   "sound": "z/a"
+  },
+  {
+   "unit": "zayin_tsere",
+   "hebrew": "זֵ",
+   "letter": "zayin",
+   "nekuda": "tsere",
+   "sound": "z/e"
+  },
+  {
+   "unit": "zayin_segol",
+   "hebrew": "זֶ",
+   "letter": "zayin",
+   "nekuda": "segol",
+   "sound": "z/e"
+  },
+  {
+   "unit": "zayin_hiriq",
+   "hebrew": "זִ",
+   "letter": "zayin",
+   "nekuda": "hiriq",
+   "sound": "z/i"
+  },
+  {
+   "unit": "zayin_holam",
+   "hebrew": "זֹ",
+   "letter": "zayin",
+   "nekuda": "holam",
+   "sound": "z/o"
+  },
+  {
+   "unit": "zayin_qubuts",
+   "hebrew": "זֻ",
+   "letter": "zayin",
+   "nekuda": "qubuts",
+   "sound": "z/u"
+  },
+  {
+   "unit": "zayin_shuruq",
+   "hebrew": "זוּ",
+   "letter": "zayin",
+   "nekuda": "shuruq",
+   "sound": "z/u"
+  },
+  {
+   "unit": "zayin_shva",
+   "hebrew": "זְ",
+   "letter": "zayin",
+   "nekuda": "shva",
+   "sound": "z/@"
+  },
+  {
+   "unit": "zayin_hataf",
+   "hebrew": "זֲ",
+   "letter": "zayin",
+   "nekuda": "hataf",
+   "sound": "z/a:"
+  },
+  {
+   "unit": "het_kamats",
+   "hebrew": "חָ",
+   "letter": "het",
+   "nekuda": "kamats",
+   "sound": "kh/a"
+  },
+  {
+   "unit": "het_patah",
+   "hebrew": "חַ",
+   "letter": "het",
+   "nekuda": "patah",
+   "sound": "kh/a"
+  },
+  {
+   "unit": "het_tsere",
+   "hebrew": "חֵ",
+   "letter": "het",
+   "nekuda": "tsere",
+   "sound": "kh/e"
+  },
+  {
+   "unit": "het_segol",
+   "hebrew": "חֶ",
+   "letter": "het",
+   "nekuda": "segol",
+   "sound": "kh/e"
+  },
+  {
+   "unit": "het_hiriq",
+   "hebrew": "חִ",
+   "letter": "het",
+   "nekuda": "hiriq",
+   "sound": "kh/i"
+  },
+  {
+   "unit": "het_holam",
+   "hebrew": "חֹ",
+   "letter": "het",
+   "nekuda": "holam",
+   "sound": "kh/o"
+  },
+  {
+   "unit": "het_qubuts",
+   "hebrew": "חֻ",
+   "letter": "het",
+   "nekuda": "qubuts",
+   "sound": "kh/u"
+  },
+  {
+   "unit": "het_shuruq",
+   "hebrew": "חוּ",
+   "letter": "het",
+   "nekuda": "shuruq",
+   "sound": "kh/u"
+  },
+  {
+   "unit": "het_shva",
+   "hebrew": "חְ",
+   "letter": "het",
+   "nekuda": "shva",
+   "sound": "kh/@"
+  },
+  {
+   "unit": "het_hataf",
+   "hebrew": "חֲ",
+   "letter": "het",
+   "nekuda": "hataf",
+   "sound": "kh/a:"
+  },
+  {
+   "unit": "tet_kamats",
+   "hebrew": "טָ",
+   "letter": "tet",
+   "nekuda": "kamats",
+   "sound": "t/a"
+  },
+  {
+   "unit": "tet_patah",
+   "hebrew": "טַ",
+   "letter": "tet",
+   "nekuda": "patah",
+   "sound": "t/a"
+  },
+  {
+   "unit": "tet_tsere",
+   "hebrew": "טֵ",
+   "letter": "tet",
+   "nekuda": "tsere",
+   "sound": "t/e"
+  },
+  {
+   "unit": "tet_segol",
+   "hebrew": "טֶ",
+   "letter": "tet",
+   "nekuda": "segol",
+   "sound": "t/e"
+  },
+  {
+   "unit": "tet_hiriq",
+   "hebrew": "טִ",
+   "letter": "tet",
+   "nekuda": "hiriq",
+   "sound": "t/i"
+  },
+  {
+   "unit": "tet_holam",
+   "hebrew": "טֹ",
+   "letter": "tet",
+   "nekuda": "holam",
+   "sound": "t/o"
+  },
+  {
+   "unit": "tet_qubuts",
+   "hebrew": "טֻ",
+   "letter": "tet",
+   "nekuda": "qubuts",
+   "sound": "t/u"
+  },
+  {
+   "unit": "tet_shuruq",
+   "hebrew": "טוּ",
+   "letter": "tet",
+   "nekuda": "shuruq",
+   "sound": "t/u"
+  },
+  {
+   "unit": "tet_shva",
+   "hebrew": "טְ",
+   "letter": "tet",
+   "nekuda": "shva",
+   "sound": "t/@"
+  },
+  {
+   "unit": "tet_hataf",
+   "hebrew": "טֲ",
+   "letter": "tet",
+   "nekuda": "hataf",
+   "sound": "t/a:"
+  },
+  {
+   "unit": "yod_kamats",
+   "hebrew": "יָ",
+   "letter": "yod",
+   "nekuda": "kamats",
+   "sound": "y/a"
+  },
+  {
+   "unit": "yod_patah",
+   "hebrew": "יַ",
+   "letter": "yod",
+   "nekuda": "patah",
+   "sound": "y/a"
+  },
+  {
+   "unit": "yod_tsere",
+   "hebrew": "יֵ",
+   "letter": "yod",
+   "nekuda": "tsere",
+   "sound": "y/e"
+  },
+  {
+   "unit": "yod_segol",
+   "hebrew": "יֶ",
+   "letter": "yod",
+   "nekuda": "segol",
+   "sound": "y/e"
+  },
+  {
+   "unit": "yod_hiriq",
+   "hebrew": "יִ",
+   "letter": "yod",
+   "nekuda": "hiriq",
+   "sound": "y/i"
+  },
+  {
+   "unit": "yod_holam",
+   "hebrew": "יֹ",
+   "letter": "yod",
+   "nekuda": "holam",
+   "sound": "y/o"
+  },
+  {
+   "unit": "yod_qubuts",
+   "hebrew": "יֻ",
+   "letter": "yod",
+   "nekuda": "qubuts",
+   "sound": "y/u"
+  },
+  {
+   "unit": "yod_shuruq",
+   "hebrew": "יוּ",
+   "letter": "yod",
+   "nekuda": "shuruq",
+   "sound": "y/u"
+  },
+  {
+   "unit": "yod_shva",
+   "hebrew": "יְ",
+   "letter": "yod",
+   "nekuda": "shva",
+   "sound": "y/@"
+  },
+  {
+   "unit": "yod_hataf",
+   "hebrew": "יֲ",
+   "letter": "yod",
+   "nekuda": "hataf",
+   "sound": "y/a:"
+  },
+  {
+   "unit": "kaf_kamats",
+   "hebrew": "כָ",
+   "letter": "kaf",
+   "nekuda": "kamats",
+   "sound": "k/a"
+  },
+  {
+   "unit": "kaf_patah",
+   "hebrew": "כַ",
+   "letter": "kaf",
+   "nekuda": "patah",
+   "sound": "k/a"
+  },
+  {
+   "unit": "kaf_tsere",
+   "hebrew": "כֵ",
+   "letter": "kaf",
+   "nekuda": "tsere",
+   "sound": "k/e"
+  },
+  {
+   "unit": "kaf_segol",
+   "hebrew": "כֶ",
+   "letter": "kaf",
+   "nekuda": "segol",
+   "sound": "k/e"
+  },
+  {
+   "unit": "kaf_hiriq",
+   "hebrew": "כִ",
+   "letter": "kaf",
+   "nekuda": "hiriq",
+   "sound": "k/i"
+  },
+  {
+   "unit": "kaf_holam",
+   "hebrew": "כֹ",
+   "letter": "kaf",
+   "nekuda": "holam",
+   "sound": "k/o"
+  },
+  {
+   "unit": "kaf_qubuts",
+   "hebrew": "כֻ",
+   "letter": "kaf",
+   "nekuda": "qubuts",
+   "sound": "k/u"
+  },
+  {
+   "unit": "kaf_shuruq",
+   "hebrew": "כוּ",
+   "letter": "kaf",
+   "nekuda": "shuruq",
+   "sound": "k/u"
+  },
+  {
+   "unit": "kaf_shva",
+   "hebrew": "כְ",
+   "letter": "kaf",
+   "nekuda": "shva",
+   "sound": "k/@"
+  },
+  {
+   "unit": "kaf_hataf",
+   "hebrew": "כֲ",
+   "letter": "kaf",
+   "nekuda": "hataf",
+   "sound": "k/a:"
+  },
+  {
+   "unit": "lamed_kamats",
+   "hebrew": "לָ",
+   "letter": "lamed",
+   "nekuda": "kamats",
+   "sound": "l/a"
+  },
+  {
+   "unit": "lamed_patah",
+   "hebrew": "לַ",
+   "letter": "lamed",
+   "nekuda": "patah",
+   "sound": "l/a"
+  },
+  {
+   "unit": "lamed_tsere",
+   "hebrew": "לֵ",
+   "letter": "lamed",
+   "nekuda": "tsere",
+   "sound": "l/e"
+  },
+  {
+   "unit": "lamed_segol",
+   "hebrew": "לֶ",
+   "letter": "lamed",
+   "nekuda": "segol",
+   "sound": "l/e"
+  },
+  {
+   "unit": "lamed_hiriq",
+   "hebrew": "לִ",
+   "letter": "lamed",
+   "nekuda": "hiriq",
+   "sound": "l/i"
+  },
+  {
+   "unit": "lamed_holam",
+   "hebrew": "לֹ",
+   "letter": "lamed",
+   "nekuda": "holam",
+   "sound": "l/o"
+  },
+  {
+   "unit": "lamed_qubuts",
+   "hebrew": "לֻ",
+   "letter": "lamed",
+   "nekuda": "qubuts",
+   "sound": "l/u"
+  },
+  {
+   "unit": "lamed_shuruq",
+   "hebrew": "לוּ",
+   "letter": "lamed",
+   "nekuda": "shuruq",
+   "sound": "l/u"
+  },
+  {
+   "unit": "lamed_shva",
+   "hebrew": "לְ",
+   "letter": "lamed",
+   "nekuda": "shva",
+   "sound": "l/@"
+  },
+  {
+   "unit": "lamed_hataf",
+   "hebrew": "לֲ",
+   "letter": "lamed",
+   "nekuda": "hataf",
+   "sound": "l/a:"
+  },
+  {
+   "unit": "mem_kamats",
+   "hebrew": "מָ",
+   "letter": "mem",
+   "nekuda": "kamats",
+   "sound": "m/a"
+  },
+  {
+   "unit": "mem_patah",
+   "hebrew": "מַ",
+   "letter": "mem",
+   "nekuda": "patah",
+   "sound": "m/a"
+  },
+  {
+   "unit": "mem_tsere",
+   "hebrew": "מֵ",
+   "letter": "mem",
+   "nekuda": "tsere",
+   "sound": "m/e"
+  },
+  {
+   "unit": "mem_segol",
+   "hebrew": "מֶ",
+   "letter": "mem",
+   "nekuda": "segol",
+   "sound": "m/e"
+  },
+  {
+   "unit": "mem_hiriq",
+   "hebrew": "מִ",
+   "letter": "mem",
+   "nekuda": "hiriq",
+   "sound": "m/i"
+  },
+  {
+   "unit": "mem_holam",
+   "hebrew": "מֹ",
+   "letter": "mem",
+   "nekuda": "holam",
+   "sound": "m/o"
+  },
+  {
+   "unit": "mem_qubuts",
+   "hebrew": "מֻ",
+   "letter": "mem",
+   "nekuda": "qubuts",
+   "sound": "m/u"
+  },
+  {
+   "unit": "mem_shuruq",
+   "hebrew": "מוּ",
+   "letter": "mem",
+   "nekuda": "shuruq",
+   "sound": "m/u"
+  },
+  {
+   "unit": "mem_shva",
+   "hebrew": "מְ",
+   "letter": "mem",
+   "nekuda": "shva",
+   "sound": "m/@"
+  },
+  {
+   "unit": "mem_hataf",
+   "hebrew": "מֲ",
+   "letter": "mem",
+   "nekuda": "hataf",
+   "sound": "m/a:"
+  },
+  {
+   "unit": "nun_kamats",
+   "hebrew": "נָ",
+   "letter": "nun",
+   "nekuda": "kamats",
+   "sound": "n/a"
+  },
+  {
+   "unit": "nun_patah",
+   "hebrew": "נַ",
+   "letter": "nun",
+   "nekuda": "patah",
+   "sound": "n/a"
+  },
+  {
+   "unit": "nun_tsere",
+   "hebrew": "נֵ",
+   "letter": "nun",
+   "nekuda": "tsere",
+   "sound": "n/e"
+  },
+  {
+   "unit": "nun_segol",
+   "hebrew": "נֶ",
+   "letter": "nun",
+   "nekuda": "segol",
+   "sound": "n/e"
+  },
+  {
+   "unit": "nun_hiriq",
+   "hebrew": "נִ",
+   "letter": "nun",
+   "nekuda": "hiriq",
+   "sound": "n/i"
+  },
+  {
+   "unit": "nun_holam",
+   "hebrew": "נֹ",
+   "letter": "nun",
+   "nekuda": "holam",
+   "sound": "n/o"
+  },
+  {
+   "unit": "nun_qubuts",
+   "hebrew": "נֻ",
+   "letter": "nun",
+   "nekuda": "qubuts",
+   "sound": "n/u"
+  },
+  {
+   "unit": "nun_shuruq",
+   "hebrew": "נוּ",
+   "letter": "nun",
+   "nekuda": "shuruq",
+   "sound": "n/u"
+  },
+  {
+   "unit": "nun_shva",
+   "hebrew": "נְ",
+   "letter": "nun",
+   "nekuda": "shva",
+   "sound": "n/@"
+  },
+  {
+   "unit": "nun_hataf",
+   "hebrew": "נֲ",
+   "letter": "nun",
+   "nekuda": "hataf",
+   "sound": "n/a:"
+  },
+  {
+   "unit": "samekh_kamats",
+   "hebrew": "סָ",
+   "letter": "samekh",
+   "nekuda": "kamats",
+   "sound": "s/a"
+  },
+  {
+   "unit": "samekh_patah",
+   "hebrew": "סַ",
+   "letter": "samekh",
+   "nekuda": "patah",
+   "sound": "s/a"
+  },
+  {
+   "unit": "samekh_tsere",
+   "hebrew": "סֵ",
+   "letter": "samekh",
+   "nekuda": "tsere",
+   "sound": "s/e"
+  },
+  {
+   "unit": "samekh_segol",
+   "hebrew": "סֶ",
+   "letter": "samekh",
+   "nekuda": "segol",
+   "sound": "s/e"
+  },
+  {
+   "unit": "samekh_hiriq",
+   "hebrew": "סִ",
+   "letter": "samekh",
+   "nekuda": "hiriq",
+   "sound": "s/i"
+  },
+  {
+   "unit": "samekh_holam",
+   "hebrew": "סֹ",
+   "letter": "samekh",
+   "nekuda": "holam",
+   "sound": "s/o"
+  },
+  {
+   "unit": "samekh_qubuts",
+   "hebrew": "סֻ",
+   "letter": "samekh",
+   "nekuda": "qubuts",
+   "sound": "s/u"
+  },
+  {
+   "unit": "samekh_shuruq",
+   "hebrew": "סוּ",
+   "letter": "samekh",
+   "nekuda": "shuruq",
+   "sound": "s/u"
+  },
+  {
+   "unit": "samekh_shva",
+   "hebrew": "סְ",
+   "letter": "samekh",
+   "nekuda": "shva",
+   "sound": "s/@"
+  },
+  {
+   "unit": "samekh_hataf",
+   "hebrew": "סֲ",
+   "letter": "samekh",
+   "nekuda": "hataf",
+   "sound": "s/a:"
+  },
+  {
+   "unit": "ayin_kamats",
+   "hebrew": "עָ",
+   "letter": "ayin",
+   "nekuda": "kamats",
+   "sound": "'/a"
+  },
+  {
+   "unit": "ayin_patah",
+   "hebrew": "עַ",
+   "letter": "ayin",
+   "nekuda": "patah",
+   "sound": "'/a"
+  },
+  {
+   "unit": "ayin_tsere",
+   "hebrew": "עֵ",
+   "letter": "ayin",
+   "nekuda": "tsere",
+   "sound": "'/e"
+  },
+  {
+   "unit": "ayin_segol",
+   "hebrew": "עֶ",
+   "letter": "ayin",
+   "nekuda": "segol",
+   "sound": "'/e"
+  },
+  {
+   "unit": "ayin_hiriq",
+   "hebrew": "עִ",
+   "letter": "ayin",
+   "nekuda": "hiriq",
+   "sound": "'/i"
+  },
+  {
+   "unit": "ayin_holam",
+   "hebrew": "עֹ",
+   "letter": "ayin",
+   "nekuda": "holam",
+   "sound": "'/o"
+  },
+  {
+   "unit": "ayin_qubuts",
+   "hebrew": "עֻ",
+   "letter": "ayin",
+   "nekuda": "qubuts",
+   "sound": "'/u"
+  },
+  {
+   "unit": "ayin_shuruq",
+   "hebrew": "עוּ",
+   "letter": "ayin",
+   "nekuda": "shuruq",
+   "sound": "'/u"
+  },
+  {
+   "unit": "ayin_shva",
+   "hebrew": "עְ",
+   "letter": "ayin",
+   "nekuda": "shva",
+   "sound": "'/@"
+  },
+  {
+   "unit": "ayin_hataf",
+   "hebrew": "עֲ",
+   "letter": "ayin",
+   "nekuda": "hataf",
+   "sound": "'/a:"
+  },
+  {
+   "unit": "pe_kamats",
+   "hebrew": "פָ",
+   "letter": "pe",
+   "nekuda": "kamats",
+   "sound": "p/a"
+  },
+  {
+   "unit": "pe_patah",
+   "hebrew": "פַ",
+   "letter": "pe",
+   "nekuda": "patah",
+   "sound": "p/a"
+  },
+  {
+   "unit": "pe_tsere",
+   "hebrew": "פֵ",
+   "letter": "pe",
+   "nekuda": "tsere",
+   "sound": "p/e"
+  },
+  {
+   "unit": "pe_segol",
+   "hebrew": "פֶ",
+   "letter": "pe",
+   "nekuda": "segol",
+   "sound": "p/e"
+  },
+  {
+   "unit": "pe_hiriq",
+   "hebrew": "פִ",
+   "letter": "pe",
+   "nekuda": "hiriq",
+   "sound": "p/i"
+  },
+  {
+   "unit": "pe_holam",
+   "hebrew": "פֹ",
+   "letter": "pe",
+   "nekuda": "holam",
+   "sound": "p/o"
+  },
+  {
+   "unit": "pe_qubuts",
+   "hebrew": "פֻ",
+   "letter": "pe",
+   "nekuda": "qubuts",
+   "sound": "p/u"
+  },
+  {
+   "unit": "pe_shuruq",
+   "hebrew": "פוּ",
+   "letter": "pe",
+   "nekuda": "shuruq",
+   "sound": "p/u"
+  },
+  {
+   "unit": "pe_shva",
+   "hebrew": "פְ",
+   "letter": "pe",
+   "nekuda": "shva",
+   "sound": "p/@"
+  },
+  {
+   "unit": "pe_hataf",
+   "hebrew": "פֲ",
+   "letter": "pe",
+   "nekuda": "hataf",
+   "sound": "p/a:"
+  },
+  {
+   "unit": "tsadi_kamats",
+   "hebrew": "צָ",
+   "letter": "tsadi",
+   "nekuda": "kamats",
+   "sound": "ts/a"
+  },
+  {
+   "unit": "tsadi_patah",
+   "hebrew": "צַ",
+   "letter": "tsadi",
+   "nekuda": "patah",
+   "sound": "ts/a"
+  },
+  {
+   "unit": "tsadi_tsere",
+   "hebrew": "צֵ",
+   "letter": "tsadi",
+   "nekuda": "tsere",
+   "sound": "ts/e"
+  },
+  {
+   "unit": "tsadi_segol",
+   "hebrew": "צֶ",
+   "letter": "tsadi",
+   "nekuda": "segol",
+   "sound": "ts/e"
+  },
+  {
+   "unit": "tsadi_hiriq",
+   "hebrew": "צִ",
+   "letter": "tsadi",
+   "nekuda": "hiriq",
+   "sound": "ts/i"
+  },
+  {
+   "unit": "tsadi_holam",
+   "hebrew": "צֹ",
+   "letter": "tsadi",
+   "nekuda": "holam",
+   "sound": "ts/o"
+  },
+  {
+   "unit": "tsadi_qubuts",
+   "hebrew": "צֻ",
+   "letter": "tsadi",
+   "nekuda": "qubuts",
+   "sound": "ts/u"
+  },
+  {
+   "unit": "tsadi_shuruq",
+   "hebrew": "צוּ",
+   "letter": "tsadi",
+   "nekuda": "shuruq",
+   "sound": "ts/u"
+  },
+  {
+   "unit": "tsadi_shva",
+   "hebrew": "צְ",
+   "letter": "tsadi",
+   "nekuda": "shva",
+   "sound": "ts/@"
+  },
+  {
+   "unit": "tsadi_hataf",
+   "hebrew": "צֲ",
+   "letter": "tsadi",
+   "nekuda": "hataf",
+   "sound": "ts/a:"
+  },
+  {
+   "unit": "qof_kamats",
+   "hebrew": "קָ",
+   "letter": "qof",
+   "nekuda": "kamats",
+   "sound": "q/a"
+  },
+  {
+   "unit": "qof_patah",
+   "hebrew": "קַ",
+   "letter": "qof",
+   "nekuda": "patah",
+   "sound": "q/a"
+  },
+  {
+   "unit": "qof_tsere",
+   "hebrew": "קֵ",
+   "letter": "qof",
+   "nekuda": "tsere",
+   "sound": "q/e"
+  },
+  {
+   "unit": "qof_segol",
+   "hebrew": "קֶ",
+   "letter": "qof",
+   "nekuda": "segol",
+   "sound": "q/e"
+  },
+  {
+   "unit": "qof_hiriq",
+   "hebrew": "קִ",
+   "letter": "qof",
+   "nekuda": "hiriq",
+   "sound": "q/i"
+  },
+  {
+   "unit": "qof_holam",
+   "hebrew": "קֹ",
+   "letter": "qof",
+   "nekuda": "holam",
+   "sound": "q/o"
+  },
+  {
+   "unit": "qof_qubuts",
+   "hebrew": "קֻ",
+   "letter": "qof",
+   "nekuda": "qubuts",
+   "sound": "q/u"
+  },
+  {
+   "unit": "qof_shuruq",
+   "hebrew": "קוּ",
+   "letter": "qof",
+   "nekuda": "shuruq",
+   "sound": "q/u"
+  },
+  {
+   "unit": "qof_shva",
+   "hebrew": "קְ",
+   "letter": "qof",
+   "nekuda": "shva",
+   "sound": "q/@"
+  },
+  {
+   "unit": "qof_hataf",
+   "hebrew": "קֲ",
+   "letter": "qof",
+   "nekuda": "hataf",
+   "sound": "q/a:"
+  },
+  {
+   "unit": "resh_kamats",
+   "hebrew": "רָ",
+   "letter": "resh",
+   "nekuda": "kamats",
+   "sound": "r/a"
+  },
+  {
+   "unit": "resh_patah",
+   "hebrew": "רַ",
+   "letter": "resh",
+   "nekuda": "patah",
+   "sound": "r/a"
+  },
+  {
+   "unit": "resh_tsere",
+   "hebrew": "רֵ",
+   "letter": "resh",
+   "nekuda": "tsere",
+   "sound": "r/e"
+  },
+  {
+   "unit": "resh_segol",
+   "hebrew": "רֶ",
+   "letter": "resh",
+   "nekuda": "segol",
+   "sound": "r/e"
+  },
+  {
+   "unit": "resh_hiriq",
+   "hebrew": "רִ",
+   "letter": "resh",
+   "nekuda": "hiriq",
+   "sound": "r/i"
+  },
+  {
+   "unit": "resh_holam",
+   "hebrew": "רֹ",
+   "letter": "resh",
+   "nekuda": "holam",
+   "sound": "r/o"
+  },
+  {
+   "unit": "resh_qubuts",
+   "hebrew": "רֻ",
+   "letter": "resh",
+   "nekuda": "qubuts",
+   "sound": "r/u"
+  },
+  {
+   "unit": "resh_shuruq",
+   "hebrew": "רוּ",
+   "letter": "resh",
+   "nekuda": "shuruq",
+   "sound": "r/u"
+  },
+  {
+   "unit": "resh_shva",
+   "hebrew": "רְ",
+   "letter": "resh",
+   "nekuda": "shva",
+   "sound": "r/@"
+  },
+  {
+   "unit": "resh_hataf",
+   "hebrew": "רֲ",
+   "letter": "resh",
+   "nekuda": "hataf",
+   "sound": "r/a:"
+  },
+  {
+   "unit": "shin_kamats",
+   "hebrew": "שָ",
+   "letter": "shin",
+   "nekuda": "kamats",
+   "sound": "sh/a"
+  },
+  {
+   "unit": "shin_patah",
+   "hebrew": "שַ",
+   "letter": "shin",
+   "nekuda": "patah",
+   "sound": "sh/a"
+  },
+  {
+   "unit": "shin_tsere",
+   "hebrew": "שֵ",
+   "letter": "shin",
+   "nekuda": "tsere",
+   "sound": "sh/e"
+  },
+  {
+   "unit": "shin_segol",
+   "hebrew": "שֶ",
+   "letter": "shin",
+   "nekuda": "segol",
+   "sound": "sh/e"
+  },
+  {
+   "unit": "shin_hiriq",
+   "hebrew": "שִ",
+   "letter": "shin",
+   "nekuda": "hiriq",
+   "sound": "sh/i"
+  },
+  {
+   "unit": "shin_holam",
+   "hebrew": "שֹ",
+   "letter": "shin",
+   "nekuda": "holam",
+   "sound": "sh/o"
+  },
+  {
+   "unit": "shin_qubuts",
+   "hebrew": "שֻ",
+   "letter": "shin",
+   "nekuda": "qubuts",
+   "sound": "sh/u"
+  },
+  {
+   "unit": "shin_shuruq",
+   "hebrew": "שוּ",
+   "letter": "shin",
+   "nekuda": "shuruq",
+   "sound": "sh/u"
+  },
+  {
+   "unit": "shin_shva",
+   "hebrew": "שְ",
+   "letter": "shin",
+   "nekuda": "shva",
+   "sound": "sh/@"
+  },
+  {
+   "unit": "shin_hataf",
+   "hebrew": "שֲ",
+   "letter": "shin",
+   "nekuda": "hataf",
+   "sound": "sh/a:"
+  },
+  {
+   "unit": "tav_kamats",
+   "hebrew": "תָ",
+   "letter": "tav",
+   "nekuda": "kamats",
+   "sound": "t/a"
+  },
+  {
+   "unit": "tav_patah",
+   "hebrew": "תַ",
+   "letter": "tav",
+   "nekuda": "patah",
+   "sound": "t/a"
+  },
+  {
+   "unit": "tav_tsere",
+   "hebrew": "תֵ",
+   "letter": "tav",
+   "nekuda": "tsere",
+   "sound": "t/e"
+  },
+  {
+   "unit": "tav_segol",
+   "hebrew": "תֶ",
+   "letter": "tav",
+   "nekuda": "segol",
+   "sound": "t/e"
+  },
+  {
+   "unit": "tav_hiriq",
+   "hebrew": "תִ",
+   "letter": "tav",
+   "nekuda": "hiriq",
+   "sound": "t/i"
+  },
+  {
+   "unit": "tav_holam",
+   "hebrew": "תֹ",
+   "letter": "tav",
+   "nekuda": "holam",
+   "sound": "t/o"
+  },
+  {
+   "unit": "tav_qubuts",
+   "hebrew": "תֻ",
+   "letter": "tav",
+   "nekuda": "qubuts",
+   "sound": "t/u"
+  },
+  {
+   "unit": "tav_shuruq",
+   "hebrew": "תוּ",
+   "letter": "tav",
+   "nekuda": "shuruq",
+   "sound": "t/u"
+  },
+  {
+   "unit": "tav_shva",
+   "hebrew": "תְ",
+   "letter": "tav",
+   "nekuda": "shva",
+   "sound": "t/@"
+  },
+  {
+   "unit": "tav_hataf",
+   "hebrew": "תֲ",
+   "letter": "tav",
+   "nekuda": "hataf",
+   "sound": "t/a:"
+  }
+ ]
+}

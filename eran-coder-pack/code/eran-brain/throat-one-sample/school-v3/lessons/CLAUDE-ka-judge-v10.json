@@ -1,0 +1,58 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "ka",
+ "letter": "kaf",
+ "hebrew": "כ",
+ "gate": "hebrew-judge facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+ "canon_conf": 0.8998,
+ "syl_conf": 0.4499,
+ "judge_top3": [
+  [
+   "ka",
+   0.44988154307038597
+  ],
+  [
+   "qa",
+   0.44988154307038597
+  ],
+  [
+   "a",
+   0.021292145393210882
+  ]
+ ],
+ "judge_phones": "k ɑ5",
+ "old_ruler_pass": false,
+ "old_ruler_fails": [
+  "closure -18.5 dB > -20",
+  "F1 voiced onset 580 not below vowel 573",
+  "gap 29 ms"
+ ],
+ "spec": {
+  "knots": "AH",
+  "constr": "seal",
+  "nasal": 0,
+  "voice": "on",
+  "release": "gap",
+  "burst": 1,
+  "pre": 0,
+  "c_pos": 0.52,
+  "c_area": 2.0,
+  "velum": 0.0,
+  "ten": 0.6,
+  "voi": 1.0,
+  "d_pre": 0.0,
+  "d_cons": 0.08916443826178044,
+  "d_trans": 0.0056742850921667806,
+  "d_gap": 0.029954857401653618,
+  "gap_pos": 0.52,
+  "gap_area": 0.12500000000000006,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.0,
+  "d_vowel": 0.33918590573668017,
+  "glide": 0.25564049202246164,
+  "gain": 6.01112704552128,
+  "f0": 111.64807315882902,
+  "trans_voi": null
+ }
+}

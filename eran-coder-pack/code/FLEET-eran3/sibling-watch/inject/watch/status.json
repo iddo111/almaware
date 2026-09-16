@@ -1,0 +1,140 @@
+{
+ "ts": "2026-09-01T13:43:58",
+ "host": "edgexpert-01e6",
+ "verdict": "ALARM",
+ "n_alarm": 3,
+ "n_warn": 0,
+ "findings": [
+  {
+   "level": "ALARM",
+   "code": "BLIND",
+   "organ": "watchdog",
+   "series": "frozen",
+   "msg": "detector 'frozen' did NOT fire on a fixture built to set it off. The instrument is blind -- every OK it printed is worthless until this is fixed.",
+   "nums": {}
+  },
+  {
+   "level": "ALARM",
+   "code": "BLIND",
+   "organ": "watchdog",
+   "series": "dead",
+   "msg": "detector 'dead' did NOT fire on a fixture built to set it off. The instrument is blind -- every OK it printed is worthless until this is fixed.",
+   "nums": {}
+  },
+  {
+   "level": "ALARM",
+   "code": "BLIND",
+   "organ": "watchdog",
+   "series": "diverge",
+   "msg": "detector 'diverge' did NOT fire on a fixture built to set it off. The instrument is blind -- every OK it printed is worthless until this is fixed.",
+   "nums": {}
+  }
+ ],
+ "organs": {
+  "ear": {
+   "what": "the sibling's learning loop -- naming human syllables",
+   "root": "/home/eran3/sibling-ear",
+   "unit": "sibling-ear.service",
+   "unit_active": "active",
+   "pid": 832848,
+   "rounds": 43,
+   "last_round_at": "2026-09-01T13:22:46",
+   "last_round_age": "21m",
+   "objective": "exam",
+   "objective_now": 0.6667,
+   "objective_best": 0.6667,
+   "files": 50,
+   "bytes": 875336,
+   "seal": "intact",
+   "series_moving": [
+    "bias_move",
+    "dev",
+    "exam",
+    "g_move",
+    "gate_move",
+    "ruler",
+    "tau",
+    "theta"
+   ],
+   "series_still": [],
+   "series_constant_by_design": [
+    "born=0.2778",
+    "hushed=0.0 (MOVED!)"
+   ],
+   "stop_file": false,
+   "it_says_of_itself": {
+    "stall": "converged",
+    "verdict": "FAILED: Murphy says FOOLING ITSELF",
+    "murphy": "FOOLING ITSELF",
+    "seal": "intact"
+   }
+  },
+  "birth": {
+   "what": "the sibling itself -- the second whole holobrain",
+   "root": "/home/eran3/sibling",
+   "unit": "sibling.service",
+   "unit_active": "active",
+   "pid": 834009,
+   "rounds": 4,
+   "last_round_at": "2026-09-01T13:24:47",
+   "last_round_age": "19m",
+   "objective": "correct",
+   "objective_now": 3.0,
+   "objective_best": 3.0,
+   "files": 125,
+   "bytes": 52243692,
+   "seal": "intact",
+   "series_moving": [],
+   "series_still": [
+    "correct"
+   ],
+   "series_constant_by_design": [
+    "n=12.0"
+   ],
+   "stop_file": false,
+   "it_says_of_itself": {}
+  }
+ },
+ "disk": {
+  "used_pct": 69.9,
+  "free_gb": 984.9
+ },
+ "self_audit": {
+  "detectors": {
+   "fd_allowlist": {
+    "refused": 3,
+    "kept": 2
+   },
+   "frozen": {
+    "fired_on_sick": 0,
+    "fired_on_well": 0
+   },
+   "dead": {
+    "fired_on_sick": 0,
+    "fired_on_well": 0
+   },
+   "diverge": {
+    "fired_on_sick": 0,
+    "fired_on_well": 0
+   },
+   "stall": {
+    "fired_on_sick": 3,
+    "fired_on_well": 0
+   },
+   "seal": {
+    "fired_on_sick": 4,
+    "fired_on_well": 0
+   }
+  },
+  "source": {
+   "patterns_checked": 5,
+   "hits": {}
+  },
+  "blinded_on_purpose": [
+   "frozen",
+   "dead",
+   "diverge"
+  ]
+ },
+ "interval_s": null
+}

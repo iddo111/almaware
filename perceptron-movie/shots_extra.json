@@ -1,0 +1,72 @@
+[
+ {
+  "id": "b03_99",
+  "block": 3,
+  "k": 99,
+  "prompt": "Extreme macro of a paper card with a black circle printed on it sliding into a metal holder under a lamp, clean laboratory table, shallow focus, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5510613
+ },
+ {
+  "id": "b04_99",
+  "block": 4,
+  "k": 99,
+  "prompt": "A pair of hands sorting small wooden blocks into two separate piles on a plain table, warm daylight, top down view, unhurried, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5518330
+ },
+ {
+  "id": "b10_99",
+  "block": 10,
+  "k": 99,
+  "prompt": "A slow push in on a single small brass dial at the centre of a panel of hundreds of identical dials, warm raking light, shallow focus, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5526047
+ },
+ {
+  "id": "b13_99",
+  "block": 13,
+  "k": 99,
+  "prompt": "Extreme macro of a fine wiper arm sweeping a few millimetres across a carbon track inside a potentiometer, warm light, dark background, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5533764
+ },
+ {
+  "id": "b16_99",
+  "block": 16,
+  "k": 99,
+  "prompt": "A straight taut wire above a white surface scattered with black and white spheres, the wire rotating and never separating them, top down, clean light, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5541481
+ },
+ {
+  "id": "b22_99",
+  "block": 22,
+  "k": 99,
+  "prompt": "A slow orbit around a single glowing junction where two branching filaments meet, warm gold on deep blue, extreme macro, volumetric, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5549198
+ },
+ {
+  "id": "b25_99",
+  "block": 25,
+  "k": 99,
+  "prompt": "Thin copper foil being cut carefully with scissors on a kitchen table, the cut edge catching warm daylight, macro, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5556915
+ },
+ {
+  "id": "b26_99",
+  "block": 26,
+  "k": 99,
+  "prompt": "Extreme macro of the boundary between amber gel and a copper surface, the metal darkening slightly where the gel touches it, backlit, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5564632
+ },
+ {
+  "id": "b28_99",
+  "block": 28,
+  "k": 99,
+  "prompt": "A modest device of copper and amber gel sitting on a windowsill in plain afternoon light, ordinary and unglamorous, static shot, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5572349
+ },
+ {
+  "id": "b30_99",
+  "block": 30,
+  "k": 99,
+  "prompt": "A wide dark sky before dawn with one bright star low on the horizon, absolutely still, extremely slow drift, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5580066
+ }
+]

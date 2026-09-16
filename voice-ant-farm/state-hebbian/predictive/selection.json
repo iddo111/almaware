@@ -1,0 +1,98 @@
+{
+  "question": "how beta -- the weight on the contrastive term -- was chosen",
+  "protocol": "sweep_predictive.py: leave-one-base-rendering-out over the 396 corpus-combined/train syllable items, cosine 1-NN over unit histograms, four ants (7007/7019/7039/7057) per row. The held-out split was not opened during selection.",
+  "fixed_a_priori_never_tuned": {
+    "feature_set": "mfcc20_mel26_pd6w4",
+    "units": 256,
+    "delta_frames": 3,
+    "rounds": 12,
+    "candidates": 8,
+    "negatives": 256,
+    "tau": 1.0,
+    "ridge": 1.0,
+    "predictor": "linear"
+  },
+  "swept": [
+    "beta"
+  ],
+  "not_swept_and_why": "The remaining axes (delta, tau, candidates, negatives, rounds, predictor) were queued but the run was killed after the beta axis: this machine was shared with two other training jobs and the sweep was getting under 15% of one core. Only beta was therefore selected; everything else stayed at the value it was written with. That is a limitation, not a result.",
+  "beta_values_measured": [
+    0.0,
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "beta_values_not_measured": [
+    4.0,
+    8.0
+  ],
+  "chance_top1": 0.045454545454545456,
+  "chosen": {
+    "beta": 1.0,
+    "reason": "highest CV top-1 of the five measured values; 1.0 and 2.0 are a plateau"
+  },
+  "rows": [
+    {
+      "axis": "beta",
+      "value": 0.0,
+      "cv_top1": 0.789,
+      "cv_top1_sd_over_ants": 0.025,
+      "cv_ba_pa": 0.826,
+      "cv_da_ta": 0.8190000000000001,
+      "cv_all_pairs": 0.924,
+      "dead_units_train": 118,
+      "mean_infonce_nats": 0.0,
+      "seconds_four_ants": 38
+    },
+    {
+      "axis": "beta",
+      "value": 0.25,
+      "cv_top1": 0.795,
+      "cv_top1_sd_over_ants": 0.016,
+      "cv_ba_pa": 0.826,
+      "cv_da_ta": 0.764,
+      "cv_all_pairs": 0.917,
+      "dead_units_train": 118,
+      "mean_infonce_nats": -2.667,
+      "seconds_four_ants": 98
+    },
+    {
+      "axis": "beta",
+      "value": 0.5,
+      "cv_top1": 0.795,
+      "cv_top1_sd_over_ants": 0.006999999999999999,
+      "cv_ba_pa": 0.826,
+      "cv_da_ta": 0.757,
+      "cv_all_pairs": 0.912,
+      "dead_units_train": 115,
+      "mean_infonce_nats": -2.344,
+      "seconds_four_ants": 111
+    },
+    {
+      "axis": "beta",
+      "value": 1.0,
+      "cv_top1": 0.8140000000000001,
+      "cv_top1_sd_over_ants": 0.015,
+      "cv_ba_pa": 0.8540000000000001,
+      "cv_da_ta": 0.799,
+      "cv_all_pairs": 0.922,
+      "dead_units_train": 116,
+      "mean_infonce_nats": -2.074,
+      "seconds_four_ants": 120
+    },
+    {
+      "axis": "beta",
+      "value": 2.0,
+      "cv_top1": 0.812,
+      "cv_top1_sd_over_ants": 0.022000000000000002,
+      "cv_ba_pa": 0.8540000000000001,
+      "cv_da_ta": 0.785,
+      "cv_all_pairs": 0.9179999999999999,
+      "dead_units_train": 115,
+      "mean_infonce_nats": -1.941,
+      "seconds_four_ants": 145
+    }
+  ],
+  "raw_log": "state-hebbian/predictive/sweep.log"
+}

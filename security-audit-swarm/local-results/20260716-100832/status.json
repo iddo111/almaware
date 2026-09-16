@@ -1,0 +1,17 @@
+﻿{
+    "started":  "2026-07-16T10:08:32.9218716+03:00",
+    "roots":  [
+                  "C:\\",
+                  "D:\\",
+                  "E:\\"
+              ],
+    "files_seen":  44000,
+    "text_files_scanned":  5234,
+    "bytes_text_scanned":  257494712,
+    "findings":  180,
+    "target_artifacts":  2118,
+    "git_repositories":  2,
+    "errors":  2584,
+    "current_path":  "C:\\Windows.old\\Users\\iddo1\\Desktop\\camera_old_work_extract_20260527_172257\\candidate_files\\100786_D__grok_grok-tui_projects_open-claude-cowork_node_modules_@typescript-eslint_eslint-plugin_dist_rules_no-restricted-imports.js",
+    "completed":  false
+}

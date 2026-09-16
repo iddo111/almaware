@@ -1,0 +1,59 @@
+{
+  "mic": "auto",
+  "prefer": [
+    "usbaudio",
+    "brio",
+    "scarlett"
+  ],
+  "avoid": [
+    "wh-1000xm4",
+    "hands-free",
+    "headset",
+    "bluetooth",
+    "mix"
+  ],
+  "language": "auto",
+  "lang_whitelist": [
+    "he",
+    "en"
+  ],
+  "translate_to_english": false,
+  "auto_detect_langs": 2,
+  "lang_confidence": 0.6,
+  "code_switch": true,
+  "lang_lock": true,
+  "speech_rms_gate": 0.012,
+  "no_speech_threshold": 0.6,
+  "log_prob_threshold": -1.0,
+  "compression_ratio_threshold": 2.4,
+  "vad_threshold": 0.5,
+  "vad_min_silence_ms": 500,
+  "vad_speech_pad_ms": 100,
+  "arming": "auto",
+  "wake_words": [
+    "ערן",
+    "קלוד",
+    "claude"
+  ],
+  "model": "deepdml/faster-whisper-large-v3-turbo-ct2",
+  "lora_dir": "",
+  "device": "auto",
+  "compute_type": "auto",
+  "type_output": true,
+  "auto_enter": true,
+  "collect_corpus": true,
+  "brain_backend": "grok",
+  "brain_auto": false,
+  "dicta_url": "",
+  "enable_voice_commands": true,
+  "voice_commands": {
+    "by the way": "/btw",
+    "דרך אגב": "/btw",
+    "ביי דה וויי": "/btw",
+    "new line": "\n",
+    "שורה חדשה": "\n",
+    "new paragraph": "\n\n"
+  },
+  "type_anywhere": true,
+  "type_targets": []
+}

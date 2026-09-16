@@ -1,0 +1,546 @@
+{
+  "question": "is the 14-dim feature space dominated by loudness",
+  "claim_under_test": "GLM-5.2: magnitude-spectrum features are strictly positive, so L2 distance is inflated by energy and k-means groups by loudness, not by phone",
+  "seed": 7007,
+  "syllable_corpus::all_frames": {
+    "files": 200,
+    "frames": 29732,
+    "variance": {
+      "total_variance": 27.652362672301813,
+      "per_dimension": {
+        "log_energy": {
+          "variance": 12.219147195742305,
+          "share": 0.44188438219717485
+        },
+        "zcr": {
+          "variance": 0.019537682534178893,
+          "share": 0.0007065465893715098
+        },
+        "band00": {
+          "variance": 0.5196831640891675,
+          "share": 0.018793445256296736
+        },
+        "band01": {
+          "variance": 0.30604093620599265,
+          "share": 0.011067442584663507
+        },
+        "band02": {
+          "variance": 0.4615936134372601,
+          "share": 0.016692736852450537
+        },
+        "band03": {
+          "variance": 0.6149732123170056,
+          "share": 0.022239445489878447
+        },
+        "band04": {
+          "variance": 0.7169428066383128,
+          "share": 0.025926999986747738
+        },
+        "band05": {
+          "variance": 0.8582574782120983,
+          "share": 0.03103740133828702
+        },
+        "band06": {
+          "variance": 0.954098315948817,
+          "share": 0.03450331992443078
+        },
+        "band07": {
+          "variance": 0.8822728045365092,
+          "share": 0.031905874192090074
+        },
+        "band08": {
+          "variance": 1.0057331066100372,
+          "share": 0.03637060306667528
+        },
+        "band09": {
+          "variance": 1.4147238402029305,
+          "share": 0.051161047501376754
+        },
+        "band10": {
+          "variance": 2.1485014017036406,
+          "share": 0.07769684736037773
+        },
+        "band11": {
+          "variance": 5.530857114123555,
+          "share": 0.20001390766017899
+        }
+      },
+      "log_energy_share": 0.44188438219717485,
+      "zcr_share": 0.0007065465893715098,
+      "twelve_bands_share": 0.5574090712134536
+    },
+    "pair_correlations": {
+      "pairs": 399984,
+      "pearson_distance_vs_abs_energy_gap": 0.9072183050634173,
+      "spearman_distance_vs_abs_energy_gap": 0.8589474446715623,
+      "mean_fraction_of_squared_distance_from_energy_column": 0.35763599533910084,
+      "median_fraction_of_squared_distance_from_energy_column": 0.36211933599400176,
+      "pearson_distance_vs_abs_energy_gap_energy_column_removed": 0.7063430452328748,
+      "spearman_full_vs_energyless_distance": 0.9401954075401087
+    },
+    "neighbours": {
+      "probe_frames": 400,
+      "bank_frames": 4000,
+      "mean_top10_neighbour_overlap_with_vs_without_energy": 0.47574999999999995
+    }
+  },
+  "syllable_corpus::speech_frames_only": {
+    "files": 200,
+    "frames": 19627,
+    "variance": {
+      "total_variance": 30.348627075763403,
+      "per_dimension": {
+        "log_energy": {
+          "variance": 13.751391034500497,
+          "share": 0.45311410628793947
+        },
+        "zcr": {
+          "variance": 0.01327243101585109,
+          "share": 0.0004373321726454814
+        },
+        "band00": {
+          "variance": 0.5507514026492706,
+          "share": 0.018147489877362658
+        },
+        "band01": {
+          "variance": 0.3816774458354423,
+          "share": 0.012576432037027869
+        },
+        "band02": {
+          "variance": 0.6052508093866527,
+          "share": 0.019943268203720808
+        },
+        "band03": {
+          "variance": 0.8069830321409102,
+          "share": 0.026590429614042465
+        },
+        "band04": {
+          "variance": 0.8327304470561113,
+          "share": 0.027438817742142112
+        },
+        "band05": {
+          "variance": 0.9795438522953576,
+          "share": 0.032276381064948644
+        },
+        "band06": {
+          "variance": 1.0930993237759579,
+          "share": 0.03601808151146691
+        },
+        "band07": {
+          "variance": 0.9761848807018998,
+          "share": 0.032165701541124636
+        },
+        "band08": {
+          "variance": 1.074253537179117,
+          "share": 0.035397104933192265
+        },
+        "band09": {
+          "variance": 1.5245421075763068,
+          "share": 0.050234302321827774
+        },
+        "band10": {
+          "variance": 2.2518082117978078,
+          "share": 0.07419802570232627
+        },
+        "band11": {
+          "variance": 5.507138559852217,
+          "share": 0.1814625269902325
+        }
+      },
+      "log_energy_share": 0.45311410628793947,
+      "zcr_share": 0.0004373321726454814,
+      "twelve_bands_share": 0.546448561539415
+    },
+    "pair_correlations": {
+      "pairs": 399966,
+      "pearson_distance_vs_abs_energy_gap": 0.8737876126801426,
+      "spearman_distance_vs_abs_energy_gap": 0.8586058549859409,
+      "mean_fraction_of_squared_distance_from_energy_column": 0.37274930242393184,
+      "median_fraction_of_squared_distance_from_energy_column": 0.3877452540138019,
+      "pearson_distance_vs_abs_energy_gap_energy_column_removed": 0.5786730477344548,
+      "spearman_full_vs_energyless_distance": 0.9001922945835403
+    },
+    "neighbours": {
+      "probe_frames": 400,
+      "bank_frames": 4000,
+      "mean_top10_neighbour_overlap_with_vs_without_energy": 0.54
+    }
+  },
+  "human_corpus_40h_sample::all_frames": {
+    "files": 180,
+    "frames": 92684,
+    "variance": {
+      "total_variance": 41.746155913079456,
+      "per_dimension": {
+        "log_energy": {
+          "variance": 24.264157648206698,
+          "share": 0.5812309449216739
+        },
+        "zcr": {
+          "variance": 0.02150309238321365,
+          "share": 0.0005150915554473013
+        },
+        "band00": {
+          "variance": 1.0654380455008001,
+          "share": 0.025521824038581442
+        },
+        "band01": {
+          "variance": 0.7691832702816316,
+          "share": 0.018425247869125104
+        },
+        "band02": {
+          "variance": 0.7926902844525098,
+          "share": 0.01898834197100655
+        },
+        "band03": {
+          "variance": 0.7499655162334361,
+          "share": 0.017964899996899236
+        },
+        "band04": {
+          "variance": 1.071835128505393,
+          "share": 0.02567506169279594
+        },
+        "band05": {
+          "variance": 1.3353106050742385,
+          "share": 0.03198643266351318
+        },
+        "band06": {
+          "variance": 1.3148792788043662,
+          "share": 0.031497014516548634
+        },
+        "band07": {
+          "variance": 1.5212874628661592,
+          "share": 0.036441378363882504
+        },
+        "band08": {
+          "variance": 1.8547417063717793,
+          "share": 0.04442904180767148
+        },
+        "band09": {
+          "variance": 2.0844912109854628,
+          "share": 0.04993253068200161
+        },
+        "band10": {
+          "variance": 2.3452144106667334,
+          "share": 0.05617797278268575
+        },
+        "band11": {
+          "variance": 2.5554582527470395,
+          "share": 0.061214217138167465
+        }
+      },
+      "log_energy_share": 0.5812309449216739,
+      "zcr_share": 0.0005150915554473013,
+      "twelve_bands_share": 0.41825396352287886
+    },
+    "pair_correlations": {
+      "pairs": 399996,
+      "pearson_distance_vs_abs_energy_gap": 0.8724251075067111,
+      "spearman_distance_vs_abs_energy_gap": 0.8192359868439937,
+      "mean_fraction_of_squared_distance_from_energy_column": 0.4499680081807678,
+      "median_fraction_of_squared_distance_from_energy_column": 0.4661148199329144,
+      "pearson_distance_vs_abs_energy_gap_energy_column_removed": 0.203790192942973,
+      "spearman_full_vs_energyless_distance": 0.6337140075613579
+    },
+    "neighbours": {
+      "probe_frames": 400,
+      "bank_frames": 4000,
+      "mean_top10_neighbour_overlap_with_vs_without_energy": 0.43450000000000005
+    }
+  },
+  "human_corpus_40h_sample::speech_frames_only": {
+    "files": 180,
+    "frames": 84942,
+    "variance": {
+      "total_variance": 40.05308109188757,
+      "per_dimension": {
+        "log_energy": {
+          "variance": 22.341451712291093,
+          "share": 0.5577960821799594
+        },
+        "zcr": {
+          "variance": 0.022362521473540675,
+          "share": 0.0005583221281338584
+        },
+        "band00": {
+          "variance": 1.1040189626000463,
+          "share": 0.02756389602256233
+        },
+        "band01": {
+          "variance": 0.8039113709168929,
+          "share": 0.02007114930990212
+        },
+        "band02": {
+          "variance": 0.8250541800698127,
+          "share": 0.020599019041182345
+        },
+        "band03": {
+          "variance": 0.779179429021435,
+          "share": 0.019453670174184215
+        },
+        "band04": {
+          "variance": 1.0981359789076997,
+          "share": 0.027417016343597053
+        },
+        "band05": {
+          "variance": 1.3612890885916207,
+          "share": 0.03398712537166932
+        },
+        "band06": {
+          "variance": 1.3246470275536035,
+          "share": 0.03307228786006928
+        },
+        "band07": {
+          "variance": 1.5417757022125878,
+          "share": 0.038493310881016395
+        },
+        "band08": {
+          "variance": 1.8755210410079943,
+          "share": 0.04682588679520752
+        },
+        "band09": {
+          "variance": 2.1007234467793143,
+          "share": 0.05244848559739887
+        },
+        "band10": {
+          "variance": 2.3576522972080665,
+          "share": 0.05886319436448024
+        },
+        "band11": {
+          "variance": 2.5173583332538696,
+          "share": 0.06285055393063732
+        }
+      },
+      "log_energy_share": 0.5577960821799594,
+      "zcr_share": 0.0005583221281338584,
+      "twelve_bands_share": 0.44164559569190703
+    },
+    "pair_correlations": {
+      "pairs": 399997,
+      "pearson_distance_vs_abs_energy_gap": 0.8567047556426836,
+      "spearman_distance_vs_abs_energy_gap": 0.7915005928801727,
+      "mean_fraction_of_squared_distance_from_energy_column": 0.43177017815620256,
+      "median_fraction_of_squared_distance_from_energy_column": 0.4309235087514077,
+      "pearson_distance_vs_abs_energy_gap_energy_column_removed": 0.18356004145591506,
+      "spearman_full_vs_energyless_distance": 0.6465615665609799
+    },
+    "neighbours": {
+      "probe_frames": 400,
+      "bank_frames": 4000,
+      "mean_top10_neighbour_overlap_with_vs_without_energy": 0.4335
+    }
+  },
+  "kmeans_partition": {
+    "64": {
+      "k": 64,
+      "frames": 19627,
+      "eta_squared_per_dimension": {
+        "log_energy": 0.9775773554141074,
+        "zcr": 0.8564924755734827,
+        "band00": 0.839078828219302,
+        "band01": 0.4734883807893232,
+        "band02": 0.6448435901236085,
+        "band03": 0.7329826649485756,
+        "band04": 0.7540573825617769,
+        "band05": 0.7857237809526434,
+        "band06": 0.8612368526171903,
+        "band07": 0.8533613945404133,
+        "band08": 0.8687830318045112,
+        "band09": 0.9010728251820265,
+        "band10": 0.922465703950933,
+        "band11": 0.9725423654927418
+      },
+      "eta_squared_log_energy": 0.9775773554141074,
+      "eta_squared_bands_mean": 0.8008030667652539,
+      "eta_squared_zcr": 0.8564924755734827
+    },
+    "256": {
+      "k": 256,
+      "frames": 19627,
+      "eta_squared_per_dimension": {
+        "log_energy": 0.9871273690661738,
+        "zcr": 0.8988410246101635,
+        "band00": 0.8987544624849628,
+        "band01": 0.675877589236197,
+        "band02": 0.7745525022555627,
+        "band03": 0.8151543482125017,
+        "band04": 0.8411193952881303,
+        "band05": 0.8607119540285108,
+        "band06": 0.8951809314916677,
+        "band07": 0.8908889047284506,
+        "band08": 0.9048829430910832,
+        "band09": 0.933038762961185,
+        "band10": 0.948900116512506,
+        "band11": 0.9818804047427062
+      },
+      "eta_squared_log_energy": 0.9871273690661738,
+      "eta_squared_bands_mean": 0.868411859586122,
+      "eta_squared_zcr": 0.8988410246101635
+    }
+  },
+  "gain_sweep": {
+    "legacy14": [
+      {
+        "gain_db": -6.0,
+        "mean_distance_same_frame_different_level": 1.3758496497634278,
+        "mean_distance_different_file_same_level": 5.3073493252509705,
+        "ratio_self_over_other": 0.25923480167727,
+        "fraction_self_farther_than_median_other": 0.0
+      },
+      {
+        "gain_db": -12.0,
+        "mean_distance_same_frame_different_level": 2.7360448990862234,
+        "mean_distance_different_file_same_level": 5.3073493252509705,
+        "ratio_self_over_other": 0.5155200329604916,
+        "fraction_self_farther_than_median_other": 0.0
+      },
+      {
+        "gain_db": -18.0,
+        "mean_distance_same_frame_different_level": 4.046925947089362,
+        "mean_distance_different_file_same_level": 5.3073493252509705,
+        "ratio_self_over_other": 0.7625135824082946,
+        "fraction_self_farther_than_median_other": 0.0
+      }
+    ],
+    "legacy14_noenergy": [
+      {
+        "gain_db": -6.0,
+        "mean_distance_same_frame_different_level": 1.8387358637946025e-06,
+        "mean_distance_different_file_same_level": 3.6515993093528145,
+        "ratio_self_over_other": 5.035426146250663e-07,
+        "fraction_self_farther_than_median_other": 0.0
+      },
+      {
+        "gain_db": -12.0,
+        "mean_distance_same_frame_different_level": 4.554531309763927e-06,
+        "mean_distance_different_file_same_level": 3.6515993093528145,
+        "ratio_self_over_other": 1.247270284584193e-06,
+        "fraction_self_farther_than_median_other": 0.0
+      },
+      {
+        "gain_db": -18.0,
+        "mean_distance_same_frame_different_level": 1.0296034077140562e-05,
+        "mean_distance_different_file_same_level": 3.6515993093528145,
+        "ratio_self_over_other": 2.8195958003303938e-06,
+        "fraction_self_farther_than_median_other": 0.0
+      }
+    ],
+    "logmel26": [
+      {
+        "gain_db": -6.0,
+        "mean_distance_same_frame_different_level": 7.043633212339774,
+        "mean_distance_different_file_same_level": 15.475880779224163,
+        "ratio_self_over_other": 0.4551361769209032,
+        "fraction_self_farther_than_median_other": 0.0
+      },
+      {
+        "gain_db": -12.0,
+        "mean_distance_same_frame_different_level": 14.084570863255593,
+        "mean_distance_different_file_same_level": 15.475880779224163,
+        "ratio_self_over_other": 0.9100981756181299,
+        "fraction_self_farther_than_median_other": 1.0
+      },
+      {
+        "gain_db": -18.0,
+        "mean_distance_same_frame_different_level": 21.115385610442253,
+        "mean_distance_different_file_same_level": 15.475880779224163,
+        "ratio_self_over_other": 1.3644060659079857,
+        "fraction_self_farther_than_median_other": 1.0
+      }
+    ],
+    "mfcc13": [
+      {
+        "gain_db": -6.0,
+        "mean_distance_same_frame_different_level": 7.043632995443318,
+        "mean_distance_different_file_same_level": 15.238746317121329,
+        "ratio_self_over_other": 0.46221866608078643,
+        "fraction_self_farther_than_median_other": 0.0
+      },
+      {
+        "gain_db": -12.0,
+        "mean_distance_same_frame_different_level": 14.084568519446117,
+        "mean_distance_different_file_same_level": 15.238746317121329,
+        "ratio_self_over_other": 0.9242603181615768,
+        "fraction_self_farther_than_median_other": 1.0
+      },
+      {
+        "gain_db": -18.0,
+        "mean_distance_same_frame_different_level": 21.11536671253952,
+        "mean_distance_different_file_same_level": 15.238746317121329,
+        "ratio_self_over_other": 1.3856367363249282,
+        "fraction_self_farther_than_median_other": 1.0
+      }
+    ],
+    "mfcc12": [
+      {
+        "gain_db": -6.0,
+        "mean_distance_same_frame_different_level": 0.0014912935040746439,
+        "mean_distance_different_file_same_level": 8.365206738435553,
+        "ratio_self_over_other": 0.00017827335901007786,
+        "fraction_self_farther_than_median_other": 0.0
+      },
+      {
+        "gain_db": -12.0,
+        "mean_distance_same_frame_different_level": 0.007284425719029617,
+        "mean_distance_different_file_same_level": 8.365206738435553,
+        "ratio_self_over_other": 0.0008708004412562717,
+        "fraction_self_farther_than_median_other": 0.0
+      },
+      {
+        "gain_db": -18.0,
+        "mean_distance_same_frame_different_level": 0.028621832721890218,
+        "mean_distance_different_file_same_level": 8.365206738435553,
+        "ratio_self_over_other": 0.003421533216911627,
+        "fraction_self_farther_than_median_other": 0.0
+      }
+    ],
+    "mfcc13_cmvn": [
+      {
+        "gain_db": -6.0,
+        "mean_distance_same_frame_different_level": 0.0013800613188080597,
+        "mean_distance_different_file_same_level": 4.692967818166578,
+        "ratio_self_over_other": 0.00029407005806982375,
+        "fraction_self_farther_than_median_other": 0.0
+      },
+      {
+        "gain_db": -12.0,
+        "mean_distance_same_frame_different_level": 0.006670908204133443,
+        "mean_distance_different_file_same_level": 4.692967818166578,
+        "ratio_self_over_other": 0.0014214689856406463,
+        "fraction_self_farther_than_median_other": 0.0
+      },
+      {
+        "gain_db": -18.0,
+        "mean_distance_same_frame_different_level": 0.025425341832881365,
+        "mean_distance_different_file_same_level": 4.692967818166578,
+        "ratio_self_over_other": 0.005417753289178614,
+        "fraction_self_farther_than_median_other": 0.0
+      }
+    ],
+    "recommended51": [
+      {
+        "gain_db": -6.0,
+        "mean_distance_same_frame_different_level": 0.002047197437175645,
+        "mean_distance_different_file_same_level": 12.49271777437586,
+        "ratio_self_over_other": 0.00016387126277475866,
+        "fraction_self_farther_than_median_other": 0.0
+      },
+      {
+        "gain_db": -12.0,
+        "mean_distance_same_frame_different_level": 0.009961075468705905,
+        "mean_distance_different_file_same_level": 12.49271777437586,
+        "ratio_self_over_other": 0.0007973505564287483,
+        "fraction_self_farther_than_median_other": 0.0
+      },
+      {
+        "gain_db": -18.0,
+        "mean_distance_same_frame_different_level": 0.038697857899059517,
+        "mean_distance_different_file_same_level": 12.49271777437586,
+        "ratio_self_over_other": 0.0030976332450600706,
+        "fraction_self_farther_than_median_other": 0.0
+      }
+    ]
+  },
+  "gain_sweep_note": "self = same file, same frame index, only quieter. other = a different syllable file at the ORIGINAL level. ratio > 1 means a phone is further from itself-turned-down than from a different phone.",
+  "seconds": 28.0
+}

@@ -1,0 +1,32 @@
+{
+ "ba": {
+  "signature_ok": true,
+  "attempt": 2,
+  "fails": []
+ },
+ "va": {
+  "signature_ok": true,
+  "attempt": 1,
+  "fails": []
+ },
+ "ma": {
+  "signature_ok": true,
+  "attempt": 1,
+  "fails": []
+ },
+ "pa": {
+  "signature_ok": true,
+  "attempt": 1,
+  "fails": []
+ },
+ "fa": {
+  "signature_ok": true,
+  "attempt": 1,
+  "fails": []
+ },
+ "wa": {
+  "signature_ok": true,
+  "attempt": 1,
+  "fails": []
+ }
+}

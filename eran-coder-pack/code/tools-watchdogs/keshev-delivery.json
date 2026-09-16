@@ -1,0 +1,40 @@
+{
+ "ts": 1789103803.8617032,
+ "iso": "2026-09-11T08:16:43+03:00",
+ "verdict": "OK",
+ "alarms": [],
+ "warnings": [
+  "SLEEPING WATCHDOG KESHEV-Watchdog is DISABLED and nobody noticed (last run 18/08/2026 7:43:59)",
+  "SLEEPING WATCHDOG KESHEV-STT-PC is disabled AS INTENDED (disabled 2026-09-05 19:22 on purpose -- it relaunched the unused 3.2 GB PC decoder at logon and undid the VRAM saving; re-enable with schtasks /change /enable)"
+ ],
+ "counts": {
+  "typed": 1582,
+  "guarded": 0,
+  "blocked": 0,
+  "empty": 8351,
+  "fail": 3,
+  "skip": 12051
+ },
+ "delivery_rate": 0.1592,
+ "baseline": {
+  "median_rate": 0.1561,
+  "n": 1243,
+  "span_h": 23.6
+ },
+ "facts": {
+  "paused": true,
+  "paused_signed": true,
+  "paused_by_iddo": true,
+  "paused_who": "iddo (pause button in KESHEV 6)",
+  "paused_for_min": 232.9,
+  "heartbeat_age_min": 0.0,
+  "log_age_min": 0.3
+ },
+ "last_typed_text": "ובאופן אוטומטי",
+ "repaired": null,
+ "receipts": {
+  "ok": null,
+  "msg": "receipts check could not run: Command '['C:\\\\Program Files\\\\Python312\\\\pythonw.exe', 'D:\\\\CLAUDE\\\\RAMCHAT\\\\receipts.py', 'check']' timed out after 120 seconds"
+ },
+ "window": "recent tail of trial.log (3000 KB), not a wall-clock window"
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="manifest" href="/static/manifest.json">
+  <link rel="icon" type="image/png" href="/static/icon-192.png">
+  <link rel="apple-touch-icon" href="/static/icon-192.png">
+  <title>Clod</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; height: 100%; background: #0a0a0a; color: #f0f0f0; font-family: system-ui, -apple-system, sans-serif; }
+    body { display: flex; flex-direction: column; padding: 16px; gap: 12px; }
+    h1 { font-size: 20px; margin: 0; font-weight: 500; opacity: .8; }
+    .status { font-size: 12px; opacity: .55; display: flex; gap: 8px; align-items: center; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #999; }
+    .dot.ok { background: #4ade80; }
+    .dot.err { background: #ef4444; }
+    textarea { flex: 1; min-height: 100px; padding: 14px; font-size: 18px; background: #161616; color: #f0f0f0; border: 1px solid #2a2a2a; border-radius: 12px; resize: none; outline: none; font-family: inherit; }
+    textarea:focus { border-color: #4a4a4a; }
+    .row { display: flex; gap: 10px; align-items: center; }
+    button { flex: 1; padding: 16px; font-size: 18px; font-weight: 500; background: #f0f0f0; color: #0a0a0a; border: none; border-radius: 12px; cursor: pointer; }
+    button:active { background: #ccc; }
+    button.secondary { background: #1f1f1f; color: #f0f0f0; flex: 0 0 auto; padding: 16px 18px; }
+    button:disabled { opacity: .4; }
+    label.toggle { display: flex; align-items: center; gap: 8px; font-size: 14px; opacity: .8; cursor: pointer; user-select: none; }
+    .log { font-size: 11px; opacity: .5; min-height: 16px; font-family: ui-monospace, monospace; }
+    .log.ok { color: #4ade80; }
+    .log.err { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <h1>Clod / Grok</h1>
+  <div class="status">
+    <span class="dot" id="dot"></span>
+    <span id="statusText">checking…</span>
+  </div>
+  <div class="row">
+    <label class="toggle"><input type="radio" name="target" value="Claude" checked> <span>Claude</span></label>
+    <label class="toggle"><input type="radio" name="target" value="Grok"> <span>Grok</span></label>
+  </div>
+  <textarea id="text" placeholder="Speak (FUTO mic in your keyboard) or type, then Send →" autofocus></textarea>
+  <label class="toggle">
+    <input type="checkbox" id="enter" checked>
+    <span>Press Enter after paste</span>
+  </label>
+  <label class="toggle">
+    <input type="checkbox" id="autosend">
+    <span>Auto-send when input stops for 1.5s</span>
+  </label>
+  <div class="row">
+    <button class="secondary" id="clear">Clear</button>
+    <button id="send">Send</button>
+  </div>
+  <div class="log" id="log"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const text = $('text'), btn = $('send'), clr = $('clear');
+const enterChk = $('enter'), autoChk = $('autosend');
+const dot = $('dot'), statusText = $('statusText'), log = $('log');
+
+function currentTarget() {
+  const el = document.querySelector('input[name=target]:checked');
+  return el ? el.value : 'Claude';
+}
+
+async function ping() {
+  try {
+    const r = await fetch('/health', { cache: 'no-store' });
+    const j = await r.json();
+    dot.className = 'dot ok';
+    const wins = j.claude_windows || [];
+    statusText.textContent = wins.length
+      ? `bridge up, ${wins.length} window${wins.length>1?'s':''}: ${wins.map(w=>w.title).join(' | ').slice(0,80)}`
+      : 'bridge up, but no Claude/Grok window detected on PC';
+  } catch (e) {
+    dot.className = 'dot err';
+    statusText.textContent = 'bridge unreachable';
+  }
+}
+ping(); setInterval(ping, 8000);
+
+async function send() {
+  const t = text.value;
+  if (!t.trim()) return;
+  const target = currentTarget();
+  btn.disabled = true;
+  log.className = 'log';
+  log.textContent = `sending to ${target}…`;
+  try {
+    const r = await fetch('/type', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: t, enter: enterChk.checked, title_match: target }),
+    });
+    const j = await r.json();
+    if (j.ok) {
+      log.className = 'log ok';
+      log.textContent = `pasted ${j.chars} chars → ${j.window}${j.enter ? ' + Enter' : ''}`;
+      text.value = '';
+    } else {
+      log.className = 'log err';
+      log.textContent = 'error: ' + (j.error || r.status);
+    }
+  } catch (e) {
+    log.className = 'log err';
+    log.textContent = 'fetch failed: ' + e;
+  }
+  btn.disabled = false;
+}
+
+btn.addEventListener('click', send);
+clr.addEventListener('click', () => { text.value = ''; text.focus(); });
+
+let autoTimer = null;
+text.addEventListener('input', () => {
+  if (!autoChk.checked) return;
+  clearTimeout(autoTimer);
+  autoTimer = setTimeout(() => { if (text.value.trim()) send(); }, 1500);
+});
+
+text.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); send(); }
+});
+
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('/static/sw.js').catch(()=>{});
+</script>
+</body>
+</html>

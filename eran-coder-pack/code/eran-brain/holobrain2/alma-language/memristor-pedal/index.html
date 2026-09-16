@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALMA Memristor Pedal — real, playable, testable</title>
+<meta name="description" content="A working memristor guitar pedal in the browser: real per-sample memristor distortion, memristor-controlled phaser, and an honest (non-memristor) delay. Pluck the anthem chords or use your mic.">
+<meta name="color-scheme" content="light">
+<style>
+  :root{
+    --bg:#fbf7ef; --card:#ffffff; --ink:#2d2a26; --muted:#8a8172;
+    --blue:#2e86de; --teal:#16a085; --purple:#8e44ad; --orange:#f39c12;
+    --pink:#e84393; --green:#27ae60; --red:#e74c3c; --gold:#f6b93b;
+  }
+  *{margin:0;box-sizing:border-box}
+  html,body{height:100%;background:var(--bg);color:var(--ink);
+    font-family:'Segoe UI','Assistant',Arial,sans-serif;overflow:hidden}
+  #c{display:block;width:100vw;height:100vh}
+  .panel{position:fixed;background:var(--card);border:1px solid #ece5d6;
+    border-radius:14px;box-shadow:0 8px 24px rgba(120,100,60,.10);padding:11px 15px}
+  .hud{top:12px;left:12px;max-width:320px}
+  .hud h1{font-size:15px;color:var(--purple)}
+  .hud .task{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+  .ctlp{bottom:12px;left:12px;right:12px;display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
+  .grp{border:1px solid #eee3cf;border-radius:10px;padding:7px 11px;min-width:150px}
+  .grp h3{font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+  .grp.dist h3{color:var(--red)} .grp.phase h3{color:var(--purple)}
+  .grp.delay h3{color:var(--teal)} .grp.src h3{color:var(--blue)}
+  label{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;margin:4px 0 1px}
+  input[type=range]{width:150px}
+  button{background:#f2ede0;color:var(--ink);border:1px solid #e0d8c6;
+    border-radius:9px;padding:7px 12px;font-size:12.5px;cursor:pointer;font-weight:600;margin:2px 2px 0 0}
+  button:hover{background:#e9e1cf} button.on{background:var(--green);color:#fff;border-color:var(--green)}
+  .info{top:12px;right:12px;max-width:270px;font-size:11.5px;color:#7a6a3a;background:#fff9ec;border:1px solid #f0dfae}
+  .info b{color:#b5892a}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div class="panel hud">
+  <h1>🎸 ALMA Memristor Pedal</h1>
+  <div class="task">guitar → <b style="color:var(--red)">memristor distortion</b> → <b style="color:var(--purple)">memristor phaser</b> → <b style="color:var(--teal)">delay (PT2399, honest: not a memristor)</b> → out. Real per-sample memristor model. Click <b>Power</b> then <b>Pluck</b>.</div>
+</div>
+
+<div class="panel info">
+  <b>What's real here:</b> the distortion runs an actual memristor state equation per audio sample (G rides between G<sub>off</sub>/G<sub>on</sub> from the signal's own history) — that's why it breathes. The phaser's allpass frequency is the memristor's variable resistance. Delay is honest silicon (a memristor can't delay). Min build: <b>~4–6 memristors</b>.
+</div>
+
+<div class="panel ctlp">
+  <div class="grp src">
+    <h3>🔌 source</h3>
+    <button id="power">⏻ Power</button>
+    <button id="pluck">🎸 Pluck Bm–D–G–A</button>
+    <button id="mic">🎤 Mic</button>
+    <button id="byp">bypass</button>
+  </div>
+  <div class="grp dist">
+    <h3>① memristor distortion</h3>
+    <label>drive <span id="vD">6.0</span></label><input id="drive" type="range" min="1" max="30" step="0.5" value="6">
+    <label>state speed <span id="vR">0.35</span></label><input id="rate" type="range" min="0" max="1" step="0.01" value="0.35">
+    <label>memristors <span id="vN">2</span></label><input id="ndist" type="range" min="1" max="2" step="1" value="2">
+  </div>
+  <div class="grp phase">
+    <h3>② memristor phaser</h3>
+    <label>rate Hz <span id="vPr">0.6</span></label><input id="prate" type="range" min="0.05" max="6" step="0.05" value="0.6">
+    <label>depth <span id="vPd">1200</span></label><input id="pdepth" type="range" min="0" max="3000" step="50" value="1200">
+    <label>stages (memristors) <span id="vPs">4</span></label><input id="pstages" type="range" min="0" max="4" step="1" value="4">
+  </div>
+  <div class="grp delay">
+    <h3>③ delay · PT2399</h3>
+    <label>time ms <span id="vDt">280</span></label><input id="dtime" type="range" min="0" max="700" step="10" value="280">
+    <label>feedback <span id="vDf">0.35</span></label><input id="dfb" type="range" min="0" max="0.85" step="0.01" value="0.35">
+    <label>volume <span id="vV">0.8</span></label><input id="vol" type="range" min="0" max="1" step="0.01" value="0.8">
+  </div>
+</div>
+
+<script>
+const cv=document.getElementById('c'),cx=cv.getContext('2d');
+function rs(){cv.width=innerWidth;cv.height=innerHeight}addEventListener('resize',rs);rs();
+let ac=null, graph=null, powered=false, bypass=false, micStream=null;
+const S={drive:6,rate:.35,ndist:2,prate:.6,pdepth:1200,pstages:4,dtime:.28,dfb:.35,vol:.8};
+let memW=[0.5,0.5];         // live memristor states (for the viz + model)
+let lfoPhase=0, scope=new Float32Array(1024);
+
+function buildGraph(){
+  const g={};
+  g.input=ac.createGain(); g.input.gain.value=1;
+  // --- ① memristor distortion: real per-sample state model ---
+  g.dist=ac.createScriptProcessor(1024,1,1);
+  g.dist.onaudioprocess=e=>{
+    const inp=e.inputBuffer.getChannelData(0), out=e.outputBuffer.getChannelData(0);
+    const Gon=1.0,Goff=0.08, dr=S.drive, k=S.rate*0.06, two=(S.ndist>1);
+    let w0=memW[0], w1=memW[1];
+    for(let i=0;i<inp.length;i++){
+      let V=inp[i]*dr;
+      // memristor A (handles + swing), memristor B (− swing) when 2 selected
+      let Va= two? Math.max(0,V): V;
+      let Ga=Goff+(Gon-Goff)*w0, ia=Ga*Va;
+      w0+=k*Va*(1-Math.abs(2*w0-1)); w0=w0<0?0:w0>1?1:w0;
+      let ib=0;
+      if(two){ let Vb=Math.min(0,V); let Gb=Goff+(Gon-Goff)*w1; ib=Gb*Vb;
+               w1+=k*(-Vb)*(1-Math.abs(2*w1-1)); w1=w1<0?0:w1>1?1:w1; }
+      out[i]=Math.tanh((ia+ib)*1.6);
+    }
+    memW[0]=w0; memW[1]=w1;
+  };
+  // --- ② memristor phaser: allpass stages, freq = memristor variable-R (LFO) ---
+  g.allpass=[]; for(let s=0;s<4;s++){const f=ac.createBiquadFilter();f.type='allpass';f.frequency.value=800;f.Q.value=0.7;g.allpass.push(f);}
+  g.phWet=ac.createGain(); g.phDry=ac.createGain(); g.phWet.gain.value=.5; g.phDry.gain.value=.5;
+  g.phSum=ac.createGain();
+  // --- ③ delay (honest silicon) ---
+  g.delay=ac.createDelay(1.0); g.delay.delayTime.value=S.dtime;
+  g.fb=ac.createGain(); g.fb.gain.value=S.dfb; g.dWet=ac.createGain(); g.dWet.gain.value=.5;
+  // --- master + scope ---
+  g.master=ac.createGain(); g.master.gain.value=S.vol;
+  g.an=ac.createAnalyser(); g.an.fftSize=2048;
+  // wiring: input -> dist -> [phaser: dry + allpass chain -> sum] -> [delay dry+wet] -> master -> an -> out
+  g.input.connect(g.dist);
+  g.dist.connect(g.phDry); g.phDry.connect(g.phSum);
+  let node=g.dist; for(const ap of g.allpass){node.connect(ap);node=ap;}
+  node.connect(g.phWet); g.phWet.connect(g.phSum);
+  g.phSum.connect(g.master);                       // dry-through of phaser sum
+  g.phSum.connect(g.delay); g.delay.connect(g.dWet); g.dWet.connect(g.master);
+  g.delay.connect(g.fb); g.fb.connect(g.delay);    // feedback loop
+  g.master.connect(g.an); g.an.connect(ac.destination);
+  g.dry=ac.createGain(); g.dry.gain.value=0; g.input.connect(g.dry); g.dry.connect(g.master); // TRUE bypass: clean input straight to master
+  return g;
+}
+function applyRoute(){ // true bypass = dry-only, every effect path muted (honest)
+  if(!graph)return;
+  graph.dry.gain.value   = bypass?1:0;
+  graph.phWet.gain.value = (S.pstages>0 && !bypass)?.5:0;
+  graph.phDry.gain.value = bypass?0:.5;
+  graph.dWet.gain.value  = bypass?0:.5;
+}
+function power(){
+  if(!ac){ac=new (window.AudioContext||window.webkitAudioContext)();graph=buildGraph();}
+  ac.resume(); powered=true; document.getElementById('power').classList.add('on');
+  document.getElementById('power').textContent='⏻ On';
+}
+// ---- pluck the anthem chords (Bm D G A) through the pedal ----
+const CH={Bm:[123.47,146.83,185.00],D:[146.83,220.00,293.66],G:[98.00,146.83,196.00],A:[110.00,164.81,220.00]};
+let seq=['Bm','D','G','A'],si=0;
+function pluck(){
+  if(!powered)power();
+  const t=ac.currentTime, notes=CH[seq[si%4]]; si++;
+  notes.forEach((f,k)=>{
+    const o=ac.createOscillator(),ga=ac.createGain();
+    o.type='sawtooth';o.frequency.value=f;
+    ga.gain.setValueAtTime(0,t);ga.gain.linearRampToValueAtTime(.28,t+.005);
+    ga.gain.exponentialRampToValueAtTime(.001,t+0.9);
+    o.connect(ga);ga.connect(graph.input);o.start(t);o.stop(t+1.0);
+  });
+}
+async function mic(){
+  if(!powered)power();
+  try{ micStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false}});
+    const src=ac.createMediaStreamSource(micStream); src.connect(graph.input);
+    document.getElementById('mic').classList.add('on');
+  }catch(e){ alert('Mic blocked: '+e.message); }
+}
+// ---- controls ----
+function hook(id,key,disp,f){const el=document.getElementById(id);el.oninput=()=>{S[key]=parseFloat(el.value)*(f||1);document.getElementById(disp).textContent=el.value;push();};}
+function push(){
+  if(!graph)return;
+  graph.delay.delayTime.value=S.dtime; graph.fb.gain.value=S.dfb; graph.master.gain.value=S.vol;
+  applyRoute();
+}
+hook('drive','drive','vD');hook('rate','rate','vR');hook('ndist','ndist','vN');
+hook('prate','prate','vPr');hook('pdepth','pdepth','vPd');hook('pstages','pstages','vPs');
+hook('dtime','dtime','vDt',0.001);hook('dfb','dfb','vDf');hook('vol','vol','vV');
+document.getElementById('power').onclick=()=>power();
+document.getElementById('pluck').onclick=()=>pluck();
+document.getElementById('mic').onclick=()=>mic();
+document.getElementById('byp').onclick=e=>{bypass=!bypass;e.target.classList.toggle('on',bypass);applyRoute();};
+// ---- phaser LFO (memristor variable-R) driven in the draw loop ----
+function draw(){
+  requestAnimationFrame(draw);
+  // move phaser allpass freqs = memristor resistance sweeping
+  if(graph){ lfoPhase+=S.prate/60;
+    for(let s=0;s<4;s++){ const on=s<S.pstages;
+      const base=500+s*250, f=base+(on? (Math.sin(lfoPhase*2*Math.PI+s)*0.5+0.5)*S.pdepth :0);
+      graph.allpass[s].frequency.value=on?f:20000; }
+    graph.an.getFloatTimeDomainData(scope);
+  }
+  // ---- canvas: signal chain + scope + memristor states ----
+  const W=cv.width,H=cv.height; cx.clearRect(0,0,W,H);
+  const cyc=H*0.42, x0=W*0.06, seg=(W*0.88)/5;
+  const boxes=[['GUITAR','#2e86de'],['① MEMRISTOR\nDISTORTION','#e74c3c'],['② MEMRISTOR\nPHASER','#8e44ad'],['③ DELAY\n(PT2399)','#16a085'],['OUT','#27ae60']];
+  cx.lineWidth=3; cx.strokeStyle='#d8cdb5';
+  for(let i=0;i<5;i++){const x=x0+seg*i;
+    if(i<4){cx.beginPath();cx.moveTo(x+120,cyc);cx.lineTo(x+seg,cyc);cx.stroke();}}
+  boxes.forEach((b,i)=>{const x=x0+seg*i, on=!(i===2&&S.pstages===0)&&!(bypass&&i>0&&i<4);
+    cx.fillStyle=on?'#fff':'#f3eee2';cx.strokeStyle=b[1];cx.lineWidth=3;
+    roundRect(x,cyc-42,124,84,14);cx.fill();cx.stroke();
+    cx.fillStyle=b[1];cx.font='bold 13px Segoe UI';cx.textAlign='center';
+    b[0].split('\n').forEach((ln,k)=>cx.fillText(ln,x+62,cyc-6+k*16));
+    // memristor glyphs glowing by state
+    if(i===1){for(let m=0;m<S.ndist;m++)memGlyph(x+40+m*44,cyc+62,memW[m],'#e74c3c',m);}
+    if(i===2){for(let m=0;m<S.pstages;m++)memGlyph(x+22+m*28,cyc+62,(Math.sin(lfoPhase*2*Math.PI+m)*0.5+0.5),'#8e44ad',m);}
+  });
+  // oscilloscope
+  const sy=H*0.78, sh=H*0.16;
+  cx.strokeStyle='#eadfc6';cx.lineWidth=1;cx.strokeRect(x0,sy-sh/2,W*0.88,sh);
+  cx.strokeStyle='#e67e22';cx.lineWidth=2;cx.beginPath();
+  for(let i=0;i<scope.length;i++){const x=x0+(i/scope.length)*W*0.88,y=sy-scope[i]*sh*0.9;i?cx.lineTo(x,y):cx.moveTo(x,y);}
+  cx.stroke();
+  cx.fillStyle='#8a8172';cx.font='11px Segoe UI';cx.textAlign='left';
+  cx.fillText('live output — hear the memristor state breathe into the distortion',x0+6,sy-sh/2-6);
+}
+function memGlyph(x,y,w,col,idx){
+  cx.beginPath();cx.arc(x,y,11,0,7);cx.fillStyle='#fff';cx.fill();
+  cx.lineWidth=2+w*3;cx.strokeStyle=col;cx.globalAlpha=0.35+w*0.65;cx.stroke();cx.globalAlpha=1;
+  cx.fillStyle=col;cx.font='9px Segoe UI';cx.textAlign='center';cx.fillText('M'+(idx+1),x,y+3);
+}
+function roundRect(x,y,w,h,r){cx.beginPath();cx.moveTo(x+r,y);cx.arcTo(x+w,y,x+w,y+h,r);cx.arcTo(x+w,y+h,x,y+h,r);cx.arcTo(x,y+h,x,y,r);cx.arcTo(x,y,x+w,y,r);cx.closePath();}
+draw();
+</script>
+</body>
+</html>

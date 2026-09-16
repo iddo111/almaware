@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#08151b">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'self'">
+  <title>ALMA · GPT‑OSS 120B Cloud</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <a class="brand" href="/" aria-label="Alma cloud chat">
+        <span class="brand-mark">א</span>
+        <span><b>ALMA</b><small>GPT‑OSS 120B · CLOUD ONLY</small></span>
+      </a>
+      <button class="key-button" id="keyButton" type="button">מפתח גישה</button>
+    </header>
+
+    <section class="chat-stage" aria-labelledby="title">
+      <div class="intro" id="intro">
+        <p class="eyebrow">ענן אמיתי. תשובה אמיתית.</p>
+        <h1 id="title">דבר עם <span>120B</span><br>בלי להעיר אף מחשב.</h1>
+        <p>הממשק וה־gateway רצים ב־Cloudflare. המודל רץ ב־GroqCloud. אין מסלול מקומי ואין fallback ל־DGX.</p>
+      </div>
+
+      <div class="messages" id="messages" aria-live="polite"></div>
+
+      <form class="composer" id="composer">
+        <label for="prompt">מה תרצה לשאול?</label>
+        <textarea id="prompt" rows="3" maxlength="6000" placeholder="כתוב ל־Alma…" required></textarea>
+        <div class="composer-row">
+          <span id="hint">Enter לשליחה · Shift+Enter לשורה חדשה</span>
+          <button id="sendButton" type="submit">שלח לענן <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+    </section>
+
+    <aside class="cloud-rail" aria-label="מסלול הענן">
+      <div class="rail-head">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 8.6 4.7 4.7 0 0 0 7 18Z"/></svg>
+        <span id="statusDot" class="status-dot"></span>
+      </div>
+      <div class="signal-line"><i id="packet"></i></div>
+      <ol>
+        <li><b>Browser</b><small>הממשק שלך</small></li>
+        <li><b>Cloudflare</b><small>UI + gateway</small></li>
+        <li><b>GroqCloud</b><small>free tier</small></li>
+        <li><b>GPT‑OSS</b><small>120B</small></li>
+      </ol>
+      <div class="truth-card">
+        <span id="truthLabel">בודק מסלול</span>
+        <b id="truthValue">—</b>
+        <small id="truthDetail">אין בדיקה עדיין</small>
+      </div>
+    </aside>
+  </main>
+
+  <dialog id="keyDialog">
+    <form method="dialog" id="keyForm">
+      <button class="dialog-close" id="dialogClose" type="button" aria-label="סגור">×</button>
+      <p class="eyebrow">גישה פרטית</p>
+      <h2>מפתח Alma</h2>
+      <p>המפתח נשמר רק ב־session של הדפדפן הזה. הוא אינו מפתח Groq.</p>
+      <label for="accessToken">CHAT_ACCESS_TOKEN</label>
+      <input id="accessToken" type="password" autocomplete="off" required>
+      <button class="save-key" value="save">שמור לזמן השיחה</button>
+    </form>
+  </dialog>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

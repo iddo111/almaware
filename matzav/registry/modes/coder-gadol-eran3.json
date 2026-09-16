@@ -1,0 +1,12 @@
+{
+  "id": "coder-gadol-eran3", "order": 21,
+  "title_he": "קודר גדול", "title_en": "CODER-BIG",
+  "subtitle_he": "gpt-oss:120b על ערן3",
+  "box_hint": "eran3",
+  "want": ["eran3/ollama-gptoss120b"],
+  "concede": ["eran3/qwen-rpc"],
+  "note_he": "65 GB, 131k הקשר, כלים+חשיבה. נמשך לדיסק ב-03/09 23:28 ולא רשום בשום מקום.",
+  "honesty": "לא הורץ מעולם על ידי MATZAV. גם זמן הטעינה הקר הוא אומדן, לא מדידה.",
+  "demonstrated": {"status": "planned", "evidence": "Model verified on disk 65 GB; never loaded by MATZAV. Refuses to run."},
+  "runnable": false
+}

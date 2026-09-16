@@ -1,0 +1,22 @@
+{
+  "status": "technical-pass-human-review-pending",
+  "engine": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+  "node": "DGX3",
+  "seed": 20260722,
+  "artifact": "wan-ti2v-canary.mp4",
+  "artifact_sha256": "3d2ebc1c3c9fb18d7cb379d7a20a0f03a9a5b42103e893dd1279c12d4b927c1c",
+  "width": 832,
+  "height": 480,
+  "frames": 17,
+  "fps": 24,
+  "inference_steps": 8,
+  "technical_gates": [
+    "artifact-nonempty",
+    "sha256-match",
+    "ffprobe-pass",
+    "full-ffmpeg-decode-pass",
+    "no-cuda-kernel-or-oom-fatal-signature"
+  ],
+  "human_review": "not-recorded",
+  "source_receipt": "run-receipt.json"
+}

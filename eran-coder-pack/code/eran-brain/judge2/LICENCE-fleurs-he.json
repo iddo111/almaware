@@ -1,0 +1,10 @@
+{
+ "source": "google/fleurs",
+ "config": "he_il",
+ "licence": "CC-BY-4.0",
+ "attribution": "FLEURS (Conneau et al. 2022), Google — CC BY 4.0",
+ "utterances": 3242,
+ "distinct_speaker_ids": 1502,
+ "hours": 9.47,
+ "note": "CC-BY permits derivatives WITH ATTRIBUTION. Any syllable cut from this carries the line above; it does not stop travelling because the clip got shorter."
+}

@@ -1,0 +1,3467 @@
+[
+ {
+  "file": "fle_1_0000.wav",
+  "speaker": "1",
+  "src": "u00780.wav",
+  "dur": 0.850375,
+  "start_s": 0.32
+ },
+ {
+  "file": "fle_10_0001.wav",
+  "speaker": "10",
+  "src": "u00986.wav",
+  "dur": 1.1405625,
+  "start_s": 0.39
+ },
+ {
+  "file": "fle_100_0002.wav",
+  "speaker": "100",
+  "src": "u00393.wav",
+  "dur": 1.182375,
+  "start_s": 1.14
+ },
+ {
+  "file": "fle_101_0003.wav",
+  "speaker": "101",
+  "src": "u00751.wav",
+  "dur": 1.18975,
+  "start_s": 1.02
+ },
+ {
+  "file": "fle_102_0004.wav",
+  "speaker": "102",
+  "src": "u01530.wav",
+  "dur": 0.850375,
+  "start_s": 0.37
+ },
+ {
+  "file": "fle_103_0005.wav",
+  "speaker": "103",
+  "src": "u01377.wav",
+  "dur": 0.661375,
+  "start_s": 0.66
+ },
+ {
+  "file": "fle_104_0006.wav",
+  "speaker": "104",
+  "src": "u01613.wav",
+  "dur": 0.4993125,
+  "start_s": 1.19
+ },
+ {
+  "file": "fle_105_0007.wav",
+  "speaker": "105",
+  "src": "u01307.wav",
+  "dur": 0.612,
+  "start_s": 0.58
+ },
+ {
+  "file": "fle_106_0008.wav",
+  "speaker": "106",
+  "src": "u01114.wav",
+  "dur": 0.5501875,
+  "start_s": 1.67
+ },
+ {
+  "file": "fle_107_0009.wav",
+  "speaker": "107",
+  "src": "u00102.wav",
+  "dur": 0.5239375,
+  "start_s": 1.55
+ },
+ {
+  "file": "fle_108_0010.wav",
+  "speaker": "108",
+  "src": "u00083.wav",
+  "dur": 0.5878125,
+  "start_s": 0.52
+ },
+ {
+  "file": "fle_11_0011.wav",
+  "speaker": "11",
+  "src": "u00137.wav",
+  "dur": 0.6365625,
+  "start_s": 1.52
+ },
+ {
+  "file": "fle_111_0012.wav",
+  "speaker": "111",
+  "src": "u01565.wav",
+  "dur": 0.6760625,
+  "start_s": 0.58
+ },
+ {
+  "file": "fle_112_0013.wav",
+  "speaker": "112",
+  "src": "u00620.wav",
+  "dur": 0.445,
+  "start_s": 0.53
+ },
+ {
+  "file": "fle_113_0014.wav",
+  "speaker": "113",
+  "src": "u00156.wav",
+  "dur": 0.5796875,
+  "start_s": 0.59
+ },
+ {
+  "file": "fle_114_0015.wav",
+  "speaker": "114",
+  "src": "u01249.wav",
+  "dur": 0.6003125,
+  "start_s": 0.59
+ },
+ {
+  "file": "fle_115_0016.wav",
+  "speaker": "115",
+  "src": "u00000.wav",
+  "dur": 0.654125,
+  "start_s": 0.44
+ },
+ {
+  "file": "fle_116_0017.wav",
+  "speaker": "116",
+  "src": "u00319.wav",
+  "dur": 0.5,
+  "start_s": 1.11
+ },
+ {
+  "file": "fle_117_0018.wav",
+  "speaker": "117",
+  "src": "u00817.wav",
+  "dur": 1.1731875,
+  "start_s": 0.79
+ },
+ {
+  "file": "fle_118_0019.wav",
+  "speaker": "118",
+  "src": "u01091.wav",
+  "dur": 0.58525,
+  "start_s": 0.65
+ },
+ {
+  "file": "fle_119_0020.wav",
+  "speaker": "119",
+  "src": "u00435.wav",
+  "dur": 0.579375,
+  "start_s": 0.62
+ },
+ {
+  "file": "fle_12_0021.wav",
+  "speaker": "12",
+  "src": "u00486.wav",
+  "dur": 0.966625,
+  "start_s": 1.13
+ },
+ {
+  "file": "fle_120_0022.wav",
+  "speaker": "120",
+  "src": "u01214.wav",
+  "dur": 0.834875,
+  "start_s": 1.49
+ },
+ {
+  "file": "fle_123_0023.wav",
+  "speaker": "123",
+  "src": "u01113.wav",
+  "dur": 1.03825,
+  "start_s": 0.58
+ },
+ {
+  "file": "fle_124_0024.wav",
+  "speaker": "124",
+  "src": "u01470.wav",
+  "dur": 0.55,
+  "start_s": 0.58
+ },
+ {
+  "file": "fle_126_0025.wav",
+  "speaker": "126",
+  "src": "u00819.wav",
+  "dur": 0.524125,
+  "start_s": 0.39
+ },
+ {
+  "file": "fle_127_0026.wav",
+  "speaker": "127",
+  "src": "u00011.wav",
+  "dur": 0.527125,
+  "start_s": 0.8
+ },
+ {
+  "file": "fle_128_0027.wav",
+  "speaker": "128",
+  "src": "u01044.wav",
+  "dur": 0.5501875,
+  "start_s": 0.65
+ },
+ {
+  "file": "fle_129_0028.wav",
+  "speaker": "129",
+  "src": "u00908.wav",
+  "dur": 0.5265625,
+  "start_s": 1.38
+ },
+ {
+  "file": "fle_130_0029.wav",
+  "speaker": "130",
+  "src": "u00955.wav",
+  "dur": 1.1803125,
+  "start_s": 0.82
+ },
+ {
+  "file": "fle_131_0030.wav",
+  "speaker": "131",
+  "src": "u00071.wav",
+  "dur": 1.0616875,
+  "start_s": 1.27
+ },
+ {
+  "file": "fle_133_0032.wav",
+  "speaker": "133",
+  "src": "u00308.wav",
+  "dur": 0.5935625,
+  "start_s": 0.64
+ },
+ {
+  "file": "fle_136_0034.wav",
+  "speaker": "136",
+  "src": "u02530.wav",
+  "dur": 1.141375,
+  "start_s": 0.7
+ },
+ {
+  "file": "fle_137_0035.wav",
+  "speaker": "137",
+  "src": "u00701.wav",
+  "dur": 1.089875,
+  "start_s": 0.83
+ },
+ {
+  "file": "fle_138_0036.wav",
+  "speaker": "138",
+  "src": "u00444.wav",
+  "dur": 0.5805,
+  "start_s": 1.46
+ },
+ {
+  "file": "fle_139_0037.wav",
+  "speaker": "139",
+  "src": "u00600.wav",
+  "dur": 0.670625,
+  "start_s": 1.73
+ },
+ {
+  "file": "fle_14_0038.wav",
+  "speaker": "14",
+  "src": "u01684.wav",
+  "dur": 0.659,
+  "start_s": 1.61
+ },
+ {
+  "file": "fle_141_0039.wav",
+  "speaker": "141",
+  "src": "u01370.wav",
+  "dur": 0.6104375,
+  "start_s": 0.95
+ },
+ {
+  "file": "fle_142_0040.wav",
+  "speaker": "142",
+  "src": "u00054.wav",
+  "dur": 1.0385625,
+  "start_s": 0.38
+ },
+ {
+  "file": "fle_143_0041.wav",
+  "speaker": "143",
+  "src": "u00148.wav",
+  "dur": 0.4485625,
+  "start_s": 0.66
+ },
+ {
+  "file": "fle_145_0042.wav",
+  "speaker": "145",
+  "src": "u00478.wav",
+  "dur": 0.485,
+  "start_s": 1.39
+ },
+ {
+  "file": "fle_147_0043.wav",
+  "speaker": "147",
+  "src": "u01339.wav",
+  "dur": 0.580375,
+  "start_s": 1.08
+ },
+ {
+  "file": "fle_149_0044.wav",
+  "speaker": "149",
+  "src": "u00738.wav",
+  "dur": 0.558375,
+  "start_s": 1.52
+ },
+ {
+  "file": "fle_15_0045.wav",
+  "speaker": "15",
+  "src": "u00080.wav",
+  "dur": 0.7784375,
+  "start_s": 3.04
+ },
+ {
+  "file": "fle_150_0046.wav",
+  "speaker": "150",
+  "src": "u00146.wav",
+  "dur": 0.5336875,
+  "start_s": 1.56
+ },
+ {
+  "file": "fle_151_0047.wav",
+  "speaker": "151",
+  "src": "u00903.wav",
+  "dur": 0.5750625,
+  "start_s": 0.49
+ },
+ {
+  "file": "fle_152_0048.wav",
+  "speaker": "152",
+  "src": "u00257.wav",
+  "dur": 0.60575,
+  "start_s": 1.14
+ },
+ {
+  "file": "fle_154_0049.wav",
+  "speaker": "154",
+  "src": "u00307.wav",
+  "dur": 1.1725625,
+  "start_s": 0.84
+ },
+ {
+  "file": "fle_155_0050.wav",
+  "speaker": "155",
+  "src": "u00939.wav",
+  "dur": 0.5854375,
+  "start_s": 0.85
+ },
+ {
+  "file": "fle_156_0051.wav",
+  "speaker": "156",
+  "src": "u00186.wav",
+  "dur": 0.5303125,
+  "start_s": 1.24
+ },
+ {
+  "file": "fle_158_0052.wav",
+  "speaker": "158",
+  "src": "u01585.wav",
+  "dur": 1.0899375,
+  "start_s": 0.41
+ },
+ {
+  "file": "fle_16_0053.wav",
+  "speaker": "16",
+  "src": "u00577.wav",
+  "dur": 0.779,
+  "start_s": 1.19
+ },
+ {
+  "file": "fle_161_0054.wav",
+  "speaker": "161",
+  "src": "u00691.wav",
+  "dur": 0.9456875,
+  "start_s": 1.22
+ },
+ {
+  "file": "fle_162_0055.wav",
+  "speaker": "162",
+  "src": "u00313.wav",
+  "dur": 0.7509375,
+  "start_s": 0.88
+ },
+ {
+  "file": "fle_164_0056.wav",
+  "speaker": "164",
+  "src": "u00818.wav",
+  "dur": 0.52375,
+  "start_s": 0.99
+ },
+ {
+  "file": "fle_165_0057.wav",
+  "speaker": "165",
+  "src": "u01489.wav",
+  "dur": 1.037875,
+  "start_s": 1.47
+ },
+ {
+  "file": "fle_166_0058.wav",
+  "speaker": "166",
+  "src": "u00591.wav",
+  "dur": 0.5796875,
+  "start_s": 4.77
+ },
+ {
+  "file": "fle_168_0059.wav",
+  "speaker": "168",
+  "src": "u01354.wav",
+  "dur": 1.037875,
+  "start_s": 0.6
+ },
+ {
+  "file": "fle_169_0060.wav",
+  "speaker": "169",
+  "src": "u00549.wav",
+  "dur": 0.49925,
+  "start_s": 1.33
+ },
+ {
+  "file": "fle_17_0061.wav",
+  "speaker": "17",
+  "src": "u01680.wav",
+  "dur": 0.880375,
+  "start_s": 1.49
+ },
+ {
+  "file": "fle_170_0062.wav",
+  "speaker": "170",
+  "src": "u00512.wav",
+  "dur": 0.5815,
+  "start_s": 0.57
+ },
+ {
+  "file": "fle_171_0063.wav",
+  "speaker": "171",
+  "src": "u01404.wav",
+  "dur": 0.5434375,
+  "start_s": 1.17
+ },
+ {
+  "file": "fle_172_0064.wav",
+  "speaker": "172",
+  "src": "u02061.wav",
+  "dur": 0.774375,
+  "start_s": 1.08
+ },
+ {
+  "file": "fle_174_0065.wav",
+  "speaker": "174",
+  "src": "u00513.wav",
+  "dur": 1.0883125,
+  "start_s": 0.44
+ },
+ {
+  "file": "fle_175_0066.wav",
+  "speaker": "175",
+  "src": "u00728.wav",
+  "dur": 0.520375,
+  "start_s": 0.73
+ },
+ {
+  "file": "fle_176_0067.wav",
+  "speaker": "176",
+  "src": "u00101.wav",
+  "dur": 0.6050625,
+  "start_s": 0.66
+ },
+ {
+  "file": "fle_178_0068.wav",
+  "speaker": "178",
+  "src": "u00443.wav",
+  "dur": 0.649,
+  "start_s": 2.16
+ },
+ {
+  "file": "fle_179_0069.wav",
+  "speaker": "179",
+  "src": "u01367.wav",
+  "dur": 0.66725,
+  "start_s": 1.34
+ },
+ {
+  "file": "fle_18_0070.wav",
+  "speaker": "18",
+  "src": "u01557.wav",
+  "dur": 1.1775,
+  "start_s": 0.32
+ },
+ {
+  "file": "fle_180_0071.wav",
+  "speaker": "180",
+  "src": "u01299.wav",
+  "dur": 0.7414375,
+  "start_s": 1.13
+ },
+ {
+  "file": "fle_181_0072.wav",
+  "speaker": "181",
+  "src": "u00098.wav",
+  "dur": 0.547375,
+  "start_s": 0.68
+ },
+ {
+  "file": "fle_182_0073.wav",
+  "speaker": "182",
+  "src": "u01183.wav",
+  "dur": 1.143125,
+  "start_s": 1.08
+ },
+ {
+  "file": "fle_183_0074.wav",
+  "speaker": "183",
+  "src": "u01250.wav",
+  "dur": 0.6003125,
+  "start_s": 0.43
+ },
+ {
+  "file": "fle_184_0075.wav",
+  "speaker": "184",
+  "src": "u00068.wav",
+  "dur": 0.88025,
+  "start_s": 1.14
+ },
+ {
+  "file": "fle_185_0076.wav",
+  "speaker": "185",
+  "src": "u00300.wav",
+  "dur": 1.0790625,
+  "start_s": 1.28
+ },
+ {
+  "file": "fle_186_0077.wav",
+  "speaker": "186",
+  "src": "u01324.wav",
+  "dur": 0.5838125,
+  "start_s": 0.29
+ },
+ {
+  "file": "fle_189_0078.wav",
+  "speaker": "189",
+  "src": "u00139.wav",
+  "dur": 0.59425,
+  "start_s": 0.76
+ },
+ {
+  "file": "fle_190_0079.wav",
+  "speaker": "190",
+  "src": "u00262.wav",
+  "dur": 0.588375,
+  "start_s": 0.77
+ },
+ {
+  "file": "fle_191_0080.wav",
+  "speaker": "191",
+  "src": "u00006.wav",
+  "dur": 1.078125,
+  "start_s": 1.07
+ },
+ {
+  "file": "fle_192_0081.wav",
+  "speaker": "192",
+  "src": "u00793.wav",
+  "dur": 0.6619375,
+  "start_s": 0.86
+ },
+ {
+  "file": "fle_193_0082.wav",
+  "speaker": "193",
+  "src": "u00099.wav",
+  "dur": 0.8353125,
+  "start_s": 0.63
+ },
+ {
+  "file": "fle_194_0083.wav",
+  "speaker": "194",
+  "src": "u00345.wav",
+  "dur": 0.636375,
+  "start_s": 1.23
+ },
+ {
+  "file": "fle_196_0084.wav",
+  "speaker": "196",
+  "src": "u00237.wav",
+  "dur": 1.1245,
+  "start_s": 2.92
+ },
+ {
+  "file": "fle_197_0085.wav",
+  "speaker": "197",
+  "src": "u02339.wav",
+  "dur": 1.1405,
+  "start_s": 0.74
+ },
+ {
+  "file": "fle_198_0086.wav",
+  "speaker": "198",
+  "src": "u00886.wav",
+  "dur": 0.779,
+  "start_s": 1.59
+ },
+ {
+  "file": "fle_199_0087.wav",
+  "speaker": "199",
+  "src": "u00545.wav",
+  "dur": 0.5875625,
+  "start_s": 0.69
+ },
+ {
+  "file": "fle_200_0088.wav",
+  "speaker": "200",
+  "src": "u00211.wav",
+  "dur": 0.545,
+  "start_s": 1.6
+ },
+ {
+  "file": "fle_202_0089.wav",
+  "speaker": "202",
+  "src": "u01535.wav",
+  "dur": 0.534,
+  "start_s": 5.26
+ },
+ {
+  "file": "fle_203_0090.wav",
+  "speaker": "203",
+  "src": "u01662.wav",
+  "dur": 0.6099375,
+  "start_s": 1.2
+ },
+ {
+  "file": "fle_204_0091.wav",
+  "speaker": "204",
+  "src": "u01202.wav",
+  "dur": 0.5736875,
+  "start_s": 0.51
+ },
+ {
+  "file": "fle_205_0092.wav",
+  "speaker": "205",
+  "src": "u00412.wav",
+  "dur": 0.5124375,
+  "start_s": 0.65
+ },
+ {
+  "file": "fle_207_0093.wav",
+  "speaker": "207",
+  "src": "u01251.wav",
+  "dur": 0.8418125,
+  "start_s": 0.56
+ },
+ {
+  "file": "fle_208_0094.wav",
+  "speaker": "208",
+  "src": "u00159.wav",
+  "dur": 0.966625,
+  "start_s": 1.01
+ },
+ {
+  "file": "fle_209_0095.wav",
+  "speaker": "209",
+  "src": "u00281.wav",
+  "dur": 0.4915,
+  "start_s": 0.7
+ },
+ {
+  "file": "fle_21_0096.wav",
+  "speaker": "21",
+  "src": "u00983.wav",
+  "dur": 0.6353125,
+  "start_s": 0.62
+ },
+ {
+  "file": "fle_211_0097.wav",
+  "speaker": "211",
+  "src": "u00161.wav",
+  "dur": 0.7025625,
+  "start_s": 1.46
+ },
+ {
+  "file": "fle_212_0098.wav",
+  "speaker": "212",
+  "src": "u00188.wav",
+  "dur": 1.1251875,
+  "start_s": 0.76
+ },
+ {
+  "file": "fle_213_0099.wav",
+  "speaker": "213",
+  "src": "u00334.wav",
+  "dur": 0.448375,
+  "start_s": 0.5
+ },
+ {
+  "file": "fle_214_0100.wav",
+  "speaker": "214",
+  "src": "u01809.wav",
+  "dur": 0.534375,
+  "start_s": 0.38
+ },
+ {
+  "file": "fle_217_0101.wav",
+  "speaker": "217",
+  "src": "u00966.wav",
+  "dur": 1.061125,
+  "start_s": 1.12
+ },
+ {
+  "file": "fle_219_0102.wav",
+  "speaker": "219",
+  "src": "u00111.wav",
+  "dur": 0.835,
+  "start_s": 0.42
+ },
+ {
+  "file": "fle_22_0103.wav",
+  "speaker": "22",
+  "src": "u01858.wav",
+  "dur": 0.3809375,
+  "start_s": 1.65
+ },
+ {
+  "file": "fle_220_0104.wav",
+  "speaker": "220",
+  "src": "u00173.wav",
+  "dur": 0.5281875,
+  "start_s": 1.43
+ },
+ {
+  "file": "fle_221_0105.wav",
+  "speaker": "221",
+  "src": "u01850.wav",
+  "dur": 1.0615625,
+  "start_s": 1.09
+ },
+ {
+  "file": "fle_223_0106.wav",
+  "speaker": "223",
+  "src": "u01261.wav",
+  "dur": 0.585625,
+  "start_s": 1.0
+ },
+ {
+  "file": "fle_224_0107.wav",
+  "speaker": "224",
+  "src": "u00643.wav",
+  "dur": 1.0795625,
+  "start_s": 1.4
+ },
+ {
+  "file": "fle_226_0108.wav",
+  "speaker": "226",
+  "src": "u00082.wav",
+  "dur": 0.947875,
+  "start_s": 0.38
+ },
+ {
+  "file": "fle_227_0109.wav",
+  "speaker": "227",
+  "src": "u01141.wav",
+  "dur": 1.089875,
+  "start_s": 2.38
+ },
+ {
+  "file": "fle_228_0110.wav",
+  "speaker": "228",
+  "src": "u00416.wav",
+  "dur": 0.834875,
+  "start_s": 0.87
+ },
+ {
+  "file": "fle_229_0111.wav",
+  "speaker": "229",
+  "src": "u00067.wav",
+  "dur": 1.079375,
+  "start_s": 1.3
+ },
+ {
+  "file": "fle_23_0112.wav",
+  "speaker": "23",
+  "src": "u00356.wav",
+  "dur": 0.7504375,
+  "start_s": 1.69
+ },
+ {
+  "file": "fle_230_0113.wav",
+  "speaker": "230",
+  "src": "u00177.wav",
+  "dur": 0.7785,
+  "start_s": 1.14
+ },
+ {
+  "file": "fle_231_0114.wav",
+  "speaker": "231",
+  "src": "u01681.wav",
+  "dur": 1.0385625,
+  "start_s": 0.93
+ },
+ {
+  "file": "fle_232_0115.wav",
+  "speaker": "232",
+  "src": "u02147.wav",
+  "dur": 0.7415,
+  "start_s": 1.61
+ },
+ {
+  "file": "fle_233_0116.wav",
+  "speaker": "233",
+  "src": "u00917.wav",
+  "dur": 0.484,
+  "start_s": 0.82
+ },
+ {
+  "file": "fle_234_0117.wav",
+  "speaker": "234",
+  "src": "u00587.wav",
+  "dur": 0.447875,
+  "start_s": 0.79
+ },
+ {
+  "file": "fle_235_0118.wav",
+  "speaker": "235",
+  "src": "u02185.wav",
+  "dur": 0.57975,
+  "start_s": 0.33
+ },
+ {
+  "file": "fle_236_0119.wav",
+  "speaker": "236",
+  "src": "u00897.wav",
+  "dur": 0.5796875,
+  "start_s": 2.46
+ },
+ {
+  "file": "fle_237_0120.wav",
+  "speaker": "237",
+  "src": "u00609.wav",
+  "dur": 1.061,
+  "start_s": 0.43
+ },
+ {
+  "file": "fle_238_0121.wav",
+  "speaker": "238",
+  "src": "u00607.wav",
+  "dur": 0.6493125,
+  "start_s": 1.13
+ },
+ {
+  "file": "fle_239_0122.wav",
+  "speaker": "239",
+  "src": "u00971.wav",
+  "dur": 0.485,
+  "start_s": 1.32
+ },
+ {
+  "file": "fle_24_0123.wav",
+  "speaker": "24",
+  "src": "u00217.wav",
+  "dur": 1.12525,
+  "start_s": 0.56
+ },
+ {
+  "file": "fle_240_0124.wav",
+  "speaker": "240",
+  "src": "u00259.wav",
+  "dur": 0.661625,
+  "start_s": 1.35
+ },
+ {
+  "file": "fle_241_0125.wav",
+  "speaker": "241",
+  "src": "u00436.wav",
+  "dur": 1.0385625,
+  "start_s": 0.54
+ },
+ {
+  "file": "fle_242_0126.wav",
+  "speaker": "242",
+  "src": "u00651.wav",
+  "dur": 0.8804375,
+  "start_s": 0.77
+ },
+ {
+  "file": "fle_243_0127.wav",
+  "speaker": "243",
+  "src": "u01588.wav",
+  "dur": 0.6458125,
+  "start_s": 0.95
+ },
+ {
+  "file": "fle_244_0128.wav",
+  "speaker": "244",
+  "src": "u02013.wav",
+  "dur": 0.6495,
+  "start_s": 0.38
+ },
+ {
+  "file": "fle_245_0129.wav",
+  "speaker": "245",
+  "src": "u01049.wav",
+  "dur": 0.5814375,
+  "start_s": 2.42
+ },
+ {
+  "file": "fle_247_0130.wav",
+  "speaker": "247",
+  "src": "u00270.wav",
+  "dur": 0.5779375,
+  "start_s": 1.39
+ },
+ {
+  "file": "fle_248_0131.wav",
+  "speaker": "248",
+  "src": "u00066.wav",
+  "dur": 0.6614375,
+  "start_s": 0.79
+ },
+ {
+  "file": "fle_25_0132.wav",
+  "speaker": "25",
+  "src": "u00206.wav",
+  "dur": 0.5878125,
+  "start_s": 0.85
+ },
+ {
+  "file": "fle_250_0133.wav",
+  "speaker": "250",
+  "src": "u00428.wav",
+  "dur": 1.182375,
+  "start_s": 0.38
+ },
+ {
+  "file": "fle_251_0134.wav",
+  "speaker": "251",
+  "src": "u02272.wav",
+  "dur": 1.0836875,
+  "start_s": 0.84
+ },
+ {
+  "file": "fle_252_0135.wav",
+  "speaker": "252",
+  "src": "u01047.wav",
+  "dur": 0.6735625,
+  "start_s": 0.5
+ },
+ {
+  "file": "fle_253_0136.wav",
+  "speaker": "253",
+  "src": "u01361.wav",
+  "dur": 0.5798125,
+  "start_s": 0.34
+ },
+ {
+  "file": "fle_254_0137.wav",
+  "speaker": "254",
+  "src": "u00716.wav",
+  "dur": 0.944625,
+  "start_s": 0.86
+ },
+ {
+  "file": "fle_255_0138.wav",
+  "speaker": "255",
+  "src": "u00143.wav",
+  "dur": 0.904875,
+  "start_s": 1.04
+ },
+ {
+  "file": "fle_256_0139.wav",
+  "speaker": "256",
+  "src": "u01486.wav",
+  "dur": 0.58075,
+  "start_s": 0.7
+ },
+ {
+  "file": "fle_257_0140.wav",
+  "speaker": "257",
+  "src": "u01225.wav",
+  "dur": 1.004,
+  "start_s": 0.32
+ },
+ {
+  "file": "fle_259_0141.wav",
+  "speaker": "259",
+  "src": "u01971.wav",
+  "dur": 1.0785625,
+  "start_s": 0.82
+ },
+ {
+  "file": "fle_26_0142.wav",
+  "speaker": "26",
+  "src": "u00453.wav",
+  "dur": 0.8505625,
+  "start_s": 0.67
+ },
+ {
+  "file": "fle_260_0143.wav",
+  "speaker": "260",
+  "src": "u00105.wav",
+  "dur": 0.661875,
+  "start_s": 0.95
+ },
+ {
+  "file": "fle_262_0144.wav",
+  "speaker": "262",
+  "src": "u00867.wav",
+  "dur": 0.778125,
+  "start_s": 2.21
+ },
+ {
+  "file": "fle_264_0145.wav",
+  "speaker": "264",
+  "src": "u00280.wav",
+  "dur": 1.061125,
+  "start_s": 0.73
+ },
+ {
+  "file": "fle_265_0146.wav",
+  "speaker": "265",
+  "src": "u00485.wav",
+  "dur": 0.535,
+  "start_s": 1.51
+ },
+ {
+  "file": "fle_266_0147.wav",
+  "speaker": "266",
+  "src": "u00100.wav",
+  "dur": 0.835125,
+  "start_s": 0.88
+ },
+ {
+  "file": "fle_268_0148.wav",
+  "speaker": "268",
+  "src": "u01579.wav",
+  "dur": 1.0380625,
+  "start_s": 1.44
+ },
+ {
+  "file": "fle_269_0149.wav",
+  "speaker": "269",
+  "src": "u00576.wav",
+  "dur": 0.750875,
+  "start_s": 0.76
+ },
+ {
+  "file": "fle_27_0150.wav",
+  "speaker": "27",
+  "src": "u00521.wav",
+  "dur": 0.536,
+  "start_s": 2.38
+ },
+ {
+  "file": "fle_270_0151.wav",
+  "speaker": "270",
+  "src": "u01760.wav",
+  "dur": 0.8773125,
+  "start_s": 1.3
+ },
+ {
+  "file": "fle_271_0152.wav",
+  "speaker": "271",
+  "src": "u00489.wav",
+  "dur": 0.53,
+  "start_s": 2.19
+ },
+ {
+  "file": "fle_272_0153.wav",
+  "speaker": "272",
+  "src": "u00408.wav",
+  "dur": 0.880375,
+  "start_s": 0.64
+ },
+ {
+  "file": "fle_273_0154.wav",
+  "speaker": "273",
+  "src": "u00900.wav",
+  "dur": 0.6538125,
+  "start_s": 1.07
+ },
+ {
+  "file": "fle_274_0155.wav",
+  "speaker": "274",
+  "src": "u01346.wav",
+  "dur": 0.787375,
+  "start_s": 0.88
+ },
+ {
+  "file": "fle_275_0156.wav",
+  "speaker": "275",
+  "src": "u00166.wav",
+  "dur": 0.638375,
+  "start_s": 1.26
+ },
+ {
+  "file": "fle_28_0157.wav",
+  "speaker": "28",
+  "src": "u00689.wav",
+  "dur": 0.7436875,
+  "start_s": 1.05
+ },
+ {
+  "file": "fle_280_0158.wav",
+  "speaker": "280",
+  "src": "u00995.wav",
+  "dur": 0.5,
+  "start_s": 0.38
+ },
+ {
+  "file": "fle_281_0159.wav",
+  "speaker": "281",
+  "src": "u02433.wav",
+  "dur": 1.0780625,
+  "start_s": 0.92
+ },
+ {
+  "file": "fle_283_0160.wav",
+  "speaker": "283",
+  "src": "u00056.wav",
+  "dur": 0.5434375,
+  "start_s": 0.84
+ },
+ {
+  "file": "fle_284_0161.wav",
+  "speaker": "284",
+  "src": "u00700.wav",
+  "dur": 0.583125,
+  "start_s": 1.26
+ },
+ {
+  "file": "fle_286_0162.wav",
+  "speaker": "286",
+  "src": "u00122.wav",
+  "dur": 0.6760625,
+  "start_s": 1.61
+ },
+ {
+  "file": "fle_287_0163.wav",
+  "speaker": "287",
+  "src": "u00134.wav",
+  "dur": 1.0884375,
+  "start_s": 0.94
+ },
+ {
+  "file": "fle_29_0164.wav",
+  "speaker": "29",
+  "src": "u00136.wav",
+  "dur": 1.079375,
+  "start_s": 1.74
+ },
+ {
+  "file": "fle_290_0165.wav",
+  "speaker": "290",
+  "src": "u00821.wav",
+  "dur": 1.124625,
+  "start_s": 1.03
+ },
+ {
+  "file": "fle_291_0166.wav",
+  "speaker": "291",
+  "src": "u00890.wav",
+  "dur": 0.8503125,
+  "start_s": 0.62
+ },
+ {
+  "file": "fle_294_0167.wav",
+  "speaker": "294",
+  "src": "u01378.wav",
+  "dur": 0.966625,
+  "start_s": 1.2
+ },
+ {
+  "file": "fle_295_0168.wav",
+  "speaker": "295",
+  "src": "u00801.wav",
+  "dur": 0.603125,
+  "start_s": 0.88
+ },
+ {
+  "file": "fle_296_0169.wav",
+  "speaker": "296",
+  "src": "u00487.wav",
+  "dur": 0.90475,
+  "start_s": 0.24
+ },
+ {
+  "file": "fle_297_0170.wav",
+  "speaker": "297",
+  "src": "u00338.wav",
+  "dur": 0.7875,
+  "start_s": 0.94
+ },
+ {
+  "file": "fle_298_0171.wav",
+  "speaker": "298",
+  "src": "u00272.wav",
+  "dur": 1.169,
+  "start_s": 0.72
+ },
+ {
+  "file": "fle_299_0172.wav",
+  "speaker": "299",
+  "src": "u01888.wav",
+  "dur": 0.5310625,
+  "start_s": 0.67
+ },
+ {
+  "file": "fle_30_0173.wav",
+  "speaker": "30",
+  "src": "u00084.wav",
+  "dur": 0.648625,
+  "start_s": 1.02
+ },
+ {
+  "file": "fle_300_0174.wav",
+  "speaker": "300",
+  "src": "u00474.wav",
+  "dur": 0.4468125,
+  "start_s": 0.59
+ },
+ {
+  "file": "fle_303_0175.wav",
+  "speaker": "303",
+  "src": "u01647.wav",
+  "dur": 1.0380625,
+  "start_s": 0.33
+ },
+ {
+  "file": "fle_304_0176.wav",
+  "speaker": "304",
+  "src": "u00684.wav",
+  "dur": 0.7783125,
+  "start_s": 1.15
+ },
+ {
+  "file": "fle_306_0177.wav",
+  "speaker": "306",
+  "src": "u00858.wav",
+  "dur": 1.079375,
+  "start_s": 1.24
+ },
+ {
+  "file": "fle_308_0178.wav",
+  "speaker": "308",
+  "src": "u01201.wav",
+  "dur": 1.010125,
+  "start_s": 0.77
+ },
+ {
+  "file": "fle_309_0179.wav",
+  "speaker": "309",
+  "src": "u01477.wav",
+  "dur": 0.7786875,
+  "start_s": 0.65
+ },
+ {
+  "file": "fle_31_0180.wav",
+  "speaker": "31",
+  "src": "u00518.wav",
+  "dur": 0.535,
+  "start_s": 0.6
+ },
+ {
+  "file": "fle_310_0181.wav",
+  "speaker": "310",
+  "src": "u00153.wav",
+  "dur": 1.0385625,
+  "start_s": 0.88
+ },
+ {
+  "file": "fle_312_0182.wav",
+  "speaker": "312",
+  "src": "u02004.wav",
+  "dur": 0.5448125,
+  "start_s": 1.29
+ },
+ {
+  "file": "fle_313_0183.wav",
+  "speaker": "313",
+  "src": "u01176.wav",
+  "dur": 1.1405625,
+  "start_s": 0.73
+ },
+ {
+  "file": "fle_315_0184.wav",
+  "speaker": "315",
+  "src": "u00665.wav",
+  "dur": 1.010875,
+  "start_s": 0.95
+ },
+ {
+  "file": "fle_316_0185.wav",
+  "speaker": "316",
+  "src": "u00396.wav",
+  "dur": 1.1618125,
+  "start_s": 0.96
+ },
+ {
+  "file": "fle_317_0186.wav",
+  "speaker": "317",
+  "src": "u01928.wav",
+  "dur": 0.6613125,
+  "start_s": 0.86
+ },
+ {
+  "file": "fle_318_0187.wav",
+  "speaker": "318",
+  "src": "u01220.wav",
+  "dur": 0.57925,
+  "start_s": 0.6
+ },
+ {
+  "file": "fle_319_0188.wav",
+  "speaker": "319",
+  "src": "u00092.wav",
+  "dur": 0.649,
+  "start_s": 0.44
+ },
+ {
+  "file": "fle_32_0189.wav",
+  "speaker": "32",
+  "src": "u02850.wav",
+  "dur": 1.0780625,
+  "start_s": 3.09
+ },
+ {
+  "file": "fle_320_0190.wav",
+  "speaker": "320",
+  "src": "u01272.wav",
+  "dur": 0.5434375,
+  "start_s": 0.84
+ },
+ {
+  "file": "fle_321_0191.wav",
+  "speaker": "321",
+  "src": "u00677.wav",
+  "dur": 0.6614375,
+  "start_s": 0.82
+ },
+ {
+  "file": "fle_322_0192.wav",
+  "speaker": "322",
+  "src": "u01483.wav",
+  "dur": 0.741625,
+  "start_s": 0.9
+ },
+ {
+  "file": "fle_323_0193.wav",
+  "speaker": "323",
+  "src": "u02082.wav",
+  "dur": 0.5239375,
+  "start_s": 0.52
+ },
+ {
+  "file": "fle_324_0194.wav",
+  "speaker": "324",
+  "src": "u00953.wav",
+  "dur": 0.5358125,
+  "start_s": 0.45
+ },
+ {
+  "file": "fle_325_0195.wav",
+  "speaker": "325",
+  "src": "u00714.wav",
+  "dur": 0.4993125,
+  "start_s": 0.49
+ },
+ {
+  "file": "fle_327_0196.wav",
+  "speaker": "327",
+  "src": "u00124.wav",
+  "dur": 0.4583125,
+  "start_s": 0.35
+ },
+ {
+  "file": "fle_328_0197.wav",
+  "speaker": "328",
+  "src": "u02002.wav",
+  "dur": 0.834875,
+  "start_s": 1.11
+ },
+ {
+  "file": "fle_329_0198.wav",
+  "speaker": "329",
+  "src": "u00457.wav",
+  "dur": 0.57675,
+  "start_s": 0.77
+ },
+ {
+  "file": "fle_33_0199.wav",
+  "speaker": "33",
+  "src": "u01449.wav",
+  "dur": 0.7899375,
+  "start_s": 0.65
+ },
+ {
+  "file": "fle_330_0200.wav",
+  "speaker": "330",
+  "src": "u01079.wav",
+  "dur": 0.585375,
+  "start_s": 0.39
+ },
+ {
+  "file": "fle_331_0201.wav",
+  "speaker": "331",
+  "src": "u00906.wav",
+  "dur": 0.523875,
+  "start_s": 0.8
+ },
+ {
+  "file": "fle_332_0202.wav",
+  "speaker": "332",
+  "src": "u01791.wav",
+  "dur": 0.78825,
+  "start_s": 0.68
+ },
+ {
+  "file": "fle_333_0203.wav",
+  "speaker": "333",
+  "src": "u00004.wav",
+  "dur": 0.5796875,
+  "start_s": 0.3
+ },
+ {
+  "file": "fle_334_0204.wav",
+  "speaker": "334",
+  "src": "u01618.wav",
+  "dur": 0.526375,
+  "start_s": 0.67
+ },
+ {
+  "file": "fle_335_0205.wav",
+  "speaker": "335",
+  "src": "u01062.wav",
+  "dur": 0.553,
+  "start_s": 1.15
+ },
+ {
+  "file": "fle_336_0206.wav",
+  "speaker": "336",
+  "src": "u00110.wav",
+  "dur": 0.49025,
+  "start_s": 1.06
+ },
+ {
+  "file": "fle_337_0207.wav",
+  "speaker": "337",
+  "src": "u01646.wav",
+  "dur": 0.78825,
+  "start_s": 0.95
+ },
+ {
+  "file": "fle_338_0208.wav",
+  "speaker": "338",
+  "src": "u00951.wav",
+  "dur": 0.5691875,
+  "start_s": 0.99
+ },
+ {
+  "file": "fle_339_0209.wav",
+  "speaker": "339",
+  "src": "u00418.wav",
+  "dur": 0.4478125,
+  "start_s": 0.2
+ },
+ {
+  "file": "fle_34_0210.wav",
+  "speaker": "34",
+  "src": "u00028.wav",
+  "dur": 0.5854375,
+  "start_s": 2.31
+ },
+ {
+  "file": "fle_340_0211.wav",
+  "speaker": "340",
+  "src": "u01817.wav",
+  "dur": 0.789125,
+  "start_s": 1.16
+ },
+ {
+  "file": "fle_341_0212.wav",
+  "speaker": "341",
+  "src": "u00539.wav",
+  "dur": 0.5838125,
+  "start_s": 1.03
+ },
+ {
+  "file": "fle_342_0213.wav",
+  "speaker": "342",
+  "src": "u00003.wav",
+  "dur": 0.779,
+  "start_s": 1.0
+ },
+ {
+  "file": "fle_343_0214.wav",
+  "speaker": "343",
+  "src": "u00669.wav",
+  "dur": 0.684375,
+  "start_s": 1.11
+ },
+ {
+  "file": "fle_344_0215.wav",
+  "speaker": "344",
+  "src": "u01194.wav",
+  "dur": 1.1231875,
+  "start_s": 0.67
+ },
+ {
+  "file": "fle_345_0216.wav",
+  "speaker": "345",
+  "src": "u01420.wav",
+  "dur": 0.7508125,
+  "start_s": 0.73
+ },
+ {
+  "file": "fle_346_0217.wav",
+  "speaker": "346",
+  "src": "u01434.wav",
+  "dur": 1.17075,
+  "start_s": 0.75
+ },
+ {
+  "file": "fle_348_0218.wav",
+  "speaker": "348",
+  "src": "u00062.wav",
+  "dur": 1.07975,
+  "start_s": 1.11
+ },
+ {
+  "file": "fle_349_0219.wav",
+  "speaker": "349",
+  "src": "u00184.wav",
+  "dur": 0.6670625,
+  "start_s": 0.86
+ },
+ {
+  "file": "fle_35_0220.wav",
+  "speaker": "35",
+  "src": "u00668.wav",
+  "dur": 0.5434375,
+  "start_s": 0.93
+ },
+ {
+  "file": "fle_350_0221.wav",
+  "speaker": "350",
+  "src": "u00725.wav",
+  "dur": 1.0815,
+  "start_s": 0.65
+ },
+ {
+  "file": "fle_352_0222.wav",
+  "speaker": "352",
+  "src": "u00132.wav",
+  "dur": 0.600125,
+  "start_s": 0.31
+ },
+ {
+  "file": "fle_353_0223.wav",
+  "speaker": "353",
+  "src": "u00546.wav",
+  "dur": 0.447875,
+  "start_s": 0.47
+ },
+ {
+  "file": "fle_354_0224.wav",
+  "speaker": "354",
+  "src": "u00117.wav",
+  "dur": 0.5344375,
+  "start_s": 0.62
+ },
+ {
+  "file": "fle_355_0225.wav",
+  "speaker": "355",
+  "src": "u00129.wav",
+  "dur": 0.7835625,
+  "start_s": 0.86
+ },
+ {
+  "file": "fle_356_0226.wav",
+  "speaker": "356",
+  "src": "u01019.wav",
+  "dur": 0.5376875,
+  "start_s": 0.38
+ },
+ {
+  "file": "fle_357_0227.wav",
+  "speaker": "357",
+  "src": "u00788.wav",
+  "dur": 1.089875,
+  "start_s": 1.42
+ },
+ {
+  "file": "fle_358_0228.wav",
+  "speaker": "358",
+  "src": "u01832.wav",
+  "dur": 0.587125,
+  "start_s": 1.02
+ },
+ {
+  "file": "fle_359_0229.wav",
+  "speaker": "359",
+  "src": "u00541.wav",
+  "dur": 0.8349375,
+  "start_s": 0.46
+ },
+ {
+  "file": "fle_36_0230.wav",
+  "speaker": "36",
+  "src": "u00096.wav",
+  "dur": 0.659,
+  "start_s": 0.12
+ },
+ {
+  "file": "fle_360_0231.wav",
+  "speaker": "360",
+  "src": "u01564.wav",
+  "dur": 0.61225,
+  "start_s": 0.3
+ },
+ {
+  "file": "fle_361_0232.wav",
+  "speaker": "361",
+  "src": "u00286.wav",
+  "dur": 0.8805625,
+  "start_s": 0.42
+ },
+ {
+  "file": "fle_363_0233.wav",
+  "speaker": "363",
+  "src": "u00076.wav",
+  "dur": 0.558125,
+  "start_s": 0.47
+ },
+ {
+  "file": "fle_364_0234.wav",
+  "speaker": "364",
+  "src": "u00320.wav",
+  "dur": 0.6764375,
+  "start_s": 0.71
+ },
+ {
+  "file": "fle_365_0235.wav",
+  "speaker": "365",
+  "src": "u02444.wav",
+  "dur": 1.141375,
+  "start_s": 0.86
+ },
+ {
+  "file": "fle_366_0236.wav",
+  "speaker": "366",
+  "src": "u00625.wav",
+  "dur": 1.088875,
+  "start_s": 0.6
+ },
+ {
+  "file": "fle_368_0237.wav",
+  "speaker": "368",
+  "src": "u01283.wav",
+  "dur": 0.835,
+  "start_s": 2.65
+ },
+ {
+  "file": "fle_369_0238.wav",
+  "speaker": "369",
+  "src": "u00785.wav",
+  "dur": 0.7024375,
+  "start_s": 1.63
+ },
+ {
+  "file": "fle_37_0239.wav",
+  "speaker": "37",
+  "src": "u00385.wav",
+  "dur": 0.6613125,
+  "start_s": 2.44
+ },
+ {
+  "file": "fle_371_0240.wav",
+  "speaker": "371",
+  "src": "u00507.wav",
+  "dur": 1.07975,
+  "start_s": 0.9
+ },
+ {
+  "file": "fle_373_0241.wav",
+  "speaker": "373",
+  "src": "u00369.wav",
+  "dur": 1.0385625,
+  "start_s": 1.33
+ },
+ {
+  "file": "fle_374_0242.wav",
+  "speaker": "374",
+  "src": "u01726.wav",
+  "dur": 1.0385625,
+  "start_s": 0.75
+ },
+ {
+  "file": "fle_375_0243.wav",
+  "speaker": "375",
+  "src": "u00568.wav",
+  "dur": 1.179375,
+  "start_s": 0.96
+ },
+ {
+  "file": "fle_377_0244.wav",
+  "speaker": "377",
+  "src": "u00208.wav",
+  "dur": 0.834875,
+  "start_s": 0.38
+ },
+ {
+  "file": "fle_378_0245.wav",
+  "speaker": "378",
+  "src": "u00175.wav",
+  "dur": 0.4479375,
+  "start_s": 0.66
+ },
+ {
+  "file": "fle_379_0246.wav",
+  "speaker": "379",
+  "src": "u01070.wav",
+  "dur": 1.180375,
+  "start_s": 0.72
+ },
+ {
+  "file": "fle_38_0247.wav",
+  "speaker": "38",
+  "src": "u00118.wav",
+  "dur": 0.5950625,
+  "start_s": 0.8
+ },
+ {
+  "file": "fle_381_0248.wav",
+  "speaker": "381",
+  "src": "u01131.wav",
+  "dur": 0.6618125,
+  "start_s": 1.04
+ },
+ {
+  "file": "fle_382_0249.wav",
+  "speaker": "382",
+  "src": "u01463.wav",
+  "dur": 0.5805,
+  "start_s": 0.67
+ },
+ {
+  "file": "fle_383_0250.wav",
+  "speaker": "383",
+  "src": "u01083.wav",
+  "dur": 1.170625,
+  "start_s": 0.95
+ },
+ {
+  "file": "fle_384_0251.wav",
+  "speaker": "384",
+  "src": "u02257.wav",
+  "dur": 0.6141875,
+  "start_s": 0.93
+ },
+ {
+  "file": "fle_386_0252.wav",
+  "speaker": "386",
+  "src": "u00097.wav",
+  "dur": 0.679125,
+  "start_s": 1.6
+ },
+ {
+  "file": "fle_387_0253.wav",
+  "speaker": "387",
+  "src": "u00192.wav",
+  "dur": 0.6010625,
+  "start_s": 0.88
+ },
+ {
+  "file": "fle_388_0254.wav",
+  "speaker": "388",
+  "src": "u00364.wav",
+  "dur": 0.535,
+  "start_s": 1.05
+ },
+ {
+  "file": "fle_392_0255.wav",
+  "speaker": "392",
+  "src": "u00740.wav",
+  "dur": 1.0785625,
+  "start_s": 2.57
+ },
+ {
+  "file": "fle_393_0256.wav",
+  "speaker": "393",
+  "src": "u00850.wav",
+  "dur": 0.5758125,
+  "start_s": 1.74
+ },
+ {
+  "file": "fle_394_0257.wav",
+  "speaker": "394",
+  "src": "u00230.wav",
+  "dur": 0.612625,
+  "start_s": 0.72
+ },
+ {
+  "file": "fle_395_0258.wav",
+  "speaker": "395",
+  "src": "u00543.wav",
+  "dur": 0.677125,
+  "start_s": 1.47
+ },
+ {
+  "file": "fle_396_0259.wav",
+  "speaker": "396",
+  "src": "u00260.wav",
+  "dur": 0.5806875,
+  "start_s": 1.27
+ },
+ {
+  "file": "fle_397_0260.wav",
+  "speaker": "397",
+  "src": "u01156.wav",
+  "dur": 0.4994375,
+  "start_s": 1.26
+ },
+ {
+  "file": "fle_398_0261.wav",
+  "speaker": "398",
+  "src": "u02284.wav",
+  "dur": 0.6616875,
+  "start_s": 0.89
+ },
+ {
+  "file": "fle_4_0262.wav",
+  "speaker": "4",
+  "src": "u00654.wav",
+  "dur": 0.5281875,
+  "start_s": 4.51
+ },
+ {
+  "file": "fle_400_0263.wav",
+  "speaker": "400",
+  "src": "u00023.wav",
+  "dur": 0.78825,
+  "start_s": 0.42
+ },
+ {
+  "file": "fle_401_0264.wav",
+  "speaker": "401",
+  "src": "u00037.wav",
+  "dur": 0.87725,
+  "start_s": 0.69
+ },
+ {
+  "file": "fle_402_0265.wav",
+  "speaker": "402",
+  "src": "u00303.wav",
+  "dur": 1.1810625,
+  "start_s": 0.95
+ },
+ {
+  "file": "fle_403_0266.wav",
+  "speaker": "403",
+  "src": "u01027.wav",
+  "dur": 0.695,
+  "start_s": 2.58
+ },
+ {
+  "file": "fle_404_0267.wav",
+  "speaker": "404",
+  "src": "u00373.wav",
+  "dur": 0.6099375,
+  "start_s": 1.88
+ },
+ {
+  "file": "fle_406_0268.wav",
+  "speaker": "406",
+  "src": "u00326.wav",
+  "dur": 0.55025,
+  "start_s": 0.73
+ },
+ {
+  "file": "fle_407_0269.wav",
+  "speaker": "407",
+  "src": "u00745.wav",
+  "dur": 0.564625,
+  "start_s": 0.91
+ },
+ {
+  "file": "fle_408_0270.wav",
+  "speaker": "408",
+  "src": "u00476.wav",
+  "dur": 0.661375,
+  "start_s": 0.92
+ },
+ {
+  "file": "fle_409_0271.wav",
+  "speaker": "409",
+  "src": "u00707.wav",
+  "dur": 0.5936875,
+  "start_s": 0.53
+ },
+ {
+  "file": "fle_41_0272.wav",
+  "speaker": "41",
+  "src": "u00655.wav",
+  "dur": 0.637375,
+  "start_s": 1.31
+ },
+ {
+  "file": "fle_411_0273.wav",
+  "speaker": "411",
+  "src": "u00309.wav",
+  "dur": 0.5356875,
+  "start_s": 2.39
+ },
+ {
+  "file": "fle_412_0274.wav",
+  "speaker": "412",
+  "src": "u00621.wav",
+  "dur": 0.5,
+  "start_s": 1.02
+ },
+ {
+  "file": "fle_414_0275.wav",
+  "speaker": "414",
+  "src": "u00251.wav",
+  "dur": 0.8418125,
+  "start_s": 0.99
+ },
+ {
+  "file": "fle_415_0276.wav",
+  "speaker": "415",
+  "src": "u01344.wav",
+  "dur": 0.6485625,
+  "start_s": 1.12
+ },
+ {
+  "file": "fle_416_0277.wav",
+  "speaker": "416",
+  "src": "u01149.wav",
+  "dur": 0.5236875,
+  "start_s": 0.76
+ },
+ {
+  "file": "fle_417_0278.wav",
+  "speaker": "417",
+  "src": "u01240.wav",
+  "dur": 0.545375,
+  "start_s": 0.97
+ },
+ {
+  "file": "fle_418_0279.wav",
+  "speaker": "418",
+  "src": "u00027.wav",
+  "dur": 0.661875,
+  "start_s": 0.79
+ },
+ {
+  "file": "fle_42_0280.wav",
+  "speaker": "42",
+  "src": "u00628.wav",
+  "dur": 1.0616875,
+  "start_s": 1.54
+ },
+ {
+  "file": "fle_422_0281.wav",
+  "speaker": "422",
+  "src": "u01101.wav",
+  "dur": 0.5760625,
+  "start_s": 0.9
+ },
+ {
+  "file": "fle_424_0282.wav",
+  "speaker": "424",
+  "src": "u00164.wav",
+  "dur": 0.5829375,
+  "start_s": 0.32
+ },
+ {
+  "file": "fle_425_0283.wav",
+  "speaker": "425",
+  "src": "u00871.wav",
+  "dur": 1.0885625,
+  "start_s": 0.86
+ },
+ {
+  "file": "fle_427_0284.wav",
+  "speaker": "427",
+  "src": "u00666.wav",
+  "dur": 0.5274375,
+  "start_s": 1.12
+ },
+ {
+  "file": "fle_428_0285.wav",
+  "speaker": "428",
+  "src": "u00536.wav",
+  "dur": 0.5545625,
+  "start_s": 2.0
+ },
+ {
+  "file": "fle_429_0286.wav",
+  "speaker": "429",
+  "src": "u00769.wav",
+  "dur": 0.5935625,
+  "start_s": 0.7
+ },
+ {
+  "file": "fle_431_0287.wav",
+  "speaker": "431",
+  "src": "u01316.wav",
+  "dur": 0.5815,
+  "start_s": 0.91
+ },
+ {
+  "file": "fle_432_0288.wav",
+  "speaker": "432",
+  "src": "u02044.wav",
+  "dur": 0.661625,
+  "start_s": 0.76
+ },
+ {
+  "file": "fle_433_0289.wav",
+  "speaker": "433",
+  "src": "u00987.wav",
+  "dur": 0.7784375,
+  "start_s": 0.61
+ },
+ {
+  "file": "fle_436_0290.wav",
+  "speaker": "436",
+  "src": "u01482.wav",
+  "dur": 0.6003125,
+  "start_s": 1.25
+ },
+ {
+  "file": "fle_437_0291.wav",
+  "speaker": "437",
+  "src": "u00285.wav",
+  "dur": 0.5796875,
+  "start_s": 0.96
+ },
+ {
+  "file": "fle_440_0292.wav",
+  "speaker": "440",
+  "src": "u02120.wav",
+  "dur": 0.632125,
+  "start_s": 1.04
+ },
+ {
+  "file": "fle_442_0293.wav",
+  "speaker": "442",
+  "src": "u00316.wav",
+  "dur": 0.6613125,
+  "start_s": 0.28
+ },
+ {
+  "file": "fle_443_0294.wav",
+  "speaker": "443",
+  "src": "u01816.wav",
+  "dur": 1.145,
+  "start_s": 1.84
+ },
+ {
+  "file": "fle_444_0295.wav",
+  "speaker": "444",
+  "src": "u00360.wav",
+  "dur": 0.774375,
+  "start_s": 0.85
+ },
+ {
+  "file": "fle_445_0296.wav",
+  "speaker": "445",
+  "src": "u00674.wav",
+  "dur": 0.6845,
+  "start_s": 1.02
+ },
+ {
+  "file": "fle_446_0297.wav",
+  "speaker": "446",
+  "src": "u00713.wav",
+  "dur": 0.5501875,
+  "start_s": 1.28
+ },
+ {
+  "file": "fle_447_0298.wav",
+  "speaker": "447",
+  "src": "u00021.wav",
+  "dur": 1.1246875,
+  "start_s": 0.28
+ },
+ {
+  "file": "fle_449_0299.wav",
+  "speaker": "449",
+  "src": "u01095.wav",
+  "dur": 0.8785,
+  "start_s": 0.53
+ },
+ {
+  "file": "fle_45_0300.wav",
+  "speaker": "45",
+  "src": "u00239.wav",
+  "dur": 0.5271875,
+  "start_s": 1.57
+ },
+ {
+  "file": "fle_450_0301.wav",
+  "speaker": "450",
+  "src": "u00759.wav",
+  "dur": 0.585625,
+  "start_s": 1.25
+ },
+ {
+  "file": "fle_451_0302.wav",
+  "speaker": "451",
+  "src": "u01279.wav",
+  "dur": 0.661875,
+  "start_s": 4.11
+ },
+ {
+  "file": "fle_453_0303.wav",
+  "speaker": "453",
+  "src": "u00854.wav",
+  "dur": 1.1250625,
+  "start_s": 0.85
+ },
+ {
+  "file": "fle_454_0304.wav",
+  "speaker": "454",
+  "src": "u00920.wav",
+  "dur": 0.5796875,
+  "start_s": 0.94
+ },
+ {
+  "file": "fle_455_0305.wav",
+  "speaker": "455",
+  "src": "u00790.wav",
+  "dur": 0.6349375,
+  "start_s": 0.43
+ },
+ {
+  "file": "fle_456_0306.wav",
+  "speaker": "456",
+  "src": "u00387.wav",
+  "dur": 0.5645,
+  "start_s": 0.65
+ },
+ {
+  "file": "fle_457_0307.wav",
+  "speaker": "457",
+  "src": "u00498.wav",
+  "dur": 0.578,
+  "start_s": 0.68
+ },
+ {
+  "file": "fle_458_0308.wav",
+  "speaker": "458",
+  "src": "u00431.wav",
+  "dur": 0.668875,
+  "start_s": 0.37
+ },
+ {
+  "file": "fle_459_0309.wav",
+  "speaker": "459",
+  "src": "u01016.wav",
+  "dur": 0.6365625,
+  "start_s": 0.68
+ },
+ {
+  "file": "fle_46_0310.wav",
+  "speaker": "46",
+  "src": "u00095.wav",
+  "dur": 0.538125,
+  "start_s": 0.55
+ },
+ {
+  "file": "fle_460_0311.wav",
+  "speaker": "460",
+  "src": "u01753.wav",
+  "dur": 0.6495625,
+  "start_s": 0.74
+ },
+ {
+  "file": "fle_461_0312.wav",
+  "speaker": "461",
+  "src": "u00697.wav",
+  "dur": 1.078,
+  "start_s": 1.77
+ },
+ {
+  "file": "fle_462_0313.wav",
+  "speaker": "462",
+  "src": "u00488.wav",
+  "dur": 1.18325,
+  "start_s": 0.41
+ },
+ {
+  "file": "fle_463_0314.wav",
+  "speaker": "463",
+  "src": "u01105.wav",
+  "dur": 0.695,
+  "start_s": 1.67
+ },
+ {
+  "file": "fle_464_0315.wav",
+  "speaker": "464",
+  "src": "u01017.wav",
+  "dur": 1.098,
+  "start_s": 2.11
+ },
+ {
+  "file": "fle_465_0316.wav",
+  "speaker": "465",
+  "src": "u00746.wav",
+  "dur": 0.5798125,
+  "start_s": 2.61
+ },
+ {
+  "file": "fle_466_0317.wav",
+  "speaker": "466",
+  "src": "u01712.wav",
+  "dur": 0.6003125,
+  "start_s": 0.64
+ },
+ {
+  "file": "fle_467_0318.wav",
+  "speaker": "467",
+  "src": "u00696.wav",
+  "dur": 0.7508125,
+  "start_s": 1.47
+ },
+ {
+  "file": "fle_468_0319.wav",
+  "speaker": "468",
+  "src": "u00411.wav",
+  "dur": 0.4994375,
+  "start_s": 0.33
+ },
+ {
+  "file": "fle_469_0320.wav",
+  "speaker": "469",
+  "src": "u00245.wav",
+  "dur": 0.6123125,
+  "start_s": 2.3
+ },
+ {
+  "file": "fle_47_0321.wav",
+  "speaker": "47",
+  "src": "u00682.wav",
+  "dur": 0.541125,
+  "start_s": 0.46
+ },
+ {
+  "file": "fle_470_0322.wav",
+  "speaker": "470",
+  "src": "u00038.wav",
+  "dur": 0.609875,
+  "start_s": 8.2
+ },
+ {
+  "file": "fle_471_0323.wav",
+  "speaker": "471",
+  "src": "u01219.wav",
+  "dur": 0.684375,
+  "start_s": 1.32
+ },
+ {
+  "file": "fle_472_0324.wav",
+  "speaker": "472",
+  "src": "u00135.wav",
+  "dur": 0.632125,
+  "start_s": 2.12
+ },
+ {
+  "file": "fle_473_0325.wav",
+  "speaker": "473",
+  "src": "u00855.wav",
+  "dur": 0.6003125,
+  "start_s": 2.2
+ },
+ {
+  "file": "fle_474_0326.wav",
+  "speaker": "474",
+  "src": "u00553.wav",
+  "dur": 0.6014375,
+  "start_s": 1.04
+ },
+ {
+  "file": "fle_475_0327.wav",
+  "speaker": "475",
+  "src": "u01696.wav",
+  "dur": 0.6115,
+  "start_s": 1.32
+ },
+ {
+  "file": "fle_476_0328.wav",
+  "speaker": "476",
+  "src": "u01861.wav",
+  "dur": 0.6688125,
+  "start_s": 0.32
+ },
+ {
+  "file": "fle_477_0329.wav",
+  "speaker": "477",
+  "src": "u00895.wav",
+  "dur": 0.516375,
+  "start_s": 1.83
+ },
+ {
+  "file": "fle_479_0330.wav",
+  "speaker": "479",
+  "src": "u01290.wav",
+  "dur": 1.0610625,
+  "start_s": 1.39
+ },
+ {
+  "file": "fle_48_0331.wav",
+  "speaker": "48",
+  "src": "u01253.wav",
+  "dur": 1.0580625,
+  "start_s": 1.09
+ },
+ {
+  "file": "fle_480_0332.wav",
+  "speaker": "480",
+  "src": "u00449.wav",
+  "dur": 1.0106875,
+  "start_s": 0.34
+ },
+ {
+  "file": "fle_481_0333.wav",
+  "speaker": "481",
+  "src": "u00410.wav",
+  "dur": 0.661375,
+  "start_s": 2.04
+ },
+ {
+  "file": "fle_482_0334.wav",
+  "speaker": "482",
+  "src": "u01444.wav",
+  "dur": 0.53425,
+  "start_s": 1.09
+ },
+ {
+  "file": "fle_49_0335.wav",
+  "speaker": "49",
+  "src": "u01286.wav",
+  "dur": 0.5583125,
+  "start_s": 0.82
+ },
+ {
+  "file": "fle_5_0336.wav",
+  "speaker": "5",
+  "src": "u00933.wav",
+  "dur": 1.0985,
+  "start_s": 1.81
+ },
+ {
+  "file": "fle_50_0337.wav",
+  "speaker": "50",
+  "src": "u00493.wav",
+  "dur": 1.0615625,
+  "start_s": 0.97
+ },
+ {
+  "file": "fle_51_0338.wav",
+  "speaker": "51",
+  "src": "u00605.wav",
+  "dur": 1.0479375,
+  "start_s": 0.37
+ },
+ {
+  "file": "fle_52_0339.wav",
+  "speaker": "52",
+  "src": "u01718.wav",
+  "dur": 1.0744375,
+  "start_s": 0.36
+ },
+ {
+  "file": "fle_53_0340.wav",
+  "speaker": "53",
+  "src": "u00924.wav",
+  "dur": 0.58675,
+  "start_s": 0.33
+ },
+ {
+  "file": "fle_54_0341.wav",
+  "speaker": "54",
+  "src": "u02214.wav",
+  "dur": 0.6365,
+  "start_s": 0.68
+ },
+ {
+  "file": "fle_56_0342.wav",
+  "speaker": "56",
+  "src": "u00029.wav",
+  "dur": 0.661875,
+  "start_s": 0.66
+ },
+ {
+  "file": "fle_57_0343.wav",
+  "speaker": "57",
+  "src": "u00464.wav",
+  "dur": 0.96675,
+  "start_s": 1.14
+ },
+ {
+  "file": "fle_6_0344.wav",
+  "speaker": "6",
+  "src": "u02508.wav",
+  "dur": 1.182375,
+  "start_s": 1.99
+ },
+ {
+  "file": "fle_61_0345.wav",
+  "speaker": "61",
+  "src": "u02276.wav",
+  "dur": 0.637,
+  "start_s": 1.01
+ },
+ {
+  "file": "fle_62_0346.wav",
+  "speaker": "62",
+  "src": "u01121.wav",
+  "dur": 1.1810625,
+  "start_s": 0.57
+ },
+ {
+  "file": "fle_63_0347.wav",
+  "speaker": "63",
+  "src": "u01763.wav",
+  "dur": 0.6003125,
+  "start_s": 0.87
+ },
+ {
+  "file": "fle_66_0348.wav",
+  "speaker": "66",
+  "src": "u01659.wav",
+  "dur": 0.6458125,
+  "start_s": 0.29
+ },
+ {
+  "file": "fle_67_0349.wav",
+  "speaker": "67",
+  "src": "u00616.wav",
+  "dur": 0.6619375,
+  "start_s": 0.64
+ },
+ {
+  "file": "fle_68_0350.wav",
+  "speaker": "68",
+  "src": "u00859.wav",
+  "dur": 0.9665,
+  "start_s": 0.7
+ },
+ {
+  "file": "fle_69_0351.wav",
+  "speaker": "69",
+  "src": "u02502.wav",
+  "dur": 0.5869375,
+  "start_s": 0.61
+ },
+ {
+  "file": "fle_7_0352.wav",
+  "speaker": "7",
+  "src": "u01556.wav",
+  "dur": 0.7788125,
+  "start_s": 0.91
+ },
+ {
+  "file": "fle_70_0353.wav",
+  "speaker": "70",
+  "src": "u00258.wav",
+  "dur": 0.745,
+  "start_s": 1.31
+ },
+ {
+  "file": "fle_71_0354.wav",
+  "speaker": "71",
+  "src": "u00284.wav",
+  "dur": 0.7413125,
+  "start_s": 1.08
+ },
+ {
+  "file": "fle_73_0355.wav",
+  "speaker": "73",
+  "src": "u00221.wav",
+  "dur": 0.85,
+  "start_s": 0.47
+ },
+ {
+  "file": "fle_75_0356.wav",
+  "speaker": "75",
+  "src": "u00214.wav",
+  "dur": 0.661375,
+  "start_s": 1.56
+ },
+ {
+  "file": "fle_76_0357.wav",
+  "speaker": "76",
+  "src": "u00039.wav",
+  "dur": 1.0786875,
+  "start_s": 1.29
+ },
+ {
+  "file": "fle_77_0358.wav",
+  "speaker": "77",
+  "src": "u00157.wav",
+  "dur": 0.8360625,
+  "start_s": 0.86
+ },
+ {
+  "file": "fle_79_0359.wav",
+  "speaker": "79",
+  "src": "u00194.wav",
+  "dur": 0.684375,
+  "start_s": 1.7
+ },
+ {
+  "file": "fle_8_0360.wav",
+  "speaker": "8",
+  "src": "u01065.wav",
+  "dur": 0.5584375,
+  "start_s": 0.98
+ },
+ {
+  "file": "fle_80_0361.wav",
+  "speaker": "80",
+  "src": "u00698.wav",
+  "dur": 0.6616875,
+  "start_s": 0.86
+ },
+ {
+  "file": "fle_81_0362.wav",
+  "speaker": "81",
+  "src": "u00662.wav",
+  "dur": 0.516375,
+  "start_s": 0.81
+ },
+ {
+  "file": "fle_82_0363.wav",
+  "speaker": "82",
+  "src": "u00838.wav",
+  "dur": 0.564625,
+  "start_s": 1.11
+ },
+ {
+  "file": "fle_84_0364.wav",
+  "speaker": "84",
+  "src": "u00181.wav",
+  "dur": 0.7509375,
+  "start_s": 0.68
+ },
+ {
+  "file": "fle_85_0365.wav",
+  "speaker": "85",
+  "src": "u00241.wav",
+  "dur": 0.612375,
+  "start_s": 1.15
+ },
+ {
+  "file": "fle_86_0366.wav",
+  "speaker": "86",
+  "src": "u00455.wav",
+  "dur": 0.5965625,
+  "start_s": 0.49
+ },
+ {
+  "file": "fle_87_0367.wav",
+  "speaker": "87",
+  "src": "u01469.wav",
+  "dur": 0.5736875,
+  "start_s": 0.87
+ },
+ {
+  "file": "fle_88_0368.wav",
+  "speaker": "88",
+  "src": "u00108.wav",
+  "dur": 0.661625,
+  "start_s": 0.59
+ },
+ {
+  "file": "fle_89_0369.wav",
+  "speaker": "89",
+  "src": "u01779.wav",
+  "dur": 0.5965625,
+  "start_s": 0.55
+ },
+ {
+  "file": "fle_90_0370.wav",
+  "speaker": "90",
+  "src": "u00160.wav",
+  "dur": 0.5788125,
+  "start_s": 1.99
+ },
+ {
+  "file": "fle_91_0371.wav",
+  "speaker": "91",
+  "src": "u00235.wav",
+  "dur": 1.0395,
+  "start_s": 1.71
+ },
+ {
+  "file": "fle_92_0372.wav",
+  "speaker": "92",
+  "src": "u00567.wav",
+  "dur": 1.12075,
+  "start_s": 1.08
+ },
+ {
+  "file": "fle_93_0373.wav",
+  "speaker": "93",
+  "src": "u00504.wav",
+  "dur": 0.5255,
+  "start_s": 2.15
+ },
+ {
+  "file": "fle_94_0374.wav",
+  "speaker": "94",
+  "src": "u01542.wav",
+  "dur": 0.4999375,
+  "start_s": 0.89
+ },
+ {
+  "file": "fle_96_0375.wav",
+  "speaker": "96",
+  "src": "u01098.wav",
+  "dur": 0.745,
+  "start_s": 1.05
+ },
+ {
+  "file": "fle_97_0376.wav",
+  "speaker": "97",
+  "src": "u01046.wav",
+  "dur": 0.535,
+  "start_s": 0.33
+ },
+ {
+  "file": "fle_98_0377.wav",
+  "speaker": "98",
+  "src": "u01143.wav",
+  "dur": 0.7504375,
+  "start_s": 0.31
+ },
+ {
+  "file": "fle_99_0378.wav",
+  "speaker": "99",
+  "src": "u00905.wav",
+  "dur": 0.7899375,
+  "start_s": 0.26
+ },
+ {
+  "file": "fle_1000_0379.wav",
+  "speaker": "1000",
+  "src": "u01421.wav",
+  "dur": 0.944625,
+  "start_s": 0.29
+ },
+ {
+  "file": "fle_1001_0380.wav",
+  "speaker": "1001",
+  "src": "u01396.wav",
+  "dur": 0.535,
+  "start_s": 0.64
+ },
+ {
+  "file": "fle_1004_0382.wav",
+  "speaker": "1004",
+  "src": "u00378.wav",
+  "dur": 1.0109375,
+  "start_s": 1.59
+ },
+ {
+  "file": "fle_1005_0383.wav",
+  "speaker": "1005",
+  "src": "u00965.wav",
+  "dur": 0.535,
+  "start_s": 0.9
+ },
+ {
+  "file": "fle_1006_0384.wav",
+  "speaker": "1006",
+  "src": "u00699.wav",
+  "dur": 0.5798125,
+  "start_s": 1.17
+ },
+ {
+  "file": "fle_1007_0385.wav",
+  "speaker": "1007",
+  "src": "u01939.wav",
+  "dur": 0.6005,
+  "start_s": 0.51
+ },
+ {
+  "file": "fle_1008_0386.wav",
+  "speaker": "1008",
+  "src": "u00506.wav",
+  "dur": 0.5584375,
+  "start_s": 1.3
+ },
+ {
+  "file": "fle_1009_0387.wav",
+  "speaker": "1009",
+  "src": "u01395.wav",
+  "dur": 1.083625,
+  "start_s": 0.55
+ },
+ {
+  "file": "fle_1010_0388.wav",
+  "speaker": "1010",
+  "src": "u00962.wav",
+  "dur": 1.081875,
+  "start_s": 0.79
+ },
+ {
+  "file": "fle_1012_0389.wav",
+  "speaker": "1012",
+  "src": "u00223.wav",
+  "dur": 1.1245,
+  "start_s": 2.77
+ },
+ {
+  "file": "fle_1013_0390.wav",
+  "speaker": "1013",
+  "src": "u01099.wav",
+  "dur": 0.5360625,
+  "start_s": 0.31
+ },
+ {
+  "file": "fle_1014_0391.wav",
+  "speaker": "1014",
+  "src": "u01785.wav",
+  "dur": 0.491625,
+  "start_s": 2.03
+ },
+ {
+  "file": "fle_1015_0392.wav",
+  "speaker": "1015",
+  "src": "u01331.wav",
+  "dur": 0.5838125,
+  "start_s": 0.72
+ },
+ {
+  "file": "fle_1016_0393.wav",
+  "speaker": "1016",
+  "src": "u02243.wav",
+  "dur": 1.1690625,
+  "start_s": 0.37
+ },
+ {
+  "file": "fle_1019_0395.wav",
+  "speaker": "1019",
+  "src": "u00442.wav",
+  "dur": 0.5345,
+  "start_s": 0.42
+ },
+ {
+  "file": "fle_1020_0396.wav",
+  "speaker": "1020",
+  "src": "u00162.wav",
+  "dur": 0.4486875,
+  "start_s": 0.56
+ },
+ {
+  "file": "fle_1021_0397.wav",
+  "speaker": "1021",
+  "src": "u00718.wav",
+  "dur": 0.850375,
+  "start_s": 1.02
+ },
+ {
+  "file": "fle_1023_0398.wav",
+  "speaker": "1023",
+  "src": "u00256.wav",
+  "dur": 0.564625,
+  "start_s": 0.5
+ },
+ {
+  "file": "fle_1024_0399.wav",
+  "speaker": "1024",
+  "src": "u00763.wav",
+  "dur": 0.788375,
+  "start_s": 0.3
+ },
+ {
+  "file": "fle_1025_0400.wav",
+  "speaker": "1025",
+  "src": "u01629.wav",
+  "dur": 1.077625,
+  "start_s": 1.38
+ },
+ {
+  "file": "fle_1026_0401.wav",
+  "speaker": "1026",
+  "src": "u01364.wav",
+  "dur": 0.6426875,
+  "start_s": 0.45
+ },
+ {
+  "file": "fle_1027_0402.wav",
+  "speaker": "1027",
+  "src": "u00585.wav",
+  "dur": 0.5815,
+  "start_s": 1.24
+ },
+ {
+  "file": "fle_1028_0403.wav",
+  "speaker": "1028",
+  "src": "u01428.wav",
+  "dur": 0.606625,
+  "start_s": 0.77
+ },
+ {
+  "file": "fle_1029_0404.wav",
+  "speaker": "1029",
+  "src": "u01329.wav",
+  "dur": 1.1859375,
+  "start_s": 0.52
+ },
+ {
+  "file": "fle_1030_0405.wav",
+  "speaker": "1030",
+  "src": "u00380.wav",
+  "dur": 0.741375,
+  "start_s": 1.06
+ },
+ {
+  "file": "fle_1032_0406.wav",
+  "speaker": "1032",
+  "src": "u00064.wav",
+  "dur": 0.679625,
+  "start_s": 0.67
+ },
+ {
+  "file": "fle_1033_0407.wav",
+  "speaker": "1033",
+  "src": "u01984.wav",
+  "dur": 0.68,
+  "start_s": 0.53
+ },
+ {
+  "file": "fle_1034_0408.wav",
+  "speaker": "1034",
+  "src": "u00113.wav",
+  "dur": 0.5795625,
+  "start_s": 1.73
+ },
+ {
+  "file": "fle_1035_0409.wav",
+  "speaker": "1035",
+  "src": "u02365.wav",
+  "dur": 0.8545625,
+  "start_s": 0.88
+ },
+ {
+  "file": "fle_1036_0410.wav",
+  "speaker": "1036",
+  "src": "u00803.wav",
+  "dur": 0.53425,
+  "start_s": 0.37
+ },
+ {
+  "file": "fle_1037_0411.wav",
+  "speaker": "1037",
+  "src": "u00401.wav",
+  "dur": 0.6613125,
+  "start_s": 1.19
+ },
+ {
+  "file": "fle_1038_0412.wav",
+  "speaker": "1038",
+  "src": "u01651.wav",
+  "dur": 0.4478125,
+  "start_s": 1.0
+ },
+ {
+  "file": "fle_1039_0413.wav",
+  "speaker": "1039",
+  "src": "u02618.wav",
+  "dur": 0.3809375,
+  "start_s": 1.06
+ },
+ {
+  "file": "fle_1040_0414.wav",
+  "speaker": "1040",
+  "src": "u01033.wav",
+  "dur": 1.037875,
+  "start_s": 0.41
+ },
+ {
+  "file": "fle_1041_0415.wav",
+  "speaker": "1041",
+  "src": "u02624.wav",
+  "dur": 1.0495625,
+  "start_s": 0.56
+ },
+ {
+  "file": "fle_1042_0416.wav",
+  "speaker": "1042",
+  "src": "u01534.wav",
+  "dur": 0.5270625,
+  "start_s": 0.33
+ },
+ {
+  "file": "fle_1043_0417.wav",
+  "speaker": "1043",
+  "src": "u00050.wav",
+  "dur": 0.7509375,
+  "start_s": 0.87
+ },
+ {
+  "file": "fle_1044_0418.wav",
+  "speaker": "1044",
+  "src": "u01968.wav",
+  "dur": 1.0991875,
+  "start_s": 0.95
+ },
+ {
+  "file": "fle_1045_0419.wav",
+  "speaker": "1045",
+  "src": "u01120.wav",
+  "dur": 1.038375,
+  "start_s": 0.57
+ },
+ {
+  "file": "fle_1046_0420.wav",
+  "speaker": "1046",
+  "src": "u01417.wav",
+  "dur": 0.580625,
+  "start_s": 1.94
+ },
+ {
+  "file": "fle_1048_0421.wav",
+  "speaker": "1048",
+  "src": "u00622.wav",
+  "dur": 0.7874375,
+  "start_s": 0.98
+ },
+ {
+  "file": "fle_1049_0422.wav",
+  "speaker": "1049",
+  "src": "u01641.wav",
+  "dur": 0.6050625,
+  "start_s": 1.86
+ },
+ {
+  "file": "fle_1050_0423.wav",
+  "speaker": "1050",
+  "src": "u02086.wav",
+  "dur": 1.140625,
+  "start_s": 0.96
+ },
+ {
+  "file": "fle_1051_0424.wav",
+  "speaker": "1051",
+  "src": "u00362.wav",
+  "dur": 0.5336875,
+  "start_s": 0.21
+ },
+ {
+  "file": "fle_1052_0425.wav",
+  "speaker": "1052",
+  "src": "u02140.wav",
+  "dur": 0.8800625,
+  "start_s": 0.67
+ },
+ {
+  "file": "fle_1053_0426.wav",
+  "speaker": "1053",
+  "src": "u02983.wav",
+  "dur": 0.490875,
+  "start_s": 0.41
+ },
+ {
+  "file": "fle_1054_0427.wav",
+  "speaker": "1054",
+  "src": "u00296.wav",
+  "dur": 0.6535,
+  "start_s": 1.5
+ },
+ {
+  "file": "fle_1055_0428.wav",
+  "speaker": "1055",
+  "src": "u00690.wav",
+  "dur": 0.5796875,
+  "start_s": 3.08
+ },
+ {
+  "file": "fle_1056_0429.wav",
+  "speaker": "1056",
+  "src": "u00210.wav",
+  "dur": 0.944875,
+  "start_s": 0.3
+ },
+ {
+  "file": "fle_1057_0430.wav",
+  "speaker": "1057",
+  "src": "u02592.wav",
+  "dur": 0.614125,
+  "start_s": 1.26
+ },
+ {
+  "file": "fle_1058_0431.wav",
+  "speaker": "1058",
+  "src": "u00052.wav",
+  "dur": 0.904875,
+  "start_s": 0.82
+ },
+ {
+  "file": "fle_1059_0432.wav",
+  "speaker": "1059",
+  "src": "u01312.wav",
+  "dur": 0.5564375,
+  "start_s": 0.42
+ },
+ {
+  "file": "fle_1062_0433.wav",
+  "speaker": "1062",
+  "src": "u02203.wav",
+  "dur": 1.1775,
+  "start_s": 1.17
+ },
+ {
+  "file": "fle_1063_0434.wav",
+  "speaker": "1063",
+  "src": "u00145.wav",
+  "dur": 0.525125,
+  "start_s": 0.54
+ },
+ {
+  "file": "fle_1064_0435.wav",
+  "speaker": "1064",
+  "src": "u00060.wav",
+  "dur": 0.741375,
+  "start_s": 0.53
+ },
+ {
+  "file": "fle_1065_0436.wav",
+  "speaker": "1065",
+  "src": "u02675.wav",
+  "dur": 0.6003125,
+  "start_s": 0.98
+ },
+ {
+  "file": "fle_1066_0437.wav",
+  "speaker": "1066",
+  "src": "u00717.wav",
+  "dur": 0.5936875,
+  "start_s": 0.65
+ },
+ {
+  "file": "fle_1067_0438.wav",
+  "speaker": "1067",
+  "src": "u01340.wav",
+  "dur": 0.661875,
+  "start_s": 0.48
+ },
+ {
+  "file": "fle_1068_0439.wav",
+  "speaker": "1068",
+  "src": "u02603.wav",
+  "dur": 0.9049375,
+  "start_s": 1.32
+ },
+ {
+  "file": "fle_1070_0440.wav",
+  "speaker": "1070",
+  "src": "u00337.wav",
+  "dur": 0.7788125,
+  "start_s": 0.44
+ },
+ {
+  "file": "fle_1071_0441.wav",
+  "speaker": "1071",
+  "src": "u00816.wav",
+  "dur": 0.8366875,
+  "start_s": 1.0
+ },
+ {
+  "file": "fle_1072_0442.wav",
+  "speaker": "1072",
+  "src": "u00318.wav",
+  "dur": 0.4209375,
+  "start_s": 0.72
+ },
+ {
+  "file": "fle_1074_0443.wav",
+  "speaker": "1074",
+  "src": "u00271.wav",
+  "dur": 0.9055625,
+  "start_s": 0.88
+ },
+ {
+  "file": "fle_1075_0444.wav",
+  "speaker": "1075",
+  "src": "u00797.wav",
+  "dur": 0.7741875,
+  "start_s": 0.48
+ },
+ {
+  "file": "fle_1076_0445.wav",
+  "speaker": "1076",
+  "src": "u02473.wav",
+  "dur": 1.088125,
+  "start_s": 1.38
+ },
+ {
+  "file": "fle_1077_0446.wav",
+  "speaker": "1077",
+  "src": "u00901.wav",
+  "dur": 0.8193125,
+  "start_s": 1.5
+ },
+ {
+  "file": "fle_1078_0447.wav",
+  "speaker": "1078",
+  "src": "u01001.wav",
+  "dur": 1.0109375,
+  "start_s": 0.42
+ },
+ {
+  "file": "fle_1079_0448.wav",
+  "speaker": "1079",
+  "src": "u02200.wav",
+  "dur": 0.7509375,
+  "start_s": 0.27
+ },
+ {
+  "file": "fle_1080_0449.wav",
+  "speaker": "1080",
+  "src": "u01029.wav",
+  "dur": 0.5808125,
+  "start_s": 0.86
+ },
+ {
+  "file": "fle_1081_0450.wav",
+  "speaker": "1081",
+  "src": "u01686.wav",
+  "dur": 1.143125,
+  "start_s": 0.76
+ },
+ {
+  "file": "fle_1083_0452.wav",
+  "speaker": "1083",
+  "src": "u00268.wav",
+  "dur": 1.079375,
+  "start_s": 1.21
+ },
+ {
+  "file": "fle_1084_0453.wav",
+  "speaker": "1084",
+  "src": "u00140.wav",
+  "dur": 0.6764375,
+  "start_s": 0.44
+ },
+ {
+  "file": "fle_1085_0454.wav",
+  "speaker": "1085",
+  "src": "u01697.wav",
+  "dur": 0.5295625,
+  "start_s": 1.04
+ },
+ {
+  "file": "fle_1086_0455.wav",
+  "speaker": "1086",
+  "src": "u01867.wav",
+  "dur": 0.4993125,
+  "start_s": 0.4
+ },
+ {
+  "file": "fle_1087_0456.wav",
+  "speaker": "1087",
+  "src": "u00147.wav",
+  "dur": 1.06175,
+  "start_s": 0.96
+ },
+ {
+  "file": "fle_1089_0457.wav",
+  "speaker": "1089",
+  "src": "u00918.wav",
+  "dur": 0.600625,
+  "start_s": 0.4
+ },
+ {
+  "file": "fle_109_0458.wav",
+  "speaker": "109",
+  "src": "u00963.wav",
+  "dur": 0.7784375,
+  "start_s": 0.35
+ },
+ {
+  "file": "fle_1090_0459.wav",
+  "speaker": "1090",
+  "src": "u02574.wav",
+  "dur": 0.66375,
+  "start_s": 0.5
+ },
+ {
+  "file": "fle_1091_0460.wav",
+  "speaker": "1091",
+  "src": "u03110.wav",
+  "dur": 0.8774375,
+  "start_s": 1.77
+ },
+ {
+  "file": "fle_1092_0461.wav",
+  "speaker": "1092",
+  "src": "u00975.wav",
+  "dur": 0.61375,
+  "start_s": 0.6
+ },
+ {
+  "file": "fle_1093_0462.wav",
+  "speaker": "1093",
+  "src": "u00472.wav",
+  "dur": 0.661375,
+  "start_s": 0.88
+ },
+ {
+  "file": "fle_1094_0463.wav",
+  "speaker": "1094",
+  "src": "u00650.wav",
+  "dur": 0.687375,
+  "start_s": 1.16
+ },
+ {
+  "file": "fle_1095_0464.wav",
+  "speaker": "1095",
+  "src": "u01568.wav",
+  "dur": 1.123875,
+  "start_s": 1.34
+ },
+ {
+  "file": "fle_1096_0465.wav",
+  "speaker": "1096",
+  "src": "u00093.wav",
+  "dur": 0.7884375,
+  "start_s": 0.78
+ },
+ {
+  "file": "fle_1097_0466.wav",
+  "speaker": "1097",
+  "src": "u01221.wav",
+  "dur": 0.667,
+  "start_s": 0.89
+ },
+ {
+  "file": "fle_1098_0467.wav",
+  "speaker": "1098",
+  "src": "u01123.wav",
+  "dur": 0.6489375,
+  "start_s": 1.29
+ },
+ {
+  "file": "fle_1099_0468.wav",
+  "speaker": "1099",
+  "src": "u01853.wav",
+  "dur": 0.7509375,
+  "start_s": 0.48
+ },
+ {
+  "file": "fle_110_0469.wav",
+  "speaker": "110",
+  "src": "u00288.wav",
+  "dur": 0.966625,
+  "start_s": 0.67
+ },
+ {
+  "file": "fle_1100_0470.wav",
+  "speaker": "1100",
+  "src": "u01797.wav",
+  "dur": 0.7415,
+  "start_s": 2.13
+ },
+ {
+  "file": "fle_1101_0471.wav",
+  "speaker": "1101",
+  "src": "u01628.wav",
+  "dur": 0.7878125,
+  "start_s": 0.57
+ },
+ {
+  "file": "fle_1102_0472.wav",
+  "speaker": "1102",
+  "src": "u02687.wav",
+  "dur": 0.5798125,
+  "start_s": 1.24
+ },
+ {
+  "file": "fle_1103_0473.wav",
+  "speaker": "1103",
+  "src": "u01302.wav",
+  "dur": 0.5855,
+  "start_s": 0.53
+ },
+ {
+  "file": "fle_1104_0474.wav",
+  "speaker": "1104",
+  "src": "u03145.wav",
+  "dur": 1.097875,
+  "start_s": 0.8
+ },
+ {
+  "file": "fle_1105_0475.wav",
+  "speaker": "1105",
+  "src": "u03062.wav",
+  "dur": 0.632125,
+  "start_s": 0.75
+ },
+ {
+  "file": "fle_1106_0476.wav",
+  "speaker": "1106",
+  "src": "u01325.wav",
+  "dur": 0.5799375,
+  "start_s": 1.16
+ },
+ {
+  "file": "fle_1107_0477.wav",
+  "speaker": "1107",
+  "src": "u00463.wav",
+  "dur": 0.58075,
+  "start_s": 0.77
+ },
+ {
+  "file": "fle_1109_0478.wav",
+  "speaker": "1109",
+  "src": "u01910.wav",
+  "dur": 0.57975,
+  "start_s": 0.35
+ },
+ {
+  "file": "fle_1110_0479.wav",
+  "speaker": "1110",
+  "src": "u01166.wav",
+  "dur": 0.5796875,
+  "start_s": 1.48
+ },
+ {
+  "file": "fle_1111_0480.wav",
+  "speaker": "1111",
+  "src": "u00046.wav",
+  "dur": 0.6014375,
+  "start_s": 1.03
+ },
+ {
+  "file": "fle_1112_0481.wav",
+  "speaker": "1112",
+  "src": "u01294.wav",
+  "dur": 0.7891875,
+  "start_s": 0.43
+ },
+ {
+  "file": "fle_1113_0482.wav",
+  "speaker": "1113",
+  "src": "u02585.wav",
+  "dur": 0.516375,
+  "start_s": 0.73
+ },
+ {
+  "file": "fle_1114_0483.wav",
+  "speaker": "1114",
+  "src": "u00645.wav",
+  "dur": 0.53,
+  "start_s": 0.63
+ },
+ {
+  "file": "fle_1115_0484.wav",
+  "speaker": "1115",
+  "src": "u01828.wav",
+  "dur": 0.8805625,
+  "start_s": 0.59
+ },
+ {
+  "file": "fle_1116_0485.wav",
+  "speaker": "1116",
+  "src": "u01822.wav",
+  "dur": 0.78825,
+  "start_s": 0.37
+ },
+ {
+  "file": "fle_1117_0486.wav",
+  "speaker": "1117",
+  "src": "u01160.wav",
+  "dur": 0.8415,
+  "start_s": 0.88
+ },
+ {
+  "file": "fle_1119_0487.wav",
+  "speaker": "1119",
+  "src": "u02239.wav",
+  "dur": 0.6641875,
+  "start_s": 1.32
+ },
+ {
+  "file": "fle_1121_0488.wav",
+  "speaker": "1121",
+  "src": "u01234.wav",
+  "dur": 0.9048125,
+  "start_s": 2.3
+ },
+ {
+  "file": "fle_1122_0489.wav",
+  "speaker": "1122",
+  "src": "u00163.wav",
+  "dur": 1.1406875,
+  "start_s": 0.49
+ },
+ {
+  "file": "fle_1123_0490.wav",
+  "speaker": "1123",
+  "src": "u01645.wav",
+  "dur": 0.8804375,
+  "start_s": 0.67
+ },
+ {
+  "file": "fle_1124_0491.wav",
+  "speaker": "1124",
+  "src": "u00542.wav",
+  "dur": 0.850375,
+  "start_s": 1.19
+ },
+ {
+  "file": "fle_1125_0492.wav",
+  "speaker": "1125",
+  "src": "u00007.wav",
+  "dur": 0.48475,
+  "start_s": 0.62
+ },
+ {
+  "file": "fle_1127_0493.wav",
+  "speaker": "1127",
+  "src": "u00904.wav",
+  "dur": 0.9446875,
+  "start_s": 0.77
+ },
+ {
+  "file": "fle_1128_0494.wav",
+  "speaker": "1128",
+  "src": "u02096.wav",
+  "dur": 1.010125,
+  "start_s": 1.35
+ },
+ {
+  "file": "fle_1129_0495.wav",
+  "speaker": "1129",
+  "src": "u00509.wav",
+  "dur": 0.9456875,
+  "start_s": 0.89
+ },
+ {
+  "file": "fle_1130_0496.wav",
+  "speaker": "1130",
+  "src": "u00104.wav",
+  "dur": 0.7785,
+  "start_s": 1.27
+ },
+ {
+  "file": "fle_1131_0497.wav",
+  "speaker": "1131",
+  "src": "u00198.wav",
+  "dur": 0.6458125,
+  "start_s": 0.72
+ },
+ {
+  "file": "fle_1132_0498.wav",
+  "speaker": "1132",
+  "src": "u00981.wav",
+  "dur": 0.603,
+  "start_s": 0.83
+ },
+ {
+  "file": "fle_1133_0499.wav",
+  "speaker": "1133",
+  "src": "u01412.wav",
+  "dur": 0.4993125,
+  "start_s": 1.1
+ }
+]

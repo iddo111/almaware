@@ -1,0 +1,12 @@
+{
+  "id": "coder-eran4", "order": 20,
+  "title_he": "קודר", "title_en": "CODER",
+  "subtitle_he": "qwen-coder-dgx4 על ערן4",
+  "box_hint": "eran4",
+  "want": ["eran4/ollama-qwen-coder", "eran4/qwen-coder-ui"],
+  "concede": ["eran4/winston-forever-v2"],
+  "note_he": "51 GB. הדלת בטיילנט: dgx4:8447. כשהוא חם — מיידי; כשהוא קר — כמה דקות.",
+  "honesty": "המנגנון נמדד (ollama /api/ps, 50,917 MiB), אבל MATZAV מעולם לא הריץ אותו בעצמו.",
+  "demonstrated": {"status": "planned", "evidence": "Mechanism measured (ollama /api/ps showed 50,917 MiB warm at 06:48 and empty at 07:29). MATZAV has never driven it. Refuses to run."},
+  "runnable": false
+}

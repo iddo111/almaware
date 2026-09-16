@@ -1,0 +1,20 @@
+{
+  "theme": "light",
+  "font_size": 14,
+  "temperature": 0.3,
+  "max_tokens": 8000,
+  "stream": true,
+  "rag_recall": true,
+  "rag_standard": true,
+  "rag_project": true,
+  "rag_ramchat": true,
+  "rag_quorum": true,
+  "rag_brain2": true,
+  "recall_limit": 4,
+  "door": "https://<tailnet-host>:8450/v1/chat/completions",
+  "model": "qwen-coder-dgx4:latest",
+  "sidebar_width": 299,
+  "send_on_enter": true,
+  "room_visible": true,
+  "room_width": 280
+}

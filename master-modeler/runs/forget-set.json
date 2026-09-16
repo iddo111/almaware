@@ -1,0 +1,54 @@
+{
+  "built": "2026-09-05T16:14:29",
+  "sets": [
+    {
+      "corpus": "tts-vault",
+      "verdict": "REJECT",
+      "reasons": [
+        "PROVENANCE: the corpus's own record names a generator ('mms-tts' -- names facebook/mms-tts (a TTS model))",
+        "CONFOUNDED: ka/qa separate at 100.0%, but this corpus's own time-only control already reaches 96.2% -- early clips of ONE unit can be told from late clips of the SAME unit. The separation is real; nothing here shows it is phonetic. Re-record interleaved to decide it.",
+        "CONFOUNDED: aa/ah separate at 100.0%, but this corpus's own time-only control already reaches 96.2% -- early clips of ONE unit can be told from late clips of the SAME unit. The separation is real; nothing here shows it is phonetic. Re-record interleaved to decide it.",
+        "STARVED: median unit holds 6 clips but only 1.49 independent examples (within-unit cosine 0.5996, corpus floor -0.023, excess 0.6086). Below 3 you cannot even estimate what the unit's variation IS.",
+        "LEAKAGE: a random split scores 25.0 points higher than an honest one -- that much of any number reported on this corpus was session memorisation"
+      ],
+      "root": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault",
+      "n_files": 132,
+      "files": "(re-run with --files)",
+      "derived": [
+        {
+          "path": "D:\\CLAUDE\\eran-brain\\state\\metrics.jsonl",
+          "by": "eran-brain/proof/measure.py",
+          "note": "every reported heldout number was computed on this vault",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "corpus": "tts-food-train",
+      "verdict": "REJECT",
+      "reasons": [
+        "CONFOUNDED: ta/tha separate at 91.7%, but this corpus's own time-only control already reaches 75.5% -- early clips of ONE unit can be told from late clips of the SAME unit. The separation is real; nothing here shows it is phonetic. Re-record interleaved to decide it.",
+        "ARTEFACT: ka/qa are the same sound (kaf vs qof -- both /k/ in modern Hebrew) yet separate at 100.0% (n=36) -- above the measured drift floor 0.755 (p=4.1e-05) -- a nuisance channel, not phonetics",
+        "ARTEFACT: aa/ah are the same sound (alef vs ayin -- both a bare /a/ in modern Hebrew) yet separate at 100.0% (n=36) -- above the measured drift floor 0.755 (p=4.1e-05) -- a nuisance channel, not phonetics",
+        "STARVED: median unit holds 18 clips but only 1.91 independent examples (within-unit cosine 0.4858, corpus floor -0.0152, excess 0.4936). Below 3 you cannot even estimate what the unit's variation IS."
+      ],
+      "root": "D:\\CLAUDE\\eran-brain\\food\\train",
+      "n_files": 396,
+      "files": "(re-run with --files)",
+      "derived": [
+        {
+          "path": "D:\\CLAUDE\\eran-brain\\food\\words",
+          "by": "eran-brain/proof/make_words.py",
+          "note": "words are concatenated FROM train clips -- rejecting train rejects words",
+          "exists": true
+        },
+        {
+          "path": "D:\\CLAUDE\\eran-brain\\state\\curriculum.json",
+          "by": "eran-brain/body/school.py",
+          "note": "the mastery gate (and '13 syllables mastered') is a DEV split of train",
+          "exists": true
+        }
+      ]
+    }
+  ]
+}

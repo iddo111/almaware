@@ -1,0 +1,368 @@
+{
+ "chance_pct": 4.55,
+ "fixed": {
+  "R0 nearest single CLIP  (THE OLD RULER)": {
+   "loto_mean_pct": 78.28,
+   "loto_sd_pct": 5.3,
+   "per_take": {
+    "take0": 80.3,
+    "take1": 75.76,
+    "take2": 75.76,
+    "take3": 81.82,
+    "take4": 69.7,
+    "take5": 86.36
+   },
+   "syllables": {
+    "ba": {
+     "recall_pct": 61.1,
+     "n": 18
+    },
+    "ma": {
+     "recall_pct": 94.4,
+     "n": 18
+    },
+    "pa": {
+     "recall_pct": 94.4,
+     "n": 18
+    },
+    "ah": {
+     "recall_pct": 88.9,
+     "n": 18
+    },
+    "aa": {
+     "recall_pct": 88.9,
+     "n": 18
+    },
+    "ba_called_ma": 0,
+    "ma_called_ba": 0
+   }
+  },
+  "R1 mean distance to clips": {
+   "loto_mean_pct": 72.98,
+   "loto_sd_pct": 4.9,
+   "per_take": {
+    "take0": 80.3,
+    "take1": 74.24,
+    "take2": 63.64,
+    "take3": 74.24,
+    "take4": 72.73,
+    "take5": 72.73
+   },
+   "syllables": {
+    "ba": {
+     "recall_pct": 83.3,
+     "n": 18
+    },
+    "ma": {
+     "recall_pct": 94.4,
+     "n": 18
+    },
+    "pa": {
+     "recall_pct": 94.4,
+     "n": 18
+    },
+    "ah": {
+     "recall_pct": 94.4,
+     "n": 18
+    },
+    "aa": {
+     "recall_pct": 38.9,
+     "n": 18
+    },
+    "ba_called_ma": 0,
+    "ma_called_ba": 0
+   }
+  },
+  "R2 CENTROID of the syllable": {
+   "loto_mean_pct": 80.81,
+   "loto_sd_pct": 8.38,
+   "per_take": {
+    "take0": 92.42,
+    "take1": 87.88,
+    "take2": 69.7,
+    "take3": 78.79,
+    "take4": 71.21,
+    "take5": 84.85
+   },
+   "syllables": {
+    "ba": {
+     "recall_pct": 83.3,
+     "n": 18
+    },
+    "ma": {
+     "recall_pct": 88.9,
+     "n": 18
+    },
+    "pa": {
+     "recall_pct": 94.4,
+     "n": 18
+    },
+    "ah": {
+     "recall_pct": 77.8,
+     "n": 18
+    },
+    "aa": {
+     "recall_pct": 77.8,
+     "n": 18
+    },
+    "ba_called_ma": 0,
+    "ma_called_ba": 0
+   }
+  },
+  "R3 centroid + pooled diag spread": {
+   "loto_mean_pct": 79.29,
+   "loto_sd_pct": 8.14,
+   "per_take": {
+    "take0": 87.88,
+    "take1": 84.85,
+    "take2": 65.15,
+    "take3": 78.79,
+    "take4": 72.73,
+    "take5": 86.36
+   },
+   "syllables": {
+    "ba": {
+     "recall_pct": 83.3,
+     "n": 18
+    },
+    "ma": {
+     "recall_pct": 88.9,
+     "n": 18
+    },
+    "pa": {
+     "recall_pct": 94.4,
+     "n": 18
+    },
+    "ah": {
+     "recall_pct": 83.3,
+     "n": 18
+    },
+    "aa": {
+     "recall_pct": 66.7,
+     "n": 18
+    },
+    "ba_called_ma": 0,
+    "ma_called_ba": 0
+   }
+  },
+  "R4 centroid + per-class spread (ear3 today)": {
+   "loto_mean_pct": 68.69,
+   "loto_sd_pct": 6.29,
+   "per_take": {
+    "take0": 69.7,
+    "take1": 78.79,
+    "take2": 57.58,
+    "take3": 68.18,
+    "take4": 71.21,
+    "take5": 66.67
+   },
+   "syllables": {
+    "ba": {
+     "recall_pct": 27.8,
+     "n": 18
+    },
+    "ma": {
+     "recall_pct": 83.3,
+     "n": 18
+    },
+    "pa": {
+     "recall_pct": 66.7,
+     "n": 18
+    },
+    "ah": {
+     "recall_pct": 38.9,
+     "n": 18
+    },
+    "aa": {
+     "recall_pct": 72.2,
+     "n": 18
+    },
+    "ba_called_ma": 0,
+    "ma_called_ba": 0
+   }
+  }
+ },
+ "nested": {
+  "R5 WCCN whiten + centroid": {
+   "loto_mean_pct": 86.62,
+   "loto_sd_pct": 6.69,
+   "chosen_per_fold": [
+    0.35,
+    0.75,
+    0.75,
+    0.2,
+    0.35,
+    0.75
+   ],
+   "per_take": {
+    "take0": {
+     "acc_pct": 90.91,
+     "chosen": 0.35
+    },
+    "take1": {
+     "acc_pct": 92.42,
+     "chosen": 0.75
+    },
+    "take2": {
+     "acc_pct": 77.27,
+     "chosen": 0.75
+    },
+    "take3": {
+     "acc_pct": 89.39,
+     "chosen": 0.2
+    },
+    "take4": {
+     "acc_pct": 77.27,
+     "chosen": 0.35
+    },
+    "take5": {
+     "acc_pct": 92.42,
+     "chosen": 0.75
+    }
+   },
+   "grid": [
+    0.02,
+    0.05,
+    0.1,
+    0.2,
+    0.35,
+    0.5,
+    0.75,
+    0.9,
+    0.97
+   ],
+   "syllables": {
+    "ba": {
+     "recall_pct": 83.3,
+     "n": 18
+    },
+    "ma": {
+     "recall_pct": 100.0,
+     "n": 18
+    },
+    "pa": {
+     "recall_pct": 100.0,
+     "n": 18
+    },
+    "ah": {
+     "recall_pct": 83.3,
+     "n": 18
+    },
+    "aa": {
+     "recall_pct": 66.7,
+     "n": 18
+    },
+    "ba_called_ma": 0,
+    "ma_called_ba": 0
+   }
+  },
+  "R6 nuisance projection + centroid": {
+   "loto_mean_pct": 80.3,
+   "loto_sd_pct": 6.25,
+   "chosen_per_fold": [
+    32,
+    4,
+    4,
+    1,
+    16,
+    1
+   ],
+   "per_take": {
+    "take0": {
+     "acc_pct": 78.79,
+     "chosen": 32
+    },
+    "take1": {
+     "acc_pct": 87.88,
+     "chosen": 4
+    },
+    "take2": {
+     "acc_pct": 69.7,
+     "chosen": 4
+    },
+    "take3": {
+     "acc_pct": 84.85,
+     "chosen": 1
+    },
+    "take4": {
+     "acc_pct": 75.76,
+     "chosen": 16
+    },
+    "take5": {
+     "acc_pct": 84.85,
+     "chosen": 1
+    }
+   },
+   "grid": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    8,
+    12,
+    16,
+    24,
+    32
+   ],
+   "syllables": {
+    "ba": {
+     "recall_pct": 66.7,
+     "n": 18
+    },
+    "ma": {
+     "recall_pct": 88.9,
+     "n": 18
+    },
+    "pa": {
+     "recall_pct": 94.4,
+     "n": 18
+    },
+    "ah": {
+     "recall_pct": 88.9,
+     "n": 18
+    },
+    "aa": {
+     "recall_pct": 72.2,
+     "n": 18
+    },
+    "ba_called_ma": 0,
+    "ma_called_ba": 0
+   }
+  }
+ },
+ "within_between_variants_raw": {
+  "within, same syllable, ALL pairs   (= the recorded 0.575)": 0.5735923706340966,
+  "within, same syllable, DIFFERENT take": 0.6020472125208131,
+  "within, same syllable, SAME take": 0.3601810564837225,
+  "between, different syllable, ALL pairs": 0.9028222616733108,
+  "between, different syllable, DIFFERENT take": 0.9027703703953142,
+  "between, different syllable, SAME take   (= the recorded 0.881?)": 0.9030817180632941,
+  "between, CENTROID to CENTROID": 0.6813936576763703
+ },
+ "within_between_nuisance_k4_descriptive": {
+  "within_same_syllable_diff_take": 0.4817529639718932,
+  "within_same_syllable_same_take": 0.2660903365846718,
+  "between_diff_syllable": 0.7148803784413698,
+  "signal_between_minus_within": 0.23312741446947655,
+  "ratio_within_over_between": 0.6738931134496143,
+  "dprime": 1.6911203390393426
+ },
+ "within_between_nuisance_k8_descriptive": {
+  "within_same_syllable_diff_take": 0.4315902414546312,
+  "within_same_syllable_same_take": 0.25314867922457784,
+  "between_diff_syllable": 0.6307850240926756,
+  "signal_between_minus_within": 0.19919478263804435,
+  "ratio_within_over_between": 0.6842113001579783,
+  "dprime": 1.8617559111194204
+ },
+ "within_between_nuisance_k16_descriptive": {
+  "within_same_syllable_diff_take": 0.36446312560003286,
+  "within_same_syllable_same_take": 0.2365141065610437,
+  "between_diff_syllable": 0.5327932416558943,
+  "signal_between_minus_within": 0.1683301160558614,
+  "ratio_within_over_between": 0.684061089940443,
+  "dprime": 2.018741276041828
+ }
+}

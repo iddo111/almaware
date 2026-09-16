@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://btelaviv1933sh"]
+
+[ext_resource type="Script" path="res://scripts/tel_aviv_1933.gd" id="1_city"]
+[ext_resource type="Script" path="res://scripts/shot.gd" id="2_shot"]
+
+[sub_resource type="Environment" id="Environment_dummy"]
+
+[node name="Shot" type="Node3D"]
+
+[node name="City" type="Node3D" parent="."]
+script = ExtResource("1_city")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.7071, -0.28, 0.6485, 0, 0.9178, 0.3969, -0.7071, -0.28, 0.6485, 62, 18, 62)
+current = true
+far = 2000.0
+fov = 65.0
+
+[node name="Shooter" type="Node" parent="."]
+script = ExtResource("2_shot")
+out_path = "user://ta1933.png"

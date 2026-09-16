@@ -1,0 +1,157 @@
+{
+  "scan_date": "2026-08-10 04:53:31",
+  "findings": [
+    {
+      "path": "C:\\Users\\iddo1\\Downloads\\lebron-ml-technical-report.pdf",
+      "size_mb": 0.36,
+      "what": "Technical report on LeBron (ML framework or model) - 4.68 MB large version exists also",
+      "date": "varies",
+      "status": "unknown",
+      "name": "lebron-ml-technical-report",
+      "source": "External research / ChatGPT export",
+      "run_url": "PDF viewer"
+    },
+    {
+      "path": "C:\\Users\\iddo1\\Downloads\\LoRa_Bird_Tracker_Guide.pdf",
+      "size_mb": 0.04,
+      "what": "Guide for LoRa-based bird tracking system - hardware + protocol documentation",
+      "date": "unknown",
+      "status": "reference",
+      "name": "LoRa_Bird_Tracker_Guide",
+      "source": "External (possibly Perplexity research)",
+      "run_url": "PDF viewer"
+    },
+    {
+      "path": "C:\\Users\\iddo1\\Downloads\\AI_Manchurian_Candidate_Brief.pdf",
+      "size_mb": 0.04,
+      "what": "Technical brief on AI system robustness / threat model analysis",
+      "date": "2026-08-09",
+      "status": "current",
+      "name": "AI_Manchurian_Candidate_Brief",
+      "source": "ChatGPT or Perplexity (PDF export)",
+      "run_url": "Open PDF with viewer or read via PDF skill"
+    },
+    {
+      "path": "C:\\Users\\iddo1\\Downloads\\manchurian-candidate.zip",
+      "size_mb": 0.1,
+      "what": "ZIP archive - likely source code or model for AI robustness / threat mitigation project",
+      "date": "2026-08-09",
+      "status": "unknown",
+      "name": "manchurian-candidate",
+      "source": "ChatGPT or Perplexity (generated code export)",
+      "run_url": "Extract: unzip manchurian-candidate.zip"
+    },
+    {
+      "path": "C:\\Users\\iddo1\\Downloads\\eranim-deploy-pack-v3.tar.gz",
+      "size_mb": 250,
+      "what": "Tar.gz archive - Eran animation deployment package v3 (likely CUDA/ML model files)",
+      "date": "2026-08-09",
+      "status": "stale",
+      "name": "eranim-deploy-pack-v3",
+      "source": "Internal (Eran project)",
+      "run_url": "Extract: tar -xzf eranim-deploy-pack-v3.tar.gz"
+    },
+    {
+      "path": "C:\\Users\\iddo1\\Downloads\\eranim-deploy-pack-v4.tar.gz",
+      "size_mb": 260,
+      "what": "Tar.gz archive - Eran animation deployment package v4 (latest version)",
+      "date": "2026-08-09",
+      "status": "working",
+      "name": "eranim-deploy-pack-v4",
+      "source": "Internal (Eran project)",
+      "run_url": "Extract: tar -xzf eranim-deploy-pack-v4.tar.gz"
+    },
+    {
+      "size_kb": 8,
+      "path": "D:\\CLAUDE\\alma-mic\\qwen_a70_output.md",
+      "what": "Qwen3-480B generated code: A70 audio relay system (PC WASAPI loopback + UDP + phone receive + latency gate)",
+      "date": "2026-08-09",
+      "status": "working",
+      "name": "qwen_a70_output",
+      "source": "Qwen3-480B (orchestrated by claude-cli-FABLE)",
+      "run_url": "Read locally; use files: a70_relay.py (PC side), a70_receive.py (phone side), a70_latency.py (xcorr acceptance)"
+    },
+    {
+      "size_kb": 17,
+      "path": "C:\\Users\\iddo1\\Downloads\\HANDOUT_CLAUDE_connect_perplexity.md",
+      "what": "Technical handout for connecting Claude Desktop to Iddo Harness via Perplexity Computer (MCP adapter, git bridge, RAMCHAT integration)",
+      "date": "2026-08-08",
+      "status": "current",
+      "name": "HANDOUT_CLAUDE_connect_perplexity",
+      "source": "Perplexity Computer",
+      "run_url": "Read locally: type or cat the file"
+    },
+    {
+      "size_kb": 4,
+      "path": "C:\\Users\\iddo1\\Downloads\\Claude--PR5-Closeout-Handout.md",
+      "what": "PR #5 closeout instructions for Claude - MCP transport adapter, acceptance gates, signing/verification",
+      "date": "2026-08-06",
+      "status": "current",
+      "name": "Claude--PR5-Closeout-Handout",
+      "source": "Perplexity Computer",
+      "run_url": "Read locally"
+    },
+    {
+      "size_kb": 4,
+      "path": "C:\\Users\\iddo1\\Downloads\\Antigravity-Handout-v2.md",
+      "what": "Command handout for Antigravity/Gemini - Almaware Protocol v1.0 (AMP) + Iddo Harness standard",
+      "date": "2026-07-23",
+      "status": "current",
+      "name": "Antigravity-Handout-v2",
+      "source": "Perplexity Computer (Hebrew + English)",
+      "run_url": "Read locally"
+    },
+    {
+      "size_kb": 4,
+      "path": "C:\\Users\\iddo1\\Downloads\\ChatGPT-Handout-v2.md",
+      "what": "Command handout for ChatGPT - AMP protocol and task submission via iddo-harness-bridge",
+      "date": "2026-07-23",
+      "status": "current",
+      "name": "ChatGPT-Handout-v2",
+      "source": "Perplexity Computer (Hebrew)",
+      "run_url": "Read locally"
+    },
+    {
+      "size_kb": 4,
+      "path": "C:\\Users\\iddo1\\Downloads\\Handout-Gemini-v3.1--Subordinate.md",
+      "what": "Gemini worker + Executor handout - subordinate agent configuration for Iddo Harness",
+      "date": "2026-07-23",
+      "status": "current",
+      "name": "Handout-Gemini-v3.1--Subordinate",
+      "source": "Perplexity Computer",
+      "run_url": "Read locally"
+    },
+    {
+      "size_kb": 4,
+      "path": "C:\\Users\\iddo1\\Downloads\\Handout-ChatGPT-v3.1--Subordinate.md",
+      "what": "ChatGPT worker + Executor handout - subordinate agent configuration for Iddo Harness",
+      "date": "2026-07-23",
+      "status": "current",
+      "name": "Handout-ChatGPT-v3.1--Subordinate",
+      "source": "Perplexity Computer",
+      "run_url": "Read locally"
+    },
+    {
+      "size_kb": 2,
+      "path": "C:\\Users\\iddo1\\Downloads\\DUAL_CLUSTER_PLAN.md",
+      "what": "Plan for dual-cluster deployment - ChatGPT/Perplexity coordination strategy",
+      "date": "2026-07-23",
+      "status": "current",
+      "name": "DUAL_CLUSTER_PLAN",
+      "source": "Perplexity Computer (Hebrew)",
+      "run_url": "Read locally"
+    },
+    {
+      "path": "C:\\Users\\iddo1\\Downloads\\quorum.zip",
+      "size_mb": 0.03,
+      "what": "ZIP archive - Quorum project (task/project management, coordination)",
+      "date": "2026-07-20",
+      "status": "unknown",
+      "name": "quorum",
+      "source": "Perplexity Computer (likely project export)",
+      "run_url": "Extract: unzip quorum.zip"
+    }
+  ],
+  "summary": "Perplexity/ChatGPT work products inventory on Iddo PC",
+  "scanner": "claude-cli inventory-harvester"
+}

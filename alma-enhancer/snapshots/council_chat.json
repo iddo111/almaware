@@ -1,0 +1,13 @@
+{
+ "section": "COUNCIL",
+ "tag": "Local\\ASCII_CHAT_COUNCIL_10MB",
+ "size": 10485760,
+ "kind": "text",
+ "header_text": "ALMA-ENHANCER v1 :: COUNCIL :: council chat, plain [HH:MM:SS] PARTY: msg lines (ram-council compatible) :: init 2026-07-07T02:39:34\n",
+ "head": 1062,
+ "used_bytes": 38,
+ "saved_at": "2026-07-07T02:40:49",
+ "lines": [
+  "[02:39:50] CLOD: enhancer core online"
+ ]
+}

@@ -1,0 +1,31 @@
+{
+  "as_of": "2026-07-21 14:53 IDT",
+  "source": "fresh direct SSH, local HTTP/generation checks, plus reports/ALL-PROJECTS-STATUS-20260720-1555.md",
+  "inventory_count": 973,
+  "active_tracks": 4,
+  "projects": [
+    {"name": "Four-DGX hardware", "state": "VERIFIED", "note": "All four nodes reached by fresh direct SSH; Eran1 43 C, Eran2 38 C, Eran3 80 C under Yigael load, Eran4 43 C"},
+    {"name": "Nemotron 3 Super", "state": "BROKEN", "note": "Eran1 Ray head has one GPU only; Eran2/Eran3 workers absent; port 8000 refused"},
+    {"name": "GPT-OSS 120B / Alma Harness", "state": "VERIFIED", "note": "Eran4 Ollama has gpt-oss:120b loaded; fresh deterministic local generation returned DGX4_OK. External proxy path was not re-accepted"},
+    {"name": "Yigael vocal", "state": "ACTIVE", "url": "/#yigael", "note": "Training advanced during a valid non-silent WAV inference on Eran3. Trainer is around step 26.4k, but the daemon still has checkpoint 6030 loaded; Eran3 is hot at 80 C / 96%"},
+    {"name": "Perez Hebrew AI", "state": "VERIFIED", "url": "http://127.0.0.1:8796/", "note": "Dashboard live; pure-NumPy checkpoint and sample generation verified; 40/40 tests pass; optional DGX enrichment is OFFLINE"},
+    {"name": "Portfolio control", "state": "VERIFIED", "url": "/#ai", "note": "Four-track law is installed; ACTIVE.md was refreshed from current evidence. Portfolio control is infrastructure, not one of the four project slots"},
+    {"name": "ALMA Mic / A70", "state": "UNKNOWN", "note": "LKG process is live; fresh Hebrew dictation-to-correct-window acceptance remains the next evidence gate"},
+    {"name": "RAMCHAT", "state": "UNKNOWN", "note": "IPC mappings were freshly reported healthy at 14:41-14:44; no fresh routed model answer in this cycle"},
+    {"name": "Quorum", "state": "BLOCKED", "note": "Source tests passed previously; packaged executable remains blocked by Windows Application Control"},
+    {"name": "Public websites", "state": "UNKNOWN", "note": "Latest portfolio check found Pages origins healthy but several public domains failed; refresh required"},
+    {"name": "Electric Cave", "state": "VERIFIED", "note": "Production origin and source page passed the latest recorded GET checks; singular cave domain remained unresolved"},
+    {"name": "Eran evidence site", "state": "UNKNOWN", "note": "Local preview verified previously; remote evidence surfaces need a fresh route check"},
+    {"name": "ALMAWARE Master Dashboard", "state": "ACTIVE", "url": "/", "note": "Live four-node telemetry, Yigael training, voice generation, and portfolio view on port 8790"},
+    {"name": "Free neuromorphic lab", "state": "VERIFIED", "note": "Simulation tests passed; this does not represent physical neuromorphic hardware"},
+    {"name": "Arduino neuron package", "state": "VERIFIED", "note": "Four Uno builds compile; wiring, power, mechanics, and chemistry remain unverified"},
+    {"name": "Shisha / memristor / digipot", "state": "PLANNED", "note": "Software and experiment artifacts exist; choose one controlled physical test with fuse and measurement gates"},
+    {"name": "Robotics / Quincy embodiment", "state": "PLANNED", "note": "Protocols and firmware scaffolds exist; no fresh physical motion or emergency-stop acceptance"},
+    {"name": "Yigal Holobrain", "state": "PLANNED", "note": "Architecture direction only; the live vocal cortex is real but a four-machine developmental mind is not deployed"},
+    {"name": "Optical / Physarum computing", "state": "PLANNED", "note": "Research concepts only; full optical Tree of Life and Physarum loop remain distinct"},
+    {"name": "Eran promotional film", "state": "VERIFIED", "note": "Playable five-minute artifact exists; later 4K/HDR redesign remains a separate unmet target"},
+    {"name": "Perceptron movie", "state": "UNKNOWN", "note": "Sources and an older playable render exist; current final render has not been freshly verified"},
+    {"name": "Neurocalm VR / EEG", "state": "PLANNED", "note": "Private non-contact research scope; no live prototype or autonomous body-control path"},
+    {"name": "Security audit", "state": "BLOCKED", "note": "Prior audit ended incomplete; never treat it as a clean verdict"}
+  ]
+}

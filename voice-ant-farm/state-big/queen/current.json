@@ -1,0 +1,315 @@
+{
+  "format_version": 1,
+  "architecture": "independent-waveform-acoustic-colony",
+  "merge_policy": "none -- the Queen selects one ant, she never merges codebooks",
+  "selection_key": "held-out syllable discrimination, cosine top-1",
+  "selection_key_rejected": "held-out quantisation error -- a prior controlled experiment showed it does not rank ants on this task",
+  "colonies": [
+    {
+      "colony": "all-256",
+      "selected_ant": "ant-a",
+      "selected_checkpoint_sha256": "a3055ae0e60906ac460f8a8ea295af10dbf8e6a129c66b9cd6267a427b9e3b07",
+      "ants": [
+        {
+          "ant": "ant-a",
+          "seed": 7007,
+          "checkpoint_sha256": "a3055ae0e60906ac460f8a8ea295af10dbf8e6a129c66b9cd6267a427b9e3b07",
+          "syllable_top1_cosine": 0.3712121212121212,
+          "syllable_top1_edit": 0.3560606060606061,
+          "heldout_quantisation_error": 0.30119058206171684,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 3
+        },
+        {
+          "ant": "ant-b",
+          "seed": 7019,
+          "checkpoint_sha256": "7caa537328c6100c9c110e8f493796155e2985c9a5830e3f2979bb0a5919229d",
+          "syllable_top1_cosine": 0.3181818181818182,
+          "syllable_top1_edit": 0.3712121212121212,
+          "heldout_quantisation_error": 0.2992015105262738,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 2
+        },
+        {
+          "ant": "ant-c",
+          "seed": 7039,
+          "checkpoint_sha256": "fa450b7914c145f1895b2783ed7548c09fa1b922d631095ea30730d6d003ca59",
+          "syllable_top1_cosine": 0.29545454545454547,
+          "syllable_top1_edit": 0.3333333333333333,
+          "heldout_quantisation_error": 0.30014391031575144,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 3
+        },
+        {
+          "ant": "ant-d",
+          "seed": 7057,
+          "checkpoint_sha256": "14895320e1f2a525939dcef293c29afbec11111fd446fda3093320be6f006f97",
+          "syllable_top1_cosine": 0.2878787878787879,
+          "syllable_top1_edit": 0.26515151515151514,
+          "heldout_quantisation_error": 0.3020090113856188,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 5
+        }
+      ]
+    },
+    {
+      "colony": "iddo-13.8h-256",
+      "selected_ant": "ant-c",
+      "selected_checkpoint_sha256": "41c9519fa22d4b8bc674ba25582aaa39b1ecc25c733954040f660499dc44ffca",
+      "ants": [
+        {
+          "ant": "ant-a",
+          "seed": 7007,
+          "checkpoint_sha256": "402cd83bdce7660dc28988b4faa6ea6c912647bef12d23a70c138c97c3164f84",
+          "syllable_top1_cosine": 0.32575757575757575,
+          "syllable_top1_edit": 0.3333333333333333,
+          "heldout_quantisation_error": 0.3081128041472278,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 3
+        },
+        {
+          "ant": "ant-b",
+          "seed": 7019,
+          "checkpoint_sha256": "72b820ea5242fe2d07bd2565e0e6e236bcc3b638a909e248784fb29e07117111",
+          "syllable_top1_cosine": 0.3106060606060606,
+          "syllable_top1_edit": 0.2727272727272727,
+          "heldout_quantisation_error": 0.30955783925694663,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 3
+        },
+        {
+          "ant": "ant-c",
+          "seed": 7039,
+          "checkpoint_sha256": "41c9519fa22d4b8bc674ba25582aaa39b1ecc25c733954040f660499dc44ffca",
+          "syllable_top1_cosine": 0.3560606060606061,
+          "syllable_top1_edit": 0.3409090909090909,
+          "heldout_quantisation_error": 0.306810214981737,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 3
+        },
+        {
+          "ant": "ant-d",
+          "seed": 7057,
+          "checkpoint_sha256": "0b74301f76d4644f901cb9090ccdd2a9838bc3208599e5a699dec89ee8b482a6",
+          "syllable_top1_cosine": 0.25757575757575757,
+          "syllable_top1_edit": 0.2727272727272727,
+          "heldout_quantisation_error": 0.3075289350238255,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 2
+        }
+      ]
+    },
+    {
+      "colony": "iddo-fresh-256",
+      "selected_ant": "ant-c",
+      "selected_checkpoint_sha256": "0f9ea47f9fb692a0843bdc1b0b3a6c470ac2a4a9f8b162ab9578f562183267de",
+      "ants": [
+        {
+          "ant": "ant-a",
+          "seed": 7007,
+          "checkpoint_sha256": "1610bc381eab038124cba024ee9b620e6870f59c303330a48b20acf74eeb0de6",
+          "syllable_top1_cosine": 0.2878787878787879,
+          "syllable_top1_edit": 0.3181818181818182,
+          "heldout_quantisation_error": 0.3084120917920343,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 3
+        },
+        {
+          "ant": "ant-b",
+          "seed": 7019,
+          "checkpoint_sha256": "6ccc28e540c43ac3c440bc2a88b4b711ca86a8c40849c59c570dc5270715ebbe",
+          "syllable_top1_cosine": 0.30303030303030304,
+          "syllable_top1_edit": 0.3106060606060606,
+          "heldout_quantisation_error": 0.3086616076822271,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 3
+        },
+        {
+          "ant": "ant-c",
+          "seed": 7039,
+          "checkpoint_sha256": "0f9ea47f9fb692a0843bdc1b0b3a6c470ac2a4a9f8b162ab9578f562183267de",
+          "syllable_top1_cosine": 0.42424242424242425,
+          "syllable_top1_edit": 0.3106060606060606,
+          "heldout_quantisation_error": 0.3072764386430659,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 3
+        },
+        {
+          "ant": "ant-d",
+          "seed": 7057,
+          "checkpoint_sha256": "b7fdb6f67e0600b919e9f06f2b755e0f39c84038d89016bdc3ecd9052dbe2428",
+          "syllable_top1_cosine": 0.2878787878787879,
+          "syllable_top1_edit": 0.30303030303030304,
+          "heldout_quantisation_error": 0.3055816704907626,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 3
+        }
+      ]
+    },
+    {
+      "colony": "multi-13.8h-256",
+      "selected_ant": "ant-b",
+      "selected_checkpoint_sha256": "7db4f1720e1e7e6c1d9441b85c318784d261981352e712afe5c9a0be54b87227",
+      "ants": [
+        {
+          "ant": "ant-a",
+          "seed": 7007,
+          "checkpoint_sha256": "f285a54f0cf2d7ed8f8422035283834cddd4541480bed60155f65cfc314ffe6d",
+          "syllable_top1_cosine": 0.3409090909090909,
+          "syllable_top1_edit": 0.38636363636363635,
+          "heldout_quantisation_error": 0.39094027042083923,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 2
+        },
+        {
+          "ant": "ant-b",
+          "seed": 7019,
+          "checkpoint_sha256": "7db4f1720e1e7e6c1d9441b85c318784d261981352e712afe5c9a0be54b87227",
+          "syllable_top1_cosine": 0.36363636363636365,
+          "syllable_top1_edit": 0.3106060606060606,
+          "heldout_quantisation_error": 0.39757525375102537,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 3
+        },
+        {
+          "ant": "ant-c",
+          "seed": 7039,
+          "checkpoint_sha256": "1734049af90efad49e19737c7a91e8f816d1f849ad65ec86686db61598b6da20",
+          "syllable_top1_cosine": 0.2727272727272727,
+          "syllable_top1_edit": 0.3712121212121212,
+          "heldout_quantisation_error": 0.39644015798719656,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": false,
+          "vowel_boxes_covered": 2
+        },
+        {
+          "ant": "ant-d",
+          "seed": 7057,
+          "checkpoint_sha256": "1b9a200a86770159458c4be9aa8c31528b0b5b3528d009f89e169f4a6773790e",
+          "syllable_top1_cosine": 0.32575757575757575,
+          "syllable_top1_edit": 0.3409090909090909,
+          "heldout_quantisation_error": 0.3949073587960612,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": false,
+          "vowel_boxes_covered": 2
+        }
+      ]
+    },
+    {
+      "colony": "orig-253s-256",
+      "selected_ant": "ant-c",
+      "selected_checkpoint_sha256": "89bd6c12548bc1d7dbb0e8d2205f9eb15fc33e20a8a2dd80f7518efd22d0f74d",
+      "ants": [
+        {
+          "ant": "ant-a",
+          "seed": 7007,
+          "checkpoint_sha256": "11a94b18b086be828ee08f1f4211824186e07de892b78c956878666d941b793e",
+          "syllable_top1_cosine": 0.25757575757575757,
+          "syllable_top1_edit": 0.25,
+          "heldout_quantisation_error": 0.7728376579046707,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 4
+        },
+        {
+          "ant": "ant-b",
+          "seed": 7019,
+          "checkpoint_sha256": "c94f68b28232df0b9a3b6fcbdd1c2a2ee6b5da25bfc63cfc466f22cd70f286e2",
+          "syllable_top1_cosine": 0.23484848484848486,
+          "syllable_top1_edit": 0.19696969696969696,
+          "heldout_quantisation_error": 0.7508878037213773,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 4
+        },
+        {
+          "ant": "ant-c",
+          "seed": 7039,
+          "checkpoint_sha256": "89bd6c12548bc1d7dbb0e8d2205f9eb15fc33e20a8a2dd80f7518efd22d0f74d",
+          "syllable_top1_cosine": 0.30303030303030304,
+          "syllable_top1_edit": 0.2803030303030303,
+          "heldout_quantisation_error": 0.7759048612038012,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 4
+        },
+        {
+          "ant": "ant-d",
+          "seed": 7057,
+          "checkpoint_sha256": "b3dbefe92e8ed678ba650db43c1328c47bdb049972940d0edb56bb0744235b7e",
+          "syllable_top1_cosine": 0.23484848484848486,
+          "syllable_top1_edit": 0.19696969696969696,
+          "heldout_quantisation_error": 0.78953401240231,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 3
+        }
+      ]
+    },
+    {
+      "colony": "random-frames-256",
+      "selected_ant": "ant-d",
+      "selected_checkpoint_sha256": "7ff60edcfe3e4d864424e9322f15c7189616822509b96d77aa32c966783b8100",
+      "ants": [
+        {
+          "ant": "ant-a",
+          "seed": 7007,
+          "checkpoint_sha256": "64a6075cc4c75d1402f936d6be32c728c125e1f989b8ee793e87800d3cf4bb13",
+          "syllable_top1_cosine": 0.24242424242424243,
+          "syllable_top1_edit": 0.3333333333333333,
+          "heldout_quantisation_error": 0.39925284980733133,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 2
+        },
+        {
+          "ant": "ant-b",
+          "seed": 7019,
+          "checkpoint_sha256": "a5042f742736a6c4a2341ac6225c5b2f98af8b76a38d7d9938a5ce861fd7caf4",
+          "syllable_top1_cosine": 0.32575757575757575,
+          "syllable_top1_edit": 0.3484848484848485,
+          "heldout_quantisation_error": 0.3750569480419101,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 4
+        },
+        {
+          "ant": "ant-c",
+          "seed": 7039,
+          "checkpoint_sha256": "437fdc44d84e2129ed560693f2bffba37294aabcba1290fc20e41962b3369d50",
+          "syllable_top1_cosine": 0.2878787878787879,
+          "syllable_top1_edit": 0.30303030303030304,
+          "heldout_quantisation_error": 0.3868913091358937,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 2
+        },
+        {
+          "ant": "ant-d",
+          "seed": 7057,
+          "checkpoint_sha256": "7ff60edcfe3e4d864424e9322f15c7189616822509b96d77aa32c966783b8100",
+          "syllable_top1_cosine": 0.36363636363636365,
+          "syllable_top1_edit": 0.3484848484848485,
+          "heldout_quantisation_error": 0.40533185178205433,
+          "headline_exemplar_is_a": false,
+          "has_voiced_a_unit": true,
+          "vowel_boxes_covered": 2
+        }
+      ]
+    }
+  ]
+}

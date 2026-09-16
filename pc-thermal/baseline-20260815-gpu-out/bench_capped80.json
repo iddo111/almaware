@@ -1,0 +1,20 @@
+{
+  "aborted": false,
+  "threads": 8,
+  "single_thread_ops_per_s": 618358,
+  "all_core_ops_per_s": 1949591,
+  "scaling_x": 3.15,
+  "idle_pkg_c": 70.6,
+  "single_max_c": 75.0,
+  "allcore_max_c": 82.0,
+  "allcore_avg_c": 79.5,
+  "allcore_max_w": 31.3,
+  "allcore_min_mhz": 3400.0,
+  "allcore_max_mhz": 3400.0,
+  "allcore_avg_load": 99.7,
+  "fan1_max": 0.0,
+  "fan2_max": 2093.0,
+  "fan3_max": 1654.0,
+  "cooldown_end_c": 74.0,
+  "samples": 111
+}

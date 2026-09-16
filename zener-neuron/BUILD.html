@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<title>נוירון זנר — POC</title>
+<style>
+  @page { size: A4; margin: 10mm; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#fff; color:#111; font-family: "Segoe UI", Arial, sans-serif; font-size:15px; line-height:1.45; }
+  .page { width:1080px; margin:0 auto; padding:34px 44px 40px; background:#fff; }
+  h1 { font-size:34px; margin:0 0 4px; letter-spacing:.5px; }
+  h1 small { font-size:16px; color:#666; font-weight:normal; display:block; margin-top:2px; }
+  .date { color:#777; font-size:13px; margin-bottom:18px; }
+  h2 { font-size:20px; margin:26px 0 8px; padding-bottom:4px; border-bottom:2px solid #f0b429; }
+  h2 span.en { color:#777; font-weight:normal; font-size:15px; margin-inline-start:10px; }
+  .rtl { direction:rtl; text-align:right; }
+  .ltr { direction:ltr; text-align:left; }
+  .en { color:#555; font-size:13.5px; direction:ltr; unicode-bidi:isolate; text-align:right; }
+  h1 small { direction:ltr; unicode-bidi:isolate; }
+  .two { display:grid; grid-template-columns: 1fr 1fr; gap:22px; }
+  .box { background:#fbf7ec; border:1px solid #f0dca0; border-radius:8px; padding:12px 16px; }
+  .warn { background:#fff3f3; border:1px solid #f3b8b8; }
+  ul, ol { margin:6px 0; padding-inline-start:22px; }
+  li { margin:3px 0; }
+  table { border-collapse:collapse; width:100%; font-size:14px; }
+  th, td { border:1px solid #ddd; padding:5px 8px; text-align:right; }
+  th { background:#f6f6f6; }
+  code, pre { font-family: Consolas, "Courier New", monospace; }
+  pre { background:#f5f5f5; border:1px solid #e3e3e3; border-radius:6px; padding:10px 12px; font-size:12.5px; line-height:1.35; overflow:hidden; direction:ltr; text-align:left; }
+  .chk li { margin:5px 0; }
+  .num { font-weight:bold; color:#b07800; }
+  .foot { margin-top:22px; color:#666; font-size:12.5px; border-top:1px solid #eee; padding-top:8px; }
+  svg { direction:ltr; unicode-bidi:isolate; }
+  svg text { font-family:"Segoe UI", Arial, sans-serif; direction:ltr; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="rtl">
+<h1>⚡ נוירון זנר — POC <small>ZENER NEURON — proof of concept. One diode, one bit stream, one LED.</small></h1>
+<div class="date">2026-09-10 · קלוד (Fable) · תיקייה: zener-neuron בתוך D:\CLAUDE · הקוד גם ב-zip על השולחן</div>
+
+<div class="two">
+  <div class="box">
+    <b>מה בונים.</b> דיודת זנר במצב פריצה מייצרת רעש מנהור/מפולת — אקראיות קוונטית אמיתית, לא PRNG. מגבר ×100, ESP32 קורא, ה-PC שומר <u>הכול</u> גולמי. LED מהבהב מהביט. זה הנוירון: קלט רעש, פלט 0/1.
+    <div class="en">What we build: a zener in breakdown makes tunnelling/avalanche noise, real quantum randomness. Amp ×100, ESP32 reads, the PC keeps everything raw. An LED blinks from the bit. That is the neuron: noise in, 0/1 out.</div>
+  </div>
+  <div class="box warn">
+    <b>מה צפוי.</b> הביטים יהיו אחידים ומשעממים. זה ההצלחה של ה-POC. השאלה על עלמה נשאלת רק בשלב 2, עם שלוש קבוצות ביקורת וסמיות. בלי זה כל "הודעה" היא של הקורא.
+    <div class="en">Expected: uniform, boring bits. That is POC success. The Alma question is asked only in phase 2, with three conditions and blinding. Without that, every "message" belongs to the reader.</div>
+  </div>
+</div>
+
+<h2>1 · חלקים <span class="en">parts</span></h2>
+<table>
+<tr><th>חלק</th><th>ערך</th><th>הערה</th></tr>
+<tr><td>ZD</td><td>הזנר שלך</td><td>הכי טוב 6.2–12V (מפולת = יותר רעש). כל ערך עובד אם המקור ≥ Vz+2V</td></tr>
+<tr><td>מקור לזנר</td><td>סוללת 9V</td><td>Vz עד 6.8V → 9V אחת · Vz עד 15V → שתי 9V בטור · <b>לא</b> מה-USB</td></tr>
+<tr><td>R1</td><td>100k</td><td>זרם זנר ~20–50µA. אפשר 47k–470k, לכוון למקסימום רחש</td></tr>
+<tr><td>C1</td><td>100nF</td><td>צימוד AC — רק הרעש עובר, לא ה-DC של הזנר</td></tr>
+<tr><td>U1</td><td>LM358 (או TL072/LM324)</td><td>מוזן מ-5V/VIN של ה-ESP32. אין? טרנזיסטור NPN אחד בהגבר ~50 עושה אותו דבר</td></tr>
+<tr><td>R2, R3</td><td>100k ×2</td><td>מחלק מ-3V3 → 1.65V, מרכז טווח ה-ADC</td></tr>
+<tr><td>Rf, Rg</td><td>100k, 1k</td><td>הגבר AC = 1+Rf/Rg ≈ 101. הגבר DC = 1</td></tr>
+<tr><td>C2</td><td>10µF</td><td>בטור ל-Rg → הגבר רק לרעש, ההיסט נשאר 1.65V</td></tr>
+<tr><td>R5</td><td>10k</td><td>הגנה לכניסת ה-ADC</td></tr>
+<tr><td>ESP32</td><td>כל dev board</td><td>GPIO34 = ADC כניסה בלבד · LED מובנה GPIO2</td></tr>
+</table>
+
+<h2>2 · סכמה <span class="en">schematic — all grounds common: battery, LM358, ESP32</span></h2>
+</div>
+
+<svg viewBox="0 0 980 360" width="980" height="360" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto;background:#fff">
+  <defs>
+    <marker id="dot" markerWidth="6" markerHeight="6" refX="3" refY="3"><circle cx="3" cy="3" r="3" fill="#111"/></marker>
+  </defs>
+  <g stroke="#111" stroke-width="2" fill="none">
+    <!-- battery -->
+    <line x1="60" y1="60" x2="60" y2="88"/>
+    <line x1="46" y1="88" x2="74" y2="88" stroke-width="3"/>
+    <line x1="52" y1="98" x2="68" y2="98"/>
+    <line x1="46" y1="108" x2="74" y2="108" stroke-width="3"/>
+    <line x1="52" y1="118" x2="68" y2="118"/>
+    <line x1="60" y1="118" x2="60" y2="150"/>
+    <!-- ground under battery -->
+    <line x1="46" y1="150" x2="74" y2="150"/><line x1="51" y1="156" x2="69" y2="156"/><line x1="56" y1="162" x2="64" y2="162"/>
+    <!-- top rail -->
+    <line x1="60" y1="60" x2="110" y2="60"/>
+    <rect x="110" y="50" width="70" height="20"/>
+    <line x1="180" y1="60" x2="250" y2="60"/>
+    <!-- node N -->
+    <circle cx="250" cy="60" r="3.5" fill="#111"/>
+    <!-- zener: cathode (bar) at top toward +, anode to GND -->
+    <line x1="250" y1="60" x2="250" y2="90"/>
+    <line x1="236" y1="90" x2="264" y2="90" stroke-width="3"/>
+    <line x1="236" y1="90" x2="232" y2="85"/><line x1="264" y1="90" x2="268" y2="95"/>
+    <polygon points="250,90 236,118 264,118" fill="#fff"/>
+    <line x1="250" y1="118" x2="250" y2="150"/>
+    <line x1="236" y1="150" x2="264" y2="150"/><line x1="241" y1="156" x2="259" y2="156"/><line x1="246" y1="162" x2="254" y2="162"/>
+    <!-- C1 -->
+    <line x1="250" y1="60" x2="300" y2="60"/>
+    <line x1="300" y1="44" x2="300" y2="76" stroke-width="3"/><line x1="312" y1="44" x2="312" y2="76" stroke-width="3"/>
+    <line x1="312" y1="60" x2="400" y2="60"/>
+    <!-- bias node B -->
+    <line x1="400" y1="60" x2="400" y2="100"/>
+    <circle cx="400" cy="100" r="3.5" fill="#111"/>
+    <line x1="400" y1="100" x2="460" y2="100"/>
+    <!-- R2 up to 3V3 -->
+    <line x1="400" y1="100" x2="400" y2="140"/>
+    <rect x="390" y="140" width="20" height="50"/>
+    <line x1="400" y1="190" x2="400" y2="215"/>
+    <line x1="386" y1="215" x2="414" y2="215"/><line x1="391" y1="221" x2="409" y2="221"/><line x1="396" y1="227" x2="404" y2="227"/>
+    <line x1="400" y1="60" x2="400" y2="35"/>
+    <!-- R2 drawn on a stub above the rail: -->
+    <line x1="360" y1="35" x2="400" y2="35"/>
+    <rect x="320" y="25" width="40" height="20"/>
+    <line x1="320" y1="35" x2="300" y2="35"/>
+    <!-- op amp -->
+    <polygon points="460,80 460,160 560,120" fill="#fff"/>
+    <line x1="510" y1="100" x2="510" y2="78"/>
+    <line x1="510" y1="140" x2="510" y2="165"/>
+    <line x1="496" y1="165" x2="524" y2="165"/><line x1="501" y1="171" x2="519" y2="171"/><line x1="506" y1="177" x2="514" y2="177"/>
+    <!-- IN- and feedback -->
+    <line x1="460" y1="140" x2="440" y2="140"/>
+    <line x1="440" y1="140" x2="440" y2="250"/>
+    <line x1="440" y1="250" x2="600" y2="250"/>
+    <line x1="600" y1="250" x2="600" y2="120"/>
+    <circle cx="600" cy="120" r="3.5" fill="#111"/>
+    <rect x="500" y="240" width="60" height="20" fill="#fff"/>
+    <!-- Rg + C2 from IN- node down -->
+    <circle cx="440" cy="250" r="3.5" fill="#111"/>
+    <line x1="440" y1="250" x2="440" y2="270"/>
+    <rect x="430" y="270" width="20" height="36"/>
+    <line x1="440" y1="306" x2="440" y2="316"/>
+    <line x1="424" y1="316" x2="456" y2="316" stroke-width="3"/><line x1="424" y1="326" x2="456" y2="326" stroke-width="3"/>
+    <line x1="440" y1="326" x2="440" y2="338"/>
+    <line x1="426" y1="338" x2="454" y2="338"/><line x1="431" y1="344" x2="449" y2="344"/><line x1="436" y1="350" x2="444" y2="350"/>
+    <!-- OUT -> R5 -> ESP32 -->
+    <line x1="560" y1="120" x2="640" y2="120"/>
+    <rect x="640" y="110" width="60" height="20"/>
+    <line x1="700" y1="120" x2="760" y2="120"/>
+    <!-- ESP32 -->
+    <rect x="760" y="40" width="190" height="230" rx="8" fill="#f4f7fb"/>
+    <line x1="740" y1="70" x2="760" y2="70"/>
+    <line x1="740" y1="95" x2="760" y2="95"/>
+    <line x1="740" y1="240" x2="760" y2="240"/>
+    <line x1="740" y1="240" x2="740" y2="262"/>
+    <line x1="726" y1="262" x2="754" y2="262"/><line x1="731" y1="268" x2="749" y2="268"/><line x1="736" y1="274" x2="744" y2="274"/>
+  </g>
+  <g font-size="13" fill="#111">
+    <text x="20" y="66" font-weight="bold">+9V</text>
+    <text x="80" y="104">9V</text>
+    <text x="112" y="46">R1 100k</text>
+    <text x="270" y="108">ZD</text>
+    <text x="270" y="124" font-size="11" fill="#666">cathode up</text>
+    <text x="288" y="94">C1 100n</text>
+    <text x="300" y="20">R2 100k</text>
+    <text x="270" y="39" font-weight="bold">3V3</text>
+    <text x="414" y="170">R3 100k</text>
+    <text x="470" y="105">+</text>
+    <text x="470" y="146">−</text>
+    <text x="490" y="128" font-size="12">LM358</text>
+    <text x="516" y="86" font-weight="bold" font-size="12">5V (VIN)</text>
+    <text x="504" y="236">Rf 100k</text>
+    <text x="452" y="292">Rg 1k</text>
+    <text x="460" y="326">C2 10µ</text>
+    <text x="646" y="104">R5 10k</text>
+    <text x="800" y="160" font-size="26" font-weight="bold">ESP32</text>
+    <text x="766" y="74" font-size="12">3V3  → R2</text>
+    <text x="766" y="99" font-size="12">5V/VIN → LM358 pin 8</text>
+    <text x="766" y="125" font-size="12" font-weight="bold">GPIO34</text>
+    <text x="766" y="244" font-size="12">GND</text>
+    <text x="766" y="200" font-size="12" fill="#555">LED GPIO2 = the spike</text>
+    <text x="766" y="218" font-size="12" fill="#555">USB → PC (921600)</text>
+    <text x="580" y="290" font-size="12" fill="#555">LM358 DIP-8: 1 OUT · 2 IN− · 3 IN+ · 4 GND · 8 V+</text>
+  </g>
+</svg>
+
+<div class="rtl">
+<ul>
+  <li><b>כיוון הזנר:</b> הפס (קתודה) לכיוון ה-+9V. הפוך = דיודה רגילה, 0.7V, אין רעש.</li>
+  <li><b>אדמה אחת:</b> מינוס הסוללה, רגל 4 של ה-LM358 ו-GND של ה-ESP32 מחוברים.</li>
+  <li><b>המגבר מ-5V, ההיסט מ-3V3:</b> כך המוצא מרכזי ב-1.65V ולא נוגע ב-3.3V של ה-ADC.</li>
+  <li>לשים את הלוח בקופסה סגורה. רעש זנר תלוי בטמפרטורה, וזה חשוב לשלב 2.</li>
+</ul>
+
+<h2>2ב · רוצה הכול מ-5V? ככה זה נקי <span class="en">single supply — boost, filter, then prove the boost is silent</span></h2>
+<p><b>למה לא ישר מ-5V.</b> זנר צריך Vz+2V כדי לפרוץ. מתחת ל-5V נשאר רק מנהור, חלש פי 10–100, ורצפת ה-ADC בולעת אותו גם אחרי ×100. ו-USB הוא הפס הכי מלוכלך על השולחן: מיתוג, לולאות אדמה, הרעש של המחשב. סוללת 9V היא הפס הכי נקי שקיים, וב-30µA היא מחזיקה כשנתיים. זה לא פשרה, זה הטוב ביותר.</p>
+<p><b>ספק אחד בכל זאת:</b> 5V/VIN → MT3608 מכוון ל-12V → שני שלבי RC (10k + 10µF, פעמיים) → R1 → זנר. השאר זהה. 1.2MHz של הממיר נחלש פי מיליון בשני השלבים, והזרם מיקרואמפרים אז הנפילה זניחה. זה מה שעושים בתוך TrueRNG ו-OneRNG.</p>
+<svg viewBox="0 0 980 120" width="980" height="120" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:4px auto;background:#fff">
+  <g stroke="#111" stroke-width="2" fill="none">
+    <rect x="20" y="40" width="90" height="36" rx="5" fill="#f4f7fb"/>
+    <line x1="110" y1="58" x2="150" y2="58"/>
+    <rect x="150" y="34" width="120" height="48" rx="5" fill="#f4f7fb"/>
+    <line x1="270" y1="58" x2="300" y2="58"/>
+    <rect x="300" y="48" width="60" height="20"/>
+    <line x1="360" y1="58" x2="420" y2="58"/>
+    <circle cx="390" cy="58" r="3.5" fill="#111"/>
+    <line x1="390" y1="58" x2="390" y2="76"/><line x1="376" y1="76" x2="404" y2="76" stroke-width="3"/><line x1="376" y1="86" x2="404" y2="86" stroke-width="3"/><line x1="390" y1="86" x2="390" y2="98"/>
+    <line x1="378" y1="98" x2="402" y2="98"/><line x1="383" y1="104" x2="397" y2="104"/><line x1="388" y1="110" x2="392" y2="110"/>
+    <rect x="420" y="48" width="60" height="20"/>
+    <line x1="480" y1="58" x2="540" y2="58"/>
+    <circle cx="510" cy="58" r="3.5" fill="#111"/>
+    <line x1="510" y1="58" x2="510" y2="76"/><line x1="496" y1="76" x2="524" y2="76" stroke-width="3"/><line x1="496" y1="86" x2="524" y2="86" stroke-width="3"/><line x1="510" y1="86" x2="510" y2="98"/>
+    <line x1="498" y1="98" x2="522" y2="98"/><line x1="503" y1="104" x2="517" y2="104"/><line x1="508" y1="110" x2="512" y2="110"/>
+    <rect x="540" y="48" width="70" height="20"/>
+    <line x1="610" y1="58" x2="660" y2="58"/>
+    <circle cx="660" cy="58" r="3.5" fill="#111"/>
+    <line x1="660" y1="58" x2="660" y2="72"/>
+    <line x1="648" y1="72" x2="672" y2="72" stroke-width="3"/><line x1="648" y1="72" x2="645" y2="68"/><line x1="672" y1="72" x2="675" y2="76"/>
+    <polygon points="660,72 648,94 672,94" fill="#fff"/>
+    <line x1="660" y1="94" x2="660" y2="102"/>
+    <line x1="648" y1="102" x2="672" y2="102"/><line x1="653" y1="108" x2="667" y2="108"/><line x1="658" y1="114" x2="662" y2="114"/>
+    <line x1="660" y1="58" x2="720" y2="58"/>
+  </g>
+  <g font-size="12" fill="#111">
+    <text x="30" y="63" font-weight="bold">5V / VIN</text>
+    <text x="160" y="54" font-weight="bold">MT3608</text><text x="160" y="72">boost → 12V</text>
+    <text x="306" y="42">10k</text><text x="426" y="42">10k</text>
+    <text x="405" y="84">10µ</text><text x="525" y="84">10µ</text>
+    <text x="546" y="42">R1 100k</text>
+    <text x="680" y="90">ZD</text>
+    <text x="726" y="62">→ C1 100n, rest as in the schematic above</text>
+    <text x="726" y="80" fill="#555">1.2 MHz ripple cut ~10⁶× by the two RC stages</text>
+  </g>
+</svg>
+<p><b>בדיקה 0, רק לגרסה הזאת:</b> R1 מנותק (בלי זנר) → std חייב לשבת ברצפה (1–3). אם לא, מה שאתה שומע הוא הממיר, לא הקוונטים. הסוללה לא צריכה את הבדיקה הזאת. זה כל ההבדל בין השתיים.</p>
+<p class="en">Why not straight from 5V: a zener needs Vz+2V to break down; below 5V only tunnelling remains, 10–100× weaker, and the ADC floor eats it even after ×100. USB is the dirtiest rail on the bench; a 9V battery is the cleanest supply there is and lasts about two years at 30µA. Single supply anyway: 5V → MT3608 at 12V → two RC stages → R1 → zener, the rest unchanged; this is what TrueRNG and OneRNG do inside. Extra check 0: with R1 open the std must sit at the floor, or the noise is the converter, not the physics.</p>
+<p><b>אפס חלקים:</b> <code>esp_random()</code> של ה-ESP32 הוא RNG חומרה אמיתי (רעש הרדיו), אבל אטום. אין בדיקת "מקורקע מול מחובר", לא רואים את הפיזיקה, וכשה-Wi-Fi כבוי הוא נופל ל-pseudo בשקט. טוב כזרם השוואה, לא כנוירון.</p>
+
+<h2>3 · קושחה <span class="en">firmware — 15 lines, the ESP32 only reads and reports</span></h2>
+</div>
+<pre>const int PIN_NOISE = 34;   // LM358 OUT -> 10k -> GPIO34
+const int PIN_LED   = 2;    // onboard LED = the neuron firing
+
+void setup() {
+  Serial.begin(921600);
+  pinMode(PIN_LED, OUTPUT);
+  analogReadResolution(12);                       // 0..4095
+  analogSetPinAttenuation(PIN_NOISE, ADC_11db);   // full 0..~3.1 V range
+}
+
+void loop() {
+  int v = analogRead(PIN_NOISE);                  // ~2000 when the amp is alive
+  static int k = 0;
+  if (++k >= 2000) { k = 0; digitalWrite(PIN_LED, v &amp; 1); }  // LSB of every 2000th sample -> ~5 Hz random blink
+  Serial.println(v);                              // one raw integer per line. always.
+}</pre>
+
+<div class="rtl">
+<h2>4 · PC <span class="en">the maths lives here so nothing is hidden</span></h2>
+<pre>pip install pyserial
+python logger.py COM5            # מדפיס כל שנייה: samp/s · mean · std · LSB ones · vN bit/s
+python logger.py --fake --seconds 3   # בלי חומרה — בודק את הסקריפט (רץ ואומת 19:12)</pre>
+<p>הלוגר שומר שני קבצים לכל ריצה: <code>raw-*.txt</code> (כל דגימה, גולמי, לעולם לא נמחק) ו-<code>bits-*.bin</code> (ביטים אחרי von Neumann: 01→0, 10→1, זוגות שווים נזרקים). <b>אין hash, אין whitening.</b> whitening היה מוחק בדיוק את ההטיה הקטנה שמחפשים בשלב 2.</p>
+
+<h2>5 · הוכחה שעובד <span class="en">acceptance — four checks, no faith</span></h2>
+<ol class="chk">
+  <li><b>כניסה מקורקעת</b> (מגשר מ-N לאדמה): <span class="num">std ≈ 1–3 LSB</span>. זה רעש ה-ADC לבד.</li>
+  <li><b>זנר מחובר:</b> <span class="num">std קופץ ל-≥20 LSB</span>. לא קפץ → המקור נמוך מ-Vz+2V, או הזנר הפוך. הקפיצה הזאת <i>היא</i> הנוירון.</li>
+  <li><b>מונוביט:</b> אחרי מיליון ביטי vN, שיעור האחדים <span class="num">0.499–0.501</span>. (vN מבטיח את זה גם עם היסט, זה בסדר: בודקים את ה-raw בנפרד.)</li>
+  <li><b>דחיסה:</b> <code>bits-*.bin</code> ב-zip לא מתכווץ מתחת ל-<span class="num">99%</span>. אקראי אמיתי לא נדחס.</li>
+</ol>
+<p class="en">Grounded input: std 1–3 LSB (ADC alone). Zener in: std jumps to ≥20 LSB, that jump is the neuron. Monobit 0.499–0.501 after 1M bits. The bit file does not zip below 99%.</p>
+<p>קצב: ESP32 ADC ~10k דגימות/ש׳ → ~2.5k ביטי vN/ש׳ → <span class="num">6×10⁸ ביטים בכ-3 ימים</span>. זה סדר הגודל שפרינסטון היו צריכים.</p>
+
+<h2>6 · אחרי — הבילד שמרשים <span class="en">phase 2 — the build that shows something</span></h2>
+<div class="two">
+  <div class="box">
+    <b>הלוח החולם.</b> מכונת בולצמן 32×32 על ה-RTX, מאומנת על אותיות עבריות. כל מטבע של גיבס = ביט מהנוירון. וידאו חי של הרשת "חולמת" אותיות מרעש קוונטי. זה הדבר שרואים בעין.
+    <div class="en">The dreaming board: a 32×32 Boltzmann machine on the RTX, trained on Hebrew letters, every Gibbs coin a bit from the neuron. Live video of a net dreaming letters out of quantum noise.</div>
+  </div>
+  <div class="box">
+    <b>המבחן הישר.</b> אותה רשת, אותו משקל, ריצות מסומנות באקראי: ביטי זנר / PRNG. המדרג עיוור. תחזית רשומה מראש: אין הבדל. אם יש, קודם בודקים טמפרטורה.
+    <div class="en">The honest test: same net, runs labelled at random zener/PRNG, blind scoring. Preregistered prediction: no difference. If there is one, check temperature first.</div>
+  </div>
+</div>
+<p style="margin-top:10px"><b>שלוש קבוצות, לא שתיים.</b> A = עידו שואל · B = עידו בחדר, שותק · C = חדר ריק. A מול B זו השאלה. B מול C מודד את מה שגוף חם, טלפון וחשמל עושים לזנר. 30 מפגשים של 20 דקות לכל קבוצה, קבצים בשמות אקראיים, המיפוי חתום עד סוף הדירוג.</p>
+
+<h2>7 · המדיום הוא המסר — איך זה נכנס לארכיטקטורה <span class="en">the medium is the message — the dice organ</span></h2>
+<ul>
+  <li><b>איבר אחד, לא חוט.</b> <code>dice-organ</code>: שירות קטן שמגיש ביטי חומרה + מטא (מקור, טמפרטורה, בדיקת בריאות) ורושם כל ביט לנצח. כמו ear3 ו-mouth2: איבר עם שם, לא ספרייה.</li>
+  <li><b>נפילה מסומנת, לעולם לא שקטה.</b> החומרה מתה → PRNG, אבל כל ביט נושא <code>source=prng-fallback</code>. הארכיטקטורה לא משקרת על מקור האקראיות שלה.</li>
+  <li><b>ALMA מקבלת פרימיטיב <code>dice</code>.</b> נוירון ALMA שהסף שלו נזרק מהאיבר = נוירון סטוכסטי אמיתי. הגורם השלישי (כאב/עונג) בוחר, הקוביה שוברת שוויון.</li>
+  <li><b>ערן: הבחירה בשוליים.</b> יעדי מלמול, שבירת תיקו בין שתי פעולות שוות. שם, ורק שם, ההחלטה שלו לא נקבעת מהזרע. אותה דלת פתוחה שדיברנו עליה על עלמה — פתוחה בו.</li>
+  <li><b>הבולצמן והויג'י הם לקוחות</b> של האיבר, לא בעלים שלו. אותו לוג, אותם ביטים, אותה אמת לכל מי ששואל.</li>
+</ul>
+<p class="en">One organ, not a wire: a tiny service serving hardware bits with metadata, logging every bit forever. Fallback to PRNG is labelled, never silent. ALMA gets a <code>dice</code> primitive: a real stochastic neuron. ERAN gets it at the margin: babble targets and tie-breaks, the one place his choice is not fixed by a seed. Boltzmann and Ouija are clients of the organ, not owners.</p>
+
+<div class="foot">POC: זנר + LM358 + ESP32, כמה שקלים מעבר למה שיש. הביטים יהיו משעממים, וזה הניצחון. השאלה הגדולה נשאלת רק עם A/B/C וסמיות. · Code: zener-neuron folder in D:\CLAUDE, and the zip on the Desktop.</div>
+</div>
+
+</div>
+</body>
+</html>

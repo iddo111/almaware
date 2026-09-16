@@ -1,0 +1,68 @@
+{
+  "model": "Qwen/Qwen3.5-4B-Base",
+  "revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+  "heldout_files": 400,
+  "heldout_tokens_scored": 465320,
+  "seq_cap": 2048,
+  "MEAN_CE_NATS": 0.9386,
+  "PERPLEXITY": 2.557,
+  "BITS_PER_TOKEN": 1.3542,
+  "TOP1_ACCURACY": 0.7893,
+  "seconds": 403.1,
+  "per_ext": {
+    ".py": {
+      "files_tokens": 334546,
+      "ce": 0.9468,
+      "ppl": 2.578,
+      "top1": 0.7878
+    },
+    ".h": {
+      "files_tokens": 45653,
+      "ce": 0.9864,
+      "ppl": 2.682,
+      "top1": 0.7755
+    },
+    ".cpp": {
+      "files_tokens": 36480,
+      "ce": 0.793,
+      "ppl": 2.21,
+      "top1": 0.8148
+    },
+    ".js": {
+      "files_tokens": 19371,
+      "ce": 0.4804,
+      "ppl": 1.617,
+      "top1": 0.8865
+    },
+    ".ps1": {
+      "files_tokens": 7933,
+      "ce": 1.234,
+      "ppl": 3.435,
+      "top1": 0.7358
+    },
+    ".html": {
+      "files_tokens": 7472,
+      "ce": 0.9311,
+      "ppl": 2.537,
+      "top1": 0.7794
+    },
+    ".ts": {
+      "files_tokens": 5450,
+      "ce": 0.9344,
+      "ppl": 2.546,
+      "top1": 0.7938
+    },
+    ".css": {
+      "files_tokens": 4861,
+      "ce": 1.9109,
+      "ppl": 6.759,
+      "top1": 0.6176
+    },
+    ".sh": {
+      "files_tokens": 3554,
+      "ce": 1.5793,
+      "ppl": 4.852,
+      "top1": 0.688
+    }
+  }
+}

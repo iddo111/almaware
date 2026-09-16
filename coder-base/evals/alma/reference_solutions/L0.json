@@ -1,0 +1,40 @@
+{
+  "alma": "0.1",
+  "weave": "L0_linear",
+  "knots": [
+    {
+      "name": "x"
+    },
+    {
+      "name": "neuron",
+      "verb": "sum",
+      "bias": 7.0
+    },
+    {
+      "name": "y",
+      "verb": "fringe"
+    }
+  ],
+  "threads": [
+    {
+      "from": "x",
+      "to": "neuron",
+      "strands": [
+        {
+          "weight": 3.0,
+          "delay": 1
+        }
+      ]
+    },
+    {
+      "from": "neuron",
+      "to": "y"
+    }
+  ],
+  "seeds": [
+    {
+      "to": "x",
+      "value": 5.0
+    }
+  ]
+}

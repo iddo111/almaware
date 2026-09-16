@@ -1,0 +1,53 @@
+{
+  "train_micro_batch_size_per_gpu": 1,
+  "gradient_accumulation_steps": 16,
+  "gradient_clipping": 1.0,
+  "steps_per_print": 1,
+  "wall_clock_breakdown": true,
+
+  "bf16": { "enabled": true },
+  "fp16": { "enabled": false },
+
+  "zero_allow_untested_optimizer": true,
+
+  "zero_optimization": {
+    "stage": 3,
+    "contiguous_gradients": true,
+    "overlap_comm": true,
+    "reduce_scatter": true,
+    "reduce_bucket_size": 500000000,
+    "sub_group_size": 1000000000,
+    "stage3_max_live_parameters": 1000000000,
+    "stage3_max_reuse_distance": 0,
+    "stage3_prefetch_bucket_size": 200000000,
+    "stage3_param_persistence_threshold": 100000,
+    "stage3_gather_16bit_weights_on_model_save": false,
+
+    "offload_param": {
+      "device": "nvme",
+      "nvme_path": "__NVME_PATH__/param",
+      "pin_memory": true,
+      "buffer_count": 5,
+      "buffer_size": 720000000,
+      "max_in_cpu": 0
+    },
+
+    "offload_optimizer": {
+      "device": "nvme",
+      "nvme_path": "__NVME_PATH__/optimizer",
+      "pin_memory": true,
+      "buffer_count": 4,
+      "pipeline_read": true,
+      "pipeline_write": true,
+      "fast_init": false
+    }
+  },
+
+  "aio": {
+    "block_size": 8388608,
+    "queue_depth": 16,
+    "thread_count": 2,
+    "single_submit": false,
+    "overlap_events": true
+  }
+}

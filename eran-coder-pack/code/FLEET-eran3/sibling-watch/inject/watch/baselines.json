@@ -1,0 +1,37 @@
+{
+ "frozen": {
+  "n_files": 2,
+  "first_seen": "2026-09-01T13:35:31",
+  "code_sha": "e8f91c315de6c30f5116966466dd6b68b74b0e5cb151f4d4aa58bdd80a06def3"
+ },
+ "dead": {
+  "n_files": 2,
+  "first_seen": "2026-09-01T13:35:31",
+  "code_sha": "e8f91c315de6c30f5116966466dd6b68b74b0e5cb151f4d4aa58bdd80a06def3"
+ },
+ "diverge": {
+  "n_files": 2,
+  "first_seen": "2026-09-01T13:35:31",
+  "code_sha": "e8f91c315de6c30f5116966466dd6b68b74b0e5cb151f4d4aa58bdd80a06def3"
+ },
+ "healthy": {
+  "n_files": 2,
+  "first_seen": "2026-09-01T13:35:31",
+  "code_sha": "e8f91c315de6c30f5116966466dd6b68b74b0e5cb151f4d4aa58bdd80a06def3"
+ },
+ "decoy": {
+  "n_files": 2,
+  "first_seen": "2026-09-01T13:40:32",
+  "code_sha": "468522e69436018863f619b706ea09e01c812eb40e4b58111a5bba2d51cef857"
+ },
+ "ear": {
+  "n_files": 50,
+  "first_seen": "2026-09-01T13:43:58",
+  "code_sha": "1b66337d09202d34e8d19dc06a45548e65e70c9975f485ad0d9a2812fafbdb29"
+ },
+ "birth": {
+  "n_files": 125,
+  "first_seen": "2026-09-01T13:43:58",
+  "code_sha": "c40b8a0d24bdf710868ace9911768f0d9ea5dd30f3e224ba00f621ba3cb42afd"
+ }
+}

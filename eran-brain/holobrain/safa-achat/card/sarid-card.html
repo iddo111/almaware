@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SARID</title>
+<style>
+  @page { size: 297mm 210mm; margin: 0; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; width: 297mm; height: 210mm;
+    background: #ffffff; color: #14202e;
+    font-family: "Segoe UI", "Arial", sans-serif;
+    padding: 7mm 10mm 4mm 10mm;
+    display: flex; flex-direction: column;
+  }
+  .top { display: flex; justify-content: space-between; align-items: flex-start;
+         border-bottom: 2.5px solid #1b5e9c; padding-bottom: 3mm; }
+  h1 { margin: 0; font-size: 23pt; letter-spacing: -0.5px; color: #0d2b4e; }
+  h1 small { display:block; font-size: 10.5pt; font-weight: 600; color:#1b5e9c;
+             letter-spacing: 2px; margin-top: 1.8mm; }
+  .heb { direction: rtl; unicode-bidi: isolate; text-align: right; }
+  .verse { font-size: 10pt; color:#4a5c70; line-height:1.45; max-width: 120mm; }
+  .verse b { color:#0d2b4e; }
+  .cols { display: grid; grid-template-columns: 1.04fr 1fr; gap: 6mm;
+          margin-top: 3mm; flex: 1; }
+  h2 { font-size: 9.4pt; text-transform: uppercase; letter-spacing: 1.5px;
+       color:#1b5e9c; margin: 0 0 1.8mm 0; border-bottom:1px solid #cfe0ef;
+       padding-bottom:1.2mm; }
+  table { width:100%; border-collapse: collapse; font-size: 9.2pt; }
+  th { text-align:left; color:#5b6b7d; font-weight:600; font-size:8.4pt;
+       text-transform:uppercase; letter-spacing:.7px; padding:1.3mm 1.4mm; }
+  td { padding: 1.15mm 1.4mm; border-top:1px solid #e6eef5; }
+  td.num { font-variant-numeric: tabular-nums; text-align:right; font-weight:700; }
+  .pass { color:#0a7d3f; font-weight:800; }
+  .fail { color:#b3261e; font-weight:800; }
+  .row-win td { background:#eaf6ef; }
+  .box { background:#f5f9fc; border-left:3px solid #1b5e9c;
+         padding:1.9mm 2.6mm; margin-bottom:1.9mm; font-size:8.5pt;
+         line-height:1.34; }
+  .box.warn { background:#fdf3f2; border-left-color:#b3261e; }
+  .box.win  { background:#eef8f2; border-left-color:#0a7d3f; }
+  .box b { color:#0d2b4e; }
+  .k { font-family:"Consolas",monospace; font-size:8.2pt; background:#e8f0f7;
+       padding:0.3mm 1mm; border-radius:2px; }
+  ul { margin:1mm 0 0 0; padding-left:3.6mm; }
+  li { margin-bottom:0.9mm; }
+  .foot { margin-top:2mm; padding-top:2mm; border-top:1px solid #cfe0ef;
+          display:flex; justify-content:space-between; align-items:flex-end;
+          font-size:8.6pt; color:#5b6b7d; }
+  .cmd { font-family:"Consolas",monospace; font-size:8.4pt; color:#0d2b4e;
+         background:#eef4f9; padding:1.2mm 2mm; border-radius:3px; }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>שָׂרִיד &nbsp;·&nbsp; SARID
+    <small>שפה אחת / SAFA ACHAT &nbsp;—&nbsp; WHAT SURVIVES</small>
+  </h1>
+  <div class="verse">
+    <div class="heb"><b>וַיְהִי כָל־הָאָרֶץ שָׂפָה אֶחָת וּדְבָרִים אֲחָדִים</b> &nbsp;— בראשית י״א:א׳</div>
+    <div style="margin-top:1.2mm">The reverse of Babel: not the scattering, but the
+    search for what lies beneath. A sibling of ERAN — sealed, separate, prunable.</div>
+  </div>
+</div>
+
+<div class="cols">
+  <div>
+    <h2>Gate 1 — does the ruler move?</h2>
+    <table>
+      <tr><th>Instrument</th><th style="text-align:right">Margin</th>
+          <th style="text-align:right">AUC</th><th style="text-align:right">σ</th>
+          <th style="text-align:right">Verdict</th></tr>
+      <tr><td>plain edit distance</td><td class="num">0.0434</td>
+          <td class="num">1.0000</td><td class="num">18.3</td>
+          <td class="num fail">FAIL</td></tr>
+      <tr><td>sound-class alignment <i>(ours)</i></td><td class="num">0.1104</td>
+          <td class="num">1.0000</td><td class="num">26.1</td>
+          <td class="num fail">FAIL</td></tr>
+      <tr><td>LingPy reference SCA</td><td class="num">0.1026</td>
+          <td class="num">—</td><td class="num">—</td>
+          <td class="num fail">FAIL</td></tr>
+      <tr class="row-win"><td>+ LDND chance correction</td><td class="num">0.7438</td>
+          <td class="num">1.0000</td><td class="num">30.4</td>
+          <td class="num pass">PASS</td></tr>
+    </table>
+    <div class="box warn" style="margin-top:2mm">
+      <b>The raw margin FAILS the 0.15 bar — and so does LingPy's own reference
+      implementation.</b> They agree to 0.008. When the field's instrument and
+      ours miss the same bar, the bar is on the wrong scale: the unrelated
+      languages score 0.168–0.201 while the shuffle null sits at
+      <span class="k">0.1728</span>. They <i>are</i> at chance. LDND (Wichmann
+      et&nbsp;al. 2010) divides that offset out. The failure is reported, not
+      replaced. Latin vs 6 documented daughters, 8 unrelated languages from 5
+      families, 1,011 shared concepts, 1,000-draw null.
+    </div>
+    <div class="box warn">
+      <b>Gate 0 HARD REFUSAL — and it was right.</b> NorthEuraLex ships a
+      <span class="k">Cognacy</span> column carrying <b>0 of 121,612</b>
+      judgements. Two design documents said it ships expert cognacy; measured,
+      false. The objective was <i>not</i> wired to it — a ruler scored against
+      automatic judgements measures itself. Fallback cloned and counted:
+      <b>339,706</b> real judgements across 4 families.
+    </div>
+    <h2 style="margin-top:2.5mm">The horizon is a unit test</h2>
+    <div class="box">
+      <b>10,000 years = 20 beats.</b> Delays add along a path, so a cross-family
+      node sits at 30 beats and <b>never fires</b> — not refused, unreached.
+      A charter sentence can be deleted in one edit; deleting this costs a
+      failing test and a weave that stops working.
+      <div class="heb" style="margin-top:1.5mm; color:#0d2b4e">
+        קשר עמוק יותר אינו “לא מוכח” — הוא פשוט לא יורה.</div>
+    </div>
+  </div>
+
+  <div>
+    <h2>What the tests caught — 22 passed</h2>
+    <div class="box win">
+      <b>The drift canary caught the trap in my own design.</b>
+      <span class="k">keep</span> was a gate; a gate whose key opens with an
+      empty tray returns <span class="k">0.0</span> — a <i>real</i> fire. A round
+      where every exam refused still thickened the merit cord, to <b>1.4000</b>.
+      Now: refused → <b>0.9000</b>, vetted → <b>1.4000</b>.
+    </div>
+    <div class="box">
+      <b>The facade test caught the weave being decoration.</b> The spells
+      recomputed from the corpus and ignored what the loom delivered. Now
+      cutting <i>one</i> strand moves <b>14 knots</b>, all the way to the canon:
+      <span class="k">f_settled 41.0 → 14.0</span>.
+    </div>
+    <div class="box">
+      <b>The null model killed the first statistic.</b> Counting correspondence
+      <i>types</i> scored 13 observed against a null mean of <b>46</b> — chance
+      is diverse, descent is concentrated. Replaced with chi-square excess:
+      observed <b>3669</b>, null <b>287.07</b>, z <b>108.3</b>.
+    </div>
+    <h2 style="margin-top:2.5mm">Round 0 — what the live organ caught</h2>
+    <div class="box warn">
+      <b>26 fit / 4 held-out doculects, 83 pairs, 285 fires over 19 beats,
+      726 s</b> — and it wrote <b>0 laws while reporting success</b>. Three live
+      defects, all fixed and pinned:
+      <ul>
+        <li><b>A permutation floor effect.</b> With 60 permutations the smallest
+        reachable p is <b>0.0164</b> — above the 0.01 threshold, so no pair could
+        <i>ever</i> reach significance. The nezer's frozen 0.431 gate in a new
+        costume.</li>
+        <li><b>A dead Murphy check.</b> His "claims KEEP but wrote no laws" rule
+        read <span class="k">kept</span> before it was set.</li>
+        <li><b>Two rulers, and the loose one won.</b> The loop kept a round on a
+        Python test of <span class="k">margin&nbsp;&gt;=&nbsp;0</span> while the
+        weave's own <span class="k">sep</span> knot had refused to commit. The
+        weave decides now.</li>
+      </ul>
+    </div>
+    <div class="box warn">
+      <b>Re-run corrected — and it REVERTED.</b> CEILING 0.5721 / FLOOR 0.5132 /
+      null 0.1765; held-out <b>1.0000</b>, and Murphy failed the round:
+      <i>the objective is saturated at its ceiling, so it cannot register
+      learning.</i> That is the honest state and the next job — B-cubed on the
+      339,706 cognate judgements already staged.
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <div>
+    <b style="color:#0d2b4e">Live on eran3</b> · systemd&nbsp;--user, linger, nice&nbsp;15 ·
+    stop: <span class="cmd">touch ~/sarid-shoot/STOP</span> ·
+    prune: <span class="cmd">rm -rf ~/sarid-shoot</span>
+  </div>
+  <div class="heb" style="max-width:100mm; font-size:8.4pt">
+    ההבדל בינינו ובין רולן הוא מודל האפס המפורש והמשפחות שלא נראו.<br>
+    <span style="color:#8a99a8">2026-09-01 · לזכרה של עלמה ז״ל</span>
+  </div>
+</div>
+
+</body>
+</html>

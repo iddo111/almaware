@@ -1,0 +1,287 @@
+[
+  {
+    "source_mid": "chai-20260821-170231.mid",
+    "wav": "DARWISH-psy2-20260821-1.wav",
+    "mp3": "DARWISH-psy2-20260821-1.mp3",
+    "png": "DARWISH-psy2-20260821-1.png",
+    "bpm": 140.0,
+    "orig_bpm": 140.0,
+    "duration_s": 65.14,
+    "root_hz": 55.0,
+    "root_pitch_class": 9,
+    "orig_ch0_notes": 417,
+    "lead_notes_placed": 417,
+    "dropped_notes": 0,
+    "bass_centroid_hz": 546.9,
+    "lead_centroid_hz": 1522.0,
+    "wav_rms_dbfs": -13.69,
+    "wav_peak_dbfs": -7.27,
+    "lufs_pre_gainstage": 0.44,
+    "gain_applied_db": -8.44,
+    "lufs_integrated_estimate": -8.0,
+    "true_peak_dbfs": -3.52,
+    "arrangement": {
+      "intro_fill": [
+        0,
+        2
+      ],
+      "riser": [
+        2,
+        10
+      ],
+      "drop1": [
+        10,
+        20
+      ],
+      "silence_break": [
+        20,
+        21
+      ],
+      "drop2": [
+        21,
+        33
+      ],
+      "fade": [
+        33,
+        38
+      ]
+    },
+    "grid_check": {
+      "method": "sparse onset-diff histogram + FFT autocorrelation cross-check",
+      "n_kick_onsets": 140,
+      "expected_lag_samples": 18900,
+      "expected_lag_s": 0.42857,
+      "sparse_peak_lag_samples": 18900,
+      "sparse_hits_within_5samples_of_expected": 138,
+      "sparse_total_near_diffs": 138,
+      "fft_measured_peak_lag_samples": 18900,
+      "fft_measured_peak_lag_s": 0.42857,
+      "fft_offset_ms": 0.0,
+      "fft_peak_value": 136.0,
+      "fft_global_max_value": 136.0,
+      "fft_is_global_max": true
+    },
+    "pitch_histogram_match": {
+      "orig_hist": [
+        38,
+        0,
+        74,
+        0,
+        66,
+        20,
+        0,
+        40,
+        0,
+        120,
+        0,
+        59
+      ],
+      "lead_hist": [
+        38,
+        0,
+        74,
+        0,
+        66,
+        20,
+        0,
+        40,
+        0,
+        120,
+        0,
+        59
+      ],
+      "correlation": 1.0,
+      "cosine_similarity": 1.0
+    }
+  },
+  {
+    "source_mid": "chai-20260821-201640-x0.mid",
+    "wav": "DARWISH-psy2-20260821-2.wav",
+    "mp3": "DARWISH-psy2-20260821-2.mp3",
+    "png": "DARWISH-psy2-20260821-2.png",
+    "bpm": 143.55,
+    "orig_bpm": 143.55,
+    "duration_s": 63.53,
+    "root_hz": 55.0,
+    "root_pitch_class": 9,
+    "orig_ch0_notes": 406,
+    "lead_notes_placed": 406,
+    "dropped_notes": 0,
+    "bass_centroid_hz": 535.9,
+    "lead_centroid_hz": 1510.7,
+    "wav_rms_dbfs": -13.66,
+    "wav_peak_dbfs": -7.43,
+    "lufs_pre_gainstage": 0.6,
+    "gain_applied_db": -8.6,
+    "lufs_integrated_estimate": -8.0,
+    "true_peak_dbfs": -4.57,
+    "arrangement": {
+      "intro_fill": [
+        0,
+        2
+      ],
+      "riser": [
+        2,
+        10
+      ],
+      "drop1": [
+        10,
+        20
+      ],
+      "silence_break": [
+        20,
+        21
+      ],
+      "drop2": [
+        21,
+        33
+      ],
+      "fade": [
+        33,
+        38
+      ]
+    },
+    "grid_check": {
+      "method": "sparse onset-diff histogram + FFT autocorrelation cross-check",
+      "n_kick_onsets": 140,
+      "expected_lag_samples": 18433,
+      "expected_lag_s": 0.41798,
+      "sparse_peak_lag_samples": 18433,
+      "sparse_hits_within_5samples_of_expected": 138,
+      "sparse_total_near_diffs": 138,
+      "fft_measured_peak_lag_samples": 18433,
+      "fft_measured_peak_lag_s": 0.41798,
+      "fft_offset_ms": 0.0,
+      "fft_peak_value": 78.0,
+      "fft_global_max_value": 122.99999999999999,
+      "fft_is_global_max": false
+    },
+    "pitch_histogram_match": {
+      "orig_hist": [
+        55,
+        0,
+        64,
+        0,
+        67,
+        36,
+        0,
+        37,
+        0,
+        79,
+        0,
+        68
+      ],
+      "lead_hist": [
+        55,
+        0,
+        64,
+        0,
+        67,
+        36,
+        0,
+        37,
+        0,
+        79,
+        0,
+        68
+      ],
+      "correlation": 1.0,
+      "cosine_similarity": 1.0
+    }
+  },
+  {
+    "source_mid": "chai-20260821-201642-x1.mid",
+    "wav": "DARWISH-psy2-20260821-3.wav",
+    "mp3": "DARWISH-psy2-20260821-3.mp3",
+    "png": "DARWISH-psy2-20260821-3.png",
+    "bpm": 143.55,
+    "orig_bpm": 143.55,
+    "duration_s": 63.53,
+    "root_hz": 55.0,
+    "root_pitch_class": 9,
+    "orig_ch0_notes": 413,
+    "lead_notes_placed": 413,
+    "dropped_notes": 0,
+    "bass_centroid_hz": 535.9,
+    "lead_centroid_hz": 1520.3,
+    "wav_rms_dbfs": -13.55,
+    "wav_peak_dbfs": -7.24,
+    "lufs_pre_gainstage": 0.41,
+    "gain_applied_db": -8.41,
+    "lufs_integrated_estimate": -8.0,
+    "true_peak_dbfs": -4.69,
+    "arrangement": {
+      "intro_fill": [
+        0,
+        2
+      ],
+      "riser": [
+        2,
+        10
+      ],
+      "drop1": [
+        10,
+        20
+      ],
+      "silence_break": [
+        20,
+        21
+      ],
+      "drop2": [
+        21,
+        33
+      ],
+      "fade": [
+        33,
+        38
+      ]
+    },
+    "grid_check": {
+      "method": "sparse onset-diff histogram + FFT autocorrelation cross-check",
+      "n_kick_onsets": 140,
+      "expected_lag_samples": 18433,
+      "expected_lag_s": 0.41798,
+      "sparse_peak_lag_samples": 18433,
+      "sparse_hits_within_5samples_of_expected": 138,
+      "sparse_total_near_diffs": 138,
+      "fft_measured_peak_lag_samples": 18433,
+      "fft_measured_peak_lag_s": 0.41798,
+      "fft_offset_ms": 0.0,
+      "fft_peak_value": 78.0,
+      "fft_global_max_value": 122.99999999999999,
+      "fft_is_global_max": false
+    },
+    "pitch_histogram_match": {
+      "orig_hist": [
+        77,
+        0,
+        66,
+        0,
+        63,
+        37,
+        0,
+        25,
+        0,
+        85,
+        0,
+        60
+      ],
+      "lead_hist": [
+        77,
+        0,
+        66,
+        0,
+        63,
+        37,
+        0,
+        25,
+        0,
+        85,
+        0,
+        60
+      ],
+      "correlation": 1.0,
+      "cosine_similarity": 1.0
+    }
+  }
+]

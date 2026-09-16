@@ -1,0 +1,3013 @@
+{
+ "summary": {
+  "generated": "2026-08-26T12:28:33",
+  "root": "D:\\קפה-קלוד",
+  "total_files_all_types": 203,
+  "total_bytes_all_types": 11623030730,
+  "by_extension": {
+   "wav": {
+    "count": 97,
+    "bytes": 11452537722
+   },
+   "mp3": {
+    "count": 32,
+    "bytes": 166967104
+   },
+   "txt": {
+    "count": 48,
+    "bytes": 3364413
+   },
+   "srt": {
+    "count": 14,
+    "bytes": 119069
+   },
+   "md": {
+    "count": 6,
+    "bytes": 25256
+   },
+   "py": {
+    "count": 1,
+    "bytes": 9768
+   },
+   "log": {
+    "count": 4,
+    "bytes": 6366
+   },
+   "json": {
+    "count": 1,
+    "bytes": 1032
+   }
+  },
+  "by_directory": {
+   ".": {
+    "count": 124,
+    "bytes": 11454719117
+   },
+   "cleaned": {
+    "count": 34,
+    "bytes": 168039098
+   },
+   "dgx_compare/alma_ozen": {
+    "count": 3,
+    "bytes": 1621
+   },
+   "dgx_compare/whisper_dgx": {
+    "count": 4,
+    "bytes": 20548
+   },
+   "handouts": {
+    "count": 4,
+    "bytes": 12351
+   },
+   "transcripts": {
+    "count": 34,
+    "bytes": 237995
+   }
+  },
+  "audio_files": 129,
+  "audio_ok": 129,
+  "audio_corrupt": 0,
+  "audio_unparsed": 0,
+  "audio_total_hours": 18.509,
+  "root_original_wavs": 96,
+  "root_original_hours": 16.567,
+  "audio_with_transcript": 72,
+  "date_span": [
+   "2026-06-24",
+   "2026-08-26"
+  ],
+  "dates_with_audio": {
+   "2026-06-24": {
+    "files": 7,
+    "dur_s": 145.6
+   },
+   "2026-06-25": {
+    "files": 20,
+    "dur_s": 5061.2
+   },
+   "2026-06-26": {
+    "files": 38,
+    "dur_s": 9093.9
+   },
+   "2026-06-28": {
+    "files": 2,
+    "dur_s": 1067.8
+   },
+   "2026-07-01": {
+    "files": 5,
+    "dur_s": 1391.7
+   },
+   "2026-07-02": {
+    "files": 5,
+    "dur_s": 4603.6
+   },
+   "2026-07-03": {
+    "files": 4,
+    "dur_s": 7936.7
+   },
+   "2026-07-04": {
+    "files": 6,
+    "dur_s": 658.6
+   },
+   "2026-07-07": {
+    "files": 2,
+    "dur_s": 5495.4
+   },
+   "2026-07-08": {
+    "files": 2,
+    "dur_s": 1172.3
+   },
+   "2026-07-09": {
+    "files": 1,
+    "dur_s": 5000.4
+   },
+   "2026-07-10": {
+    "files": 1,
+    "dur_s": 61.5
+   },
+   "2026-07-11": {
+    "files": 6,
+    "dur_s": 7326.6
+   },
+   "2026-07-12": {
+    "files": 1,
+    "dur_s": 567.2
+   },
+   "2026-07-15": {
+    "files": 1,
+    "dur_s": 978.5
+   },
+   "2026-07-16": {
+    "files": 1,
+    "dur_s": 397.4
+   },
+   "2026-07-23": {
+    "files": 5,
+    "dur_s": 2595.9
+   },
+   "2026-07-24": {
+    "files": 1,
+    "dur_s": 1310.1
+   },
+   "2026-08-18": {
+    "files": 4,
+    "dur_s": 4366.8
+   },
+   "2026-08-21": {
+    "files": 3,
+    "dur_s": 2082.2
+   },
+   "2026-08-26": {
+    "files": 14,
+    "dur_s": 5317.7
+   }
+  },
+  "heldout_eval_dates_present": {
+   "2026-06-25": [
+    "20260625165315.WAV",
+    "20260625165526.WAV",
+    "20260625170458.WAV",
+    "20260625171050.WAV",
+    "20260625171740.WAV",
+    "20260625172207.WAV",
+    "20260625172706.WAV",
+    "20260625173229.WAV",
+    "20260625173851.WAV",
+    "20260625182956.WAV",
+    "cleaned/20260625165315.mp3",
+    "cleaned/20260625165526.mp3",
+    "cleaned/20260625170458.mp3",
+    "cleaned/20260625171050.mp3",
+    "cleaned/20260625171740.mp3",
+    "cleaned/20260625172207.mp3",
+    "cleaned/20260625172706.mp3",
+    "cleaned/20260625173229.mp3",
+    "cleaned/20260625173851.mp3",
+    "cleaned/20260625182956.mp3"
+   ],
+   "2026-07-01": [
+    "20260701130300.WAV",
+    "20260701131248.WAV",
+    "20260701131518.WAV",
+    "20260701220133.WAV",
+    "20260701235639.WAV"
+   ]
+  },
+  "flagged_short_lt_5s": [
+   "20260625182956.WAV",
+   "20260704174549.WAV",
+   "20260704174607.WAV",
+   "20260704174628.WAV",
+   "20260821151530.WAV",
+   "cleaned/20260625182956.mp3"
+  ],
+  "flagged_long_gt_4h": [],
+  "flagged_zero_byte_audio": [],
+  "flagged_bad_header": [],
+  "zero_byte_nonaudio": [
+   "20260624061811.srt",
+   "20260624061811.txt",
+   "20260711163040.srt",
+   "20260711163040.txt",
+   "cleaned/_clean.log",
+   "transcripts/20260625182956.txt",
+   "transcripts/20260626171556.txt"
+  ]
+ },
+ "files": [
+  {
+   "path": "D:\\קפה-קלוד\\20260624061811.WAV",
+   "rel": "20260624061811.WAV",
+   "bytes": 9462272,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 49.28,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260624061811.srt",
+    "20260624061811.txt",
+    "transcripts/20260624061811.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260624061811.txt"
+   ],
+   "date_guess": "2026-06-24",
+   "date_source": "filename",
+   "mtime": "2026-06-24T06:19:02",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260624070723.WAV",
+   "rel": "20260624070723.WAV",
+   "bytes": 1569280,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 8.171,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260624070723.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260624070723.txt"
+   ],
+   "date_guess": "2026-06-24",
+   "date_source": "filename",
+   "mtime": "2026-06-24T07:07:32",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260624100647.WAV",
+   "rel": "20260624100647.WAV",
+   "bytes": 1544704,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 8.043,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260624100647.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260624100647.txt"
+   ],
+   "date_guess": "2026-06-24",
+   "date_source": "filename",
+   "mtime": "2026-06-24T10:06:56",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260625165315.WAV",
+   "rel": "20260625165315.WAV",
+   "bytes": 22807040,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 118.784,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625165315.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625165315.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-25T16:55:16",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260625165526.WAV",
+   "rel": "20260625165526.WAV",
+   "bytes": 107721216,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 561.045,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625165526.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625165526.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-25T17:04:48",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260625170458.WAV",
+   "rel": "20260625170458.WAV",
+   "bytes": 66318848,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 345.408,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625170458.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625170458.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-25T17:10:44",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260625171050.WAV",
+   "rel": "20260625171050.WAV",
+   "bytes": 73163264,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 381.056,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625171050.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625171050.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-25T17:17:12",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260625171740.WAV",
+   "rel": "20260625171740.WAV",
+   "bytes": 47583744,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 247.829,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625171740.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625171740.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-25T17:21:48",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260625172207.WAV",
+   "rel": "20260625172207.WAV",
+   "bytes": 49459712,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 257.6,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625172207.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625172207.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-25T17:26:26",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260625172706.WAV",
+   "rel": "20260625172706.WAV",
+   "bytes": 52134400,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 271.531,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625172706.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625172706.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-25T17:31:38",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260625173229.WAV",
+   "rel": "20260625173229.WAV",
+   "bytes": 71025152,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 369.92,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625173229.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625173229.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-25T17:38:40",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260625173851.WAV",
+   "rel": "20260625173851.WAV",
+   "bytes": 17121792,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 89.173,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625173851.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625173851.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-25T17:40:20",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260625182956.WAV",
+   "rel": "20260625182956.WAV",
+   "bytes": 131584,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 0.683,
+   "has_transcript": false,
+   "transcript_files": [
+    "transcripts/20260625182956.txt"
+   ],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-25T18:29:58",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": [
+    "short_lt_5s"
+   ]
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626141510.WAV",
+   "rel": "20260626141510.WAV",
+   "bytes": 4284928,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 22.315,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626141510.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626141510.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:15:34",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626163232.WAV",
+   "rel": "20260626163232.WAV",
+   "bytes": 27992576,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 145.792,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626163232.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626163232.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T16:35:00",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626163549.WAV",
+   "rel": "20260626163549.WAV",
+   "bytes": 16597504,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 86.443,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626163549.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626163549.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T16:37:16",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626163814.WAV",
+   "rel": "20260626163814.WAV",
+   "bytes": 30220800,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 157.397,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626163814.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626163814.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T16:40:52",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626164524.WAV",
+   "rel": "20260626164524.WAV",
+   "bytes": 50983424,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 265.536,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626164524.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626164524.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T16:49:52",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626165009.WAV",
+   "rel": "20260626165009.WAV",
+   "bytes": 116892160,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 608.811,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626165009.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626165009.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T17:00:20",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626170653.WAV",
+   "rel": "20260626170653.WAV",
+   "bytes": 29389312,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 153.067,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626170653.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626170653.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T17:09:26",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626170941.WAV",
+   "rel": "20260626170941.WAV",
+   "bytes": 70062592,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 364.907,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626170941.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626170941.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T17:15:48",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626171556.WAV",
+   "rel": "20260626171556.WAV",
+   "bytes": 10043904,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 52.309,
+   "has_transcript": false,
+   "transcript_files": [
+    "transcripts/20260626171556.txt"
+   ],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T17:16:50",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626171819.WAV",
+   "rel": "20260626171819.WAV",
+   "bytes": 80323072,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 418.347,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626171819.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626171819.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T17:25:18",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626172534.WAV",
+   "rel": "20260626172534.WAV",
+   "bytes": 60613120,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 315.691,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626172534.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626172534.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T17:30:52",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626173057.WAV",
+   "rel": "20260626173057.WAV",
+   "bytes": 64496128,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 335.915,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626173057.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626173057.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T17:36:34",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626173828.WAV",
+   "rel": "20260626173828.WAV",
+   "bytes": 78615040,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 409.451,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626173828.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626173828.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T17:45:18",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626174540.WAV",
+   "rel": "20260626174540.WAV",
+   "bytes": 33055232,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 172.16,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626174540.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626174540.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T17:48:32",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626174911.WAV",
+   "rel": "20260626174911.WAV",
+   "bytes": 28021248,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 145.941,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626174911.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626174911.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T17:51:38",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626175204.WAV",
+   "rel": "20260626175204.WAV",
+   "bytes": 50532864,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 263.189,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626175204.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626175204.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T17:56:28",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626175647.WAV",
+   "rel": "20260626175647.WAV",
+   "bytes": 95773184,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 498.816,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626175647.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626175647.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T18:05:06",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626180512.WAV",
+   "rel": "20260626180512.WAV",
+   "bytes": 11436544,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 59.563,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626180512.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626180512.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T18:06:12",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260626180617.WAV",
+   "rel": "20260626180617.WAV",
+   "bytes": 24625664,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 128.256,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626180617.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626180617.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T18:08:34",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260628092804.WAV",
+   "rel": "20260628092804.WAV",
+   "bytes": 192913920,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 1004.757,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-06-28",
+   "date_source": "filename",
+   "mtime": "2026-06-28T09:44:50",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260628201708.WAV",
+   "rel": "20260628201708.WAV",
+   "bytes": 12108288,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 63.061,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-06-28",
+   "date_source": "filename",
+   "mtime": "2026-06-28T20:18:12",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260701130300.WAV",
+   "rel": "20260701130300.WAV",
+   "bytes": 110387712,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 574.933,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260701130300.srt",
+    "20260701130300.txt"
+   ],
+   "transcript_files_nonempty": [
+    "20260701130300.srt",
+    "20260701130300.txt"
+   ],
+   "date_guess": "2026-07-01",
+   "date_source": "filename",
+   "mtime": "2026-07-01T13:12:36",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260701131248.WAV",
+   "rel": "20260701131248.WAV",
+   "bytes": 25977344,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 135.296,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260701131248.srt",
+    "20260701131248.txt"
+   ],
+   "transcript_files_nonempty": [
+    "20260701131248.srt",
+    "20260701131248.txt"
+   ],
+   "date_guess": "2026-07-01",
+   "date_source": "filename",
+   "mtime": "2026-07-01T13:15:04",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260701131518.WAV",
+   "rel": "20260701131518.WAV",
+   "bytes": 6570496,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 34.219,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260701131518.srt",
+    "20260701131518.txt"
+   ],
+   "transcript_files_nonempty": [
+    "20260701131518.srt",
+    "20260701131518.txt"
+   ],
+   "date_guess": "2026-07-01",
+   "date_source": "filename",
+   "mtime": "2026-07-01T13:15:54",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260701220133.WAV",
+   "rel": "20260701220133.WAV",
+   "bytes": 60875264,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 317.056,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260701220133.srt",
+    "20260701220133.txt"
+   ],
+   "transcript_files_nonempty": [
+    "20260701220133.srt",
+    "20260701220133.txt"
+   ],
+   "date_guess": "2026-07-01",
+   "date_source": "filename",
+   "mtime": "2026-07-01T22:06:50",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260701235639.WAV",
+   "rel": "20260701235639.WAV",
+   "bytes": 63394304,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 330.176,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260701235639.srt",
+    "20260701235639.txt"
+   ],
+   "transcript_files_nonempty": [
+    "20260701235639.srt",
+    "20260701235639.txt"
+   ],
+   "date_guess": "2026-07-01",
+   "date_source": "filename",
+   "mtime": "2026-07-02T00:02:10",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260702000225.WAV",
+   "rel": "20260702000225.WAV",
+   "bytes": 61858304,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 322.176,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260702000225.srt",
+    "20260702000225.txt"
+   ],
+   "transcript_files_nonempty": [
+    "20260702000225.srt",
+    "20260702000225.txt"
+   ],
+   "date_guess": "2026-07-02",
+   "date_source": "filename",
+   "mtime": "2026-07-02T00:07:48",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260702201939.WAV",
+   "rel": "20260702201939.WAV",
+   "bytes": 429257216,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 2235.712,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260702201939.srt",
+    "20260702201939.txt"
+   ],
+   "transcript_files_nonempty": [
+    "20260702201939.srt",
+    "20260702201939.txt"
+   ],
+   "date_guess": "2026-07-02",
+   "date_source": "filename",
+   "mtime": "2026-07-02T20:56:56",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260702205719.WAV",
+   "rel": "20260702205719.WAV",
+   "bytes": 269070848,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 1401.408,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260702205719.srt",
+    "20260702205719.txt"
+   ],
+   "transcript_files_nonempty": [
+    "20260702205719.srt",
+    "20260702205719.txt"
+   ],
+   "date_guess": "2026-07-02",
+   "date_source": "filename",
+   "mtime": "2026-07-02T21:20:42",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260702212111.WAV",
+   "rel": "20260702212111.WAV",
+   "bytes": 102236672,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 532.48,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260702212111.srt",
+    "20260702212111.txt"
+   ],
+   "transcript_files_nonempty": [
+    "20260702212111.srt",
+    "20260702212111.txt"
+   ],
+   "date_guess": "2026-07-02",
+   "date_source": "filename",
+   "mtime": "2026-07-02T21:30:04",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260702213010.WAV",
+   "rel": "20260702213010.WAV",
+   "bytes": 21463552,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 111.787,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260702213010.srt",
+    "20260702213010.txt"
+   ],
+   "transcript_files_nonempty": [
+    "20260702213010.srt",
+    "20260702213010.txt"
+   ],
+   "date_guess": "2026-07-02",
+   "date_source": "filename",
+   "mtime": "2026-07-02T21:32:02",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260703134854.WAV",
+   "rel": "20260703134854.WAV",
+   "bytes": 392192512,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 2042.667,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-03",
+   "date_source": "filename",
+   "mtime": "2026-07-03T14:22:58",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260703142556.WAV",
+   "rel": "20260703142556.WAV",
+   "bytes": 128344576,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 668.459,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-03",
+   "date_source": "filename",
+   "mtime": "2026-07-03T14:37:06",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260703143921.WAV",
+   "rel": "20260703143921.WAV",
+   "bytes": 578130432,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 3011.093,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-03",
+   "date_source": "filename",
+   "mtime": "2026-07-03T15:29:34",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260703152945.WAV",
+   "rel": "20260703152945.WAV",
+   "bytes": 425177600,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 2214.464,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-03",
+   "date_source": "filename",
+   "mtime": "2026-07-03T16:06:40",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260704174037.WAV",
+   "rel": "20260704174037.WAV",
+   "bytes": 57147904,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 297.643,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-04",
+   "date_source": "filename",
+   "mtime": "2026-07-04T17:45:36",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260704174549.WAV",
+   "rel": "20260704174549.WAV",
+   "bytes": 66048,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 0.341,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-04",
+   "date_source": "filename",
+   "mtime": "2026-07-04T17:45:50",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": [
+    "short_lt_5s"
+   ]
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260704174607.WAV",
+   "rel": "20260704174607.WAV",
+   "bytes": 57856,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 0.299,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-04",
+   "date_source": "filename",
+   "mtime": "2026-07-04T17:46:24",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": [
+    "short_lt_5s"
+   ]
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260704174628.WAV",
+   "rel": "20260704174628.WAV",
+   "bytes": 53760,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 0.277,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-04",
+   "date_source": "filename",
+   "mtime": "2026-07-04T17:46:30",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": [
+    "short_lt_5s"
+   ]
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260704174657.WAV",
+   "rel": "20260704174657.WAV",
+   "bytes": 27390464,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 142.656,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-04",
+   "date_source": "filename",
+   "mtime": "2026-07-04T17:49:20",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260704174927.WAV",
+   "rel": "20260704174927.WAV",
+   "bytes": 41746944,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 217.429,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-04",
+   "date_source": "filename",
+   "mtime": "2026-07-04T17:53:06",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260707024749.WAV",
+   "rel": "20260707024749.WAV",
+   "bytes": 265499136,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 1382.805,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-07",
+   "date_source": "filename",
+   "mtime": "2026-07-07T03:10:54",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260707234054.WAV",
+   "rel": "20260707234054.WAV",
+   "bytes": 789611008,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 4112.555,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-07",
+   "date_source": "filename",
+   "mtime": "2026-07-08T00:49:28",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260708044655.WAV",
+   "rel": "20260708044655.WAV",
+   "bytes": 1094144,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 5.696,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-08",
+   "date_source": "filename",
+   "mtime": "2026-07-08T04:47:02",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260708045006.WAV",
+   "rel": "20260708045006.WAV",
+   "bytes": 223994368,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 1166.635,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-08",
+   "date_source": "filename",
+   "mtime": "2026-07-08T05:09:34",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260709165153.WAV",
+   "rel": "20260709165153.WAV",
+   "bytes": 960078336,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 5000.405,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-09",
+   "date_source": "filename",
+   "mtime": "2026-07-09T18:15:16",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260710135611.WAV",
+   "rel": "20260710135611.WAV",
+   "bytes": 11813376,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 61.525,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-10",
+   "date_source": "filename",
+   "mtime": "2026-07-10T14:43:52",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260711163040.WAV",
+   "rel": "20260711163040.WAV",
+   "bytes": 259109376,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 1349.525,
+   "has_transcript": false,
+   "transcript_files": [
+    "20260711163040.srt",
+    "20260711163040.txt"
+   ],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-11",
+   "date_source": "filename",
+   "mtime": "2026-07-11T16:53:10",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260711165614.WAV",
+   "rel": "20260711165614.WAV",
+   "bytes": 282804736,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 1472.939,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-11",
+   "date_source": "filename",
+   "mtime": "2026-07-11T17:20:48",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260711172117.WAV",
+   "rel": "20260711172117.WAV",
+   "bytes": 83706368,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 435.968,
+   "has_transcript": true,
+   "transcript_files": [
+    "dgx_compare/alma_ozen/20260711172117.srt",
+    "dgx_compare/alma_ozen/20260711172117.txt",
+    "dgx_compare/whisper_dgx/20260711172117.srt",
+    "dgx_compare/whisper_dgx/20260711172117.txt"
+   ],
+   "transcript_files_nonempty": [
+    "dgx_compare/alma_ozen/20260711172117.srt",
+    "dgx_compare/alma_ozen/20260711172117.txt",
+    "dgx_compare/whisper_dgx/20260711172117.srt",
+    "dgx_compare/whisper_dgx/20260711172117.txt"
+   ],
+   "date_guess": "2026-07-11",
+   "date_source": "filename",
+   "mtime": "2026-07-11T17:28:34",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260711172854.WAV",
+   "rel": "20260711172854.WAV",
+   "bytes": 319263232,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 1662.827,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-11",
+   "date_source": "filename",
+   "mtime": "2026-07-11T17:56:38",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260711175656.WAV",
+   "rel": "20260711175656.WAV",
+   "bytes": 193020416,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 1005.312,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-11",
+   "date_source": "filename",
+   "mtime": "2026-07-11T18:13:42",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260711181538.WAV",
+   "rel": "20260711181538.WAV",
+   "bytes": 268808704,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 1400.043,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-11",
+   "date_source": "filename",
+   "mtime": "2026-07-11T18:39:00",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260712174645.WAV",
+   "rel": "20260712174645.WAV",
+   "bytes": 108900864,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 567.189,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-12",
+   "date_source": "filename",
+   "mtime": "2026-07-12T17:56:14",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260715003559.WAV",
+   "rel": "20260715003559.WAV",
+   "bytes": 187863552,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 978.453,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-15",
+   "date_source": "filename",
+   "mtime": "2026-07-15T00:52:18",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260716235432.WAV",
+   "rel": "20260716235432.WAV",
+   "bytes": 76304896,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 397.419,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-16",
+   "date_source": "filename",
+   "mtime": "2026-07-17T00:01:10",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260723141045.WAV",
+   "rel": "20260723141045.WAV",
+   "bytes": 171545088,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 893.461,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-23",
+   "date_source": "filename",
+   "mtime": "2026-07-23T14:25:40",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260723144009.WAV",
+   "rel": "20260723144009.WAV",
+   "bytes": 146825728,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 764.715,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-23",
+   "date_source": "filename",
+   "mtime": "2026-07-23T14:52:56",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260723145301.WAV",
+   "rel": "20260723145301.WAV",
+   "bytes": 103313920,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 538.091,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-23",
+   "date_source": "filename",
+   "mtime": "2026-07-23T15:02:00",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260723155357.WAV",
+   "rel": "20260723155357.WAV",
+   "bytes": 24928768,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 129.835,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-23",
+   "date_source": "filename",
+   "mtime": "2026-07-23T15:56:08",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260723155828.WAV",
+   "rel": "20260723155828.WAV",
+   "bytes": 51806720,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 269.824,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-23",
+   "date_source": "filename",
+   "mtime": "2026-07-23T16:03:00",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260724090731.WAV",
+   "rel": "20260724090731.WAV",
+   "bytes": 251531776,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 1310.059,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-07-24",
+   "date_source": "filename",
+   "mtime": "2026-07-24T09:30:02",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260818132043.WAV",
+   "rel": "20260818132043.WAV",
+   "bytes": 98411008,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 512.555,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-18",
+   "date_source": "filename",
+   "mtime": "2026-08-18T13:29:18",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260818133037.WAV",
+   "rel": "20260818133037.WAV",
+   "bytes": 472756736,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 2462.272,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-18",
+   "date_source": "filename",
+   "mtime": "2026-08-18T14:11:40",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260818141146.WAV",
+   "rel": "20260818141146.WAV",
+   "bytes": 195723776,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 1019.392,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-18",
+   "date_source": "filename",
+   "mtime": "2026-08-18T14:28:46",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260818144502.WAV",
+   "rel": "20260818144502.WAV",
+   "bytes": 71537152,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 372.587,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-18",
+   "date_source": "filename",
+   "mtime": "2026-08-18T14:51:16",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260821144021.WAV",
+   "rel": "20260821144021.WAV",
+   "bytes": 245924352,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 1280.853,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-21",
+   "date_source": "filename",
+   "mtime": "2026-08-21T15:01:44",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260821150155.WAV",
+   "rel": "20260821150155.WAV",
+   "bytes": 153035264,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 797.056,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-21",
+   "date_source": "filename",
+   "mtime": "2026-08-21T15:15:14",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260821151530.WAV",
+   "rel": "20260821151530.WAV",
+   "bytes": 827904,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 4.309,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-21",
+   "date_source": "filename",
+   "mtime": "2026-08-21T15:15:36",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": [
+    "short_lt_5s"
+   ]
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826140841.WAV",
+   "rel": "20260826140841.WAV",
+   "bytes": 113111552,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 589.12,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T14:18:32",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826141845.WAV",
+   "rel": "20260826141845.WAV",
+   "bytes": 30220800,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 157.397,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T14:21:24",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826142142.WAV",
+   "rel": "20260826142142.WAV",
+   "bytes": 62341632,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 324.693,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T14:27:08",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826142713.WAV",
+   "rel": "20260826142713.WAV",
+   "bytes": 126693888,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 659.861,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T14:38:14",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826143819.WAV",
+   "rel": "20260826143819.WAV",
+   "bytes": 34210304,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 178.176,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T14:41:18",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826144124.WAV",
+   "rel": "20260826144124.WAV",
+   "bytes": 65409536,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 340.672,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T14:47:06",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826150508.WAV",
+   "rel": "20260826150508.WAV",
+   "bytes": 145306112,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 756.8,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T15:17:46",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826152223.WAV",
+   "rel": "20260826152223.WAV",
+   "bytes": 19689984,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 102.549,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T15:24:06",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826152427.WAV",
+   "rel": "20260826152427.WAV",
+   "bytes": 43807232,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 228.16,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T15:28:16",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826152930.WAV",
+   "rel": "20260826152930.WAV",
+   "bytes": 45203968,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 235.435,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T15:33:28",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826153333.WAV",
+   "rel": "20260826153333.WAV",
+   "bytes": 44859904,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 233.643,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T15:37:28",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826153746.WAV",
+   "rel": "20260826153746.WAV",
+   "bytes": 95203840,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 495.851,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T15:46:04",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826154734.WAV",
+   "rel": "20260826154734.WAV",
+   "bytes": 128967168,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 671.701,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T15:58:48",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\20260826160109.WAV",
+   "rel": "20260826160109.WAV",
+   "bytes": 65974784,
+   "sr": 48000,
+   "ch": 2,
+   "bits": 16,
+   "dur_s": 343.616,
+   "has_transcript": false,
+   "transcript_files": [],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-08-26",
+   "date_source": "filename",
+   "mtime": "2026-08-26T16:06:54",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260624061811.mp3",
+   "rel": "cleaned/20260624061811.mp3",
+   "bytes": 805660,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 33.497,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260624061811.srt",
+    "20260624061811.txt",
+    "transcripts/20260624061811.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260624061811.txt"
+   ],
+   "date_guess": "2026-06-24",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:03:25",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260624061811.wav",
+   "rel": "cleaned/20260624061811.wav",
+   "bytes": 1071994,
+   "sr": 16000,
+   "ch": 1,
+   "bits": 16,
+   "dur_s": 33.497,
+   "has_transcript": true,
+   "transcript_files": [
+    "20260624061811.srt",
+    "20260624061811.txt",
+    "transcripts/20260624061811.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260624061811.txt"
+   ],
+   "date_guess": "2026-06-24",
+   "date_source": "filename",
+   "mtime": "2026-07-02T01:38:53",
+   "parser": "wave",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260624070723.mp3",
+   "rel": "cleaned/20260624070723.mp3",
+   "bytes": 174960,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 7.218,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260624070723.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260624070723.txt"
+   ],
+   "date_guess": "2026-06-24",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:03:26",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260624100647.mp3",
+   "rel": "cleaned/20260624100647.mp3",
+   "bytes": 141732,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 5.847,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260624100647.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260624100647.txt"
+   ],
+   "date_guess": "2026-06-24",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:03:26",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260625165315.mp3",
+   "rel": "cleaned/20260625165315.mp3",
+   "bytes": 2573000,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 107.149,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625165315.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625165315.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:03:36",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260625165526.mp3",
+   "rel": "cleaned/20260625165526.mp3",
+   "bytes": 12283655,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 511.743,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625165526.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625165526.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:04:18",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260625170458.mp3",
+   "rel": "cleaned/20260625170458.mp3",
+   "bytes": 7460615,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 310.797,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625170458.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625170458.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:04:43",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260625171050.mp3",
+   "rel": "cleaned/20260625171050.mp3",
+   "bytes": 8480017,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 353.255,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625171050.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625171050.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:05:13",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260625171740.mp3",
+   "rel": "cleaned/20260625171740.mp3",
+   "bytes": 5325262,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 221.82,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625171740.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625171740.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:05:31",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260625172207.mp3",
+   "rel": "cleaned/20260625172207.mp3",
+   "bytes": 5747191,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 239.402,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625172207.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625172207.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:05:51",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260625172706.mp3",
+   "rel": "cleaned/20260625172706.mp3",
+   "bytes": 5827440,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 242.749,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625172706.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625172706.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:06:11",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260625173229.mp3",
+   "rel": "cleaned/20260625173229.mp3",
+   "bytes": 8345853,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 347.681,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625173229.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625173229.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:06:40",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260625173851.mp3",
+   "rel": "cleaned/20260625173851.mp3",
+   "bytes": 1991828,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 82.927,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260625173851.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260625173851.txt"
+   ],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:06:47",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260625182956.mp3",
+   "rel": "cleaned/20260625182956.mp3",
+   "bytes": 18225,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 0.683,
+   "has_transcript": false,
+   "transcript_files": [
+    "transcripts/20260625182956.txt"
+   ],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-06-25",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:06:48",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": [
+    "short_lt_5s"
+   ]
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626141510.mp3",
+   "rel": "cleaned/20260626141510.mp3",
+   "bytes": 484040,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 20.107,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626141510.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626141510.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:06:50",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626163232.mp3",
+   "rel": "cleaned/20260626163232.mp3",
+   "bytes": 3287084,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 136.903,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626163232.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626163232.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:07:01",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626163549.mp3",
+   "rel": "cleaned/20260626163549.mp3",
+   "bytes": 1941046,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 80.8,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626163549.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626163549.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:07:09",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626163814.mp3",
+   "rel": "cleaned/20260626163814.mp3",
+   "bytes": 3679547,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 153.246,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626163814.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626163814.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:07:21",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626164524.mp3",
+   "rel": "cleaned/20260626164524.mp3",
+   "bytes": 6205484,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 258.493,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626164524.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626164524.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:07:43",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626165009.mp3",
+   "rel": "cleaned/20260626165009.mp3",
+   "bytes": 13977017,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 582.318,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626165009.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626165009.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:08:31",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626170653.mp3",
+   "rel": "cleaned/20260626170653.mp3",
+   "bytes": 3626884,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 151.045,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626170653.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626170653.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:08:43",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626170941.mp3",
+   "rel": "cleaned/20260626170941.mp3",
+   "bytes": 8618571,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 359.032,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626170941.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626170941.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:09:13",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626171556.mp3",
+   "rel": "cleaned/20260626171556.mp3",
+   "bytes": 1257056,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 52.305,
+   "has_transcript": false,
+   "transcript_files": [
+    "transcripts/20260626171556.txt"
+   ],
+   "transcript_files_nonempty": [],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:09:17",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626171819.mp3",
+   "rel": "cleaned/20260626171819.mp3",
+   "bytes": 9960220,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 414.953,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626171819.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626171819.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:09:50",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626172534.mp3",
+   "rel": "cleaned/20260626172534.mp3",
+   "bytes": 7519547,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 313.243,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626172534.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626172534.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:10:16",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626173057.mp3",
+   "rel": "cleaned/20260626173057.mp3",
+   "bytes": 7994140,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 333.01,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626173057.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626173057.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:10:43",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626173828.mp3",
+   "rel": "cleaned/20260626173828.mp3",
+   "bytes": 9569637,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 398.667,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626173828.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626173828.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:11:15",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626174540.mp3",
+   "rel": "cleaned/20260626174540.mp3",
+   "bytes": 4123420,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 171.749,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626174540.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626174540.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:11:29",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626174911.mp3",
+   "rel": "cleaned/20260626174911.mp3",
+   "bytes": 3483315,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 145.06,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626174911.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626174911.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:11:41",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626175204.mp3",
+   "rel": "cleaned/20260626175204.mp3",
+   "bytes": 6050630,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 252.037,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626175204.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626175204.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:12:02",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626175647.mp3",
+   "rel": "cleaned/20260626175647.mp3",
+   "bytes": 11675524,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 486.413,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626175647.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626175647.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:12:41",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626180512.mp3",
+   "rel": "cleaned/20260626180512.mp3",
+   "bytes": 1352351,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 56.28,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626180512.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626180512.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:12:46",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  },
+  {
+   "path": "D:\\קפה-קלוד\\cleaned\\20260626180617.mp3",
+   "rel": "cleaned/20260626180617.mp3",
+   "bytes": 2986153,
+   "sr": 44100,
+   "ch": 1,
+   "bits": null,
+   "dur_s": 124.357,
+   "has_transcript": true,
+   "transcript_files": [
+    "transcripts/20260626180617.txt"
+   ],
+   "transcript_files_nonempty": [
+    "transcripts/20260626180617.txt"
+   ],
+   "date_guess": "2026-06-26",
+   "date_source": "filename",
+   "mtime": "2026-06-26T14:12:56",
+   "parser": "ffprobe",
+   "error": null,
+   "health": "ok",
+   "flags": []
+  }
+ ]
+}

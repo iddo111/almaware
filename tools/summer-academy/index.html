@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Academy — AI, VR & DIY Makers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --navy: #0a0e27;
+            --cyan: #00d9ff;
+            --orange: #ff6b35;
+            --purple: #9d4edd;
+            --cream: #faf9f6;
+            --gray-light: #2a2d3a;
+            --gray-dark: #16172a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--gray-dark) 100%);
+            color: var(--cream);
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="4" fill="%2300d9ff"/><circle cx="10" cy="10" r="8" fill="none" stroke="%2300d9ff" stroke-width="1"/></svg>') 10 10, auto;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 2px solid var(--cyan);
+            background: linear-gradient(180deg, rgba(10, 14, 39, 0.95) 0%, rgba(42, 45, 58, 0.8) 100%);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(1.5rem, 5vw, 3.5rem);
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--cyan) 0%, var(--orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--cyan);
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: rgba(42, 45, 58, 0.5);
+            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--cyan);
+            background: transparent;
+            color: var(--cyan);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--cyan);
+            z-index: -1;
+            transition: left 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn:hover::before {
+            left: 0;
+        }
+
+        .tab-btn.active {
+            background: var(--cyan);
+            color: var(--navy);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            padding: 2rem 1rem;
+            animation: fadeInTab 0.6s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeInTab {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Timeline Section (AI & VR News) */
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--cyan) 0%, var(--purple) 100%);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: slideInItem 0.6s ease-out forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(n+5) { animation-delay: 0.5s; }
+
+        @keyframes slideInItem {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-content {
+            background: linear-gradient(135deg, rgba(42, 45, 58, 0.7) 0%, rgba(26, 27, 44, 0.7) 100%);
+            padding: 1.5rem;
+            border-left: 4px solid var(--orange);
+            margin-left: 50%;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 50%;
+            border-left: none;
+            border-right: 4px solid var(--cyan);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+        }
+
+        .timeline-date {
+            font-family: 'Space Mono', monospace;
+            color: var(--cyan);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: rgba(250, 249, 246, 0.8);
+            line-height: 1.6;
+        }
+
+        /* DIY Builds Grid */
+        .builds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .build-card {
+            background: linear-gradient(135deg, rgba(42, 45, 58, 0.8) 0%, rgba(26, 27, 44, 0.8) 100%);
+            border: 1px solid var(--cyan);
+            border-radius: 8px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            opacity: 0;
+            animation: popIn 0.6s ease-out forwards;
+        }
+
+        .build-card:nth-child(1) { animation-delay: 0.1s; }
+        .build-card:nth-child(2) { animation-delay: 0.2s; }
+        .build-card:nth-child(3) { animation-delay: 0.3s; }
+        .build-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .build-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+            transition: all 0.6s ease;
+            pointer-events: none;
+        }
+
+        .build-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            border-color: var(--orange);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.15), inset 0 0 20px rgba(255, 107, 53, 0.05);
+        }
+
+        .build-card:hover::before {
+            top: -25%;
+            right: -25%;
+        }
+
+        .build-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .build-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--cyan);
+        }
+
+        .build-desc {
+            font-size: 0.9rem;
+            color: rgba(250, 249, 246, 0.7);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .build-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--orange);
+            color: var(--navy);
+            border: none;
+            border-radius: 4px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .build-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Summer School Curriculum */
+        .curriculum {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .week-header {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.8rem;
+            color: var(--cyan);
+            margin: 2rem 0 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--orange);
+        }
+
+        .day-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .day-card {
+            background: linear-gradient(135deg, rgba(42, 45, 58, 0.85) 0%, rgba(26, 27, 44, 0.85) 100%);
+            border-left: 4px solid var(--purple);
+            border-radius: 6px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: slideInDay 0.6s ease-out forwards;
+        }
+
+        .day-card:nth-child(1) { animation-delay: 0.1s; }
+        .day-card:nth-child(2) { animation-delay: 0.2s; }
+        .day-card:nth-child(3) { animation-delay: 0.3s; }
+        .day-card:nth-child(4) { animation-delay: 0.4s; }
+        .day-card:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes slideInDay {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .day-card:hover {
+            border-left-color: var(--cyan);
+            transform: translateX(6px);
+            box-shadow: 0 10px 25px rgba(0, 217, 255, 0.1);
+        }
+
+        .day-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--orange);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .day-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .day-title-he {
+            font-size: 1rem;
+            color: var(--cyan);
+            font-weight: 600;
+        }
+
+        .day-content {
+            font-size: 0.85rem;
+            color: rgba(250, 249, 246, 0.75);
+            line-height: 1.6;
+            margin: 1rem 0;
+        }
+
+        .day-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(0, 217, 255, 0.15);
+            border: 1px solid var(--cyan);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--cyan);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 217, 255, 0.2);
+            color: rgba(250, 249, 246, 0.6);
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-content,
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-left: 50px;
+                margin-right: 0;
+                border-left: 4px solid var(--orange);
+                border-right: none;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .tab-nav {
+                gap: 0.5rem;
+            }
+
+            .tab-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Smooth scrolling & page load */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 Summer Academy</h1>
+        <p class="tagline">AI • VR • DIY Makers — Israel 2026</p>
+    </header>
+
+    <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="news">📡 AI & VR News</button>
+        <button class="tab-btn" data-tab="builds">🔧 DIY Builds</button>
+        <button class="tab-btn" data-tab="curriculum">📚 Summer School</button>
+    </nav>
+
+    <!-- Tab 1: AI & VR News -->
+    <section id="news" class="tab-content active">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">May 2026</div>
+                    <div class="timeline-title">Claude 4.7 Release</div>
+                    <div class="timeline-desc">Opus 4.7 sets new reasoning benchmarks. 200K token context standard. Prompt caching now mainstream.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">April 2026</div>
+                    <div class="timeline-title">Grok 4 Heavy Launch</div>
+                    <div class="timeline-desc">xAI releases Grok 4 Heavy — 2M token context, specialized reasoning, multimodal mastery. 40% cheaper than Opus.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">March 2026</div>
+                    <div class="timeline-title">Meta Quest 4 Pro</div>
+                    <div class="timeline-desc">Haptic gloves included. 8K per eye. Eye-tracking + brain-computer interface (BCI) optional module.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">February 2026</div>
+                    <div class="timeline-title">Neuralink Human Trials Expand</div>
+                    <div class="timeline-desc">21 active participants. Real-time thought-to-text. Brain-computer interface is becoming clinical reality.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">January 2026</div>
+                    <div class="timeline-title">DeepSeek-V3 Open Release</div>
+                    <div class="timeline-desc">Open-source LLM rivals GPT-4. 600B parameters. Distillation techniques break frontier models open.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2025–2026</div>
+                    <div class="timeline-title">Agentic AI Goes Mainstream</div>
+                    <div class="timeline-desc">Claude Code, Grok Build, CrewAI dominate. Autonomous agents handle complex workflows. AIME benchmark scores exceed 80%.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tab 2: DIY Builds -->
+    <section id="builds" class="tab-content">
+        <div class="builds-grid">
+            <div class="build-card">
+                <div class="build-icon">🍄</div>
+                <div class="build-title">Fungal Neural Network</div>
+                <div class="build-desc">Grow a living mycelium network and train it to recognize patterns. Uses Physarum polycephalum as a bio-computer.</div>
+                <div class="build-desc" style="font-size: 0.75rem; color: var(--orange);">→ Biohacking, AI, 3 weeks growth cycle</div>
+                <button class="build-btn">Learn More</button>
+            </div>
+
+            <div class="build-card">
+                <div class="build-icon">💡</div>
+                <div class="build-title">Optical Computer</div>
+                <div class="build-desc">Build a light-based logic gate system. Use fiber optics, LEDs, and photodiodes to compute without electricity.</div>
+                <div class="build-desc" style="font-size: 0.75rem; color: var(--orange);">→ Photonics, Physics, DIY optics</div>
+                <button class="build-btn">Build Guide</button>
+            </div>
+
+            <div class="build-card">
+                <div class="build-icon">📿</div>
+                <div class="build-title">Wooden Abacus Computer</div>
+                <div class="build-desc">Craft a programmable wooden abacus with movable rods. Perform calculations manually — the original analog computer.</div>
+                <div class="build-desc" style="font-size: 0.75rem; color: var(--orange);">→ Woodworking, Math, History of Computing</div>
+                <button class="build-btn">Schematics</button>
+            </div>
+
+            <div class="build-card">
+                <div class="build-icon">⚙️</div>
+                <div class="build-title">Turing Machine Simulator</div>
+                <div class="build-desc">3D print a mechanical Turing machine. Use stepper motors and Arduino to run Turing-complete programs tape-by-tape.</div>
+                <div class="build-desc" style="font-size: 0.75rem; color: var(--orange);">→ 3D Printing, Arduino, Theory of Computation</div>
+                <button class="build-btn">Code & STL</button>
+            </div>
+
+            <div class="build-card">
+                <div class="build-icon">🐝</div>
+                <div class="build-title">Smart Beehive Monitor</div>
+                <div class="build-desc">ESP32 + temperature/humidity sensors. Track bee health in real-time. IoT gateway sends data to cloud dashboard.</div>
+                <div class="build-desc" style="font-size: 0.75rem; color: var(--orange);">→ IoT, Sensors, Beekeeping, MQTT</div>
+                <button class="build-btn">Hardware Kit</button>
+            </div>
+
+            <div class="build-card">
+                <div class="build-icon">🌱</div>
+                <div class="build-title">Hydroponic System + AI</div>
+                <div class="build-desc">PVC-based hydroponics + Arduino + machine learning. Predict plant growth and optimize nutrient delivery.</div>
+                <div class="build-desc" style="font-size: 0.75rem; color: var(--orange);">→ Agriculture, ML, DIY PVC hacks</div>
+                <button class="build-btn">Plans & Code</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tab 3: Summer School Curriculum -->
+    <section id="curriculum" class="tab-content">
+        <div class="curriculum">
+            <h2 class="week-header">📅 Week 1: Foundations & First Builds</h2>
+            <div class="day-grid">
+                <div class="day-card">
+                    <div class="day-number">Day 1 — Monday</div>
+                    <div class="day-title">Welcome to Making</div>
+                    <div class="day-title-he">!ברוכים הבאים לעולם ההייטק</div>
+                    <div class="day-content">Intro to AI, VR, and the maker movement. Tour the lab. Soldering basics. Safety first. Meet your bot teammate (Claude).</div>
+                    <div class="day-tags">
+                        <span class="tag">Orientation</span>
+                        <span class="tag">Safety</span>
+                        <span class="tag">Hardware</span>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-number">Day 2 — Tuesday</div>
+                    <div class="day-title">Arduino Basics</div>
+                    <div class="day-title-he">Arduino יסודות</div>
+                    <div class="day-content">Blink LEDs. Read sensors. Code your first program. Build a simple temperature logger with DHT11.</div>
+                    <div class="day-tags">
+                        <span class="tag">Arduino</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">Sensors</span>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-number">Day 3 — Wednesday</div>
+                    <div class="day-title">3D Design Bootcamp</div>
+                    <div class="day-title-he">תכן תלת-ממדי</div>
+                    <div class="day-content">Fusion 360 crash course. Design a simple case for your Arduino. Slice for 3D printer. Print overnight.</div>
+                    <div class="day-tags">
+                        <span class="tag">CAD</span>
+                        <span class="tag">3D Design</span>
+                        <span class="tag">Fusion360</span>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-number">Day 4 — Thursday</div>
+                    <div class="day-title">Drone Piloting & AI Vision</div>
+                    <div class="day-title-he">רחפנים ובינה מלאכותית</div>
+                    <div class="day-content">Fly a DJI Mini 3 Pro. Learn gimbal, exposure, FPV. Intro to object detection with OpenCV + PyTorch.</div>
+                    <div class="day-tags">
+                        <span class="tag">Drones</span>
+                        <span class="tag">CV</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-number">Day 5 — Friday</div>
+                    <div class="day-title">Raised Beds & Hydroponics</div>
+                    <div class="day-title-he">גדילה וחקלאות דיגיטלית</div>
+                    <div class="day-content">Build a raised bed. Set up seedlings. Tour the hydroponic setup. Learn nutrient cycles. Automation via Arduino.</div>
+                    <div class="day-tags">
+                        <span class="tag">Agriculture</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">Hydroponics</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="week-header">📅 Week 2: Advanced Projects & AI Integration</h2>
+            <div class="day-grid">
+                <div class="day-card">
+                    <div class="day-number">Day 6 — Monday</div>
+                    <div class="day-title">Mycelium Computing</div>
+                    <div class="day-title-he">חישוב ביולוגי</div>
+                    <div class="day-content">Start a Physarum culture. Wire it with electrodes. Train it to solve mazes. Real bio-computing in action.</div>
+                    <div class="day-tags">
+                        <span class="tag">Biology</span>
+                        <span class="tag">AI</span>
+                        <span class="tag">Experiments</span>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-number">Day 7 — Tuesday</div>
+                    <div class="day-title">Optical Gates & Photonics</div>
+                    <div class="day-title-he">מעגלים אופטיים</div>
+                    <div class="day-content">Build light-based AND, OR gates. Experiment with fiber optics. Think beyond electricity — photon logic.</div>
+                    <div class="day-tags">
+                        <span class="tag">Photonics</span>
+                        <span class="tag">Physics</span>
+                        <span class="tag">DIY Optics</span>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-number">Day 8 — Wednesday</div>
+                    <div class="day-title">Turing Machine Hackathon</div>
+                    <div class="day-title-he">מכונת טיורינג</div>
+                    <div class="day-content">Finalize your 3D-printed Turing machine. Program it with Arduino. Solve a halting problem. Theory meets hardware.</div>
+                    <div class="day-tags">
+                        <span class="tag">3D Printing</span>
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Computability</span>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-number">Day 9 — Thursday</div>
+                    <div class="day-title">AI + Smart Home Lab</div>
+                    <div class="day-title-he">בית חכם עם AI</div>
+                    <div class="day-content">Build a smart beehive + hydroponic + drone weather station system. Wire everything with MQTT. Deploy your own IoT network.</div>
+                    <div class="day-tags">
+                        <span class="tag">IoT</span>
+                        <span class="tag">MQTT</span>
+                        <span class="tag">AI Integration</span>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-number">Day 10 — Friday</div>
+                    <div class="day-title">Demo Day & Celebration</div>
+                    <div class="day-title-he">יום ההצגה</div>
+                    <div class="day-content">Present your creations. Fly drones. Harvest hydroponic lettuce. Run your Turing machine. Celebrate 2 weeks of building.</div>
+                    <div class="day-tags">
+                        <span class="tag">Showcase</span>
+                        <span class="tag">Community</span>
+                        <span class="tag">Awards</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Built with ❤️ by Claude Code (Opus 4.7) + Grok Heavy + Frontend Design skill</p>
+        <p>Summer Academy 2026 — All resources open-source. הצטרפו אלינו! 🚀</p>
+    </footer>
+
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabName = button.dataset.tab;
+
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(tabName).classList.add('active');
+            });
+        });
+
+        // Smooth scroll on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>

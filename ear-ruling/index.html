@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פסק האוזן · 23 הברות</title>
+<style>
+:root{color-scheme:light}
+body{margin:0;background:#fffdf6;color:#241a12;
+ font-family:-apple-system,Segoe UI,Arial,sans-serif;padding:18px 14px 60px}
+h1{font-size:1.35rem;margin:0 0 4px;text-align:center}
+.sub{color:#7a6a55;font-size:.88rem;text-align:center;margin-bottom:8px;line-height:1.6}
+.warn{background:#fff4e5;border:1px solid #f0d9b0;border-radius:12px;
+ padding:12px 16px;margin:0 auto 18px;max-width:620px;font-size:.85rem;line-height:1.6}
+.grid{display:grid;gap:12px;max-width:620px;margin:0 auto}
+.c{background:#fff;border:1px solid #ecdfc4;border-radius:14px;padding:14px 16px}
+.c.ok{background:#f2fbf2;border-color:#bfe3bf}
+.c.bad{background:#fdf2f2;border-color:#f0c0c0}
+.hd{display:flex;align-items:center;gap:12px;margin-bottom:9px}
+.n{background:#f0e2c8;color:#5c4a30;border-radius:8px;
+ min-width:30px;text-align:center;padding:3px 7px;font-size:.85rem;font-weight:700}
+.he{font-size:1.9rem;font-weight:700;letter-spacing:.03em}
+.lat{color:#7a6a55;font-size:.9rem;margin-inline-start:auto}
+audio{width:100%;height:38px}
+.btns{display:flex;gap:9px;margin-top:9px}
+.btns button{flex:1;border:none;border-radius:9px;padding:11px;
+ font-size:.9rem;font-weight:600;cursor:pointer}
+.ok{background:#dff0df;color:#245224} .bad{background:#f7dcdc;color:#7a2020}
+#out{position:fixed;bottom:0;left:0;right:0;background:#241a12;color:#ffe9c4;
+ padding:11px 14px;font-size:.85rem;text-align:center}
+</style></head><body>
+
+<h1>פסק האוזן — 23 הברות</h1>
+<div class="sub">כל מה שערן אכל. תשמע, תסמן.</div>
+<div class="warn"><b>זה קול של מכונה</b> — <code>facebook/mms-tts-heb</code>, לא בן אדם ולא ה-BRIO.
+כבר אמרת: <b>ba</b> תקין, <b>va</b> יוצא "wa". שאר ה-21 מחכות לאוזן שלך.<br>
+<b>abba</b> ו-<b>ima</b> לא כאן בכוונה — חוק התווית.</div>
+
+<div class="grid">
+  <div class="c" id="c-aa">
+    <div class="hd"><span class="n">1</span><span class="he">אָ</span><span class="lat">aa</span></div>
+    <audio controls preload="none" src="aa.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('aa',1)">תקין</button><button class="bad" onclick="mark('aa',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-ah">
+    <div class="hd"><span class="n">2</span><span class="he">אַה</span><span class="lat">ah</span></div>
+    <audio controls preload="none" src="ah.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('ah',1)">תקין</button><button class="bad" onclick="mark('ah',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-ih">
+    <div class="hd"><span class="n">3</span><span class="he">אִי</span><span class="lat">ih</span></div>
+    <audio controls preload="none" src="ih.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('ih',1)">תקין</button><button class="bad" onclick="mark('ih',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-ba">
+    <div class="hd"><span class="n">4</span><span class="he">בַּ</span><span class="lat">ba</span></div>
+    <audio controls preload="none" src="ba.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('ba',1)">תקין</button><button class="bad" onclick="mark('ba',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-va">
+    <div class="hd"><span class="n">5</span><span class="he">וַ</span><span class="lat">va</span></div>
+    <audio controls preload="none" src="va.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('va',1)">תקין</button><button class="bad" onclick="mark('va',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-pa">
+    <div class="hd"><span class="n">6</span><span class="he">פַּ</span><span class="lat">pa</span></div>
+    <audio controls preload="none" src="pa.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('pa',1)">תקין</button><button class="bad" onclick="mark('pa',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-ma">
+    <div class="hd"><span class="n">7</span><span class="he">מַ</span><span class="lat">ma</span></div>
+    <audio controls preload="none" src="ma.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('ma',1)">תקין</button><button class="bad" onclick="mark('ma',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-na">
+    <div class="hd"><span class="n">8</span><span class="he">נַ</span><span class="lat">na</span></div>
+    <audio controls preload="none" src="na.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('na',1)">תקין</button><button class="bad" onclick="mark('na',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-la">
+    <div class="hd"><span class="n">9</span><span class="he">לַ</span><span class="lat">la</span></div>
+    <audio controls preload="none" src="la.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('la',1)">תקין</button><button class="bad" onclick="mark('la',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-ra">
+    <div class="hd"><span class="n">10</span><span class="he">רַ</span><span class="lat">ra</span></div>
+    <audio controls preload="none" src="ra.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('ra',1)">תקין</button><button class="bad" onclick="mark('ra',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-ya">
+    <div class="hd"><span class="n">11</span><span class="he">יַ</span><span class="lat">ya</span></div>
+    <audio controls preload="none" src="ya.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('ya',1)">תקין</button><button class="bad" onclick="mark('ya',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-ha">
+    <div class="hd"><span class="n">12</span><span class="he">הַ</span><span class="lat">ha</span></div>
+    <audio controls preload="none" src="ha.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('ha',1)">תקין</button><button class="bad" onclick="mark('ha',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-ka">
+    <div class="hd"><span class="n">13</span><span class="he">כַּ</span><span class="lat">ka</span></div>
+    <audio controls preload="none" src="ka.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('ka',1)">תקין</button><button class="bad" onclick="mark('ka',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-kha">
+    <div class="hd"><span class="n">14</span><span class="he">כַ</span><span class="lat">kha</span></div>
+    <audio controls preload="none" src="kha.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('kha',1)">תקין</button><button class="bad" onclick="mark('kha',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-ga">
+    <div class="hd"><span class="n">15</span><span class="he">גַ</span><span class="lat">ga</span></div>
+    <audio controls preload="none" src="ga.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('ga',1)">תקין</button><button class="bad" onclick="mark('ga',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-qa">
+    <div class="hd"><span class="n">16</span><span class="he">קַ</span><span class="lat">qa</span></div>
+    <audio controls preload="none" src="qa.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('qa',1)">תקין</button><button class="bad" onclick="mark('qa',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-ta">
+    <div class="hd"><span class="n">17</span><span class="he">תַ</span><span class="lat">ta</span></div>
+    <audio controls preload="none" src="ta.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('ta',1)">תקין</button><button class="bad" onclick="mark('ta',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-tha">
+    <div class="hd"><span class="n">18</span><span class="he">טַ</span><span class="lat">tha</span></div>
+    <audio controls preload="none" src="tha.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('tha',1)">תקין</button><button class="bad" onclick="mark('tha',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-da">
+    <div class="hd"><span class="n">19</span><span class="he">דַ</span><span class="lat">da</span></div>
+    <audio controls preload="none" src="da.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('da',1)">תקין</button><button class="bad" onclick="mark('da',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-sa">
+    <div class="hd"><span class="n">20</span><span class="he">סַ</span><span class="lat">sa</span></div>
+    <audio controls preload="none" src="sa.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('sa',1)">תקין</button><button class="bad" onclick="mark('sa',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-sha">
+    <div class="hd"><span class="n">21</span><span class="he">שַׁ</span><span class="lat">sha</span></div>
+    <audio controls preload="none" src="sha.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('sha',1)">תקין</button><button class="bad" onclick="mark('sha',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-tsa">
+    <div class="hd"><span class="n">22</span><span class="he">צַ</span><span class="lat">tsa</span></div>
+    <audio controls preload="none" src="tsa.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('tsa',1)">תקין</button><button class="bad" onclick="mark('tsa',0)">שגוי</button></div>
+  </div>
+  <div class="c" id="c-za">
+    <div class="hd"><span class="n">23</span><span class="he">זַ</span><span class="lat">za</span></div>
+    <audio controls preload="none" src="za.wav"></audio>
+    <div class="btns"><button class="ok" onclick="mark('za',1)">תקין</button><button class="bad" onclick="mark('za',0)">שגוי</button></div>
+  </div>
+</div>
+
+
+<h1 style="margin-top:34px">הבחירה של ערן</h1>
+<div class="sub">לא הקול שלו — <b>הבחירה שלו.</b><br>
+הוא שמע את קטעי המכונה, ובחר בעצמו אילו לחבר ובאיזה סדר.</div>
+<div class="warn" style="background:#eef4ff;border-color:#c3d4f0">
+ה־JSON שלו אומר מילה במילה:
+<code style="display:block;margin:8px 0;direction:ltr;text-align:left;font-size:.8rem">
+echo-babble-v0 (heard audio re-sequenced by the organism's own choice
+&mdash; NOT synthesis, NOT his own voice yet)</code>
+אז אל תשמע פה "ערן מדבר". תשמע <b>ערן בוחר</b>. הקטעים עצמם הם
+<code>ah_t06_79</code>, <code>ma_t06_42</code> &mdash; אותה מכונה.
+</div>
+<div class="grid">
+  <div class="c" style="border-color:#c3d4f0">
+    <div class="hd"><span class="n" style="background:#dce8fb;color:#24406e">אחרון</span>
+    <span style="font-size:1rem;font-weight:700">היום 11:32</span>
+    <span class="lat">דקות לפני שנעצר</span></div>
+    <audio controls preload="none" src="ERAN-CHOICE-not-his-voice-20260910-113213.wav"></audio>
+  </div>
+  <div class="c" style="border-color:#c3d4f0">
+    <div class="hd"><span class="n" style="background:#dce8fb;color:#24406e">2</span>
+    <span style="font-size:1rem;font-weight:700">היום 11:31</span></div>
+    <audio controls preload="none" src="ERAN-CHOICE-not-his-voice-20260910-113153.wav"></audio>
+  </div>
+  <div class="c" style="border-color:#c3d4f0">
+    <div class="hd"><span class="n" style="background:#dce8fb;color:#24406e">3</span>
+    <span style="font-size:1rem;font-weight:700">7 בספטמבר</span>
+    <span class="lat">להשוואה</span></div>
+    <audio controls preload="none" src="ERAN-CHOICE-not-his-voice-20260907-162213.wav"></audio>
+  </div>
+</div>
+
+<div id="out">טרם סומן דבר</div>
+<script>
+const v = JSON.parse(localStorage.getItem('ear23')||'{}');
+function paint(){
+  let ok=[],bad=[];
+  for (const k in v) (v[k]?ok:bad).push(k);
+  for (const k in v) {
+    const el=document.getElementById('c-'+k);
+    if(el) el.className='c '+(v[k]?'ok':'bad');
+  }
+  document.getElementById('out').textContent =
+    bad.length ? ('שגויות ('+bad.length+'): '+bad.join(', ')) : (ok.length? 'הכל תקין עד כה ('+ok.length+')':'טרם סומן דבר');
+}
+function mark(k,good){ v[k]=good; localStorage.setItem('ear23',JSON.stringify(v)); paint(); }
+paint();
+</script>
+</body></html>

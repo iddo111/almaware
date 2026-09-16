@@ -1,0 +1,127 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "aya",
+ "letter": "ayin",
+ "hebrew": "ע",
+ "facts": {
+  "place": "glottal",
+  "manner": "stop",
+  "nasal": 0,
+  "voiced": 0
+ },
+ "decisions": {
+  "knots": "AH4",
+  "constr": "none",
+  "nasal": 0,
+  "voice": "off",
+  "release": "none",
+  "burst": 0,
+  "pre": 1
+ },
+ "amounts": {
+  "c_pos": 0.65,
+  "c_area": 2.0,
+  "velum": 0.0,
+  "ten": 0.6,
+  "voi": 1.0,
+  "d_pre": 0.2024924652987812,
+  "d_cons": 0.07584790514769617,
+  "d_trans": 0.0,
+  "d_gap": 0.04,
+  "gap_pos": 0.65,
+  "gap_area": 2.0,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.0,
+  "d_vowel": 0.32075904335693,
+  "glide": 0.024952465993832433,
+  "gain": 6.0,
+  "f0": 105.06322686437564,
+  "trans_voi": null
+ },
+ "live_amounts": [
+  "c_area",
+  "c_pos",
+  "d_cons",
+  "d_pre",
+  "d_trans",
+  "d_vowel",
+  "f0",
+  "glide",
+  "ten",
+  "trans_voi",
+  "voi"
+ ],
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -0.9,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    0.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.2025,
+   0.0758,
+   0.3208
+  ],
+  "f0_knots": [
+   105.06322686437564,
+   105.06322686437564,
+   97.70880098386935
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.024952465993832433,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "ruler": "school-v2/ruler.py (09-02 family rulers + verifiers' objections)",
+ "brief": "{\"gap_db_re_vowel\": -22.6, \"gap_ms_at_le_-20dB\": 50, \"rise_10_90_ms\": 35.0, \"vowel1_F\": [581, 1227, 2666], \"vowel2_F\": [563, 1185, 2604], \"f0_v2\": 101.3, \"hnr_v2_db\": 13.7, \"burst\": {\"max_jump_db\": 56.3, \"at_ms\": 290.0, \"burst\": true}, \"onset_overshoot_db\": 0.5, \"gap_centroid_hz\": 578}",
+ "attempt": 8
+}

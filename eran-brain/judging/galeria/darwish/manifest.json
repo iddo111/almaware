@@ -1,0 +1,175 @@
+{
+ "model": "DARWISH (דרויש) — Chai the Songbird, eran4",
+ "status_line_he": "גרסה 3 של הפסייטראנס של דרוויש (עידו 23:16: 'תסדר את הדרוויש, לא נשמע טוב בכלל'). Surge XT לא היה זמין — surgepy לא קיים ב-PyPI ואין אף תוסף VST במחשב — אז המנוע החדש הוא אוסילטורים מוגבלי-פס PolyBLEP + pedalboard של Spotify (DSP אמיתי של JUCE: פילטר סולם, קומפרסור, לימיטר, ריוורב, דיליי). האבחנה על v2 נעשתה במספרים: בליטה של ‎+6..+9 dB ב-315–1600 הרץ עם צניחה ל‎-13..-16 dB מעל 10 קילוהרץ (קופסתי וכהה), שטיחות ספקטרלית 0.76 מעל 10 קילוהרץ (רעש אליאסינג ולא הרמוניות), הבעיטה יושבת ב-43 הרץ עם 1% מהאנרגיה שלה בפס ה-63 הרץ, ושום דבר לא נכנע לבעיטה. ב-v3: סטיית הספקטרום מהיעד ירדה מ-7.8 ל-2.0 dB, השטיחות מ-0.76 ל-0.36, ה-PLR מ-4.5 ל-7.0 dB, הבעיטה עברה ל-64.6 הרץ עם 60% מהאנרגיה בפס הנכון והקרסט שלה עלה מ-10.3 ל-13.6 dB, והבאס שותק 24–31 ms לפני כל בעיטה (נמדד מהסטמים). המנגינה נשארה שלו במדויק — 0 תווים הושמטו, קורלציה 1.00. v2 ו-v1 נשארים למטה להשוואה. כל המספרים ב-psy3_measurements.json. פגם פתוח אחד, בכנות: הקליק של הבעיטה ב-v3 חלש מזה של v2 (‎-23.3 מול ‎-17.8 dB ברמה מוחלטת) — הבעיטה של v3 יושבת נכון וחזק יותר, אבל פחות 'קליקית'. מה שלא נבדק: אף אחד כאן לא שמע את זה — צריך את האוזניים של עידו.",
+ "note_en": "MEASURED 2026-09-03 18:44-18:49: dmidi-life.service + dmidi-tap.service both loaded/active/running on eran4; state/brain.json.gz and state/metrics.jsonl are being written right now (beat 1017651+, updating every ~1s). A PAUSED-20260824.txt note ('darwish can wait, ERAN takes eran4') exists in the working dir but the live metrics contradict it -- the organism is running, just not composing new pieces: the only .mid files on disk are 3 from 2026-08-21 (chai-20260821-170231, chai-20260821-201640-x0, chai-20260821-201642-x1), found via `systemctl --user cat dmidi-life/dmidi-tap` -> WorkingDirectory ~/darwish-midi -> songs/outbox/. No fluidsynth/mido/pretty_midi were installed on the PC; mido was pip-installed fresh and used to parse note_on/note_off events, then rendered with a custom numpy triangle-wave + ADSR envelope synth at 22050 Hz, capped to 30s per piece.",
+ "items": [
+  {
+   "file": "DARWISH-psy4fb-fluidbass-20260821-1.wav",
+   "spectrogram": "DARWISH-psy4fb-fluidbass-20260821-1.png",
+   "mp3": "DARWISH-psy4fb-fluidbass-20260821-1.mp3",
+   "kind": "audio",
+   "label_he": "קטע 1 — נסיון חיבור מנוע קול-פתוח (FluidSynth), הבאס בלבד הוחלף (140 BPM, -7.9 LUFS)",
+   "note_he": "עידו, 2026-09-15/16 (סוף לילה ארוך): 'תעלה פרויקט קוד-פתוח לפסייטראנס ונחבר אליו'. נבדק לפני שנבנה משהו: Surge XT ו-Vital (המועמדים ה'עשירים בטמבר' המתאימים לז'אנר) אין להם בנייה רשמית ל-Linux ARM64 — ורק לזה יש לנו (כל קופסאות ה-DGX הן aarch64, Grace CPU; נבדק ב-GitHub releases API: רק x86_64/win/mac). Carla גם לא זמינה כחבילת apt ל-arm64. FluidSynth כן — כבר מותקנת על eran4 (2.3.4 arm64), רצה לגמרי מה-CLI בלי מסך ובלי כרטיס קול אמיתי (`fluidsynth -ni -F out.wav soundfont.sf2 in.mid`), ולכן היא הכלי שבאמת חובר, לא ניחוש. הוחלף רק קול הבאס (לא כל הצינור בכל היגד המשימה) — כל שאר המנוע (קיק, ליד, פאד, האטים, אפקטי pedalboard, ה-match-EQ, הקומפרסור/לימיטר/לולאת ה-LUFS) זהה ב-100% לגרסת v4_richvoices. אותם תווים בדיוק, אותו טיימינג — רק המנוע שמנגן אותם השתנה: הקובץ psy_render_v4_fluidbass.py (עותק, לא עריכה) מוסיף נקודת-חיבור אחת (bass_override) שממלאת את תפקיד bass_tr לפני ה-duck/gate/HPF; make_bass_midi.py קורא את לוח השורשים-לפי-תיבה (bar_roots_from_his_phrase) ישירות מהדוח של הרינדור עצמו. נבדקו 4 שילובים אמיתיים (SoundFont x תוכנית GM 38/39); הזוכה נבחר במספרים בלבד (לא באוזן — 'הוא לא שופט עכשיו כלום'): MuseScore_General.sf2 + תוכנית 38 (Synth Bass 1) — שטיחות ספקטרלית מעל 10 קילוהרץ 0.064, פי-15 יותר הרמוני מהבאס המקורי (0.998 כתת-ערוץ מבודד) ומכל שאר 3 השילובים (0.30-0.72) — בדיוק המדד שכל שדרוג ה-PolyBLEP הקודם בפרויקט הזה נשען עליו. התוצאה המלאה (הקובץ הזה): LUFS -7.90 (יעד -8, כמו לפני: -8.04), true peak זהה -1.0 dBTP, סטיית ספקטרום מהיעד השתפרה מעט (1.77->1.54 dB). בכנות, לפני שאומרים מה עובד: זה שיפור בטמבר עלה במחיר — הפער בין הבאס לקיק (הסימוכין הכי נשמר בפרויקט הזה) נחלש: הבאס שותק בממוצע רק 3.0ms לפני כל בעיטה (היה 30.6ms), עם מינימום 0.0ms (היה 24.1ms), ואנרגיית הבאס בחלון הקיק עלתה מ-0.547 ל-1.315 מהממוצע. הסיבה הנחושת: לתו מדגם/SoundFont יש זנב-דעיכה טבעי אחרי ה-note_off שלא נחתך כמו המעטפת הקצרה שנבנתה ביד. לא נפתר במפגש הזה — נקודת החיבור (נעילת-שער מורחבת לכיסוי זנב ה-release, או תוכנית GM עם release מהיר יותר) ידועה וסומנה בקוד. גם 4 קבצי ה-A/B הגולמיים (באס בלבד, בלי שאר התזמורת) נמצאים ב-fluid_variants/ להשוואה ישירה.",
+   "source": "galeria/darwish/psy_render_v4_fluidbass.py <- raw/chai-20260821-170231.mid, bass voice rendered externally on eran4 via `fluidsynth -ni -F` (aarch64, headless, no display/JACK needed) with ~/soundfonts/MuseScore_General.sf2 program 38"
+  },
+  {
+   "file": "DARWISH-psy3-20260821-1.wav",
+   "spectrogram": "DARWISH-psy3-20260821-1.png",
+   "mp3": "DARWISH-psy3-20260821-1.mp3",
+   "kind": "audio",
+   "label_he": "קטע 1 — גרסה 3, מנוע PolyBLEP + pedalboard (140.0 BPM, ‎-8 LUFS, ‎-1 dBTP)",
+   "note_he": "מה שלו ומה של המנוע: כל הגבהים והסדר הם של דרוויש (0 תווים הושמטו, קורלציית היסטוגרמת מחלקות-גובה 1.00), וגם הטמפו; חדש בגרסה 3 — שורש הבאס בכל תיבה נלקח מהפראזה שלו עצמה ולא מדרון קבוע. התזמורת, התופים, המבנה, האפקטים והמיקס — של המנוע.\nמנוע: אוסילטורים מוגבלי-פס PolyBLEP (במקום נסירה נאיבית) + pedalboard 0.9.24 של Spotify (פילטר סולם של JUCE עם קאטאוף מונפש לכל תו, קומפרסור, לימיטר, ריוורב, דיליי, EQ), רוויה בדגימת-יתר פי-4, EQ-התאמה נמדד בשתי מעברות, ועוצמה לפי ITU BS.1770-4 אמיתי (pyloudnorm).\nמדידות v2 → v3: סטיית ספקטרום 1/3-אוקטבה מהיעד 7.77 → 1.93 dB; שטיחות ספקטרלית מעל 10kHz 0.7597 → 0.3583 (ככל שנמוך יותר — צליל הרמוני ולא רעש/אליאסינג); PLR (פיק ביחס לעוצמה) 4.48 → 7.05 dB; קרסט כללי 6.42 → 7.64 dB; עומק הנשימה (pumping) 12.09 → 14.81 dB; LUFS -8.0 → -8.05, true peak -3.52 → -1.0 dBTP.\nבאס מול בעיטה (מהסטמים, מדידה אמיתית): הבאס שותק 24.1–30.4 ms לפני כל בעיטה, ואפס אנרגיית באס בתוך 60 ms הראשונות שלה. ב-v2 לא היה שקע כזה בכלל.\nאזהרה כנה: אף אחד כאן לא יכול לשמוע. כל מה שלמעלה הוא מספרים, לא אוזן."
+  },
+  {
+   "file": "DARWISH-psy3-20260821-2.wav",
+   "spectrogram": "DARWISH-psy3-20260821-2.png",
+   "mp3": "DARWISH-psy3-20260821-2.mp3",
+   "kind": "audio",
+   "label_he": "קטע 2 — גרסה 3, מנוע PolyBLEP + pedalboard (143.55 BPM, ‎-8 LUFS, ‎-1 dBTP)",
+   "note_he": "מה שלו ומה של המנוע: כל הגבהים והסדר הם של דרוויש (0 תווים הושמטו, קורלציית היסטוגרמת מחלקות-גובה 1.00), וגם הטמפו; חדש בגרסה 3 — שורש הבאס בכל תיבה נלקח מהפראזה שלו עצמה ולא מדרון קבוע. התזמורת, התופים, המבנה, האפקטים והמיקס — של המנוע.\nמנוע: אוסילטורים מוגבלי-פס PolyBLEP (במקום נסירה נאיבית) + pedalboard 0.9.24 של Spotify (פילטר סולם של JUCE עם קאטאוף מונפש לכל תו, קומפרסור, לימיטר, ריוורב, דיליי, EQ), רוויה בדגימת-יתר פי-4, EQ-התאמה נמדד בשתי מעברות, ועוצמה לפי ITU BS.1770-4 אמיתי (pyloudnorm).\nמדידות v2 → v3: סטיית ספקטרום 1/3-אוקטבה מהיעד 7.95 → 2.07 dB; שטיחות ספקטרלית מעל 10kHz 0.6522 → 0.3733 (ככל שנמוך יותר — צליל הרמוני ולא רעש/אליאסינג); PLR (פיק ביחס לעוצמה) 3.55 → 6.91 dB; קרסט כללי 6.23 → 8.04 dB; עומק הנשימה (pumping) 13.72 → 15.45 dB; LUFS -8.0 → -7.91, true peak -4.45 → -1.0 dBTP.\nבאס מול בעיטה (מהסטמים, מדידה אמיתית): הבאס שותק 25.1–30.9 ms לפני כל בעיטה, ואפס אנרגיית באס בתוך 60 ms הראשונות שלה. ב-v2 לא היה שקע כזה בכלל.\nאזהרה כנה: אף אחד כאן לא יכול לשמוע. כל מה שלמעלה הוא מספרים, לא אוזן."
+  },
+  {
+   "file": "DARWISH-psy3-20260821-3.wav",
+   "spectrogram": "DARWISH-psy3-20260821-3.png",
+   "mp3": "DARWISH-psy3-20260821-3.mp3",
+   "kind": "audio",
+   "label_he": "קטע 3 — גרסה 3, מנוע PolyBLEP + pedalboard (143.55 BPM, ‎-8 LUFS, ‎-1 dBTP)",
+   "note_he": "מה שלו ומה של המנוע: כל הגבהים והסדר הם של דרוויש (0 תווים הושמטו, קורלציית היסטוגרמת מחלקות-גובה 1.00), וגם הטמפו; חדש בגרסה 3 — שורש הבאס בכל תיבה נלקח מהפראזה שלו עצמה ולא מדרון קבוע. התזמורת, התופים, המבנה, האפקטים והמיקס — של המנוע.\nמנוע: אוסילטורים מוגבלי-פס PolyBLEP (במקום נסירה נאיבית) + pedalboard 0.9.24 של Spotify (פילטר סולם של JUCE עם קאטאוף מונפש לכל תו, קומפרסור, לימיטר, ריוורב, דיליי, EQ), רוויה בדגימת-יתר פי-4, EQ-התאמה נמדד בשתי מעברות, ועוצמה לפי ITU BS.1770-4 אמיתי (pyloudnorm).\nמדידות v2 → v3: סטיית ספקטרום 1/3-אוקטבה מהיעד 7.75 → 2.07 dB; שטיחות ספקטרלית מעל 10kHz 0.66 → 0.3691 (ככל שנמוך יותר — צליל הרמוני ולא רעש/אליאסינג); PLR (פיק ביחס לעוצמה) 3.31 → 7.1 dB; קרסט כללי 6.31 → 8.15 dB; עומק הנשימה (pumping) 13.94 → 15.75 dB; LUFS -8.0 → -8.1, true peak -4.69 → -1.0 dBTP.\nבאס מול בעיטה (מהסטמים, מדידה אמיתית): הבאס שותק 25.9–31.2 ms לפני כל בעיטה, ואפס אנרגיית באס בתוך 60 ms הראשונות שלה. ב-v2 לא היה שקע כזה בכלל.\nאזהרה כנה: אף אחד כאן לא יכול לשמוע. כל מה שלמעלה הוא מספרים, לא אוזן."
+  },
+  {
+   "file": "DARWISH-psy2-20260821-1.wav",
+   "spectrogram": "DARWISH-psy2-20260821-1.png",
+   "kind": "audio",
+   "label_he": "קטע 1 — מנוע v2 (140 BPM, −8 LUFS)",
+   "note_he": "אותו רצף תווים של דרוויש בדיוק כמו קטע 1 המקורי (0 הושמטו, קורלציית היסטוגרמת גובה-צליל 1.00) — מנוע חדש: לימיטר עם lookahead, קומפרסיית מקבילה + סטורציה על באס המאסטר, מדד רועש (LUFS) בקירוב לפי BS.1770 בנוי בבית → הגיע בדיוק ל-8- LUFS (v1 היה סביב 20- עד 22- dBFS RMS, הרבה יותר שקט מפסייטראנס אמיתי). באס דרך פילטר בסגנון סולם (ladder) 4 קטבים, ליד = סופרסוו סטריאו אמיתי ב-7 קולות + שכבת FM/acid שנייה, מבנה: 2 תיבות פתיחה, רייזר 8 תיבות, דרופ 10 תיבות, תיבת שקט אחת, דרופ שני 12 תיבות, פייד 5 תיבות. פיק אמיתי (true peak, נדגם ב-4x) 3.5- dBFS, בטוח מתחת לתקרת 0.3-.",
+   "source": "galeria/darwish/psy_render_v2.py <- raw/chai-20260821-170231.mid (imports psy_render.py, v1 untouched)"
+  },
+  {
+   "file": "DARWISH-psy2-20260821-2.wav",
+   "spectrogram": "DARWISH-psy2-20260821-2.png",
+   "kind": "audio",
+   "label_he": "קטע 2 — מנוע v2 (143.55 BPM, −8 LUFS)",
+   "note_he": "אותו רצף תווים של דרוויש בדיוק כמו קטע 2 המקורי (0 הושמטו, קורלציה 1.00). אותו מנוע v2: לימיטר lookahead, קומפרסיה+סטורציה, יעד 8- LUFS (הושג בדיוק). פיק אמיתי 4.6- dBFS.",
+   "source": "galeria/darwish/psy_render_v2.py <- raw/chai-20260821-201640-x0.mid (imports psy_render.py, v1 untouched)"
+  },
+  {
+   "file": "DARWISH-psy2-20260821-3.wav",
+   "spectrogram": "DARWISH-psy2-20260821-3.png",
+   "kind": "audio",
+   "label_he": "קטע 3 — מנוע v2 (143.55 BPM, −8 LUFS)",
+   "note_he": "אותו רצף תווים של דרוויש בדיוק כמו קטע 3 המקורי (0 הושמטו, קורלציה 1.00). אותו מנוע v2: לימיטר lookahead, קומפרסיה+סטורציה, יעד 8- LUFS (הושג בדיוק). פיק אמיתי 4.7- dBFS.",
+   "source": "galeria/darwish/psy_render_v2.py <- raw/chai-20260821-201642-x1.mid (imports psy_render.py, v1 untouched)"
+  },
+  {
+   "file": "DARWISH-psy-20260821-1.wav",
+   "spectrogram": "DARWISH-psy-20260821-1.png",
+   "kind": "audio",
+   "label_he": "קטע 1 — דרוויש דרך מנוע פסייטראנס (140 BPM)",
+   "note_he": "רצף התווים (417 תווים) הוא כולו של דרוויש (chai-20260821-170231, 0 הושמטו); קיק, בס מתגלגל, לייד סופרסו, האטים ומאסטר — מנוע פסייטראנס. קיק על הרשת בדיוק (היסט 0.0 מ\"ש); היסטוגרמת הפצה של הלייד = היסטוגרמת ה-MIDI המקורי (קורלציה 1.00).",
+   "source": "galeria/darwish/psy_render.py <- raw/chai-20260821-170231.mid"
+  },
+  {
+   "file": "DARWISH-psy-20260821-2.wav",
+   "spectrogram": "DARWISH-psy-20260821-2.png",
+   "kind": "audio",
+   "label_he": "קטע 2 — דרוויש דרך מנוע פסייטראנס (143.55 BPM)",
+   "note_he": "רצף התווים (406 תווים) הוא כולו של דרוויש (chai-20260821-201640-x0, 0 הושמטו); קיק, בס מתגלגל, לייד סופרסו, האטים ומאסטר — מנוע פסייטראנס. קיק על הרשת בדיוק (היסט 0.0 מ\"ש); היסטוגרמת הפצה של הלייד = היסטוגרמת ה-MIDI המקורי (קורלציה 1.00).",
+   "source": "galeria/darwish/psy_render.py <- raw/chai-20260821-201640-x0.mid"
+  },
+  {
+   "file": "DARWISH-psy-20260821-3.wav",
+   "spectrogram": "DARWISH-psy-20260821-3.png",
+   "kind": "audio",
+   "label_he": "קטע 3 — דרוויש דרך מנוע פסייטראנס (143.55 BPM)",
+   "note_he": "רצף התווים (413 תווים) הוא כולו של דרוויש (chai-20260821-201642-x1, 0 הושמטו); קיק, בס מתגלגל, לייד סופרסו, האטים ומאסטר — מנוע פסייטראנס. קיק על הרשת בדיוק (היסט 0.0 מ\"ש); היסטוגרמת הפצה של הלייד = היסטוגרמת ה-MIDI המקורי (קורלציה 1.00).",
+   "source": "galeria/darwish/psy_render.py <- raw/chai-20260821-201642-x1.mid"
+  },
+  {
+   "file": "DARWISH-musicgen-psy-20260821-1.wav",
+   "spectrogram": "DARWISH-musicgen-psy-20260821-1.png",
+   "kind": "audio",
+   "label_he": "קטע 1 — MusicGen-melody, הנחיית מנגינה לא אומתה (כרומה 0.55, ראו אזהרה)",
+   "note_he": "facebook/musicgen-melody (1.5B, transformers 5.12.1), רץ על eran2 (GPU פנוי, לא הופרעה שום עבודה חיה), עם הנחיה טקסטואלית 'full-on psytrance, 145 bpm, rolling bassline, punchy kick, acid lead, festival mix' + ניסיון להנחיה על קו המנגינה בערוץ 0 של דרוויש (סינוס/סאו, מונו, 32kHz). התאמת כרומה שנמדדה (librosa chroma_cqt, קוסינוס ממוצע לפריים) מול המנגינה: 0.553. ⚠️ אבל בדיקה נוספת (לא התבקשה, נעשתה כי המספר לבד לא הספיק) גילתה תקלה: עם אותו seed ואותה הנחיית טקסט, המודל הפיק פלט זהה לחלוטין (bit-identical) לשלושת הקטעים למרות שקובצי המנגינה שהוזנו שונים לגמרי (input_features נבדקו ואומתו כשונים). המסקנה: בהרצה הזו MusicGen לא באמת עקב אחרי המנגינה של דרוויש — מספרי הכרומה אינם הוכחה לכך, הם נמדדים נכון אבל לא מוכיחים את מה שהם נועדו להוכיח. נראה כמו תקלת קונדישונינג ב-generate() של הגרסה הזו של transformers, לא משהו שנפתר בתוך התקציב שהוקצה לצי (eran2/eran3, כ-30 דק'). הצליל עצמו כן פסייטראנס אמיתי לפי ההנחיה הטקסטואלית — רק לא מוכח שהוא 'דרוויש'. מדדנו: -12.93 LUFS, פיק אמיתי -0.99 dBFS (תוקן — הריצה הראשונה קליפ'ה קשה ב-16 סיביות, תוקנה בנרמול לפני הכתיבה), BPM משוער 125.0. 30 שניות (המקסימום המעשי של המודל).",
+   "source": "eran2 (venv ~/darwish-musicgen) facebook/musicgen-melody <- galeria/darwish/DARWISH-melody-1.wav <- raw MIDI channel-0"
+  },
+  {
+   "file": "DARWISH-musicgen-psy-20260821-2.wav",
+   "spectrogram": "DARWISH-musicgen-psy-20260821-2.png",
+   "kind": "audio",
+   "label_he": "קטע 2 — MusicGen-melody, הנחיית מנגינה לא אומתה (כרומה 0.53, ראו אזהרה)",
+   "note_he": "facebook/musicgen-melody (1.5B, transformers 5.12.1), רץ על eran2 (GPU פנוי, לא הופרעה שום עבודה חיה), עם הנחיה טקסטואלית 'full-on psytrance, 145 bpm, rolling bassline, punchy kick, acid lead, festival mix' + ניסיון להנחיה על קו המנגינה בערוץ 0 של דרוויש (סינוס/סאו, מונו, 32kHz). התאמת כרומה שנמדדה (librosa chroma_cqt, קוסינוס ממוצע לפריים) מול המנגינה: 0.533. ⚠️ אבל בדיקה נוספת (לא התבקשה, נעשתה כי המספר לבד לא הספיק) גילתה תקלה: עם אותו seed ואותה הנחיית טקסט, המודל הפיק פלט זהה לחלוטין (bit-identical) לשלושת הקטעים למרות שקובצי המנגינה שהוזנו שונים לגמרי (input_features נבדקו ואומתו כשונים). המסקנה: בהרצה הזו MusicGen לא באמת עקב אחרי המנגינה של דרוויש — מספרי הכרומה אינם הוכחה לכך, הם נמדדים נכון אבל לא מוכיחים את מה שהם נועדו להוכיח. נראה כמו תקלת קונדישונינג ב-generate() של הגרסה הזו של transformers, לא משהו שנפתר בתוך התקציב שהוקצה לצי (eran2/eran3, כ-30 דק'). הצליל עצמו כן פסייטראנס אמיתי לפי ההנחיה הטקסטואלית — רק לא מוכח שהוא 'דרוויש'. מדדנו: -12.93 LUFS, פיק אמיתי -0.99 dBFS (תוקן — הריצה הראשונה קליפ'ה קשה ב-16 סיביות, תוקנה בנרמול לפני הכתיבה), BPM משוער 125.0. 30 שניות (המקסימום המעשי של המודל).",
+   "source": "eran2 (venv ~/darwish-musicgen) facebook/musicgen-melody <- galeria/darwish/DARWISH-melody-2.wav <- raw MIDI channel-0"
+  },
+  {
+   "file": "DARWISH-musicgen-psy-20260821-3.wav",
+   "spectrogram": "DARWISH-musicgen-psy-20260821-3.png",
+   "kind": "audio",
+   "label_he": "קטע 3 — MusicGen-melody, הנחיית מנגינה לא אומתה (כרומה 0.54, ראו אזהרה)",
+   "note_he": "facebook/musicgen-melody (1.5B, transformers 5.12.1), רץ על eran2 (GPU פנוי, לא הופרעה שום עבודה חיה), עם הנחיה טקסטואלית 'full-on psytrance, 145 bpm, rolling bassline, punchy kick, acid lead, festival mix' + ניסיון להנחיה על קו המנגינה בערוץ 0 של דרוויש (סינוס/סאו, מונו, 32kHz). התאמת כרומה שנמדדה (librosa chroma_cqt, קוסינוס ממוצע לפריים) מול המנגינה: 0.537. ⚠️ אבל בדיקה נוספת (לא התבקשה, נעשתה כי המספר לבד לא הספיק) גילתה תקלה: עם אותו seed ואותה הנחיית טקסט, המודל הפיק פלט זהה לחלוטין (bit-identical) לשלושת הקטעים למרות שקובצי המנגינה שהוזנו שונים לגמרי (input_features נבדקו ואומתו כשונים). המסקנה: בהרצה הזו MusicGen לא באמת עקב אחרי המנגינה של דרוויש — מספרי הכרומה אינם הוכחה לכך, הם נמדדים נכון אבל לא מוכיחים את מה שהם נועדו להוכיח. נראה כמו תקלת קונדישונינג ב-generate() של הגרסה הזו של transformers, לא משהו שנפתר בתוך התקציב שהוקצה לצי (eran2/eran3, כ-30 דק'). הצליל עצמו כן פסייטראנס אמיתי לפי ההנחיה הטקסטואלית — רק לא מוכח שהוא 'דרוויש'. מדדנו: -12.93 LUFS, פיק אמיתי -0.99 dBFS (תוקן — הריצה הראשונה קליפ'ה קשה ב-16 סיביות, תוקנה בנרמול לפני הכתיבה), BPM משוער 125.0. 30 שניות (המקסימום המעשי של המודל).",
+   "source": "eran2 (venv ~/darwish-musicgen) facebook/musicgen-melody <- galeria/darwish/DARWISH-melody-3.wav <- raw MIDI channel-0"
+  },
+  {
+   "file": "DARWISH-20260821-1.wav",
+   "kind": "audio",
+   "label_he": "קטע 1 — chai-20260821-170231 (רינדור ישן, גל משולש)",
+   "note_he": "1008 צלילים; נועד מה-MIDI המקורי ב-numpy synth, 30 שניות",
+   "source": "eran4:~/darwish-midi/songs/outbox/chai-20260821-170231.mid"
+  },
+  {
+   "file": "DARWISH-20260821-1.png",
+   "kind": "image",
+   "label_he": "גליל פסנתר (piano roll) — קטע 1",
+   "note_he": "piano roll, רקע לבן",
+   "source": "generated locally from the .mid via mido + matplotlib"
+  },
+  {
+   "file": "DARWISH-20260821-2.wav",
+   "kind": "audio",
+   "label_he": "קטע 2 — chai-20260821-201640-x0 (רינדור ישן, גל משולש)",
+   "note_he": "951 צלילים; 30 שניות",
+   "source": "eran4:~/darwish-midi/songs/outbox/chai-20260821-201640-x0.mid"
+  },
+  {
+   "file": "DARWISH-20260821-2.png",
+   "kind": "image",
+   "label_he": "גליל פסנתר (piano roll) — קטע 2",
+   "note_he": "piano roll, רקע לבן",
+   "source": "generated locally from the .mid via mido + matplotlib"
+  },
+  {
+   "file": "DARWISH-20260821-3.wav",
+   "kind": "audio",
+   "label_he": "קטע 3 — chai-20260821-201642-x1 (רינדור ישן, גל משולש)",
+   "note_he": "996 צלילים; 30 שניות",
+   "source": "eran4:~/darwish-midi/songs/outbox/chai-20260821-201642-x1.mid"
+  },
+  {
+   "file": "DARWISH-20260821-3.png",
+   "kind": "image",
+   "label_he": "גליל פסנתר (piano roll) — קטע 3",
+   "note_he": "piano roll, רקע לבן",
+   "source": "generated locally from the .mid via mido + matplotlib"
+  },
+  {
+   "file": "raw/chai-20260821-170231.mid",
+   "kind": "file",
+   "label_he": "קובץ MIDI מקורי — קטע 1",
+   "note_he": "הקובץ המקורי שארגן כתב",
+   "source": "eran4:~/darwish-midi/songs/outbox/chai-20260821-170231.mid"
+  },
+  {
+   "file": "raw/chai-20260821-201640-x0.mid",
+   "kind": "file",
+   "label_he": "קובץ MIDI מקורי — קטע 2",
+   "note_he": "הקובץ המקורי שארגן כתב",
+   "source": "eran4:~/darwish-midi/songs/outbox/chai-20260821-201640-x0.mid"
+  },
+  {
+   "file": "raw/chai-20260821-201642-x1.mid",
+   "kind": "file",
+   "label_he": "קובץ MIDI מקורי — קטע 3",
+   "note_he": "הקובץ המקורי שארגן כתב",
+   "source": "eran4:~/darwish-midi/songs/outbox/chai-20260821-201642-x1.mid"
+  }
+ ]
+}

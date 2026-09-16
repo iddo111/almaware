@@ -1,0 +1,35 @@
+{
+ "source": "room_vggt_8.npz",
+ "views": 8,
+ "conf_percentile": 50.0,
+ "conf_threshold": 2.925814151763916,
+ "confident_points": 812224,
+ "voxels": 256,
+ "mesh_raw_vertices": 61815,
+ "mesh_raw_faces": 123156,
+ "mesh_vertices": 893,
+ "mesh_faces": 1987,
+ "bbox_lo": [
+  -0.4692179325087049,
+  -0.16879721726880653,
+  -0.1385309264446446
+ ],
+ "bbox_hi": [
+  0.3239203664109753,
+  0.35996164867764696,
+  1.0181290928132225
+ ],
+ "bbox_size": [
+  0.7931382989196802,
+  0.5287588659464535,
+  1.156660019257867
+ ],
+ "watertight": {
+  "watertight": false,
+  "boundary_edges": 155,
+  "nonmanifold_edges": 557,
+  "euler": 160
+ },
+ "scale_is_arbitrary": true,
+ "note": "shape only. A feed-forward multi-view model returns the scene up to one similarity transform, so these units are not metres."
+}

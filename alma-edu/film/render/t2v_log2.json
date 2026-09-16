@@ -1,0 +1,90 @@
+[
+  {
+    "id": "01_dawn_window",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 90.2,
+    "seed": 310411,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/01_dawn_window"
+  },
+  {
+    "id": "02_the_line",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 85.2,
+    "seed": 310412,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/02_the_line"
+  },
+  {
+    "id": "04_name_cards",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 145.3,
+    "seed": 310414,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/04_name_cards"
+  },
+  {
+    "id": "05_rope_circle",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 90.2,
+    "seed": 310415,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/05_rope_circle"
+  },
+  {
+    "id": "07_walking_line",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 85.2,
+    "seed": 310417,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/07_walking_line"
+  },
+  {
+    "id": "11_body_letter",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 85.1,
+    "seed": 310421,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/11_body_letter"
+  },
+  {
+    "id": "14_disc_pouch",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 85.2,
+    "seed": 310424,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/14_disc_pouch"
+  },
+  {
+    "id": "15_lamp_off",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 85.2,
+    "seed": 310425,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/15_lamp_off"
+  }
+]

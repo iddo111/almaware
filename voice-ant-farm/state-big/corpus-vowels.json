@@ -1,0 +1,145 @@
+{
+  "original 253 s (BEFORE)": {
+    "frames": 64,
+    "sampled_seconds": 116.0,
+    "f1_median": 517.5757921254117,
+    "f1_p90": 914.9315899720737,
+    "f2_median": 1539.2749593910598,
+    "a_rate": 0.078125,
+    "a_frames_per_sampled_second": 0.04310344827586207,
+    "vowel_box_hits": {
+      "u": 1,
+      "a": 9,
+      "e": 10,
+      "o": 3
+    },
+    "pool_files": 8,
+    "pool_hours": 0.032
+  },
+  "Iddo big (human-big)": {
+    "frames": 3140,
+    "sampled_seconds": 2195.2,
+    "f1_median": 614.1522621255979,
+    "f1_p90": 1204.986960724359,
+    "f2_median": 1787.4850921139005,
+    "a_rate": 0.04777070063694268,
+    "a_frames_per_sampled_second": 0.06833152634408109,
+    "vowel_box_hits": {
+      "e": 518,
+      "i": 107,
+      "a": 337,
+      "u": 16,
+      "o": 102
+    },
+    "pool_files": 18146,
+    "pool_hours": 26.746
+  },
+  ".. kafe sessions": {
+    "frames": 3114,
+    "sampled_seconds": 1789.8,
+    "f1_median": 579.8458018806493,
+    "f1_p90": 818.4507968363223,
+    "f2_median": 1783.6686732892358,
+    "a_rate": 0.036608863198458574,
+    "a_frames_per_sampled_second": 0.063694298654884,
+    "vowel_box_hits": {
+      "a": 281,
+      "e": 789,
+      "i": 108,
+      "o": 86,
+      "u": 12
+    },
+    "pool_files": 6490,
+    "pool_hours": 8.149
+  },
+  ".. voice-input": {
+    "frames": 3143,
+    "sampled_seconds": 3049.6,
+    "f1_median": 652.5497225106104,
+    "f1_p90": 1329.294930923242,
+    "f2_median": 1844.5925496079224,
+    "a_rate": 0.05727012408526885,
+    "a_frames_per_sampled_second": 0.05902413431269673,
+    "vowel_box_hits": {
+      "a": 347,
+      "u": 24,
+      "e": 405,
+      "o": 94,
+      "i": 100
+    },
+    "pool_files": 6280,
+    "pool_hours": 14.169
+  },
+  ".. alma-mic": {
+    "frames": 3166,
+    "sampled_seconds": 1208.8,
+    "f1_median": 624.5995820497317,
+    "f1_p90": 1178.2650235918823,
+    "f2_median": 1737.2307762829766,
+    "a_rate": 0.06822488945041061,
+    "a_frames_per_sampled_second": 0.17868960953011234,
+    "vowel_box_hits": {
+      "i": 93,
+      "a": 409,
+      "e": 434,
+      "o": 114,
+      "u": 20
+    },
+    "pool_files": 5376,
+    "pool_hours": 4.429
+  },
+  "open multi-speaker": {
+    "frames": 3200,
+    "sampled_seconds": 2863.0,
+    "f1_median": 541.1326738184271,
+    "f1_p90": 1555.6213417601393,
+    "f2_median": 1949.4948867346843,
+    "a_rate": 0.029375,
+    "a_frames_per_sampled_second": 0.03283301408466447,
+    "vowel_box_hits": {
+      "i": 360,
+      "e": 480,
+      "a": 217,
+      "o": 83,
+      "u": 26
+    },
+    "pool_files": 6772,
+    "pool_hours": 13.796
+  },
+  ".. FLEURS he_il": {
+    "frames": 3199,
+    "sampled_seconds": 4194.8,
+    "f1_median": 585.2268542611566,
+    "f1_p90": 1663.318395725842,
+    "f2_median": 2017.4659054117865,
+    "a_rate": 0.03125976867771178,
+    "a_frames_per_sampled_second": 0.02383915247045138,
+    "vowel_box_hits": {
+      "e": 473,
+      "u": 15,
+      "a": 226,
+      "i": 356,
+      "o": 72
+    },
+    "pool_files": 3242,
+    "pool_hours": 9.475
+  },
+  ".. Common Voice 17": {
+    "frames": 3197,
+    "sampled_seconds": 1757.1,
+    "f1_median": 505.9170118240872,
+    "f1_p90": 1462.2287235407932,
+    "f2_median": 1858.5699672889075,
+    "a_rate": 0.024397873005943073,
+    "a_frames_per_sampled_second": 0.044391629787466524,
+    "vowel_box_hits": {
+      "a": 230,
+      "i": 350,
+      "e": 347,
+      "o": 109,
+      "u": 46
+    },
+    "pool_files": 3530,
+    "pool_hours": 4.321
+  }
+}

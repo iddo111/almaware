@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ALMA MASTER</title>
+<style>
+/* 100% ours - hand written, no framework, no CDN, no font import. */
+:root{
+  --bg:#fbfbf7; --card:#fff; --ink:#16181d; --dim:#6b7280; --line:#e6e6df;
+  --teal:#0f766e; --teal2:#0d9488; --warm:#c9602a; --red:#b91c1c;
+  --amber:#b45309; --ok:#15803d; --box:#f1f5f4;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font:15px/1.5 "Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--bg);
+ border-bottom:1px solid var(--line);padding:14px 22px 11px;
+ display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+h1{margin:0;font-size:21px;letter-spacing:.3px}
+h1 span{color:var(--teal)}
+.sub{color:var(--dim);font-size:13px}
+.right{margin-left:auto;display:flex;gap:12px;align-items:center}
+.pulse{width:9px;height:9px;border-radius:50%;background:var(--ok);
+ box-shadow:0 0 0 0 rgba(21,128,61,.55);animation:p 2.2s infinite}
+@keyframes p{70%{box-shadow:0 0 0 9px rgba(21,128,61,0)}100%{box-shadow:0 0 0 0 rgba(21,128,61,0)}}
+.wrap{max-width:1500px;margin:0 auto;padding:18px 22px 60px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.card h2{margin:0 0 10px;font-size:13px;letter-spacing:.9px;text-transform:uppercase;
+ color:var(--teal);display:flex;align-items:center;gap:8px}
+.card h2 .n{color:var(--dim);font-weight:400;letter-spacing:0;text-transform:none;font-size:12px}
+.node{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.node:first-of-type{border-top:0}
+.dot{width:10px;height:10px;border-radius:50%;flex:0 0 10px}
+.dot.up{background:var(--ok)} .dot.down{background:var(--red)}
+.dot.warn{background:var(--amber)} .dot.unk{background:#9ca3af}
+.nm{font-weight:600;min-width:62px}
+.meta{color:var(--dim);font-size:12.5px;margin-left:auto;text-align:right;white-space:nowrap}
+.bar{height:6px;background:var(--box);border-radius:4px;overflow:hidden;width:74px;margin-left:6px}
+.bar i{display:block;height:100%;background:var(--teal2)}
+.link{display:flex;gap:9px;align-items:center;padding:6px 0;font-size:13.5px;
+ border-top:1px solid var(--line)}
+.link:first-of-type{border-top:0}
+.gb{margin-left:auto;font-weight:700;color:var(--teal)}
+.pill{font-size:11px;padding:2px 8px;border-radius:999px;font-weight:700;letter-spacing:.4px}
+.pill.up{background:#dcfce7;color:#166534}
+.pill.down{background:#fee2e2;color:#991b1b}
+.pill.unk{background:#f3f4f6;color:#4b5563}
+.pill.new{background:#ffedd5;color:#9a3412}
+.pill.stale{background:#fef3c7;color:#92400e}
+.w{display:flex;align-items:center;gap:9px;padding:8px 0;border-top:1px solid var(--line)}
+.w:first-of-type{border-top:0}
+.w .who{font-weight:600}
+.w .nd{color:var(--dim);font-size:12px}
+.w .dt{color:var(--dim);font-size:12px;margin-left:auto;text-align:right;
+ max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.msg{padding:7px 0;border-top:1px solid var(--line);font-size:13.5px}
+.msg:first-of-type{border-top:0}
+.msg b{color:var(--teal)} .msg .t{color:var(--dim);font-size:11.5px;margin-left:6px}
+.msg .x{display:block;margin-top:2px;white-space:pre-wrap;word-break:break-word}
+.task{padding:6px 0;border-top:1px solid var(--line);font-size:13px}
+.task:first-of-type{border-top:0}
+.task .id{font-family:Consolas,monospace;font-size:11px;color:var(--dim)}
+.mission{background:var(--box);border-radius:9px;padding:9px 11px;font-size:13px;
+ margin-bottom:10px;color:#374151}
+.err{color:var(--red);font-size:12.5px}
+.foot{margin-top:26px;color:var(--dim);font-size:12.5px;display:flex;gap:16px;flex-wrap:wrap}
+a{color:var(--teal)}
+.empty{color:var(--dim);font-size:13px;padding:6px 0}
+</style>
+</head>
+<body>
+<header>
+  <h1>ALMA <span>MASTER</span></h1>
+  <div class="sub">fleet · workers · council · services</div>
+  <div class="right"><span class="pulse" id="pulse"></span>
+    <span class="sub" id="age">connecting…</span></div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+    <div class="card" id="c-fleet"><h2>DGX Fleet</h2><div id="fleet"></div></div>
+    <div class="card" id="c-fabric"><h2>QSFP Fabric</h2><div id="fabric"></div></div>
+    <div class="card" id="c-workers"><h2>Eran Workers</h2><div id="workers"></div></div>
+    <div class="card" id="c-services"><h2>Services</h2><div id="services"></div></div>
+    <div class="card" id="c-queue"><h2>Council Queue <span class="n" id="qn"></span></h2>
+      <div id="queue"></div></div>
+    <div class="card" id="c-council"><h2>Council Feed <span class="n" id="cn"></span></h2>
+      <div id="council"></div></div>
+  </div>
+  <div class="foot">
+    <span>ALMAWARE · 100% our own code — stdlib http.server, hand-written CSS/JS, no CDN</span>
+    <span>every tile is live or honestly marked BROKEN / UNKNOWN</span>
+  </div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => (s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+function dotFor(state){
+  if(state==='UP'||state==='LIVE'||state===true) return 'up';
+  if(state==='DOWN'||state==='BROKEN') return 'down';
+  if(state==='STALE'||state==='NOT BUILT'||state==='DISK ONLY') return 'warn';
+  return 'unk';
+}
+function pill(state){
+  const k = state==='UP'||state==='LIVE' ? 'up'
+          : state==='DOWN'||state==='BROKEN' ? 'down'
+          : state==='NOT BUILT' ? 'new'
+          : state==='STALE'||state==='DISK ONLY' ? 'stale' : 'unk';
+  return `<span class="pill ${k}">${esc(state)}</span>`;
+}
+
+function render(d){
+  // ---- fleet ----
+  const ck = d.cockpit || {};
+  if(ck.state==='BROKEN'){
+    $('#fleet').innerHTML = `<div class="err">${esc(ck.error)}</div>`;
+  } else {
+    $('#fleet').innerHTML = (ck.nodes||[]).map(n=>{
+      const util = n.gpu_util==null ? 0 : n.gpu_util;
+      return `<div class="node">
+        <span class="dot ${n.reachable?'up':'down'}"></span>
+        <span class="nm">${esc(n.id)}</span>
+        <span class="sub">${esc(n.hostname||'—')}</span>
+        <span class="meta">${n.gpu_temp==null?'—':n.gpu_temp+'°C'}
+          ${n.gpu_util==null?'':util+'%'}</span>
+        <span class="bar"><i style="width:${Math.min(100,util)}%"></i></span>
+      </div>`;
+    }).join('') || '<div class="empty">no nodes</div>';
+    $('#c-fleet').querySelector('h2').innerHTML =
+      `DGX Fleet <span class="n">${(ck.nodes||[]).filter(n=>n.reachable).length}/${(ck.nodes||[]).length} reachable</span>`;
+  }
+
+  // ---- fabric ----
+  const links = ck.links || [];
+  $('#fabric').innerHTML = links.map(l=>`<div class="link">
+      <span class="dot ${l.state==='up'?'up':'down'}"></span>
+      <span>${esc(l.name)}</span>
+      <span class="gb">${l.gbps==null?'—':l.gbps+'G'}</span>
+    </div>`).join('') || '<div class="empty">no fabric data</div>';
+  $('#c-fabric').querySelector('h2').innerHTML =
+    `QSFP Fabric <span class="n">${links.filter(l=>l.state==='up').length}/${links.length} up</span>`;
+
+  // ---- workers ----
+  $('#workers').innerHTML = (d.workers||[]).map(w=>`<div class="w">
+      <span class="dot ${dotFor(w.state)}"></span>
+      <span class="who">${esc(w.name)}</span>
+      <span class="nd">${esc(w.node)}</span>
+      <span class="dt">${esc(w.detail||'')}</span>
+      ${pill(w.state)}
+    </div>`).join('') || '<div class="empty">no workers</div>';
+
+  // ---- services ----
+  const s = d.services||{};
+  const rows = [
+    ['Quorum', s.quorum, 'http://127.0.0.1:8099/'],
+    ['Cockpit', s.cockpit, 'http://127.0.0.1:8790/'],
+    ['ALMA-RECALL', s.recall, 'http://127.0.0.1:8794/'],
+  ];
+  $('#services').innerHTML = rows.map(([n,v,u])=>{
+    v = v||{};
+    const extra = v.sessions ? `${v.sessions.toLocaleString()} sessions` : (v.error?esc(v.error):'');
+    return `<div class="w">
+      <span class="dot ${dotFor(v.state)}"></span>
+      <span class="who"><a href="${u}" target="_blank">${n}</a></span>
+      <span class="dt">${extra}</span>
+      ${pill(v.state||'UNKNOWN')}
+    </div>`;
+  }).join('');
+
+  // ---- council ----
+  const c = d.council||{};
+  $('#cn').textContent = `${c.n_messages||0} msgs · ${c.state||''}`;
+  $('#qn').textContent = `${c.n_open||0} open · ${c.n_held||0} held`;
+  if(c.state==='BROKEN'){
+    $('#council').innerHTML = `<div class="err">${esc(c.error)}</div>`;
+  } else {
+    $('#council').innerHTML =
+      (c.mission?`<div class="mission">${esc(c.mission)}</div>`:'') +
+      (c.messages||[]).slice().reverse().map(m=>`<div class="msg">
+        <b>${esc(m.who)}</b><span class="t">${esc(m.at||'')}</span>
+        <span class="x">${esc(m.text)}</span></div>`).join('');
+  }
+  const held = (c.held||[]).map(t=>`<div class="task">
+      <span class="pill up">${esc(t.who)}</span> ${esc(t.prompt)}
+      <div class="id">${esc(t.id)}</div></div>`).join('');
+  const open = (c.open||[]).map(t=>`<div class="task">
+      <span class="pill unk">open</span> ${esc(t.prompt)}
+      <div class="id">${esc(t.id)}</div></div>`).join('');
+  $('#queue').innerHTML = (held+open) || '<div class="empty">queue empty</div>';
+
+  const age = ck.age_s==null ? '?' : ck.age_s.toFixed(0);
+  $('#age').textContent = `fleet data ${age}s old · refreshed ${new Date().toLocaleTimeString()}`;
+  $('#pulse').style.background = (ck.state==='LIVE') ? 'var(--ok)' : 'var(--amber)';
+}
+
+async function tick(){
+  try{
+    const r = await fetch('/api/status', {cache:'no-store'});
+    render(await r.json());
+  }catch(e){
+    $('#age').textContent = 'server unreachable';
+    $('#pulse').style.background = 'var(--red)';
+  }
+}
+tick(); setInterval(tick, 5000);
+</script>
+</body>
+</html>

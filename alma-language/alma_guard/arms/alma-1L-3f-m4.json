@@ -1,0 +1,12 @@
+{
+ "kind": "alma",
+ "task": "binary",
+ "width": 1024,
+ "drift": 0.05,
+ "init": 0.02,
+ "r_ok": 0.1,
+ "r_fa": 1.0,
+ "epochs": 15,
+ "name": "alma-1L-3f-m4",
+ "r_miss": 4.0
+}

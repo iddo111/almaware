@@ -1,0 +1,460 @@
+{
+  "alma": "0.1",
+  "weave": "fib",
+  "knots": [
+    {
+      "name": "f",
+      "verb": "sum"
+    },
+    {
+      "name": "show",
+      "verb": "fringe"
+    }
+  ],
+  "threads": [
+    {
+      "from": "f",
+      "to": "f",
+      "strands": [
+        {
+          "weight": 1.0,
+          "delay": 1
+        },
+        {
+          "weight": 1.0,
+          "delay": 2
+        }
+      ]
+    },
+    {
+      "from": "f",
+      "to": "show"
+    }
+  ],
+  "seeds": [
+    {
+      "to": "f",
+      "value": 1.0
+    }
+  ],
+  "run": 10,
+  "scene": {
+    "seed": 1337,
+    "layout": "bfs-layer",
+    "positions": {
+      "f": [
+        0.0824,
+        3.0233,
+        0.0
+      ],
+      "show": [
+        -0.0939,
+        3.0601,
+        6.0
+      ]
+    }
+  },
+  "trace": {
+    "beats": 10,
+    "finished": false,
+    "fires": [
+      {
+        "beat": 1,
+        "knot": "f",
+        "spoke": 1.0
+      },
+      {
+        "beat": 2,
+        "knot": "f",
+        "spoke": 1.0
+      },
+      {
+        "beat": 2,
+        "knot": "show",
+        "spoke": 1.0
+      },
+      {
+        "beat": 3,
+        "knot": "f",
+        "spoke": 2.0
+      },
+      {
+        "beat": 3,
+        "knot": "show",
+        "spoke": 1.0
+      },
+      {
+        "beat": 4,
+        "knot": "f",
+        "spoke": 3.0
+      },
+      {
+        "beat": 4,
+        "knot": "show",
+        "spoke": 2.0
+      },
+      {
+        "beat": 5,
+        "knot": "f",
+        "spoke": 5.0
+      },
+      {
+        "beat": 5,
+        "knot": "show",
+        "spoke": 3.0
+      },
+      {
+        "beat": 6,
+        "knot": "f",
+        "spoke": 8.0
+      },
+      {
+        "beat": 6,
+        "knot": "show",
+        "spoke": 5.0
+      },
+      {
+        "beat": 7,
+        "knot": "f",
+        "spoke": 13.0
+      },
+      {
+        "beat": 7,
+        "knot": "show",
+        "spoke": 8.0
+      },
+      {
+        "beat": 8,
+        "knot": "f",
+        "spoke": 21.0
+      },
+      {
+        "beat": 8,
+        "knot": "show",
+        "spoke": 13.0
+      },
+      {
+        "beat": 9,
+        "knot": "f",
+        "spoke": 34.0
+      },
+      {
+        "beat": 9,
+        "knot": "show",
+        "spoke": 21.0
+      },
+      {
+        "beat": 10,
+        "knot": "f",
+        "spoke": 55.0
+      },
+      {
+        "beat": 10,
+        "knot": "show",
+        "spoke": 34.0
+      }
+    ],
+    "fringes": {
+      "show": [
+        [
+          2,
+          1.0
+        ],
+        [
+          3,
+          1.0
+        ],
+        [
+          4,
+          2.0
+        ],
+        [
+          5,
+          3.0
+        ],
+        [
+          6,
+          5.0
+        ],
+        [
+          7,
+          8.0
+        ],
+        [
+          8,
+          13.0
+        ],
+        [
+          9,
+          21.0
+        ],
+        [
+          10,
+          34.0
+        ]
+      ]
+    },
+    "sparks": [
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 1,
+        "arrival_beat": 2,
+        "value": 1.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 2,
+        "depart_beat": 1,
+        "arrival_beat": 3,
+        "value": 1.0
+      },
+      {
+        "from": "f",
+        "to": "show",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 1,
+        "arrival_beat": 2,
+        "value": 1.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 2,
+        "arrival_beat": 3,
+        "value": 1.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 2,
+        "depart_beat": 2,
+        "arrival_beat": 4,
+        "value": 1.0
+      },
+      {
+        "from": "f",
+        "to": "show",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 2,
+        "arrival_beat": 3,
+        "value": 1.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 3,
+        "arrival_beat": 4,
+        "value": 2.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 2,
+        "depart_beat": 3,
+        "arrival_beat": 5,
+        "value": 2.0
+      },
+      {
+        "from": "f",
+        "to": "show",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 3,
+        "arrival_beat": 4,
+        "value": 2.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 4,
+        "arrival_beat": 5,
+        "value": 3.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 2,
+        "depart_beat": 4,
+        "arrival_beat": 6,
+        "value": 3.0
+      },
+      {
+        "from": "f",
+        "to": "show",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 4,
+        "arrival_beat": 5,
+        "value": 3.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 5,
+        "arrival_beat": 6,
+        "value": 5.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 2,
+        "depart_beat": 5,
+        "arrival_beat": 7,
+        "value": 5.0
+      },
+      {
+        "from": "f",
+        "to": "show",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 5,
+        "arrival_beat": 6,
+        "value": 5.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 6,
+        "arrival_beat": 7,
+        "value": 8.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 2,
+        "depart_beat": 6,
+        "arrival_beat": 8,
+        "value": 8.0
+      },
+      {
+        "from": "f",
+        "to": "show",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 6,
+        "arrival_beat": 7,
+        "value": 8.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 7,
+        "arrival_beat": 8,
+        "value": 13.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 2,
+        "depart_beat": 7,
+        "arrival_beat": 9,
+        "value": 13.0
+      },
+      {
+        "from": "f",
+        "to": "show",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 7,
+        "arrival_beat": 8,
+        "value": 13.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 8,
+        "arrival_beat": 9,
+        "value": 21.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 2,
+        "depart_beat": 8,
+        "arrival_beat": 10,
+        "value": 21.0
+      },
+      {
+        "from": "f",
+        "to": "show",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 8,
+        "arrival_beat": 9,
+        "value": 21.0
+      },
+      {
+        "from": "f",
+        "to": "f",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 9,
+        "arrival_beat": 10,
+        "value": 34.0
+      },
+      {
+        "from": "f",
+        "to": "show",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 9,
+        "arrival_beat": 10,
+        "value": 34.0
+      }
+    ]
+  }
+}

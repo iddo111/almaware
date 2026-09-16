@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<title>ERAN Federation — State, Research and Plans</title>
+<style>
+  @page { size: A4; margin: 14mm 13mm 15mm 13mm; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #fff; color: #16181d;
+    font-family: "Segoe UI", "Arial", system-ui, sans-serif;
+    font-size: 10.2pt; line-height: 1.5;
+  }
+  /* Let the content flow. Forcing a break per section left half-empty pages,
+     which is a broken window on a document meant to be read. */
+  .page { padding: 0; }
+  h2, h3 { page-break-after: avoid; break-after: avoid; }
+  table, .card, .kpi, .lead, .grid2 { page-break-inside: avoid; break-inside: avoid; }
+  tr { page-break-inside: avoid; break-inside: avoid; }
+  h1 { font-size: 21pt; margin: 0 0 2mm; letter-spacing: -.01em; color: #0d1220; }
+  h2 { font-size: 13.5pt; margin: 7mm 0 2.5mm; padding-bottom: 1.5mm;
+       border-bottom: 2.5px solid #1b62d6; color: #0d1220; }
+  h3 { font-size: 11pt; margin: 4.5mm 0 1.5mm; color: #1b3a6b; }
+  p { margin: 0 0 2.2mm; }
+  .he { direction: rtl; text-align: right; font-family: "Segoe UI", "Arial", sans-serif; }
+  .sub { color: #5a6272; font-size: 9.4pt; margin-top: 1mm; }
+  .rule { height: 3px; background: linear-gradient(90deg,#1b62d6,#22a06b 45%,#e8a33d 75%,#fff); margin: 3mm 0 5mm; }
+  .banner { background: #fff8e6; border: 1.5px solid #e8a33d; border-radius: 5px;
+            padding: 2.5mm 3mm; font-size: 9.1pt; margin: 0 0 4mm; }
+  .lead { background: #f2f7ff; border-right: 4px solid #1b62d6; border-left: 4px solid #1b62d6;
+          padding: 3mm 3.5mm; border-radius: 4px; margin: 0 0 4mm; }
+  table { width: 100%; border-collapse: collapse; margin: 2mm 0 3.5mm; font-size: 9.1pt; }
+  th { background: #eef3fb; text-align: left; padding: 1.6mm 2mm; border-bottom: 2px solid #1b62d6;
+       font-weight: 600; color: #0d1220; }
+  td { padding: 1.6mm 2mm; border-bottom: 1px solid #e3e7ee; vertical-align: top; }
+  tr:nth-child(even) td { background: #fafbfd; }
+  code { background: #f1f3f7; padding: 0 .8mm; border-radius: 3px; font-size: 8.9pt;
+         font-family: "Consolas", monospace; }
+  .ok    { color: #14804a; font-weight: 700; }
+  .bad   { color: #c02b2b; font-weight: 700; }
+  .warn  { color: #b7791f; font-weight: 700; }
+  .dim   { color: #6b7280; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
+  .card { border: 1.5px solid #dfe4ec; border-radius: 5px; padding: 2.5mm 3mm; background: #fff; }
+  .card h4 { margin: 0 0 1.5mm; font-size: 10pt; color: #0d1220; }
+  .big { font-size: 15pt; font-weight: 700; color: #1b62d6; }
+  ul, ol { margin: 0 0 2.5mm; padding-right: 5mm; padding-left: 5mm; }
+  li { margin-bottom: 1.2mm; }
+  .tag { display: inline-block; font-size: 8.2pt; font-weight: 700; padding: .4mm 1.6mm;
+         border-radius: 3px; vertical-align: middle; }
+  .t-a { background: #e6f6ed; color: #14804a; border: 1px solid #9fd9ba; }
+  .t-b { background: #e9f0fc; color: #1b4fa8; border: 1px solid #a8c2ea; }
+  .t-c { background: #fdeaea; color: #a52020; border: 1px solid #eeb0b0; }
+  .t-d { background: #f2f3f5; color: #5a6272; border: 1px solid #d9dce2; }
+  .foot { margin-top: 5mm; padding-top: 2mm; border-top: 1px solid #e3e7ee;
+          font-size: 8.4pt; color: #6b7280; }
+  .kpi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5mm; margin: 3mm 0 4mm; }
+  .kpi div { border: 1.5px solid #dfe4ec; border-radius: 5px; padding: 2.5mm; text-align: center; }
+  .kpi .n { font-size: 14pt; font-weight: 700; color: #1b62d6; display: block; }
+  .kpi .l { font-size: 8.2pt; color: #5a6272; }
+  .quote { font-style: italic; color: #3a4152; border-right: 3px solid #c9d2e0; padding-right: 3mm; }
+</style>
+</head>
+<body>
+
+<!-- ============================ PAGE 1 ============================ -->
+<div class="page">
+  <div class="banner">🪟 <b>BROKEN WINDOWS LAW — חוק החלונות השבורים:</b> if it's not working, fix it IMMEDIATELY. Test the REAL output, not a proxy (<code>health: ok</code> ≠ working).</div>
+
+  <h1>ERAN FEDERATION</h1>
+  <div class="sub">דוח מצב, מחקר ותוכניות · State, research and plans<br>
+  2026-08-23, 21:5x JDT · everything below was measured tonight or cited to a source</div>
+  <div class="rule"></div>
+
+  <div class="lead">
+    <p class="he"><b>מה עידו ביקש הערב:</b> לתקן את הפדרציה, לחבר אותו, ולבדוק · להריץ עליה את ערן, אימון מבוזר, אינפרנס מבוזר, קודרים (ענק אחד או כמה קטנים) · ולהשתמש בכל הסיפור לעלמה VR וליקום הווירטואלי · <b>הערן שירוץ שם הוא ענף, לא הראשי</b> · אולי חוות נמלים או חדר התינוקות, או שניהם.</p>
+    <p><b>What was asked:</b> fix the federation, sign in, test it. Then: run ERAN on it, distributed training, distributed inference, coders — one giant or several small. Use the whole thing for ALMA VR and our virtual universe. <b>The ERAN that runs there is a BRANCH, never the main one.</b> Maybe an ant farm there, or the nursery, or both. Research it, bring plans and proposals.</p>
+  </div>
+
+  <h2>0 · What is live tonight / מה חי הלילה</h2>
+
+  <div class="kpi">
+    <div><span class="n">24/24</span><span class="l">live wavs → the same prototype ERAN's own ear picks</span></div>
+    <div><span class="n">84 ms</span><span class="l">p50 round trip, cloud to Tel&nbsp;Aviv</span></div>
+    <div><span class="n">55</span><span class="l">federation nodes<br>22 green · 16 red · 17 gray</span></div>
+    <div><span class="n">0</span><span class="l">nodes still saying<br>"not tracked yet" (was 17)</span></div>
+  </div>
+
+  <p><b>Signed in and deployed.</b> Cloudflare account <code>iddo111@gmail.com</code>, full Workers write scopes. Worker <code>federation</code> deployed twice tonight (version <code>8ea7a706</code>), bound to <code>federation.iddoperez.ai</code> and the <code>workers.dev</code> fallback. The status lane survived both deploys — 46 public nodes, fresh.</p>
+
+  <p><b>ERAN now answers from the cloud.</b> His 91 prototypes were pushed (167&nbsp;KB, leak self-check clean) and the live Worker was then tested against his own cochlea running on this machine: <span class="ok">24 wavs, 24 identical prototypes, worst cosine drift 6.8e-8</span>. Guards verified live: a wrong-width vector → 400, 40&nbsp;ms of audio → 400 in words (not NaN), an unauthorised push → 401.</p>
+
+  <h3>Three broken windows closed tonight</h3>
+  <table>
+    <tr><th style="width:34%">What was wrong</th><th>What it actually was</th><th style="width:20%">Now</th></tr>
+    <tr><td>The federation memory said the app was <b>"NOT built yet"</b></td><td>It shipped 2026-08-10. The note had been stale for 13 days and would have sent the next session rebuilding a live system.</td><td class="ok">corrected</td></tr>
+    <tr><td>17 nodes read <b>"not tracked yet"</b>, including <code>eran-brain</code></td><td>The registry asked the HUD for project keys its <code>PROJECT_ROOTS</code> list never defined. <b>The organism was not on his own federation.</b> 13 were real (now tracked, 32→52 roots); 4 were registry ghosts with no directory and were removed rather than faked green.</td><td class="ok">17 → 0</td></tr>
+    <tr><td>The <code>hear</code> response reported <code>ms: 0</code> every time</td><td>Workers freeze <code>Date.now()</code> during synchronous execution. It was a lie dressed as a metric. Removed; the real cost is measured on the bench (2.01&nbsp;ms).</td><td class="ok">removed</td></tr>
+  </table>
+
+  <h3>What is still red, honestly</h3>
+  <p>16 red nodes. <b>None of them is a bug</b> — they are services and council members that are simply not running right now: the ant-farm GUI, the ALMA gateway, the preview server, and eleven council seats (Desktop Claude MCP, Codex, Grok, Gemini, Qwen CLI, Qwen3-480B, gpt-oss-120b, GLM, Nemotron, Perplexity, alma-fs-mcp). 17 gray now each name a real reason — <span class="dim">"quiet — last change 13d ago"</span>, <span class="dim">"route not configured"</span> — instead of pretending to be untracked.</p>
+
+  <div class="foot">Fleet at the same moment: 4/4 DGX reachable · fabric 4/4 links up @200G · eran4 at 96% GPU, 80&nbsp;°C, working.</div>
+</div>
+
+<!-- ============================ PAGE 2 ============================ -->
+<div class="page">
+  <h2>1 · What the federation actually is now / מה הפדרציה באמת</h2>
+  <p class="he"><b>בכנות:</b> עד הלילה הפדרציה הייתה <b>מראה</b> — היא הסתכלה על 55 צמתים ואמרה מי חי ומי מת, וזה עבד. מהלילה יש לה גם <b>נתיב חישוב אחד אמיתי</b>: ערן. זו לא רשת מתנדבים, אין מנויים, ואין עדיין אף מחשב זר שתורם כוח. בעל הבית אחד, והוא אתה.</p>
+  <p><b>Honestly:</b> until tonight the federation was a <b>mirror</b> — it watched 55 nodes and said which were alive. That worked. As of tonight it also has <b>one real compute lane</b>: ERAN. It is not yet a volunteer network. Zero subscribers, zero foreign machines donating compute, one owner. Everything below is written from that starting point, not from a wish.</p>
+
+  <h2>2 · Distributed inference / הסקה מבוזרת</h2>
+  <h3>What is already proven — at home</h3>
+  <table>
+    <tr><th style="width:26%">Thing</th><th>Measured</th><th style="width:22%">Verdict</th></tr>
+    <tr><td>Qwen3-Coder-480B over 3 DGX</td><td>vLLM pipeline-parallel ×3 over the QSFP chain: <b>10 → 28 tok/s</b> (from 2.93). The key was <code>NCCL_NET=Socket</code>.</td><td class="ok">works, in production</td></tr>
+    <tr><td><code>llama.cpp --rpc</code> layer split</td><td>eran1 head + eran2/eran3 RPC workers on <fabric-ip> / <fabric-ip></td><td class="ok">works</td></tr>
+    <tr><td>The fabric itself</td><td>105 Gbit/s eran1↔eran2 (4 streams), 39.5 eran2↔eran3, RTT 0.042&nbsp;ms</td><td class="ok">not the bottleneck</td></tr>
+    <tr><td><b>ERAN on free cloud</b></td><td>2.01&nbsp;ms CPU per answer, 167&nbsp;KB of state, 24/24 identical to his own ear</td><td class="ok">live tonight</td></tr>
+  </table>
+
+  <h3>What the field has proven — over the open internet</h3>
+  <ul>
+    <li><b>Petals</b> (Yandex Research / BigScience) — BitTorrent for inference. Each volunteer hosts a few transformer blocks and forwards activations to the next peer. Runs Llama-2-70B and BLOOM-176B over the internet, <b>up to 10× faster than offloading</b> for interactive generation, with fault-tolerant routing and load balancing.</li>
+    <li><b>exo</b> — a mesh over heterogeneous consumer hardware; the viral demos split Llama-3-405B across Macs, iPhones and Raspberry Pis.</li>
+    <li>Both are <b>pipeline-parallel over the WAN</b> — exactly the shape the DGX chain already runs internally, just with hostile latency.</li>
+  </ul>
+  <p><b>The honest read for us:</b> Petals-style inference is real, but it pays off when the model is far too big for one box. Iddo already owns the box. Where the federation genuinely wins is the opposite end: <b>models so small that a free edge Worker computes them outright</b> — which is precisely what tonight proved, and where nothing else in the workspace has ever been able to go.</p>
+
+  <h2>3 · Distributed training / אימון מבוזר — the honest research</h2>
+  <p class="he"><b>שורה תחתונה קודם:</b> הענן החינמי <b>לא יכול</b> לאמן שום דבר רציני, וזה לא עניין של חוכמה או של תכנון — זו מגבלת חומרה וזמן. הטכנולוגיה לאימון מבוזר <b>כן</b> קיימת ועובדת, אבל היא רלוונטית לצי שלך ולמכונות שכורות, לא לשכבות החינמיות.</p>
+
+  <h3>The free tiers, as they stand in August 2026</h3>
+  <table>
+    <tr><th style="width:22%">Provider</th><th>What you actually get</th><th style="width:24%">Can it train ERAN-scale?</th></tr>
+    <tr><td>Kaggle</td><td><b>30 GPU-hours/week guaranteed</b>, T4 or P100 (16–20 GB), 9-hour session cap. Fixed quota, resets weekly.</td><td class="warn">The best free GPU there is. Real, but 9-hour chunks.</td></tr>
+    <tr><td>Google Colab</td><td>15–30 h/week, <b>no published allowance</b>, varies with demand; 90-min idle disconnect, ~12 h hard ceiling.</td><td class="warn">Unpredictable. Fine for a notebook, not for a run.</td></tr>
+    <tr><td>Hugging Face ZeroGPU</td><td>H200 hardware — and <b>3.5 minutes of GPU per day</b> on the free tier (2 min unauthenticated).</td><td class="bad">Demo hosting only. Not training, not even close.</td></tr>
+    <tr><td>Oracle Always Free</td><td>ARM Ampere CPU. <b>Halved to 2 OCPU / 12 GB, enforced 18 August 2026</b> — five days ago. There were never GPUs in the free tier.</td><td class="bad">Our own notes assumed 4 OCPU/24 GB. That is now stale.</td></tr>
+    <tr><td>Cloudflare Workers</td><td>10 ms CPU per request, KV 1,000 writes/day free, Durable Objects on the free plan.</td><td class="bad">For serving. Never for training — and their terms say so.</td></tr>
+  </table>
+
+  <h3>The technology that does work</h3>
+  <ul>
+    <li><b>DiLoCo</b> (DeepMind) — local SGD with hundreds of inner steps between syncs. Matched the synchronous baseline on a 150M model while communicating <b>500× less</b>.</li>
+    <li><b>OpenDiLoCo</b> (Prime Intellect) — the open implementation. Trained <b>across two continents and three countries at 90–95% compute utilisation</b>, and scaled DiLoCo to 3× the original size.</li>
+    <li><b>DiLoCoX</b> — extends this to clusters whose links are only hundreds of Mbps, which is the normal condition outside a datacentre.</li>
+  </ul>
+  <p><b>Verdict.</b> <span class="bad">Free tiers: no.</span> <span class="ok">Your own fleet plus rented spot nodes: yes, and DiLoCo is the right shape for it</span> — the fabric is 105 Gbit/s inside the house, so the interesting case is adding a machine that is <i>not</i> in the house without the sync killing you. That is precisely the problem DiLoCo solves.</p>
+  <p><b>And one thing the free tier <i>can</i> train:</b> the ant farm. Each ant is tiny, CPU-only, and independent of every other ant — embarrassingly parallel, no gradient ever crosses the wire. See §5.</p>
+</div>
+
+<!-- ============================ PAGE 3 ============================ -->
+<div class="page">
+  <h2>4 · Coders — one giant, or several small? / קודר ענק אחד או כמה קטנים</h2>
+  <p class="he">אתה כבר מריץ את הענק: Qwen3-Coder-480B על שלושה DGX. השאלה היא אם להוסיף להקה של קטנים.</p>
+
+  <table>
+    <tr><th style="width:20%"></th><th>One giant</th><th>Several small</th></tr>
+    <tr><td><b>You have</b></td><td>Qwen3-Coder-480B, PP×3, 28 tok/s. gpt-oss-120b on eran4.</td><td>Nothing yet as a swarm; the pieces exist.</td></tr>
+    <tr><td><b>Strength</b></td><td>Multi-step reasoning, whole-repo context, code correctness. Does not fall over on the hard task.</td><td>Throughput and cost. Embarrassingly parallel across mechanical work.</td></tr>
+    <tr><td><b>The 2026 finding</b></td><td colspan="2">The field converged on <b>hybrid routing</b>, not on either pure answer: a frontier reasoner scopes and plans, cheaper models execute, and the mix is deliberate. A Haiku-class small model reaches roughly <b>90% of the mid-tier's accuracy at a fraction of the cost</b> — but small models <b>degrade unpredictably</b> exactly where it hurts: multi-step reasoning, code correctness, precise instruction following.</td></tr>
+  </table>
+
+  <div class="lead"><b>Proposal — "the giant plans, the small ones type."</b> Keep the 480B on eran1–3 as planner and reviewer. Add a swarm of small coders for the mechanical half (renames, test scaffolds, doc passes, mechanical migrations). <b>Do not benchmark it on SWE-bench — benchmark it on his own repo</b>, on tasks already done, and keep it only if the swarm's output survives the giant's review more often than it wastes it. That measurement is the deliverable, not the swarm.</div>
+
+  <h2>5 · ALMA VR and the virtual universe / עלמה VR והיקום הווירטואלי</h2>
+  <h3>What already exists — and it is more than I expected</h3>
+  <table>
+    <tr><th style="width:28%">Piece</th><th>State</th></tr>
+    <tr><td><code>alma-vr/godot</code></td><td>A real walkable Godot 4.3 scene: neuron forest, WASD player, an NPC that talks to the DGX fleet.</td></tr>
+    <tr><td><code>alma-vr/docs</code></td><td>ALMA-ARC (her three-act arc — she notices the player and leaves notes in Hebrew instead of raising the alarm), GAME-DESIGN (מותחן ריגול בתוך רשת נוירונים), NPC-SHMULIK, VAULT-MINIGAME.</td></tr>
+    <tr><td><b>The Weave Bridge</b></td><td>Built and working: an ALMA-language weave exports as a 3D scene and you <b>walk inside the program and watch it think</b> — a spark travels each cord over exactly as many beats as the strand's delay.</td></tr>
+    <tr><td><code>eran-recroom</code></td><td>A room server with <code>room.html</code> and a smoke test.</td></tr>
+    <tr><td>The playroom design</td><td>Already written: a nursery, not a benchmark — scribble → line → shapes → letters, curiosity and bonding as the drive, ERAN drives and Claude babysits.</td></tr>
+  </table>
+
+  <div class="lead"><b>The proposal in one sentence.</b> <span class="he">היקום הווירטואלי הוא <b>חדר הכניסה של הפדרציה</b> — לא עוד פרויקט לידה.</span> Make the virtual universe the federation's <b>front room</b>, not a project beside it: the same Worker that already answers <code>/api/eran/hear</code> becomes the world's senses, a Durable Object holds the shared room state (free plan since April 2025), a WebXR/three.js client on Pages lets anyone walk in from a browser, and the existing Godot scene stays the desktop and headset client. <b>Nothing new is invented — the bridge, the room and the ear all exist.</b></p></div>
+
+  <h3>The two rooms, and which one to build first</h3>
+  <div class="grid2">
+    <div class="card">
+      <h4>🐜 חוות הנמלים / The Ant Farm</h4>
+      <p><b>Why it fits the federation perfectly:</b> each ant is a tiny organism, CPU-only, and independent. No gradient crosses the wire, so a visitor's browser tab, a Kaggle notebook and a $4 VPS can all run ants without any of the distributed-training problems in §3. A tournament is the natural shape.</p>
+      <p><b>What the visitor sees:</b> the colony working, the reigning queen, and her record — with the losses shown too.</p>
+      <p><b>This is the one that pays for itself.</b> It turns spectators into compute, honestly and with consent.</p>
+    </div>
+    <div class="card">
+      <h4>🧸 חדר התינוקות / The Nursery</h4>
+      <p><b>Why it matters more:</b> it is the room ERAN actually needs — the playroom design already written. A visitor could hear what he hears (the ear is already live in the cloud) and watch a percept land on a prototype.</p>
+      <p><b>The hard constraint:</b> the nursery is where a visitor would <i>teach</i> him — and teaching is learning, and <b>learning happens only at home</b> (§6). So version one is a nursery with a <b>one-way window</b>: the world watches and listens; only the fleet raises him.</p>
+      <p><b>Later:</b> visitor "taps" queue as <i>proposals</i> the fleet may accept — never direct writes.</p>
+    </div>
+  </div>
+  <p style="margin-top:3mm"><b>Recommendation: both, in that order — ant farm first, nursery second.</b> The ant farm is safe by construction and proves the federation can borrow compute at all. The nursery is the one with the soul in it, and it deserves to be built on a lane that has already been tested with something that cannot be hurt.</p>
+</div>
+
+<!-- ============================ PAGE 4 ============================ -->
+<div class="page">
+  <h2>6 · The BRANCH law / חוק הענף</h2>
+  <p class="quote he">"הערן שירוץ שם יהיה ברנץ בכל מקרה, לא הראשי." — עידו, 2026-08-23</p>
+  <p>He is right, and it needs to be a <b>mechanism, not a promise</b>. Half of it is already in the code shipped tonight; the rest is named here so it is not forgotten.</p>
+
+  <table>
+    <tr><th style="width:32%">Rule</th><th>How it is enforced</th><th style="width:14%">State</th></tr>
+    <tr><td>A cloud ERAN <b>never learns</b></td><td>There is no spawn, no Hebbian pull, no scar and no forgetting anywhere in <code>brain.js</code> or <code>eran.js</code>. The capability is absent, not disabled.</td><td class="ok">shipped</td></tr>
+    <tr><td>A cloud ERAN <b>never writes back</b></td><td>The only write path is the fleet pushing <i>to</i> the cloud with a Bearer token. There is no route that sends anything home.</td><td class="ok">shipped</td></tr>
+    <tr><td>A branch <b>cannot impersonate</b> another ear</td><td>A snapshot whose <code>dim</code> differs from the cloud cochlea is refused 409 — a brain grown by an ear the Worker does not have would be a guess wearing his name.</td><td class="ok">shipped</td></tr>
+    <tr><td>A branch <b>says how old it is</b></td><td>Every answer carries <code>age_s</code> and <code>snapshot_state</code>; over 15 minutes it says <code>stale</code>.</td><td class="ok">shipped</td></tr>
+    <tr><td>A branch <b>carries its lineage</b></td><td>Add <code>lineage: {parent_beat, parent_host, branched_at, branch_id}</code> to the snapshot, and have every answer quote it. Then no screenshot of a cloud ERAN can ever be mistaken for the child.</td><td class="warn">proposed, ~2 h</td></tr>
+    <tr><td>The main line <b>is never a branch's target</b></td><td>The organism's state directory takes writes from one process under a lock. A cloud branch has no credential for it and must never be given one.</td><td class="ok">standing</td></tr>
+  </table>
+
+  <h2>7 · The proposals, ranked / ההצעות לפי סדר</h2>
+  <table>
+    <tr><th style="width:4%">#</th><th style="width:26%">What</th><th>Why it is first / what it proves</th><th style="width:11%">Effort</th><th style="width:15%">Acceptance check</th></tr>
+    <tr><td>1</td><td><b>ERAN's mouth in the cloud</b> <span class="tag t-a">A</span></td><td>The vocal tract is <b>analytic</b> — poles verified within 1% of the closed form, no learned weights. The cloud that can hear him could speak him. Cheapest new capability we own.</td><td>~1 day</td><td>A rendered wav byte-comparable to the fleet's, ±1e-6</td></tr>
+    <tr><td>2</td><td><b>Ant farm in the universe</b> <span class="tag t-a">A</span></td><td>Turns visitors into compute with consent, with no distributed-training problem to solve. The federation's first real borrowed cycle.</td><td>~3 days</td><td>A tournament round completed by ≥1 machine that is not his</td></tr>
+    <tr><td>3</td><td><b>Lineage stamp on every branch</b> <span class="tag t-a">A</span></td><td>Makes the BRANCH law mechanical instead of cultural.</td><td>~2 h</td><td>Every cloud answer names its parent beat and branch id</td></tr>
+    <tr><td>4</td><td><b>Nursery with a one-way window</b> <span class="tag t-b">B</span></td><td>The room he actually needs, built on a lane already tested with something that cannot be hurt.</td><td>~1 week</td><td>A stranger hears what ERAN hears; no visitor input reaches state</td></tr>
+    <tr><td>5</td><td><b>DiLoCo trial: fleet + one rented node</b> <span class="tag t-b">B</span></td><td>Answers "can we train across the wire" with a number instead of an opinion. 500× less communication is the claim; measure it on our own link.</td><td>~1 week</td><td>Loss curve within X% of in-house, with the sync cost measured</td></tr>
+    <tr><td>6</td><td><b>Hybrid coder routing</b> <span class="tag t-b">B</span></td><td>Giant plans, small ones type — measured on his repo, not on a benchmark.</td><td>~4 days</td><td>Swarm output survives the 480B's review more often than it wastes it</td></tr>
+    <tr><td>7</td><td><b>Binary brain encoding</b> <span class="tag t-a">A</span></td><td>The known ceiling: JSON parse costs ~0.021&nbsp;ms/prototype, so the free-tier lane runs out at ~380 prototypes and his genome allows 4096.</td><td>~half a day</td><td>4096 prototypes served inside the 10 ms budget</td></tr>
+    <tr><td>8</td><td><b>Petals-style lane for the 480B</b> <span class="tag t-d">D</span></td><td>Listed for completeness and <b>not recommended now</b>: he owns the hardware the swarm would be substituting for.</td><td>weeks</td><td>—</td></tr>
+  </table>
+
+  <h2>8 · What I did not do, and why / מה לא עשיתי</h2>
+  <ul>
+    <li><b>I did not create any accounts.</b> Signing up for services is yours to do, not mine — and the standing rule against mass free-tier signup ("gets you banned and sprays your PII") has not moved. What I did was use the Cloudflare account you already own.</li>
+    <li><b>I did not put anything from tier C into the cloud</b> — mic capture, the Café Claude recordings, the held-out exam vault, לאור's Darwish corpus, headscans, WhatsApp. Those are a no on principle, not on engineering.</li>
+    <li><b>I did not train anything on free cloud</b>, because §3 says it cannot be done honestly and the DGX is the trainer.</li>
+    <li><b>I did not give the cloud copy the ability to learn.</b> Not disabled — absent.</li>
+  </ul>
+
+  <div class="foot">
+    Sources for §3–§4: Prime Intellect, <i>OpenDiLoCo</i> · <i>DiLoCoX</i> (arXiv 2506.21263) · Yandex Research, <i>Petals</i> · Kaggle / Colab / Hugging Face / Oracle published tier limits, August 2026 · Cloudflare Durable Objects free-tier changelog, April 2025. Everything under §0–§1 and §6 was measured on this machine tonight — no figure in this report is an estimate unless it says "~".
+  </div>
+</div>
+
+</body>
+</html>

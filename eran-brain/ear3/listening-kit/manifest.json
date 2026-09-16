@@ -1,0 +1,110 @@
+{
+ "files": [
+  {
+   "ascii": "pitch-70.wav",
+   "hebrew": "1-זוג-גובה-צליל-70.wav",
+   "why_he": "אותה צורת פה בדיוק, גובה צליל 70 הרץ",
+   "why_en": "same mouth shape exactly, pitch 70 Hz",
+   "source": "mouth34.say(uniform, seed 0)",
+   "meta": {
+    "f0": 70.0
+   }
+  },
+  {
+   "ascii": "pitch-290.wav",
+   "hebrew": "2-זוג-גובה-צליל-290.wav",
+   "why_he": "אותה צורת פה בדיוק, גובה צליל 290 הרץ",
+   "why_en": "same mouth shape exactly, pitch 290 Hz",
+   "source": "mouth34.say(uniform, seed 0)",
+   "meta": {
+    "f0": 290.0
+   }
+  },
+  {
+   "ascii": "abba-real.wav",
+   "hebrew": "3-אבא-אמיתי.wav",
+   "why_he": "הקלטה אמיתית של עידו אומר אבא — זו שהאוזן הכי בטוחה בה",
+   "why_en": "a real take of Iddo saying abba -- the one the ear is surest of",
+   "source": "abba_t06_57.wav",
+   "meta": {
+    "name": "abba_t06_57.wav",
+    "unit": "abba",
+    "pred": "abba",
+    "d_own": 5.238047566958405,
+    "d_other": 6.118168502111239,
+    "margin": 0.16802461678749073
+   }
+  },
+  {
+   "ascii": "abba-fake-splice.wav",
+   "hebrew": "4-אבא-מזויף-הדבקה.wav",
+   "why_he": "זיוף: שתי הקלטות אה אמיתיות מודבקות עם שקט באמצע — לא אבא",
+   "why_en": "a fake: two real ah takes glued with silence -- NOT abba",
+   "source": "ah_t06_0.wav + 0.25s silence + ah_t06_1.wav",
+   "meta": {
+    "wdist_to_abba": 11.74,
+    "real_abba_max": 5.95
+   }
+  },
+  {
+   "ascii": "best-1.wav",
+   "hebrew": "5-הכי-ברור-אי.wav",
+   "why_he": "ההקלטה שהאוזן מזהה הכי בקלות (אי)",
+   "why_en": "the take the ear finds easiest (ih)",
+   "source": "ih_t06_65.wav",
+   "meta": {
+    "name": "ih_t06_65.wav",
+    "unit": "ih",
+    "pred": "ih",
+    "d_own": 2.9786566024675865,
+    "d_other": 5.637103953157976,
+    "margin": 0.8924987689041
+   }
+  },
+  {
+   "ascii": "best-2.wav",
+   "hebrew": "6-הכי-ברור-אמא.wav",
+   "why_he": "ההקלטה שהאוזן מזהה הכי בקלות (אמא)",
+   "why_en": "the take the ear finds easiest (ima)",
+   "source": "ima_t06_42.wav",
+   "meta": {
+    "name": "ima_t06_42.wav",
+    "unit": "ima",
+    "pred": "ima",
+    "d_own": 2.588064239535434,
+    "d_other": 3.7797230063819223,
+    "margin": 0.460444044874402
+   }
+  },
+  {
+   "ascii": "worst-1.wav",
+   "hebrew": "7-הכי-קשה-אמא-נשמע-כמו-מה.wav",
+   "why_he": "ההקלטה שהאוזן הכי טועה בה: אמא שנשמע לה כמו מה",
+   "why_en": "the take the ear gets most wrong: real ima heard as ma",
+   "source": "ima_t06_49.wav",
+   "meta": {
+    "name": "ima_t06_49.wav",
+    "unit": "ima",
+    "pred": "ma",
+    "d_own": 32.89079529308164,
+    "d_other": 6.231268958048546,
+    "margin": -0.810546722798179
+   }
+  },
+  {
+   "ascii": "worst-2.wav",
+   "hebrew": "8-הכי-קשה-אה-נשמע-כמו-בה.wav",
+   "why_he": "ההקלטה שהאוזן הכי טועה בה: אה שנשמע לה כמו בה",
+   "why_en": "the take the ear gets most wrong: real ah heard as ba",
+   "source": "ah_t06_92.wav",
+   "meta": {
+    "name": "ah_t06_92.wav",
+    "unit": "ah",
+    "pred": "ba",
+    "d_own": 4.506265837105205,
+    "d_other": 3.2924646387789367,
+    "margin": -0.2693585425723587
+   }
+  }
+ ]
+}

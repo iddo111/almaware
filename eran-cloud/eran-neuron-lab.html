@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מעבדת הנוירונים של ערן · לילה אחד, מוחות מאפס</title>
+<style>
+  :root{--blue:#0038b8;--ink:#0b1320;--line:#dbe3f4;--bg:#f5f8ff;
+        --green:#1aa251;--amber:#e8a317;--red:#d6293e;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI","Heebo",Arial,sans-serif;background:var(--bg);color:var(--ink);padding:24px;line-height:1.5}
+  header{margin-bottom:22px}
+  h1{font-size:30px;color:var(--blue)}
+  h1 small{display:block;font-size:16px;color:var(--ink);opacity:.6;font-weight:400;margin-top:4px}
+  h2{font-size:21px;color:var(--blue);margin:26px 0 10px;border-bottom:2px solid var(--line);padding-bottom:5px}
+  .lead{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 22px;box-shadow:0 2px 12px rgba(0,56,184,.06);margin-bottom:8px}
+  .lead b{color:var(--blue)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 2px 12px rgba(0,56,184,.06)}
+  .card h3{font-size:17px;color:var(--blue);margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+  .ok{font-size:11px;color:var(--green);font-weight:800;background:#e7f6ee;border-radius:999px;padding:2px 9px}
+  .card p{font-size:14px;margin:4px 0}
+  .k{color:var(--blue);font-weight:700}
+  code{background:#eef3ff;padding:1px 6px;border-radius:5px;font-size:12.5px;color:var(--blue)}
+  .hon{color:var(--amber);font-size:12.5px;margin-top:6px}
+  .anat{background:var(--ink);color:#dbe6ff;border-radius:14px;padding:14px 18px;margin:8px 0;font-size:14px}
+  .anat b{color:#7fd0ff}
+  .brains{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  .brain{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+  .brain .e{font-size:26px}
+  .foot{margin-top:26px;color:#69748a;font-size:12.5px;text-align:center;border-top:1px solid var(--line);padding-top:12px}
+  .tag{display:inline-block;background:#eef3ff;color:var(--blue);border-radius:999px;padding:3px 11px;font-size:12px;margin:2px;font-weight:600}
+</style>
+</head>
+<body>
+<p style="margin-bottom:14px;font-weight:700"><a href="./" style="color:var(--blue);text-decoration:none">← ERAN Lab · חזרה למעבדה</a></p>
+<header>
+  <h1>🧠 מעבדת הנוירונים של ערן
+    <small>לילה אחד — מוחות מאפס · 15.07.2026 · Shisha Brain · לע"נ שיפרה ז"ל</small>
+  </h1>
+</header>
+
+<div class="lead">
+  <p><b>מה קרה כאן:</b> התחלנו בכישלון כן — ניסינו לבנות ממריסטור מנחושת, מגבת ומי-מלח, ומדדנו ביושר: <b>קצר מוחלט, אין זיכרון.</b> עברנו חקירה עצמית (בית-דין + דיין חיצוני), תיקנו — ויצאנו עם <b>6 נוירונים אמיתיים</b>, מנוע-סימולציה עם מוד מדעי ומוד פנטזיה, ורעיון של <b>מוח מבוזר</b>. מכישלון מפואר לבסיס אמיתי.</p>
+  <p style="margin-top:8px"><span class="tag">🔬 נבדק בסימולציה לפני שהומלץ (אספרי)</span><span class="tag">⚖️ הכל מדוד, לא מובטח</span><span class="tag">כולם קומפלו על Mega+Uno</span></p>
+</div>
+
+<h2>🧬 האנטומיה המשותפת של נוירון</h2>
+<div class="anat">
+  <b>משקל / סינפסה</b> (פוטנציומטר · מלח · חום) &nbsp;→&nbsp; <b>קרום / אינטגרציה</b> (קבל · מסה תרמית) &nbsp;→&nbsp; <b>סף</b> (טרנזיסטור) &nbsp;→&nbsp; <b>ספייק</b> (נורה / LED).<br>
+  כל 6 הבילדים חולקים את אותה אנטומיה — משנים רק את החומר של כל חלק.
+</div>
+
+<h2>🔧 6 הבילדים</h2>
+<div class="grid">
+  <div class="card"><h3>1 · נוירון רוזנבלט <span class="ok">✓</span></h3>
+    <p>פרספטרון בודד שלומד — כמו ה-Mark I המקורי (1958): הפוט הוא המשקל, סרבו מסובב אותו = הלמידה.</p>
+    <p><span class="k">רכיבים:</span> סרבו→פוט · טרנזיסטור · LED · EEPROM</p>
+    <p><span class="k">פקודות:</span> <code>t</code> אמן <code>o</code> הפעל <code>r</code> קרא <code>w</code> שמור <code>l</code> טען</p>
+    <p class="hon">🟢 זיכרון קבוע · 🔴 שכבה אחת ≠ XOR (הוכח בסימולציה: AND ב-6, OR ב-4, XOR לעולם)</p>
+  </div>
+  <div class="card"><h3>2 · תא-זיכרון קבל <span class="ok">✓</span></h3>
+    <p>קבל מחזיק ערך; רואים אותו דועך = retention. המוספט מדליק נורת 12V ביחס למטען.</p>
+    <p><span class="k">רכיבים:</span> קבל 1000µF · מוספט · נורת 12V</p>
+    <p><span class="k">פקודות:</span> <code>w</code> כתוב <code>m</code> מדוד-החזקה <code>r</code> קרא</p>
+    <p class="hon">🟡 נדיף — מחזיק שניות (ניבוי אמולטור: 0.7–33 דק' לפי דליפה)</p>
+  </div>
+  <div class="card"><h3>3 · נורה כממריסטור <span class="ok">✓ מאומת</span></h3>
+    <p>נורת-להט = ממריסטור תרמי אמיתי. הזיכרון = חום הפתיל שמפגר אחרי הזרם.</p>
+    <p><span class="k">חתימה:</span> פינץ'-לופ במקור, שטח קטֵן עם התדר (טביעת האצבע של Chua)</p>
+    <p class="hon">🟢 אומת באמולטור התרמי · 🟡 נדיף ~20ms</p>
+  </div>
+  <div class="card"><h3>4 · נוירון פלטייה <span class="ok">✓</span></h3>
+    <p>נוירון תרמי איטי: חום=אינטגרציה, סף=ירי. המאוורר = כפתור-שכחה (נוירומודולטור).</p>
+    <p><span class="k">רכיבים:</span> פלטייה · מוספט · NTC · מאוורר · 12V</p>
+    <p><span class="k">פקודות:</span> <code>w</code> למד <code>u</code> שכח <code>m</code> מדוד <code>0-9</code> מאוורר</p>
+    <p class="hon">🟢 זיכרון שניות · 🔴 לא ממריסטור נקי (Seebeck) · ⚠️ 5-6A — גוף-קירור!</p>
+  </div>
+  <div class="card"><h3>5 · SAPE <span class="ok">✓</span></h3>
+    <p>Self-Adjusting Peltier Element — נוירון הומאוסטטי ששולט בעצמו על חימום/קירור כדי להחזיק setpoint.</p>
+    <p><span class="k">רכיבים:</span> פלטייה · מאוורר-קר · מאוורר-חם · NTC</p>
+    <p><span class="k">פקודות:</span> <code>a</code> אוטונומי <code>+/-</code> setpoint <code>s</code> סטטוס</p>
+    <p class="hon">🟢 מגן על עצמו · 🟡 "יצוד" סביב ה-setpoint (השהיה תרמית)</p>
+  </div>
+  <div class="card"><h3>6 · נוירון מי-מלח <span class="ok">✓</span></h3>
+    <p>מוח-מלח כן: leaky integrate-and-fire = בדיוק מודל ה-RC של נוירון ביולוגי. מלח=סינפסה, קבל=קרום.</p>
+    <p><span class="k">רכיבים:</span> תא מי-מלח · קבל · טרנזיסטור · LED</p>
+    <p><span class="k">פקודות:</span> <code>f</code> הזן-רצף <code>p</code> פולס <code>r</code> קרא</p>
+    <p class="hon">🟢 כמו נוירון אמיתי (המוח רץ על מלח!) · 🟡 פולסים קצרים</p>
+  </div>
+</div>
+
+<h2>🧠🍔❤️🕸️ הרעיון הגדול — מוח מבוזר</h2>
+<div class="lead"><p>לא CPU אחד — אלא <b>כמה מוחות</b>, כמו בגוף. מבוסס מדע: מערכת אנטרית ~500M נוירונים ("מוח שני"), מערכת תוך-לבבית ~40K, ופלקסוסים = רשתות עצבים אמיתיות.</p></div>
+<div class="brains">
+  <div class="brain"><div class="e">🧠</div><b>מוח-ראש</b><p>שפה · היגיון (מודל-שפה / פרספטרון)</p></div>
+  <div class="brain"><div class="e">🍔</div><b>מוח-בטן</b><p>דחפים · רעב · אינסטינקט (נוירונים תרמיים · SAPE)</p></div>
+  <div class="brain"><div class="e">❤️</div><b>מוח-לב</b><p>רגש · הערכת-ערך (בית-דין מוסרי)</p></div>
+  <div class="brain"><div class="e">🕸️</div><b>פלקסוסים</b><p>הבאסים שמחברים (צי DGX = מוחות · QSFP = מערכת-העצבים)</p></div>
+</div>
+
+<h2>🔬🔮 מנוע עלמה — שני מודים</h2>
+<div class="lead"><p><b>🔬 מוד מדעי</b> — פיזיקה אמיתית, נבדק על השולחן. <b>🔮 מוד פנטזיה</b> — חלום חופשי, מסומן "לא נבדק". <b>הגשר היחיד מפנטזיה למדע:</b> לבחור חלום אחד, למדל, ולבדוק. זה התיקון: לחלום חופשי, אבל לתייג מה חלום ומה נבדק.</p></div>
+
+<p class="foot">ALMAWARE · Shisha Brain · הסקיצות ב-shisha-lab\arduino\ · עקרונות: ALMA-Standard · No-Overselling · Asprey (שפן-הניסיונות של עצמו) · לע"נ שיפרה ז"ל 🕯️</p>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "when": "2026-09-02 05:29",
+  "how": "BLIND. Three distinct clips, shuffled, no scores shown, so his ear could not be steered by the machine's opinion.",
+  "scale": "his own words",
+  "rulings": [
+    {"blind": "ERAN-A", "iddo": "ילד / a child",  "file": "ba-cv-10-2026-08-30T074325Z.wav", "unit_claimed": "ba", "wdist": 4.517, "metric_rank": 2},
+    {"blind": "ERAN-B", "iddo": "מבוגר / an adult", "file": "ma-nasal-103-2026-09-01T165313Z.wav", "unit_claimed": "ma", "wdist": 5.065, "metric_rank": 3},
+    {"blind": "ERAN-C", "iddo": "רעש / noise",    "file": "ba-cv-14-2026-08-29T195956Z.wav", "unit_claimed": "ba", "wdist": 3.910, "metric_rank": 1}
+  ],
+  "iddo_also_said": "זה הברת AH לא BA — the clips are /ah/, not /ba/. The arm named ba-cv is producing ah, and no metric noticed.",
+  "the_finding": "THE METRIC ORDER IS EXACTLY INVERTED. Its best (3.910, sitting at the human mean) is NOISE to his ear; its worst (5.065) is the one that sounds like an ADULT. Rank correlation -1 on three points, and it agrees with the independent measurement on his earlier 113 rulings: wdist scored AUC 0.4524 against him, below chance. Two independent measurements now say wdist is ANTI-correlated with the only judge that matters.",
+  "the_second_finding": "The ba arm emits ah. ah is the EASY syllable (a pure vowel); ba is the HARD one (it needs a plosive burst). The search has been grinding on the hard target while producing the easy sound, and scoring the easy sound against a hard reference.",
+  "the_order": "Iddo, 2026-09-02 05:31: תפסיק את החיפוש על ba ותעביר הכל ל-ma — stop the ba search, move everything to ma."
+}

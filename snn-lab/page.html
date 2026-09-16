@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מעבדת נוירונים יורים — SNN LAB</title>
+<style>
+  :root{
+    --bg:#0a0e14; --panel:#111823; --panel2:#0e141d; --line:#1e2a3a;
+    --ink:#dbe6f3; --dim:#7c8da3; --faint:#4b5a6e;
+    --spike:#22d3ee; --spike2:#0891b2; --hot:#f59e0b; --good:#34d399;
+    --bad:#f87171; --violet:#a78bfa;
+    --mono:ui-monospace,"Cascadia Mono","JetBrains Mono",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:"Segoe UI",system-ui,sans-serif;font-size:14px}
+  header{display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+         padding:14px 20px;border-bottom:1px solid var(--line);
+         background:linear-gradient(180deg,#101827,#0a0e14)}
+  h1{margin:0;font-size:19px;font-weight:650;letter-spacing:.2px}
+  h1 small{display:block;font-size:11px;color:var(--dim);font-weight:400;
+           letter-spacing:1.4px;text-transform:uppercase}
+  .pill{font-family:var(--mono);font-size:12px;padding:4px 12px;border-radius:20px;
+        border:1px solid var(--line);background:var(--panel2);color:var(--dim)}
+  .pill.live{color:#04141a;background:var(--spike);border-color:var(--spike);
+             font-weight:700}
+  .pill.err{color:#fff;background:#7f1d1d;border-color:#b91c1c}
+  .grow{flex:1}
+  main{display:grid;grid-template-columns:290px 1fr;gap:14px;padding:14px;
+       align-items:start}
+  @media(max-width:1000px){main{grid-template-columns:1fr}}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+         padding:14px}
+  .panel h2{margin:0 0 10px;font-size:11px;letter-spacing:1.4px;color:var(--dim);
+            text-transform:uppercase;font-weight:600}
+  .panel h2 .note{float:left;text-transform:none;letter-spacing:0;
+                  font-family:var(--mono);color:var(--faint)}
+  label{display:block;margin:9px 0 3px;font-size:11px;color:var(--dim);
+        letter-spacing:.4px}
+  select,input[type=number]{width:100%;background:var(--panel2);color:var(--ink);
+        border:1px solid var(--line);border-radius:6px;padding:7px 8px;
+        font-family:var(--mono);font-size:13px}
+  input[type=range]{width:100%;accent-color:var(--spike)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .chk{display:flex;align-items:center;gap:8px;margin-top:10px;color:var(--ink);
+       font-size:13px}
+  .btn{width:100%;margin-top:14px;padding:11px;border-radius:8px;cursor:pointer;
+       border:1px solid var(--spike);background:var(--spike);color:#04141a;
+       font-weight:700;font-size:14px;letter-spacing:.3px}
+  .btn:hover{filter:brightness(1.1)}
+  .btn.stop{background:transparent;color:var(--bad);border-color:var(--bad)}
+  .btn:disabled{opacity:.35;cursor:not-allowed;filter:none}
+  .msg{margin-top:10px;font-family:var(--mono);font-size:11px;min-height:15px;
+       color:var(--hot);word-break:break-word}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+         gap:10px;margin-bottom:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+        padding:11px 13px}
+  .card .k{font-size:10px;color:var(--dim);letter-spacing:1.2px;
+           text-transform:uppercase}
+  .card .v{font-family:var(--mono);font-size:21px;margin-top:3px;font-weight:600}
+  .card .s{font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:2px}
+  canvas{display:block;width:100%}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:860px){.two{grid-template-columns:1fr}}
+  .stack{display:flex;flex-direction:column;gap:14px}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);
+          font-size:10px;color:var(--dim);margin-top:8px}
+  .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;
+            margin-inline-end:5px;vertical-align:-1px}
+  table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:11px}
+  th{text-align:right;color:var(--dim);font-weight:500;padding:5px 6px;
+     border-bottom:1px solid var(--line);white-space:nowrap;font-size:10px;
+     letter-spacing:.6px}
+  td{padding:5px 6px;border-bottom:1px solid #16202c;white-space:nowrap}
+  tbody tr:hover{background:var(--panel2)}
+  .win{color:var(--good)} .lose{color:var(--bad)} .mut{color:var(--faint)}
+  pre.log{font-family:var(--mono);font-size:10.5px;color:var(--dim);margin:0;
+          max-height:150px;overflow:auto;white-space:pre-wrap;direction:ltr;
+          line-height:1.5}
+  footer{margin:6px 14px 26px;padding:14px 18px;border:1px solid var(--line);
+         border-radius:10px;background:var(--panel2);color:var(--dim);
+         font-size:12px;line-height:1.75;direction:rtl}
+  footer b{color:var(--ink)} footer .en{direction:ltr;text-align:left;
+         margin-top:9px;padding-top:9px;border-top:1px solid var(--line)}
+  .rtl{direction:rtl}
+  .scroll{overflow-x:auto}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>מעבדת נוירונים יורים <small>spiking neural network lab · eran4 · GB10</small></h1>
+  <span class="pill" id="pill">מתחבר…</span>
+  <span class="pill" id="devpill" style="display:none"></span>
+  <span class="grow"></span>
+  <span class="pill" id="clock"></span>
+</header>
+
+<main>
+  <!-- ------------------------------------------------------- controls -->
+  <div class="stack">
+    <div class="panel rtl">
+      <h2>הכוונונים <span class="note">knobs</span></h2>
+
+      <label>מאגר / dataset</label>
+      <select id="dataset">
+        <option value="syllables">22 ההברות של עידו — syllables</option>
+        <option value="mnist">MNIST — ספרות כתובות</option>
+      </select>
+
+      <label>קידוד לזמן / spike encoding</label>
+      <select id="encoding"></select>
+
+      <div class="row">
+        <div><label>נוירונים נסתרים</label>
+          <input type="number" id="hidden" value="512" min="8" max="4096" step="8"></div>
+        <div><label>סבבים / epochs</label>
+          <input type="number" id="epochs" value="40" min="1" max="500"></div>
+      </div>
+      <div class="row">
+        <div><label>צעדי זמן / timesteps</label>
+          <input type="number" id="steps" value="32" min="4" max="200"></div>
+        <div><label>גודל אצווה / batch</label>
+          <input type="number" id="batch" value="64" min="1" max="512"></div>
+      </div>
+
+      <label>β — דעיכת המתח בקרום <span id="betav" class="mut"></span></label>
+      <input type="range" id="beta" min="0.05" max="0.99" step="0.01" value="0.9">
+
+      <label>סף ירייה / threshold <span id="thrv" class="mut"></span></label>
+      <input type="range" id="threshold" min="0.1" max="4" step="0.05" value="1">
+
+      <label>הגברת קלט / input gain <span id="gainv" class="mut"></span></label>
+      <input type="range" id="input_gain" min="0.5" max="40" step="0.5" value="13.86">
+
+      <label>קצב למידה / learning rate</label>
+      <select id="lr">
+        <option value="0.0001">1e-4</option>
+        <option value="0.0005">5e-4</option>
+        <option value="0.001">1e-3</option>
+        <option value="0.002" selected>2e-3</option>
+        <option value="0.005">5e-3</option>
+      </select>
+
+      <label>גרדיאנט תחליפי / surrogate</label>
+      <select id="surrogate">
+        <option value="atan" selected>atan</option>
+        <option value="sigmoid">sigmoid</option>
+        <option value="fast_sigmoid">fast_sigmoid</option>
+        <option value="triangular">triangular</option>
+        <option value="straight_through">straight_through</option>
+      </select>
+
+      <label class="chk"><input type="checkbox" id="recurrent">
+        חיווט חוזר בשכבה הנסתרת (RLeaky)</label>
+
+      <button class="btn" id="go">התחל אימון ▸</button>
+      <button class="btn stop" id="halt" disabled>עצור</button>
+      <div class="msg" id="msg"></div>
+    </div>
+
+    <div class="panel rtl">
+      <h2>יומן <span class="note">stdout</span></h2>
+      <pre class="log" id="log"></pre>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------------- the view -->
+  <div class="stack">
+    <div class="cards" id="cards"></div>
+
+    <div class="panel">
+      <h2>ראסטר יריות — מי ירה ומתי
+        <span class="note">spike raster · hidden layer · time →</span></h2>
+      <canvas id="raster" height="330"></canvas>
+      <div class="legend">
+        <span><i style="background:var(--spike)"></i>ירייה של נוירון נסתר / hidden spike</span>
+        <span><i style="background:var(--hot)"></i>קו הזמן הרץ / playhead</span>
+        <span id="rasterinfo"></span>
+      </div>
+    </div>
+
+    <div class="two">
+      <div class="panel">
+        <h2>מתח הקרום <span class="note">membrane potential</span></h2>
+        <canvas id="mem" height="200"></canvas>
+        <div class="legend">
+          <span><i style="background:var(--bad)"></i>סף / threshold — חוצים אותו, יורים, מתאפסים</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>ספירת יריות בפלט <span class="note">output spike counts</span></h2>
+        <canvas id="out" height="200"></canvas>
+        <div class="legend">
+          <span><i style="background:var(--good)"></i>התשובה הנכונה</span>
+          <span><i style="background:var(--violet)"></i>ניחוש הרשת</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="two">
+      <div class="panel">
+        <h2>הפסד <span class="note">loss per batch</span></h2>
+        <canvas id="loss" height="190"></canvas>
+      </div>
+      <div class="panel">
+        <h2>דיוק מול קווי הייחוס <span class="note">accuracy vs baselines</span></h2>
+        <canvas id="acc" height="190"></canvas>
+        <div class="legend" id="acclegend"></div>
+      </div>
+    </div>
+
+    <div class="panel rtl">
+      <h2>ריצות קודמות <span class="note">run history</span></h2>
+      <div class="scroll"><table id="hist">
+        <thead><tr>
+          <th>ריצה</th><th>מאגר</th><th>קידוד</th><th>נסתרים</th><th>β</th>
+          <th>סף</th><th>gain</th><th>epochs</th><th>סופי</th><th>מיטבי</th>
+          <th>סיכוי</th><th>שניות</th><th>מכשיר</th>
+        </tr></thead><tbody></tbody>
+      </table></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <b>מה זה באמת:</b> רשת נוירונים <b>יורים</b> (LIF — נוירון שצובר מתח, יורה כשעובר
+  את הסף, ומתאפס), מאומנת ב-<span dir="ltr">snnTorch</span> עם
+  <b>גרדיאנט תחליפי</b> — כי לירייה עצמה אין נגזרת. רצה על ה-GPU של
+  <span dir="ltr">eran4 (NVIDIA GB10)</span>.
+  <b>מה זה לא:</b> זה <b>לא</b> SpiNNaker ולא שבב נוירומורפי — SpiNNaker הוא חומרה
+  ייעודית שאין כאן. זה GPU רגיל <b>שמדמה</b> יריות, צעד-זמן אחרי צעד-זמן.
+  ההברות נשמעות דרך <b>אותה שבלול קפואה</b> שערן חובש
+  (<span dir="ltr">eran-brain/body/ears.py</span>, 8 פרוסות × 24 פסים) — נבדק
+  והוכח זהה ביט-לביט על 528 קבצים, אחרת ההשוואה לא היתה שווה כלום.
+  <div class="en">
+    <b>What this is:</b> a spiking neural network — Leaky-Integrate-and-Fire neurons
+    trained with snnTorch using a surrogate gradient, because a spike has no usable
+    derivative. Running on eran4's NVIDIA GB10 GPU.
+    <b>What this is NOT:</b> this is not SpiNNaker and not neuromorphic silicon.
+    SpiNNaker is dedicated hardware that is not on this machine. This is an ordinary
+    GPU <i>simulating</i> spikes, one timestep at a time.
+    Syllables are heard through the exact frozen cochlea ERAN wears
+    (eran-brain/body/ears.py, 8 slices × 24 log bands), verified bit-identical over
+    all 528 wavs — otherwise the comparison would mean nothing.
+  </div>
+</footer>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const ENCODINGS = {
+  syllables: [["cochlea-time","cochlea-time — 8 הפרוסות כ-8 רגעים בזמן"],
+              ["static","static — כל 192 המספרים בכל צעד"]],
+  mnist:     [["rate","rate — בהירות = הסתברות ירייה"],
+              ["latency","latency — בהיר יורה מוקדם"],
+              ["static","static — זרם קבוע"]]
+};
+const CSS = k => getComputedStyle(document.documentElement)
+                  .getPropertyValue(k).trim();
+
+/* ---------------------------------------------------------------- helpers */
+function fit(cv){                        // crisp on hidpi, honest css pixels
+  const d = window.devicePixelRatio || 1;
+  const w = cv.clientWidth || 600;
+  const h = cv._css || (cv._css = cv.height);   // the height attribute is CSS px
+  cv.style.height = h + "px";
+  const W = Math.round(w*d), H = Math.round(h*d);
+  if (cv.width !== W || cv.height !== H){ cv.width = W; cv.height = H; }
+  const g = cv.getContext("2d");
+  g.setTransform(d,0,0,d,0,0);
+  g.clearRect(0,0,w,h);
+  return {g, w, h};
+}
+const pct = v => (v==null ? "—" : (100*v).toFixed(2)+"%");
+
+function axes(g,w,h,pad,ymin,ymax,ticks,fmt){
+  g.strokeStyle = CSS("--line"); g.lineWidth = 1;
+  g.fillStyle = CSS("--faint");
+  g.font = "10px ui-monospace,monospace";
+  for (let i=0;i<=ticks;i++){
+    const v = ymin + (ymax-ymin)*i/ticks;
+    const y = h-pad.b - (h-pad.t-pad.b)*i/ticks;
+    g.beginPath(); g.moveTo(pad.l,y); g.lineTo(w-pad.r,y); g.stroke();
+    g.textAlign="right"; g.textBaseline="middle";
+    g.fillText(fmt(v), pad.l-5, y);
+  }
+}
+
+function line(g,pts,color,width){
+  if (pts.length<2) return;
+  g.strokeStyle=color; g.lineWidth=width||1.6; g.beginPath();
+  pts.forEach((p,i)=> i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1]));
+  g.stroke();
+}
+
+function empty(cv,text){
+  const {g,w,h} = fit(cv);
+  g.fillStyle = CSS("--faint"); g.font="12px ui-monospace,monospace";
+  g.textAlign="center"; g.textBaseline="middle";
+  g.fillText(text, w/2, h/2);
+}
+
+/* ------------------------------------------------------------ the raster */
+let phase = 0;
+function drawRaster(v){
+  window.__viz = v;                      // the animation loop redraws from here
+  const cv = $("raster");
+  if (!v || !v.raster_hidden){
+    // Clear the caption too — a stale "heard ra → said ra" under an empty
+    // raster is a lie about a run that is not this run.
+    $("rasterinfo").textContent = "";
+    return empty(cv,"הראסטר יופיע בסוף הסבב הראשון · raster appears after epoch 1");
+  }
+  const {g,w,h} = fit(cv);
+  const pad = {l:46,r:12,t:10,b:26};
+  const T = v.timesteps, N = v.hidden_shown||1;
+  const pw = w-pad.l-pad.r, ph = h-pad.t-pad.b;
+  const X = t => pad.l + (T<=1?0:pw*t/(T-1));
+  const Y = n => pad.t + ph*(1 - n/Math.max(1,N-1));
+
+  g.fillStyle = CSS("--panel2"); g.fillRect(pad.l,pad.t,pw,ph);
+  g.strokeStyle = CSS("--line"); g.lineWidth=1;
+  g.strokeRect(pad.l,pad.t,pw,ph);
+
+  const head = phase % (T+8);           // sweeps, then pauses off the end
+  const dotW = Math.max(1.4, pw/T*0.55), dotH = Math.max(1.2, ph/N*0.7);
+  v.raster_hidden.forEach(([t,n])=>{
+    const d = head - t;
+    let a = 0.30;                        // the settled raster stays visible
+    if (d>=0 && d<7) a = 1 - d*0.10;     // recently swept: bright
+    g.fillStyle = d>=0 && d<2
+      ? CSS("--hot") : `rgba(34,211,238,${a})`;
+    g.fillRect(X(t)-dotW/2, Y(n)-dotH/2, dotW, dotH);
+  });
+  if (head<=T){                          // the playhead itself
+    g.strokeStyle = CSS("--hot"); g.lineWidth=1.4; g.globalAlpha=.75;
+    g.beginPath(); g.moveTo(X(head),pad.t); g.lineTo(X(head),h-pad.b); g.stroke();
+    g.globalAlpha=1;
+  }
+  g.fillStyle = CSS("--faint"); g.font="10px ui-monospace,monospace";
+  g.textAlign="center"; g.textBaseline="top";
+  g.fillText("timestep 0", pad.l+22, h-pad.b+7);
+  g.fillText("t = "+T, w-pad.r-18, h-pad.b+7);
+  g.save(); g.translate(13,pad.t+ph/2); g.rotate(-Math.PI/2);
+  g.textAlign="center"; g.textBaseline="middle";
+  g.fillText("neuron 0 … "+N, 0,0); g.restore();
+
+  $("rasterinfo").textContent =
+    `${v.raster_hidden.length} spikes · ${N} neurons × ${T} steps · `
+    + `heard "${v.label}" → said "${v.pred}" ${v.correct?"✓":"✗"}`;
+}
+
+/* ------------------------------------------------------ membrane traces */
+function drawMem(v){
+  const cv = $("mem");
+  if (!v || !v.mem_hidden || !v.mem_hidden.length) return empty(cv,"—");
+  const {g,w,h} = fit(cv);
+  const pad={l:46,r:12,t:10,b:22};
+  const T = v.timesteps, thr = v.threshold||1;
+  let lo=0, hi=thr*1.25;
+  v.mem_hidden.forEach(tr=>tr.forEach(y=>{lo=Math.min(lo,y);hi=Math.max(hi,y)}));
+  const X = t => pad.l + (w-pad.l-pad.r)*(T<=1?0:t/(T-1));
+  const Y = y => h-pad.b - (h-pad.t-pad.b)*(y-lo)/((hi-lo)||1);
+  axes(g,w,h,pad,lo,hi,4,x=>x.toFixed(1));
+  const cols=["#22d3ee","#a78bfa","#34d399","#f59e0b","#f472b6","#60a5fa"];
+  v.mem_hidden.forEach((tr,i)=>
+    line(g, tr.map((y,t)=>[X(t),Y(y)]), cols[i%cols.length], 1.5));
+  g.setLineDash([4,4]);
+  line(g,[[pad.l,Y(thr)],[w-pad.r,Y(thr)]],CSS("--bad"),1.4);
+  g.setLineDash([]);
+  g.fillStyle=CSS("--bad"); g.font="10px ui-monospace,monospace";
+  g.textAlign="left"; g.textBaseline="bottom";
+  g.fillText("threshold "+thr, pad.l+4, Y(thr)-3);
+}
+
+/* -------------------------------------------------------- output counts */
+function drawOut(v){
+  const cv=$("out");
+  if (!v || !v.spike_counts) return empty(cv,"—");
+  const {g,w,h}=fit(cv);
+  const pad={l:32,r:10,t:10,b:30};
+  const c=v.spike_counts, n=c.length, mx=Math.max(1,...c);
+  const bw=(w-pad.l-pad.r)/n;
+  const labels = (window.CLASSES && window.CLASSES.length===n)
+                 ? window.CLASSES : c.map((_,i)=>String(i));
+  axes(g,w,h,pad,0,mx,4,x=>String(Math.round(x)));
+  c.forEach((val,i)=>{
+    const bh=(h-pad.t-pad.b)*val/mx;
+    g.fillStyle = labels[i]===v.label ? CSS("--good")
+                : labels[i]===v.pred  ? CSS("--violet") : CSS("--spike2");
+    g.fillRect(pad.l+i*bw+1, h-pad.b-bh, Math.max(1,bw-2), bh);
+    g.fillStyle = labels[i]===v.label||labels[i]===v.pred
+                ? CSS("--ink") : CSS("--faint");
+    g.font="9px ui-monospace,monospace"; g.textAlign="center"; g.textBaseline="top";
+    g.fillText(labels[i], pad.l+i*bw+bw/2, h-pad.b+5);
+  });
+}
+
+/* ----------------------------------------------------------- the curves */
+function drawLoss(st){
+  const cv=$("loss");
+  if (!st.steps.length) return empty(cv,"ממתין לצעד הראשון · waiting for step 1");
+  const {g,w,h}=fit(cv);
+  const pad={l:46,r:12,t:10,b:22};
+  const ls=st.steps.map(s=>s.l);
+  const hi=Math.max(...ls), lo=Math.min(...ls);
+  const X=i=>pad.l+(w-pad.l-pad.r)*(st.steps.length<=1?0:i/(st.steps.length-1));
+  const Y=y=>h-pad.b-(h-pad.t-pad.b)*(y-lo)/((hi-lo)||1);
+  axes(g,w,h,pad,lo,hi,4,x=>x.toFixed(2));
+  line(g, ls.map((y,i)=>[X(i),Y(y)]), CSS("--spike"), 1.6);
+  const rs=st.steps.map(s=>s.r).filter(x=>x!=null);
+  if (rs.length===st.steps.length){      // firing rate on its own 0..1 scale
+    const Y2=y=>h-pad.b-(h-pad.t-pad.b)*Math.min(1,y);
+    g.globalAlpha=.55;
+    line(g, rs.map((y,i)=>[X(i),Y2(y)]), CSS("--hot"), 1.2);
+    g.globalAlpha=1;
+    g.fillStyle=CSS("--hot"); g.font="10px ui-monospace,monospace";
+    g.textAlign="left"; g.textBaseline="top";
+    g.fillText("firing rate (0-1)", pad.l+4, pad.t+2);
+  }
+}
+
+function drawAcc(st){
+  const cv=$("acc");
+  const eps=st.epochs||[];
+  const base=(st.start&&st.start.baselines)||{};
+  if (!eps.length) return empty(cv,"דיוק יופיע בסוף הסבב הראשון · after epoch 1");
+  const {g,w,h}=fit(cv);
+  const pad={l:46,r:12,t:10,b:22};
+  const vals=[...eps.map(e=>e.test_acc),...eps.map(e=>e.train_acc),
+              ...Object.values(base)];
+  const hi=Math.min(1,Math.max(...vals)*1.12), lo=0;
+  const X=i=>pad.l+(w-pad.l-pad.r)*(eps.length<=1?0:i/(eps.length-1));
+  const Y=y=>h-pad.b-(h-pad.t-pad.b)*(y-lo)/((hi-lo)||1);
+  axes(g,w,h,pad,lo,hi,4,x=>(100*x).toFixed(0)+"%");
+
+  const marks=[["chance",CSS("--bad")],
+               ["prototype_organism_heldout",CSS("--violet")],
+               ["raw_features_loudest60",CSS("--hot")],
+               ["frozen_cochlea_nearest_centroid",CSS("--good")]];
+  const shown=[];
+  g.setLineDash([3,4]);
+  marks.forEach(([k,col])=>{
+    if (base[k]==null || base[k]>hi) return;
+    line(g,[[pad.l,Y(base[k])],[w-pad.r,Y(base[k])]],col,1.1);
+    shown.push(`<span><i style="background:${col}"></i>${k} ${pct(base[k])}</span>`);
+  });
+  g.setLineDash([]);
+  line(g, eps.map((e,i)=>[X(i),Y(e.train_acc)]), CSS("--spike2"), 1.4);
+  line(g, eps.map((e,i)=>[X(i),Y(e.test_acc)]), CSS("--spike"), 2.2);
+  $("acclegend").innerHTML =
+    `<span><i style="background:${CSS("--spike")}"></i>מבחן / test</span>`
+   +`<span><i style="background:${CSS("--spike2")}"></i>אימון / train</span>`
+   + shown.join("");
+}
+
+/* ------------------------------------------------------------ the cards */
+function cards(st){
+  const s=st.start||{}, d=st.done, last=st.epochs[st.epochs.length-1];
+  const acc = d ? d.final_test_acc : (last?last.test_acc:null);
+  const best= d ? d.best_test_acc  : Math.max(0,...st.epochs.map(e=>e.test_acc));
+  const ch  = s.chance;
+  const org = (s.baselines||{}).prototype_organism_heldout;
+  const c=[];
+  c.push(["דיוק מבחן / test", acc==null?"—":pct(acc),
+          ch!=null?`chance ${pct(ch)}`:"",
+          acc!=null&&ch!=null?(acc>ch?"win":"lose"):""]);
+  c.push(["מיטבי / best", best?pct(best):"—",
+          st.epochs.length?`epoch ${st.epochs.length}`:""]);
+  if (org!=null && acc!=null)
+    c.push(["מול ערן / vs organism",
+            (acc-org>=0?"+":"")+(100*(acc-org)).toFixed(2)+"pp",
+            `organism ${pct(org)}`, acc>org?"win":"lose"]);
+  c.push(["קצב ירייה / firing", last&&last.hidden_rate!=null
+          ? last.hidden_rate.toFixed(3) : "—", "spikes/neuron/step",
+          last&&last.hidden_rate===0?"lose":""]);
+  c.push(["מכשיר / device", s.device||"—",
+          s.gpu ? s.gpu : (s.cuda_available===false?"cuda NOT available":"")]);
+  c.push(["זמן / wall", st.elapsed!=null?Math.round(st.elapsed)+"s":"—",
+          s.n_params?s.n_params.toLocaleString()+" params":""]);
+  $("cards").innerHTML = c.map(([k,v,sub,cls])=>
+    `<div class="card"><div class="k">${k}</div>
+     <div class="v ${cls||""}">${v}</div>
+     <div class="s">${sub||""}</div></div>`).join("");
+}
+
+/* ---------------------------------------------------------------- state */
+let busy=false;
+async function poll(){
+  if (busy) return; busy=true;
+  try{
+    const st = await (await fetch("/api/state",{cache:"no-store"})).json();
+    render(st);
+  }catch(e){
+    $("pill").className="pill err"; $("pill").textContent="השרת לא עונה";
+  }finally{ busy=false; }
+}
+
+let lastRunning=null;
+function render(st){
+  const p=$("pill");
+  if (st.error){ p.className="pill err"; p.textContent="שגיאה: "+st.error; }
+  else if (st.running){ p.className="pill live";
+    p.textContent="מאמן ▸ "+(st.run_id||""); }
+  else if (st.done){ p.className="pill";
+    p.textContent="הסתיים · "+pct(st.done.final_test_acc)
+      +(st.done.stopped?" (נעצר)":""); }
+  else { p.className="pill"; p.textContent="מוכן / idle"; }
+
+  const s=st.start||{};
+  const dp=$("devpill");
+  if (s.device){ dp.style.display=""; dp.textContent =
+    `${s.device} · cuda=${s.cuda_available} · tensors on ${s.tensor_device}`; }
+
+  if (s.classes) window.CLASSES = s.classes;
+  $("go").disabled = st.running;
+  $("halt").disabled = !st.running;
+  cards(st); drawLoss(st); drawAcc(st); drawMem(st.viz);
+  drawOut(st.viz); drawRaster(st.viz);
+  $("log").textContent = (st.log||[]).join("\n");
+  $("log").scrollTop = 1e6;
+  if (lastRunning===true && !st.running) loadHistory();
+  lastRunning = st.running;
+}
+
+async function loadHistory(){
+  try{
+    const {runs} = await (await fetch("/api/runs",{cache:"no-store"})).json();
+    $("hist").tBodies[0].innerHTML = runs.map(r=>{
+      const cls = r.final==null ? "mut"
+                : (r.chance!=null && r.final>r.chance ? "win":"lose");
+      const org = r.vs_organism;
+      return `<tr>
+        <td class="mut">${r.run_id}</td><td>${r.dataset||""}</td>
+        <td>${r.encoding||""}${r.recurrent?" +rec":""}</td>
+        <td>${r.hidden??""}</td><td>${r.beta??""}</td><td>${r.threshold??""}</td>
+        <td>${r.hidden_rate==null?"":r.hidden_rate.toFixed(2)}</td>
+        <td>${r.epochs_done??""}${r.stopped?"*":""}</td>
+        <td class="${cls}">${pct(r.final)}</td><td>${pct(r.best)}</td>
+        <td class="mut">${pct(r.chance)}</td>
+        <td class="mut">${r.wall??""}</td>
+        <td class="mut">${r.device||""}${org!=null
+          ? (org>=0?` · +${(100*org).toFixed(1)}pp vs ערן`
+                   : ` · ${(100*org).toFixed(1)}pp vs ערן`) : ""}</td>
+      </tr>`;
+    }).join("") || `<tr><td colspan="13" class="mut">עוד לא רצה כלום</td></tr>`;
+  }catch(e){}
+}
+
+/* -------------------------------------------------------------- controls */
+function syncEncodings(){
+  const ds=$("dataset").value, sel=$("encoding"), keep=sel.value;
+  sel.innerHTML = ENCODINGS[ds].map(([v,t])=>
+    `<option value="${v}">${t}</option>`).join("");
+  if ([...sel.options].some(o=>o.value===keep)) sel.value=keep;
+  syncGain();
+}
+function syncGain(){
+  const enc=$("encoding").value;
+  const want = (enc==="rate"||enc==="latency") ? 1 : 13.86;
+  $("input_gain").value = want;
+  syncLabels();
+}
+function syncLabels(){
+  $("betav").textContent = "= "+(+$("beta").value).toFixed(2);
+  $("thrv").textContent  = "= "+(+$("threshold").value).toFixed(2);
+  $("gainv").textContent = "= "+(+$("input_gain").value).toFixed(2);
+}
+["beta","threshold","input_gain"].forEach(k=>
+  $(k).addEventListener("input",syncLabels));
+$("dataset").addEventListener("change",()=>{
+  syncEncodings();
+  const mn = $("dataset").value==="mnist";
+  $("epochs").value = mn ? 3 : 40;
+  $("batch").value  = mn ? 128 : 64;
+});
+$("encoding").addEventListener("change",syncGain);
+
+$("go").addEventListener("click", async ()=>{
+  const cfg = {
+    dataset:$("dataset").value, encoding:$("encoding").value,
+    hidden:+$("hidden").value, epochs:+$("epochs").value,
+    batch:+$("batch").value, steps:+$("steps").value,
+    beta:+$("beta").value, threshold:+$("threshold").value,
+    input_gain:+$("input_gain").value, lr:+$("lr").value,
+    surrogate:$("surrogate").value, recurrent:$("recurrent").checked
+  };
+  $("go").disabled=true; $("msg").textContent="שולח…";
+  try{
+    const r = await (await fetch("/api/start",{method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(cfg)})).json();
+    $("msg").textContent = r.ok ? "" : "✋ "+r.msg;
+  }catch(e){ $("msg").textContent="✋ "+e; }
+  poll();
+});
+
+$("halt").addEventListener("click", async ()=>{
+  $("msg").textContent="מבקש לעצור…";
+  try{
+    const r=await (await fetch("/api/stop",{method:"POST"})).json();
+    $("msg").textContent = r.ok ? "" : "✋ "+r.msg;
+  }catch(e){ $("msg").textContent="✋ "+e; }
+  poll();
+});
+
+setInterval(()=>{ $("clock").textContent =
+  new Date().toLocaleTimeString("he-IL"); }, 1000);
+setInterval(()=>{ phase++; if (window.__viz) drawRaster(window.__viz); }, 90);
+
+syncEncodings(); syncLabels(); loadHistory(); poll();
+setInterval(poll, 800);
+window.addEventListener("resize", ()=>poll());
+</script>
+</body>
+</html>

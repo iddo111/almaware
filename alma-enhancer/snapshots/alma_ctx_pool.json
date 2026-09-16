@@ -1,0 +1,149 @@
+{
+ "section": "ALMA_CTX_POOL",
+ "tag": "Local\\ALMA_CTX_POOL_64MB",
+ "size": 67108864,
+ "kind": "jsonl",
+ "header_text": "ALMA-ENHANCER v1 :: ALMA_CTX_POOL :: context cards {\"id\",\"author\",\"topic\",\"text\",\"ts\",\"weight\"} :: init 2026-07-07T02:39:34\n",
+ "head": 3220,
+ "used_bytes": 2196,
+ "saved_at": "2026-07-07T02:40:49",
+ "records": [
+  {
+   "id": "bd4cc443b283",
+   "author": "CLOD",
+   "topic": "test",
+   "text": "בדיקת עברית בזיכרון המשותף",
+   "ts": 1783381198.0101297,
+   "weight": 1.0
+  },
+  {
+   "id": "1cd19afc54a1",
+   "author": "GEMINI",
+   "topic": "mesh",
+   "text": "FSDP 3-node test passed on eran2 star topology",
+   "ts": 1783381198.221081,
+   "weight": 1.0
+  },
+  {
+   "id": "f4807474fd02",
+   "author": "GPT",
+   "topic": "race",
+   "text": "writer A card 1",
+   "ts": 1783381221.0711694,
+   "weight": 1.0
+  },
+  {
+   "id": "de7b15805283",
+   "author": "GPT",
+   "topic": "race",
+   "text": "writer A card 2",
+   "ts": 1783381221.320671,
+   "weight": 1.0
+  },
+  {
+   "id": "3ff250f9d539",
+   "author": "GPT",
+   "topic": "race",
+   "text": "writer A card 3",
+   "ts": 1783381221.6292105,
+   "weight": 1.0
+  },
+  {
+   "id": "98bcaa1abdaa",
+   "author": "GPT",
+   "topic": "race",
+   "text": "writer A card 4",
+   "ts": 1783381222.1160796,
+   "weight": 1.0
+  },
+  {
+   "id": "3f3a98231b42",
+   "author": "GPT",
+   "topic": "race",
+   "text": "writer A card 5",
+   "ts": 1783381222.6501985,
+   "weight": 1.0
+  },
+  {
+   "id": "c50a33cff7ec",
+   "author": "GPT",
+   "topic": "race",
+   "text": "writer A card 1",
+   "ts": 1783381230.6601186,
+   "weight": 1.0
+  },
+  {
+   "id": "84e932096fe6",
+   "author": "GROK",
+   "topic": "race",
+   "text": "writer B card 1",
+   "ts": 1783381230.6876378,
+   "weight": 1.0
+  },
+  {
+   "id": "2ca5bfec8f14",
+   "author": "GPT",
+   "topic": "race",
+   "text": "writer A card 2",
+   "ts": 1783381230.9029362,
+   "weight": 1.0
+  },
+  {
+   "id": "37906979314a",
+   "author": "GROK",
+   "topic": "race",
+   "text": "writer B card 2",
+   "ts": 1783381230.9149082,
+   "weight": 1.0
+  },
+  {
+   "id": "9780ef597268",
+   "author": "GROK",
+   "topic": "race",
+   "text": "writer B card 3",
+   "ts": 1783381231.1519516,
+   "weight": 1.0
+  },
+  {
+   "id": "290fe95c088f",
+   "author": "GPT",
+   "topic": "race",
+   "text": "writer A card 3",
+   "ts": 1783381231.153162,
+   "weight": 1.0
+  },
+  {
+   "id": "671534403cae",
+   "author": "GROK",
+   "topic": "race",
+   "text": "writer B card 4",
+   "ts": 1783381231.4990962,
+   "weight": 1.0
+  },
+  {
+   "id": "48375f9e9ced",
+   "author": "GPT",
+   "topic": "race",
+   "text": "writer A card 4",
+   "ts": 1783381231.4992845,
+   "weight": 1.0
+  },
+  {
+   "id": "71fd94cfab71",
+   "author": "GPT",
+   "topic": "race",
+   "text": "writer A card 5",
+   "ts": 1783381231.7818112,
+   "weight": 1.0
+  },
+  {
+   "id": "dfcb7ba5ccf4",
+   "author": "GROK",
+   "topic": "race",
+   "text": "writer B card 5",
+   "ts": 1783381231.7877226,
+   "weight": 1.0
+  }
+ ],
+ "bad_lines": 0
+}

@@ -1,0 +1,398 @@
+{
+ "model": "hebrew reference + judge",
+ "status_line_he": "⚠️ תוצאה שלילית על הייחוס: facebook/mms-tts-heb ייצר 840 קליפים (24 הברות × 35), אבל השופט שומע רק 156/840 = 18.6% מהם כהברה הנכונה — הוא לא מבטא את העיצורים. מבחן ביקורת: המילה \"בַּיִת\" יצאה ממנו ונשמעה לוויספר \"היית\", בלי ב'. לכן הייחוס נפסל, והשופט לבדו הוא השער של school-v3. השופט: facebook/wav2vec2-xlsr-53-espeak-cv-ft — 26.5% על 132 הקליפים האנושיים, אבל 4/5 על הקליפים שלך. שום דבר לא חווט לערן החי.",
+ "items": [
+  {
+   "file": "JUDGE-confusion-human132.png",
+   "spectrogram": "JUDGE-confusion-human132.png",
+   "kind": "image",
+   "label_he": "מטריצת הבלבול של השופט — 132 קליפים אנושיים",
+   "note_he": "השורה = מה שכתוב בשם הקובץ, העמודה = מה שהשופט העברי שמע. 35/132 = 26.5%. ויספר העברי (ivrit-ai) מקבל 23.5% על אותם קליפים, בנפרד. על 5 הקליפים שלך (LISTEN) ויספר 5/5 והשופט 4/5. השאלה הזאת פתוחה לאוזן שלך.",
+   "source": "hebrew-ref/val/val-human132.json"
+  },
+  {
+   "file": "HEBTTS-mms-a-v22.wav",
+   "spectrogram": "HEBTTS-mms-a-v22.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — אַ (a)",
+   "note_he": "✅ שמע נכון · ביטחון 0.96 · פונמות שהשופט קרא: [aɪ] · הטקסט שנשלח למודל: \"אַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-a-v22.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-a-v09.wav",
+   "spectrogram": "HEBTTS-mms-a-v09.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — אַ (a)",
+   "note_he": "✅ שמע נכון · ביטחון 0.94 · פונמות שהשופט קרא: [aː] · הטקסט שנשלח למודל: \"אַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-a-v09.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-aya-v06.wav",
+   "spectrogram": "HEBTTS-mms-aya-v06.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — עַ (aya)",
+   "note_he": "✅ שמע נכון · ביטחון 0.93 · פונמות שהשופט קרא: [a] · הטקסט שנשלח למודל: \"עַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-aya-v06.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-aya-v21.wav",
+   "spectrogram": "HEBTTS-mms-aya-v21.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — עַ (aya)",
+   "note_he": "✅ שמע נכון · ביטחון 0.90 · פונמות שהשופט קרא: [—] · הטקסט שנשלח למודל: \"עַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-aya-v21.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ba-v33.wav",
+   "spectrogram": "HEBTTS-mms-ba-v33.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — בַּ (ba)",
+   "note_he": "❌ שמע la · ביטחון 0.95 · פונמות שהשופט קרא: [l a r a] · הטקסט שנשלח למודל: \"בַּ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ba-v33.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ba-v34.wav",
+   "spectrogram": "HEBTTS-mms-ba-v34.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — בַּ (ba)",
+   "note_he": "❌ שמע la · ביטחון 0.95 · פונמות שהשופט קרא: [ð e l a] · הטקסט שנשלח למודל: \"בַּ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ba-v34.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-va-v31.wav",
+   "spectrogram": "HEBTTS-mms-va-v31.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — בַ (va)",
+   "note_he": "✅ שמע נכון · ביטחון 0.40 · פונמות שהשופט קרא: [d a r v a] · הטקסט שנשלח למודל: \"בַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-va-v31.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-va-v33.wav",
+   "spectrogram": "HEBTTS-mms-va-v33.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — בַ (va)",
+   "note_he": "❌ שמע la · ביטחון 0.95 · פונמות שהשופט קרא: [l a r a] · הטקסט שנשלח למודל: \"בַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-va-v33.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ga-v17.wav",
+   "spectrogram": "HEBTTS-mms-ga-v17.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — גַ (ga)",
+   "note_he": "✅ שמע נכון · ביטחון 0.61 · פונמות שהשופט קרא: [h aː l ɡ a] · הטקסט שנשלח למודל: \"גַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ga-v17.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ga-v22.wav",
+   "spectrogram": "HEBTTS-mms-ga-v22.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — גַ (ga)",
+   "note_he": "❌ שמע la · ביטחון 0.96 · פונמות שהשופט קרא: [h a l a] · הטקסט שנשלח למודל: \"גַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ga-v22.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-da-v16.wav",
+   "spectrogram": "HEBTTS-mms-da-v16.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — דַ (da)",
+   "note_he": "✅ שמע נכון · ביטחון 0.81 · פונמות שהשופט קרא: [a l d e] · הטקסט שנשלח למודל: \"דַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-da-v16.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-da-v17.wav",
+   "spectrogram": "HEBTTS-mms-da-v17.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — דַ (da)",
+   "note_he": "✅ שמע נכון · ביטחון 0.70 · פונמות שהשופט קרא: [l d e] · הטקסט שנשלח למודל: \"דַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-da-v17.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ha-v20.wav",
+   "spectrogram": "HEBTTS-mms-ha-v20.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — הַ (ha)",
+   "note_he": "✅ שמע נכון · ביטחון 0.81 · פונמות שהשופט קרא: [aɪ h eː] · הטקסט שנשלח למודל: \"הַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ha-v20.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ha-v29.wav",
+   "spectrogram": "HEBTTS-mms-ha-v29.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — הַ (ha)",
+   "note_he": "✅ שמע נכון · ביטחון 0.79 · פונמות שהשופט קרא: [h aː] · הטקסט שנשלח למודל: \"הַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ha-v29.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-wa-v33.wav",
+   "spectrogram": "HEBTTS-mms-wa-v33.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — וַ (wa)",
+   "note_he": "✅ שמע נכון · ביטחון 0.49 · פונמות שהשופט קרא: [v e r l] · הטקסט שנשלח למודל: \"וַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-wa-v33.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-wa-v27.wav",
+   "spectrogram": "HEBTTS-mms-wa-v27.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — וַ (wa)",
+   "note_he": "✅ שמע נכון · ביטחון 0.48 · פונמות שהשופט קרא: [v a] · הטקסט שנשלח למודל: \"וַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-wa-v27.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-za-v33.wav",
+   "spectrogram": "HEBTTS-mms-za-v33.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — זַ (za)",
+   "note_he": "✅ שמע נכון · ביטחון 0.86 · פונמות שהשופט קרא: [z e r] · הטקסט שנשלח למודל: \"זַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-za-v33.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-za-v17.wav",
+   "spectrogram": "HEBTTS-mms-za-v17.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — זַ (za)",
+   "note_he": "✅ שמע נכון · ביטחון 0.72 · פונמות שהשופט קרא: [a l z i] · הטקסט שנשלח למודל: \"זַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-za-v17.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-cha-v28.wav",
+   "spectrogram": "HEBTTS-mms-cha-v28.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — חַ (cha)",
+   "note_he": "✅ שמע נכון · ביטחון 0.40 · פונמות שהשופט קרא: [x a5 n l a5] · הטקסט שנשלח למודל: \"חַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-cha-v28.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-cha-v15.wav",
+   "spectrogram": "HEBTTS-mms-cha-v15.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — חַ (cha)",
+   "note_he": "✅ שמע נכון · ביטחון 0.33 · פונמות שהשופט קרא: [x a] · הטקסט שנשלח למודל: \"חַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-cha-v15.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ta-v13.wav",
+   "spectrogram": "HEBTTS-mms-ta-v13.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — טַ (ta)",
+   "note_he": "✅ שמע נכון · ביטחון 0.66 · פונמות שהשופט קרא: [t a] · הטקסט שנשלח למודל: \"טַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ta-v13.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ta-v31.wav",
+   "spectrogram": "HEBTTS-mms-ta-v31.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — טַ (ta)",
+   "note_he": "✅ שמע נכון · ביטחון 0.35 · פונמות שהשופט קרא: [θ ɪ ŋ] · הטקסט שנשלח למודל: \"טַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ta-v31.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ya-v08.wav",
+   "spectrogram": "HEBTTS-mms-ya-v08.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — יַ (ya)",
+   "note_he": "✅ שמע נכון · ביטחון 0.76 · פונמות שהשופט קרא: [j] · הטקסט שנשלח למודל: \"יַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ya-v08.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ya-v30.wav",
+   "spectrogram": "HEBTTS-mms-ya-v30.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — יַ (ya)",
+   "note_he": "✅ שמע נכון · ביטחון 0.76 · פונמות שהשופט קרא: [j ʉ j e] · הטקסט שנשלח למודל: \"יַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ya-v30.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ka-v31.wav",
+   "spectrogram": "HEBTTS-mms-ka-v31.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — כַּ (ka)",
+   "note_he": "✅ שמע נכון · ביטחון 0.29 · פונמות שהשופט קרא: [a q a] · הטקסט שנשלח למודל: \"כַּ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ka-v31.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ka-v17.wav",
+   "spectrogram": "HEBTTS-mms-ka-v17.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — כַּ (ka)",
+   "note_he": "❌ שמע a · ביטחון 0.89 · פונמות שהשופט קרא: [—] · הטקסט שנשלח למודל: \"כַּ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ka-v17.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-kha-v17.wav",
+   "spectrogram": "HEBTTS-mms-kha-v17.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — כַ (kha)",
+   "note_he": "❌ שמע a · ביטחון 0.89 · פונמות שהשופט קרא: [—] · הטקסט שנשלח למודל: \"כַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-kha-v17.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-kha-v09.wav",
+   "spectrogram": "HEBTTS-mms-kha-v09.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — כַ (kha)",
+   "note_he": "❌ שמע a · ביטחון 0.88 · פונמות שהשופט קרא: [—] · הטקסט שנשלח למודל: \"כַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-kha-v09.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-la-v26.wav",
+   "spectrogram": "HEBTTS-mms-la-v26.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — לַ (la)",
+   "note_he": "✅ שמע נכון · ביטחון 0.95 · פונמות שהשופט קרא: [e l i] · הטקסט שנשלח למודל: \"לַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-la-v26.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-la-v23.wav",
+   "spectrogram": "HEBTTS-mms-la-v23.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — לַ (la)",
+   "note_he": "✅ שמע נכון · ביטחון 0.93 · פונמות שהשופט קרא: [h e l i] · הטקסט שנשלח למודל: \"לַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-la-v23.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ma-v25.wav",
+   "spectrogram": "HEBTTS-mms-ma-v25.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — מַ (ma)",
+   "note_he": "✅ שמע נכון · ביטחון 0.94 · פונמות שהשופט קרא: [a m] · הטקסט שנשלח למודל: \"מַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ma-v25.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ma-v19.wav",
+   "spectrogram": "HEBTTS-mms-ma-v19.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — מַ (ma)",
+   "note_he": "✅ שמע נכון · ביטחון 0.93 · פונמות שהשופט קרא: [aː m] · הטקסט שנשלח למודל: \"מַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ma-v19.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-na-v26.wav",
+   "spectrogram": "HEBTTS-mms-na-v26.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — נַ (na)",
+   "note_he": "✅ שמע נכון · ביטחון 0.92 · פונמות שהשופט קרא: [h n i] · הטקסט שנשלח למודל: \"נַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-na-v26.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-na-v19.wav",
+   "spectrogram": "HEBTTS-mms-na-v19.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — נַ (na)",
+   "note_he": "✅ שמע נכון · ביטחון 0.91 · פונמות שהשופט קרא: [aː n i] · הטקסט שנשלח למודל: \"נַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-na-v19.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-sa-v29.wav",
+   "spectrogram": "HEBTTS-mms-sa-v29.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — סַ (sa)",
+   "note_he": "✅ שמע נכון · ביטחון 0.96 · פונמות שהשופט קרא: [s ɑː] · הטקסט שנשלח למודל: \"סַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-sa-v29.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-sa-v07.wav",
+   "spectrogram": "HEBTTS-mms-sa-v07.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — סַ (sa)",
+   "note_he": "✅ שמע נכון · ביטחון 0.93 · פונמות שהשופט קרא: [s əɜ] · הטקסט שנשלח למודל: \"סַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-sa-v07.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-pa-v12.wav",
+   "spectrogram": "HEBTTS-mms-pa-v12.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — פַּ (pa)",
+   "note_he": "❌ שמע a · ביטחון 0.94 · פונמות שהשופט קרא: [—] · הטקסט שנשלח למודל: \"פַּ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-pa-v12.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-pa-v30.wav",
+   "spectrogram": "HEBTTS-mms-pa-v30.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — פַּ (pa)",
+   "note_he": "❌ שמע fa · ביטחון 0.94 · פונמות שהשופט קרא: [f a s f ə] · הטקסט שנשלח למודל: \"פַּ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-pa-v30.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-fa-v30.wav",
+   "spectrogram": "HEBTTS-mms-fa-v30.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — פַ (fa)",
+   "note_he": "✅ שמע נכון · ביטחון 0.94 · פונמות שהשופט קרא: [f a s f ə] · הטקסט שנשלח למודל: \"פַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-fa-v30.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-fa-v28.wav",
+   "spectrogram": "HEBTTS-mms-fa-v28.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — פַ (fa)",
+   "note_he": "✅ שמע נכון · ביטחון 0.58 · פונמות שהשופט קרא: [x a f ɔ] · הטקסט שנשלח למודל: \"פַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-fa-v28.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-tza-v24.wav",
+   "spectrogram": "HEBTTS-mms-tza-v24.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — צַ (tza)",
+   "note_he": "❌ שמע a · ביטחון 0.95 · פונמות שהשופט קרא: [—] · הטקסט שנשלח למודל: \"צַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-tza-v24.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-tza-v29.wav",
+   "spectrogram": "HEBTTS-mms-tza-v29.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — צַ (tza)",
+   "note_he": "❌ שמע sa · ביטחון 0.94 · פונמות שהשופט קרא: [s oʊ s ɪ ŋ] · הטקסט שנשלח למודל: \"צַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-tza-v29.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-qa-v29.wav",
+   "spectrogram": "HEBTTS-mms-qa-v29.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — קַ (qa)",
+   "note_he": "✅ שמע נכון · ביטחון 0.49 · פונמות שהשופט קרא: [k a l aɪ] · הטקסט שנשלח למודל: \"קַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-qa-v29.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-qa-v28.wav",
+   "spectrogram": "HEBTTS-mms-qa-v28.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — קַ (qa)",
+   "note_he": "✅ שמע נכון · ביטחון 0.44 · פונמות שהשופט קרא: [k ɑ5 h a5] · הטקסט שנשלח למודל: \"קַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-qa-v28.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ra-v00.wav",
+   "spectrogram": "HEBTTS-mms-ra-v00.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — רַ (ra)",
+   "note_he": "❌ שמע a · ביטחון 0.97 · פונמות שהשופט קרא: [ɔ] · הטקסט שנשלח למודל: \"רַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ra-v00.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-ra-v24.wav",
+   "spectrogram": "HEBTTS-mms-ra-v24.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — רַ (ra)",
+   "note_he": "❌ שמע a · ביטחון 0.96 · פונמות שהשופט קרא: [—] · הטקסט שנשלח למודל: \"רַ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-ra-v24.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-sha-v08.wav",
+   "spectrogram": "HEBTTS-mms-sha-v08.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — שַׁ (sha)",
+   "note_he": "✅ שמע נכון · ביטחון 0.95 · פונמות שהשופט קרא: [ʃ a] · הטקסט שנשלח למודל: \"שַׁ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-sha-v08.wav (facebook/mms-tts-heb)"
+  },
+  {
+   "file": "HEBTTS-mms-sha-v16.wav",
+   "spectrogram": "HEBTTS-mms-sha-v16.png",
+   "kind": "audio",
+   "label_he": "מודל עברי (mms-tts) — שַׁ (sha)",
+   "note_he": "✅ שמע נכון · ביטחון 0.90 · פונמות שהשופט קרא: [ʃ a5] · הטקסט שנשלח למודל: \"שַׁ\".",
+   "source": "hebrew-ref/corpus/mms/HEBTTS-mms-sha-v16.wav (facebook/mms-tts-heb)"
+  }
+ ]
+}

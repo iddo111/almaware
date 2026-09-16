@@ -1,0 +1,35 @@
+{
+  "model": "KESHEV (קשב) — live mic STT, PC GPU (RTX 3070 Ti)",
+  "status_line_he": "שרת http://127.0.0.1:8737 חי (401 = בריא, דורש מפתח); זמן פענוח נמדד p50 472ms / p90 672ms / p99 2065ms; שני קטעים אמיתיים מקולו של עידו מהיום, 2026-09-03 בסביבות 18:35-18:37, עם התמלול המדויק שקשב הפיק.",
+  "note_en": "Recordings are real, previously-captured audio from D:/CLAUDE/keshev-next/segments/ (BRIO mic) -- nothing new was recorded for this task, per instructions. Pairing method: main.py's --debug-dump writes every PASS/BLOCK segment to segments/<timestamp>.wav while trial.log logs the same segment's peak_rms and decoded text on one line; the two 2026-09-03 pairs below were matched by finding the segment.wav whose own measured peak sample amplitude equals (within <0.3%) the peak_rms value on a specific decode=ok log line -- an exact, verifiable correspondence, not a guess by file order. Latency numbers (p50 472ms decode / p90 672 / p99 2065, n=500 live requests) are Iddo's own 2026-08-30 01:38 measurement recorded as a comment in app/main.py next to KESHEV_SILENCE_MS; a second, later measurement in the same file (2026-08-30 22:45) found a separate room-noise problem (segments hitting the 15s cap, ~1.9-4.4s decode on those) that is NOT reflected in the p50/p90/p99 above -- that number is decode time only, not full mouth-to-screen latency, which was measured at up to 19s on a noisy night before the fix.",
+  "items": [
+    {
+      "file": "IDDO-keshev-20260903-183557.wav",
+      "kind": "audio",
+      "label_he": "הקלטה אמיתית של עידו — 18:35:57",
+      "note_he": "5.06 שניות, BRIO mic, peak_rms 10874 (log: 10848, הפרש 0.24%)",
+      "source": "D:/CLAUDE/keshev-next/segments/20260903-183557-300.wav + D:/CLAUDE/keshev-next/trial.log"
+    },
+    {
+      "file": "IDDO-keshev-20260903-183557.txt",
+      "kind": "text",
+      "label_he": "תמלול קשב",
+      "note_he": "\u05ea\u05e8\u05d9\u05e5 \u05dc\u05db\u05df \u05e1\u05d5\u05e0\u05ea",
+      "source": "decoder output logged in trial.log, route=he, decode=ok"
+    },
+    {
+      "file": "IDDO-keshev-20260903-183703.wav",
+      "kind": "audio",
+      "label_he": "הקלטה אמיתית של עידו — 18:37:03",
+      "note_he": "5.06 שניות, BRIO mic, peak_rms 12442 (log: 12473, הפרש 0.25%)",
+      "source": "D:/CLAUDE/keshev-next/segments/20260903-183703-776.wav + D:/CLAUDE/keshev-next/trial.log"
+    },
+    {
+      "file": "IDDO-keshev-20260903-183703.txt",
+      "kind": "text",
+      "label_he": "תמלול קשב",
+      "note_he": "\u05d5\u05e2\u05d5\u05d3 \u05de\u05e9\u05d4\u05d5 \u05d9\u05e6\u05e8",
+      "source": "decoder output logged in trial.log, route=he, decode=ok"
+    }
+  ]
+}

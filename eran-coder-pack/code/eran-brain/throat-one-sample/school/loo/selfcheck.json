@@ -1,0 +1,149 @@
+{
+ "ba": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7280,
+  "len_new": 7280,
+  "max_abs_diff": 0.4475
+ },
+ "va": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7760,
+  "len_new": 7760,
+  "max_abs_diff": 1.0212
+ },
+ "ma": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 8320,
+  "len_new": 8320,
+  "max_abs_diff": 0.7626
+ },
+ "pa": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7920,
+  "len_new": 7920,
+  "max_abs_diff": 0.0884
+ },
+ "fa": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7760,
+  "len_new": 7760,
+  "max_abs_diff": 0.9916
+ },
+ "wa": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7200,
+  "len_new": 7200,
+  "max_abs_diff": 0.7866
+ },
+ "da": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7120,
+  "len_new": 7120,
+  "max_abs_diff": 0.0
+ },
+ "ta": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 8240,
+  "len_new": 8240,
+  "max_abs_diff": 0.0
+ },
+ "na": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 8320,
+  "len_new": 8320,
+  "max_abs_diff": 0.0
+ },
+ "la": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7360,
+  "len_new": 7360,
+  "max_abs_diff": 0.0
+ },
+ "sa": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7760,
+  "len_new": 7760,
+  "max_abs_diff": 0.0
+ },
+ "za": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7760,
+  "len_new": 7760,
+  "max_abs_diff": 0.0
+ },
+ "sha": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7760,
+  "len_new": 7760,
+  "max_abs_diff": 0.0
+ },
+ "ra": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7360,
+  "len_new": 7360,
+  "max_abs_diff": 0.0
+ },
+ "ga": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7280,
+  "len_new": 7280,
+  "max_abs_diff": 0.0
+ },
+ "kha": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7760,
+  "len_new": 7760,
+  "max_abs_diff": 0.0
+ },
+ "a": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 9600,
+  "len_new": 9600,
+  "max_abs_diff": 1.2093
+ },
+ "ha": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 6880,
+  "len_new": 6880,
+  "max_abs_diff": 0.0
+ },
+ "ya": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 6400,
+  "len_new": 6400,
+  "max_abs_diff": 0.0
+ },
+ "cha": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 7440,
+  "len_new": 7440,
+  "max_abs_diff": 0.0
+ },
+ "aya": {
+  "signature_ok": true,
+  "fails": [],
+  "len_ref": 10560,
+  "len_new": 10560,
+  "max_abs_diff": 1.2916
+ }
+}

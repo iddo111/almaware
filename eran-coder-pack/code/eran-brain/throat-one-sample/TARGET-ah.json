@@ -1,0 +1,15 @@
+{
+  "chosen": "IDDO-ah-20260902T144701.wav",
+  "chosen_at": "2026-09-02 14:48",
+  "speaker": "iddo",
+  "unit": "ah",
+  "measured": {"dur_s": 0.85, "sr": 48000, "clip_pct": 0.0,
+               "f0_hz": 105, "F1_hz": 504, "F2_hz": 1421, "F3_hz": 2379},
+  "why_this_one": "The only take that is neither quiet nor short. f0 105 Hz and F1/F2 504/1421 are an adult male vowel.",
+  "why_not_the_others": {
+    "IDDO-ah-20260902T144739.wav": "quiet (rms 739); its f0 read of 249 Hz is a harmonic lock, not his pitch",
+    "IDDO-ah-20260902T144741.wav": "0.68 s, too short to hold a steady vowel"
+  },
+  "consequence": "f0 105 Hz is BELOW the child tract's hard pitch floor of 200 Hz (mouth2.py f0_knots clipped to [200,500]). The child throat cannot reach this target at any setting. This is the measured proof for the adult-tract order.",
+  "the_rest": "ma/la/na/ya recorded 14:47 and kept in ../kept/ - not used until ah is settled."
+}

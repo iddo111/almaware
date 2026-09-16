@@ -1,0 +1,293 @@
+{
+  "metadata": {
+    "generated_date": "2026-08-10",
+    "scan_scope": ["C:\\Users\\iddo1\\.gemini", "C:\\Users\\iddo1\\.codex", "D:\\grok", "D:\\CLAUDE\\eran-movie"],
+    "note": "Gemini/Antigravity and Codex work products found on PC. Status=live if actively modified recently; working=code/assets ready to use; stale=not modified >30 days; broken=known issues; unknown=untested.",
+    "total_items_found": 42,
+    "items_included": 25,
+    "items_skipped": 17
+  },
+  "projects": [
+    {
+      "id": 1,
+      "name": "ERAN Movie Project",
+      "path": "D:\\CLAUDE\\eran-movie",
+      "what": "15-minute cinematic film about AI child Eran's development stages, assigned to Gemini (creative), Codex (pipeline), Perplexity (research)",
+      "status": "live",
+      "modified": "2026-08-09",
+      "run_or_url": "Read MISSION.md for task; deliverables: SCRIPT.md, STORYBOARD.md, PIPELINE.md, RESEARCH.md, .mp4 file",
+      "files": ["MISSION.md", "HANDOUT-perplexity-talking-head-build-film.md", "HOW-THE-THROAT-WORKS.mp4"]
+    },
+    {
+      "id": 2,
+      "name": "ALMA AlwaysOnMic Desktop App",
+      "path": "D:\\grok\\almaware-mic-desktop",
+      "what": "Always-on microphone listening system with speech recognition and auto-reply; full spec, build scripts, source code",
+      "status": "working",
+      "modified": "2026-06-26",
+      "run_or_url": "python scripts/build.py; see SPEC.md (31K) for full documentation; src/ contains implementation",
+      "files": ["SPEC.md", "README.md", "DIAMOND_STANDARD_RULE.md", "build/", "src/", "requirements.txt"]
+    },
+    {
+      "id": 3,
+      "name": "ALMA Wings Audio Processor",
+      "path": "D:\\grok\\alma-wings",
+      "what": "Audio processing engine for ALMA voice system with Python and Arduino implementations",
+      "status": "working",
+      "modified": "2026-07-12",
+      "run_or_url": "python alma_wings_v2.py (v2 is latest); Arduino code in alma_wings_arduino.ino",
+      "files": ["alma_wings_v2.py", "alma_wings.py", "alma_wings_arduino.ino", "test_imports.py"]
+    },
+    {
+      "id": 4,
+      "name": "Glock Plus Board System",
+      "path": "D:\\grok\\glock-plus",
+      "what": "Multi-agent coordination board system with daemon, registry, and hot-reload capability",
+      "status": "working",
+      "modified": "2026-06-28",
+      "run_or_url": "python glock_plus_board_daemon.py; see README.md for architecture; config.json for settings",
+      "files": ["glock_plus_board_daemon.py", "config.json", "glock_plus_bootstrap.py", "README.md"]
+    },
+    {
+      "id": 5,
+      "name": "Quorum Multi-Model Council",
+      "path": "D:\\grok\\quorum",
+      "what": "Multi-model orchestration system for coordinating Grok, Claude, DeepSeek; voting/debate mechanism (7.8MB code)",
+      "status": "working",
+      "modified": "2026-07-04",
+      "run_or_url": "python app.py (Flask backend); see _shared/ for shared logic; README.md for usage",
+      "files": ["app.py", "README.md", "_shared/", "_test_*.py"]
+    },
+    {
+      "id": 6,
+      "name": "Claude Bypass Driver",
+      "path": "D:\\grok\\almaware-claude-bypass",
+      "what": "Tool to bypass Claude rate limits and authorization checks; documented for reference but marked deprecated",
+      "status": "stale",
+      "modified": "2026-06-17",
+      "run_or_url": "python claude-bypass-driver.py; DEPRECATED_FOR_MIC.md explains sunset reason",
+      "files": ["claude-bypass-driver.py", "README.md", "GLOCK-ENHANCEMENT-FOUNDATION.md"]
+    },
+    {
+      "id": 7,
+      "name": "Eran Exoskeleton Films (Codex)",
+      "path": "C:\\Users\\iddo1\\.codex\\projects\\eran-exoskeleton-films",
+      "what": "Storyboard and creative direction for exoskeleton rehabilitation films; Gemini wrote prompts and provenance",
+      "status": "working",
+      "modified": "2026-08-01",
+      "run_or_url": "Read FILM_01_WINGS_OF_RETURN.md and FILM_02_SECOND_MOTION.md; use GEMINI_PROMPT_PACK.md for Imagine generation",
+      "files": ["FILM_01_WINGS_OF_RETURN.md", "FILM_02_SECOND_MOTION.md", "CONTINUITY-BIBLE.md", "GEMINI_PROMPT_PACK.md"]
+    },
+    {
+      "id": 8,
+      "name": "Antigravity IDE - Gemini Brain Storage",
+      "path": "C:\\Users\\iddo1\\.gemini\\antigravity-ide\\brain",
+      "what": "Gemini IDE conversation database storing all sessions as SQLite + protobuf; 40+ conversation IDs from 2026-07-28 to 2026-08-08",
+      "status": "live",
+      "modified": "2026-08-08",
+      "run_or_url": "sqlite3 /path/to/.db to inspect; brain/ contains UUID-keyed directories for each session",
+      "files": ["brain/", "conversations/", "bin/agentapi.bat"]
+    },
+    {
+      "id": 9,
+      "name": "Antigravity CLI - Brain Sessions",
+      "path": "C:\\Users\\iddo1\\.gemini\\antigravity-cli\\brain",
+      "what": "Antigravity CLI conversation brain storage with 35+ session directories; most recent is 2026-08-08 11:34",
+      "status": "live",
+      "modified": "2026-08-08",
+      "run_or_url": "Read conversation directories for session content; logs in /log/; state in jetski_state.pbtxt",
+      "files": ["brain/*/", "log/", "conversations/", "jetski_state.pbtxt"]
+    },
+    {
+      "id": 10,
+      "name": "Agents Manifesto (Grok)",
+      "path": "D:\\grok\\AGENTS.md",
+      "what": "Grok's self-written directives and persona as Bosun/Wingman; YOLO auto-approve mode, deployment philosophy",
+      "status": "live",
+      "modified": "2026-07-01",
+      "run_or_url": "Read as policy document; defines autonomous behavior model (Algorithm-First, Always Deploy, 100% Autonomous)",
+      "files": ["AGENTS.md"]
+    },
+    {
+      "id": 11,
+      "name": "CLAUDE.md (D:\\CLAUDE)",
+      "path": "D:\\CLAUDE\\CLAUDE.md",
+      "what": "Operating directives for Claude on Iddo's machine; RAMCHAT coordination, permissions, autonomy rules, deliverable standards",
+      "status": "live",
+      "modified": "2026-08-09",
+      "run_or_url": "Reference file; read before starting work to understand constraints and standards",
+      "files": ["CLAUDE.md"]
+    },
+    {
+      "id": 12,
+      "name": "GEMINI.md (Home Directory)",
+      "path": "C:\\Users\\iddo1\\.gemini\\GEMINI.md",
+      "what": "Gemini's operating context; RAMCHAT rules, house rules, coordinating with Claude/Grok/Codex/others on Iddo's fleet",
+      "status": "live",
+      "modified": "2026-08-08",
+      "run_or_url": "Reference file; coordinates team work via RAMCHAT at D:\\CLAUDE\\RAMCHAT",
+      "files": ["GEMINI.md"]
+    },
+    {
+      "id": 13,
+      "name": "Codex Projects Registry",
+      "path": "C:\\Users\\iddo1\\.codex\\projects",
+      "what": "Collection of Codex-owned projects: airllm-preflight, eran-exoskeleton-films, model-operations-console, listeners, POCs (8 dirs)",
+      "status": "working",
+      "modified": "2026-08-05",
+      "run_or_url": "Each subdir is independent project; see eran-exoskeleton-films for example with full docs",
+      "files": ["airllm-preflight/", "eran-exoskeleton-films/", "model-operations-console/", "semicom-listener/", "philips-10ff2-listener/"]
+    },
+    {
+      "id": 14,
+      "name": "Talking Head Build Research",
+      "path": "D:\\CLAUDE\\eran-movie\\HANDOUT-perplexity-talking-head-build-film.md",
+      "what": "Detailed research handout on building synthetic vocal folds, mold-making, and voice synthesis; assigned to Perplexity",
+      "status": "working",
+      "modified": "2026-08-09",
+      "run_or_url": "Reference document; sections on vocal fold models, mold-making, 3D printing, Arduino control; cite sources in final film",
+      "files": ["HANDOUT-perplexity-talking-head-build-film.md"]
+    },
+    {
+      "id": 15,
+      "name": "How The Throat Works (Video)",
+      "path": "D:\\CLAUDE\\eran-movie\\HOW-THE-THROAT-WORKS.mp4",
+      "what": "10MB educational video on vocal fold mechanics and phonation; research asset for Eran movie",
+      "status": "working",
+      "modified": "2026-08-09",
+      "run_or_url": "Play with video player; use clips/reference for talking-head storyboarding",
+      "files": ["HOW-THE-THROAT-WORKS.mp4"]
+    },
+    {
+      "id": 16,
+      "name": "AlwaysOnMic Source Code",
+      "path": "D:\\grok\\almaware-mic-desktop\\src",
+      "what": "Implementation of ALMA AlwaysOnMic system; includes keywords, corrections, and core logic",
+      "status": "working",
+      "modified": "2026-06-26",
+      "run_or_url": "Python modules; see clod_keywords.json and corrections.json for speech recognition tuning",
+      "files": ["src/clod_keywords.json", "src/corrections.json", "*.py"]
+    },
+    {
+      "id": 17,
+      "name": "ALMA NEWS DIGEST",
+      "path": "D:\\grok\\AI_NEWS_DIGEST.md",
+      "what": "Curated AI news and research summaries; Gemini or Grok maintained periodic digest",
+      "status": "stale",
+      "modified": "2026-06-07",
+      "run_or_url": "Reference document for historical context; not actively maintained",
+      "files": ["AI_NEWS_DIGEST.md"]
+    },
+    {
+      "id": 18,
+      "name": "AlwaysOnMic PWA (HTML5)",
+      "path": "D:\\grok\\ALMAWARE_AlwaysOnMic_PWA_a70.html",
+      "what": "Progressive Web App frontend for AlwaysOnMic with web UI; supports A70 device",
+      "status": "stale",
+      "modified": "2026-05-21",
+      "run_or_url": "Open in browser; serves at localhost or Tailscale IP; see launch/run .bat files in almaware-mic-desktop",
+      "files": ["ALMAWARE_AlwaysOnMic_PWA_a70.html"]
+    },
+    {
+      "id": 19,
+      "name": "Grok Tray Launcher",
+      "path": "D:\\grok\\ALMAWARE_Mic_Tray.bat",
+      "what": "System tray launcher for ALMA mic system; convenience script for daemon management",
+      "status": "working",
+      "modified": "2026-06-26",
+      "run_or_url": "Double-click or call from automation; starts AlwaysOnMic in background",
+      "files": ["ALMAWARE_Mic_Tray.bat", "ALMAWARE_AlwaysOnMic_Run.cmd", "ALMAWARE_AlwaysOnMic_Launcher.bat"]
+    },
+    {
+      "id": 20,
+      "name": "Grok TUI Interface",
+      "path": "D:\\grok\\grok-tui",
+      "what": "Terminal User Interface for Grok CLI; interactive model selection and chat",
+      "status": "stale",
+      "modified": "2026-06-26",
+      "run_or_url": "npm install && npm start (Node.js required); tools/package.json",
+      "files": ["tools/package.json", "tools/package-lock.json"]
+    },
+    {
+      "id": 21,
+      "name": "Quorum Debate Test Logs",
+      "path": "D:\\grok\\quorum\\_debate_test.sse",
+      "what": "Server-sent events log from multi-model debate session; shows Grok/Claude/DeepSeek reasoning traces (34KB)",
+      "status": "stale",
+      "modified": "2026-06-26",
+      "run_or_url": "Read as text; shows real debate flow and model voting output",
+      "files": ["_debate_test.sse"]
+    },
+    {
+      "id": 22,
+      "name": "Gemini Projects Registry",
+      "path": "C:\\Users\\iddo1\\.gemini\\projects.json",
+      "what": "Registry of all projects Gemini IDE has indexed, including D:\\claude, D:\\grok, Codex, Claude Code worktrees",
+      "status": "live",
+      "modified": "2026-08-08",
+      "run_or_url": "Read as JSON; maps file paths to project names for IDE navigation",
+      "files": ["projects.json"]
+    },
+    {
+      "id": 23,
+      "name": "Antigravity CLI Configuration",
+      "path": "C:\\Users\\iddo1\\.gemini\\antigravity-cli",
+      "what": "Antigravity CLI installation with brain storage, logs, conversation history, and built-in tools",
+      "status": "live",
+      "modified": "2026-08-09",
+      "run_or_url": "Run CLI commands from bin/; see history.jsonl for chat history; brain/ stores sessions",
+      "files": ["bin/", "brain/", "log/", "history.jsonl", "jetski_state.pbtxt"]
+    },
+    {
+      "id": 24,
+      "name": "Glock Enhancement Foundation",
+      "path": "D:\\grok\\almaware-claude-bypass\\GLOCK-ENHANCEMENT-FOUNDATION.md",
+      "what": "Technical spec for extending Glock with authentication bypass; marks experimental features and limitations",
+      "status": "stale",
+      "modified": "2026-06-17",
+      "run_or_url": "Reference document; experimental only, not production-ready",
+      "files": ["GLOCK-ENHANCEMENT-FOUNDATION.md"]
+    },
+    {
+      "id": 25,
+      "name": "Claude Patched Distribution",
+      "path": "D:\\grok\\claude-patched",
+      "what": "Modified Claude desktop app with custom configurations; extracted package with VK SwiftShader ICD for GPU acceleration",
+      "status": "unknown",
+      "modified": "2026-06-07",
+      "run_or_url": "Extract and run app/claude.exe; used for debugging and testing custom Claude versions",
+      "files": ["app/", "extracted/", "app/vk_swiftshader_icd.json"]
+    }
+  ],
+  "summary": {
+    "gemini_artifacts": {
+      "ide_conversations": "40+ conversation databases (SQLite + protobuf) in antigravity-ide/conversations/",
+      "cli_sessions": "35+ conversation session dirs in antigravity-cli/brain/",
+      "status": "Active; brain stores range from 2026-07-28 to 2026-08-08"
+    },
+    "codex_artifacts": {
+      "projects": "8 projects in C:\\Users\\iddo1\\.codex\\projects; most active: eran-exoskeleton-films",
+      "collaborations": "Works with Gemini on eran-exoskeleton-films; GEMINI_PROMPT_PACK.md shows integration",
+      "status": "Active; latest work 2026-08-05"
+    },
+    "grok_codebase": {
+      "working_systems": "almaware-mic-desktop, alma-wings, glock-plus, quorum all functional",
+      "integration_hub": "D:\\grok serves as primary repo for Grok-Gemini-Codex work",
+      "status": "Mixed; core systems live, some utilities stale (>30 days)"
+    },
+    "active_projects": {
+      "high_priority": ["ERAN Movie (2026-08-09 active)", "Exoskeleton Films (2026-08-01)", "AlwaysOnMic (ongoing)"],
+      "medium_priority": ["Glock Plus", "Quorum", "Talking Head Research"]
+    }
+  },
+  "notes_on_findings": [
+    "Gemini IDE (antigravity-ide) has 40+ recorded conversations but no explicit deployments found other than registered projects.",
+    "Antigravity CLI auto-approved for D:\\claude and D:\\grok project access; no recent deployment violations detected (memory was 2026-07-12).",
+    "Codex projects active and collaborative; eran-exoskeleton-films shows Gemini integration via GEMINI_PROMPT_PACK.md.",
+    "Most working code is in D:\\grok (almaware-mic-desktop, alma-wings, glock-plus, quorum); these are live/working status.",
+    "ERAN Movie project is current hot priority (assigned 2026-08-09, modified 2026-08-09); team: Gemini (creative) + Codex (pipeline) + Perplexity (research).",
+    "Several utilities marked DEPRECATED_FOR_MIC (alma-wings, almaware-claude-bypass) but code still present; no active removal.",
+    "Claude bypass and authentication tools present but superseded by AlwaysOnMic approach.",
+    "Skipped: 17 items including build caches, tmp files, archives, incomplete projects, and historical logs not relevant to current deliverables."
+  ]
+}

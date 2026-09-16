@@ -1,0 +1,13 @@
+{
+  "bind": ["<lan-ip>"],
+  "port": 8737,
+  "models": {
+    "stock": "~/keshev/models/large-v3-turbo-ct2",
+    "lora": "~/keshev-spike/iddo-lora-run2-ct2"
+  },
+  "device": "cuda",
+  "compute_type": "int8_float16",
+  "token_file": "~/.config/keshev-stt/token",
+  "inflight_cap": 2,
+  "decode_wall_s": 15.0
+}

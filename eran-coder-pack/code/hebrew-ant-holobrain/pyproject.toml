@@ -1,0 +1,9 @@
+[project]
+name = "hebrew-ant-holobrain"
+version = "0.1.0"
+description = "Random-initialized voice-first multimodal Queen/ant research scaffold"
+requires-python = ">=3.11"
+dependencies = ["torch>=2.5"]
+
+[tool.setuptools]
+packages = ["holobrain"]

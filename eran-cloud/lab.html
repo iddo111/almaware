@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hardware &amp; concept lab · ERAN Lab</title>
+<meta name="description" content="Bio-transformer architecture experiments, connectome models built from real wiring, hand-built physical neurons with their failures published, and the concept layer — clearly fenced from what is built.">
+<link rel="stylesheet" href="alma.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="./">ERAN Lab<span class="heb">מעבדת ער"ן</span></a>
+  <nav>
+    <a href="./">Hub</a>
+    <a href="eran.html">Eran</a>
+    <a href="ants.html">The Ants</a>
+    <a href="edge.html">Edge &amp; Fleet</a>
+    <a href="lab.html" aria-current="page">Hardware Lab</a>
+  </nav>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Track 4 · the bench</span>
+  <h1>Hardware &amp; concept lab
+    <span class="sub">מעבדת החומרה והרעיונות · where the speculative work lives, fenced</span></h1>
+  <p class="lead">Some of this produced measurements. Some of it produced a clean, useful <strong>no</strong>.
+    Some of it is a design document and says so in the label. The fence between those three categories is the
+    most important thing on the page.</p>
+</div></header>
+
+<main id="main">
+
+<!-- ============ BIO-TRANSFORMER ============ -->
+<section id="biotransformer"><div class="wrap">
+  <h2>The shape is the algorithm <span class="state s-prototype">Prototype</span></h2>
+  <p class="section-note">In a brain, structure <em>is</em> computation — where a region sits, how it is wired, how
+    asymmetric it is. Transformers throw that away: a uniform, symmetric, all-to-all stack. The premise here is to
+    make <strong>topology a first-class, grown, asymmetric variable</strong>.</p>
+
+  <div class="note">
+    <h3>The reframe that keeps this honest</h3>
+    <p>"More brain-like" does not mean better. The brain is optimised for embodied, continual, low-energy survival —
+      <em>not</em> for language fluency, which is precisely why backpropagation and transformers beat it at language
+      by being unconstrained by biology.</p>
+    <p>So the target is only the capabilities we actually lack: continual learning without catastrophic forgetting,
+      sample efficiency, energy, robustness, grounding, and a built-in conscience. Not brain-likeness for its own sake.</p>
+  </div>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>The bake-off, both arms built and scored</h3>
+      <p class="what">Rather than argue modular-versus-monolithic, both were built on the same benchmark, in pure
+        standard-library code, deterministic, and scored on thirteen graded scenarios.</p>
+      <ul class="facts">
+        <li><span class="k">Modular specialists — accuracy</span><span class="v">0.785</span></li>
+        <li><span class="k">Single fused pass — accuracy</span><span class="v">0.665</span></li>
+        <li><span class="k">Fault survival, modular</span><span class="v">13 / 13</span></li>
+        <li><span class="k">Fault survival, fused</span><span class="v">0 / 13</span></li>
+      </ul>
+      <p class="foot">the fused model names one problem when the truth has several</p>
+    </article>
+
+    <article class="card">
+      <h3>What we concluded — and what the test also showed</h3>
+      <p class="what">The decisive gap was <strong>structural, not accuracy</strong>. One component fault takes down
+        the entire fused pass; the modular arm degrades gracefully every time, and can be traced, swapped and extended.
+        The adopted design is therefore specialists <em>inside</em> one brain with a learned routing gate — keeping the
+        seams, paying for only the parts each input needs.</p>
+      <p><strong>The harness also surfaced a shared weakness rather than hiding it:</strong> both architectures scored
+        zero on two chord-recognition scenarios. A benchmark that only ever flatters the thing you built is not a
+        benchmark.</p>
+    </article>
+  </div>
+
+  <div class="note warn">
+    <h3>Honest tagging of the underlying claims</h3>
+    <ul>
+      <li><strong>Well supported:</strong> lateralisation, small-world and rich-club connectivity, developmental
+        pruning, predictive coding, excitation–inhibition balance, and the broad findings on atypical connectivity.</li>
+      <li><strong>Simplified or contested:</strong> the tidy story that a single connectivity parameter explains a
+        cognitive style.</li>
+      <li><strong>Our unproven leap:</strong> that <em>deliberately</em> atypical artificial topologies yield clean
+        task-specific advantages by design. That is the interesting bet and it is not established.</li>
+    </ul>
+    <p>And the standing law over all of it: <strong>data is the limiter, not cleverness.</strong> Any edge here comes
+      from structure and orchestration, never from claiming to out-scale anyone.</p>
+  </div>
+</div></section>
+
+<!-- ============ CONNECTOME ============ -->
+<section id="connectome"><div class="wrap">
+  <h2>Connectome models — built the right way round <span class="state s-prototype">Prototype</span></h2>
+  <p class="section-note">Real published wiring goes in; known biological dynamics come out. If the dynamics have to
+    be hand-tuned to appear, the model is a drawing of a brain rather than a model of one.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3><em>C. elegans</em> — tap withdrawal</h3>
+      <p class="what">The classic reflex circuit, assembled from the published connectome with established
+        dynamics.</p>
+      <ul>
+        <li>A head tap makes the animal reverse. A tail tap makes it advance.</li>
+        <li>Both directions came out correct without being fitted to.</li>
+      </ul>
+      <p class="foot">the smallest nervous system there is — and therefore the right first one</p>
+    </article>
+
+    <article class="card">
+      <h3>Fly central complex — heading</h3>
+      <ul class="facts">
+        <li><span class="k">Real neurons</span><span class="v">172</span></li>
+        <li><span class="k">Real synapses</span><span class="v">8,605</span></li>
+        <li><span class="k">Bump tracks a cue to</span><span class="v">~13°</span></li>
+      </ul>
+      <p>The activity bump holds a heading and follows a moving cue. The ring topology that makes this work was
+        <strong>recovered from the wiring</strong> rather than imposed on it, which is the part that counts.</p>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ GIST ============ -->
+<section id="gist"><div class="wrap">
+  <h2>Retrieval by gist <span class="state s-concept">Concept</span> <span class="state s-prototype">runnable demo</span></h2>
+  <div class="grid two">
+    <article class="card">
+      <h3>The principle</h3>
+      <p class="what">Memory should be reached by <strong>context</strong>, matched against a compressed
+        <strong>gist</strong> — and the crux: <em>the match score and the connection weight are the same number</em>,
+        not two separate quantities. Activation then spreads along the whole pathway.</p>
+      <p>One source yields <em>several</em> gists at different levels of granularity, so a document is a small
+        constellation of points rather than a single one.</p>
+    </article>
+    <article class="card">
+      <h3>Where it is already real</h3>
+      <ul>
+        <li><strong>Attention</strong> is literally this: query is context, key is gist, and the match score is
+          exactly what weights the value that propagates.</li>
+        <li><strong>Modern associative memory</strong> settles to the nearest attractor from a partial cue.</li>
+        <li><strong>Spreading activation</strong> through a weighted associative graph is a fifty-year-old,
+          well-studied model.</li>
+      </ul>
+      <p class="foot">honest limit: in the demo the gists are hand-set — <em>learning</em> them is the next step</p>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ SHISHA ============ -->
+<section id="shisha"><div class="wrap">
+  <h2>Shisha Brain — analog neuromorphic from scratch
+     <span class="state s-concept">Concept</span> <span class="state s-negative">tested, failed</span></h2>
+  <p class="section-note">An attempt at massively parallel analog computation in physical material — hand-built
+    memristive cells, a few shekels of salt and gel, no foundry. The name is a memorial dedication. This is the most
+    speculative work in the lab and it is fenced accordingly.</p>
+
+  <div class="note negative">
+    <h3>The measurement that ended the first attempt</h3>
+    <p>A cell was built and driven through an automated five-cycle set/reset test with sixty resistance reads.</p>
+    <ul class="facts">
+      <li><span class="k">Reads returning 0 Ω (dead short)</span><span class="v">60 / 60</span></li>
+      <li><span class="k">Valid switching cycles</span><span class="v">0 / 5</span></li>
+      <li><span class="k">Separation between set and reset</span><span class="v">none</span></li>
+    </ul>
+    <p><strong>Verdict: no memristance whatsoever.</strong> The cause was mechanical rather than chemical — a soaked
+      absorbent substrate cannot hold a sub-millimetre gap, so the electrodes simply touched. Reported as a failure
+      the same morning, rather than retried quietly until a graph looked better.</p>
+  </div>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>What the literature review actually returned</h3>
+      <ul>
+        <li><strong>Buildable by hand:</strong> single two-terminal cells genuinely are, at roughly a hundred
+          switching cycles — discrete devices, not addressable arrays.</li>
+        <li><strong>Hard ceiling:</strong> the substrate is fundamentally low precision. Usable accuracy
+          <em>requires</em> multi-device redundancy plus a digital final stage. That is mandatory, not optional.</li>
+        <li><strong>Every impressive published result</strong> in this space was foundry-fabricated or simulated.
+          None were hand-built. That is the sentence that should govern expectations.</li>
+        <li>For small arrays, reservoir computing — not backpropagation — is the paradigm that fits.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>Corrected chemistry, published because we had it wrong</h3>
+      <ul>
+        <li>Gel and table salt between <em>two identical electrodes</em> is <strong>not a memristor</strong>. It is
+          an ionic resistor. Earlier guidance in this lab said otherwise and was wrong.</li>
+        <li>Real switching needs <strong>asymmetric electrodes</strong> — one active, one inert — and pairing the
+          wrong salt with the wrong metal passivates the surface instead.</li>
+        <li>A series compliance resistor is not optional: the most common failure mode is an uncontrolled filament
+          becoming a permanent short.</li>
+        <li>Two dissimilar metals form a battery whose voltage masks the effect being measured. Same metal, different
+          geometry, is the way to get asymmetry without an EMF.</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="note warn">
+    <h3>The claim we refuse to make</h3>
+    <p>This is <strong>not</strong> a quantum computer. There are no qubits, no entanglement, no Hilbert-space
+      superposition, and it <strong>cannot break modern cryptography</strong>. Any framing that implies otherwise
+      collapses under the first hard question from anyone who knows the field.</p>
+    <p>Further: the central speculative idea — carrying several independent computation channels on one device by
+      <strong>frequency multiplexing</strong> — has, in our own literature search, <em>no published support</em>.
+      Not refuted, simply no evidence. It is treated as untested speculation to be settled by a small experiment
+      before anything is built on top of it.</p>
+    <p>What is genuinely worth pursuing, without any embellishment: massively parallel analog computation in
+      material, at very low power, from ordinary materials, owned end to end.</p>
+  </div>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Published hardware fact that killed a design</h3>
+      <p class="what">An early stand-in used small incandescent bulbs as analog weights. It worked as a weight grid
+        and was then proposed for the frequency-multiplexing test.</p>
+      <p><strong>It physically cannot carry one.</strong> A filament is a thermal low-pass filter with a cutoff of a
+        few hertz — the very thermal averaging that makes brightness-as-weight work destroys any carrier above it.
+        The bulb grid also turned out to be miswired: two lamps lit regardless of command, so they were never under
+        control at all. Both facts are recorded so the design is not proposed again.</p>
+    </article>
+
+    <article class="card">
+      <h3>The pivot that did produce something</h3>
+      <p class="what">After the negative result, the bench moved to thermal and electronic neurons — and each idea
+        was <strong>simulated before it was recommended</strong>.</p>
+      <ul>
+        <li>A single-neuron perceptron with a motor-driven potentiometer as a physical weight: simulation converged
+          on AND in six epochs and OR in four, and <strong>never</strong> on exclusive-or — the 1969 limitation,
+          reproduced honestly rather than glossed.</li>
+        <li>An incandescent bulb was <em>verified</em> to show the pinched hysteresis signature of a memristive
+          system, volatile on a ~20 ms scale.</li>
+        <li>A thermoelectric element was checked and found <strong>not</strong> to be a clean memristor — its
+          back-EMF breaks the required pinch at the origin — but it makes a good slow integrate-and-fire neuron,
+          with a fan as a literal forgetting knob.</li>
+      </ul>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ PROTONEURON ============ -->
+<section id="protoneuron"><div class="wrap">
+  <h2>PROTONEURON <span class="state s-concept">Concept</span></h2>
+  <div class="grid two">
+    <article class="card">
+      <h3>The circuit</h3>
+      <p class="what">A physical analog spiking neuron built as a relaxation oscillator: a capacitor as the membrane
+        that integrates charge, a resistor and potentiometer as leak and tunable input weight, and a relay as the
+        threshold. Cross the pull-in voltage and it fires — visibly, audibly — then discharges and resets.</p>
+      <p>Several inputs sum on the same capacitor; the potentiometers set the firing rate. Three of them wire into a
+        physical three-member panel, which is the smallest hardware version of the conscience mechanism this project
+        keeps returning to.</p>
+    </article>
+    <article class="card">
+      <h3>Status, stated exactly</h3>
+      <ul>
+        <li>A pure-Python circuit simulation exists and shows it spiking, so the behaviour can be seen before any
+          soldering.</li>
+        <li>A wiring plan exists. <strong>The circuit has not been built.</strong></li>
+        <li>Safety is real even at low voltage: relay coils need flyback protection, motors and electrochemistry
+          need current limits, and nothing here touches mains.</li>
+      </ul>
+      <p class="foot">simulate first, recommend second, build third</p>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ ALMA LANGUAGE ============ -->
+<section id="alma-language"><div class="wrap">
+  <h2>ALMA Language <span class="state s-concept">Concept</span></h2>
+  <p class="section-note">Two things share this name, and only one of them matters technically.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>The visible idea</h3>
+      <p class="what">A node-based visual language for building and training models with your hands rather than by
+        typing — a spatial version of a node-graph editor, where a neuron is a block that snaps to other blocks
+        because they all speak one interface.</p>
+      <p>The layered plan is deliberately unglamorous: a module standard first, then a node runtime, then a flat
+        two-dimensional canvas that proves a graph can run, and only then anything spatial. The first three layers
+        are buildable; everything past them is a long horizon and is described as one.</p>
+    </article>
+
+    <article class="card">
+      <h3>The load-bearing idea</h3>
+      <p class="what">A <strong>readable, editable symbolic map</strong> layered over a neural substrate — so a
+        model's world-model can be inspected and corrected directly rather than probed from outside.</p>
+      <p>That is the genuine differentiator, and it comes with its limit attached: lossless symbolic compression of
+        neural knowledge is unsolved, because fuzzy sub-symbolic knowledge does not map cleanly onto symbols and
+        forcing it discards the intuition. So the target is a <em>hybrid</em>, never a full translation.</p>
+      <p class="foot">status: design and scaffold. No language exists.</p>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ YIGAEL ============ -->
+<section id="yigael"><div class="wrap">
+  <h2>Yigael — the little brother <span class="state s-parked">Parked</span></h2>
+  <p class="section-note">A sibling project to Eran, deliberately dormant. Everything below is design and a stopped
+    seed; none of it is running.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>The design</h3>
+      <p class="what">Where Eran is raised pure and voice-first, <strong>Yigael</strong> (<span class="rtl">יגאל</span>,
+        "he will be redeemed") was to be the worldly sibling — free-range, bigger from birth, multi-cortex: audio,
+        vision, movement through street-level imagery, and reinforcement learning through games.</p>
+      <p>It reached a real seed: an orchestrator routing across live model cortices on the cluster, and a vocal
+        cortex trained on <em>world</em> sound rather than one person's voice.</p>
+    </article>
+
+    <article class="card">
+      <h3>Why it is separated, and why it stopped</h3>
+      <ul>
+        <li><strong>Clean-experiment design.</strong> Same architecture, two upbringings — one pure arm, one wild
+          arm. Letting them mix during formation destroys the control, so they are kept apart on purpose.</li>
+        <li><strong>Free-range inside a sandbox.</strong> "Roaming" means imagery as <em>data</em>; "feeding on the
+          web" means streamed input, never an autonomous agent taking outward actions. Rate-limited, licence-respecting,
+          and incapable of harming a third-party service — a lesson taken from watching aggressive automated access
+          take a real site offline, and from our own broadcast storm.</li>
+        <li><strong>Parked since 2026-06-30</strong> with nothing deleted. State preserved on the nodes and revivable.
+          Focus went to getting Eran's architecture right first.</li>
+      </ul>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ ALSO ============ -->
+<section id="also"><div class="wrap">
+  <h2>Also on the bench <span class="heb">עוד על השולחן</span></h2>
+  <p class="section-note">Smaller pieces, listed for completeness with their honest labels.</p>
+  <div class="grid">
+    <article class="card">
+      <h3>Hebrew dictation stack <span class="state s-live">Live</span></h3>
+      <p>A from-scratch microphone application — capture, voice activity detection, transcription and typing —
+        rebuilt clean after an earlier version leaked memory and crashed every couple of days. Soak-tested at 300
+        inferences with flat memory.</p>
+      <p class="foot">honest split: the app is ours, the recognition model is not, and is credited as such</p>
+    </article>
+    <article class="card">
+      <h3>Personal voice adapter <span class="state s-negative">Run 1 failed</span></h3>
+      <p>A fine-tuned adapter for one speaker came back <strong>worse</strong> on Hebrew than the base model —
+        37.1% word error rate against 30.7% — while English improved. Diagnosed as a self-distillation trap: the
+        adapter was learning the base model's own mistakes.</p>
+      <p class="foot">deployment gated on an evaluation win that has not happened</p>
+    </article>
+    <article class="card">
+      <h3>Adversarial review harness <span class="state s-prototype">Prototype</span></h3>
+      <p>A structured debate format in which several models must challenge a <em>named</em> opponent's weakest point
+        and either defend or explicitly concede — conceding counts as a win. Built to make disagreement visible
+        instead of averaging it away.</p>
+      <p class="foot">ships inert by design: it reaches no model until explicitly enabled</p>
+    </article>
+  </div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <p><a href="./">← back to the hub</a></p>
+  <p class="ded">לזכרה של עלמה ז״ל <span class="dim" dir="ltr">— in memory of Alma z"l.</span></p>
+  <p class="small">© 2026 ALMAWARE · speculative work is labelled speculative on the same line as the idea.</p>
+</div></footer>
+
+</body>
+</html>

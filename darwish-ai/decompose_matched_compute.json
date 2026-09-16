@@ -1,0 +1,48 @@
+{
+ "joint_step": 1500,
+ "split_step": 750,
+ "seeds": [
+  "907",
+  "1337",
+  "2026"
+ ],
+ "seconds": 45295.3,
+ "per_lane": {
+  "drum": {
+   "joint_nats": 722481.4063812544,
+   "split_nats": 701503.9184002479,
+   "diff_nats": -20977.487981006503,
+   "diff_sd": 18069.11258087867,
+   "diff_bits_per_second": -0.6681513949682619
+  },
+  "pitch": {
+   "joint_nats": 1668102.6798103824,
+   "split_nats": 1683198.2825313609,
+   "diff_nats": 15095.602720978359,
+   "diff_sd": 11803.811188597994,
+   "diff_bits_per_second": 0.48080818947629045
+  },
+  "dur": {
+   "joint_nats": 296396.5725024566,
+   "split_nats": 278226.6562543263,
+   "diff_nats": -18169.916248130303,
+   "diff_sd": 5211.437740426553,
+   "diff_bits_per_second": -0.5787277722974654
+  },
+  "struct": {
+   "joint_nats": 347022.1073274584,
+   "split_nats": 482177.79926609155,
+   "diff_nats": 135155.69193863322,
+   "diff_sd": 21016.009672455715,
+   "diff_bits_per_second": 4.304827355327872
+  }
+ },
+ "total_joint_bits_per_second": 96.63564971603434,
+ "total_split_bits_per_second": 100.17440609357278,
+ "gap_bits_per_second": 3.5387563775384416,
+ "clock_cost_bits_per_second": 4.304827355327872,
+ "non_clock_gain_bits_per_second": -0.7660709777894369,
+ "pitch_stream_struct_nats": 288156.2288440149,
+ "pitch_stream_struct_bits_per_second": 9.178028677468205,
+ "clock_is_intrinsic": "93.8% of the pitch stream's struct tokens are STEP, which assigns each note to a sixteenth. No other stream carries that, so the second copy cannot be removed and the stream stay decodable. Only BAR+PHRASE (6.2%) are derivable."
+}

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>תקן ALMAWARE — ארכיטקטורה</title>
+<meta name="description" content="תקן ALMAWARE — ארכיטקטורת לֶגוֹ של תוכנה, חוזה MCP, ערימת־הנשמה. כלים עבריים-תחילה, 100% שלנו. לזכרה של עלמה ז״ל.">
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --bg:#fff7ec; --card:#ffffff; --ink:#2b2540; --muted:#7a7290;
+  --accent:#ff6b6b; --accent2:#ffd166; --sky:#4dabf7; --mint:#51cf66; --grape:#9775fa;
+  --line:#f0e6d6; --shadow:0 8px 28px rgba(120,90,60,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Segoe UI','Heebo',system-ui,Arial,sans-serif;background:
+  radial-gradient(1200px 500px at 80% -10%,#ffe7c2 0,transparent 60%),
+  radial-gradient(900px 500px at 0% 0%,#ffd9e0 0,transparent 55%),var(--bg);
+  color:var(--ink);line-height:1.75}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px}
+/* top nav */
+.topnav{position:sticky;top:0;z-index:20;backdrop-filter:saturate(1.4) blur(10px);
+  background:rgba(255,247,236,.82);border-bottom:1px solid var(--line)}
+.topnav .inner{max-width:920px;margin:0 auto;padding:12px 22px;display:flex;gap:14px;
+  align-items:center;flex-wrap:wrap}
+.topnav .brand{font-weight:800;font-size:18px;letter-spacing:-.5px;
+  background:linear-gradient(90deg,var(--accent),var(--grape),var(--sky));
+  -webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
+.topnav a.nav{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;
+  padding:6px 12px;border-radius:999px;border:1px solid transparent}
+.topnav a.nav:hover{border-color:var(--line);background:#fff}
+.topnav a.nav.active{background:#fff;border-color:var(--line);box-shadow:var(--shadow)}
+.spacer{flex:1}
+.dedi-mini{font-size:13px;color:var(--accent);font-weight:600}
+/* hero */
+header.hero{padding:60px 0 24px;text-align:center}
+.logo{font-size:60px;line-height:1}
+h1{font-size:clamp(34px,6vw,60px);margin:10px 0 6px;letter-spacing:-1px;
+  background:linear-gradient(90deg,var(--accent),var(--grape),var(--sky));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{font-size:19px;color:var(--muted);margin:0 auto;max-width:680px}
+.dedication{margin-top:14px;font-size:15px;color:var(--accent);font-weight:600}
+.pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px 0 8px}
+.pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 16px;
+  font-size:14px;font-weight:600;box-shadow:var(--shadow)}
+.pill b{color:var(--mint)}
+/* landing cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin:30px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;
+  box-shadow:var(--shadow);text-decoration:none;color:inherit;display:flex;flex-direction:column;
+  transition:transform .15s}
+.card:hover{transform:translateY(-4px)}
+.card .ico{font-size:36px}
+.card h3{margin:10px 0 4px;font-size:22px}
+.card p{margin:6px 0 14px;color:#564f6b;font-size:15px;flex:1}
+.card .go{font-weight:700;color:var(--grape)}
+/* article (md content) */
+.doc{background:var(--card);border:1px solid var(--line);border-radius:20px;
+  box-shadow:var(--shadow);padding:34px 38px;margin:26px 0 50px}
+.doc h1{font-size:clamp(28px,5vw,42px);margin:.2em 0 .4em;letter-spacing:-.5px;
+  background:linear-gradient(90deg,var(--accent),var(--grape),var(--sky));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.doc h2{font-size:27px;margin:1.5em 0 .4em;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.doc h3{font-size:20px;margin:1.3em 0 .3em;color:#3a3358}
+.doc p{margin:.7em 0;color:#3f3a55}
+.doc ul,.doc ol{padding-inline-start:1.4em;margin:.6em 0}
+.doc li{margin:.35em 0}
+.doc strong{color:#2b2540}
+.doc em{color:#6a5fa0}
+.doc blockquote{margin:1.1em 0;padding:14px 20px;border-inline-start:5px solid var(--accent2);
+  background:#fffaf0;border-radius:0 12px 12px 0;color:#5b5470}
+.doc blockquote p{margin:.3em 0}
+.doc code{background:#f4eee2;border:1px solid var(--line);border-radius:6px;
+  padding:1px 6px;font-family:'Cascadia Code',Consolas,monospace;font-size:.92em;color:#a04668}
+.doc pre{background:#2b2540;color:#f4eee2;border-radius:14px;padding:18px 20px;overflow:auto;
+  direction:ltr;text-align:left;box-shadow:var(--shadow)}
+.doc pre code{background:none;border:none;color:inherit;padding:0;font-size:13px;line-height:1.5}
+.doc hr{border:none;border-top:1px dashed var(--accent2);margin:2em 0}
+.doc table{border-collapse:collapse;width:100%;margin:1.1em 0;background:#fff;
+  border-radius:12px;overflow:hidden;box-shadow:var(--shadow);font-size:15px}
+.doc th{background:linear-gradient(90deg,#fff0e0,#ffe7ee);text-align:right;
+  padding:11px 14px;font-weight:800;border-bottom:2px solid var(--line)}
+.doc td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.doc tr:last-child td{border-bottom:none}
+.doc td:first-child{font-weight:600;white-space:nowrap}
+.pagenav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:10px 0 40px}
+.pagenav a{flex:1;min-width:200px;text-decoration:none;background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);color:var(--ink);font-weight:700;
+  transition:transform .15s}
+.pagenav a:hover{transform:translateY(-3px)}
+.pagenav a .lbl{display:block;font-size:12px;color:var(--muted);font-weight:600;margin-bottom:3px}
+footer{padding:42px 0 70px;text-align:center;color:var(--muted)}
+footer a.src{color:var(--sky);font-weight:600}
+@media(max-width:560px){.doc{padding:24px 20px}.topnav .inner{gap:8px}}
+</style>
+</head>
+<body>
+<nav class="topnav"><div class="inner"><a class="brand" href="index.html">🧱✨ ALMAWARE</a><a class="nav" href="index.html">בית</a><a class="nav active" href="standard.html">התקן</a><a class="nav" href="protocol.html">הפרוטוקול</a><a class="nav" href="manifest.html">המניפסט</a><a class="nav" href="principles.html">העקרונות</a>
+      <span class="spacer"></span><span class="dedi-mini">לזכרה של עלמה ז״ל 🤍</span>
+    </div></nav>
+<div class="wrap">
+<article class="doc"><h1>תקן ALMAWARE — ארכיטקטורה</h1>
+<h2>1. עיקרון העל: לֶגוֹ של תוכנה</h2>
+<p>ALMAWARE בנויה כמערכת של אבני־לֶגוֹ. כל יכולת במערכת — קליטת קלט, זיכרון, היגיון, שליטה בחומרה, ממשק־על — היא <strong>רכיב עצמאי</strong> עם פנים ברורות, שמתחבר לרכיבים אחרים דרך חוזה אחיד. אין רכיב שיודע על המימוש הפנימי של רכיב אחר; הוא יודע רק את החוזה.</p>
+<p>שלושת חוקי היסוד של אבן הלֶגוֹ:</p>
+<ol>
+<li><strong>גבול נקי (Encapsulation).</strong> לרכיב יש פְּנים פרטי וחזית ציבורית. כל מה שעובר את הגבול עובר דרך הממשק המוצהר בלבד.</li>
+<li><strong>קישוריות אחידה (Uniform Coupling).</strong> כל הרכיבים מתחברים באותו סוג חיבור — חוזה בסגנון MCP. אין "דבק" מותאם בין שני רכיבים מסוימים.</li>
+<li><strong>החלפה ללא תפר (Substitutability).</strong> רכיב הממלא חוזה ניתן להחלפה ברכיב אחר הממלא אותו חוזה, בלי לגעת בשאר המערכת.</li>
+</ol>
+<p>עיקרון נלווה — <strong>ONE-of-everything</strong>: לכל תפקיד יש מימוש קנוני אחד. אין שני רכיבי־מיקרופון, שני שרתי־זיכרון, שתי שכבות־היגיון מתחרות. כפילות היא חוב טכני, לא גמישות.</p>
+<blockquote>
+<p>ALMAWARE היא 100% שלנו. כל אבן נכתבת על־ידי הצי שלנו, ללא קוד חיצוני, ללא פרויקטים מאומצים, ללא קולאז'. התקן הזה הוא מה שמאפשר טוהר כזה: כשהחוזה אחיד, אפשר לבנות כל אבן מאפס בלי לאבד תאימות.</p>
+</blockquote>
+<hr />
+<h2>2. אנטומיה של רכיב</h2>
+<p>כל רכיב ALMAWARE — בין אם הוא אפליקציה, שירות־רקע, או סוכן (agent) — מורכב מארבעה חלקים קבועים:</p>
+<table>
+<thead>
+<tr>
+<th>חלק</th>
+<th>תפקיד</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>מָנִיפֶסְט</strong></td>
+<td>מצהיר זהות הרכיב, גרסה, היכולות (capabilities) שהוא חושף, והתלויות שהוא דורש.</td>
+</tr>
+<tr>
+<td><strong>חזית (Surface)</strong></td>
+<td>אוסף ה־endpoints/הכלים (tools) שהרכיב מציע לעולם, מתוארים סכֵמתית.</td>
+</tr>
+<tr>
+<td><strong>גרעין (Core)</strong></td>
+<td>הלוגיקה הפרטית. מעולם לא נחשפת ישירות.</td>
+</tr>
+<tr>
+<td><strong>חוזה־בריאות</strong></td>
+<td>נקודת <code>health</code>/<code>status</code> אחידה, כדי שמנצח הצי יידע אם הרכיב חי, עמוס, או נפל.</td>
+</tr>
+</tbody>
+</table>
+<p>המניפסט הוא לב התקן. הוא מאפשר <strong>גילוי (discovery)</strong>: מנצח חדש המצטרף לצי קורא מניפסטים, מבין מי מציע מה, ובונה את גרף החיבורים בלי הגדרה ידנית.</p>
+<hr />
+<h2>3. חוזה בסגנון MCP</h2>
+<p>הקישוריות בין רכיבי ALMAWARE מבוססת על דגם <strong>Model Context Protocol (MCP)</strong>: רכיב חושף <strong>כלים (tools)</strong>, <strong>משאבים (resources)</strong>, ו<strong>הנחיות (prompts)</strong>, וכל צרכן — אדם, מודל, או רכיב אחר — קורא להם דרך אותו פרוטוקול אחיד.</p>
+<p>עקרונות החוזה:</p>
+<ul>
+<li><strong>סכֵמה־ראשונה.</strong> לכל כלי יש סכֵמת קלט/פלט מוצהרת. הצרכן יכול לאמת קריאה לפני שהוא שולח אותה; הספק יכול לדחות קריאה לא־חוקית בלי להריץ דבר.</li>
+<li><strong>ללא־מצב בגבול.</strong> הקריאה עצמה נושאת את ההקשר שהיא צריכה. מצב מתמשך חי ברכיבי־זיכרון ייעודיים, לא מתחבא בתוך ערוץ התקשורת.</li>
+<li><strong>תיאור־עצמי.</strong> רכיב יודע לתאר את עצמו (introspection): "אלו הכלים שלי, אלו הפרמטרים, זו המשמעות". זה מה שמאפשר לסוכן להשתמש ברכיב שלא ראה מעולם.</li>
+<li><strong>גבול הרשאות מפורש.</strong> כל כלי מסומן בדרגת רגישות. כלים שנוגעים בעולם האמיתי (חומרה, פרסום, שליחה החוצה) דורשים אישור מפורש — לעולם לא רץ "טריגר־הריגה" אוטומטי. המקסימום שרכיב אוטונומי עושה בכוחות עצמו הוא להמליץ; פעולה הרת־גורל ממתינה לאישור הבעלים.</li>
+</ul>
+<p>החוזה אדיש לשפה ולטרנספורט: רכיב יכול לדבר MCP מעל תהליך מקומי, מעל רשת, או מעל גשר ייעודי — כל עוד הסכֵמה והסמנטיקה נשמרות.</p>
+<hr />
+<h2>4. דגם הצי והסוכן (Fleet &amp; Agent)</h2>
+<p>ALMAWARE אינה תוכנה אחת אלא <strong>צי</strong>: אוסף סוכנים מתואמים, שלכל אחד תפקיד, הרצים תחת מנצח.</p>
+<p><strong>הסוכן (Agent).</strong> יחידת עבודה אוטונומית: מקבל משימה, מתבונן במצב (Look-first / OODA), פועל דרך הכלים שהחוזה חושף לו, ומדווח. סוכן מכבד את גבול ההרשאות שלו ואת חוקי ה"אזרח המנומס" — בלי DoS, בלי נזק, תוך כיבוד רישיונות ו־robots.</p>
+<p><strong>המנצח (Conductor / Orchestrator).</strong> רכיב־על שמכיר את מניפסטי הצי, מקצה משימות, ואוכף את כללי המשילות הגלובליים:</p>
+<ul>
+<li><strong>WIP=1 מקומי.</strong> עבודה כבדה נשלחת לחוות־החישוב הייעודיות; המכונה המקומית מריצה משימה אחת בכל רגע, כדי לא להעמיס ולא לחרוג בחום.</li>
+<li><strong>קדימוּת הבעלים.</strong> קלט הבעלים ורכיבי־יסוד מסוימים (למשל קליטת קלט קולית) <strong>תמיד מנצחים</strong> על משאבים. סוכן־רקע נסוג בפניהם.</li>
+<li><strong>משילות תרמית/חישובית משותפת.</strong> SDK משילות אחיד מנהל מסך־החום, CPU ו־GPU על־פני כל הצי, כך שאף סוכן לא מרעיב או מחמם את האחרים.</li>
+<li><strong>גבול אנשים קשיח.</strong> סוכן לעולם אינו פונה אל בני־אדם בשם הבעלים. המקסימום — קישור. דיבור פרטי שנקלט אגב־אורחא אינו הוראה.</li>
+</ul>
+<p><strong>גילוי ובריאות.</strong> המנצח עוקב אחר נקודות ה־<code>health</code> של כל הרכיבים. רכיב שנפל מוצא מהגרף; רכיב שחזר מצטרף מחדש. הצי הוא מבנה חי, לא תצורה קפואה.</p>
+<hr />
+<h2>5. ערימת־הנשמה (Soul-Stack)</h2>
+<p>מעל אבני־הלֶגוֹ הטכניות יושב הסדר הארכיטקטוני שמבדל את ALMAWARE: <strong>ערימת־הנשמה</strong> — שלוש שכבות שמרכיבות סוכן בעל מצפון, לא רק סוכן יעיל. אלו אינן שלוש אבני־לֶגוֹ שוות; הן <strong>היררכיה של שיפוט</strong>.</p>
+<pre><code>            ┌─────────────────────────────┐
+            │   שכבה מוסרית  (Moral)        │  ← הגבול העליון
+            │   מה מותר / מה אסור           │
+            ├─────────────────────────────┤
+            │   שכבת זיכרון  (Memory)       │  ← מי אנחנו, מה היה
+            │   הקשר, היסטוריה, זהות        │
+            ├─────────────────────────────┤
+            │   שכבת היגיון  (Logic)        │  ← איך לפתור
+            │   חישוב, תכנון, ביצוע         │
+            └─────────────────────────────┘
+</code></pre>
+<h3>5.1 השכבה המוסרית (Moral)</h3>
+<p>השכבה העליונה, ובעלת זכות הווטו. לפני שכל פעולה מבוצעת, היא עוברת דרך מסנן מוסרי: חמלה חוצת־גבולות, איסור על דה־הומניזציה, שיפוט מעשים ולא תוויות, ועיקרון <em>"אין דן יחידי"</em> — החלטות כבדות אינן נופלות על שופט יחיד. בארכיטקטורה זה ממומש כשכבת בית־דין: כל "נוירון"־החלטה הוא שופט, שלושה מהם בית־דין, ובית־הדין הוא הקובע. השכבה הזו עוצרת פעולה גם אם ההיגיון מצא אותה יעילה. <strong>טוהר הנשק = ערובת היישור (alignment).</strong></p>
+<h3>5.2 שכבת הזיכרון (Memory)</h3>
+<p>מתחת למוסר, מעל ההיגיון. שומרת מי הסוכן, מה למד, ומה ההקשר המתמשך. כאן חיה הזהות והרצף ההיסטורי. הזיכרון הוא־הוא שמאפשר לחוזה ה־MCP להיות חסר־מצב בגבול: המצב אינו מתחבא בערוץ — הוא מאוחסן ומנוהל במפורש בשכבה הזו, וכל קריאה שואבת ממנה את ההקשר שהיא צריכה. שכבת זיכרון מטופלת תמיד עם קדושה ובקרת־פרטיות הדוקה: מידע אישי אינו דולף מהגבול שלה.</p>
+<h3>5.3 שכבת ההיגיון (Logic)</h3>
+<p>היסוד. כאן מתבצע החישוב, התכנון, פתרון־הבעיות והביצוע בפועל. שכבת ההיגיון חזקה אך <strong>כפופה</strong>: היא מציעה פתרונות, הזיכרון מעגן אותם בהקשר, והמוסר מאשר או חוסם. היגיון בלי שתי השכבות מעליו הוא כלי; שלושתן יחד הן סוכן בעל מצפון.</p>
+<hr />
+<h2>6. כיצד הכול מתחבר — תרחיש קצה־לקצה</h2>
+<ol>
+<li><strong>קלט</strong> נכנס דרך אבן־קלט (חזית MCP חושפת <code>capture</code>).</li>
+<li><strong>המנצח</strong> מזהה את המשימה, בודק WIP וקדימוּת הבעלים, ומקצה אותה לסוכן מתאים.</li>
+<li>הסוכן שולף <strong>הקשר</strong> משכבת הזיכרון, <strong>מתכנן</strong> בשכבת ההיגיון, ומרכיב פעולה.</li>
+<li>הפעולה עוברת את <strong>השכבה המוסרית</strong>. אם היא נוגעת בעולם או רגישה — היא נעצרת לאישור, או נדחית.</li>
+<li>הסוכן קורא לכלי של אבן־יעד דרך <strong>חוזה MCP</strong> מאומת־סכֵמה.</li>
+<li>תוצאה נכתבת חזרה לזיכרון; נקודות <strong>ה־health</strong> מתעדכנות; המנצח רושם את סגירת המעגל.</li>
+</ol>
+<p>כל חץ במסלול הזה הוא אותו סוג חיבור. זה כל הרעיון: אבן אחת, חוזה אחד, צי אחד, נשמה אחת.</p>
+<hr />
+<h2>7. כללי תקן מחייבים (תמצית)</h2>
+<ul>
+<li>כל רכיב חייב מניפסט, חזית מתוארת־סכֵמה, ונקודת <code>health</code>.</li>
+<li>כל חיבור בין־רכיבי הוא חוזה בסגנון MCP — לעולם לא דבק נקודתי.</li>
+<li>כלי הנוגע בעולם האמיתי מסומן רגיש ודורש אישור; אין טריגר־הריגה אוטומטי.</li>
+<li>מימוש קנוני אחד לכל תפקיד (ONE-of-everything).</li>
+<li>מקומית: WIP=1, קדימוּת הבעלים, משילות תרמית משותפת.</li>
+<li>ערימת־הנשמה מחייבת: מוסר חוסם מעל זיכרון מעל היגיון.</li>
+<li>100% שלנו: כל אבן נכתבת מאפס בידי הצי, ללא קוד חיצוני, וללא דליפת מידע אישי דרך גבול כלשהו.</li>
+</ul></article><div class="pagenav">
+      <a href="index.html"><span class="lbl">→ הקודם</span>בית</a>
+      <a href="protocol.html" style="text-align:left"><span class="lbl">הבא ←</span>הפרוטוקול הטכני</a>
+    </div>
+<footer>
+  <p>תקן ALMAWARE — נבנה לזכרה של עלמה ז״ל 🤍 · <a class="src" href="https://iddoperez.ai">iddoperez.ai</a></p>
+  <p style="font-size:13px">100% שלנו · מצפן במבנה · יושרה באמת · משמעות בהקדשה</p>
+</footer>
+</div>
+</body>
+</html>

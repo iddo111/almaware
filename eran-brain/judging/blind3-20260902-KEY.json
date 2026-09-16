@@ -1,0 +1,25 @@
+{
+ "built": "2026-09-02 14:37",
+ "rng_seed": 20260902,
+ "how": "BLIND. Three candidates plus one control, bare letters, no scores, no filenames. Chosen at RANDOM, not by the metric -- Iddo's own blind ruling at 05:29 today found the metric exactly backwards, so ranking by it would have steered the sitting.",
+ "what": "ERAN's own throat saying /ba/. Not corpus, not a human.",
+ "scale": "1 = good, 2 = close, 3 = no  (his own station scale)",
+ "clips": {
+  "B": {
+   "file": "ERAN-v4-seed12.wav",
+   "kind": "v4 candidate"
+  },
+  "A": {
+   "file": "ERAN-v4-seed14.wav",
+   "kind": "v4 candidate"
+  },
+  "C": {
+   "file": "ERAN-v4-seed10.wav",
+   "kind": "v4 candidate"
+  },
+  "X": {
+   "file": "ERAN-v4-zz-control.wav",
+   "kind": "CONTROL - v4 with NO learning. If X scores as well as the others, the learning bought nothing."
+  }
+ }
+}

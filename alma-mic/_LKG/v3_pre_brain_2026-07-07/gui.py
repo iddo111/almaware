@@ -1,0 +1,347 @@
+"""alma-mic / gui.py — the visible window: live monitor + transcript + settings.
+
+ALMAWARE-pure: every line ours. tkinter = Python's own GUI (stdlib). Bright design.
+All recognition runs in pipeline.py (the one pipeline); this file is just the window:
+callbacks from pipeline threads are marshalled onto a UI queue drained by a timer
+(the tkinter main loop is the only thread that touches widgets).
+"""
+from __future__ import annotations
+import queue
+import threading
+import tkinter as tk
+from tkinter import scrolledtext, ttk
+
+import audio
+import hotkey as hotkey_mod
+from config import Config
+from pipeline import Pipeline
+
+# ---- bright theme ----
+BG = "#ffffff"; FG = "#1a1a1a"; MUTED = "#6b7280"; TRACK = "#e5e7eb"
+GREEN = "#16a34a"; BLUE = "#2563eb"; RED = "#dc2626"; PANEL = "#f9fafb"
+AMBER = "#f59e0b"; AMBER_DK = "#d97706"   # pause button
+FONT = "Segoe UI"
+METER_FULL_RMS = 0.25
+
+
+class MicWindow:
+    def __init__(self):
+        self.cfg = Config.load()
+        self._model_sig = self._sig()
+        self._ui_q: "queue.Queue[tuple]" = queue.Queue()
+        self._segments = 0
+        self.pipe = Pipeline(self.cfg, **self._cbs())
+
+        self._last_text = ""        # most recent finalized utterance
+
+        self.root = tk.Tk()
+        self.root.title("ALMA-MIC")
+        self.root.configure(bg=BG)
+        self.root.geometry("580x880+90+60")   # fixed visible spot (top-left), no focus-steal
+        self.root.minsize(520, 720)
+        self._build()
+        self._render_arm()      # show the default-ON dictation state on the button
+        self.root.protocol("WM_DELETE_WINDOW", self._on_close)
+        self.root.after(33, self._poll)
+
+    def _sig(self):
+        c = self.cfg
+        return (c.model, c.lora_dir, c.device, c.compute_type)
+
+    # callbacks run on pipeline threads -> just enqueue for the UI thread
+    def _cbs(self):
+        q = lambda *m: self._ui_q.put(m)
+        return dict(
+            on_level=lambda rms, sp: q("level", rms, sp),
+            on_text=lambda t, lang: q("transcript", t, lang),
+            on_device=lambda d: q("device", d),
+            on_model=lambda d: q("model", d),
+            on_error=lambda m: q("error", m),
+            on_log=lambda m: q("log", m),
+        )
+
+    # ---------------------------------------------------------------- layout
+    def _build(self):
+        pad = {"padx": 18}
+        top = tk.Frame(self.root, bg=BG); top.pack(fill="x", pady=(14, 0), **pad)
+        tk.Label(top, text="🎙️  ALMA-MIC", bg=BG, fg=FG,
+                 font=(FONT, 22, "bold")).pack(side="left")
+        tk.Button(top, text="⚙  הגדרות", font=(FONT, 10), relief="flat", bg=TRACK, fg=FG,
+                  activebackground="#d1d5db", cursor="hand2",
+                  command=self._open_settings).pack(side="right")
+
+        self.device_var = tk.StringVar(value="מאתר מיקרופון…")
+        tk.Label(self.root, textvariable=self.device_var, bg=BG, fg=FG, font=(FONT, 10),
+                 wraplength=520, justify="left").pack(anchor="w", pady=(10, 2), **pad)
+
+        self.status_var = tk.StringVar(value="…")
+        self.status = tk.Label(self.root, textvariable=self.status_var, bg=BG, fg=GREEN,
+                               font=(FONT, 15, "bold"))
+        self.status.pack(anchor="w", pady=(2, 4), **pad)
+
+        # --- DICTATION ARM (walkie-talkie): type into the focused window ONLY while ON.
+        # Default OFF so the mic never pours ambient speech/noise into your work. ---
+        df = tk.Frame(self.root, bg=BG); df.pack(fill="x", pady=(2, 6), **pad)
+        self.dict_btn = tk.Button(
+            df, text="🔴  הכתבה כבויה — לחץ כדי להקליד  (Ctrl+Alt+D)",
+            font=(FONT, 12, "bold"), relief="flat", bg="#fee2e2", fg=RED,
+            activebackground="#fecaca", cursor="hand2", command=self._toggle_arm)
+        self.dict_btn.pack(fill="x", ipady=3)
+
+        self.meter = tk.Canvas(self.root, width=520, height=26, bg=BG, highlightthickness=0)
+        self.meter.pack(anchor="w", **pad)
+        self.meter.create_rectangle(0, 5, 520, 21, fill=TRACK, width=0)
+        self._fill = self.meter.create_rectangle(0, 5, 0, 21, fill=GREEN, width=0)
+        self.rms_var = tk.StringVar(value="RMS 0.00000")
+        tk.Label(self.root, textvariable=self.rms_var, bg=BG, fg=MUTED,
+                 font=("Consolas", 9)).pack(anchor="w", **pad)
+
+        tk.Label(self.root, text="תמלול חי:", bg=BG, fg=FG,
+                 font=(FONT, 11, "bold")).pack(anchor="w", pady=(10, 2), **pad)
+        self.transcript = scrolledtext.ScrolledText(
+            self.root, height=12, bg=PANEL, fg=FG, font=(FONT, 12), relief="flat",
+            borderwidth=1, highlightthickness=1, highlightbackground=TRACK, wrap="word")
+        self.transcript.pack(fill="both", expand=True, padx=18, pady=(0, 6))
+        self.transcript.configure(state="disabled")
+
+        self.log_var = tk.StringVar(value="")
+        tk.Label(self.root, textvariable=self.log_var, bg=BG, fg=MUTED, font=("Consolas", 9),
+                 anchor="w").pack(fill="x", **pad)
+
+        bar = tk.Frame(self.root, bg=BG); bar.pack(fill="x", pady=(6, 2), padx=18)
+        self.btn = tk.Button(bar, text="⏸  פאוזה", width=14, font=(FONT, 12, "bold"),
+                             command=self._toggle, relief="flat", bg=AMBER, fg="white",
+                             activebackground=AMBER_DK, activeforeground="white",
+                             cursor="hand2")
+        self.btn.pack(side="left")
+        tk.Button(bar, text="נקה", width=8, font=(FONT, 10), command=self._clear,
+                  relief="flat", bg=BG, fg=MUTED, activebackground=TRACK,
+                  cursor="hand2").pack(side="left", padx=8)
+        self.count_var = tk.StringVar(value="זוהו: 0")
+        tk.Label(bar, textvariable=self.count_var, bg=BG, fg=MUTED,
+                 font=(FONT, 10)).pack(side="right")
+
+        self.hotkey_var = tk.StringVar(value="קיצור גלובלי: Ctrl+Alt+P  (פאוזה/המשך מכל חלון)")
+        tk.Label(self.root, textvariable=self.hotkey_var, bg=BG, fg=MUTED,
+                 font=(FONT, 9)).pack(anchor="w", padx=18, pady=(0, 12))
+
+
+    # ---------------------------------------------------------------- UI pump
+    def _poll(self):
+        try:
+            while True:
+                m = self._ui_q.get_nowait()
+                k = m[0]
+                if k == "device":
+                    self.device_var.set("🎧 " + m[1])
+                elif k == "model":
+                    self.device_var.set(self.device_var.get() + f"   ·   🧠 {m[1]}")
+                elif k == "level":
+                    self._set_level(m[1], m[2])
+                elif k == "toggle":          # global hotkey → pause/resume
+                    self._toggle()
+                elif k == "arm_toggle":      # global hotkey → dictation on/off
+                    self._toggle_arm()
+                elif k == "transcript":
+                    self._add_transcript(m[1], m[2])
+                elif k == "log":
+                    self.log_var.set(m[1])
+                elif k == "error":
+                    self.status_var.set("⚠️ שגיאה"); self.status.configure(fg=RED)
+                    self.log_var.set(f"[error] {m[1]}")
+        except queue.Empty:
+            pass
+        self.root.after(33, self._poll)
+
+    def _set_level(self, rms, in_speech):
+        pct = min(1.0, rms / METER_FULL_RMS)
+        self.meter.coords(self._fill, 0, 5, int(520 * pct), 21)
+        self.rms_var.set(f"RMS {rms:.5f}")
+        if not self.pipe.model_ready:
+            self.status_var.set("⏳ טוען מודל…"); self.status.configure(fg=MUTED)
+            return
+        if in_speech:
+            self.meter.itemconfigure(self._fill, fill=BLUE)
+            self.status_var.set("🗣️  דיבור"); self.status.configure(fg=BLUE)
+        else:
+            self.meter.itemconfigure(self._fill, fill=GREEN)
+            mode = "מילת-הפעלה" if self.cfg.arming == "wakeword" else "אוטומט"
+            typ = " · 🟢 מקליד לחלון" if self.pipe.armed else " · 🔴 לא מקליד"
+            self.status_var.set(f"🟢  מקשיב ({mode}){typ}"); self.status.configure(fg=GREEN)
+
+    def _toggle_arm(self):
+        """Arm/disarm typing into the focused window (default off = listen-only)."""
+        self.pipe.armed = not self.pipe.armed
+        self._render_arm()
+
+    def _render_arm(self):
+        if self.pipe.armed:
+            self.dict_btn.configure(text="🟢  הכתבה דלוקה — מקליד לחלון הפעיל  (Ctrl+Alt+D)",
+                                    bg="#dcfce7", fg=GREEN, activebackground="#bbf7d0")
+        else:
+            self.dict_btn.configure(text="🔴  הכתבה כבויה — לחץ כדי להקליד  (Ctrl+Alt+D)",
+                                    bg="#fee2e2", fg=RED, activebackground="#fecaca")
+
+    def _add_transcript(self, text, lang):
+        self._segments += 1
+        self.count_var.set(f"זוהו: {self._segments}")
+        self.transcript.configure(state="normal")
+        self.transcript.insert("end", f"[{lang}] {text}\n")
+        self.transcript.see("end")
+        self.transcript.configure(state="disabled")
+        self._last_text = text
+
+    # ---------------------------------------------------------------- buttons
+    def _clear(self):
+        self.transcript.configure(state="normal")
+        self.transcript.delete("1.0", "end")
+        self.transcript.configure(state="disabled")
+
+    def _toggle(self):
+        if self.pipe.running:
+            self.pipe.stop()
+            self.btn.configure(text="▶  המשך", bg=GREEN, activebackground="#15803d")
+            self.status_var.set("⏸  מושהה"); self.status.configure(fg=MUTED)
+            self._set_level(0.0, False)
+        else:
+            self.pipe.start()
+            self.btn.configure(text="⏸  פאוזה", bg=AMBER, activebackground=AMBER_DK)
+
+    def _on_close(self):
+        self.pipe.stop()
+        self.root.destroy()
+
+    # ---------------------------------------------------------------- settings
+    def _open_settings(self):
+        SettingsDialog(self.root, self.cfg, self._apply_settings)
+
+    def _apply_settings(self):
+        self.cfg.save()
+        was = self.pipe.running
+        if was:
+            self.pipe.stop()
+        if self._sig() != self._model_sig:          # model/device changed -> reload
+            self.pipe = Pipeline(self.cfg, **self._cbs())
+            self._model_sig = self._sig()
+        if was:
+            self.pipe.start()
+        self._render_arm()      # a recreated pipe starts disarmed — keep the button in sync
+
+    def run(self):
+        self.pipe.start()
+        # global hotkeys: Ctrl+Alt+P pause/resume the whole pipeline; Ctrl+Alt+D arm/disarm typing
+        self.hotkey = hotkey_mod.GlobalHotkey(on_press=lambda: self._ui_q.put(("toggle",)))
+        self.hotkey.start()
+        self.hotkey_arm = hotkey_mod.GlobalHotkey(
+            on_press=lambda: self._ui_q.put(("arm_toggle",)), vk=0x44, label="Ctrl+Alt+D")
+        self.hotkey_arm.start()
+        self.root.after(800, self._check_hotkey)
+        # NOTE: do NOT grab foreground/topmost here — that made the mic steal focus
+        # and type into ITSELF instead of the window you're working in.
+        self.root.mainloop()
+
+    def _check_hotkey(self):
+        if not getattr(self.hotkey, "ok", False):
+            self.hotkey_var.set("קיצור גלובלי תפוס במערכת — השתמש בכפתור פאוזה")
+            self.hotkey_var_failed = True
+
+
+class SettingsDialog(tk.Toplevel):
+    """Mic / languages / translate / wake-word / model / typing — Iddo's choices."""
+
+    LANGS = ["auto", "he", "en", "ar", "ru", "fr", "es"]
+    DEVS = ["auto", "cuda", "cpu"]
+
+    def __init__(self, master, cfg: Config, on_save):
+        super().__init__(master)
+        self.cfg = cfg; self.on_save = on_save
+        self.title("הגדרות ALMA-MIC")
+        self.configure(bg=BG)
+        self.geometry("470x600")
+        self.grab_set()
+        self._build()
+
+    def _row(self, label):
+        f = tk.Frame(self, bg=BG); f.pack(fill="x", padx=18, pady=5)
+        tk.Label(f, text=label, bg=BG, fg=FG, font=(FONT, 11, "bold")).pack(anchor="w")
+        return f
+
+    def _build(self):
+        tk.Label(self, text="⚙  הגדרות", bg=BG, fg=FG,
+                 font=(FONT, 16, "bold")).pack(anchor="w", padx=18, pady=(14, 4))
+
+        f = self._row("מיקרופון")
+        names = ["auto"] + [d.name for d in audio.list_input_devices()]
+        self.mic_var = tk.StringVar(value=self.cfg.mic if self.cfg.mic in names else "auto")
+        ttk.Combobox(f, textvariable=self.mic_var, values=names, state="readonly").pack(fill="x")
+
+        f = self._row("שפה")
+        self.lang_var = tk.StringVar(value=self.cfg.language)
+        ttk.Combobox(f, textvariable=self.lang_var, values=self.LANGS, state="readonly").pack(fill="x")
+
+        f = self._row("תרגום")
+        self.translate_var = tk.BooleanVar(value=self.cfg.translate_to_english)
+        tk.Checkbutton(f, text="תרגם לאנגלית (Whisper מתרגם רק לאנגלית)",
+                       variable=self.translate_var, bg=BG, fg=FG, activebackground=BG,
+                       font=(FONT, 10)).pack(anchor="w")
+
+        f = self._row("הפעלה (מילת-חימוש)")
+        self.arming_var = tk.StringVar(value=self.cfg.arming)
+        tk.Radiobutton(f, text="אוטומט — תמיד מקשיב (VAD)", variable=self.arming_var,
+                       value="auto", bg=BG, fg=FG, activebackground=BG,
+                       font=(FONT, 10)).pack(anchor="w")
+        tk.Radiobutton(f, text="מילת-הפעלה — רק אחרי המילה", variable=self.arming_var,
+                       value="wakeword", bg=BG, fg=FG, activebackground=BG,
+                       font=(FONT, 10)).pack(anchor="w")
+        tk.Label(f, text="מילות-הפעלה (מופרדות בפסיק):", bg=BG, fg=MUTED,
+                 font=(FONT, 9)).pack(anchor="w", pady=(4, 0))
+        self.wake_var = tk.StringVar(value=", ".join(self.cfg.wake_words))
+        tk.Entry(f, textvariable=self.wake_var).pack(fill="x")
+
+        f = self._row("פלט")
+        self.type_var = tk.BooleanVar(value=self.cfg.type_output)
+        tk.Checkbutton(f, text="הקלד לחלון הפעיל", variable=self.type_var, bg=BG, fg=FG,
+                       activebackground=BG, font=(FONT, 10)).pack(anchor="w")
+        self.enter_var = tk.BooleanVar(value=self.cfg.auto_enter)
+        tk.Checkbutton(f, text="לחץ Enter אחרי כל שורה", variable=self.enter_var, bg=BG,
+                       fg=FG, activebackground=BG, font=(FONT, 10)).pack(anchor="w")
+
+        f = self._row("מודל זיהוי")
+        self.model_var = tk.StringVar(value=self.cfg.model)
+        tk.Entry(f, textvariable=self.model_var).pack(fill="x")
+        tk.Label(f, text="לורה עברית משלנו (תיקיית ct2, אופציונלי):", bg=BG, fg=MUTED,
+                 font=(FONT, 9)).pack(anchor="w", pady=(4, 0))
+        self.lora_var = tk.StringVar(value=self.cfg.lora_dir)
+        tk.Entry(f, textvariable=self.lora_var).pack(fill="x")
+        f2 = tk.Frame(f, bg=BG); f2.pack(fill="x", pady=(4, 0))
+        tk.Label(f2, text="מעבד:", bg=BG, fg=MUTED, font=(FONT, 9)).pack(side="left")
+        self.device_var = tk.StringVar(value=self.cfg.device)
+        ttk.Combobox(f2, textvariable=self.device_var, values=self.DEVS, state="readonly",
+                     width=8).pack(side="left", padx=6)
+
+        bar = tk.Frame(self, bg=BG); bar.pack(fill="x", padx=18, pady=16)
+        tk.Button(bar, text="שמור והחל", font=(FONT, 11, "bold"), relief="flat", bg=GREEN,
+                  fg="white", activebackground="#15803d", cursor="hand2",
+                  command=self._save).pack(side="left")
+        tk.Button(bar, text="ביטול", font=(FONT, 10), relief="flat", bg=TRACK, fg=FG,
+                  activebackground="#d1d5db", cursor="hand2",
+                  command=self.destroy).pack(side="left", padx=8)
+
+    def _save(self):
+        c = self.cfg
+        c.mic = self.mic_var.get()
+        c.language = self.lang_var.get()
+        c.translate_to_english = self.translate_var.get()
+        c.arming = self.arming_var.get()
+        c.wake_words = [w.strip() for w in self.wake_var.get().split(",") if w.strip()]
+        c.type_output = self.type_var.get()
+        c.auto_enter = self.enter_var.get()
+        c.model = self.model_var.get().strip() or c.model
+        c.lora_dir = self.lora_var.get().strip()
+        c.device = self.device_var.get()
+        self.on_save()
+        self.destroy()
+
+
+if __name__ == "__main__":
+    MicWindow().run()

@@ -1,0 +1,324 @@
+{
+  "format_version": 1,
+  "experiment": "sociality",
+  "hypothesis_under_test": "many ants forming social bonds increases learning exponentially",
+  "condition": "NOISE",
+  "colony_size": 2,
+  "replicate": 0,
+  "rounds": 5,
+  "units": 64,
+  "ants": [
+    "ant-00",
+    "ant-01"
+  ],
+  "seeds": [
+    1235391530,
+    2000687375
+  ],
+  "seeds_by_ant": {
+    "ant-00": 1235391530,
+    "ant-01": 2000687375
+  },
+  "recordings": "D:\\CLAUDE\\voice-ant-farm\\recordings",
+  "corpus_manifest_sha256": "a6c34e0e67de9c590cbc57a7747a7046efbc3a784f26672e29964a23d09188ee",
+  "heldout_measured_against": "real-recordings-only",
+  "heldout_pcm_sha256": [
+    "39ae835f5e2d0d1a66468637657cbff85333f00346f2adb0ed0957c84266655c",
+    "6c98c06584dcfe9d44909c9dcdb01f5f69a535954b66945c9f92008053cffcce",
+    "896bd0858dc49ccc45285616aba86b73ccd4469deeb15358db37dd9b574a0027",
+    "999eb2c4973db6348e43cf6706407823d319696c15b56889805676317bd58c04",
+    "a3dc80bc5efda80f50ba1add1a0f83cefbab60775db9b817cbb7398031bbdfdb",
+    "e19607bfb82d827d06ff5d0c344380cb1a967f6bb8d5630eca1d77e50ef70a86",
+    "e976aecf4d5c7cee1323bdd49e9daaf81eb6f2b892434439e0c78afd18d60e99",
+    "febd95c782a18c1623513cd1980aab5ffdee3a0f2b47a81f8a186eb09058c977"
+  ],
+  "volume_matching": {
+    "donation_slots": 1,
+    "matched_added_samples_per_ant": 795280,
+    "reference_added_samples_per_ant": 795280,
+    "matched_conditions": [
+      "SELF_ECHO",
+      "SOCIAL",
+      "NOISE"
+    ],
+    "tolerance": 0.03,
+    "requested_synthetic_proportion": 0.3,
+    "actual_synthetic_proportion": 0.299961,
+    "budget_was_clamped": false,
+    "real_training_samples": 1856000,
+    "segment_plan": [
+      {
+        "slot": 0,
+        "segment_samples": 795429,
+        "segment_pcm_sha256": "1727c8c17b941370fc2ef735ad118e4d81e7f034b6fbfe077edd978899127f17",
+        "synthetic_samples": 795280,
+        "clamped": false,
+        "segment": "segment-00.wav"
+      }
+    ]
+  },
+  "per_round": [
+    {
+      "round": 0,
+      "per_ant_heldout_error": {
+        "ant-00": 0.953531801700592,
+        "ant-01": 0.9612020254135132
+      },
+      "mean_heldout_error": 0.9573669135570526,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "2f6e7f090b9763ae460d8171a0764d9fd851820d3ff007ce5a6ab71f6edd97c1",
+        "ant-01": "e11e460de8b3f645411203beb2d3d96044b2223a38268091881e3c5c48648eae"
+      }
+    },
+    {
+      "round": 1,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9387282729148865,
+        "ant-01": 0.9075491428375244
+      },
+      "mean_heldout_error": 0.9231387078762054,
+      "added_samples_per_ant": {
+        "ant-00": 795280,
+        "ant-01": 795280
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 49.705,
+        "ant-01": 49.705
+      },
+      "added_audio_per_ant": {
+        "ant-00": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "1727c8c17b941370fc2ef735ad118e4d81e7f034b6fbfe077edd978899127f17",
+            "pcm_sha256": "3aa183c2b17bf6a85da2d30187398001ece25f5dc478c5cce33bca17f22a077a",
+            "sample_count": 795280
+          }
+        ],
+        "ant-01": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "1727c8c17b941370fc2ef735ad118e4d81e7f034b6fbfe077edd978899127f17",
+            "pcm_sha256": "9c1531542e4ee759ec6d119e8663fd7399dab890a2cbd5f02b065472a4fc72eb",
+            "sample_count": 795280
+          }
+        ]
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.611550331115723,
+        "ant-01": 4.611400604248047
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "63dc40bce7aba27f2e903b09b7e0c10141c12963fdb09bf1c27afd241f451c52",
+        "ant-01": "87febe02214f07458a08db6422bb67e2e80c22eadd49483868163ec21788867f"
+      }
+    },
+    {
+      "round": 2,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9385128617286682,
+        "ant-01": 0.8998622894287109
+      },
+      "mean_heldout_error": 0.9191875755786896,
+      "added_samples_per_ant": {
+        "ant-00": 795280,
+        "ant-01": 795280
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 49.705,
+        "ant-01": 49.705
+      },
+      "added_audio_per_ant": {
+        "ant-00": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "1727c8c17b941370fc2ef735ad118e4d81e7f034b6fbfe077edd978899127f17",
+            "pcm_sha256": "ff32d418c859d3c1d726f8186510ae0e8ef91ff9f8bb7579b3a9b53900a0a08a",
+            "sample_count": 795280
+          }
+        ],
+        "ant-01": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "1727c8c17b941370fc2ef735ad118e4d81e7f034b6fbfe077edd978899127f17",
+            "pcm_sha256": "5b3d64cfb4bb7305d504b5837523b75a7b2a186f1a23214f4ae57f1ac13d30af",
+            "sample_count": 795280
+          }
+        ]
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.611565589904785,
+        "ant-01": 4.61138916015625
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "3e976b8096ef16cebc650a75e02911987b82de4928cf9c4f6c393f8810ad9e04",
+        "ant-01": "2463b7c8380a547f86cd90e38dac4cfbfa821978ad092b7532b50add6a6a3f9b"
+      }
+    },
+    {
+      "round": 3,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9394189715385437,
+        "ant-01": 0.9123796820640564
+      },
+      "mean_heldout_error": 0.9258993268013,
+      "added_samples_per_ant": {
+        "ant-00": 795280,
+        "ant-01": 795280
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 49.705,
+        "ant-01": 49.705
+      },
+      "added_audio_per_ant": {
+        "ant-00": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "1727c8c17b941370fc2ef735ad118e4d81e7f034b6fbfe077edd978899127f17",
+            "pcm_sha256": "12ea63a9ec4eb27a29170dbbc4184a4ee7b01d20a6567e6963621fc74f776683",
+            "sample_count": 795280
+          }
+        ],
+        "ant-01": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "1727c8c17b941370fc2ef735ad118e4d81e7f034b6fbfe077edd978899127f17",
+            "pcm_sha256": "e2c054d2f6ee93fc12e7aebc189f48c63be7f354a4eeae6f78657ff8902d9799",
+            "sample_count": 795280
+          }
+        ]
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.611507892608643,
+        "ant-01": 4.61150598526001
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "4d65e141b240398d7e20af387ceb0d296890a931e7dfba9039e5a8ef0fdb566e",
+        "ant-01": "e0cee72f83956054e807126d4e97b1406163b38bb3b5467a719f749372048781"
+      }
+    },
+    {
+      "round": 4,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9276170134544373,
+        "ant-01": 0.9049949049949646
+      },
+      "mean_heldout_error": 0.9163059592247009,
+      "added_samples_per_ant": {
+        "ant-00": 795280,
+        "ant-01": 795280
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 49.705,
+        "ant-01": 49.705
+      },
+      "added_audio_per_ant": {
+        "ant-00": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "1727c8c17b941370fc2ef735ad118e4d81e7f034b6fbfe077edd978899127f17",
+            "pcm_sha256": "a2e95a932f64d9db36dd218fd18a82471a4c48cefdf0a5eeaf4b2cffd847202d",
+            "sample_count": 795280
+          }
+        ],
+        "ant-01": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "1727c8c17b941370fc2ef735ad118e4d81e7f034b6fbfe077edd978899127f17",
+            "pcm_sha256": "ccbeefb6485fba830828b5e0b890b895c1fc72b36028c295ce557c9b3632a589",
+            "sample_count": 795280
+          }
+        ]
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.61154317855835,
+        "ant-01": 4.61167573928833
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "4a445c0e29805869ea7048c04c04b2bef9daeb7168c1ddceddeeaed874028e68",
+        "ant-01": "636d4fd668e2614e705810fca8b0f41620cee6ec68c8342f1ade1f171f0fc97b"
+      }
+    },
+    {
+      "round": 5,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9394970536231995,
+        "ant-01": 0.9046929478645325
+      },
+      "mean_heldout_error": 0.922095000743866,
+      "added_samples_per_ant": {
+        "ant-00": 795280,
+        "ant-01": 795280
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 49.705,
+        "ant-01": 49.705
+      },
+      "added_audio_per_ant": {
+        "ant-00": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "1727c8c17b941370fc2ef735ad118e4d81e7f034b6fbfe077edd978899127f17",
+            "pcm_sha256": "2f905eaf80b3421f802032278ef3064083239949cb87627cf8cc3b00eb31126b",
+            "sample_count": 795280
+          }
+        ],
+        "ant-01": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "1727c8c17b941370fc2ef735ad118e4d81e7f034b6fbfe077edd978899127f17",
+            "pcm_sha256": "d91f77128465511e1e487ee1e12199f38184a275855481b1fd4b9a6964065036",
+            "sample_count": 795280
+          }
+        ]
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.611591339111328,
+        "ant-01": 4.611536502838135
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "eb69d62ddbe9cbf4e5e4e8a7f6262d3ab578c537156847614d7abb07bcf6914f",
+        "ant-01": "e800965f46d9c5589454f2436c9fe693921cf471d901c38b8a6d4c76b96d07c8"
+      }
+    }
+  ],
+  "final_mean_heldout_error": 0.922095000743866,
+  "baseline_round0_mean_heldout_error": 0.9573669135570526,
+  "notes": "round 0 is a real-audio-only bootstrap and is identical across conditions for a given replicate; rounds 1..N are the treatment rounds. Each round retrains from scratch on that round's mix, so added audio does not accumulate.",
+  "claim_limit": "held-out vector-quantization error on real recordings only; not a claim about speech, meaning or conversation"
+}

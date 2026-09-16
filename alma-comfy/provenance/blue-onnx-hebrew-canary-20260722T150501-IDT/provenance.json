@@ -1,0 +1,28 @@
+{
+  "status": "technical-pass-human-review-pending",
+  "engine": "blue-onnx",
+  "engine_source_commit": "f071b9100e15c24575f6e2919312f67057c7b589",
+  "model": "notmax123/blue-onnx-v2",
+  "model_revision": "45dc85f1ac045ea62458a7492c5ae387610ac0af",
+  "g2p": "thewh1teagle/renikud",
+  "g2p_revision": "b80cab616c972b6a87de86044f50b597ee2c53fd",
+  "node": "DGX4",
+  "language": "he",
+  "seed": 424242,
+  "artifact": "blue-onnx-he-fixed-seed-424242.wav",
+  "artifact_sha256": "708c6a57d53ec1072af9cc5c82e7af5fef4f2c574c73bc067d9bd5a6d303c2eb",
+  "duration_seconds": 6.130068027210885,
+  "sample_rate": 44100,
+  "channels": 1,
+  "sample_format": "s24le",
+  "technical_gates": [
+    "artifact-nonempty",
+    "sha256-match",
+    "ffprobe-pass",
+    "finite-samples",
+    "non-silent",
+    "no-clipping"
+  ],
+  "human_review": "not-recorded",
+  "source_metrics": "metrics.json"
+}

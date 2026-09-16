@@ -1,0 +1,52 @@
+{
+ "GIST": {
+  "n_params": 72,
+  "native_birth": 0.14285714285714285,
+  "native_end": 4.0,
+  "budget": "own: 60 gen x pop 10 x 14 eps (NOT matched)",
+  "score_frozen": 26.0,
+  "scores_frozen": [
+   24.0,
+   28.0,
+   28.0,
+   26.0,
+   24.0
+  ]
+ },
+ "MULTI-WEIGHT": {
+  "n_params": 153,
+  "native_birth": 0.14285714285714285,
+  "native_end": 2.9285714285714284,
+  "budget": "own: 200 gen x pop 10 x 14 eps (NOT matched)",
+  "score_frozen": 21.8,
+  "scores_frozen": [
+   20.0,
+   27.0,
+   23.0,
+   18.0,
+   21.0
+  ]
+ },
+ "BEIT-DIN": {
+  "n_params": 78,
+  "native_birth": -5.666666666666667,
+  "native_end": 1.3333333333333333,
+  "budget": "own: 30 gen x 12 pairs (NOT matched)",
+  "score_frozen": 1.0,
+  "scores_frozen": [
+   -6.0,
+   0.0,
+   2.0,
+   5.0,
+   4.0
+  ]
+ },
+ "_meta": {
+  "eval_seed_lo": 7000000,
+  "episodes": 5,
+  "ticks": 2000,
+  "opponent": "random seed 9999",
+  "wall_s": 32.4,
+  "note": "house budgets are their own, NOT matched to the agentic arena. Reference mark only."
+ }
+}

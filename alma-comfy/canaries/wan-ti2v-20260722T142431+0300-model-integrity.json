@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "incomplete_files": [],
+  "missing_indexed_shards": [],
+  "model_dir": "/home/eran3/models/alma-studio/Wan2.2-TI2V-5B-Diffusers",
+  "model_index_present": true,
+  "noncache_bytes": 34203021834,
+  "noncache_file_count": 29,
+  "weight_indexes": [
+    {
+      "declared_shards": 3,
+      "index": "text_encoder/model.safetensors.index.json",
+      "missing_shards": []
+    },
+    {
+      "declared_shards": 5,
+      "index": "transformer/diffusion_pytorch_model.safetensors.index.json",
+      "missing_shards": []
+    }
+  ]
+}

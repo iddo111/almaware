@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ערןקלאוד · הרצת הדמו ב-Windows</title>
+  <style>
+    body{margin:0;background:#f6f8fc;color:#11162c;font:17px/1.65 system-ui,"Segoe UI",Arial,sans-serif}.wrap{max-width:880px;margin:auto;padding:42px 22px}h1{font-size:clamp(38px,8vw,66px);line-height:1}.box{background:#fff;border:1px solid #dce3f0;border-radius:15px;padding:22px;margin:20px 0}.warn{border-right:5px solid #d28a00}pre{direction:ltr;text-align:left;white-space:pre-wrap;background:#11162c;color:#eaf0ff;padding:16px;border-radius:10px;overflow:auto}code{font-family:ui-monospace,Consolas,monospace}a{color:#245eea}.state{font-weight:800;color:#8b5b00}
+  </style>
+</head>
+<body><main class="wrap">
+  <p><a href="index.html">← חזרה לערןקלאוד</a></p>
+  <h1>דמו מקומי ב-Windows</h1>
+  <div class="box warn"><strong class="state">אין כרגע Coordinator ציבורי.</strong><p>הפקודה למטה מפעילה מודל צעצוע מקומי בלבד. היא אינה תורמת חישוב לערן ואינה משתמשת בחשבון ענן.</p></div>
+
+  <h2>אפשרות 1 · קובץ שכבר נמצא במחשב הזה</h2>
+  <pre><code>Set-Location D:\CLAUDE\eran-cloud
+py -3.13 .\join.py --dry-run --provider gcloud --inner-steps 2 --rounds 1</code></pre>
+
+  <h2>אפשרות 2 · הורדת המקור מהאתר</h2>
+  <pre><code>New-Item -ItemType Directory -Force "$env:USERPROFILE\eran-cloud" | Out-Null
+Invoke-WebRequest "https://erancloud.pages.dev/join.py" -OutFile "$env:USERPROFILE\eran-cloud\join.py"
+Set-Location "$env:USERPROFILE\eran-cloud"
+py -3.13 .\join.py --dry-run --provider gcloud --inner-steps 2 --rounds 1</code></pre>
+
+  <div class="box"><h2>דרישות</h2><ul><li>Windows 10/11</li><li>Python 3.13 דרך הפקודה <code>py -3.13</code></li><li>PyTorch עבור צעדי האימון</li></ul></div>
+  <div class="box"><h2>מה צריך לראות</h2><p>register, pull, loss מקומי, delta, push, ואז <code>DRY_RUN_EXIT=0</code> או <code>[done]</code>. כל שורה מסומנת dry-run.</p></div>
+  <div class="box warn"><h2>מצב live עתידי</h2><p>כאשר Coordinator HTTPS אמיתי יעבור אימות, מצב live ידרוש גם <code>--coordinator</code> וגם <code>--consent yes</code>. כשל חיבור יחזיר שגיאה ולא יעמיד פנים שהעבודה נשלחה.</p></div>
+</main></body>
+</html>

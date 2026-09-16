@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "precision": "bf16",
+  "activation_checkpointing": true,
+  "optimizer": {
+    "name": "Adafactor",
+    "factored": true,
+    "relative_step": false,
+    "scale_parameter": false,
+    "warmup_init": false,
+    "beta1": null,
+    "learning_rate": 1e-5,
+    "weight_decay": 0.01
+  },
+  "sequence_length": 1024,
+  "micro_batch_size_per_rank": 1,
+  "gradient_accumulation_steps": 8,
+  "max_steps": 2,
+  "dataloader_workers": 0,
+  "offload": {
+    "cpu": false,
+    "nvme": false,
+    "policy": "forbidden until exact-model measurement and review"
+  },
+  "runtime_capabilities": {
+    "multimodal_preprocessing_verified": false,
+    "moe_router_probe_verified": false,
+    "distributed_state_save_restore_verified": false
+  },
+  "full_parameter_required": true
+}

@@ -1,0 +1,699 @@
+{
+ "what": "ERAN mouth school dataset: LETTER (+ place/manner/nasal/voiced) -> gesture vector for mouth2.say_gesture",
+ "feature_order": [
+  "c_pos",
+  "c_area",
+  "velum",
+  "tenseness",
+  "voicing",
+  "d_pre",
+  "d_cons",
+  "d_trans",
+  "d_gap",
+  "gap_area",
+  "d_bridge",
+  "d_vowel",
+  "glide",
+  "burst_gain",
+  "knots_i",
+  "knots_ah4"
+ ],
+ "feature_doc": " of the target vector (16 dims, all in the renderer's own units):\n   0 c_pos       constriction position 0..1 (0 glottis, 1 lips) of the consonant keyframe\n   1 c_area      constriction area cm^2 (0 = sealed, 2.0 = no constriction)\n   2 velum       nasal port area (0 shut, 0.75 open)\n   3 tenseness   glottal tenseness of the consonant keyframe\n   4 voicing     0..1 of the consonant keyframe\n   5 d_pre       seconds of vowel BEFORE the consonant (ra, aya; else 0)\n   6 d_cons      seconds of the consonant hold\n   7 d_trans     seconds of the second (identical) consonant keyframe = release timing\n   8 d_gap       seconds of voiceless gap after release (VOT; 0 = none)\n   9 gap_area    c_area during the gap (2.0 = fully open)\n  10 d_bridge    seconds of a short vowel keyframe before the vowel (fast voicing onset; 0 = none)\n  11 d_vowel     seconds of the final vowel\n  12 glide       fraction of each segment spent gliding from the previous keyframe\n  13 burst_gain  C-backend burst gain (0 = no burst dial)\n  14 knots_i     1 = consonant keyframe uses the /i/ tube knots (ya), else the /ah/ FIT\n  15 knots_ah4   1 = consonant keyframe uses the AH4 knots (aya's silent gap), else the /ah/ FIT\nThe vowel knots are always the shared /ah/ FIT; f0 knots [105,105,97.65]; tenseness knots [.6,.6,.55].\n",
+ "input_encoding": "one-hot letter (21) + one-hot place ['lips', 'tip', 'palate', 'back', 'glottal'] + one-hot manner ['vowel', 'stop', 'fricative', 'nasal', 'approximant', 'tap'] + nasal + voiced",
+ "vowel_knots_shared": [
+  -0.6013,
+  -0.0092,
+  -0.631,
+  -1.4002,
+  1.6041,
+  -1.8558,
+  1.8504,
+  1.933
+ ],
+ "f0_knots": [
+  105.0,
+  105.0,
+  97.65
+ ],
+ "tenseness_knots": [
+  0.6,
+  0.6,
+  0.55
+ ],
+ "mouth": "eran2:~/mouth-v2/mouth2.py adult 17.60 cm backend c seed 0",
+ "n": 21,
+ "rows": [
+  {
+   "syl": "ba",
+   "letter": "bet",
+   "hebrew": "ב",
+   "family_script": "lips",
+   "input": {
+    "place": "lips",
+    "manner": "stop",
+    "nasal": 0,
+    "voiced": 1
+   },
+   "target": [
+    0.97,
+    0.0,
+    0.0,
+    0.6,
+    1.0,
+    0.0,
+    0.09,
+    0.015,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    9.6,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "fccbd7d9638dc4c582f098406e7358fe"
+  },
+  {
+   "syl": "va",
+   "letter": "vet",
+   "hebrew": "ב",
+   "family_script": "lips",
+   "input": {
+    "place": "lips",
+    "manner": "fricative",
+    "nasal": 0,
+    "voiced": 1
+   },
+   "target": [
+    0.96,
+    0.1,
+    0.0,
+    0.25,
+    0.13,
+    0.0,
+    0.12,
+    0.015,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "fc3ef44627fb0f088d9cb64cbd73ac91"
+  },
+  {
+   "syl": "ma",
+   "letter": "mem",
+   "hebrew": "מ",
+   "family_script": "lips",
+   "input": {
+    "place": "lips",
+    "manner": "nasal",
+    "nasal": 1,
+    "voiced": 1
+   },
+   "target": [
+    0.97,
+    0.0,
+    0.75,
+    0.6,
+    1.0,
+    0.0,
+    0.15,
+    0.02,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "606d354512eb89007085df25e0f77fa7"
+  },
+  {
+   "syl": "pa",
+   "letter": "pe",
+   "hebrew": "פ",
+   "family_script": "lips",
+   "input": {
+    "place": "lips",
+    "manner": "stop",
+    "nasal": 0,
+    "voiced": 0
+   },
+   "target": [
+    0.97,
+    0.0,
+    0.0,
+    0.6,
+    1.0,
+    0.0,
+    0.09,
+    0.015,
+    0.04,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    6.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "a269d8b132dca23e424f7539010f53a7"
+  },
+  {
+   "syl": "fa",
+   "letter": "fe",
+   "hebrew": "פ",
+   "family_script": "lips",
+   "input": {
+    "place": "lips",
+    "manner": "fricative",
+    "nasal": 0,
+    "voiced": 0
+   },
+   "target": [
+    0.98,
+    0.15,
+    0.0,
+    0.6,
+    0.0,
+    0.0,
+    0.12,
+    0.015,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "8af6055c52b038ca86f7f7ea94e151f3"
+  },
+  {
+   "syl": "wa",
+   "letter": "vav",
+   "hebrew": "ו",
+   "family_script": "lips",
+   "input": {
+    "place": "lips",
+    "manner": "approximant",
+    "nasal": 0,
+    "voiced": 1
+   },
+   "target": [
+    1.0,
+    0.15,
+    0.0,
+    0.6,
+    1.0,
+    0.0,
+    0.08,
+    0.02,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.5,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "284878d4e1b2be7919e85d05d8514e94"
+  },
+  {
+   "syl": "da",
+   "letter": "dalet",
+   "hebrew": "ד",
+   "family_script": "tip",
+   "input": {
+    "place": "tip",
+    "manner": "stop",
+    "nasal": 0,
+    "voiced": 1
+   },
+   "target": [
+    0.95,
+    0.0,
+    0.0,
+    0.6,
+    1.0,
+    0.0,
+    0.08,
+    0.015,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    6.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "afc5e01ececfb79cba846a7ae0ea3450"
+  },
+  {
+   "syl": "ta",
+   "letter": "tav",
+   "hebrew": "ת",
+   "family_script": "tip",
+   "input": {
+    "place": "tip",
+    "manner": "stop",
+    "nasal": 0,
+    "voiced": 0
+   },
+   "target": [
+    0.95,
+    0.0,
+    0.0,
+    0.6,
+    1.0,
+    0.0,
+    0.08,
+    0.015,
+    0.04,
+    0.8,
+    0.03,
+    0.35,
+    0.35,
+    6.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "eb778a8aaca30a96cb40d3c7d15b276b"
+  },
+  {
+   "syl": "na",
+   "letter": "nun",
+   "hebrew": "נ",
+   "family_script": "tip",
+   "input": {
+    "place": "tip",
+    "manner": "nasal",
+    "nasal": 1,
+    "voiced": 1
+   },
+   "target": [
+    0.93,
+    0.0,
+    0.75,
+    0.6,
+    1.0,
+    0.0,
+    0.15,
+    0.02,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "9325d42d8c6e65f4bc747d410b6e1144"
+  },
+  {
+   "syl": "la",
+   "letter": "lamed",
+   "hebrew": "ל",
+   "family_script": "tip",
+   "input": {
+    "place": "tip",
+    "manner": "approximant",
+    "nasal": 0,
+    "voiced": 1
+   },
+   "target": [
+    0.88,
+    0.4,
+    0.0,
+    0.6,
+    1.0,
+    0.0,
+    0.09,
+    0.02,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "030fb447f56808fa89ce69bae5fabab7"
+  },
+  {
+   "syl": "sa",
+   "letter": "samekh",
+   "hebrew": "ס",
+   "family_script": "tip",
+   "input": {
+    "place": "tip",
+    "manner": "fricative",
+    "nasal": 0,
+    "voiced": 0
+   },
+   "target": [
+    0.92,
+    0.12,
+    0.0,
+    0.6,
+    0.0,
+    0.0,
+    0.12,
+    0.015,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "30cb4301aae52ed02e9fbe8d788b8e23"
+  },
+  {
+   "syl": "za",
+   "letter": "zayin",
+   "hebrew": "ז",
+   "family_script": "tip",
+   "input": {
+    "place": "tip",
+    "manner": "fricative",
+    "nasal": 0,
+    "voiced": 1
+   },
+   "target": [
+    0.92,
+    0.12,
+    0.0,
+    0.25,
+    0.3,
+    0.0,
+    0.12,
+    0.015,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "ae5232b7221cd3604ad99f49360fb8c2"
+  },
+  {
+   "syl": "sha",
+   "letter": "shin",
+   "hebrew": "ש",
+   "family_script": "tip",
+   "input": {
+    "place": "palate",
+    "manner": "fricative",
+    "nasal": 0,
+    "voiced": 0
+   },
+   "target": [
+    0.8,
+    0.18,
+    0.0,
+    0.6,
+    0.0,
+    0.0,
+    0.12,
+    0.015,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "d47522a155dbe8e3a4431896b63ca695"
+  },
+  {
+   "syl": "ra",
+   "letter": "resh",
+   "hebrew": "ר",
+   "family_script": "tip",
+   "input": {
+    "place": "tip",
+    "manner": "tap",
+    "nasal": 0,
+    "voiced": 1
+   },
+   "target": [
+    0.94,
+    0.0,
+    0.0,
+    0.6,
+    1.0,
+    0.08,
+    0.03,
+    0.0,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.5,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "9283e137a032e2f99164d0cf92a190f1"
+  },
+  {
+   "syl": "ga",
+   "letter": "gimel",
+   "hebrew": "ג",
+   "family_script": "back",
+   "input": {
+    "place": "back",
+    "manner": "stop",
+    "nasal": 0,
+    "voiced": 1
+   },
+   "target": [
+    0.5,
+    0.0,
+    0.0,
+    0.6,
+    1.0,
+    0.0,
+    0.09,
+    0.015,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    6.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "abeb686beae5b9f0239a135da04c53fa"
+  },
+  {
+   "syl": "kha",
+   "letter": "khaf",
+   "hebrew": "כ",
+   "family_script": "back",
+   "input": {
+    "place": "back",
+    "manner": "fricative",
+    "nasal": 0,
+    "voiced": 0
+   },
+   "target": [
+    0.51,
+    0.15,
+    0.0,
+    0.6,
+    0.0,
+    0.0,
+    0.12,
+    0.015,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "8221f52b58fbffa08334ec0c51b3704f"
+  },
+  {
+   "syl": "a",
+   "letter": "alef",
+   "hebrew": "א",
+   "family_script": "glottal",
+   "input": {
+    "place": "glottal",
+    "manner": "vowel",
+    "nasal": 0,
+    "voiced": 1
+   },
+   "target": [
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.6,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "4c011eac4e60679959bbeb6b76cd1a6e"
+  },
+  {
+   "syl": "ha",
+   "letter": "he",
+   "hebrew": "ה",
+   "family_script": "glottal",
+   "input": {
+    "place": "glottal",
+    "manner": "fricative",
+    "nasal": 0,
+    "voiced": 0
+   },
+   "target": [
+    0.35,
+    0.15,
+    0.0,
+    0.25,
+    0.2,
+    0.0,
+    0.06,
+    0.02,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "6d021a08e1ad57245c8cee14590033aa"
+  },
+  {
+   "syl": "ya",
+   "letter": "yod",
+   "hebrew": "י",
+   "family_script": "glottal",
+   "input": {
+    "place": "palate",
+    "manner": "approximant",
+    "nasal": 0,
+    "voiced": 1
+   },
+   "target": [
+    0.75,
+    0.5,
+    0.0,
+    0.6,
+    1.0,
+    0.0,
+    0.06,
+    0.02,
+    0.0,
+    2.0,
+    0.0,
+    0.32,
+    0.5,
+    0.0,
+    1.0,
+    0.0
+   ],
+   "source_wav_md5": "e38e32e596b88f7a910f58983f124099"
+  },
+  {
+   "syl": "cha",
+   "letter": "chet",
+   "hebrew": "ח",
+   "family_script": "glottal",
+   "input": {
+    "place": "back",
+    "manner": "fricative",
+    "nasal": 0,
+    "voiced": 0
+   },
+   "target": [
+    0.51,
+    0.15,
+    0.0,
+    0.6,
+    0.0,
+    0.0,
+    0.1,
+    0.015,
+    0.0,
+    2.0,
+    0.0,
+    0.35,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "source_wav_md5": "a61c3b391cb424f865437ac1e8888b17"
+  },
+  {
+   "syl": "aya",
+   "letter": "ayin",
+   "hebrew": "ע",
+   "family_script": "glottal",
+   "input": {
+    "place": "glottal",
+    "manner": "stop",
+    "nasal": 0,
+    "voiced": 0
+   },
+   "target": [
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    0.0,
+    0.25,
+    0.09,
+    0.0,
+    0.0,
+    2.0,
+    0.0,
+    0.32,
+    0.02,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "source_wav_md5": "9ab659846cee01dfa8612aaa3d2d99f5"
+  }
+ ],
+ "written_by": "claude-cli-MORE teach.py 2026-09-03"
+}

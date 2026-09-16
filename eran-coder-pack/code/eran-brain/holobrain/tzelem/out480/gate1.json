@@ -1,0 +1,21 @@
+{
+  "camera": {
+    "width": 480,
+    "height": 360,
+    "sweep_deg": 4.0,
+    "strokes": 1200,
+    "valid_px": 116279,
+    "total_px": 172800
+  },
+  "coherence": {
+    "FLOOR_repaint_every_frame": 0.07793391155542245,
+    "TZELEM_world_anchored": 0.016783999472056384,
+    "CEILING_warp_only": 0.0
+  },
+  "fidelity_mse": {
+    "BLANK_best_flat_colour": 0.05702812604920883,
+    "FLOOR_repaint_every_frame": 0.023234105375478854,
+    "TZELEM_world_anchored": 0.023965792277468128,
+    "CEILING_warp_only": 0.17447293178523565
+  }
+}

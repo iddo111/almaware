@@ -1,0 +1,17 @@
+{
+  "status": "blocked_cleanly",
+  "candidate": "Chatterbox 0.1.7 on Python 3.14 with Torch and Torchaudio 2.10.0+cu130",
+  "environment": "/home/eran4/.venvs/alma-chatterbox-py314-cu130",
+  "python": "3.14.6",
+  "torch": "2.10.0+cu130",
+  "torchaudio": "2.10.0+cu130",
+  "repo_commit": "5de7a54aa4e5e2baadb0182dde554908b48b85c2",
+  "weights": "existing local V2 and V3 preserved",
+  "dependency_blocker": "librosa 0.11.0 resolved numba 0.53.1 and llvmlite 0.36.0; llvmlite explicitly supports Python >=3.6,<3.10 and rejected Python 3.14.6",
+  "dependency_edits": "none",
+  "downgrades": "none",
+  "chatterbox_installed": false,
+  "hebrew_reference_gate": "no clearly licensed or consented Hebrew reference recording found; generated music files were not used",
+  "failed_test_environment_removed_after_evidence": true,
+  "failed_test_environment_removed_reason": "4.4G, no accepted runtime or unique weights"
+}

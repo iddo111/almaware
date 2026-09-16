@@ -1,0 +1,209 @@
+{
+ "r01": {
+  "unit": "ah",
+  "sigma": null,
+  "made": "2026-09-02 21:29:07",
+  "map": {
+   "A": {
+    "file": "ERAN-ah-r01-control.wav",
+    "kind": "control-no-learning"
+   },
+   "B": {
+    "file": "ERAN-ah-r01-k8.wav",
+    "kind": "fit-k8"
+   },
+   "C": {
+    "file": "ERAN-ah-r01-k24.wav",
+    "kind": "fit-k24"
+   },
+   "D": {
+    "file": "ERAN-ah-r01-k16.wav",
+    "kind": "fit-k16"
+   }
+  }
+ },
+ "r02": {
+  "unit": "ma",
+  "sigma": null,
+  "made": "2026-09-02 21:35:51",
+  "map": {
+   "A": {
+    "file": "ERAN-ma-r02-v1boxed.wav",
+    "kind": "fit-v1boxed"
+   },
+   "B": {
+    "file": "ERAN-ma-r02-control.wav",
+    "kind": "control-no-learning"
+   },
+   "C": {
+    "file": "ERAN-ma-r02-v2onetemplate.wav",
+    "kind": "fit-v2onetemplate-genome-approx"
+   },
+   "D": {
+    "file": "ERAN-ma-r02-syl3.wav",
+    "kind": "fit-syl3"
+   }
+  }
+ },
+ "r03": {
+  "unit": "ah",
+  "sigma": 0.55,
+  "made": "2026-09-03 01:35:42",
+  "map": {
+   "A": {
+    "file": "ERAN-ah-r03-c3.wav",
+    "kind": "mutant"
+   },
+   "B": {
+    "file": "ERAN-ah-r03-c1.wav",
+    "kind": "mutant"
+   },
+   "C": {
+    "file": "ERAN-ah-r03-c2.wav",
+    "kind": "mutant"
+   },
+   "D": {
+    "file": "ERAN-ah-r01-k16.wav",
+    "kind": "incumbent"
+   }
+  }
+ },
+ "r04": {
+  "unit": "ma",
+  "sigma": 0.3,
+  "made": "2026-09-03 01:36:03",
+  "map": {
+   "A": {
+    "file": "ERAN-ma-r04-c1.wav",
+    "kind": "mutant"
+   },
+   "B": {
+    "file": "ERAN-ma-r04-c3.wav",
+    "kind": "mutant"
+   },
+   "C": {
+    "file": "ERAN-ma-r04-c2.wav",
+    "kind": "mutant"
+   },
+   "D": {
+    "file": "ERAN-ma-r02-v1boxed.wav",
+    "kind": "incumbent"
+   }
+  }
+ },
+ "r05": {
+  "unit": "ah",
+  "sigma": 0.44000000000000006,
+  "made": "2026-09-03 01:36:17",
+  "map": {
+   "A": {
+    "file": "ERAN-ah-r05-c2.wav",
+    "kind": "mutant"
+   },
+   "B": {
+    "file": "ERAN-ah-r05-c1.wav",
+    "kind": "mutant"
+   },
+   "C": {
+    "file": "ERAN-ah-r05-c3.wav",
+    "kind": "mutant"
+   },
+   "D": {
+    "file": "ERAN-ah-r01-k16.wav",
+    "kind": "incumbent"
+   }
+  }
+ },
+ "r06": {
+  "unit": "ma",
+  "sigma": 0.3,
+  "made": "2026-09-03 01:36:40",
+  "map": {
+   "A": {
+    "file": "ERAN-ma-r06-c2.wav",
+    "kind": "mutant"
+   },
+   "B": {
+    "file": "ERAN-ma-r06-c3.wav",
+    "kind": "mutant"
+   },
+   "C": {
+    "file": "ERAN-ma-r02-v1boxed.wav",
+    "kind": "incumbent"
+   },
+   "D": {
+    "file": "ERAN-ma-r06-c1.wav",
+    "kind": "mutant"
+   }
+  }
+ },
+ "r07": {
+  "unit": "ah",
+  "sigma": 0.3520000000000001,
+  "made": "2026-09-03 01:36:55",
+  "map": {
+   "A": {
+    "file": "ERAN-ah-r07-c1.wav",
+    "kind": "mutant"
+   },
+   "B": {
+    "file": "ERAN-ah-r07-c3.wav",
+    "kind": "mutant"
+   },
+   "C": {
+    "file": "ERAN-ah-r07-c2.wav",
+    "kind": "mutant"
+   },
+   "D": {
+    "file": "ERAN-ah-r01-k16.wav",
+    "kind": "incumbent"
+   }
+  }
+ },
+ "r08": {
+  "unit": "ma",
+  "sigma": 0.24,
+  "made": "2026-09-03 01:37:08",
+  "map": {
+   "A": {
+    "file": "ERAN-ma-r06-c2.wav",
+    "kind": "incumbent"
+   },
+   "B": {
+    "file": "ERAN-ma-r08-c1.wav",
+    "kind": "mutant"
+   },
+   "C": {
+    "file": "ERAN-ma-r08-c2.wav",
+    "kind": "mutant"
+   },
+   "D": {
+    "file": "ERAN-ma-r08-c3.wav",
+    "kind": "mutant"
+   }
+  }
+ },
+ "r09": {
+  "unit": "ah",
+  "sigma": 0.2816000000000001,
+  "made": "2026-09-03 01:37:28",
+  "map": {
+   "A": {
+    "file": "ERAN-ah-r09-c1.wav",
+    "kind": "mutant"
+   },
+   "B": {
+    "file": "ERAN-ah-r01-k16.wav",
+    "kind": "incumbent"
+   },
+   "C": {
+    "file": "ERAN-ah-r09-c3.wav",
+    "kind": "mutant"
+   },
+   "D": {
+    "file": "ERAN-ah-r09-c2.wav",
+    "kind": "mutant"
+   }
+  }
+ }
+}

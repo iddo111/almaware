@@ -1,0 +1,30 @@
+; NEGATIVE CONTROL for the ERAN auto-tester.
+; The first attempt spawned at 0,0,0 -- which is Nachalat Binyamin, a STREET -- reported
+; clean, and I nearly accepted it as proof the detector worked. Third correction. (0,-44) is a block centre, but at y=4 he stands UNDER the building --
+; the ground floor is open pilotis, which is the whole point of the style. y=9 is inside
+; the mass itself. If BURIED does not fire at y=9, the detector really is broken.
+; If BURIED does not fire here, every "clean" report from the tester is worthless.
+[gd_scene load_steps=5 format=3 uid="uid://berancontrol33"]
+
+[ext_resource type="Script" path="res://scripts/tel_aviv_1933.gd" id="1_city"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_player"]
+[ext_resource type="Script" path="res://scripts/eran_tester.gd" id="3_eran"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
+radius = 0.4
+height = 1.75
+
+[node name="ControlBuried" type="Node3D"]
+
+[node name="City" type="Node3D" parent="."]
+script = ExtResource("1_city")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -44)
+script = ExtResource("2_player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_player")
+
+[node name="Eran" type="Node3D" parent="."]
+script = ExtResource("3_eran")

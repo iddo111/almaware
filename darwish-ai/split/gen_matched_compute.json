@@ -1,0 +1,992 @@
+{
+ "heldout_reference": {
+  "n_tracks": 30,
+  "poly_mean_sounding": 2.2653,
+  "poly_max_median": 5.0,
+  "poly_frac_steps_2plus": 0.7116,
+  "vertical_interval_pct": {
+   "0": 4.329,
+   "1": 9.099,
+   "2": 12.568,
+   "3": 11.44,
+   "4": 11.515,
+   "5": 12.093,
+   "6": 6.572,
+   "7": 10.69,
+   "8": 6.287,
+   "9": 7.17,
+   "10": 4.731,
+   "11": 3.506
+  },
+  "pc_entropy_bits": 3.5414,
+  "floor_uniform_vi_cosine": 0.9355,
+  "floor_uniform_vi_pearson": -0.0
+ },
+ "steps_of_music": 512,
+ "temperature": 1.1,
+ "n_seeds": 5,
+ "ckpts": {
+  "joint": "../runs/joint-s1337/step1500.pt",
+  "rhythm": "../runs/rhythm-s1337/step750.pt",
+  "pitch": "../runs/pitch-s1337/step750.pt"
+ },
+ "summary": {
+  "joint": {
+   "n_tokens": {
+    "mean": 2059.8,
+    "sd": 290.5395,
+    "n": 5
+   },
+   "n_steps": {
+    "mean": 512.0,
+    "sd": 0.0,
+    "n": 5
+   },
+   "hit_token_cap": {
+    "mean": 0.0,
+    "sd": 0.0,
+    "n": 5
+   },
+   "n_notes": {
+    "mean": 885.2,
+    "sd": 182.8529,
+    "n": 5
+   },
+   "n_drums": {
+    "mean": 389.8,
+    "sd": 111.6678,
+    "n": 5
+   },
+   "poly_mean_sounding": {
+    "mean": 2.7082,
+    "sd": 0.2537,
+    "n": 5
+   },
+   "poly_max": {
+    "mean": 7.8,
+    "sd": 1.3038,
+    "n": 5
+   },
+   "poly_frac_steps_2plus": {
+    "mean": 0.7841,
+    "sd": 0.0565,
+    "n": 5
+   },
+   "onset_max_simultaneous": {
+    "mean": 6.6,
+    "sd": 0.5477,
+    "n": 5
+   },
+   "pc_entropy_bits": {
+    "mean": 3.3789,
+    "sd": 0.1237,
+    "n": 5
+   },
+   "mean_abs_melodic_interval": {
+    "mean": 11.1988,
+    "sd": 1.4768,
+    "n": 5
+   },
+   "vi_cosine_vs_heldout": {
+    "mean": 0.9854,
+    "sd": 0.0056,
+    "n": 5
+   },
+   "vi_pearson_vs_heldout": {
+    "mean": 0.9034,
+    "sd": 0.0348,
+    "n": 5
+   },
+   "entropy_bits_per_musical_step": {
+    "mean": 14.5692,
+    "sd": 2.4417,
+    "n": 5
+   },
+   "entropy_slope_per_window": {
+    "mean": 0.0088,
+    "sd": 0.0138,
+    "n": 5
+   },
+   "eos_suppressed": {
+    "mean": 0.0007,
+    "sd": 0.0002,
+    "n": 5
+   },
+   "distinct_tokens": {
+    "mean": 82.2,
+    "sd": 2.7749,
+    "n": 5
+   }
+  },
+  "split": {
+   "n_tokens": {
+    "mean": 1863.4,
+    "sd": 273.3181,
+    "n": 5
+   },
+   "n_steps": {
+    "mean": 512.0,
+    "sd": 0.0,
+    "n": 5
+   },
+   "hit_token_cap": {
+    "mean": 0.0,
+    "sd": 0.0,
+    "n": 5
+   },
+   "n_notes": {
+    "mean": 458.2,
+    "sd": 203.3069,
+    "n": 5
+   },
+   "n_drums": {
+    "mean": 754.2,
+    "sd": 71.3001,
+    "n": 5
+   },
+   "poly_mean_sounding": {
+    "mean": 2.632,
+    "sd": 0.2894,
+    "n": 5
+   },
+   "poly_max": {
+    "mean": 7.0,
+    "sd": 1.0,
+    "n": 5
+   },
+   "poly_frac_steps_2plus": {
+    "mean": 0.7697,
+    "sd": 0.0827,
+    "n": 5
+   },
+   "onset_max_simultaneous": {
+    "mean": 6.2,
+    "sd": 0.8367,
+    "n": 5
+   },
+   "pc_entropy_bits": {
+    "mean": 3.4759,
+    "sd": 0.0415,
+    "n": 5
+   },
+   "mean_abs_melodic_interval": {
+    "mean": 13.2782,
+    "sd": 2.782,
+    "n": 5
+   },
+   "vi_cosine_vs_heldout": {
+    "mean": 0.9728,
+    "sd": 0.0125,
+    "n": 5
+   },
+   "vi_pearson_vs_heldout": {
+    "mean": 0.795,
+    "sd": 0.0953,
+    "n": 5
+   },
+   "entropy_bits_per_musical_step": {
+    "mean": 18.387,
+    "sd": 1.3563,
+    "n": 5
+   },
+   "entropy_slope_per_window": {
+    "mean": 0.003,
+    "sd": 0.0082,
+    "n": 5
+   },
+   "eos_suppressed": {
+    "mean": 0.095,
+    "sd": 0.0372,
+    "n": 5
+   },
+   "distinct_tokens": {
+    "mean": 78.0,
+    "sd": 9.6954,
+    "n": 5
+   }
+  }
+ },
+ "runs": {
+  "joint": [
+   {
+    "n_tokens": 1837,
+    "distinct_tokens": 81,
+    "token_entropy_bits": 4.7052,
+    "n_notes": 781,
+    "n_steps": 512,
+    "poly_max": 7,
+    "poly_mean_sounding": 2.437,
+    "poly_frac_steps_2plus": 0.7326,
+    "onset_max_simultaneous": 6,
+    "pc_entropy_bits": 3.2079,
+    "mean_abs_melodic_interval": 10.869,
+    "vertical_interval_pct": {
+     "0": 6.95,
+     "1": 7.78,
+     "2": 13.38,
+     "3": 10.68,
+     "4": 10.89,
+     "5": 13.28,
+     "6": 6.64,
+     "7": 8.4,
+     "8": 5.91,
+     "9": 6.85,
+     "10": 6.02,
+     "11": 3.22
+    },
+    "lane_counts": {
+     "struct": 548,
+     "drum": 295,
+     "pitch": 781,
+     "dur": 213
+    },
+    "n_drums": 295,
+    "seed": 17,
+    "steps": 512,
+    "hit_token_cap": 0,
+    "eos_suppressed": 0.0006,
+    "entropy_series_bits": [
+     3.196,
+     3.409,
+     3.193,
+     3.609,
+     3.611,
+     3.661,
+     3.713,
+     3.809,
+     3.32,
+     3.456,
+     3.446,
+     3.73,
+     3.674,
+     3.706,
+     3.68
+    ],
+    "entropy_mean_bits_per_token": 3.5394,
+    "entropy_bits_per_musical_step": 12.692,
+    "entropy_slope_per_window": 0.02415,
+    "vi_cosine_vs_heldout": 0.99,
+    "vi_pearson_vs_heldout": 0.9177
+   },
+   {
+    "n_tokens": 1825,
+    "distinct_tokens": 80,
+    "token_entropy_bits": 4.7573,
+    "n_notes": 665,
+    "n_steps": 512,
+    "poly_max": 7,
+    "poly_mean_sounding": 2.463,
+    "poly_frac_steps_2plus": 0.7185,
+    "onset_max_simultaneous": 7,
+    "pc_entropy_bits": 3.434,
+    "mean_abs_melodic_interval": 11.84,
+    "vertical_interval_pct": {
+     "0": 5.57,
+     "1": 8.96,
+     "2": 11.26,
+     "3": 9.08,
+     "4": 11.62,
+     "5": 8.84,
+     "6": 7.75,
+     "7": 8.11,
+     "8": 8.23,
+     "9": 7.38,
+     "10": 6.78,
+     "11": 6.42
+    },
+    "lane_counts": {
+     "struct": 548,
+     "dur": 164,
+     "pitch": 665,
+     "drum": 448
+    },
+    "n_drums": 448,
+    "seed": 118,
+    "steps": 512,
+    "hit_token_cap": 0,
+    "eos_suppressed": 0.0004,
+    "entropy_series_bits": [
+     3.073,
+     3.193,
+     3.508,
+     3.59,
+     3.628,
+     3.537,
+     3.504,
+     3.61,
+     3.629,
+     3.177,
+     3.413,
+     3.617,
+     3.771,
+     3.516,
+     3.499
+    ],
+    "entropy_mean_bits_per_token": 3.4817,
+    "entropy_bits_per_musical_step": 12.404,
+    "entropy_slope_per_window": 0.01822,
+    "vi_cosine_vs_heldout": 0.9769,
+    "vi_pearson_vs_heldout": 0.8495
+   },
+   {
+    "n_tokens": 2363,
+    "distinct_tokens": 81,
+    "token_entropy_bits": 5.1738,
+    "n_notes": 1115,
+    "n_steps": 512,
+    "poly_max": 10,
+    "poly_mean_sounding": 2.96,
+    "poly_frac_steps_2plus": 0.8408,
+    "onset_max_simultaneous": 7,
+    "pc_entropy_bits": 3.4891,
+    "mean_abs_melodic_interval": 9.986,
+    "vertical_interval_pct": {
+     "0": 5.68,
+     "1": 10.23,
+     "2": 10.53,
+     "3": 10.35,
+     "4": 10.94,
+     "5": 10.17,
+     "6": 8.13,
+     "7": 9.51,
+     "8": 5.8,
+     "9": 8.43,
+     "10": 5.62,
+     "11": 4.61
+    },
+    "lane_counts": {
+     "struct": 547,
+     "pitch": 1115,
+     "drum": 417,
+     "dur": 284
+    },
+    "n_drums": 417,
+    "seed": 219,
+    "steps": 512,
+    "hit_token_cap": 0,
+    "eos_suppressed": 0.0008,
+    "entropy_series_bits": [
+     3.702,
+     3.408,
+     3.389,
+     3.462,
+     3.85,
+     3.634,
+     3.878,
+     3.902,
+     3.53,
+     3.818,
+     3.803,
+     3.537,
+     3.581,
+     3.766,
+     3.981,
+     3.841,
+     3.908,
+     3.578,
+     3.732
+    ],
+    "entropy_mean_bits_per_token": 3.6975,
+    "entropy_bits_per_musical_step": 17.057,
+    "entropy_slope_per_window": 0.01293,
+    "vi_cosine_vs_heldout": 0.9896,
+    "vi_pearson_vs_heldout": 0.9424
+   },
+   {
+    "n_tokens": 2391,
+    "distinct_tokens": 87,
+    "token_entropy_bits": 5.1512,
+    "n_notes": 1025,
+    "n_steps": 512,
+    "poly_max": 8,
+    "poly_mean_sounding": 2.953,
+    "poly_frac_steps_2plus": 0.834,
+    "onset_max_simultaneous": 7,
+    "pc_entropy_bits": 3.4733,
+    "mean_abs_melodic_interval": 13.428,
+    "vertical_interval_pct": {
+     "0": 6.07,
+     "1": 10.62,
+     "2": 10.04,
+     "3": 8.52,
+     "4": 10.33,
+     "5": 10.57,
+     "6": 8.58,
+     "7": 10.04,
+     "8": 7.36,
+     "9": 7.01,
+     "10": 5.78,
+     "11": 5.08
+    },
+    "lane_counts": {
+     "struct": 548,
+     "pitch": 1025,
+     "drum": 530,
+     "dur": 288
+    },
+    "n_drums": 530,
+    "seed": 320,
+    "steps": 512,
+    "hit_token_cap": 0,
+    "eos_suppressed": 0.0009,
+    "entropy_series_bits": [
+     3.74,
+     3.744,
+     3.686,
+     3.861,
+     3.757,
+     3.746,
+     3.803,
+     3.82,
+     3.667,
+     3.693,
+     3.434,
+     3.715,
+     3.817,
+     3.665,
+     3.775,
+     3.757,
+     3.766,
+     3.606,
+     3.694
+    ],
+    "entropy_mean_bits_per_token": 3.7224,
+    "entropy_bits_per_musical_step": 17.376,
+    "entropy_slope_per_window": -0.00389,
+    "vi_cosine_vs_heldout": 0.9827,
+    "vi_pearson_vs_heldout": 0.8934
+   },
+   {
+    "n_tokens": 1883,
+    "distinct_tokens": 82,
+    "token_entropy_bits": 4.8548,
+    "n_notes": 840,
+    "n_steps": 512,
+    "poly_max": 7,
+    "poly_mean_sounding": 2.728,
+    "poly_frac_steps_2plus": 0.7947,
+    "onset_max_simultaneous": 6,
+    "pc_entropy_bits": 3.2904,
+    "mean_abs_melodic_interval": 9.871,
+    "vertical_interval_pct": {
+     "0": 7.18,
+     "1": 10.01,
+     "2": 12.03,
+     "3": 10.17,
+     "4": 9.04,
+     "5": 10.09,
+     "6": 6.13,
+     "7": 11.14,
+     "8": 6.7,
+     "9": 7.51,
+     "10": 5.17,
+     "11": 4.84
+    },
+    "lane_counts": {
+     "struct": 548,
+     "pitch": 840,
+     "dur": 236,
+     "drum": 259
+    },
+    "n_drums": 259,
+    "seed": 421,
+    "steps": 512,
+    "hit_token_cap": 0,
+    "eos_suppressed": 0.0008,
+    "entropy_series_bits": [
+     3.838,
+     3.655,
+     3.62,
+     3.575,
+     3.627,
+     3.599,
+     3.54,
+     3.627,
+     3.67,
+     3.461,
+     3.665,
+     3.736,
+     3.605,
+     3.611,
+     3.508
+    ],
+    "entropy_mean_bits_per_token": 3.623,
+    "entropy_bits_per_musical_step": 13.317,
+    "entropy_slope_per_window": -0.00728,
+    "vi_cosine_vs_heldout": 0.9877,
+    "vi_pearson_vs_heldout": 0.9142
+   }
+  ],
+  "split": [
+   {
+    "n_tokens": 2204,
+    "distinct_tokens": 85,
+    "token_entropy_bits": 4.8504,
+    "n_notes": 663,
+    "n_steps": 512,
+    "poly_max": 7,
+    "poly_mean_sounding": 2.956,
+    "poly_frac_steps_2plus": 0.8384,
+    "onset_max_simultaneous": 7,
+    "pc_entropy_bits": 3.5023,
+    "mean_abs_melodic_interval": 11.418,
+    "vertical_interval_pct": {
+     "0": 5.83,
+     "1": 10.92,
+     "2": 10.36,
+     "3": 11.66,
+     "4": 9.99,
+     "5": 9.07,
+     "6": 7.22,
+     "7": 9.9,
+     "8": 7.59,
+     "9": 7.12,
+     "10": 5.55,
+     "11": 4.81
+    },
+    "lane_counts": {
+     "struct": 551,
+     "drum": 799,
+     "dur": 191,
+     "pitch": 663
+    },
+    "n_drums": 799,
+    "seed": 17,
+    "rhythm": {
+     "steps": 512,
+     "hit_token_cap": 0,
+     "eos_suppressed": 0.0756,
+     "entropy_series_bits": [
+      1.741,
+      1.543,
+      1.603,
+      1.607,
+      1.729,
+      1.725,
+      1.525,
+      1.652,
+      1.481,
+      1.404,
+      1.474
+     ],
+     "entropy_mean_bits_per_token": 1.5934,
+     "entropy_bits_per_musical_step": 4.198,
+     "entropy_slope_per_window": -0.02155
+    },
+    "pitch": {
+     "steps": 512,
+     "hit_token_cap": 0,
+     "eos_suppressed": 0.0109,
+     "entropy_series_bits": [
+      3.636,
+      3.723,
+      4.153,
+      4.171,
+      4.087,
+      3.91,
+      3.704,
+      3.865,
+      3.704,
+      3.9,
+      4.002,
+      3.926,
+      4.063,
+      3.945,
+      4.005,
+      3.957
+     ],
+     "entropy_mean_bits_per_token": 3.9188,
+     "entropy_bits_per_musical_step": 15.208,
+     "entropy_slope_per_window": 0.00732
+    },
+    "merge": {
+     "r_clocks": 550,
+     "p_clocks": 548,
+     "compared": 548,
+     "disagreements": 67,
+     "len_gap": 2
+    },
+    "eos_suppressed": 0.0865,
+    "hit_token_cap": 0,
+    "entropy_bits_per_musical_step": 19.406,
+    "entropy_slope_per_window": -0.00711,
+    "vi_cosine_vs_heldout": 0.9859,
+    "vi_pearson_vs_heldout": 0.9035
+   },
+   {
+    "n_tokens": 1608,
+    "distinct_tokens": 63,
+    "token_entropy_bits": 3.8749,
+    "n_notes": 195,
+    "n_steps": 512,
+    "poly_max": 6,
+    "poly_mean_sounding": 2.362,
+    "poly_frac_steps_2plus": 0.6915,
+    "onset_max_simultaneous": 6,
+    "pc_entropy_bits": 3.5318,
+    "mean_abs_melodic_interval": 12.874,
+    "vertical_interval_pct": {
+     "0": 2.87,
+     "1": 14.35,
+     "2": 11.48,
+     "3": 9.09,
+     "4": 8.61,
+     "5": 9.57,
+     "6": 11.48,
+     "7": 11.96,
+     "8": 7.66,
+     "9": 4.31,
+     "10": 5.26,
+     "11": 3.35
+    },
+    "lane_counts": {
+     "struct": 549,
+     "pitch": 195,
+     "drum": 828,
+     "dur": 36
+    },
+    "n_drums": 828,
+    "seed": 118,
+    "rhythm": {
+     "steps": 512,
+     "hit_token_cap": 0,
+     "eos_suppressed": 0.0584,
+     "entropy_series_bits": [
+      1.734,
+      1.696,
+      1.667,
+      1.667,
+      1.762,
+      1.585,
+      1.539,
+      1.519,
+      1.712,
+      1.539,
+      1.583
+     ],
+     "entropy_mean_bits_per_token": 1.6367,
+     "entropy_bits_per_musical_step": 4.399,
+     "entropy_slope_per_window": -0.01606
+    },
+    "pitch": {
+     "steps": 512,
+     "hit_token_cap": 0,
+     "eos_suppressed": 0.0089,
+     "entropy_series_bits": [
+      3.915,
+      3.757,
+      3.927,
+      3.63,
+      3.971,
+      3.996,
+      3.802,
+      4.05,
+      3.791,
+      4.028,
+      3.823,
+      4.043,
+      3.904,
+      3.835,
+      4.065,
+      3.999
+     ],
+     "entropy_mean_bits_per_token": 3.9026,
+     "entropy_bits_per_musical_step": 14.963,
+     "entropy_slope_per_window": 0.00996
+    },
+    "merge": {
+     "r_clocks": 548,
+     "p_clocks": 550,
+     "compared": 548,
+     "disagreements": 72,
+     "len_gap": 2
+    },
+    "eos_suppressed": 0.0673,
+    "hit_token_cap": 0,
+    "entropy_bits_per_musical_step": 19.362,
+    "entropy_slope_per_window": -0.00305,
+    "vi_cosine_vs_heldout": 0.9551,
+    "vi_pearson_vs_heldout": 0.6831
+   },
+   {
+    "n_tokens": 1604,
+    "distinct_tokens": 77,
+    "token_entropy_bits": 4.1067,
+    "n_notes": 294,
+    "n_steps": 512,
+    "poly_max": 6,
+    "poly_mean_sounding": 2.297,
+    "poly_frac_steps_2plus": 0.6689,
+    "onset_max_simultaneous": 5,
+    "pc_entropy_bits": 3.4563,
+    "mean_abs_melodic_interval": 18.154,
+    "vertical_interval_pct": {
+     "0": 5.4,
+     "1": 10.16,
+     "2": 8.57,
+     "3": 10.48,
+     "4": 9.21,
+     "5": 9.21,
+     "6": 8.25,
+     "7": 10.79,
+     "8": 6.98,
+     "9": 7.3,
+     "10": 7.3,
+     "11": 6.35
+    },
+    "lane_counts": {
+     "struct": 549,
+     "pitch": 294,
+     "drum": 714,
+     "dur": 47
+    },
+    "n_drums": 714,
+    "seed": 219,
+    "rhythm": {
+     "steps": 512,
+     "hit_token_cap": 0,
+     "eos_suppressed": 0.1257,
+     "entropy_series_bits": [
+      1.355,
+      1.517,
+      1.539,
+      1.421,
+      1.478,
+      1.545,
+      1.436,
+      1.556,
+      1.466,
+      1.714
+     ],
+     "entropy_mean_bits_per_token": 1.4984,
+     "entropy_bits_per_musical_step": 3.693,
+     "entropy_slope_per_window": 0.01861
+    },
+    "pitch": {
+     "steps": 512,
+     "hit_token_cap": 0,
+     "eos_suppressed": 0.0183,
+     "entropy_series_bits": [
+      3.968,
+      3.829,
+      4.009,
+      3.749,
+      4.011,
+      3.963,
+      4.084,
+      4.068,
+      3.91,
+      4.036,
+      3.956,
+      3.955,
+      3.669,
+      4.323
+     ],
+     "entropy_mean_bits_per_token": 3.9379,
+     "entropy_bits_per_musical_step": 12.844,
+     "entropy_slope_per_window": 0.00828
+    },
+    "merge": {
+     "r_clocks": 548,
+     "p_clocks": 552,
+     "compared": 548,
+     "disagreements": 69,
+     "len_gap": 4
+    },
+    "eos_suppressed": 0.14400000000000002,
+    "hit_token_cap": 0,
+    "entropy_bits_per_musical_step": 16.537,
+    "entropy_slope_per_window": 0.01345,
+    "vi_cosine_vs_heldout": 0.9732,
+    "vi_pearson_vs_heldout": 0.8111
+   },
+   {
+    "n_tokens": 1818,
+    "distinct_tokens": 77,
+    "token_entropy_bits": 4.6073,
+    "n_notes": 535,
+    "n_steps": 512,
+    "poly_max": 8,
+    "poly_mean_sounding": 2.72,
+    "poly_frac_steps_2plus": 0.8133,
+    "onset_max_simultaneous": 6,
+    "pc_entropy_bits": 3.4639,
+    "mean_abs_melodic_interval": 12.248,
+    "vertical_interval_pct": {
+     "0": 4.95,
+     "1": 7.66,
+     "2": 11.86,
+     "3": 9.76,
+     "4": 12.31,
+     "5": 10.51,
+     "6": 9.01,
+     "7": 7.81,
+     "8": 7.66,
+     "9": 6.61,
+     "10": 6.16,
+     "11": 5.71
+    },
+    "lane_counts": {
+     "struct": 548,
+     "dur": 84,
+     "pitch": 535,
+     "drum": 651
+    },
+    "n_drums": 651,
+    "seed": 320,
+    "rhythm": {
+     "steps": 512,
+     "hit_token_cap": 0,
+     "eos_suppressed": 0.0482,
+     "entropy_series_bits": [
+      1.69,
+      1.734,
+      1.63,
+      1.742,
+      1.544,
+      1.646,
+      1.813,
+      1.59,
+      1.598,
+      1.956
+     ],
+     "entropy_mean_bits_per_token": 1.6746,
+     "entropy_bits_per_musical_step": 3.918,
+     "entropy_slope_per_window": 0.00944
+    },
+    "pitch": {
+     "steps": 512,
+     "hit_token_cap": 0,
+     "eos_suppressed": 0.0071,
+     "entropy_series_bits": [
+      3.731,
+      3.835,
+      3.741,
+      3.972,
+      3.967,
+      3.954,
+      3.831,
+      3.985,
+      3.885,
+      3.875,
+      3.841,
+      3.849,
+      3.954,
+      3.663
+     ],
+     "entropy_mean_bits_per_token": 3.8626,
+     "entropy_bits_per_musical_step": 13.413,
+     "entropy_slope_per_window": -7e-05
+    },
+    "merge": {
+     "r_clocks": 547,
+     "p_clocks": 552,
+     "compared": 547,
+     "disagreements": 72,
+     "len_gap": 5
+    },
+    "eos_suppressed": 0.0553,
+    "hit_token_cap": 0,
+    "entropy_bits_per_musical_step": 17.331,
+    "entropy_slope_per_window": 0.00468,
+    "vi_cosine_vs_heldout": 0.983,
+    "vi_pearson_vs_heldout": 0.8649
+   },
+   {
+    "n_tokens": 2083,
+    "distinct_tokens": 88,
+    "token_entropy_bits": 4.7423,
+    "n_notes": 604,
+    "n_steps": 512,
+    "poly_max": 8,
+    "poly_mean_sounding": 2.825,
+    "poly_frac_steps_2plus": 0.8364,
+    "onset_max_simultaneous": 7,
+    "pc_entropy_bits": 3.4254,
+    "mean_abs_melodic_interval": 11.697,
+    "vertical_interval_pct": {
+     "0": 4.13,
+     "1": 9.83,
+     "2": 9.34,
+     "3": 9.83,
+     "4": 9.34,
+     "5": 10.92,
+     "6": 8.13,
+     "7": 7.52,
+     "8": 8.37,
+     "9": 7.28,
+     "10": 7.52,
+     "11": 7.77
+    },
+    "lane_counts": {
+     "struct": 548,
+     "drum": 779,
+     "pitch": 604,
+     "dur": 152
+    },
+    "n_drums": 779,
+    "seed": 421,
+    "rhythm": {
+     "steps": 512,
+     "hit_token_cap": 0,
+     "eos_suppressed": 0.1025,
+     "entropy_series_bits": [
+      1.714,
+      1.805,
+      1.614,
+      1.558,
+      1.511,
+      1.534,
+      1.586,
+      1.675,
+      1.545,
+      1.499,
+      1.582
+     ],
+     "entropy_mean_bits_per_token": 1.6021,
+     "entropy_bits_per_musical_step": 4.149,
+     "entropy_slope_per_window": -0.0162
+    },
+    "pitch": {
+     "steps": 512,
+     "hit_token_cap": 0,
+     "eos_suppressed": 0.0193,
+     "entropy_series_bits": [
+      3.635,
+      3.736,
+      3.769,
+      3.864,
+      3.667,
+      3.859,
+      4.235,
+      4.107,
+      4.196,
+      4.23,
+      4.169,
+      3.97,
+      4.107,
+      3.982,
+      3.982,
+      4.248
+     ],
+     "entropy_mean_bits_per_token": 3.9698,
+     "entropy_bits_per_musical_step": 15.15,
+     "entropy_slope_per_window": 0.03039
+    },
+    "merge": {
+     "r_clocks": 547,
+     "p_clocks": 550,
+     "compared": 547,
+     "disagreements": 72,
+     "len_gap": 3
+    },
+    "eos_suppressed": 0.12179999999999999,
+    "hit_token_cap": 0,
+    "entropy_bits_per_musical_step": 19.299,
+    "entropy_slope_per_window": 0.0071,
+    "vi_cosine_vs_heldout": 0.9667,
+    "vi_pearson_vs_heldout": 0.7122
+   }
+  ]
+ }
+}

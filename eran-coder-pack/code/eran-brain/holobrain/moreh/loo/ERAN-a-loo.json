@@ -1,0 +1,124 @@
+{
+ "speaker": "ERAN",
+ "syl": "a",
+ "how": "leave-one-syllable-out prediction of holobrain/moreh (fit on the other 23 syllables' lessons)",
+ "spec": {
+  "knots": "AH4",
+  "constr": "none",
+  "nasal": 0,
+  "voice": "part",
+  "release": "plain",
+  "burst": 0,
+  "pre": 1,
+  "c_pos": 0.5969299808652132,
+  "c_area": 1.5025202719778359,
+  "velum": 0.6499808491321203,
+  "ten": 0.31768433284225206,
+  "voi": 0.27118052532734627,
+  "d_pre": 0.19150105852365676,
+  "d_cons": 0.06643564607282988,
+  "d_trans": 0.0,
+  "d_gap": 0.05588848916520959,
+  "gap_pos": 0.6425089795467075,
+  "gap_area": 0.7172265264836092,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6000000000093125,
+  "d_bridge": 0.00950516454978791,
+  "d_vowel": 0.3433433070338606,
+  "glide": 0.13250401901422182,
+  "gain": 7.755121490818881,
+  "f0": 104.3776946984323,
+  "trans_voi": null
+ },
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -0.9,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.5969,
+    2.0,
+    0.0,
+    0.3177,
+    0.2712
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.1915,
+   0.0664,
+   0.3433
+  ],
+  "f0_knots": [
+   104.3776946984323,
+   104.3776946984323,
+   97.07125606954203
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.13250401901422182,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "verifier_ok": false,
+ "fails": [
+  "FAIL a consonant was predicted for the bare vowel"
+ ],
+ "wrong_decisions": {
+  "knots": [
+   "AH4",
+   "AH"
+  ],
+  "voice": [
+   "part",
+   "on"
+  ],
+  "release": [
+   "plain",
+   "none"
+  ],
+  "pre": [
+   1,
+   0
+  ]
+ }
+}

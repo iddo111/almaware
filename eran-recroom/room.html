@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>חדר המשחקים של ערן</title>
+<style>
+  :root{--bg:#fff7ec;--card:#fff;--ink:#2b2b3a;--accent:#ff8a3d;--good:#2fa36b;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);
+       color:var(--ink);padding:14px;}
+  h1{font-size:1.4rem;margin:.2rem 0}
+  .banner{background:#ffe6cc;border:1px solid #ffbf80;border-radius:10px;
+          padding:8px 12px;font-size:.85rem;margin-bottom:12px}
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .card{background:var(--card);border-radius:14px;padding:14px;
+        box-shadow:0 3px 10px rgba(0,0,0,.08)}
+  .card h2{margin:.1rem 0 .6rem;font-size:1.1rem}
+  button{background:var(--accent);color:#fff;border:0;border-radius:9px;
+         padding:8px 14px;font-size:1rem;cursor:pointer}
+  button.ghost{background:#eee;color:#333}
+  input{padding:7px;border:1px solid #ccc;border-radius:8px;font-size:1rem;width:6rem}
+  .stat{font-size:.9rem;color:#555;margin-top:6px}
+  .echo{font-size:1.5rem;color:var(--accent);min-height:1.6rem;margin-top:8px}
+  .bar{height:12px;background:#eee;border-radius:6px;overflow:hidden;margin-top:6px}
+  .bar>i{display:block;height:100%;background:var(--good);width:0}
+  .rung{display:inline-block;padding:4px 10px;margin:3px;border-radius:20px;
+        background:#eee}
+  .rung.done{background:var(--good);color:#fff}
+  .rung.next{outline:2px dashed var(--accent)}
+  canvas{background:#fdf3e6;border-radius:10px;display:block;margin-top:8px}
+</style>
+</head>
+<body>
+  <h1>🧸 חדר המשחקים של ערן</h1>
+  <div class="banner" id="banner">…</div>
+  <div class="grid">
+
+    <div class="card">
+      <h2>🎯 מובייל — מעקב חלק</h2>
+      <canvas id="cv" width="320" height="260"></canvas>
+      <div class="stat">מיומנות מעקב: <b id="skill">0</b> · חזרות: <b id="preps">0</b>
+        · שגיאת מבט: <b id="err">–</b></div>
+      <div class="bar"><i id="skillbar"></i></div>
+      <button id="playmob">שחק / עצור</button>
+    </div>
+
+    <div class="card">
+      <h2>🔁 הד — קריאה ותגובה</h2>
+      <input id="syl" value="ba" dir="ltr">
+      <button id="say">אמור לו</button>
+      <div class="echo" id="echo">…</div>
+      <div class="stat">ערן שמע זאת <b id="th">0</b> פעמים · תורות: <b id="turns">0</b></div>
+      <div class="stat">נסה: <button class="ghost" data-s="אבא">אבא</button>
+        <button class="ghost" data-s="אימא">אימא</button>
+        <button class="ghost" data-s="mama">mama</button></div>
+    </div>
+
+    <div class="card">
+      <h2>🪜 לוח ציוני-דרך</h2>
+      <div id="ladder"></div>
+      <div class="stat">מילה הבאה: <b id="nextw">–</b>
+        (<b id="rr">0</b>/<b id="rtm">3</b> חזרות)</div>
+      <button class="ghost" id="reset">אפס חדר</button>
+    </div>
+
+    <div class="card">
+      <h2>💛 מצב-רוח עדין — רגוע · סקרן · שמח</h2>
+      <div class="echo" id="mood">…</div>
+      <div class="stat" id="moodwhy">–</div>
+      <div class="stat">רמז:
+        <button class="ghost" data-c="ערן">שם / קול אבא</button>
+        <button class="ghost" data-c="novelty">משהו חדש</button>
+        <button class="ghost" data-c="quiet">שקט</button></div>
+    </div>
+
+  </div>
+
+<script>
+const $=s=>document.querySelector(s);
+async function j(u){return (await fetch(u)).json();}
+
+async function refresh(){
+  const s=await j('/status');
+  $('#banner').textContent=s.banner_he+' · '+s.banner_en;
+  $('#skill').textContent=s.pursuit_skill;
+  $('#preps').textContent=s.pursuit_reps;
+  $('#skillbar').style.width=(s.pursuit_skill*100)+'%';
+  $('#turns').textContent=s.babble_turns;
+  drawLadder(s.milestone);
+  const face={calm:'😌',curious:'👀',happy:'😊'}[s.mood]||'😌';
+  $('#mood').textContent=face+' '+s.mood_he;
+}
+const MOODFACE={calm:'😌',curious:'👀',happy:'😊'};
+async function moodCue(cue){
+  const r=await j('/mood?cue='+encodeURIComponent(cue));
+  $('#mood').textContent=(MOODFACE[r.mood]||'😌')+' '+r.mood_he;
+  $('#moodwhy').textContent='רמז: '+r.cue+' → '+r.reason;
+}
+document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>moodCue(b.dataset.c));
+function drawLadder(m){
+  const words=['אבא','אימא','עידו','ערן'];
+  $('#ladder').innerHTML=words.map((w,i)=>{
+    let c='rung';if(i<m.level)c+=' done';if(i===m.level)c+=' next';
+    return `<span class="${c}">${w}</span>`;}).join('');
+  $('#nextw').textContent=m.next||'הושלם!';
+  $('#rr').textContent=m.next_rung_reps;$('#rtm').textContent=m.reps_to_master;
+}
+
+// mobile
+const cv=$('#cv'),ctx=cv.getContext('2d');let playing=false,t0=0;
+async function frame(ts){
+  if(!playing)return;
+  if(!t0)t0=ts;
+  const r=await j('/track?t='+Math.round(ts-t0));
+  ctx.clearRect(0,0,320,260);
+  ctx.fillStyle='#ff8a3d';ctx.beginPath();
+  ctx.arc(r.target[0],r.target[1],13,0,7);ctx.fill();      // toy
+  ctx.fillStyle='#2fa36b';ctx.beginPath();
+  ctx.arc(r.gaze[0],r.gaze[1],8,0,7);ctx.fill();           // gaze
+  $('#skill').textContent=r.skill;$('#preps').textContent=r.reps;
+  $('#err').textContent=r.error;$('#skillbar').style.width=(r.skill*100)+'%';
+  requestAnimationFrame(frame);
+}
+$('#playmob').onclick=()=>{playing=!playing;t0=0;if(playing)requestAnimationFrame(frame);};
+
+// babble
+async function sayIt(syl){
+  const r=await j('/babble?syl='+encodeURIComponent(syl));
+  $('#echo').textContent='ערן: '+r.eran_says;
+  $('#th').textContent=r.times_heard;$('#turns').textContent=r.turns;
+  drawLadder(r.ladder);
+}
+$('#say').onclick=()=>sayIt($('#syl').value);
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{
+  $('#syl').value=b.dataset.s;sayIt(b.dataset.s);});
+$('#reset').onclick=async()=>{await j('/reset');refresh();$('#echo').textContent='…';};
+
+refresh();
+</script>
+</body>
+</html>

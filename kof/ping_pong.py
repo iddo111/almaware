@@ -1,0 +1,1 @@
+"import sys; import time; def ping_pong_simulator(input_str): return 'pong' if input_str.strip().lower() == 'ping' else 'ping'; output = ping_pong_simulator(input_str if len(sys.argv) > 1 else 'ping'); print(f'Received: {input_str}, Sending: {output}'); print(output)" 

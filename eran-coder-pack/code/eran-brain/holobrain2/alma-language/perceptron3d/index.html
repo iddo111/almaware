@@ -1,0 +1,229 @@
+<!-- לזכרה של עלמה ז״ל -->
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALMA · Perceptron 3D Lab</title>
+  <meta name="description" content="מעבדה תלת-ממדית אינטראקטיבית להמחשת הפרספטרון של רוזנבלט (1958) בזמן אמת">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#controls" class="skip-link">דלג לאזור הבקרה</a>
+
+  <main>
+    <!-- Masthead -->
+    <header class="masthead">
+      <div class="masthead-copy">
+        <span class="kicker">מעבדת ALMAWARE</span>
+        <h1>הפרספטרון<br><span>לומד מול העיניים.</span></h1>
+        <p class="intro">
+          כל נקודה עוברת דרך שלושה משקלים. אם הסכום עובר את הסף — המכונה בוחרת ירוק. אם היא טועה, המשקלים זזים ומישור ההחלטה מסתובב. גררו את התצוגה, בחרו נקודה והפעילו צעד אחד.
+        </p>
+      </div>
+      <div class="film-note" role="note">
+        <span>עובדה היסטורית / הדגמה מודרנית</span>
+        <b>משקלים אלקטרוניים, Mark I (1958)</b>
+        <small>
+          רוזנבלט מימש את הפרספטרון באמצעות פוטנציומטרים המונעים על ידי מנועים חשמליים קטנים כדי לשנות את המשקלים באופן מכני.
+          כאן פועל מסווג ליניארי תלת־ממדי פשוט — לא שחזור מלא של חומרת Mark I.
+        </small>
+      </div>
+    </header>
+
+    <!-- Workbench -->
+    <section class="workbench">
+      <!-- Left side: 3D Scene and Metrics -->
+      <div class="stage-column">
+        <!-- Instrument Bar -->
+        <div class="instrument-bar">
+          <div>
+            <span class="lamp" aria-hidden="true"></span>
+            <b>מנוע תצוגה דטרמיניסטי</b>
+          </div>
+          <p id="plane-readout">מחפש מישור...</p>
+        </div>
+
+        <!-- 3D Canvas Stage -->
+        <div class="stage-wrap">
+          <div class="stage-overlay">
+            <span>VOLUME: [-1.0, 1.0]³</span>
+            <span>CAMERA: PITCH/YAW ORBIT</span>
+          </div>
+          <canvas id="scene" tabindex="0" aria-describedby="scene-help live-description" aria-label="הדמיה תלת-ממדית אינטראקטיבית של מרחב הפרספטרון והנקודות המסווגות" role="img"></canvas>
+          <p class="screen-reader" id="scene-help">מקשי החצים מסובבים את המרחב, פלוס ומינוס משנים קירוב, ורווח מבצע צעד אימון.</p>
+
+          <!-- Selected Point Readout -->
+          <div class="selected-readout" id="selected-readout">
+            <span>נקודה שנבחרה (קלט)</span>
+            <b id="selected-coords">x₁ 0.00 · x₂ 0.00 · x₃ 0.00</b>
+            <small id="selected-result">ממתין לבחירת נקודה...</small>
+          </div>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div class="metrics">
+          <div>
+            <span>דיוק כולל (Accuracy)</span>
+            <b id="accuracy">0%</b>
+          </div>
+          <div>
+            <span>שגיאות סיווג (Errors)</span>
+            <b id="errors">0</b>
+          </div>
+          <div>
+            <span>עדכוני משקלים (Updates)</span>
+            <b id="updates">0</b>
+          </div>
+          <div>
+            <span>סבבים (Iterations)</span>
+            <b id="iterations">0</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Control Console -->
+      <aside class="console" id="controls">
+        <div class="console-heading">
+          <span class="kicker">לוח בקרה</span>
+          <h2>משקלי הנוירון וסף</h2>
+        </div>
+
+        <!-- Weight 1 -->
+        <div class="control-group">
+          <label for="w1">
+            <span>משקל x₁ (w₁)</span>
+            <output id="w1-value">0.00</output>
+          </label>
+          <input type="range" id="w1" min="-2.0" max="2.0" step="0.05" value="0.25">
+        </div>
+
+        <!-- Weight 2 -->
+        <div class="control-group">
+          <label for="w2">
+            <span>משקל x₂ (w₂)</span>
+            <output id="w2-value">0.00</output>
+          </label>
+          <input type="range" id="w2" min="-2.0" max="2.0" step="0.05" value="-0.35">
+        </div>
+
+        <!-- Weight 3 -->
+        <div class="control-group">
+          <label for="w3">
+            <span>משקל x₃ (w₃)</span>
+            <output id="w3-value">0.00</output>
+          </label>
+          <input type="range" id="w3" min="-2.0" max="2.0" step="0.05" value="0.15">
+        </div>
+
+        <!-- Bias / Threshold -->
+        <div class="control-group">
+          <label for="theta">
+            <span>סף הפעלה (θ - Bias)</span>
+            <output id="theta-value">0.00</output>
+          </label>
+          <input type="range" id="theta" min="-2.0" max="2.0" step="0.05" value="0.55">
+        </div>
+
+        <!-- Learning Rate -->
+        <div class="control-group">
+          <label for="rate">
+            <span>קצב למידה (Learning Rate - η)</span>
+            <output id="rate-value">0.10</output>
+          </label>
+          <input type="range" id="rate" min="0.01" max="1.0" step="0.01" value="0.10">
+        </div>
+
+        <!-- Equation and Math Readout -->
+        <div class="equation">
+          <span>משוואת מישור ההחלטה</span>
+          <strong id="sum-equation">w₁·x₁ + w₂·x₂ + w₃·x₃ = θ</strong>
+          <p><b id="sum-value">0.000</b> <span id="threshold-test">מול θ = 0.000</span></p>
+        </div>
+
+        <div class="update-rule">
+          <span>כשיש טעות בלבד</span>
+          <code>w ← w + η(t − ŷ)x</code>
+          <code>θ ← θ − η(t − ŷ)</code>
+        </div>
+
+        <!-- Control Action Buttons -->
+        <div class="actions">
+          <button type="button" class="primary" id="step">צעד אימון אחד (Step)</button>
+          <button type="button" id="epoch">אימון סבב מלא (Epoch)</button>
+          <button type="button" id="auto" aria-pressed="false">הפעל אימון רציף</button>
+          <button type="button" class="quiet" id="reset">אתחל משקלים (Reset)</button>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Signal Flow Diagram -->
+    <section class="signal-path">
+      <div class="signal-copy">
+        <span class="kicker">זרימת אותות</span>
+        <h2>מסלול החישוב של הנוירון הבודד</h2>
+      </div>
+      <div class="machine">
+        <div class="inputs">
+          <div><span>x₁·w₁:</span><b id="term1">0.000</b></div>
+          <div><span>x₂·w₂:</span><b id="term2">0.000</b></div>
+          <div><span>x₃·w₃:</span><b id="term3">0.000</b></div>
+        </div>
+        <div class="wire" aria-hidden="true"></div>
+        <div class="sum-node">
+          <span>סכום (Σ)</span>
+          <b id="machine-sum">0.000</b>
+        </div>
+        <div class="wire" aria-hidden="true"></div>
+        <div class="threshold-node">
+          <span>סף הפעלה (θ)</span>
+          <b id="machine-test">לא</b>
+        </div>
+        <div class="wire" aria-hidden="true"></div>
+        <div class="output-node">
+          <span>פלט (y)</span>
+          <b id="machine-output">-1</b>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Explainers -->
+    <section class="plain-language">
+      <article>
+        <span>01 / הקלט והמשקלים</span>
+        <h3>הכפלה וסכימה</h3>
+        <p>
+          הנוירון מכפיל כל רכיב של קלט (מיקום הנקודה) במשקל שלו. סכום המכפלות הללו מייצג את המיקום היחסי של הנקודה ביחס למשקלים.
+        </p>
+      </article>
+      <article>
+        <span>02 / סף ההפעלה</span>
+        <h3>החלטה בינארית</h3>
+        <p>
+          אם הסכום הכולל גדול או שווה לסף ההפעלה θ (המוגדר לעיתים כמינוס של ה-Bias), הנוירון יורה פלט של 1+ (ירוק). אחרת, הוא יורה 1- (אדום).
+        </p>
+      </article>
+      <article>
+        <span>03 / כלל העדכון</span>
+        <h3>למידה מהשגיאה</h3>
+        <p>
+          כאשר ישנה טעות בסיווג, משקלי הפרספטרון זזים בכיוון הנקודה שסווגה לא נכון. המטרה היא להניע את מישור ההחלטה עד שכל הנקודות יופרדו בצורה מושלמת.
+        </p>
+      </article>
+    </section>
+
+    <!-- Training log tape -->
+    <section class="training-tape">
+      <span class="kicker">סרט נייר / פלטים</span>
+      <h2>יומן אימון והודעות שגיאה</h2>
+      <ul id="training-log">
+        <li>מערכת מוכנה לפעולה. בחרו נקודה או לחצו על 'צעד אימון' כדי להתחיל.</li>
+      </ul>
+    </section>
+    <p class="screen-reader" id="live-description" aria-live="polite"></p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

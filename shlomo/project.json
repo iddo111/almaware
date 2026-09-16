@@ -1,0 +1,31 @@
+{
+  "project": "Project Shlomo",
+  "hebrew": "פרויקט שלמה",
+  "purpose": "Grounded learning of animal communication from synchronized perception, action, consequence, and response.",
+  "canonical_brain": {
+    "initialization": "random_weights",
+    "input_order": ["audio", "vision", "action", "consequence", "text_later_optional"],
+    "pretrained_llm_in_learning_loop": false
+  },
+  "prototypes": [
+    {
+      "id": "ant-farm",
+      "role": ["proto-yigael", "proto-eran", "proto-baby-cave"],
+      "path": "D:\\CLAUDE\\ant-farm"
+    },
+    {
+      "id": "alma-cat-feeder",
+      "role": ["cat-grounding-station"],
+      "status": "planned-from-prior-design"
+    },
+    {
+      "id": "bird-feeder",
+      "role": ["bird-grounding-station"],
+      "status": "planned-from-prior-design"
+    }
+  ],
+  "existing_learning_core": {
+    "path": "D:\\CLAUDE\\eran-audio",
+    "grounded_ah": "D:\\CLAUDE\\eran-audio\\grounded_ah"
+  }
+}

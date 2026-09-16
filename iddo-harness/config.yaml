@@ -1,0 +1,60 @@
+# Iddo Harness — runtime configuration (v3 Track A).
+#
+# This file holds *runtime* knobs only: pacing, concurrency, transports,
+# retries, metrics. Security policy (auto/confirm/block) stays in policy.yaml.
+#
+# Every value can be overridden by an environment variable — see
+# agent/config.py ENV_OVERRIDES. ENV wins over this file, this file wins
+# over the built-in defaults.
+
+poll_interval_seconds: 5
+max_concurrent_tasks: 3
+chunk_flush_ms: 500
+chunk_max_bytes: 16384
+
+ws:
+  # Off by default: the WebSocket bridge needs an open port (or a tunnel),
+  # which the git bridge deliberately avoids. Turn it on only when you want
+  # sub-second latency and are happy to expose 127.0.0.1:8477.
+  # 2026-09-06: back to false in this canonical copy. The bridge has not run
+  # since 2026-08-25, :8477 answers nothing, and a repo whose default opens a
+  # remote command channel is a broken window. Turn it on deliberately.
+  enabled: false
+  host: 127.0.0.1
+  port: 8477
+  # TOKEN ROTATED 2026-09-06 (ALMIDO Phase 2, defect #9). The bearer token that
+  # authorises arbitrary command execution used to be pinned here in plaintext
+  # and baked into harness-web/index.html. It now lives in a file with an
+  # iddo1-only ACL; ensure_ws_token() reads ws.token_path when ws.token is
+  # unset, and mints a fresh one if the file is missing. No copy of the value
+  # exists anywhere in this repo. The phone page must FETCH it, never bake it.
+  # Env override: HARNESS_WS_TOKEN.
+  token_path: D:\CLAUDE\iddo-harness\state\ws-token
+
+mcp:
+  # Informational only — agent/mcp_server.py does not read this flag; the
+  # adapter runs when it is launched. False keeps the repo default honest.
+  enabled: false
+  transport: stdio
+  sse_bind: 127.0.0.1
+  sse_port: 8478
+  bearer_token_env: HARNESS_MCP_TOKEN
+  # Static authenticated policy identity. MCP callers cannot override this.
+  agent_id: claude
+  allowed_tools:
+    - shell.run
+    - shell.stream
+    - fs.read
+    - fs.write
+    - fs.list
+    - fs.grep
+    - fs.glob
+    - process.list
+    - process.kill
+    - handshake
+
+retry:
+  default_max_attempts: 1
+
+metrics:
+  enabled: true

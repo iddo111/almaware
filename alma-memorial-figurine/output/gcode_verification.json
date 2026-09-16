@@ -1,0 +1,30 @@
+{
+  "file": "D:\\CLAUDE\\alma-memorial-figurine\\output\\ALMA_WELCOME_K2PLUS_0.12MM_PLA.gcode",
+  "bytes": 203468667,
+  "sha256": "387948d035b441cabeea83e7d9675eb18e705b284811d285a4ba4bf7135cd057",
+  "motion_lines": 4473097,
+  "layer_markers": 2258,
+  "support_motion_lines": 728260,
+  "motion_bounds_mm": {
+    "min": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.2
+    },
+    "max": {
+      "X": 291.907,
+      "Y": 299.383,
+      "Z": 271.44
+    }
+  },
+  "within_k2_plus_350mm_motion_bounds": true,
+  "metadata": {
+    "layers_header": "2258",
+    "max_z_header": "271.04",
+    "filament_mm": "146897.40",
+    "filament_cm3": "353.33",
+    "filament_g": "441.66",
+    "estimated_time": "1d 6h 41m 10s"
+  },
+  "pass": true
+}

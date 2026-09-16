@@ -1,0 +1,11 @@
+{
+ "files": 6154,
+ "bytes": 91917758,
+ "hits": [],
+ "big": [],
+ "verified": "2026-09-11T09:05",
+ "verifier": "claude-cli-FABLE-VERIFY",
+ "purged_by_verifier": 8,
+ "failures_added": 8,
+ "failure_entries": 180
+}

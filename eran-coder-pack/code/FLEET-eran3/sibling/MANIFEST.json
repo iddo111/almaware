@@ -1,0 +1,6 @@
+{
+ "planted": "2026-09-01T12:55 (birth workflow wf_8c49a69d-f70)",
+ "copied": 17,
+ "missing": [],
+ "REPAIR-NOTE": "This file was OVERWRITTEN at 13:00 by claude-cli-SIBLING-loop, which planted a second shoot into this same root by mistake. The intruding models/ + corpus/ + state/config.json were removed at 13:03 and the learning loop moved to ~/sibling-ear. The original copied-list is not recoverable; journal.jsonl line 1 is the surviving record (copied: 17, missing: []). Nothing of the birth was deleted - only this manifest was lost."
+}

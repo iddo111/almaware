@@ -1,0 +1,433 @@
+{
+  "schema_version": 1,
+  "lock_id": "alma-studio-assets-20260722-v1",
+  "generated_at": "2026-07-22T16:05:00+03:00",
+  "policy": {
+    "activation": "forbidden",
+    "allowed_nodes": ["dgx3", "dgx4"],
+    "download_origin": "https://huggingface.co",
+    "immutable_revisions_required": true,
+    "remote_code_execution": false,
+    "existing_environment_policy": "preserve-and-verify",
+    "lora_policy": "project-allowlist-only-exact-safetensors",
+    "completion_gate": "revision-file-set-bytes-hashes-license-and-mapping-verified"
+  },
+  "nodes": {
+    "dgx3": {
+      "ssh": "eran3@<lan-ip>",
+      "home": "/home/eran3",
+      "model_root": "/home/eran3/models/alma-studio",
+      "comfy_root": "/home/eran3/alma-studio/ComfyUI",
+      "receipt_root": "/home/eran3/alma-studio/bootstrap/receipts"
+    },
+    "dgx4": {
+      "ssh": "eran4@<lan-ip>",
+      "home": "/home/eran4",
+      "model_root": "/home/eran4/models/alma-studio",
+      "receipt_root": "/home/eran4/alma-studio/bootstrap/receipts"
+    }
+  },
+  "source_checkouts": [
+    {
+      "id": "comfyui",
+      "node": "dgx3",
+      "origin": "https://github.com/Comfy-Org/ComfyUI.git",
+      "commit": "947c2749dd04c51ef0e21b069544d8b0b4f9b411",
+      "destination": "/home/eran3/alma-studio/ComfyUI",
+      "license": "GPL-3.0",
+      "policy": "clone-or-verify-detached-exact-commit"
+    },
+    {
+      "id": "ace-step-runtime",
+      "node": "dgx4",
+      "origin": "https://github.com/ace-step/ACE-Step-1.5.git",
+      "commit": "6d467e4b5081ccb0abf1ec1bf4fdf9051a2d34b0",
+      "destination": "/home/eran4/alma-studio/ACE-Step-1.5",
+      "license": "Apache-2.0",
+      "policy": "clone-or-verify-detached-exact-commit"
+    },
+    {
+      "id": "blue-tts-runtime",
+      "node": "dgx4",
+      "origin": "https://github.com/maxmelichov/BlueTTS.git",
+      "commit": "f071b9100e15c24575f6e2919312f67057c7b589",
+      "destination": "/home/eran4/alma-studio/blue-tts",
+      "license": "MIT",
+      "policy": "clone-or-verify-detached-exact-commit"
+    }
+  ],
+  "runtime_bindings": [
+    {
+      "id": "ace-step-turbo-config-binding",
+      "node": "dgx4",
+      "source_checkout": "ace-step-runtime",
+      "source": "/home/eran4/alma-studio/ACE-Step-1.5/acestep/models/turbo/configuration_acestep_v15.py",
+      "destination": "/home/eran4/models/alma-studio/Ace-Step1.5/acestep-v15-turbo/configuration_acestep_v15.py",
+      "sha256": "5f15aa79fe793bba3c00b6992dd193a269954950603d5031ecd7703b0fa69da1",
+      "policy": "copy-if-missing-never-overwrite-never-execute"
+    },
+    {
+      "id": "ace-step-turbo-model-binding",
+      "node": "dgx4",
+      "source_checkout": "ace-step-runtime",
+      "source": "/home/eran4/alma-studio/ACE-Step-1.5/acestep/models/turbo/modeling_acestep_v15_turbo.py",
+      "destination": "/home/eran4/models/alma-studio/Ace-Step1.5/acestep-v15-turbo/modeling_acestep_v15_turbo.py",
+      "sha256": "71b22e01b490bd9e149e4c0c5da2e1f512126f3ab3316e0ae97779af84d19512",
+      "policy": "copy-if-missing-never-overwrite-never-execute"
+    }
+  ],
+  "environments": [
+    {
+      "id": "dgx3-visual-core",
+      "node": "dgx3",
+      "python": "/home/eran3/.venvs/alma-visual/bin/python",
+      "python_version": "3.12.3",
+      "policy": "preserve-and-verify",
+      "packages": {
+        "torch": "2.10.0+cu130",
+        "torchvision": "0.25.0+cu130",
+        "diffusers": "0.40.0.dev0",
+        "transformers": "5.14.1",
+        "huggingface-hub": "1.24.0",
+        "accelerate": "1.14.0",
+        "safetensors": "0.8.0",
+        "numpy": "2.4.4",
+        "imageio-ffmpeg": "0.6.0"
+      },
+      "vcs_packages": {
+        "diffusers": {
+          "origin": "https://github.com/huggingface/diffusers.git",
+          "commit": "6afdfd9f4e2e2381c5d5cced0dc4262e9e4267bd"
+        }
+      }
+    },
+    {
+      "id": "dgx3-comfy-overlay",
+      "node": "dgx3",
+      "python": "/home/eran3/.venvs/alma-flux-comfy/bin/python",
+      "python_version": "3.12.3",
+      "policy": "preserve-and-verify",
+      "inherits_pythonpath": "/home/eran3/.venvs/alma-visual/lib/python3.12/site-packages",
+      "packages": {
+        "comfyui-frontend-package": "1.45.21",
+        "comfy-kitchen": "0.2.22",
+        "numpy": "2.5.1",
+        "av": "18.0.0"
+      }
+    },
+    {
+      "id": "dgx4-ace-step",
+      "node": "dgx4",
+      "python": "/home/eran4/.venvs/alma-ace-step-cu130/bin/python",
+      "python_version": "3.12.3",
+      "policy": "preserve-and-verify",
+      "packages": {
+        "torch": "2.10.0+cu130",
+        "torchvision": "0.25.0+cu130",
+        "torchaudio": "2.10.0+cu130",
+        "diffusers": "0.37.1",
+        "transformers": "4.57.6",
+        "huggingface-hub": "0.36.0",
+        "accelerate": "1.12.0",
+        "safetensors": "0.7.0",
+        "numpy": "2.3.5",
+        "soundfile": "0.13.1",
+        "ace-step": "1.5.0"
+      }
+    },
+    {
+      "id": "dgx4-blue-onnx",
+      "node": "dgx4",
+      "python": "/home/eran4/.venvs/alma-blue-onnx-cpu/bin/python",
+      "python_version": "3.12.3",
+      "policy": "preserve-and-verify",
+      "packages": {
+        "huggingface-hub": "1.24.0",
+        "blue-onnx": "0.2.4",
+        "onnxruntime": "1.27.0",
+        "numpy": "2.5.1",
+        "soundfile": "0.14.0"
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "flux2-klein-fp8",
+      "kind": "hf_snapshot",
+      "enabled": true,
+      "node": "dgx3",
+      "repo_id": "black-forest-labs/FLUX.2-klein-4B-fp8",
+      "revision": "5b4408e59397a4a37ccb46afe426d8ed86379441",
+      "destination": "/home/eran3/models/alma-studio/FLUX.2-klein-4B-fp8",
+      "expected_files": 7,
+      "expected_bytes": 4079392379,
+      "license": {
+        "id": "Apache-2.0",
+        "url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-4B-fp8/blob/5b4408e59397a4a37ccb46afe426d8ed86379441/LICENSE.md",
+        "approval": "approved"
+      },
+      "critical_files": {
+        "flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6"
+      }
+    },
+    {
+      "id": "flux2-qwen-text-encoder",
+      "kind": "hf_file",
+      "enabled": true,
+      "node": "dgx3",
+      "repo_id": "Comfy-Org/z_image_turbo",
+      "revision": "d24c4cf2a0cd98a42f23467e27e3d76ee9438b8e",
+      "source_file": "split_files/text_encoders/qwen_3_4b.safetensors",
+      "destination": "/home/eran3/models/alma-studio/FLUX.2-klein-4B-comfy-runtime/split_files/text_encoders/qwen_3_4b.safetensors",
+      "expected_files": 1,
+      "expected_bytes": 8044982048,
+      "license": {
+        "id": "Apache-2.0",
+        "url": "https://huggingface.co/Comfy-Org/z_image_turbo",
+        "approval": "approved"
+      },
+      "critical_files": {
+        ".": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a"
+      }
+    },
+    {
+      "id": "flux2-vae",
+      "kind": "hf_file",
+      "enabled": true,
+      "node": "dgx3",
+      "repo_id": "Comfy-Org/flux2-dev",
+      "revision": "03d6521e6f6a47396b3f951cbea50f7e6c2f482e",
+      "source_file": "split_files/vae/flux2-vae.safetensors",
+      "destination": "/home/eran3/models/alma-studio/FLUX.2-klein-4B-comfy-runtime/split_files/vae/flux2-vae.safetensors",
+      "expected_files": 1,
+      "expected_bytes": 336213556,
+      "license": {
+        "id": "Apache-2.0",
+        "url": "https://huggingface.co/Comfy-Org/flux2-dev",
+        "approval": "approved"
+      },
+      "critical_files": {
+        ".": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+      }
+    },
+    {
+      "id": "qwen-image-2512",
+      "kind": "hf_snapshot",
+      "enabled": true,
+      "node": "dgx3",
+      "repo_id": "Qwen/Qwen-Image-2512",
+      "revision": "25468b98e3276ca6700de15c6628e51b7de54a26",
+      "destination": "/home/eran3/models/alma-studio/Qwen-Image-2512",
+      "expected_files": 30,
+      "expected_bytes": 57704595735,
+      "license": {
+        "id": "Apache-2.0",
+        "url": "https://huggingface.co/Qwen/Qwen-Image-2512/blob/25468b98e3276ca6700de15c6628e51b7de54a26/LICENSE",
+        "approval": "approved"
+      },
+      "critical_files": {}
+    },
+    {
+      "id": "ltx-2.3",
+      "kind": "hf_snapshot",
+      "enabled": true,
+      "node": "dgx3",
+      "repo_id": "Lightricks/LTX-2.3",
+      "revision": "4229404625088d21c4f112eb640fb04a0900ee25",
+      "destination": "/home/eran3/models/alma-studio/LTX-2.3",
+      "expected_files": 13,
+      "expected_bytes": 157004895857,
+      "verification_manifest_sha256": "cf158300a8c7827f9d9d70b663574a8ac15571a3d5f88d53da276fb038433ffc",
+      "license": {
+        "id": "LTX-2-Community-License",
+        "url": "https://huggingface.co/Lightricks/LTX-2.3/blob/4229404625088d21c4f112eb640fb04a0900ee25/LICENSE",
+        "approval": "manual-for-new-download",
+        "receipt_id": "ltx-2.3-license-acceptance"
+      },
+      "critical_files": {}
+    },
+    {
+      "id": "wan2.2-ti2v-5b",
+      "kind": "hf_snapshot",
+      "enabled": true,
+      "node": "dgx3",
+      "repo_id": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "revision": "b8fff7315c768468a5333511427288870b2e9635",
+      "destination": "/home/eran3/models/alma-studio/Wan2.2-TI2V-5B-Diffusers",
+      "expected_files": 29,
+      "expected_bytes": 34203021834,
+      "license": {
+        "id": "Apache-2.0",
+        "url": "https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B-Diffusers/blob/b8fff7315c768468a5333511427288870b2e9635/LICENSE.txt",
+        "approval": "approved"
+      },
+      "critical_files": {}
+    },
+    {
+      "id": "wan2.2-i2v-a14b",
+      "kind": "hf_snapshot",
+      "enabled": true,
+      "node": "dgx3",
+      "repo_id": "Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "revision": "596658fd9ca6b7b71d5057529bbf319ecbc61d74",
+      "destination": "/home/eran3/models/alma-studio/Wan2.2-I2V-A14B-Diffusers",
+      "expected_files": 50,
+      "expected_bytes": 126204155463,
+      "verification_manifest_sha256": "4ec7365bae3a30570e073c40ef3314d7c4d1c13c84be3f6af826028194ea95ad",
+      "license": {
+        "id": "Apache-2.0",
+        "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/blob/596658fd9ca6b7b71d5057529bbf319ecbc61d74/LICENSE.txt",
+        "approval": "approved"
+      },
+      "critical_files": {}
+    },
+    {
+      "id": "ace-step-1.5",
+      "kind": "hf_snapshot",
+      "enabled": true,
+      "node": "dgx4",
+      "repo_id": "ACE-Step/Ace-Step1.5",
+      "revision": "19671f406d603126926c1b7e2adc169acbcade22",
+      "destination": "/home/eran4/models/alma-studio/Ace-Step1.5",
+      "expected_files": 26,
+      "expected_bytes": 10091993427,
+      "exclude_globs": ["*.py", "**/*.py"],
+      "license": {
+        "id": "MIT",
+        "url": "https://huggingface.co/ACE-Step/Ace-Step1.5",
+        "approval": "approved"
+      },
+      "critical_files": {},
+      "download_note": "Model-repository Python is excluded from the locked model asset and never executed. Runtime code comes from the separately pinned Git checkout."
+    },
+    {
+      "id": "blue-onnx-v2",
+      "kind": "hf_snapshot",
+      "enabled": true,
+      "node": "dgx4",
+      "repo_id": "notmax123/blue-onnx-v2",
+      "revision": "45dc85f1ac045ea62458a7492c5ae387610ac0af",
+      "destination": "/home/eran4/models/alma-studio/blue-onnx-v2",
+      "expected_files": 13,
+      "expected_bytes": 390619119,
+      "license": {
+        "id": "MIT",
+        "url": "https://huggingface.co/notmax123/blue-onnx-v2",
+        "approval": "approved"
+      },
+      "critical_files": {
+        "duration_predictor.onnx": "1fb897a3f1c5f4132ffba3e56c5792f8c03783e2f478d825774514da668af161",
+        "text_encoder.onnx": "9f80f87093067ee2300343133b0456e36d705eea31f523f9d3dc9f4c5e212db1",
+        "vector_estimator.onnx": "8c333ef2eb0c075136384eaa9608a374230f1b26e8181097467b803078095a5a",
+        "vocoder.onnx": "f4fbb6f60dec035cd8071883e021ac2cd3eee62630e42174492fd2d1f39976db",
+        "tts.json": "9afc8622ee9a40adff8befdc6bdfcb3c008f8caed9750febe870e53f47a73a0a",
+        "vocab.json": "9c5ce360977b8b70423a782519bc067681863aae54768105e5aa0fed9f02520d",
+        "voices/female1.json": "22e6c98210ca014cfd40bd485152a58c49bfff32265faff8c1c47cb4d60e1872"
+      }
+    },
+    {
+      "id": "renikud-hebrew-g2p",
+      "kind": "hf_snapshot",
+      "enabled": true,
+      "node": "dgx4",
+      "repo_id": "thewh1teagle/renikud",
+      "revision": "b80cab616c972b6a87de86044f50b597ee2c53fd",
+      "destination": "/home/eran4/models/alma-studio/renikud",
+      "expected_files": 2,
+      "expected_bytes": 20621453,
+      "include_files": ["README.md", "model.onnx"],
+      "license": {
+        "id": "CC-BY-4.0",
+        "url": "https://huggingface.co/thewh1teagle/renikud",
+        "approval": "approved-with-attribution"
+      },
+      "critical_files": {
+        "model.onnx": "8b881a3a8f00283d86c6d1feea44d37e09c1ea6609a4de7d820d937e7f3dbbca"
+      }
+    }
+  ],
+  "comfy_links": [
+    {
+      "id": "flux2-transformer",
+      "node": "dgx3",
+      "source": "/home/eran3/models/alma-studio/FLUX.2-klein-4B-fp8/flux-2-klein-4b-fp8.safetensors",
+      "destination": "/home/eran3/alma-studio/ComfyUI/models/diffusion_models/flux-2-klein-4b-fp8.safetensors"
+    },
+    {
+      "id": "flux2-text-encoder",
+      "node": "dgx3",
+      "source": "/home/eran3/models/alma-studio/FLUX.2-klein-4B-comfy-runtime/split_files/text_encoders/qwen_3_4b.safetensors",
+      "destination": "/home/eran3/alma-studio/ComfyUI/models/text_encoders/qwen_3_4b.safetensors"
+    },
+    {
+      "id": "flux2-vae-link",
+      "node": "dgx3",
+      "source": "/home/eran3/models/alma-studio/FLUX.2-klein-4B-comfy-runtime/split_files/vae/flux2-vae.safetensors",
+      "destination": "/home/eran3/alma-studio/ComfyUI/models/vae/flux2-vae.safetensors"
+    },
+    {
+      "id": "qwen-image-diffusers",
+      "node": "dgx3",
+      "source": "/home/eran3/models/alma-studio/Qwen-Image-2512",
+      "destination": "/home/eran3/alma-studio/ComfyUI/models/diffusers/Qwen-Image-2512"
+    },
+    {
+      "id": "wan-ti2v-diffusers",
+      "node": "dgx3",
+      "source": "/home/eran3/models/alma-studio/Wan2.2-TI2V-5B-Diffusers",
+      "destination": "/home/eran3/alma-studio/ComfyUI/models/diffusers/Wan2.2-TI2V-5B-Diffusers"
+    },
+    {
+      "id": "wan-i2v-diffusers",
+      "node": "dgx3",
+      "source": "/home/eran3/models/alma-studio/Wan2.2-I2V-A14B-Diffusers",
+      "destination": "/home/eran3/alma-studio/ComfyUI/models/diffusers/Wan2.2-I2V-A14B-Diffusers"
+    },
+    {
+      "id": "ltx-dev-model",
+      "node": "dgx3",
+      "source": "/home/eran3/models/alma-studio/LTX-2.3/ltx-2.3-22b-dev.safetensors",
+      "destination": "/home/eran3/alma-studio/ComfyUI/models/diffusion_models/ltx-2.3-22b-dev.safetensors"
+    },
+    {
+      "id": "ltx-distilled-model",
+      "node": "dgx3",
+      "source": "/home/eran3/models/alma-studio/LTX-2.3/ltx-2.3-22b-distilled.safetensors",
+      "destination": "/home/eran3/alma-studio/ComfyUI/models/diffusion_models/ltx-2.3-22b-distilled.safetensors"
+    },
+    {
+      "id": "ltx-distilled-lora",
+      "node": "dgx3",
+      "source": "/home/eran3/models/alma-studio/LTX-2.3/ltx-2.3-22b-distilled-lora-384.safetensors",
+      "destination": "/home/eran3/alma-studio/ComfyUI/models/loras/ltx-2.3-22b-distilled-lora-384.safetensors"
+    },
+    {
+      "id": "ltx-spatial-upscaler",
+      "node": "dgx3",
+      "source": "/home/eran3/models/alma-studio/LTX-2.3/ltx-2.3-spatial-upscaler-x2-1.1.safetensors",
+      "destination": "/home/eran3/alma-studio/ComfyUI/models/latent_upscale_models/ltx-2.3-spatial-upscaler-x2-1.1.safetensors"
+    },
+    {
+      "id": "ltx-temporal-upscaler",
+      "node": "dgx3",
+      "source": "/home/eran3/models/alma-studio/LTX-2.3/ltx-2.3-temporal-upscaler-x2-1.0.safetensors",
+      "destination": "/home/eran3/alma-studio/ComfyUI/models/latent_upscale_models/ltx-2.3-temporal-upscaler-x2-1.0.safetensors"
+    }
+  ],
+  "system_tools": [
+    {
+      "id": "dgx4-ffmpeg",
+      "node": "dgx4",
+      "path": "/usr/bin/ffmpeg",
+      "version_contains": "ffmpeg version 6.1.1",
+      "required_features": ["libx265", "hevc_nvenc", "zscale"]
+    },
+    {
+      "id": "dgx4-ffprobe",
+      "node": "dgx4",
+      "path": "/usr/bin/ffprobe",
+      "version_contains": "ffprobe version 6.1.1",
+      "required_features": []
+    }
+  ]
+}

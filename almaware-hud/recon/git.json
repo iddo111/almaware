@@ -1,0 +1,154 @@
+{
+  "generated_at_utc": "2026-07-11T13:07:00Z",
+  "cwd": "D:\\CLAUDE",
+  "branch": "swarm/alma-language-4",
+  "main_branch": "main",
+  "commits_ahead_of_main": null,
+  "counts": {
+    "modified_unstaged": 7,
+    "staged": 0,
+    "submodule_dirty": 1,
+    "untracked": 1476,
+    "total_status_entries": 1484,
+    "stderr_warnings": 4
+  },
+  "recent_commits": [
+    { "sha": "3558b95", "subject": "grid-dashboard: reservoir training layer — linear readout learns to classify drive waveform from the 6 channels" },
+    { "sha": "a925099", "subject": "shisha-lab: 3x3 thermal-memristor grid dashboard + one-MOSFET crossbar build" },
+    { "sha": "508a4f3", "subject": "shisha-lab: 9-memristor crossbar + sound-card multiplexing build (sound-card-only, user's parts)" },
+    { "sha": "42b4732", "subject": "perceptron3d: historically-accurate bright Mark I Perceptron viz + deploy" },
+    { "sha": "8b232da", "subject": "alma-language: perceptron3d — real perceptron learning in 3D with rotating pot-weights" },
+    { "sha": "a006277", "subject": "shisha-lab: ALMA Perceptron (Mark I) build — photodiode retina + servo-driven physical weights" },
+    { "sha": "48e2c21", "subject": "crossbar3d: deploy to func.iddoperez.ai (Cloudflare Workers static-assets)" },
+    { "sha": "51d98ab", "subject": "shisha-lab: full JLCPCB crossbar board plan + layout" },
+    { "sha": "b419569", "subject": "alma-language: crossbar3d — 3D memristor array learning in real time" },
+    { "sha": "93bc803", "subject": "shisha-lab: 4-stage build ladder PDF (sound-card-only, no Red Pitaya)" },
+    { "sha": "31c43f8", "subject": "shisha-lab: full bench build PDF + sound-card FDM tx/rx reader" },
+    { "sha": "19d0bee", "subject": "shisha-lab: Experiment B — real FDM/AM-FM/mixing rig on a 9-memristor array" },
+    { "sha": "5d481f2", "subject": "shisha-lab: Experiment A — 3x3 12V bulb grid as analog neuron/weight grid" },
+    { "sha": "fc9cd94", "subject": "alma-talmud: first working slice — 2D living daf of שניים אוחזין בטלית" },
+    { "sha": "a288896", "subject": "housekeeping: archive dated one-off status/report docs" },
+    { "sha": "6575d15", "subject": "wip: accumulation 07-04→07-07 (alma-language, meta-selector, voice-input, eran-audio, firmware)" },
+    { "sha": "27f0227", "subject": "alma-language: harden JSON loading with WeaveError on malformed input" },
+    { "sha": "ea234f0", "subject": "alma-meta-selector: add contract-locking test suite" },
+    { "sha": "05ddc38", "subject": "alma-iff: add test_counter_beyond_window_rejected" },
+    { "sha": "4f11086", "subject": "alma-compress: add fast losslessness regression guard" }
+  ],
+  "worktrees": [
+    { "path": "D:/CLAUDE", "commit": "3558b95", "branch": "swarm/alma-language-4", "role": "primary" },
+    { "path": "C:/Users/<user>/.grok/worktrees/claude/2026-07-02-e4787b3c", "commit": "0c10271", "branch": "(detached HEAD)" },
+    { "path": "C:/Users/<user>/AppData/Local/Temp/iff-verify", "commit": "d747639", "branch": "swarm/alma-iff-3" },
+    { "path": "D:/CLAUDE/.claude/worktrees/dreamy-robinson-d29c66", "commit": "5f76ba2", "branch": "(detached HEAD)" },
+    { "path": "D:/CLAUDE/.claude/worktrees/fresh-20260704", "commit": "0c10271", "branch": "claude/fresh-20260704" },
+    { "path": "D:/CLAUDE/.claude/worktrees/fresh-start", "commit": "dd8fa72", "branch": "fresh-start" },
+    { "path": "D:/CLAUDE/.claude/worktrees/laughing-mendeleev-6d303d", "commit": "090ff59", "branch": "(detached HEAD)" },
+    { "path": "D:/CLAUDE/.claude/worktrees/nostalgic-gates-b1935a", "commit": "6575d15", "branch": "claude/nostalgic-gates-b1935a" },
+    { "path": "D:/CLAUDE/.claude/worktrees/wf_4df10cda-309-21", "commit": "b9c1d87", "branch": "swarm/alma-meta-selector-5" }
+  ],
+  "modified_files": [
+    {
+      "path": ".claude/launch.json",
+      "diff_summary": "+13 -1 — moved eran-voice to archive/eran-voice/, added shisha-grid9-3d (:4321) and eran-babble-audio (:8784) launch configs",
+      "critical": false,
+      "recommend": "commit"
+    },
+    {
+      "path": "alma-govern/fleet_health_check.sh",
+      "diff_summary": "eran4 hard IP <lan-ip> replaced with SSH alias 'eran4' (DHCP-drift-proof; noted .12 stale, now .163)",
+      "critical": true,
+      "recommend": "commit — health-check was pointing at a stale IP"
+    },
+    {
+      "path": "alma-language/crossbar3d/index.html",
+      "diff_summary": "+2 SEO/theme meta tags (description, color-scheme dark)",
+      "critical": false,
+      "recommend": "commit"
+    },
+    {
+      "path": "alma-language/perceptron3d/index.html",
+      "diff_summary": "+2 SEO/theme meta tags (description, color-scheme light)",
+      "critical": false,
+      "recommend": "commit"
+    },
+    {
+      "path": "almaware-standard-site-en/index.html",
+      "diff_summary": "Fixed broken HTML: raw double-quote inside meta description now &quot; escaped",
+      "critical": true,
+      "recommend": "commit — was actual malformed HTML"
+    },
+    {
+      "path": "eran-audio/config.json",
+      "diff_summary": "listen.temperature 0.95→0.65, top_k 100→30 (tighter sampling)",
+      "critical": false,
+      "recommend": "review with Iddo — this is a live tuning knob for Eran; only commit if he agrees the values stick"
+    },
+    {
+      "path": "lora-mesh/sent/m1.txt",
+      "diff_summary": "Rewritten sent-message payload (Hebrew hello → 'clod online. send me a msg')",
+      "critical": false,
+      "recommend": "leave — sent/ is a runtime artifact log, not code; committing overwrites history of what was actually sent"
+    },
+    {
+      "path": "dispatch-fix (submodule)",
+      "diff_summary": "Submodule marked dirty (uncommitted internal changes)",
+      "critical": false,
+      "recommend": "inspect inside submodule, not from parent"
+    }
+  ],
+  "session_deliverables": [
+    {
+      "path": "almaware-hud/",
+      "contents": ["hud.py", "recon/ (this task's output)", "__pycache__/"],
+      "status": "in-flight — actively receiving recon output from THIS session",
+      "recommend": "do NOT commit yet — wait until the recon workflow finishes and Iddo sees the HUD run"
+    },
+    {
+      "path": "perceptron-movie/",
+      "contents": ["GROK_IMAGINE_PROMPTS.md", "script.md", "audio/", "clips/", "music/", "photos/", "render/", "scenes/", "subs/"],
+      "status": "WIP creative — script + prompts committed as text, plus asset folders (may be large binaries)",
+      "recommend": "commit script.md + GROK_IMAGINE_PROMPTS.md only. Verify size of render/ music/ clips/ before adding binaries — likely belongs in .gitignore or LFS, not the repo."
+    },
+    {
+      "path": "alma-language/memristor-pedal/",
+      "contents": ["index.html (12 KB, standalone)"],
+      "status": "single self-contained page in the ALMA Language weave",
+      "recommend": "commit — fits the alma-language pattern of small standalone weaves (crossbar3d, perceptron3d)"
+    },
+    {
+      "path": "grok-coder/",
+      "contents": ["grok1_tk.py (Tk launcher)", "grok_coder.html", "Grok-1 Coder.url (desktop shortcut)"],
+      "status": "small, appears complete",
+      "recommend": "commit — matches the 'Grok-1 Private Stack' memory line (launcher for Grok stack)"
+    },
+    {
+      "path": "grok1_shim.py",
+      "contents": ["shim script (with .bak-20260711 backup alongside)"],
+      "status": "loose shim script at repo root",
+      "recommend": "commit grok1_shim.py + start_grok1_shim.cmd. Do NOT commit grok1_shim.py.bak-20260711 — backups belong in .gitignore."
+    }
+  ],
+  "recommendations": {
+    "commit_now_high_confidence": [
+      "alma-govern/fleet_health_check.sh (stale-IP fix)",
+      "almaware-standard-site-en/index.html (broken HTML fix)",
+      ".claude/launch.json (new launch configs)",
+      "alma-language/crossbar3d/index.html + alma-language/perceptron3d/index.html (SEO meta tags)",
+      "alma-language/memristor-pedal/",
+      "grok-coder/",
+      "grok1_shim.py + start_grok1_shim.cmd",
+      "perceptron-movie/script.md + perceptron-movie/GROK_IMAGINE_PROMPTS.md"
+    ],
+    "hold": [
+      "almaware-hud/ — this session's own output, not stable yet",
+      "eran-audio/config.json — live tuning, confirm with Iddo",
+      "lora-mesh/sent/m1.txt — runtime log, not source",
+      "perceptron-movie/{audio,clips,music,photos,render,scenes,subs}/ — likely binaries; audit sizes first"
+    ],
+    "gitignore": [
+      "grok1_shim.py.bak-20260711 and any *.bak-YYYYMMDD pattern",
+      "almaware-hud/__pycache__/",
+      "1476 untracked entries at repo root is unhealthy — a full pass of the top-level .gitignore is overdue"
+    ],
+    "honest_bottom_line": "The tree is not in a shippable state — 1,476 untracked files at the workspace root means the repo has drifted into a scratchpad. Small correctness fixes (fleet_health_check.sh, almaware-standard-site-en) should land as their own tight commit today so they're not lost. Session deliverables (memristor-pedal, grok-coder, grok1_shim, perceptron-movie text) can go in a second commit. Everything else — especially perceptron-movie binaries and almaware-hud — should wait. Do NOT run 'git add -A'."
+  }
+}

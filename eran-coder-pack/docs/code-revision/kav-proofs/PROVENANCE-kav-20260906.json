@@ -1,0 +1,85 @@
+{
+  "what": "KAV code revision of 2026-09-06 (Iddo's 11:47 order), and the provenance the 2026-09-05 body of work never had",
+  "why": "KAV-16: joiner.py, ruler.py and tests/test_joiner.py were modified and UNCOMMITTED; the last commit touching them was 39d9b8968 (2026-09-03, 'KAV is rebuilt on vertex indices'). The fold, the grove, measure_join_wide, measure_join_narrow and the whole GATE2_DECISION_20260905 record existed only on disk. There was no provenance for the numbers Iddo's memory now cites. This file is that provenance, kept OUTSIDE the git working tree, because at the hour of this revision two `git checkout HEAD -- .` processes were queued on D:\\CLAUDE behind a 50-minute-old .git/index.lock and either of them would have discarded every uncommitted change in the repository.",
+  "recorded_at": "2026-09-06T18:19:35",
+  "files": {
+    "joiner.py": {
+      "sha256": "31e5a68f12dff462ab5dd733a808abef79c54e99e2d496a9d8dafeab5c5818cd",
+      "bytes": 54640,
+      "before_this_revision": {
+        "sha256": "857538769030e802bfa0fe7a87d054a8872b2b3a22db94a0f84a91fe9e7f31a3",
+        "bytes": 51801,
+        "note": "the 2026-09-05 state, uncommitted"
+      }
+    },
+    "ruler.py": {
+      "sha256": "383d45a576abe4a19ffc0b381babb5feedb9ad28e62ba2d85bb32b8c10c33362",
+      "bytes": 38200,
+      "before_this_revision": {
+        "sha256": "55a3b43416aa304a982e014de5987c243e0f81d01299a2d0db991b281b0a2a87",
+        "bytes": 20702,
+        "note": "the 2026-09-05 state, uncommitted"
+      }
+    },
+    "tests/test_joiner.py": {
+      "sha256": "a56ca56cea0952610c4614989dfc23df9b880c033adfc73ecef8386a2077c38f",
+      "bytes": 23616,
+      "before_this_revision": {
+        "sha256": "9df4531938276706ccafa6e69cd2b8161263c10a92746a3d0753b47566459783",
+        "bytes": 19377,
+        "note": "the 2026-09-05 state, uncommitted"
+      }
+    },
+    "learn.py": {
+      "sha256": "a5265dad8444270f36d78a0b6aac89a5197de996f014a9834def953d6129adcc",
+      "bytes": 5893,
+      "before_this_revision": {
+        "sha256": "5750fac0ce62891b8137e3613d57882bb90aae37e54ed66bb6668c7aca06476c",
+        "bytes": 2503,
+        "note": "the 2026-09-05 state, uncommitted"
+      }
+    },
+    "mesh.py": {
+      "sha256": "62685aed4affe4d8f9a666de5115ac40680833f423db82cbae9d3affae82773d",
+      "bytes": 16879,
+      "before_this_revision": {
+        "sha256": "93668730ee2c3930f11b638315da81f0d925a9c3233d58bf560fa995e2fb83a7",
+        "bytes": 16286,
+        "note": "the 2026-09-05 state, uncommitted"
+      }
+    },
+    "tests/test_organ.py": {
+      "sha256": "a8d8298838269b5fc4754c5a2c05c77229d9077f2b5a3b441a1582aec8ac6e60",
+      "bytes": 10272,
+      "before_this_revision": {
+        "sha256": "337a5e599530f021ccb00d1d5f30590ed8e68c9b1445aa66bae1244fec7cf196",
+        "bytes": 8030,
+        "note": "the 2026-09-05 state, uncommitted"
+      }
+    }
+  },
+  "wide_table": {
+    "how": "ruler.measure_join_wide(columns=('FOLD_GROVE','FLOOR_mirror')) — leave-one-SHAPE-out over the 19 clean solids, 271 questions, seed 0.25",
+    "measured_at": "2026-09-06, PC, BelowNormal, 80.1 s",
+    "solids": 19,
+    "questions": 271,
+    "beyond_reach": 0,
+    "accuracy": {
+      "FOLD_GROVE": 0.8339,
+      "FLOOR_mirror": 0.5867
+    },
+    "right_solids": {
+      "FOLD_GROVE": 13,
+      "FLOOR_mirror": 8
+    },
+    "note": "reproduces the 2026-09-05 record EXACTLY to four decimals, after this revision's changes to joiner.score (beyond-reach counted), joiner.fit_line (question-gated phases), joiner.intact_only (raises), learn.fit (one shape one vote) and ruler (floors, gate 3). Nothing in the revision moved the number the ruling rests on."
+  },
+  "gates_after_the_revision": {
+    "gate 1 (coordinates)": "FAILED — honestly, for the first time. seen KAV 0.0601 vs a constant 0.2093; sealed 0.0167 vs 0.0558. It still wins on mean absolute error (19.31 of 127 vs 22.19).",
+    "gate 1b (joining)": "PASSED from one face (KAV 0.6122 vs mirror 0.5714) — and NOT passed from the start gate 2 actually climbs from (0.5208 vs pmirror/close 0.5625). Both printed now (KAV-03).",
+    "gate 2 (solid)": "FAILED 1/3 — plate closed; drum8 and stack were CUT OFF at the budget with 4 and 7 edges still on the front (KAV-08).",
+    "gate 3 (composed)": "FAILED 0/3 — asked for the first time (KAV-02)."
+  },
+  "committed": false,
+  "note": "NOT committed: .git/index.lock was held by another agent's `git add -A -- .` (pid 33608, since 16:46:59) with two `git checkout HEAD -- .` queued behind it. Committing under that lock was not attempted; the content is preserved here instead."
+}

@@ -1,0 +1,1289 @@
+{
+ "built_by": "proof/make_words.py",
+ "honest_note": "SYNTHETIC WORDS. food/words did not exist on the PC mirror, so these were BUILT by concatenating real DEV-split syllable recordings from food/train (tokens school.py never serves) with a 20 ms crossfade. Constituents are exact by construction. They are NOT naturally spoken words: no coarticulation, no cross-syllable prosody. This is an EASIER test than real speech. The 96 wavs are all distinct, but they are built from only 62 distinct syllable recordings (the dev pool is 1-6 tokens per class), so the effective sample is smaller than the file count.",
+ "sample_rate": 16000,
+ "crossfade_ms": 20,
+ "words": {
+  "daga_w00_0.wav": {
+   "word": "daga",
+   "take": 0,
+   "syllables": [
+    "da",
+    "ga"
+   ],
+   "tokens": [
+    "da_t00_0.wav",
+    "ga_t00_0.wav"
+   ]
+  },
+  "daga_w01_0.wav": {
+   "word": "daga",
+   "take": 1,
+   "syllables": [
+    "da",
+    "ga"
+   ],
+   "tokens": [
+    "da_t00_1.wav",
+    "ga_t00_0.wav"
+   ]
+  },
+  "daga_w02_0.wav": {
+   "word": "daga",
+   "take": 2,
+   "syllables": [
+    "da",
+    "ga"
+   ],
+   "tokens": [
+    "da_t00_2.wav",
+    "ga_t00_0.wav"
+   ]
+  },
+  "daga_w03_0.wav": {
+   "word": "daga",
+   "take": 3,
+   "syllables": [
+    "da",
+    "ga"
+   ],
+   "tokens": [
+    "da_t00_0.wav",
+    "ga_t00_1.wav"
+   ]
+  },
+  "daga_w04_0.wav": {
+   "word": "daga",
+   "take": 4,
+   "syllables": [
+    "da",
+    "ga"
+   ],
+   "tokens": [
+    "da_t00_1.wav",
+    "ga_t00_1.wav"
+   ]
+  },
+  "daga_w05_0.wav": {
+   "word": "daga",
+   "take": 5,
+   "syllables": [
+    "da",
+    "ga"
+   ],
+   "tokens": [
+    "da_t00_2.wav",
+    "ga_t00_1.wav"
+   ]
+  },
+  "daga_w06_0.wav": {
+   "word": "daga",
+   "take": 6,
+   "syllables": [
+    "da",
+    "ga"
+   ],
+   "tokens": [
+    "da_t00_0.wav",
+    "ga_t00_2.wav"
+   ]
+  },
+  "daga_w07_0.wav": {
+   "word": "daga",
+   "take": 7,
+   "syllables": [
+    "da",
+    "ga"
+   ],
+   "tokens": [
+    "da_t00_1.wav",
+    "ga_t00_2.wav"
+   ]
+  },
+  "gamala_w00_0.wav": {
+   "word": "gamala",
+   "take": 0,
+   "syllables": [
+    "ga",
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ga_t00_0.wav",
+    "ma_t00_0.wav",
+    "la_t00_0.wav"
+   ]
+  },
+  "gamala_w01_0.wav": {
+   "word": "gamala",
+   "take": 1,
+   "syllables": [
+    "ga",
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ga_t00_1.wav",
+    "ma_t00_0.wav",
+    "la_t00_0.wav"
+   ]
+  },
+  "gamala_w02_0.wav": {
+   "word": "gamala",
+   "take": 2,
+   "syllables": [
+    "ga",
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ga_t00_2.wav",
+    "ma_t00_0.wav",
+    "la_t00_0.wav"
+   ]
+  },
+  "gamala_w03_0.wav": {
+   "word": "gamala",
+   "take": 3,
+   "syllables": [
+    "ga",
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ga_t00_0.wav",
+    "ma_t00_1.wav",
+    "la_t00_0.wav"
+   ]
+  },
+  "gamala_w04_0.wav": {
+   "word": "gamala",
+   "take": 4,
+   "syllables": [
+    "ga",
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ga_t00_1.wav",
+    "ma_t00_1.wav",
+    "la_t00_0.wav"
+   ]
+  },
+  "gamala_w05_0.wav": {
+   "word": "gamala",
+   "take": 5,
+   "syllables": [
+    "ga",
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ga_t00_2.wav",
+    "ma_t00_1.wav",
+    "la_t00_0.wav"
+   ]
+  },
+  "gamala_w06_0.wav": {
+   "word": "gamala",
+   "take": 6,
+   "syllables": [
+    "ga",
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ga_t00_0.wav",
+    "ma_t00_2.wav",
+    "la_t00_0.wav"
+   ]
+  },
+  "gamala_w07_0.wav": {
+   "word": "gamala",
+   "take": 7,
+   "syllables": [
+    "ga",
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ga_t00_1.wav",
+    "ma_t00_2.wav",
+    "la_t00_0.wav"
+   ]
+  },
+  "kara_w00_0.wav": {
+   "word": "kara",
+   "take": 0,
+   "syllables": [
+    "ka",
+    "ra"
+   ],
+   "tokens": [
+    "ka_t00_0.wav",
+    "ra_t00_0.wav"
+   ]
+  },
+  "kara_w01_0.wav": {
+   "word": "kara",
+   "take": 1,
+   "syllables": [
+    "ka",
+    "ra"
+   ],
+   "tokens": [
+    "ka_t00_1.wav",
+    "ra_t00_0.wav"
+   ]
+  },
+  "kara_w02_0.wav": {
+   "word": "kara",
+   "take": 2,
+   "syllables": [
+    "ka",
+    "ra"
+   ],
+   "tokens": [
+    "ka_t00_2.wav",
+    "ra_t00_0.wav"
+   ]
+  },
+  "kara_w03_0.wav": {
+   "word": "kara",
+   "take": 3,
+   "syllables": [
+    "ka",
+    "ra"
+   ],
+   "tokens": [
+    "ka_t00_0.wav",
+    "ra_t00_1.wav"
+   ]
+  },
+  "kara_w04_0.wav": {
+   "word": "kara",
+   "take": 4,
+   "syllables": [
+    "ka",
+    "ra"
+   ],
+   "tokens": [
+    "ka_t00_1.wav",
+    "ra_t00_1.wav"
+   ]
+  },
+  "kara_w05_0.wav": {
+   "word": "kara",
+   "take": 5,
+   "syllables": [
+    "ka",
+    "ra"
+   ],
+   "tokens": [
+    "ka_t00_2.wav",
+    "ra_t00_1.wav"
+   ]
+  },
+  "kara_w06_0.wav": {
+   "word": "kara",
+   "take": 6,
+   "syllables": [
+    "ka",
+    "ra"
+   ],
+   "tokens": [
+    "ka_t00_0.wav",
+    "ra_t00_2.wav"
+   ]
+  },
+  "kara_w07_0.wav": {
+   "word": "kara",
+   "take": 7,
+   "syllables": [
+    "ka",
+    "ra"
+   ],
+   "tokens": [
+    "ka_t00_1.wav",
+    "ra_t00_2.wav"
+   ]
+  },
+  "khatapa_w00_0.wav": {
+   "word": "khatapa",
+   "take": 0,
+   "syllables": [
+    "kha",
+    "ta",
+    "pa"
+   ],
+   "tokens": [
+    "kha_t00_0.wav",
+    "ta_t00_0.wav",
+    "pa_t00_0.wav"
+   ]
+  },
+  "khatapa_w01_0.wav": {
+   "word": "khatapa",
+   "take": 1,
+   "syllables": [
+    "kha",
+    "ta",
+    "pa"
+   ],
+   "tokens": [
+    "kha_t00_1.wav",
+    "ta_t00_0.wav",
+    "pa_t00_0.wav"
+   ]
+  },
+  "khatapa_w02_0.wav": {
+   "word": "khatapa",
+   "take": 2,
+   "syllables": [
+    "kha",
+    "ta",
+    "pa"
+   ],
+   "tokens": [
+    "kha_t00_2.wav",
+    "ta_t00_0.wav",
+    "pa_t00_0.wav"
+   ]
+  },
+  "khatapa_w03_0.wav": {
+   "word": "khatapa",
+   "take": 3,
+   "syllables": [
+    "kha",
+    "ta",
+    "pa"
+   ],
+   "tokens": [
+    "kha_t00_0.wav",
+    "ta_t00_1.wav",
+    "pa_t00_0.wav"
+   ]
+  },
+  "khatapa_w04_0.wav": {
+   "word": "khatapa",
+   "take": 4,
+   "syllables": [
+    "kha",
+    "ta",
+    "pa"
+   ],
+   "tokens": [
+    "kha_t00_1.wav",
+    "ta_t00_1.wav",
+    "pa_t00_0.wav"
+   ]
+  },
+  "khatapa_w05_0.wav": {
+   "word": "khatapa",
+   "take": 5,
+   "syllables": [
+    "kha",
+    "ta",
+    "pa"
+   ],
+   "tokens": [
+    "kha_t00_2.wav",
+    "ta_t00_1.wav",
+    "pa_t00_0.wav"
+   ]
+  },
+  "khatapa_w06_0.wav": {
+   "word": "khatapa",
+   "take": 6,
+   "syllables": [
+    "kha",
+    "ta",
+    "pa"
+   ],
+   "tokens": [
+    "kha_t00_0.wav",
+    "ta_t00_2.wav",
+    "pa_t00_0.wav"
+   ]
+  },
+  "khatapa_w07_0.wav": {
+   "word": "khatapa",
+   "take": 7,
+   "syllables": [
+    "kha",
+    "ta",
+    "pa"
+   ],
+   "tokens": [
+    "kha_t00_1.wav",
+    "ta_t00_2.wav",
+    "pa_t00_0.wav"
+   ]
+  },
+  "mala_w00_0.wav": {
+   "word": "mala",
+   "take": 0,
+   "syllables": [
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ma_t00_0.wav",
+    "la_t00_0.wav"
+   ]
+  },
+  "mala_w01_0.wav": {
+   "word": "mala",
+   "take": 1,
+   "syllables": [
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ma_t00_1.wav",
+    "la_t00_0.wav"
+   ]
+  },
+  "mala_w02_0.wav": {
+   "word": "mala",
+   "take": 2,
+   "syllables": [
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ma_t00_2.wav",
+    "la_t00_0.wav"
+   ]
+  },
+  "mala_w03_0.wav": {
+   "word": "mala",
+   "take": 3,
+   "syllables": [
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ma_t00_0.wav",
+    "la_t00_1.wav"
+   ]
+  },
+  "mala_w04_0.wav": {
+   "word": "mala",
+   "take": 4,
+   "syllables": [
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ma_t00_1.wav",
+    "la_t00_1.wav"
+   ]
+  },
+  "mala_w05_0.wav": {
+   "word": "mala",
+   "take": 5,
+   "syllables": [
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ma_t00_2.wav",
+    "la_t00_1.wav"
+   ]
+  },
+  "mala_w06_0.wav": {
+   "word": "mala",
+   "take": 6,
+   "syllables": [
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ma_t00_0.wav",
+    "la_t00_2.wav"
+   ]
+  },
+  "mala_w07_0.wav": {
+   "word": "mala",
+   "take": 7,
+   "syllables": [
+    "ma",
+    "la"
+   ],
+   "tokens": [
+    "ma_t00_1.wav",
+    "la_t00_2.wav"
+   ]
+  },
+  "naha_w00_0.wav": {
+   "word": "naha",
+   "take": 0,
+   "syllables": [
+    "na",
+    "ha"
+   ],
+   "tokens": [
+    "na_t00_0.wav",
+    "ha_t00_0.wav"
+   ]
+  },
+  "naha_w01_0.wav": {
+   "word": "naha",
+   "take": 1,
+   "syllables": [
+    "na",
+    "ha"
+   ],
+   "tokens": [
+    "na_t00_1.wav",
+    "ha_t00_0.wav"
+   ]
+  },
+  "naha_w02_0.wav": {
+   "word": "naha",
+   "take": 2,
+   "syllables": [
+    "na",
+    "ha"
+   ],
+   "tokens": [
+    "na_t00_2.wav",
+    "ha_t00_0.wav"
+   ]
+  },
+  "naha_w03_0.wav": {
+   "word": "naha",
+   "take": 3,
+   "syllables": [
+    "na",
+    "ha"
+   ],
+   "tokens": [
+    "na_t00_0.wav",
+    "ha_t00_1.wav"
+   ]
+  },
+  "naha_w04_0.wav": {
+   "word": "naha",
+   "take": 4,
+   "syllables": [
+    "na",
+    "ha"
+   ],
+   "tokens": [
+    "na_t00_1.wav",
+    "ha_t00_1.wav"
+   ]
+  },
+  "naha_w05_0.wav": {
+   "word": "naha",
+   "take": 5,
+   "syllables": [
+    "na",
+    "ha"
+   ],
+   "tokens": [
+    "na_t00_2.wav",
+    "ha_t00_1.wav"
+   ]
+  },
+  "naha_w06_0.wav": {
+   "word": "naha",
+   "take": 6,
+   "syllables": [
+    "na",
+    "ha"
+   ],
+   "tokens": [
+    "na_t00_0.wav",
+    "ha_t00_2.wav"
+   ]
+  },
+  "naha_w07_0.wav": {
+   "word": "naha",
+   "take": 7,
+   "syllables": [
+    "na",
+    "ha"
+   ],
+   "tokens": [
+    "na_t00_1.wav",
+    "ha_t00_2.wav"
+   ]
+  },
+  "saba_w00_0.wav": {
+   "word": "saba",
+   "take": 0,
+   "syllables": [
+    "sa",
+    "ba"
+   ],
+   "tokens": [
+    "sa_t00_0.wav",
+    "ba_t00_0.wav"
+   ]
+  },
+  "saba_w01_0.wav": {
+   "word": "saba",
+   "take": 1,
+   "syllables": [
+    "sa",
+    "ba"
+   ],
+   "tokens": [
+    "sa_t00_1.wav",
+    "ba_t00_0.wav"
+   ]
+  },
+  "saba_w02_0.wav": {
+   "word": "saba",
+   "take": 2,
+   "syllables": [
+    "sa",
+    "ba"
+   ],
+   "tokens": [
+    "sa_t00_2.wav",
+    "ba_t00_0.wav"
+   ]
+  },
+  "saba_w03_0.wav": {
+   "word": "saba",
+   "take": 3,
+   "syllables": [
+    "sa",
+    "ba"
+   ],
+   "tokens": [
+    "sa_t00_0.wav",
+    "ba_t00_1.wav"
+   ]
+  },
+  "saba_w04_0.wav": {
+   "word": "saba",
+   "take": 4,
+   "syllables": [
+    "sa",
+    "ba"
+   ],
+   "tokens": [
+    "sa_t00_1.wav",
+    "ba_t00_1.wav"
+   ]
+  },
+  "saba_w05_0.wav": {
+   "word": "saba",
+   "take": 5,
+   "syllables": [
+    "sa",
+    "ba"
+   ],
+   "tokens": [
+    "sa_t00_2.wav",
+    "ba_t00_1.wav"
+   ]
+  },
+  "saba_w06_0.wav": {
+   "word": "saba",
+   "take": 6,
+   "syllables": [
+    "sa",
+    "ba"
+   ],
+   "tokens": [
+    "sa_t00_0.wav",
+    "ba_t00_2.wav"
+   ]
+  },
+  "saba_w07_0.wav": {
+   "word": "saba",
+   "take": 7,
+   "syllables": [
+    "sa",
+    "ba"
+   ],
+   "tokens": [
+    "sa_t00_1.wav",
+    "ba_t00_2.wav"
+   ]
+  },
+  "shana_w00_0.wav": {
+   "word": "shana",
+   "take": 0,
+   "syllables": [
+    "sha",
+    "na"
+   ],
+   "tokens": [
+    "sha_t00_0.wav",
+    "na_t00_0.wav"
+   ]
+  },
+  "shana_w01_0.wav": {
+   "word": "shana",
+   "take": 1,
+   "syllables": [
+    "sha",
+    "na"
+   ],
+   "tokens": [
+    "sha_t00_1.wav",
+    "na_t00_0.wav"
+   ]
+  },
+  "shana_w02_0.wav": {
+   "word": "shana",
+   "take": 2,
+   "syllables": [
+    "sha",
+    "na"
+   ],
+   "tokens": [
+    "sha_t00_2.wav",
+    "na_t00_0.wav"
+   ]
+  },
+  "shana_w03_0.wav": {
+   "word": "shana",
+   "take": 3,
+   "syllables": [
+    "sha",
+    "na"
+   ],
+   "tokens": [
+    "sha_t00_0.wav",
+    "na_t00_1.wav"
+   ]
+  },
+  "shana_w04_0.wav": {
+   "word": "shana",
+   "take": 4,
+   "syllables": [
+    "sha",
+    "na"
+   ],
+   "tokens": [
+    "sha_t00_1.wav",
+    "na_t00_1.wav"
+   ]
+  },
+  "shana_w05_0.wav": {
+   "word": "shana",
+   "take": 5,
+   "syllables": [
+    "sha",
+    "na"
+   ],
+   "tokens": [
+    "sha_t00_2.wav",
+    "na_t00_1.wav"
+   ]
+  },
+  "shana_w06_0.wav": {
+   "word": "shana",
+   "take": 6,
+   "syllables": [
+    "sha",
+    "na"
+   ],
+   "tokens": [
+    "sha_t00_0.wav",
+    "na_t00_2.wav"
+   ]
+  },
+  "shana_w07_0.wav": {
+   "word": "shana",
+   "take": 7,
+   "syllables": [
+    "sha",
+    "na"
+   ],
+   "tokens": [
+    "sha_t00_1.wav",
+    "na_t00_2.wav"
+   ]
+  },
+  "tava_w00_0.wav": {
+   "word": "tava",
+   "take": 0,
+   "syllables": [
+    "ta",
+    "va"
+   ],
+   "tokens": [
+    "ta_t00_0.wav",
+    "va_t00_0.wav"
+   ]
+  },
+  "tava_w01_0.wav": {
+   "word": "tava",
+   "take": 1,
+   "syllables": [
+    "ta",
+    "va"
+   ],
+   "tokens": [
+    "ta_t00_1.wav",
+    "va_t00_0.wav"
+   ]
+  },
+  "tava_w02_0.wav": {
+   "word": "tava",
+   "take": 2,
+   "syllables": [
+    "ta",
+    "va"
+   ],
+   "tokens": [
+    "ta_t00_2.wav",
+    "va_t00_0.wav"
+   ]
+  },
+  "tava_w03_0.wav": {
+   "word": "tava",
+   "take": 3,
+   "syllables": [
+    "ta",
+    "va"
+   ],
+   "tokens": [
+    "ta_t00_0.wav",
+    "va_t00_1.wav"
+   ]
+  },
+  "tava_w04_0.wav": {
+   "word": "tava",
+   "take": 4,
+   "syllables": [
+    "ta",
+    "va"
+   ],
+   "tokens": [
+    "ta_t00_1.wav",
+    "va_t00_1.wav"
+   ]
+  },
+  "tava_w05_0.wav": {
+   "word": "tava",
+   "take": 5,
+   "syllables": [
+    "ta",
+    "va"
+   ],
+   "tokens": [
+    "ta_t00_2.wav",
+    "va_t00_1.wav"
+   ]
+  },
+  "tava_w06_0.wav": {
+   "word": "tava",
+   "take": 6,
+   "syllables": [
+    "ta",
+    "va"
+   ],
+   "tokens": [
+    "ta_t00_0.wav",
+    "va_t00_2.wav"
+   ]
+  },
+  "tava_w07_0.wav": {
+   "word": "tava",
+   "take": 7,
+   "syllables": [
+    "ta",
+    "va"
+   ],
+   "tokens": [
+    "ta_t00_1.wav",
+    "va_t00_2.wav"
+   ]
+  },
+  "thabaah_w00_0.wav": {
+   "word": "thabaah",
+   "take": 0,
+   "syllables": [
+    "tha",
+    "ah",
+    "aa"
+   ],
+   "tokens": [
+    "tha_t00_0.wav",
+    "ah_t00_0.wav",
+    "aa_t00_0.wav"
+   ]
+  },
+  "thabaah_w01_0.wav": {
+   "word": "thabaah",
+   "take": 1,
+   "syllables": [
+    "tha",
+    "ah",
+    "aa"
+   ],
+   "tokens": [
+    "tha_t00_1.wav",
+    "ah_t00_0.wav",
+    "aa_t00_0.wav"
+   ]
+  },
+  "thabaah_w02_0.wav": {
+   "word": "thabaah",
+   "take": 2,
+   "syllables": [
+    "tha",
+    "ah",
+    "aa"
+   ],
+   "tokens": [
+    "tha_t00_2.wav",
+    "ah_t00_0.wav",
+    "aa_t00_0.wav"
+   ]
+  },
+  "thabaah_w03_0.wav": {
+   "word": "thabaah",
+   "take": 3,
+   "syllables": [
+    "tha",
+    "ah",
+    "aa"
+   ],
+   "tokens": [
+    "tha_t00_0.wav",
+    "ah_t00_1.wav",
+    "aa_t00_0.wav"
+   ]
+  },
+  "thabaah_w04_0.wav": {
+   "word": "thabaah",
+   "take": 4,
+   "syllables": [
+    "tha",
+    "ah",
+    "aa"
+   ],
+   "tokens": [
+    "tha_t00_1.wav",
+    "ah_t00_1.wav",
+    "aa_t00_0.wav"
+   ]
+  },
+  "thabaah_w05_0.wav": {
+   "word": "thabaah",
+   "take": 5,
+   "syllables": [
+    "tha",
+    "ah",
+    "aa"
+   ],
+   "tokens": [
+    "tha_t00_2.wav",
+    "ah_t00_1.wav",
+    "aa_t00_0.wav"
+   ]
+  },
+  "thabaah_w06_0.wav": {
+   "word": "thabaah",
+   "take": 6,
+   "syllables": [
+    "tha",
+    "ah",
+    "aa"
+   ],
+   "tokens": [
+    "tha_t00_0.wav",
+    "ah_t00_2.wav",
+    "aa_t00_0.wav"
+   ]
+  },
+  "thabaah_w07_0.wav": {
+   "word": "thabaah",
+   "take": 7,
+   "syllables": [
+    "tha",
+    "ah",
+    "aa"
+   ],
+   "tokens": [
+    "tha_t00_1.wav",
+    "ah_t00_2.wav",
+    "aa_t00_0.wav"
+   ]
+  },
+  "tsaqara_w00_0.wav": {
+   "word": "tsaqara",
+   "take": 0,
+   "syllables": [
+    "tsa",
+    "qa",
+    "ra"
+   ],
+   "tokens": [
+    "tsa_t00_0.wav",
+    "qa_t00_0.wav",
+    "ra_t00_0.wav"
+   ]
+  },
+  "tsaqara_w01_0.wav": {
+   "word": "tsaqara",
+   "take": 1,
+   "syllables": [
+    "tsa",
+    "qa",
+    "ra"
+   ],
+   "tokens": [
+    "tsa_t00_1.wav",
+    "qa_t00_0.wav",
+    "ra_t00_0.wav"
+   ]
+  },
+  "tsaqara_w02_0.wav": {
+   "word": "tsaqara",
+   "take": 2,
+   "syllables": [
+    "tsa",
+    "qa",
+    "ra"
+   ],
+   "tokens": [
+    "tsa_t00_2.wav",
+    "qa_t00_0.wav",
+    "ra_t00_0.wav"
+   ]
+  },
+  "tsaqara_w03_0.wav": {
+   "word": "tsaqara",
+   "take": 3,
+   "syllables": [
+    "tsa",
+    "qa",
+    "ra"
+   ],
+   "tokens": [
+    "tsa_t00_0.wav",
+    "qa_t00_1.wav",
+    "ra_t00_0.wav"
+   ]
+  },
+  "tsaqara_w04_0.wav": {
+   "word": "tsaqara",
+   "take": 4,
+   "syllables": [
+    "tsa",
+    "qa",
+    "ra"
+   ],
+   "tokens": [
+    "tsa_t00_1.wav",
+    "qa_t00_1.wav",
+    "ra_t00_0.wav"
+   ]
+  },
+  "tsaqara_w05_0.wav": {
+   "word": "tsaqara",
+   "take": 5,
+   "syllables": [
+    "tsa",
+    "qa",
+    "ra"
+   ],
+   "tokens": [
+    "tsa_t00_2.wav",
+    "qa_t00_1.wav",
+    "ra_t00_0.wav"
+   ]
+  },
+  "tsaqara_w06_0.wav": {
+   "word": "tsaqara",
+   "take": 6,
+   "syllables": [
+    "tsa",
+    "qa",
+    "ra"
+   ],
+   "tokens": [
+    "tsa_t00_0.wav",
+    "qa_t00_2.wav",
+    "ra_t00_0.wav"
+   ]
+  },
+  "tsaqara_w07_0.wav": {
+   "word": "tsaqara",
+   "take": 7,
+   "syllables": [
+    "tsa",
+    "qa",
+    "ra"
+   ],
+   "tokens": [
+    "tsa_t00_1.wav",
+    "qa_t00_2.wav",
+    "ra_t00_0.wav"
+   ]
+  },
+  "yaza_w00_0.wav": {
+   "word": "yaza",
+   "take": 0,
+   "syllables": [
+    "ya",
+    "za"
+   ],
+   "tokens": [
+    "ya_t00_0.wav",
+    "za_t00_0.wav"
+   ]
+  },
+  "yaza_w01_0.wav": {
+   "word": "yaza",
+   "take": 1,
+   "syllables": [
+    "ya",
+    "za"
+   ],
+   "tokens": [
+    "ya_t00_1.wav",
+    "za_t00_0.wav"
+   ]
+  },
+  "yaza_w02_0.wav": {
+   "word": "yaza",
+   "take": 2,
+   "syllables": [
+    "ya",
+    "za"
+   ],
+   "tokens": [
+    "ya_t00_2.wav",
+    "za_t00_0.wav"
+   ]
+  },
+  "yaza_w03_0.wav": {
+   "word": "yaza",
+   "take": 3,
+   "syllables": [
+    "ya",
+    "za"
+   ],
+   "tokens": [
+    "ya_t00_0.wav",
+    "za_t00_1.wav"
+   ]
+  },
+  "yaza_w04_0.wav": {
+   "word": "yaza",
+   "take": 4,
+   "syllables": [
+    "ya",
+    "za"
+   ],
+   "tokens": [
+    "ya_t00_1.wav",
+    "za_t00_1.wav"
+   ]
+  },
+  "yaza_w05_0.wav": {
+   "word": "yaza",
+   "take": 5,
+   "syllables": [
+    "ya",
+    "za"
+   ],
+   "tokens": [
+    "ya_t00_2.wav",
+    "za_t00_1.wav"
+   ]
+  },
+  "yaza_w06_0.wav": {
+   "word": "yaza",
+   "take": 6,
+   "syllables": [
+    "ya",
+    "za"
+   ],
+   "tokens": [
+    "ya_t00_0.wav",
+    "za_t00_2.wav"
+   ]
+  },
+  "yaza_w07_0.wav": {
+   "word": "yaza",
+   "take": 7,
+   "syllables": [
+    "ya",
+    "za"
+   ],
+   "tokens": [
+    "ya_t00_1.wav",
+    "za_t00_2.wav"
+   ]
+  }
+ },
+ "unique_wavs": 96,
+ "source_recordings": [
+  "aa_t00_0.wav",
+  "ah_t00_0.wav",
+  "ah_t00_1.wav",
+  "ah_t00_2.wav",
+  "ba_t00_0.wav",
+  "ba_t00_1.wav",
+  "ba_t00_2.wav",
+  "da_t00_0.wav",
+  "da_t00_1.wav",
+  "da_t00_2.wav",
+  "ga_t00_0.wav",
+  "ga_t00_1.wav",
+  "ga_t00_2.wav",
+  "ha_t00_0.wav",
+  "ha_t00_1.wav",
+  "ha_t00_2.wav",
+  "ka_t00_0.wav",
+  "ka_t00_1.wav",
+  "ka_t00_2.wav",
+  "kha_t00_0.wav",
+  "kha_t00_1.wav",
+  "kha_t00_2.wav",
+  "la_t00_0.wav",
+  "la_t00_1.wav",
+  "la_t00_2.wav",
+  "ma_t00_0.wav",
+  "ma_t00_1.wav",
+  "ma_t00_2.wav",
+  "na_t00_0.wav",
+  "na_t00_1.wav",
+  "na_t00_2.wav",
+  "pa_t00_0.wav",
+  "qa_t00_0.wav",
+  "qa_t00_1.wav",
+  "qa_t00_2.wav",
+  "ra_t00_0.wav",
+  "ra_t00_1.wav",
+  "ra_t00_2.wav",
+  "sa_t00_0.wav",
+  "sa_t00_1.wav",
+  "sa_t00_2.wav",
+  "sha_t00_0.wav",
+  "sha_t00_1.wav",
+  "sha_t00_2.wav",
+  "ta_t00_0.wav",
+  "ta_t00_1.wav",
+  "ta_t00_2.wav",
+  "tha_t00_0.wav",
+  "tha_t00_1.wav",
+  "tha_t00_2.wav",
+  "tsa_t00_0.wav",
+  "tsa_t00_1.wav",
+  "tsa_t00_2.wav",
+  "va_t00_0.wav",
+  "va_t00_1.wav",
+  "va_t00_2.wav",
+  "ya_t00_0.wav",
+  "ya_t00_1.wav",
+  "ya_t00_2.wav",
+  "za_t00_0.wav",
+  "za_t00_1.wav",
+  "za_t00_2.wav"
+ ]
+}

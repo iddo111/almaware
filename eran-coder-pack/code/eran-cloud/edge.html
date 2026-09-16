@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edge &amp; Fleet · owning the metal · ERAN Lab</title>
+<meta name="description" content="A four-node GB10 edge cluster, a 200G fabric we cabled and measured ourselves, an OS built from the kernel up, and an honest accounting of what a small cluster can and cannot do.">
+<link rel="stylesheet" href="alma.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="./">ERAN Lab<span class="heb">מעבדת ער"ן</span></a>
+  <nav>
+    <a href="./">Hub</a>
+    <a href="eran.html">Eran</a>
+    <a href="ants.html">The Ants</a>
+    <a href="edge.html" aria-current="page">Edge &amp; Fleet</a>
+    <a href="lab.html">Hardware Lab</a>
+  </nav>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Track 3 · the metal</span>
+  <h1>Edge &amp; Fleet
+    <span class="sub">הקצה והצי · four boards, one fabric, no rented brain</span></h1>
+  <p class="lead">Serious edge AI means owning the hardware the model runs on. Four single-board
+    <strong>GB10 unified-memory nodes</strong>, a 200-gigabit fabric cabled and measured by hand, an operating
+    system built from the kernel up, and a strict rule that <strong>no training ever runs on the desktop</strong>.</p>
+  <p class="lead" style="margin-top:14px">This page is mostly failure diagnosis, because that is what the metal
+    actually consumed.</p>
+</div></header>
+
+<main id="main">
+
+<!-- ============ FLEET ============ -->
+<section id="fleet"><div class="wrap">
+  <h2>The cluster <span class="state s-live">Live</span></h2>
+  <p class="section-note">Four compact single-board AI computers rather than a rack. Each carries a unified memory
+    pool shared between CPU and GPU. The desktop is a terminal and a cockpit; every training job lives here.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Fabric, rebuilt and measured</h3>
+      <ul class="facts">
+        <li><span class="k">Per-link throughput</span><span class="v">109–110 Gbit/s</span></li>
+        <li><span class="k">Retransmits</span><span class="v">0</span></li>
+        <li><span class="k">Two hops via the hub</span><span class="v">31.9 Gbit/s</span></li>
+        <li><span class="k">Links live</span><span class="v">4</span></li>
+        <li><span class="k">Measured</span><span class="v">2026-08-05</span></li>
+      </ul>
+      <p class="foot">the two-hop drop is the hub's kernel forwarding, not the cable</p>
+    </article>
+
+    <article class="card">
+      <h3>What the cluster has actually done</h3>
+      <ul>
+        <li>A <strong>three-node distributed training smoke test passed</strong> — real sharded training across
+          three boards, not a benchmark of a single box.</li>
+        <li>A text training run reached step 151,760 of 200,000 at roughly 9,770 tokens per second, holding around
+          95% GPU utilisation at 66–70°C.</li>
+        <li>The audio cortex run that produced <a href="eran.html#vocal">the lab's first sound</a> completed here.</li>
+        <li>A large mixture-of-experts model was requantised locally and served across nodes as a one-off
+          "we ran a 314-billion-parameter model at home" demonstration — honestly slow, and not a daily driver.</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="note warn">
+    <h3>Published gotcha: unified memory is one pool, not two</h3>
+    <p>The monitoring tool reports GPU memory as unavailable on these boards, and it is tempting to read the
+      inference runtime's large "VRAM" figure and the operating system's separate "RAM" figure as two budgets that
+      add up. <strong>They are the same physical memory.</strong> One node holds roughly one node's worth, full stop.</p>
+    <p>Concrete consequence: a 179 GB quantised model cannot be made to fit on a single ~128 GB unified node no
+      matter how the numbers are arranged. It needs a genuine multi-node split. Anything that computes a layer-offload
+      count from reported free GPU memory on this platform is computing from a null.</p>
+  </div>
+
+  <div class="note negative">
+    <h3>Negative result: a broadcast storm we caused ourselves</h3>
+    <p>Bridging two fabric ports to make one flat network closed a <strong>hidden physical loop</strong> in the
+      cabling. Multicast receives climbed past 900 million packets, a node's CPU pegged, and management access was
+      lost — recoverable only because a separate wired path existed.</p>
+    <p>It then happened <em>again</em> on a different node weeks later. Root cause: the bridge was defined in the
+      declarative network configuration, so disabling it at the connection-manager level did nothing —
+      <strong>it was recreated on every boot.</strong> Removing the configuration files fixed it permanently.</p>
+    <p><strong>Standing rules adopted:</strong> never bridge fabric ports; use routed point-to-point links; trace
+      every cable endpoint before assuming the topology; and never apply a network change remotely on a machine whose
+      only management path is the network you are changing.</p>
+  </div>
+
+  <div class="note negative">
+    <h3>Negative result: weeks lost to a fabric that was never broken</h3>
+    <p>The 200G links looked dead for weeks. The cables were fine the whole time. Two network profiles had been
+      bound to interfaces that had <em>no cable in them</em>, so they could never activate — while the interfaces that
+      did have cables sat unconfigured.</p>
+    <p><strong>Diagnostic rule adopted: read carrier state and negotiated speed, not ping.</strong> A port reporting
+      carrier up at 200,000 Mb/s means the physical layer is good and every remaining failure is software. Ping tells
+      you nothing about which of the two you are looking at.</p>
+  </div>
+
+  <div class="note">
+    <h3>Root-cause: the reboot loop that was not thermal</h3>
+    <p>One node hard-reset roughly every ten minutes for an hour — while running <em>cool</em>, with no
+      out-of-memory event and no kernel panic. Logs cut off mid-line, which is the signature of an abrupt platform
+      reset rather than a software crash.</p>
+    <p>The mechanism turned out to be the platform watchdog, armed with a ten-second timeout and configured to
+      reboot. The trigger was a firmware-management service repeatedly probing a network card that was reporting
+      insufficient slot power — while the cables were being physically handled. Any stall longer than ten seconds and
+      the watchdog fires. Masking that one service produced immediate multi-hour stability.</p>
+    <p><strong>The lesson that generalises:</strong> "it runs cool, therefore it is not a hardware problem" is
+      false. Ruled out with evidence rather than assumption: thermal (it died cold, with zero guard events),
+      correctable bus errors (present even during a seventeen-hour stable run), memory, and machine-check exceptions.</p>
+  </div>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Thermal reality, stated plainly <span class="state s-live">Live</span></h3>
+      <p class="what">These boards are dense and quiet, and under sustained full load they will hard-reset in the
+        region of 90°C. That is a real ceiling, not a tuning problem.</p>
+      <ul>
+        <li>A guard daemon polls temperatures and sheds load before the ceiling, pausing trainers rather than
+          letting the box die mid-run — <em>pause-to-survive beats crash-mid-render</em>.</li>
+        <li>Early guard thresholds were set <strong>too high to help</strong>: the hardware reset below the
+          threshold that was supposed to protect it. Fixed by measuring the actual failure point instead of trusting
+          a datasheet number.</li>
+        <li>Active cooling and a UPS were added. The boards have no internal battery, so a brief brown-out is a hard
+          reset — an ordinary mains flicker was silently in the crash statistics.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>Interconnect discipline</h3>
+      <ul>
+        <li><strong>Never tensor-parallel across the network.</strong> Pipeline-parallel only — the per-token traffic
+          is on the order of kilobytes and crosses even a modest link comfortably, while tensor parallelism does not.</li>
+        <li>Memory bandwidth on-board outruns any network here by more than two orders of magnitude. The link is for
+          shipping work, not for pretending four boards are one big board.</li>
+        <li>A four-node ring is <em>not</em> viable with two ports per node: the diagonal pairs are never cabled and
+          direct-memory transport cannot be routed through a middle host without collapsing to a slow path. Two or
+          three nodes without a switch; four needs a switch. This was checked against vendor documentation rather
+          than assumed.</li>
+        <li><strong>Never conclude hardware is absent from an empty device listing.</strong> The network cards on
+          these boards power down when no cable link is present and vanish from the bus — they were declared missing
+          once, wrongly, and the correction is on the record.</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Fleet health guard <span class="state s-live">Live</span></h3>
+      <p class="what">A small watchdog on every node, on a timer, in <strong>alert-only</strong> mode by default —
+        it reports storms, memory exhaustion and GPU faults rather than taking action on its own.</p>
+      <p>One command from the desktop returns fleet-wide health, with the exit code carrying the worst severity so
+        it composes into other scripts. The failure class that cost us the two storms above can no longer recur
+        silently, which is the entire point of writing it.</p>
+    </article>
+    <article class="card">
+      <h3>The rule that governs all of it</h3>
+      <p class="what"><strong>No model training on the desktop machine. Ever.</strong> Not training, not inference,
+        not "just a small chat server".</p>
+      <p>The rule exists because it was broken once: a service described as a chat front-end was found to be running
+        local inference on the workstation. If the cluster is unavailable the answer is to wait, not to fall back to
+        the desktop. Remote clients that call the cluster over HTTP are fine — they are not the thing being ruled out.</p>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ FEDERATION ============ -->
+<section id="federation"><div class="wrap">
+  <h2>The federation panel <span class="state s-live">Live</span></h2>
+  <p class="section-note">A public, sanitized status page for the fleet: every node and service shown honestly
+    green, red or grey, refreshed on a short interval, with a staleness banner that tells you when the data itself
+    is old rather than quietly showing you yesterday.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Honest scale</h3>
+      <ul class="facts">
+        <li><span class="k">Subscribers</span><span class="v">0</span></li>
+        <li><span class="k">Accounts in existence</span><span class="v">0</span></li>
+        <li><span class="k">Compute workers</span><span class="v">1 (dry-run)</span></li>
+      </ul>
+      <p>Those numbers are published rather than hidden because a status panel that inflates its own scale is the
+        one thing a status panel must never do.</p>
+      <p><a class="btn" href="https://federation.iddoperez.ai">Open the live panel →</a></p>
+    </article>
+
+    <article class="card">
+      <h3>Two hard lines held during design</h3>
+      <ul>
+        <li><strong>No mass sign-up across free tiers.</strong> The request existed; it was refused. Automated
+          registration across hundreds of services gets an account banned and sprays personal data across services
+          nobody vetted. A handful of legitimate, deliberate free-tier accounts instead.</li>
+        <li><strong>Free tiers cannot train.</strong> They are ephemeral and their terms forbid sustained compute.
+          They <em>serve</em>; the cluster trains. Selling it any other way would have been the easy story and a
+          false one.</li>
+      </ul>
+      <p class="foot">the experiment of actually measuring cloud-vs-cluster training remains worth running</p>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ ALMA-OS ============ -->
+<section id="almaos"><div class="wrap">
+  <h2>ALMA-OS for Jetson <span class="state s-prototype">Prototype</span></h2>
+  <p class="section-note">A lean edge-AI operating system built <strong>from the kernel up</strong> with Yocto and
+    the Tegra layer — deliberately not a stock vendor image with the desktop stripped off afterwards.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>What exists on disk</h3>
+      <ul class="facts">
+        <li><span class="k">Custom kernel</span><span class="v">5.15.185</span></li>
+        <li><span class="k">Kernel image</span><span class="v">41 MB</span></li>
+        <li><span class="k">Flashable bundle</span><span class="v">1.6 GB</span></li>
+        <li><span class="k">Build completed</span><span class="v">2026-06-18</span></li>
+        <li><span class="k">Flashed to a board</span><span class="v">not yet</span></li>
+      </ul>
+      <p class="foot">real artefacts, verified on disk — and an unflashed image is not an OS</p>
+    </article>
+
+    <article class="card">
+      <h3>The honest gap, and a documentation lesson</h3>
+      <p class="what">Everything is ready except the last forty-five minutes: putting a board into recovery mode
+        and writing the image to it. Until that happens this is a build, not an operating system, and it is labelled
+        Prototype for exactly that reason.</p>
+      <p>Worth recording: a gate document in the repository claimed the image <em>could not be built</em> on this
+        setup — and had been true when written, then silently went stale after the build succeeded. A stale document
+        that contradicts the disk is worse than no document. Trust the artefacts.</p>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ GRID ============ -->
+<section id="grid"><div class="wrap">
+  <h2>Borrowed compute <span class="heb">חישוב מושאל</span></h2>
+  <p class="section-note">Two experiments in using capacity that already exists — one harvesting a machine's idle
+    cycles, one a small distributed-training client.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>ERAN-GRID — idle-cycle harvesting <span class="state s-prototype">Prototype</span></h3>
+      <p class="what">An agent that runs work only while a machine is genuinely idle and yields the instant its
+        owner returns. Proven end to end: owner active means hold, idle means claim, run, return a result — and a
+        yielded job is requeued rather than lost.</p>
+      <p><strong>Safety and privacy are structural, not promised:</strong></p>
+      <ul>
+        <li>Opt-in and <strong>default off</strong>. It never auto-starts.</li>
+        <li><strong>No microphone, no camera, by construction</strong> — the sensor set is asserted empty in code.
+          Anything else would make it spyware, and calling it something friendlier would not change that.</li>
+        <li>Refuses to run on battery. Hard-pauses on heat.</li>
+      </ul>
+      <p class="foot">honest: the workload unit is still a neutral stand-in, not real training</p>
+    </article>
+
+    <article class="card">
+      <h3>ERANCLOUD — the Local-SGD client <span class="state s-prototype">Prototype</span></h3>
+      <p class="what">A small client that performs a register, pull, train, delta, push cycle. What is verified is
+        a <strong>local toy dry-run</strong> on a toy model, and nothing beyond that.</p>
+      <ul>
+        <li><strong>The public coordinator is LIVE as of 2026-08-24</strong> (federation.iddoperez.ai/join) with a working volunteer loop, verified the same night. What it trains is the cloud student brain, not the sovereign organism. No fake connection
+          command is displayed on the page.</li>
+        <li>Live mode <strong>fails closed</strong>: a coordinator that cannot be reached never silently degrades
+          into a simulation that looks like success.</li>
+        <li>An installer stays unreleased until install, launch, uninstall and platform application-control checks
+          all pass. The source archive is published separately in the meantime.</li>
+      </ul>
+      <p><a class="btn secondary" href="cloud.html">The ERANCLOUD page →</a>
+         <a class="btn secondary" href="join.html">Dry-run instructions →</a></p>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ LIMITS ============ -->
+<section id="limits"><div class="wrap">
+  <h2>What a four-node edge cluster cannot do <span class="heb">מה שאי אפשר</span></h2>
+  <div class="note">
+    <ul>
+      <li>It cannot train a frontier-scale model, and nothing on this site suggests otherwise. It can train small
+        models properly, and it can serve large ones slowly.</li>
+      <li>Splitting a very large model across nodes is a demonstration, not a workflow — a model that fits one node
+        runs an order of magnitude faster than the same class of model split across two.</li>
+      <li>Sustained full-load operation is limited by cooling before it is limited by compute.</li>
+      <li>Adding a fourth node to a switchless fabric is not a cabling problem, it is a topology impossibility.
+        Four nodes want a switch.</li>
+    </ul>
+  </div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <p><a href="./">← back to the hub</a></p>
+  <p class="ded">לזכרה של עלמה ז״ל <span class="dim" dir="ltr">— in memory of Alma z"l.</span></p>
+  <p class="small">© 2026 ALMAWARE · figures are measured on our own hardware and dated where it matters.</p>
+</div></footer>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+{
+  "generated_utc": "2026-07-11T00:00:00Z",
+  "method": "ssh eran{1,2,3}: ethtool per iface (link speed + carrier), lldpctl per iface (peer chassis/port), ip addr, ip route get",
+  "nodes": {
+    "eran1": {
+      "hostname": "eran1",
+      "chassis_mac": "fc:9d:05:13:02:49",
+      "role": "compute + LAN gateway (enP7s7 = <lan-ip>)"
+    },
+    "eran2": {
+      "hostname": "edgexpert-041d",
+      "chassis_mac": "fc:9d:05:13:04:1d",
+      "role": "MESH HUB — all cross-node QSFP paths transit here"
+    },
+    "eran3": {
+      "hostname": "edgexpert-01e6",
+      "chassis_mac": "fc:9d:05:13:01:e6",
+      "role": "compute + eran4 uplink (enP7s7 = <fabric-ip>)"
+    },
+    "eran4": {
+      "hostname": "edgexpert-3636",
+      "chassis_mac": "fc:9d:05:13:36:36",
+      "role": "leaf, only reachable via eran3 enP7s7"
+    }
+  },
+  "edges": [
+    {
+      "from": "eran1",
+      "from_iface": "enp1s0f0np0",
+      "from_ip": "<fabric-ip>/30",
+      "to": "eran2",
+      "to_iface": "enp1s0f0np0",
+      "to_ip": "<fabric-ip>/30",
+      "speed_mbps": 200000,
+      "medium": "QSFP DAC",
+      "direct": true,
+      "carrier": true,
+      "ip_configured": true,
+      "role": "eran1<->eran2 active routed link",
+      "lldp_verified": true
+    },
+    {
+      "from": "eran1",
+      "from_iface": "enP2p1s0f0np0",
+      "from_ip": null,
+      "to": "eran2",
+      "to_iface": "enP2p1s0f0np0",
+      "to_ip": null,
+      "speed_mbps": 200000,
+      "medium": "QSFP DAC",
+      "direct": true,
+      "carrier": true,
+      "ip_configured": false,
+      "role": "SPARE — physically cabled, no L3 config; latent 200G redundancy / potential bond partner",
+      "lldp_verified": true,
+      "lldp_peer_mac": "fc:9d:05:13:04:22"
+    },
+    {
+      "from": "eran2",
+      "from_iface": "enp1s0f1np1",
+      "from_ip": "<fabric-ip>/24",
+      "to": "eran3",
+      "to_iface": "enp1s0f1np1",
+      "to_ip": "<fabric-ip>/24",
+      "speed_mbps": 200000,
+      "medium": "QSFP DAC",
+      "direct": true,
+      "carrier": true,
+      "ip_configured": true,
+      "role": "eran2<->eran3 active routed link",
+      "lldp_verified": true
+    },
+    {
+      "from": "eran2",
+      "from_iface": "enP2p1s0f1np1",
+      "from_ip": null,
+      "to": "eran3",
+      "to_iface": "enP2p1s0f1np1",
+      "to_ip": null,
+      "speed_mbps": 200000,
+      "medium": "QSFP DAC",
+      "direct": true,
+      "carrier": true,
+      "ip_configured": false,
+      "role": "SPARE — physically cabled, no L3 config; latent 200G redundancy / potential bond partner",
+      "lldp_verified": true,
+      "lldp_peer_mac": "fc:9d:05:13:04:23 <-> fc:9d:05:13:01:ec"
+    },
+    {
+      "from": "eran3",
+      "from_iface": "enP7s7",
+      "from_ip": "<fabric-ip>/24",
+      "to": "eran4",
+      "to_iface": "enP7s7 (<fabric-ip>)",
+      "to_ip": "<fabric-ip>",
+      "speed_mbps": 10000,
+      "medium": "RJ45 10GbaseT",
+      "direct": true,
+      "carrier": true,
+      "ip_configured": true,
+      "role": "eran3<->eran4 uplink; ONLY path to eran4",
+      "lldp_verified": false,
+      "arp_verified": true,
+      "peer_mac": "fc:9d:05:13:36:36"
+    }
+  ],
+  "no_direct_edge": [
+    {
+      "from": "eran1",
+      "to": "eran3",
+      "verified_by": "route lookup — eran1 reaches <fabric-ip> via <fabric-ip> (eran2); eran3 reaches <fabric-ip> via <fabric-ip> (eran2); no QSFP carrier between them",
+      "hops": 2,
+      "transit": "eran2"
+    },
+    {
+      "from": "eran1",
+      "to": "eran4",
+      "verified_by": "eran4 only reachable via eran3 enP7s7 (<fabric-ip>/24); no cable to eran1 or eran2",
+      "hops": 3,
+      "transit": "eran2 -> eran3"
+    },
+    {
+      "from": "eran2",
+      "to": "eran4",
+      "verified_by": "no cable; must go through eran3",
+      "hops": 2,
+      "transit": "eran3"
+    }
+  ],
+  "down_ports": [
+    {"node": "eran1", "iface": "enp1s0f1np1",   "reason": "No cable"},
+    {"node": "eran1", "iface": "enP2p1s0f1np1", "reason": "No cable"},
+    {"node": "eran3", "iface": "enp1s0f0np0",   "reason": "No cable"},
+    {"node": "eran3", "iface": "enP2p1s0f0np0", "reason": "No cable"}
+  ],
+  "historical_claims_verified": {
+    "eran1 enp1s0f0np0 <fabric-ip>/30 <-> eran2 enp1s0f0np0 <fabric-ip>/30 direct QSFP": "TRUE (200G, ethtool+LLDP)",
+    "eran2 enp1s0f1np1 <fabric-ip>/24 <-> eran3 enp1s0f1np1 <fabric-ip>/24 direct QSFP": "TRUE (200G, ethtool+LLDP)",
+    "eran1 <-> eran3: NO direct cable, forwards via eran2": "TRUE (route lookup confirms 2-hop via eran2)",
+    "eran3 enP7s7 10Gb RJ45 <-> eran4": "TRUE (10Gb linked, ARP peer MAC fc:9d:05:13:36:36 = edgexpert-3636 = eran4)"
+  },
+  "discovered_beyond_history": {
+    "eran1<->eran2 has a SECOND 200G cable": "enP2p1s0f0np0 both sides — LINKED at 200G, NO IP; unused redundancy",
+    "eran2<->eran3 has a SECOND 200G cable": "enP2p1s0f1np1 both sides — LINKED at 200G, NO IP; unused redundancy"
+  },
+  "fragility": [
+    {
+      "level": "yellow",
+      "issue": "eran2 is single point of failure for eran1<->eran3 traffic",
+      "detail": "no direct QSFP between eran1 and eran3; if eran2 down, mesh splits into {eran1} and {eran3, eran4}",
+      "mitigation_available": "physically install one QSFP DAC between eran1 spare port and eran3 spare port (both have 2 unused ports each)"
+    },
+    {
+      "level": "yellow",
+      "issue": "eran4 is single-homed via eran3 enP7s7 (10G RJ45)",
+      "detail": "eran4 reachable only through eran3; loss of eran3 OR the RJ45 cable takes eran4 offline; also caps eran4 aggregate throughput at 10G",
+      "mitigation_available": "cable eran4 to eran2 as second uplink"
+    },
+    {
+      "level": "green",
+      "issue": "latent 400G potential between eran1<->eran2 and eran2<->eran3",
+      "detail": "each pair has 2x200G cables in; only 1x200G is L3-configured. Could bond (LACP) for 400G or hot-standby.",
+      "mitigation_available": "config bond0 on both ends, or add /30 to spare pair as backup route"
+    }
+  ]
+}

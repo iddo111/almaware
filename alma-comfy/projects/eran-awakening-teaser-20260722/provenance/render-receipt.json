@@ -1,0 +1,40 @@
+{
+  "status": "technical-pass-human-review-pending",
+  "rendered_at": "2026-07-22T19:51:26.1492484+03:00",
+  "project_id": "eran-awakening-teaser-20260722",
+  "artifact": "D:\\CLAUDE\\alma-comfy\\projects\\eran-awakening-teaser-20260722\\output\\ERAN-Awakening-Teaser-1080p-SDR.mp4",
+  "artifact_bytes": 5042880,
+  "artifact_sha256": "a3cf295a5a90c36f23b708a71ce774166e65404caec043ec54306308a7caa86e",
+  "duration_seconds": 10,
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 24,
+    "color": "SDR BT.709",
+    "video": "H.264 High, yuv420p",
+    "audio": "AAC-LC, 48 kHz, stereo, 256 kb/s, -16 LUFS target"
+  },
+  "sources": [
+    {
+      "path": "D:\\CLAUDE\\alma-comfy\\projects\\eran-awakening-teaser-20260722\\assets\\flux2-klein-fixed-seed.png",
+      "sha256": "2bd82bb4f87b7afed3b59249e6a2783a6d4498a6458a56d46b48ce6c344c2bc6"
+    },
+    {
+      "path": "D:\\CLAUDE\\alma-comfy\\projects\\eran-awakening-teaser-20260722\\assets\\wan-ti2v-canary.mp4",
+      "sha256": "3d2ebc1c3c9fb18d7cb379d7a20a0f03a9a5b42103e893dd1279c12d4b927c1c"
+    },
+    {
+      "path": "D:\\CLAUDE\\alma-comfy\\projects\\eran-awakening-teaser-20260722\\assets\\ace-step-fixed-seed-424242.wav",
+      "sha256": "3a94c71ca4321a8f7d12d670ac554788601a317f20c139f189393d8c4b0b9c77"
+    }
+  ],
+  "gates": [
+    "artifact-nonempty",
+    "ffprobe-pass",
+    "full-video-audio-decode-pass",
+    "source-hashes-recorded",
+    "-16-LUFS-target"
+  ],
+  "truth": "AI-generated teaser; not documentary footage; SDR is not labeled HDR",
+  "human_review": "pending"
+}

@@ -1,0 +1,1415 @@
+[
+  {
+    "id": "tts-vault",
+    "what": "the 132-clip heldout EXAM ERAN was graded on for a month",
+    "root": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault",
+    "n_clips": 132,
+    "notes": [],
+    "ear": "eran-brain/body/ears.py repr=cochlea bands=24 pool=loudest60 dim=192",
+    "provenance": {
+      "verdict": "SYNTHETIC",
+      "records_read": [
+        "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\README.md",
+        "D:\\CLAUDE\\README.md"
+      ],
+      "synthetic_evidence": [
+        {
+          "file": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\README.md",
+          "marker": "mms-tts",
+          "why": "names facebook/mms-tts (a TTS model)",
+          "quote": "h00`/`h01` are two torch seeds (401200/401201) of `facebook/mms-tts-heb`, generated 2026-08-06 by `ant-wall/make_curriculum.py`, whose tokenizer strip"
+        },
+        {
+          "file": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\README.md",
+          "marker": "tts-heb",
+          "why": "names a Hebrew TTS model",
+          "quote": "/`h01` are two torch seeds (401200/401201) of `facebook/mms-tts-heb`, generated 2026-08-06 by `ant-wall/make_curriculum.py`, whose tokenizer strips al"
+        },
+        {
+          "file": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\README.md",
+          "marker": "synthetic tts",
+          "why": "the corpus's own record calls itself synthetic TTS",
+          "quote": "ONLY / לבוחן בלבד > ⛔ **2026-09-03 21:20 — THIS CORPUS IS SYNTHETIC TTS, NOT HUMAN, AND ITS LABELS DO NOT MATCH ITS AUDIO.** > `h00`/`h01` are two t"
+        }
+      ],
+      "human_markers": [
+        "recording"
+      ]
+    },
+    "n_units": 22,
+    "n_groups": 2,
+    "units": [
+      "aa",
+      "ah",
+      "ba",
+      "da",
+      "ga",
+      "ha",
+      "ka",
+      "kha",
+      "la",
+      "ma",
+      "na",
+      "pa",
+      "qa",
+      "ra",
+      "sa",
+      "sha",
+      "ta",
+      "tha",
+      "tsa",
+      "va",
+      "ya",
+      "za"
+    ],
+    "groups": [
+      "h00",
+      "h01"
+    ],
+    "between_unit_cosine": -0.023,
+    "per_unit": [
+      {
+        "unit": "aa",
+        "k": 6,
+        "within_cosine": 0.6183,
+        "excess": 0.6269,
+        "n_eff": 1.45,
+        "twin_frac": 0.2
+      },
+      {
+        "unit": "ah",
+        "k": 6,
+        "within_cosine": 0.589,
+        "excess": 0.5982,
+        "n_eff": 1.5,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ba",
+        "k": 6,
+        "within_cosine": 0.4832,
+        "excess": 0.4948,
+        "n_eff": 1.73,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "da",
+        "k": 6,
+        "within_cosine": 0.3693,
+        "excess": 0.3835,
+        "n_eff": 2.06,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ga",
+        "k": 6,
+        "within_cosine": 0.5307,
+        "excess": 0.5412,
+        "n_eff": 1.62,
+        "twin_frac": 0.067
+      },
+      {
+        "unit": "ha",
+        "k": 6,
+        "within_cosine": 0.6872,
+        "excess": 0.6942,
+        "n_eff": 1.34,
+        "twin_frac": 0.2
+      },
+      {
+        "unit": "ka",
+        "k": 6,
+        "within_cosine": 0.5135,
+        "excess": 0.5244,
+        "n_eff": 1.66,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "kha",
+        "k": 6,
+        "within_cosine": 0.6051,
+        "excess": 0.614,
+        "n_eff": 1.47,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "la",
+        "k": 6,
+        "within_cosine": 0.5936,
+        "excess": 0.6027,
+        "n_eff": 1.49,
+        "twin_frac": 0.067
+      },
+      {
+        "unit": "ma",
+        "k": 6,
+        "within_cosine": 0.4509,
+        "excess": 0.4633,
+        "n_eff": 1.81,
+        "twin_frac": 0.133
+      },
+      {
+        "unit": "na",
+        "k": 6,
+        "within_cosine": 0.3828,
+        "excess": 0.3967,
+        "n_eff": 2.01,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "pa",
+        "k": 6,
+        "within_cosine": 0.4698,
+        "excess": 0.4818,
+        "n_eff": 1.76,
+        "twin_frac": 0.067
+      },
+      {
+        "unit": "qa",
+        "k": 6,
+        "within_cosine": 0.5658,
+        "excess": 0.5756,
+        "n_eff": 1.55,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ra",
+        "k": 6,
+        "within_cosine": 0.6678,
+        "excess": 0.6752,
+        "n_eff": 1.37,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "sa",
+        "k": 6,
+        "within_cosine": 0.664,
+        "excess": 0.6716,
+        "n_eff": 1.38,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "sha",
+        "k": 6,
+        "within_cosine": 0.9133,
+        "excess": 0.9153,
+        "n_eff": 1.08,
+        "twin_frac": 0.667
+      },
+      {
+        "unit": "ta",
+        "k": 6,
+        "within_cosine": 0.5958,
+        "excess": 0.6049,
+        "n_eff": 1.49,
+        "twin_frac": 0.067
+      },
+      {
+        "unit": "tha",
+        "k": 6,
+        "within_cosine": 0.4934,
+        "excess": 0.5048,
+        "n_eff": 1.7,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "tsa",
+        "k": 6,
+        "within_cosine": 0.695,
+        "excess": 0.7019,
+        "n_eff": 1.33,
+        "twin_frac": 0.267
+      },
+      {
+        "unit": "va",
+        "k": 6,
+        "within_cosine": 0.6908,
+        "excess": 0.6978,
+        "n_eff": 1.34,
+        "twin_frac": 0.267
+      },
+      {
+        "unit": "ya",
+        "k": 6,
+        "within_cosine": 0.7834,
+        "excess": 0.7883,
+        "n_eff": 1.21,
+        "twin_frac": 0.2
+      },
+      {
+        "unit": "za",
+        "k": 6,
+        "within_cosine": 0.8287,
+        "excess": 0.8326,
+        "n_eff": 1.16,
+        "twin_frac": 0.267
+      }
+    ],
+    "within_cosine_mean": 0.5996,
+    "excess_mean": 0.6086,
+    "n_eff_median": 1.49,
+    "k_median": 6,
+    "twin_frac_mean": 0.112,
+    "artefact": [
+      {
+        "pair": "ta/tha",
+        "why_identical": "tav vs tet -- both /t/ in modern Hebrew",
+        "n": 12,
+        "accuracy": 0.75,
+        "correct": 9,
+        "how": "leave-group-out",
+        "p_vs_coinflip": 0.072998046875,
+        "separable": false
+      },
+      {
+        "pair": "ka/qa",
+        "why_identical": "kaf vs qof -- both /k/ in modern Hebrew",
+        "n": 12,
+        "accuracy": 1.0,
+        "correct": 12,
+        "how": "leave-group-out",
+        "p_vs_coinflip": 0.000244140625,
+        "separable": true
+      },
+      {
+        "pair": "aa/ah",
+        "why_identical": "alef vs ayin -- both a bare /a/ in modern Hebrew",
+        "n": 12,
+        "accuracy": 1.0,
+        "correct": 12,
+        "how": "leave-group-out",
+        "p_vs_coinflip": 0.000244140625,
+        "separable": true
+      }
+    ],
+    "block": {
+      "unit_pairs": 231,
+      "disjoint_in_time": 231,
+      "block_fraction": 1.0,
+      "span_seconds": 60.6
+    },
+    "artefact_confounded": false,
+    "chance": 0.0455,
+    "signal": {
+      "accuracy": 0.6288,
+      "n": 132,
+      "how": "leave-group-out",
+      "p_vs_chance": 1.8599598358851085e-76
+    },
+    "leakage": {
+      "random_split_accuracy": 0.8788,
+      "honest_split_accuracy": 0.6288,
+      "gap": 0.25
+    },
+    "flags": [
+      "SYNTHETIC",
+      "ARTEFACT",
+      "ARTEFACT",
+      "STARVED",
+      "LEAKY"
+    ],
+    "verdict": "REJECT",
+    "reasons": [
+      "PROVENANCE: the corpus's own record names a generator ('mms-tts' -- names facebook/mms-tts (a TTS model))",
+      "ARTEFACT: ka/qa are the same sound (kaf vs qof -- both /k/ in modern Hebrew) yet separate at 100.0% (n=12, p=0.00024) -- a nuisance channel, not phonetics",
+      "ARTEFACT: aa/ah are the same sound (alef vs ayin -- both a bare /a/ in modern Hebrew) yet separate at 100.0% (n=12, p=0.00024) -- a nuisance channel, not phonetics",
+      "STARVED: median unit holds 6 clips but only 1.49 independent examples (within-unit cosine 0.5996, corpus floor -0.023, excess 0.6086). Below 3 you cannot even estimate what the unit's variation IS.",
+      "LEAKAGE: a random split scores 25.0 points higher than an honest one -- that much of any number reported on this corpus was session memorisation"
+    ],
+    "prescription": "Revoke the source and everything derived from it (`teachability.py forget <id>`), then re-measure every number that stood on it.",
+    "seconds": 0.3
+  },
+  {
+    "id": "tts-food-train",
+    "what": "food/train -- what the organism actually ate",
+    "root": "D:\\CLAUDE\\eran-brain\\food\\train",
+    "n_clips": 396,
+    "notes": [],
+    "ear": "eran-brain/body/ears.py repr=cochlea bands=24 pool=loudest60 dim=192",
+    "provenance": {
+      "verdict": "UNKNOWN",
+      "records_read": [
+        "D:\\CLAUDE\\README.md"
+      ],
+      "synthetic_evidence": [],
+      "human_markers": []
+    },
+    "n_units": 22,
+    "n_groups": 6,
+    "units": [
+      "aa",
+      "ah",
+      "ba",
+      "da",
+      "ga",
+      "ha",
+      "ka",
+      "kha",
+      "la",
+      "ma",
+      "na",
+      "pa",
+      "qa",
+      "ra",
+      "sa",
+      "sha",
+      "ta",
+      "tha",
+      "tsa",
+      "va",
+      "ya",
+      "za"
+    ],
+    "groups": [
+      "t00",
+      "t01",
+      "t02",
+      "t03",
+      "t04",
+      "t05"
+    ],
+    "between_unit_cosine": -0.0152,
+    "per_unit": [
+      {
+        "unit": "aa",
+        "k": 18,
+        "within_cosine": 0.5106,
+        "excess": 0.5179,
+        "n_eff": 1.84,
+        "twin_frac": 0.013
+      },
+      {
+        "unit": "ah",
+        "k": 18,
+        "within_cosine": 0.4299,
+        "excess": 0.4385,
+        "n_eff": 2.13,
+        "twin_frac": 0.02
+      },
+      {
+        "unit": "ba",
+        "k": 18,
+        "within_cosine": 0.3809,
+        "excess": 0.3901,
+        "n_eff": 2.36,
+        "twin_frac": 0.007
+      },
+      {
+        "unit": "da",
+        "k": 18,
+        "within_cosine": 0.3036,
+        "excess": 0.314,
+        "n_eff": 2.84,
+        "twin_frac": 0.02
+      },
+      {
+        "unit": "ga",
+        "k": 18,
+        "within_cosine": 0.2213,
+        "excess": 0.233,
+        "n_eff": 3.63,
+        "twin_frac": 0.026
+      },
+      {
+        "unit": "ha",
+        "k": 18,
+        "within_cosine": 0.2578,
+        "excess": 0.269,
+        "n_eff": 3.23,
+        "twin_frac": 0.026
+      },
+      {
+        "unit": "ka",
+        "k": 18,
+        "within_cosine": 0.465,
+        "excess": 0.473,
+        "n_eff": 1.99,
+        "twin_frac": 0.02
+      },
+      {
+        "unit": "kha",
+        "k": 18,
+        "within_cosine": 0.5,
+        "excess": 0.5075,
+        "n_eff": 1.87,
+        "twin_frac": 0.013
+      },
+      {
+        "unit": "la",
+        "k": 18,
+        "within_cosine": 0.279,
+        "excess": 0.2898,
+        "n_eff": 3.04,
+        "twin_frac": 0.026
+      },
+      {
+        "unit": "ma",
+        "k": 18,
+        "within_cosine": 0.5736,
+        "excess": 0.58,
+        "n_eff": 1.66,
+        "twin_frac": 0.033
+      },
+      {
+        "unit": "na",
+        "k": 18,
+        "within_cosine": 0.3807,
+        "excess": 0.39,
+        "n_eff": 2.36,
+        "twin_frac": 0.007
+      },
+      {
+        "unit": "pa",
+        "k": 18,
+        "within_cosine": 0.4983,
+        "excess": 0.5059,
+        "n_eff": 1.88,
+        "twin_frac": 0.007
+      },
+      {
+        "unit": "qa",
+        "k": 18,
+        "within_cosine": 0.3578,
+        "excess": 0.3675,
+        "n_eff": 2.48,
+        "twin_frac": 0.007
+      },
+      {
+        "unit": "ra",
+        "k": 18,
+        "within_cosine": 0.6138,
+        "excess": 0.6196,
+        "n_eff": 1.56,
+        "twin_frac": 0.046
+      },
+      {
+        "unit": "sa",
+        "k": 18,
+        "within_cosine": 0.4522,
+        "excess": 0.4605,
+        "n_eff": 2.04,
+        "twin_frac": 0.026
+      },
+      {
+        "unit": "sha",
+        "k": 18,
+        "within_cosine": 0.7896,
+        "excess": 0.7928,
+        "n_eff": 1.24,
+        "twin_frac": 0.15
+      },
+      {
+        "unit": "ta",
+        "k": 18,
+        "within_cosine": 0.5404,
+        "excess": 0.5473,
+        "n_eff": 1.75,
+        "twin_frac": 0.02
+      },
+      {
+        "unit": "tha",
+        "k": 18,
+        "within_cosine": 0.4795,
+        "excess": 0.4873,
+        "n_eff": 1.94,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "tsa",
+        "k": 18,
+        "within_cosine": 0.5435,
+        "excess": 0.5503,
+        "n_eff": 1.74,
+        "twin_frac": 0.065
+      },
+      {
+        "unit": "va",
+        "k": 18,
+        "within_cosine": 0.5734,
+        "excess": 0.5798,
+        "n_eff": 1.66,
+        "twin_frac": 0.033
+      },
+      {
+        "unit": "ya",
+        "k": 18,
+        "within_cosine": 0.7028,
+        "excess": 0.7072,
+        "n_eff": 1.38,
+        "twin_frac": 0.078
+      },
+      {
+        "unit": "za",
+        "k": 18,
+        "within_cosine": 0.8347,
+        "excess": 0.8372,
+        "n_eff": 1.18,
+        "twin_frac": 0.118
+      }
+    ],
+    "within_cosine_mean": 0.4858,
+    "excess_mean": 0.4936,
+    "n_eff_median": 1.91,
+    "k_median": 18,
+    "twin_frac_mean": 0.035,
+    "artefact": [
+      {
+        "pair": "ta/tha",
+        "why_identical": "tav vs tet -- both /t/ in modern Hebrew",
+        "n": 36,
+        "accuracy": 0.9167,
+        "correct": 33,
+        "how": "leave-group-out",
+        "p_vs_coinflip": 1.1360680218786001e-07,
+        "separable": true
+      },
+      {
+        "pair": "ka/qa",
+        "why_identical": "kaf vs qof -- both /k/ in modern Hebrew",
+        "n": 36,
+        "accuracy": 1.0,
+        "correct": 36,
+        "how": "leave-group-out",
+        "p_vs_coinflip": 1.4551915228366852e-11,
+        "separable": true
+      },
+      {
+        "pair": "aa/ah",
+        "why_identical": "alef vs ayin -- both a bare /a/ in modern Hebrew",
+        "n": 36,
+        "accuracy": 1.0,
+        "correct": 36,
+        "how": "leave-group-out",
+        "p_vs_coinflip": 1.4551915228366852e-11,
+        "separable": true
+      }
+    ],
+    "block": {
+      "unit_pairs": 231,
+      "disjoint_in_time": 231,
+      "block_fraction": 1.0,
+      "span_seconds": 251.9
+    },
+    "artefact_confounded": false,
+    "chance": 0.0455,
+    "signal": {
+      "accuracy": 0.7803,
+      "n": 396,
+      "how": "leave-group-out",
+      "p_vs_chance": 0.0
+    },
+    "leakage": {
+      "random_split_accuracy": 0.8687,
+      "honest_split_accuracy": 0.7803,
+      "gap": 0.0884
+    },
+    "flags": [
+      "ARTEFACT",
+      "ARTEFACT",
+      "ARTEFACT",
+      "STARVED"
+    ],
+    "verdict": "REJECT",
+    "reasons": [
+      "ARTEFACT: ta/tha are the same sound (tav vs tet -- both /t/ in modern Hebrew) yet separate at 91.7% (n=36, p=1.1e-07) -- a nuisance channel, not phonetics",
+      "ARTEFACT: ka/qa are the same sound (kaf vs qof -- both /k/ in modern Hebrew) yet separate at 100.0% (n=36, p=1.5e-11) -- a nuisance channel, not phonetics",
+      "ARTEFACT: aa/ah are the same sound (alef vs ayin -- both a bare /a/ in modern Hebrew) yet separate at 100.0% (n=36, p=1.5e-11) -- a nuisance channel, not phonetics",
+      "STARVED: median unit holds 18 clips but only 1.91 independent examples (within-unit cosine 0.4858, corpus floor -0.0152, excess 0.4936). Below 3 you cannot even estimate what the unit's variation IS."
+    ],
+    "prescription": "Revoke the source and everything derived from it (`teachability.py forget <id>`), then re-measure every number that stood on it.",
+    "seconds": 0.8
+  },
+  {
+    "id": "t06-starved",
+    "what": "Iddo's own mouth, the 19 units that got 3 clips each",
+    "root": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t06",
+    "n_clips": 57,
+    "notes": [],
+    "ear": "eran-brain/body/ears.py repr=cochlea bands=24 pool=loudest60 dim=192",
+    "provenance": {
+      "verdict": "HUMAN-CLAIMED",
+      "records_read": [
+        "D:\\CLAUDE\\eran-brain\\booth\\README-DICTIONARY.md",
+        "D:\\CLAUDE\\eran-brain\\booth\\RECORDING-PLAN.md"
+      ],
+      "synthetic_evidence": [],
+      "human_markers": [
+        "keshev",
+        "microphone",
+        "recorded",
+        "recording"
+      ]
+    },
+    "n_units": 19,
+    "n_groups": 1,
+    "units": [
+      "aa",
+      "da",
+      "ga",
+      "ha",
+      "ka",
+      "kha",
+      "la",
+      "na",
+      "pa",
+      "qa",
+      "ra",
+      "sa",
+      "sha",
+      "ta",
+      "tha",
+      "tsa",
+      "va",
+      "ya",
+      "za"
+    ],
+    "groups": [
+      "t06"
+    ],
+    "between_unit_cosine": -0.0265,
+    "per_unit": [
+      {
+        "unit": "aa",
+        "k": 3,
+        "within_cosine": 0.6587,
+        "excess": 0.6675,
+        "n_eff": 1.28,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "da",
+        "k": 3,
+        "within_cosine": 0.3195,
+        "excess": 0.337,
+        "n_eff": 1.79,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ga",
+        "k": 3,
+        "within_cosine": 0.3298,
+        "excess": 0.3471,
+        "n_eff": 1.77,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ha",
+        "k": 3,
+        "within_cosine": 0.3699,
+        "excess": 0.3862,
+        "n_eff": 1.69,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ka",
+        "k": 3,
+        "within_cosine": 0.3626,
+        "excess": 0.3791,
+        "n_eff": 1.71,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "kha",
+        "k": 3,
+        "within_cosine": 0.1858,
+        "excess": 0.2068,
+        "n_eff": 2.12,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "la",
+        "k": 3,
+        "within_cosine": 0.4023,
+        "excess": 0.4177,
+        "n_eff": 1.63,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "na",
+        "k": 3,
+        "within_cosine": 0.0225,
+        "excess": 0.0478,
+        "n_eff": 2.74,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "pa",
+        "k": 3,
+        "within_cosine": 0.4394,
+        "excess": 0.4538,
+        "n_eff": 1.57,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "qa",
+        "k": 3,
+        "within_cosine": 0.3562,
+        "excess": 0.3728,
+        "n_eff": 1.72,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ra",
+        "k": 3,
+        "within_cosine": 0.6367,
+        "excess": 0.6461,
+        "n_eff": 1.31,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "sa",
+        "k": 3,
+        "within_cosine": 0.1949,
+        "excess": 0.2157,
+        "n_eff": 2.1,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "sha",
+        "k": 3,
+        "within_cosine": 0.7213,
+        "excess": 0.7284,
+        "n_eff": 1.22,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ta",
+        "k": 3,
+        "within_cosine": 0.3501,
+        "excess": 0.3669,
+        "n_eff": 1.73,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "tha",
+        "k": 3,
+        "within_cosine": 0.7165,
+        "excess": 0.7238,
+        "n_eff": 1.23,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "tsa",
+        "k": 3,
+        "within_cosine": 0.127,
+        "excess": 0.1496,
+        "n_eff": 2.31,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "va",
+        "k": 3,
+        "within_cosine": 0.3898,
+        "excess": 0.4055,
+        "n_eff": 1.66,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ya",
+        "k": 3,
+        "within_cosine": 0.3779,
+        "excess": 0.394,
+        "n_eff": 1.68,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "za",
+        "k": 3,
+        "within_cosine": 0.3251,
+        "excess": 0.3426,
+        "n_eff": 1.78,
+        "twin_frac": 0.0
+      }
+    ],
+    "within_cosine_mean": 0.3835,
+    "excess_mean": 0.3994,
+    "n_eff_median": 1.71,
+    "k_median": 3,
+    "twin_frac_mean": 0.0,
+    "artefact": [
+      {
+        "pair": "ta/tha",
+        "why_identical": "tav vs tet -- both /t/ in modern Hebrew",
+        "n": 6,
+        "accuracy": 1.0,
+        "correct": 6,
+        "how": "leave-one-clip-out (single group)",
+        "p_vs_coinflip": 0.015625,
+        "separable": false,
+        "confounded_by_recording_order": true
+      },
+      {
+        "pair": "ka/qa",
+        "why_identical": "kaf vs qof -- both /k/ in modern Hebrew",
+        "n": 6,
+        "accuracy": 1.0,
+        "correct": 6,
+        "how": "leave-one-clip-out (single group)",
+        "p_vs_coinflip": 0.015625,
+        "separable": false,
+        "confounded_by_recording_order": true
+      }
+    ],
+    "block": {
+      "unit_pairs": 171,
+      "disjoint_in_time": 171,
+      "block_fraction": 1.0,
+      "span_seconds": 187.7
+    },
+    "artefact_confounded": true,
+    "chance": 0.0526,
+    "signal": {
+      "accuracy": 0.614,
+      "n": 57,
+      "how": "leave-one-clip-out (single group -- leakage untestable)",
+      "p_vs_chance": 1.9264020265726613e-30
+    },
+    "leakage": {
+      "gap": null,
+      "why": "single group -- cannot measure session leakage"
+    },
+    "flags": [
+      "STARVED"
+    ],
+    "verdict": "STARVED",
+    "reasons": [
+      "STARVED: median unit holds 3 clips but only 1.71 independent examples (within-unit cosine 0.3835, corpus floor -0.0265, excess 0.3994). Below 3 you cannot even estimate what the unit's variation IS."
+    ],
+    "prescription": "Do not augment -- augmentation raises k without raising n_eff. Record more real takes.",
+    "seconds": 0.1
+  },
+  {
+    "id": "t06-rich",
+    "what": "Iddo's own mouth, the 6 units that got 100 clips each",
+    "root": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t06",
+    "n_clips": 600,
+    "notes": [],
+    "ear": "eran-brain/body/ears.py repr=cochlea bands=24 pool=loudest60 dim=192",
+    "provenance": {
+      "verdict": "HUMAN-CLAIMED",
+      "records_read": [
+        "D:\\CLAUDE\\eran-brain\\booth\\README-DICTIONARY.md",
+        "D:\\CLAUDE\\eran-brain\\booth\\RECORDING-PLAN.md"
+      ],
+      "synthetic_evidence": [],
+      "human_markers": [
+        "keshev",
+        "microphone",
+        "recorded",
+        "recording"
+      ]
+    },
+    "n_units": 6,
+    "n_groups": 1,
+    "units": [
+      "abba",
+      "ah",
+      "ba",
+      "ih",
+      "ima",
+      "ma"
+    ],
+    "groups": [
+      "t06"
+    ],
+    "between_unit_cosine": -0.0284,
+    "per_unit": [
+      {
+        "unit": "abba",
+        "k": 100,
+        "within_cosine": 0.1021,
+        "excess": 0.1269,
+        "n_eff": 7.38,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ah",
+        "k": 100,
+        "within_cosine": 0.1429,
+        "excess": 0.1666,
+        "n_eff": 5.72,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ba",
+        "k": 100,
+        "within_cosine": 0.081,
+        "excess": 0.1063,
+        "n_eff": 8.68,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ih",
+        "k": 100,
+        "within_cosine": 0.3106,
+        "excess": 0.3296,
+        "n_eff": 2.97,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ima",
+        "k": 100,
+        "within_cosine": 0.2327,
+        "excess": 0.2539,
+        "n_eff": 3.83,
+        "twin_frac": 0.001
+      },
+      {
+        "unit": "ma",
+        "k": 100,
+        "within_cosine": 0.123,
+        "excess": 0.1471,
+        "n_eff": 6.42,
+        "twin_frac": 0.0
+      }
+    ],
+    "within_cosine_mean": 0.1654,
+    "excess_mean": 0.1884,
+    "n_eff_median": 6.07,
+    "k_median": 100,
+    "twin_frac_mean": 0.0,
+    "artefact": [],
+    "block": {
+      "unit_pairs": 15,
+      "disjoint_in_time": 15,
+      "block_fraction": 1.0,
+      "span_seconds": 39615.6
+    },
+    "artefact_confounded": true,
+    "chance": 0.1667,
+    "signal": {
+      "accuracy": 0.7,
+      "n": 600,
+      "how": "leave-one-clip-out (single group -- leakage untestable)",
+      "p_vs_chance": 0.0
+    },
+    "leakage": {
+      "gap": null,
+      "why": "single group -- cannot measure session leakage"
+    },
+    "flags": [],
+    "verdict": "ACCEPT",
+    "reasons": [
+      "all five probes passed"
+    ],
+    "seconds": 1.9
+  },
+  {
+    "id": "t07-iddo",
+    "what": "Iddo's second sitting, 11 units x ~12 clips",
+    "root": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t07",
+    "n_clips": 132,
+    "notes": [],
+    "ear": "eran-brain/body/ears.py repr=cochlea bands=24 pool=loudest60 dim=192",
+    "provenance": {
+      "verdict": "HUMAN-CLAIMED",
+      "records_read": [
+        "D:\\CLAUDE\\eran-brain\\booth\\README-DICTIONARY.md",
+        "D:\\CLAUDE\\eran-brain\\booth\\RECORDING-PLAN.md"
+      ],
+      "synthetic_evidence": [],
+      "human_markers": [
+        "keshev",
+        "microphone",
+        "recorded",
+        "recording"
+      ]
+    },
+    "n_units": 11,
+    "n_groups": 1,
+    "units": [
+      "aa",
+      "ah",
+      "ba",
+      "da",
+      "ga",
+      "ka",
+      "la",
+      "ma",
+      "na",
+      "pa",
+      "ta"
+    ],
+    "groups": [
+      "t07"
+    ],
+    "between_unit_cosine": -0.0266,
+    "per_unit": [
+      {
+        "unit": "aa",
+        "k": 12,
+        "within_cosine": 0.5297,
+        "excess": 0.5419,
+        "n_eff": 1.72,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ah",
+        "k": 12,
+        "within_cosine": 0.3608,
+        "excess": 0.3774,
+        "n_eff": 2.33,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ba",
+        "k": 12,
+        "within_cosine": 0.5007,
+        "excess": 0.5136,
+        "n_eff": 1.8,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "da",
+        "k": 12,
+        "within_cosine": 0.0573,
+        "excess": 0.0817,
+        "n_eff": 6.32,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ga",
+        "k": 12,
+        "within_cosine": 0.1787,
+        "excess": 0.1999,
+        "n_eff": 3.75,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ka",
+        "k": 12,
+        "within_cosine": 0.1017,
+        "excess": 0.1249,
+        "n_eff": 5.05,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "la",
+        "k": 12,
+        "within_cosine": 0.0533,
+        "excess": 0.0778,
+        "n_eff": 6.47,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ma",
+        "k": 12,
+        "within_cosine": 0.1941,
+        "excess": 0.215,
+        "n_eff": 3.57,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "na",
+        "k": 12,
+        "within_cosine": 0.2221,
+        "excess": 0.2422,
+        "n_eff": 3.27,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "pa",
+        "k": 12,
+        "within_cosine": 0.1305,
+        "excess": 0.1529,
+        "n_eff": 4.47,
+        "twin_frac": 0.03
+      },
+      {
+        "unit": "ta",
+        "k": 12,
+        "within_cosine": 0.0054,
+        "excess": 0.0311,
+        "n_eff": 8.94,
+        "twin_frac": 0.0
+      }
+    ],
+    "within_cosine_mean": 0.2122,
+    "excess_mean": 0.2326,
+    "n_eff_median": 3.75,
+    "k_median": 12,
+    "twin_frac_mean": 0.003,
+    "artefact": [
+      {
+        "pair": "aa/ah",
+        "why_identical": "alef vs ayin -- both a bare /a/ in modern Hebrew",
+        "n": 24,
+        "accuracy": 0.8333,
+        "correct": 20,
+        "how": "leave-one-clip-out (single group)",
+        "p_vs_coinflip": 0.000771939754486084,
+        "separable": true
+      }
+    ],
+    "block": {
+      "unit_pairs": 55,
+      "disjoint_in_time": 47,
+      "block_fraction": 0.8545,
+      "span_seconds": 472.5
+    },
+    "artefact_confounded": false,
+    "chance": 0.0909,
+    "signal": {
+      "accuracy": 0.4394,
+      "n": 132,
+      "how": "leave-one-clip-out (single group -- leakage untestable)",
+      "p_vs_chance": 5.64833539240313e-26
+    },
+    "leakage": {
+      "gap": null,
+      "why": "single group -- cannot measure session leakage"
+    },
+    "flags": [
+      "ARTEFACT"
+    ],
+    "verdict": "REJECT",
+    "reasons": [
+      "ARTEFACT: aa/ah are the same sound (alef vs ayin -- both a bare /a/ in modern Hebrew) yet separate at 83.3% (n=24, p=0.00077) -- a nuisance channel, not phonetics"
+    ],
+    "prescription": "Revoke the source and everything derived from it (`teachability.py forget <id>`), then re-measure every number that stood on it.",
+    "seconds": 0.3
+  },
+  {
+    "id": "fleurs-human",
+    "what": "FLEURS he_il syllable cut, 1502 speaker ids, IPA-recognised labels (subsample pulled read-only from eran2:~/eran-food-human2)",
+    "root": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\0bb19b15-e55e-4ca6-b4d0-9b011e3200b3\\scratchpad\\fleurs-sample",
+    "n_clips": 1116,
+    "notes": [],
+    "ear": "eran-brain/body/ears.py repr=cochlea bands=24 pool=loudest60 dim=192",
+    "provenance": {
+      "verdict": "HUMAN-CLAIMED",
+      "records_read": [
+        "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\0bb19b15-e55e-4ca6-b4d0-9b011e3200b3\\scratchpad\\fleurs-sample\\ATTRIBUTION.txt"
+      ],
+      "synthetic_evidence": [],
+      "human_markers": [
+        "fleurs",
+        "speaker"
+      ]
+    },
+    "n_units": 19,
+    "n_groups": 641,
+    "units": [
+      "B",
+      "D",
+      "F",
+      "G",
+      "H",
+      "K",
+      "L",
+      "M",
+      "N",
+      "P",
+      "R",
+      "S",
+      "SH",
+      "T",
+      "TS",
+      "V",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "groups": [
+      "fleurs-1",
+      "fleurs-10",
+      "fleurs-100",
+      "fleurs-1000",
+      "fleurs-1001",
+      "fleurs-1002",
+      "fleurs-1004",
+      "fleurs-1006",
+      "fleurs-1007",
+      "fleurs-1008",
+      "fleurs-101",
+      "fleurs-1011",
+      "..."
+    ],
+    "between_unit_cosine": -0.0059,
+    "per_unit": [
+      {
+        "unit": "B",
+        "k": 60,
+        "within_cosine": 0.1132,
+        "excess": 0.1185,
+        "n_eff": 7.51,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "D",
+        "k": 60,
+        "within_cosine": 0.0826,
+        "excess": 0.088,
+        "n_eff": 9.69,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "F",
+        "k": 60,
+        "within_cosine": 0.1272,
+        "excess": 0.1324,
+        "n_eff": 6.81,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "G",
+        "k": 60,
+        "within_cosine": 0.0841,
+        "excess": 0.0895,
+        "n_eff": 9.56,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "H",
+        "k": 60,
+        "within_cosine": 0.0819,
+        "excess": 0.0873,
+        "n_eff": 9.75,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "K",
+        "k": 60,
+        "within_cosine": 0.0441,
+        "excess": 0.0497,
+        "n_eff": 15.26,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "L",
+        "k": 60,
+        "within_cosine": 0.0727,
+        "excess": 0.0782,
+        "n_eff": 10.69,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "M",
+        "k": 60,
+        "within_cosine": 0.1051,
+        "excess": 0.1103,
+        "n_eff": 7.99,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "N",
+        "k": 60,
+        "within_cosine": 0.0929,
+        "excess": 0.0982,
+        "n_eff": 8.83,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "P",
+        "k": 60,
+        "within_cosine": 0.053,
+        "excess": 0.0585,
+        "n_eff": 13.47,
+        "twin_frac": 0.001
+      },
+      {
+        "unit": "R",
+        "k": 60,
+        "within_cosine": 0.0916,
+        "excess": 0.097,
+        "n_eff": 8.93,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "S",
+        "k": 60,
+        "within_cosine": 0.2206,
+        "excess": 0.2252,
+        "n_eff": 4.2,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "SH",
+        "k": 60,
+        "within_cosine": 0.2748,
+        "excess": 0.279,
+        "n_eff": 3.44,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "T",
+        "k": 60,
+        "within_cosine": 0.0286,
+        "excess": 0.0343,
+        "n_eff": 19.83,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "TS",
+        "k": 51,
+        "within_cosine": 0.1039,
+        "excess": 0.1092,
+        "n_eff": 7.89,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "V",
+        "k": 60,
+        "within_cosine": 0.079,
+        "excess": 0.0845,
+        "n_eff": 10.03,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "X",
+        "k": 60,
+        "within_cosine": 0.1896,
+        "excess": 0.1943,
+        "n_eff": 4.81,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "Y",
+        "k": 60,
+        "within_cosine": 0.1331,
+        "excess": 0.1382,
+        "n_eff": 6.56,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "Z",
+        "k": 45,
+        "within_cosine": 0.0789,
+        "excess": 0.0843,
+        "n_eff": 9.56,
+        "twin_frac": 0.0
+      }
+    ],
+    "within_cosine_mean": 0.1083,
+    "excess_mean": 0.1135,
+    "n_eff_median": 8.93,
+    "k_median": 60,
+    "twin_frac_mean": 0.0,
+    "artefact": [],
+    "block": {
+      "unit_pairs": 171,
+      "disjoint_in_time": 0,
+      "block_fraction": 0.0,
+      "span_seconds": 89.0
+    },
+    "artefact_confounded": false,
+    "chance": 0.0526,
+    "signal": {
+      "accuracy": 0.254,
+      "n": 63,
+      "how": "leave-group-out",
+      "p_vs_chance": 1.1794279603044279e-07
+    },
+    "leakage": {
+      "random_split_accuracy": 0.3244,
+      "honest_split_accuracy": 0.254,
+      "gap": 0.0704
+    },
+    "flags": [],
+    "verdict": "ACCEPT",
+    "reasons": [
+      "all five probes passed"
+    ],
+    "seconds": 1.7
+  }
+]

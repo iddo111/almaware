@@ -1,0 +1,12 @@
+{
+  "name": "galaxy-a70-bridge-pwa",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:webrtc": ".venv\\Scripts\\python.exe test\\webrtc_smoke.py",
+    "test:all": "npm test && npm run test:webrtc"
+  }
+}

@@ -1,0 +1,200 @@
+{
+ "version": "darwish_math/1.2 (2026-09-15)",
+ "what": "synthetic kick + rolling bass + lead loops, 143.55 BPM, 30 s each. MEASURED accuracy of the key/mode estimator on known truth -- clean synthetic audio, so an UPPER bound for real mixes.",
+ "n": 21,
+ "root_accuracy": 1.0,
+ "mode_accuracy": 0.95238,
+ "joint_accuracy": 0.95238,
+ "bpm_within_0.5": 1.0,
+ "rows": [
+  {
+   "truth": "A natural_minor",
+   "estimated": "A natural_minor",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.04646,
+   "runner_up": "A harmonic_minor",
+   "bpm": 143.55349
+  },
+  {
+   "truth": "E natural_minor",
+   "estimated": "E natural_minor",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.08442,
+   "runner_up": "E harmonic_minor",
+   "bpm": 143.5524
+  },
+  {
+   "truth": "D natural_minor",
+   "estimated": "D natural_minor",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.10779,
+   "runner_up": "D harmonic_minor",
+   "bpm": 143.56676
+  },
+  {
+   "truth": "A freygish",
+   "estimated": "A freygish",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.0123,
+   "runner_up": "A hijaz",
+   "bpm": 143.55318
+  },
+  {
+   "truth": "E freygish",
+   "estimated": "E freygish",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.05897,
+   "runner_up": "E hijaz",
+   "bpm": 143.55243
+  },
+  {
+   "truth": "D freygish",
+   "estimated": "D freygish",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.06668,
+   "runner_up": "D hijaz",
+   "bpm": 143.56682
+  },
+  {
+   "truth": "A hijaz",
+   "estimated": "A hijaz",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.12164,
+   "runner_up": "A freygish",
+   "bpm": 143.55318
+  },
+  {
+   "truth": "E hijaz",
+   "estimated": "E hijaz",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.07086,
+   "runner_up": "E harmonic_minor",
+   "bpm": 143.55243
+  },
+  {
+   "truth": "D hijaz",
+   "estimated": "D hijaz",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.05842,
+   "runner_up": "D freygish",
+   "bpm": 143.56682
+  },
+  {
+   "truth": "A harmonic_minor",
+   "estimated": "A harmonic_minor",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.08378,
+   "runner_up": "A natural_minor",
+   "bpm": 143.55349
+  },
+  {
+   "truth": "E harmonic_minor",
+   "estimated": "E harmonic_minor",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.05585,
+   "runner_up": "E natural_minor",
+   "bpm": 143.5524
+  },
+  {
+   "truth": "D harmonic_minor",
+   "estimated": "D harmonic_minor",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.02626,
+   "runner_up": "D natural_minor",
+   "bpm": 143.56676
+  },
+  {
+   "truth": "A phrygian",
+   "estimated": "A phrygian",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.1615,
+   "runner_up": "A natural_minor",
+   "bpm": 143.55318
+  },
+  {
+   "truth": "E phrygian",
+   "estimated": "E natural_minor",
+   "root_ok": true,
+   "mode_ok": false,
+   "margin": 0.02958,
+   "runner_up": "E phrygian",
+   "bpm": 143.55243
+  },
+  {
+   "truth": "D phrygian",
+   "estimated": "D phrygian",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.0368,
+   "runner_up": "D freygish",
+   "bpm": 143.56682
+  },
+  {
+   "truth": "A major",
+   "estimated": "A major",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.18886,
+   "runner_up": "A dorian",
+   "bpm": 143.55348
+  },
+  {
+   "truth": "E major",
+   "estimated": "E major",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.07476,
+   "runner_up": "F# dorian",
+   "bpm": 143.55256
+  },
+  {
+   "truth": "D major",
+   "estimated": "D major",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.27297,
+   "runner_up": "D dorian",
+   "bpm": 143.56679
+  },
+  {
+   "truth": "A dorian",
+   "estimated": "A dorian",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.18446,
+   "runner_up": "A major",
+   "bpm": 143.55348
+  },
+  {
+   "truth": "E dorian",
+   "estimated": "E dorian",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.10907,
+   "runner_up": "F# phrygian",
+   "bpm": 143.55255
+  },
+  {
+   "truth": "D dorian",
+   "estimated": "D dorian",
+   "root_ok": true,
+   "mode_ok": true,
+   "margin": 0.09125,
+   "runner_up": "D major",
+   "bpm": 143.56678
+  }
+ ]
+}

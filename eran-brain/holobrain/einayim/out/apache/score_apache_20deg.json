@@ -1,0 +1,53 @@
+{
+ "views": 2,
+ "view_index": [
+  0,
+  1
+ ],
+ "pred_hw": [
+  392,
+  518
+ ],
+ "valid_px": 254213,
+ "depth_scale_fitted": 0.5349887013435364,
+ "depth_absrel_median": 0.0034125251695513725,
+ "depth_absrel_mean": 0.006441356614232063,
+ "depth_within_5pct": 0.9835728306577555,
+ "depth_within_10pct": 0.9952205434025797,
+ "flat_baseline_absrel_median": 0.18712368607521057,
+ "flat_baseline_within_5pct": 0.1303670543992636,
+ "far_cap": 6.474258184432983,
+ "v0_depth_absrel_median": 0.003375000087544322,
+ "v0_depth_within_5pct": 0.9845057546705421,
+ "v0_depth_within_10pct": 0.997202753490698,
+ "v0_own_scale": 0.5360289216041565,
+ "v0_valid_px": 127983,
+ "v0_scale_drift_pct": 0.19443779990264742,
+ "pose_rel_rot_err_deg_median": 0.6602550686666266,
+ "pose_rel_rot_err_deg_max": 0.6602550686666266,
+ "pose_rel_trans_dir_err_deg_median": 0.8838771743940425,
+ "scene_diameter": 5.548485279083252,
+ "point_err_pct_diam_median": 0.22974971030589741,
+ "point_err_pct_diam_p90": 0.598983787637549,
+ "point_err_units_median": 0.012747628855059133,
+ "sim3_scale": 0.5280832279891498,
+ "v0_point_err_units_median": 0.012661919221653333,
+ "v0_point_err_pct_diam_median": 0.22820497099246875,
+ "chamfer_pct_diam": 0.17498841801148954,
+ "chamfer_units": 0.009709206613468163,
+ "chamfer_acc_pct_diam_median": 0.13011136170965196,
+ "chamfer_comp_pct_diam_median": 0.11602210323043027,
+ "mesh_vertices": 73665,
+ "mesh_faces": 139098,
+ "mesh_chamfer_pct_diam": 0.8955675599231389,
+ "mesh_chamfer_units": 0.04969043422658044,
+ "mesh_watertight": {
+  "watertight": false,
+  "boundary_edges": 9198,
+  "nonmanifold_edges": 0,
+  "euler": -483
+ },
+ "mesh_acc_pct_diam_median": 0.4027358640821724,
+ "mesh_comp_pct_diam_median": 0.18745384924466033,
+ "timing_infer_s": 1.1128087043762207
+}

@@ -1,0 +1,118 @@
+{
+ "what": "blind prototype-purity A/B for the ERAN closed loop",
+ "clips_dir": "clips",
+ "n_wavs": 657,
+ "arms": {
+  "open": {
+   "n_protos": 437,
+   "n_groups_used": 437
+  },
+  "closed": {
+   "n_protos": 418,
+   "n_groups_used": 416
+  }
+ },
+ "agreement": {
+  "mean_jaccard": 0.6378,
+  "frac_identical_neighbourhood": 0.4338,
+  "n_candidate_anchors_where_they_disagree": 67
+ },
+ "rounds": [
+  {
+   "anchor": "ah_t06_56.wav",
+   "open": [
+    "ah_t06_56.wav",
+    "ah_t06_32.wav",
+    "ah_t06_52.wav",
+    "ah_t06_63.wav"
+   ],
+   "closed": [
+    "ah_t06_56.wav",
+    "ba_t06_88.wav",
+    "abba_t06_71.wav",
+    "ba_t06_83.wav"
+   ],
+   "jaccard": 0.034
+  },
+  {
+   "anchor": "ih_t06_68.wav",
+   "open": [
+    "ih_t06_68.wav",
+    "ih_t06_66.wav",
+    "ih_t06_91.wav",
+    "ih_t06_48.wav"
+   ],
+   "closed": [
+    "ih_t06_68.wav",
+    "ih_t06_35.wav",
+    "ih_t06_79.wav",
+    "ih_t06_98.wav"
+   ],
+   "jaccard": 0.048
+  },
+  {
+   "anchor": "ima_t06_26.wav",
+   "open": [
+    "ima_t06_26.wav",
+    "ima_t06_95.wav",
+    "ima_t06_35.wav",
+    "ima_t06_36.wav"
+   ],
+   "closed": [
+    "ima_t06_26.wav",
+    "ima_t06_14.wav",
+    "ima_t06_89.wav",
+    "ima_t06_13.wav"
+   ],
+   "jaccard": 0.071
+  },
+  {
+   "anchor": "ih_t06_73.wav",
+   "open": [
+    "ih_t06_73.wav",
+    "ih_t06_67.wav",
+    "ih_t06_6.wav",
+    "ih_t06_71.wav"
+   ],
+   "closed": [
+    "ih_t06_73.wav",
+    "ih_t06_68.wav",
+    "ih_t06_79.wav",
+    "ih_t06_35.wav"
+   ],
+   "jaccard": 0.083
+  },
+  {
+   "anchor": "ima_t06_45.wav",
+   "open": [
+    "ima_t06_45.wav",
+    "ima_t06_32.wav",
+    "ima_t06_33.wav",
+    "ima_t06_57.wav"
+   ],
+   "closed": [
+    "ima_t06_45.wav",
+    "ima_t06_64.wav",
+    "ima_t06_10.wav",
+    "ima_t06_47.wav"
+   ],
+   "jaccard": 0.091
+  },
+  {
+   "anchor": "abba_t06_86.wav",
+   "open": [
+    "abba_t06_86.wav",
+    "abba_t06_80.wav",
+    "abba_t06_64.wav",
+    "abba_t06_87.wav"
+   ],
+   "closed": [
+    "abba_t06_86.wav",
+    "abba_t06_45.wav",
+    "abba_t06_6.wav",
+    "abba_t06_31.wav"
+   ],
+   "jaccard": 0.1
+  }
+ ]
+}

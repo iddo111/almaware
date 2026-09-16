@@ -1,0 +1,31 @@
+{
+  "name": "Community food and medicinal-plant garden sentinel",
+  "domain": "food-ecology-education",
+  "beneficiaries": "a community that has not yet been selected",
+  "lawful": false,
+  "voluntary_opt_in": false,
+  "withdrawal_without_penalty": false,
+  "human_rights_reviewed": true,
+  "preserves_democratic_choice": true,
+  "non_weaponized": true,
+  "no_coercive_surveillance": true,
+  "community_approval_recorded": false,
+  "community_controls_data_and_operations": false,
+  "transparent_governance": true,
+  "independent_reviewer_named": false,
+  "reviewer_can_stop_pilot": false,
+  "measurable_baseline": false,
+  "measurable_benefit_target": false,
+  "harm_indicators_and_stop_conditions": false,
+  "bounded_end_date": false,
+  "automation_has_scope_quota_logs_and_stop": true,
+  "replication_requires_separate_authorization": true,
+  "environmental_impact_plan": false,
+  "medical_claims": false,
+  "qualified_medical_and_legal_review": false,
+  "notes": {
+    "status": "design candidate only; no field deployment is authorized",
+    "hardware": "reuse an existing cheap Arduino or ESP board after exact identification",
+    "health_boundary": "plants may be labelled for education; no treatment claims"
+  }
+}

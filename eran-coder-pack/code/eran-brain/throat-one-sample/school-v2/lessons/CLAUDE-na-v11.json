@@ -1,0 +1,126 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "na",
+ "letter": "nun",
+ "hebrew": "נ",
+ "facts": {
+  "place": "tip",
+  "manner": "nasal",
+  "nasal": 1,
+  "voiced": 1
+ },
+ "decisions": {
+  "knots": "AH",
+  "constr": "seal",
+  "nasal": 1,
+  "voice": "on",
+  "release": "plain",
+  "burst": 0,
+  "pre": 0
+ },
+ "amounts": {
+  "c_pos": 0.9297457026793098,
+  "c_area": 2.0,
+  "velum": 0.575513627526847,
+  "ten": 0.6,
+  "voi": 1.0,
+  "d_pre": 0.0,
+  "d_cons": 0.14427445528300642,
+  "d_trans": 0.021743190225267186,
+  "d_gap": 0.04,
+  "gap_pos": 0.65,
+  "gap_area": 2.0,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.0,
+  "d_vowel": 0.3882899561738866,
+  "glide": 0.3666337637448428,
+  "gain": 6.0,
+  "f0": 103.67166293793981,
+  "trans_voi": null
+ },
+ "live_amounts": [
+  "c_pos",
+  "d_cons",
+  "d_trans",
+  "d_vowel",
+  "f0",
+  "glide",
+  "ten",
+  "trans_voi",
+  "velum",
+  "voi"
+ ],
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9297,
+    0.0,
+    0.5755,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9297,
+    0.0,
+    0.5755,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.1443,
+   0.0217,
+   0.3883
+  ],
+  "f0_knots": [
+   103.67166293793981,
+   103.67166293793981,
+   96.41464653228404
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.3666337637448428,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "ruler": "school-v2/ruler.py (09-02 family rulers + verifiers' objections)",
+ "brief": "ok   murmur <500 Hz 0.997 >= 0.95; ok   nose/lip 24.3 dB >= +20; ok   antiformant 2000 in 1.9-2.6 kHz; ok   no burst (jump 6.5 < 15); ok   murmur voiced hnr 11.3 f0 104; ok   murmur level -1.2 dB (-8..+2)",
+ "attempt": 13
+}

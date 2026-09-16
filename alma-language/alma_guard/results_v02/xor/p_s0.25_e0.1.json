@@ -1,0 +1,1 @@
+{"rule": "perturbation", "sigma": 0.25, "eta": 0.1, "seeds": 20, "trials": 200, "solved": 1, "solved_seeds": [1]}

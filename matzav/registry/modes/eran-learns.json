@@ -1,0 +1,12 @@
+{
+  "id": "eran-learns", "order": 40,
+  "title_he": "ערן לומד", "title_en": "ERAN-LEARNS",
+  "subtitle_he": "אוזן האח + וינסטון על ערן3",
+  "box_hint": "eran3",
+  "want": ["eran3/sibling-ear", "eran3/winston-forever"],
+  "concede": ["eran3/qwen-rpc"],
+  "note_he": "שתי היחידות מוגדרות להידלק באתחול ושתיהן כבויות — זה בדיוק הפער שמצב אמור לסגור.",
+  "honesty": "וינסטון על ערן3 יתפוס GPU לאורך זמן, וב-RAMCHAT יש סוכן אחר שתפס את ה-GPU של ערן3 ב-07:10. עלות ה-GPU כאן היא אומדן שהושאל מערן4.",
+  "demonstrated": {"status": "planned", "evidence": "Both units verified enabled+inactive 2026-09-04 07:36. NOT YET RUN by MATZAV."},
+  "runnable": false
+}

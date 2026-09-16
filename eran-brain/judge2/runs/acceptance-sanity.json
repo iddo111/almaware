@@ -1,0 +1,58 @@
+[
+ {
+  "clip": "NOW-pa-cv.wav",
+  "p_v1": 0.0003835378780687341,
+  "p_iddoonly": 0.00042112229818871033,
+  "why": "sweep best /pa/, rejected 2026-09-01 morning",
+  "human": false
+ },
+ {
+  "clip": "NOW-ma-nasal.wav",
+  "p_v1": 0.005269357413465943,
+  "p_iddoonly": 0.00770494894374118,
+  "why": "sweep best /ma/, rejected 2026-09-01 morning",
+  "human": false
+ },
+ {
+  "clip": "NOW-na-nasal.wav",
+  "p_v1": 0.001884901041867927,
+  "p_iddoonly": 0.0007248912941030366,
+  "why": "sweep best /na/, rejected 2026-09-01 morning",
+  "human": false
+ },
+ {
+  "clip": "ERAN-pa-CROSSED-4.861.wav",
+  "p_v1": 0.0001778869131420393,
+  "p_iddoonly": 5.894239151029981e-06,
+  "why": "CROSSED its win bar - he said no",
+  "human": false
+ },
+ {
+  "clip": "ERAN-ta-CROSSED-5.095.wav",
+  "p_v1": 7.700844236076199e-07,
+  "p_iddoonly": 4.4349775732586535e-08,
+  "why": "CROSSED its win bar - he said no",
+  "human": false
+ },
+ {
+  "clip": "ERAN-ba-BREAKTHROUGH-3.931.wav",
+  "p_v1": 0.000661050520997834,
+  "p_iddoonly": 0.0007542587992473377,
+  "why": "best wdist ever - sitting score 2",
+  "human": false
+ },
+ {
+  "clip": "ERAN-ba-RESCUED-burst43dB-cv12.wav",
+  "p_v1": 0.07004340794023803,
+  "p_iddoonly": 0.026901756147278525,
+  "why": "human-grade burst - sitting score 1 (noise)",
+  "human": true
+ },
+ {
+  "clip": "ERAN-abba-best-wdist9.200-FOUND-20260825.wav",
+  "p_v1": 4.531661913505534e-08,
+  "p_iddoonly": 2.3431978402010903e-08,
+  "why": "the abba attempt",
+  "human": false
+ }
+]

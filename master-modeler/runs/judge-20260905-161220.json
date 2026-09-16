@@ -1,0 +1,824 @@
+[
+  {
+    "id": "words-derived",
+    "what": "food/words -- 12 words CONCATENATED from food/train clips",
+    "root": "D:\\CLAUDE\\eran-brain\\food\\words",
+    "n_clips": 96,
+    "notes": [],
+    "ear": "eran-brain/body/ears.py repr=cochlea bands=24 pool=loudest60 dim=192",
+    "provenance": {
+      "verdict": "HUMAN-CLAIMED",
+      "records_read": [
+        "D:\\CLAUDE\\eran-brain\\food\\words\\manifest.json",
+        "D:\\CLAUDE\\README.md"
+      ],
+      "synthetic_evidence": [],
+      "human_markers": [
+        "recording"
+      ]
+    },
+    "n_units": 12,
+    "n_groups": 8,
+    "units": [
+      "daga",
+      "gamala",
+      "kara",
+      "khatapa",
+      "mala",
+      "naha",
+      "saba",
+      "shana",
+      "tava",
+      "thabaah",
+      "tsaqara",
+      "yaza"
+    ],
+    "groups": [
+      "w00",
+      "w01",
+      "w02",
+      "w03",
+      "w04",
+      "w05",
+      "w06",
+      "w07"
+    ],
+    "between_unit_cosine": -0.0716,
+    "per_unit": [
+      {
+        "unit": "daga",
+        "k": 8,
+        "within_cosine": 0.8088,
+        "excess": 0.8215,
+        "n_eff": 1.19,
+        "twin_frac": 0.071
+      },
+      {
+        "unit": "gamala",
+        "k": 8,
+        "within_cosine": 0.8847,
+        "excess": 0.8924,
+        "n_eff": 1.1,
+        "twin_frac": 0.357
+      },
+      {
+        "unit": "kara",
+        "k": 8,
+        "within_cosine": 0.7039,
+        "excess": 0.7237,
+        "n_eff": 1.32,
+        "twin_frac": 0.107
+      },
+      {
+        "unit": "khatapa",
+        "k": 8,
+        "within_cosine": 0.8682,
+        "excess": 0.877,
+        "n_eff": 1.12,
+        "twin_frac": 0.321
+      },
+      {
+        "unit": "mala",
+        "k": 8,
+        "within_cosine": 0.6709,
+        "excess": 0.6929,
+        "n_eff": 1.37,
+        "twin_frac": 0.107
+      },
+      {
+        "unit": "naha",
+        "k": 8,
+        "within_cosine": 0.6358,
+        "excess": 0.6602,
+        "n_eff": 1.42,
+        "twin_frac": 0.107
+      },
+      {
+        "unit": "saba",
+        "k": 8,
+        "within_cosine": 0.7531,
+        "excess": 0.7696,
+        "n_eff": 1.25,
+        "twin_frac": 0.071
+      },
+      {
+        "unit": "shana",
+        "k": 8,
+        "within_cosine": 0.7696,
+        "excess": 0.785,
+        "n_eff": 1.23,
+        "twin_frac": 0.286
+      },
+      {
+        "unit": "tava",
+        "k": 8,
+        "within_cosine": 0.8855,
+        "excess": 0.8931,
+        "n_eff": 1.1,
+        "twin_frac": 0.464
+      },
+      {
+        "unit": "thabaah",
+        "k": 8,
+        "within_cosine": 0.9323,
+        "excess": 0.9368,
+        "n_eff": 1.06,
+        "twin_frac": 0.571
+      },
+      {
+        "unit": "tsaqara",
+        "k": 8,
+        "within_cosine": 0.8776,
+        "excess": 0.8858,
+        "n_eff": 1.11,
+        "twin_frac": 0.357
+      },
+      {
+        "unit": "yaza",
+        "k": 8,
+        "within_cosine": 0.879,
+        "excess": 0.8871,
+        "n_eff": 1.11,
+        "twin_frac": 0.393
+      }
+    ],
+    "within_cosine_mean": 0.8058,
+    "excess_mean": 0.8188,
+    "n_eff_median": 1.16,
+    "k_median": 8,
+    "twin_frac_mean": 0.268,
+    "block": null,
+    "drift": {
+      "floor": 0.6562,
+      "correct": 63,
+      "n": 96,
+      "units_used": 12,
+      "per_unit": [
+        {
+          "unit": "daga",
+          "k": 8,
+          "accuracy": 0.5
+        },
+        {
+          "unit": "gamala",
+          "k": 8,
+          "accuracy": 0.5
+        },
+        {
+          "unit": "kara",
+          "k": 8,
+          "accuracy": 0.75
+        },
+        {
+          "unit": "khatapa",
+          "k": 8,
+          "accuracy": 0.75
+        },
+        {
+          "unit": "mala",
+          "k": 8,
+          "accuracy": 0.875
+        },
+        {
+          "unit": "naha",
+          "k": 8,
+          "accuracy": 0.5
+        },
+        {
+          "unit": "saba",
+          "k": 8,
+          "accuracy": 0.75
+        },
+        {
+          "unit": "shana",
+          "k": 8,
+          "accuracy": 0.625
+        },
+        {
+          "unit": "tava",
+          "k": 8,
+          "accuracy": 0.375
+        },
+        {
+          "unit": "thabaah",
+          "k": 8,
+          "accuracy": 0.75
+        },
+        {
+          "unit": "tsaqara",
+          "k": 8,
+          "accuracy": 0.875
+        },
+        {
+          "unit": "yaza",
+          "k": 8,
+          "accuracy": 0.625
+        }
+      ]
+    },
+    "artefact": [],
+    "artefact_confounded": false,
+    "chance": 0.0833,
+    "signal": {
+      "accuracy": 1.0,
+      "n": 96,
+      "how": "leave-group-out",
+      "p_vs_chance": 2.5038042912396847e-104
+    },
+    "leakage": {
+      "random_split_accuracy": 1.0,
+      "honest_split_accuracy": 1.0,
+      "gap": 0.0
+    },
+    "flags": [
+      "STARVED"
+    ],
+    "verdict": "STARVED",
+    "reasons": [
+      "STARVED: median unit holds 8 clips but only 1.16 independent examples (within-unit cosine 0.8058, corpus floor -0.0716, excess 0.8188). Below 3 you cannot even estimate what the unit's variation IS."
+    ],
+    "prescription": "Do not augment -- augmentation raises k without raising n_eff. Record more real takes.",
+    "seconds": 3.7
+  },
+  {
+    "id": "antfarm-source",
+    "what": "voice-ant-farm/corpus-syllables/heldout -- the SAME clips as tts-vault but sitting next to the generator's own 624-record manifest",
+    "root": "D:\\CLAUDE\\voice-ant-farm\\corpus-syllables\\heldout",
+    "n_clips": 132,
+    "notes": [],
+    "ear": "eran-brain/body/ears.py repr=cochlea bands=24 pool=loudest60 dim=192",
+    "provenance": {
+      "verdict": "SYNTHETIC",
+      "records_read": [
+        "D:\\CLAUDE\\voice-ant-farm\\corpus-syllables\\manifest.json",
+        "D:\\CLAUDE\\voice-ant-farm\\README.md",
+        "D:\\CLAUDE\\README.md"
+      ],
+      "synthetic_evidence": [
+        {
+          "file": "D:\\CLAUDE\\voice-ant-farm\\corpus-syllables\\manifest.json",
+          "marker": "mms-tts",
+          "why": "names facebook/mms-tts (a TTS model)",
+          "quote": "veform-features-only\", \"source\": { \"model\": \"facebook/mms-tts-heb\", \"model_sampling_rate\": 16000, \"tokenizer_vocab_size\": 33, \"token"
+        },
+        {
+          "file": "D:\\CLAUDE\\voice-ant-farm\\corpus-syllables\\manifest.json",
+          "marker": "tts-heb",
+          "why": "names a Hebrew TTS model",
+          "quote": "rm-features-only\", \"source\": { \"model\": \"facebook/mms-tts-heb\", \"model_sampling_rate\": 16000, \"tokenizer_vocab_size\": 33, \"tokenizer"
+        },
+        {
+          "file": "D:\\CLAUDE\\voice-ant-farm\\corpus-syllables\\manifest.json",
+          "marker": "vits",
+          "why": "names VITS (a speech synthesiser)",
+          "quote": ", \"item_id\": \"ah\", \"torch_seed\": 200000, \"vits\": { \"speaking_rate\": 1.0, \"noise_scale\": 0.667, \"noise_scale_"
+        },
+        {
+          "file": "D:\\CLAUDE\\voice-ant-farm\\corpus-syllables\\manifest.json",
+          "marker": "torch_seed",
+          "why": "clips are indexed by a torch RNG seed, i.e. generated",
+          "quote": "b00\", \"split\": \"train\", \"item_id\": \"ah\", \"torch_seed\": 200000, \"vits\": { \"speaking_rate\": 1.0, \"noise_scale\":"
+        },
+        {
+          "file": "D:\\CLAUDE\\voice-ant-farm\\corpus-syllables\\manifest.json",
+          "marker": "base_rendering_id",
+          "why": "clips are renderings, not recordings",
+          "quote": "derings\": 48 } }, \"base_renderings\": [ { \"base_rendering_id\": \"ah/train/b00\", \"split\": \"train\", \"item_id\": \"ah\", \""
+        },
+        {
+          "file": "D:\\CLAUDE\\voice-ant-farm\\corpus-syllables\\manifest.json",
+          "marker": "speaking_rate",
+          "why": "a synthesiser parameter is recorded per clip",
+          "quote": "\"ah\", \"torch_seed\": 200000, \"vits\": { \"speaking_rate\": 1.0, \"noise_scale\": 0.667, \"noise_scale_duration\": 0.8"
+        },
+        {
+          "file": "D:\\CLAUDE\\voice-ant-farm\\corpus-syllables\\manifest.json",
+          "marker": "noise_scale",
+          "why": "a synthesiser parameter is recorded per clip",
+          "quote": "000, \"vits\": { \"speaking_rate\": 1.0, \"noise_scale\": 0.667, \"noise_scale_duration\": 0.8 }, \"base_sample_count"
+        },
+        {
+          "file": "D:\\CLAUDE\\voice-ant-farm\\corpus-syllables\\manifest.json",
+          "marker": "tokenizer_strips_niqqud",
+          "why": "the generator's own note that the vowels were lost",
+          "quote": "sampling_rate\": 16000, \"tokenizer_vocab_size\": 33, \"tokenizer_strips_niqqud\": true, \"tokenizer_note\": \"mms-tts-heb has a 33-symbol vocabul"
+        }
+      ],
+      "human_markers": [
+        "microphone",
+        "recorded",
+        "recording",
+        "speaker"
+      ]
+    },
+    "n_units": 22,
+    "n_groups": 2,
+    "units": [
+      "aa",
+      "ah",
+      "ba",
+      "da",
+      "ga",
+      "ha",
+      "ka",
+      "kha",
+      "la",
+      "ma",
+      "na",
+      "pa",
+      "qa",
+      "ra",
+      "sa",
+      "sha",
+      "ta",
+      "tha",
+      "tsa",
+      "va",
+      "ya",
+      "za"
+    ],
+    "groups": [
+      "h00",
+      "h01"
+    ],
+    "between_unit_cosine": -0.023,
+    "per_unit": [
+      {
+        "unit": "aa",
+        "k": 6,
+        "within_cosine": 0.6183,
+        "excess": 0.6269,
+        "n_eff": 1.45,
+        "twin_frac": 0.2
+      },
+      {
+        "unit": "ah",
+        "k": 6,
+        "within_cosine": 0.589,
+        "excess": 0.5982,
+        "n_eff": 1.5,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ba",
+        "k": 6,
+        "within_cosine": 0.4832,
+        "excess": 0.4948,
+        "n_eff": 1.73,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "da",
+        "k": 6,
+        "within_cosine": 0.3693,
+        "excess": 0.3835,
+        "n_eff": 2.06,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ga",
+        "k": 6,
+        "within_cosine": 0.5307,
+        "excess": 0.5412,
+        "n_eff": 1.62,
+        "twin_frac": 0.067
+      },
+      {
+        "unit": "ha",
+        "k": 6,
+        "within_cosine": 0.6872,
+        "excess": 0.6942,
+        "n_eff": 1.34,
+        "twin_frac": 0.2
+      },
+      {
+        "unit": "ka",
+        "k": 6,
+        "within_cosine": 0.5135,
+        "excess": 0.5244,
+        "n_eff": 1.66,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "kha",
+        "k": 6,
+        "within_cosine": 0.6051,
+        "excess": 0.614,
+        "n_eff": 1.47,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "la",
+        "k": 6,
+        "within_cosine": 0.5936,
+        "excess": 0.6027,
+        "n_eff": 1.49,
+        "twin_frac": 0.067
+      },
+      {
+        "unit": "ma",
+        "k": 6,
+        "within_cosine": 0.4509,
+        "excess": 0.4633,
+        "n_eff": 1.81,
+        "twin_frac": 0.133
+      },
+      {
+        "unit": "na",
+        "k": 6,
+        "within_cosine": 0.3828,
+        "excess": 0.3967,
+        "n_eff": 2.01,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "pa",
+        "k": 6,
+        "within_cosine": 0.4698,
+        "excess": 0.4818,
+        "n_eff": 1.76,
+        "twin_frac": 0.067
+      },
+      {
+        "unit": "qa",
+        "k": 6,
+        "within_cosine": 0.5658,
+        "excess": 0.5756,
+        "n_eff": 1.55,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "ra",
+        "k": 6,
+        "within_cosine": 0.6678,
+        "excess": 0.6752,
+        "n_eff": 1.37,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "sa",
+        "k": 6,
+        "within_cosine": 0.664,
+        "excess": 0.6716,
+        "n_eff": 1.38,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "sha",
+        "k": 6,
+        "within_cosine": 0.9133,
+        "excess": 0.9153,
+        "n_eff": 1.08,
+        "twin_frac": 0.667
+      },
+      {
+        "unit": "ta",
+        "k": 6,
+        "within_cosine": 0.5958,
+        "excess": 0.6049,
+        "n_eff": 1.49,
+        "twin_frac": 0.067
+      },
+      {
+        "unit": "tha",
+        "k": 6,
+        "within_cosine": 0.4934,
+        "excess": 0.5048,
+        "n_eff": 1.7,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "tsa",
+        "k": 6,
+        "within_cosine": 0.695,
+        "excess": 0.7019,
+        "n_eff": 1.33,
+        "twin_frac": 0.267
+      },
+      {
+        "unit": "va",
+        "k": 6,
+        "within_cosine": 0.6908,
+        "excess": 0.6978,
+        "n_eff": 1.34,
+        "twin_frac": 0.267
+      },
+      {
+        "unit": "ya",
+        "k": 6,
+        "within_cosine": 0.7834,
+        "excess": 0.7883,
+        "n_eff": 1.21,
+        "twin_frac": 0.2
+      },
+      {
+        "unit": "za",
+        "k": 6,
+        "within_cosine": 0.8287,
+        "excess": 0.8326,
+        "n_eff": 1.16,
+        "twin_frac": 0.267
+      }
+    ],
+    "within_cosine_mean": 0.5996,
+    "excess_mean": 0.6086,
+    "n_eff_median": 1.49,
+    "k_median": 6,
+    "twin_frac_mean": 0.112,
+    "block": {
+      "unit_pairs": 231,
+      "disjoint_in_time": 231,
+      "block_fraction": 1.0,
+      "span_seconds": 78.0
+    },
+    "drift": {
+      "floor": 0.9621,
+      "correct": 127,
+      "n": 132,
+      "units_used": 22,
+      "per_unit": [
+        {
+          "unit": "aa",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "ah",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "ba",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "da",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "ga",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "ha",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "ka",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "kha",
+          "k": 6,
+          "accuracy": 0.6667
+        },
+        {
+          "unit": "la",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "ma",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "na",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "pa",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "qa",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "ra",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "sa",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "sha",
+          "k": 6,
+          "accuracy": 0.8333
+        },
+        {
+          "unit": "ta",
+          "k": 6,
+          "accuracy": 0.6667
+        },
+        {
+          "unit": "tha",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "tsa",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "va",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "ya",
+          "k": 6,
+          "accuracy": 1.0
+        },
+        {
+          "unit": "za",
+          "k": 6,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    "artefact": [
+      {
+        "pair": "ta/tha",
+        "why_identical": "tav vs tet -- both /t/ in modern Hebrew",
+        "n": 12,
+        "accuracy": 0.75,
+        "correct": 9,
+        "how": "leave-group-out",
+        "p_vs_coinflip": 0.072998046875,
+        "drift_floor": 0.9621,
+        "p_vs_drift_floor": 0.9992007337866011,
+        "separable": false,
+        "compared_to": "the measured drift floor 0.962"
+      },
+      {
+        "pair": "ka/qa",
+        "why_identical": "kaf vs qof -- both /k/ in modern Hebrew",
+        "n": 12,
+        "accuracy": 1.0,
+        "correct": 12,
+        "how": "leave-group-out",
+        "p_vs_coinflip": 0.000244140625,
+        "drift_floor": 0.9621,
+        "p_vs_drift_floor": 0.6289883125983674,
+        "separable": false,
+        "compared_to": "the measured drift floor 0.962"
+      },
+      {
+        "pair": "aa/ah",
+        "why_identical": "alef vs ayin -- both a bare /a/ in modern Hebrew",
+        "n": 12,
+        "accuracy": 1.0,
+        "correct": 12,
+        "how": "leave-group-out",
+        "p_vs_coinflip": 0.000244140625,
+        "drift_floor": 0.9621,
+        "p_vs_drift_floor": 0.6289883125983674,
+        "separable": false,
+        "compared_to": "the measured drift floor 0.962"
+      }
+    ],
+    "artefact_confounded": true,
+    "chance": 0.0455,
+    "signal": {
+      "accuracy": 0.6288,
+      "n": 132,
+      "how": "leave-group-out",
+      "p_vs_chance": 1.8599598358851085e-76
+    },
+    "leakage": {
+      "random_split_accuracy": 0.8788,
+      "honest_split_accuracy": 0.6288,
+      "gap": 0.25
+    },
+    "flags": [
+      "SYNTHETIC",
+      "CONFOUNDED",
+      "CONFOUNDED",
+      "STARVED",
+      "LEAKY"
+    ],
+    "verdict": "REJECT",
+    "reasons": [
+      "PROVENANCE: the corpus's own record names a generator ('mms-tts' -- names facebook/mms-tts (a TTS model))",
+      "CONFOUNDED: ka/qa separate at 100.0%, but this corpus's own time-only control already reaches 96.2% -- early clips of ONE unit can be told from late clips of the SAME unit. The separation is real; nothing here shows it is phonetic. Re-record interleaved to decide it.",
+      "CONFOUNDED: aa/ah separate at 100.0%, but this corpus's own time-only control already reaches 96.2% -- early clips of ONE unit can be told from late clips of the SAME unit. The separation is real; nothing here shows it is phonetic. Re-record interleaved to decide it.",
+      "STARVED: median unit holds 6 clips but only 1.49 independent examples (within-unit cosine 0.5996, corpus floor -0.023, excess 0.6086). Below 3 you cannot even estimate what the unit's variation IS.",
+      "LEAKAGE: a random split scores 25.0 points higher than an honest one -- that much of any number reported on this corpus was session memorisation"
+    ],
+    "prescription": "Revoke the source and everything derived from it (`teachability.py forget <id>`), then re-measure every number that stood on it.",
+    "seconds": 7.0
+  },
+  {
+    "id": "human-dictation",
+    "what": "corpus-big/human/heldout -- Iddo's own dictation, label = the capture rig (kafe / vinput / almamic), NOT a phone task",
+    "root": "D:\\CLAUDE\\voice-ant-farm\\corpus-big\\human\\heldout",
+    "n_clips": 400,
+    "notes": [],
+    "ear": "eran-brain/body/ears.py repr=cochlea bands=24 pool=loudest60 dim=192",
+    "provenance": {
+      "verdict": "HUMAN-CLAIMED",
+      "records_read": [
+        "D:\\CLAUDE\\voice-ant-farm\\corpus-big\\human\\README.md",
+        "D:\\CLAUDE\\voice-ant-farm\\README.md"
+      ],
+      "synthetic_evidence": [],
+      "human_markers": [
+        "microphone",
+        "recorded",
+        "recording",
+        "speaker"
+      ]
+    },
+    "n_units": 2,
+    "n_groups": 2,
+    "units": [
+      "kafe",
+      "vinput"
+    ],
+    "groups": [
+      "20260624",
+      "20260625"
+    ],
+    "between_unit_cosine": -0.1543,
+    "per_unit": [
+      {
+        "unit": "kafe",
+        "k": 200,
+        "within_cosine": 0.1137,
+        "excess": 0.2321,
+        "n_eff": 4.24,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "vinput",
+        "k": 200,
+        "within_cosine": 0.2021,
+        "excess": 0.3088,
+        "n_eff": 3.2,
+        "twin_frac": 0.0
+      }
+    ],
+    "within_cosine_mean": 0.1579,
+    "excess_mean": 0.2705,
+    "n_eff_median": 3.72,
+    "k_median": 200,
+    "twin_frac_mean": 0.0,
+    "block": {
+      "unit_pairs": 1,
+      "disjoint_in_time": 1,
+      "block_fraction": 1.0,
+      "span_seconds": 414.4
+    },
+    "drift": {
+      "floor": 0.6225,
+      "correct": 249,
+      "n": 400,
+      "units_used": 2,
+      "per_unit": [
+        {
+          "unit": "kafe",
+          "k": 200,
+          "accuracy": 0.64
+        },
+        {
+          "unit": "vinput",
+          "k": 200,
+          "accuracy": 0.605
+        }
+      ]
+    },
+    "artefact": [],
+    "artefact_confounded": false,
+    "chance": 0.5,
+    "signal": {
+      "accuracy": 0.925,
+      "n": 200,
+      "how": "leave-group-out",
+      "p_vs_chance": 9.89711698387611e-39
+    },
+    "leakage": {
+      "random_split_accuracy": 0.9175,
+      "honest_split_accuracy": 0.925,
+      "gap": -0.0075
+    },
+    "flags": [],
+    "verdict": "ACCEPT",
+    "reasons": [
+      "all five probes passed"
+    ],
+    "seconds": 20.4
+  }
+]

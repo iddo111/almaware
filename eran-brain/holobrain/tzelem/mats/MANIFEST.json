@@ -1,0 +1,121 @@
+{
+ "harvested": [
+  {
+   "name": "wood_polished",
+   "kind": "wood",
+   "file": "wood_polished.tzm",
+   "bytes": 2621460,
+   "texels": 512,
+   "mm_per_texel": 0.16767551434464026,
+   "physical_size_mm": 85.84986334445581,
+   "scale_basis": "measured",
+   "source": "room3d/frames/f0008.jpg",
+   "source_crop_xyxy": [
+    230,
+    380,
+    742,
+    892
+   ],
+   "provenance": "Iddo Perez, room_20260905.mp4, filmed 2026-09-05, his own desk",
+   "licence": "Iddo's own footage - no third-party licence"
+  },
+  {
+   "name": "steel_brushed",
+   "kind": "metal",
+   "file": "steel_brushed.tzm",
+   "bytes": 40980,
+   "texels": 64,
+   "mm_per_texel": 0.1833950938144503,
+   "physical_size_mm": 11.737286004124819,
+   "scale_basis": "measured",
+   "source": "room3d/frames/f0008.jpg",
+   "source_crop_xyxy": [
+    300,
+    905,
+    370,
+    975
+   ],
+   "provenance": "Iddo Perez, room_20260905.mp4, filmed 2026-09-05, his own desk",
+   "licence": "Iddo's own footage - no third-party licence"
+  },
+  {
+   "name": "paper_stack",
+   "kind": "paper",
+   "file": "paper_stack.tzm",
+   "bytes": 2621460,
+   "texels": 512,
+   "mm_per_texel": 0.23809523809523808,
+   "physical_size_mm": 121.9047619047619,
+   "scale_basis": "estimated",
+   "source": "room3d/frames/f0008.jpg",
+   "source_crop_xyxy": [
+    250,
+    110,
+    762,
+    622
+   ],
+   "provenance": "Iddo Perez, room_20260905.mp4, filmed 2026-09-05, his own desk",
+   "licence": "Iddo's own footage - no third-party licence"
+  },
+  {
+   "name": "wood_carved_dark",
+   "kind": "wood",
+   "file": "wood_carved_dark.tzm",
+   "bytes": 2621460,
+   "texels": 512,
+   "mm_per_texel": 0.2,
+   "physical_size_mm": 102.4,
+   "scale_basis": "estimated",
+   "source": "room3d/frames/f0008.jpg",
+   "source_crop_xyxy": [
+    560,
+    1330,
+    1072,
+    1842
+   ],
+   "provenance": "Iddo Perez, room_20260905.mp4, filmed 2026-09-05, his own desk",
+   "licence": "Iddo's own footage - no third-party licence"
+  },
+  {
+   "name": "floor_vinyl",
+   "kind": "floor",
+   "file": "floor_vinyl.tzm",
+   "bytes": 2621460,
+   "texels": 512,
+   "mm_per_texel": 1.5,
+   "physical_size_mm": 768.0,
+   "scale_basis": "assumed",
+   "source": "room3d/frames/f0071.jpg",
+   "source_crop_xyxy": [
+    520,
+    1340,
+    1032,
+    1852
+   ],
+   "provenance": "Iddo Perez, room_20260905.mp4, filmed 2026-09-05, his own desk",
+   "licence": "Iddo's own footage - no third-party licence"
+  },
+  {
+   "name": "plastic_black",
+   "kind": "plastic",
+   "file": "plastic_black.tzm",
+   "bytes": 655380,
+   "texels": 256,
+   "mm_per_texel": 0.2173913043478261,
+   "physical_size_mm": 55.652173913043484,
+   "scale_basis": "estimated",
+   "source": "room3d/frames/f0008.jpg",
+   "source_crop_xyxy": [
+    820,
+    380,
+    1076,
+    636
+   ],
+   "provenance": "Iddo Perez, room_20260905.mp4, filmed 2026-09-05, his own desk",
+   "licence": "Iddo's own footage - no third-party licence"
+  }
+ ],
+ "all_from": "Iddo's own footage, room3d/room_20260905.mp4",
+ "third_party_assets": [],
+ "calibration": "calibrate.py -> 5.9639 px/mm on the f0008 desk plane, +/-2.2% vs the printed digits"
+}

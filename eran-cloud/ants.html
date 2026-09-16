@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Voice Ant Farm · evolutionary tiny voice models · ERAN Lab</title>
+<meta name="description" content="Four independent tiny voice models and a queen that selects but never merges — a standing evolutionary tournament judged on a fixed, byte-identical held-out test. Real numbers, real rules, published failures.">
+<link rel="stylesheet" href="alma.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="./">ERAN Lab<span class="heb">מעבדת ער"ן</span></a>
+  <nav>
+    <a href="./">Hub</a>
+    <a href="eran.html">Eran</a>
+    <a href="ants.html" aria-current="page">The Ants</a>
+    <a href="edge.html">Edge &amp; Fleet</a>
+    <a href="lab.html">Hardware Lab</a>
+  </nav>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Track 2 · live</span>
+  <h1>The Voice Ant Farm
+    <span class="sub">חוות הנמלים · four tiny models, one throne, no spoon-feeding</span></h1>
+  <p class="lead">Four independent tiny voice models run side by side on one machine. A <strong>queen</strong>
+    sits above them — and the queen <em>selects</em>, she never merges. New variants are born, scored against
+    the reigning queen on a fixed held-out test, and the honest best takes the throne.</p>
+  <p class="lead" style="margin-top:14px">It is the smallest working instance of the whole thesis: a model that
+    gets better because of <strong>selection pressure</strong>, not because someone hand-fed it the right examples.</p>
+</div></header>
+
+<main id="main">
+
+<!-- ============ THE PROTOCOL ============ -->
+<section id="protocol"><div class="wrap">
+  <h2>The judging protocol <span class="heb">כללי השיפוט</span></h2>
+  <p class="section-note">Everything on this page depends on the test being honest, so the test is described before
+    any result.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>What is measured</h3>
+      <ul>
+        <li>Ants are ranked on <strong>held-out syllable discrimination</strong> — can the colony's learned units
+          tell one syllable from another — and explicitly <strong>not</strong> on reconstruction or quantisation
+          error, which rewards a model for copying rather than distinguishing.</li>
+        <li>The held-out set is <strong>fixed and byte-identical</strong> across every colony ever scored. New
+          colonies must be trained against the same bytes or their numbers do not count.</li>
+        <li>Before a challenge is allowed to count, the baseline is <strong>reproduced bit-exact</strong>. A
+          comparison against a number you cannot regenerate is not a comparison.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>What a coronation requires</h3>
+      <ul>
+        <li>A better score on the fixed protocol — and a <strong>significance test</strong>, not a single lucky seed.
+          Wins are checked seed-matched and paired.</li>
+        <li>A written <strong>rollback path</strong>, recorded before the crown changes hands. Deleting one state
+          file returns the colony to the previous queen, whose record is preserved rather than overwritten.</li>
+        <li>The checkpoint is pinned by hash, so "the queen" always refers to an exact file.</li>
+      </ul>
+      <p class="foot">a throne with no rollback is a claim, not a result</p>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ THE REIGNING QUEEN ============ -->
+<section id="queen"><div class="wrap">
+  <h2>The reigning queen <span class="state s-live">Live</span></h2>
+  <p class="section-note">Crowned 2026-08-11, still on the throne after the round of 2026-08-12.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Record on the fixed protocol</h3>
+      <ul class="facts">
+        <li><span class="k">Syllable discrimination, top-1 cosine</span><span class="v">0.758</span></li>
+        <li><span class="k">Syllable, top-1 edit match</span><span class="v">0.689</span></li>
+        <li><span class="k">Word-level, top-1 edit match</span><span class="v">0.979</span></li>
+        <li><span class="k">Open vowel "ah", pooled over 4 ants</span><span class="v">21/24</span></li>
+        <li><span class="k">— previously</span><span class="v">7/24</span></li>
+        <li><span class="k">Open vowel "aa", pooled</span><span class="v">13/24</span></li>
+        <li><span class="k">— previously</span><span class="v">2/24</span></li>
+      </ul>
+      <p class="foot">the crown is decided on syllable discrimination; the other rows are reported, not weighted</p>
+    </article>
+
+    <article class="card">
+      <h3>Versus the colony it replaced</h3>
+      <ul class="facts">
+        <li><span class="k">New queen, top-1 cosine</span><span class="v">0.758</span></li>
+        <li><span class="k">Previous queen</span><span class="v">0.424</span></li>
+        <li><span class="k">Paired decisions compared</span><span class="v">528</span></li>
+        <li><span class="k">Cosine, McNemar</span><span class="v">p = 7.0e-27</span></li>
+        <li><span class="k">Edit, McNemar</span><span class="v">p = 1.1e-15</span></li>
+        <li><span class="k">Seed-matched wins</span><span class="v">4 / 4</span></li>
+      </ul>
+      <p class="foot">previous queen honourably retired, record retained</p>
+    </article>
+  </div>
+
+  <h3 style="margin-top:26px">The four ants of the reigning colony</h3>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Ant</th><th>Seed</th><th>Top-1 cosine</th><th>Top-1 edit</th><th></th></tr></thead>
+    <tbody>
+      <tr><td><strong>ant-a</strong></td><td class="num">7007</td><td class="num">0.758</td><td class="num">0.689</td><td><span class="state s-live">Queen</span></td></tr>
+      <tr><td>ant-d</td><td class="num">7057</td><td class="num">0.720</td><td class="num">0.659</td><td></td></tr>
+      <tr><td>ant-b</td><td class="num">7019</td><td class="num">0.682</td><td class="num">0.583</td><td></td></tr>
+      <tr><td>ant-c</td><td class="num">7039</td><td class="num">0.674</td><td class="num">0.606</td><td></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="dim small">Four independent ants, four different seeds, one shared environment. The spread between the
+    best and worst ant is itself the argument for running a colony rather than a single model.</p>
+</div></section>
+
+<!-- ============ THE TOURNAMENT ============ -->
+<section id="tournament"><div class="wrap">
+  <h2>The standing tournament <span class="heb">הטורניר</span></h2>
+  <p class="section-note">Challengers are born by mutating the <em>organism</em> — a fresh seed, a different number
+    of learned units, a change to how the ear scales its input — never by giving anyone better data. Each round the
+    queen is re-scored from scratch alongside them, so the incumbent gets no memory advantage.</p>
+
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Round</th><th>Date</th><th>Challengers</th><th>Best challenger</th><th>Outcome</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td class="num">2026-08-11</td><td>3</td><td class="num">0.742 <span class="dim">(p = 0.845)</span></td><td>queen holds</td></tr>
+      <tr><td class="num">2</td><td class="num">2026-08-11</td><td>3</td><td class="num">0.712 <span class="dim">(p = 0.327)</span></td><td>queen holds</td></tr>
+      <tr><td class="num">3</td><td class="num">2026-08-11</td><td>3</td><td class="num">0.742 <span class="dim">(p = 0.860)</span></td><td>queen holds</td></tr>
+      <tr><td class="num">4</td><td class="num">2026-08-12</td><td>3</td><td class="num">0.735 <span class="dim">(p = 0.701)</span></td><td>queen holds</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note">
+    <h3>Two things worth reading off that table</h3>
+    <p><strong>The incumbent keeps winning, and that is the honest outcome.</strong> Several challengers came close
+      on raw score — 0.742 against 0.758 — and none reached significance. A tournament that crowned a new champion
+      every round would mean the judge was noise.</p>
+    <p><strong>One mutation reliably hurts.</strong> Challengers that turned off input scaling landed at 0.591,
+      0.576 and 0.644 with p-values of 0.0001, 0.0004 and 0.0201 — significantly <em>worse</em>. A negative result
+      reproduced three times is a finding: for this ear, that scaling step is load-bearing.</p>
+  </div>
+</div></section>
+
+<!-- ============ AUTONOMY LAW ============ -->
+<section id="autonomy"><div class="wrap">
+  <h2>The autonomy law <span class="heb">חוק האוטונומיה</span></h2>
+  <div class="note soul">
+    <h3>למה זה עקרוני</h3>
+    <p>כל הרעיון הוא <b>מה שה-AI לומד בעצמו</b>. אם מתחילים לדחוף לו דברים — אין טעם במה שאנחנו עושים.</p>
+    <p class="en">The entire point of the colony is what the model learns <em>by itself</em>. The moment we start
+      pushing curated material at it, the experiment stops being an experiment.</p>
+  </div>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Forbidden</h3>
+      <ul>
+        <li>Hand-curated or hand-labelled batches of any kind.</li>
+        <li>Weighting the sampler toward the sounds we want it to learn — for instance oversampling open vowels
+          because open vowels are the metric we report.</li>
+        <li>Any teaching signal that tells the colony what a unit "should" be.</li>
+      </ul>
+      <p class="foot">these would improve the numbers and destroy their meaning</p>
+    </article>
+    <article class="card">
+      <h3>Allowed</h3>
+      <ul>
+        <li>Evolving the <strong>organism</strong> — a better ear, a different unit count — as a new <em>kind</em>
+          of ant competing on the same test.</li>
+        <li>Intrinsic motivation and curiosity dynamics: the model choosing what to attend to.</li>
+        <li>Colony-level selection pressure. The crown is the incentive.</li>
+        <li>Natural, uncurated environment streams.</li>
+      </ul>
+      <p class="foot">evolve the animal, never the exam</p>
+    </article>
+  </div>
+
+  <p class="section-note" style="margin-top:20px">The declared goal is to reach <strong>word level emergently</strong> —
+    words composed out of syllables the colony already mastered, never assembled for it. The current honest gap is
+    exactly there: consonant-vowel syllables are handled well, while the sustained open vowels remain the weak
+    spot the tournament is trying to breed its way out of.</p>
+</div></section>
+
+<!-- ============ CRAFT ============ -->
+<section id="craft"><div class="wrap">
+  <h2>Two decisions that cost us something <span class="heb">שתי החלטות שעלו לנו</span></h2>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Soft rendering became the default <span class="state s-live">Live</span></h3>
+      <p class="what">The colony's exemplars are stitched from real recorded human speech. The original playback
+        path produced a hard, metallic square-wave character — technically faithful to the units, and wrong.</p>
+      <p>Overlap-add windowing, a gentle low-pass, edge fades and headroom are now the default everywhere, with the
+        raw path kept behind a flag for debugging. The ruling was made by ear:
+        <strong>these are a real human throat, and they must never sound like a machine imitating one.</strong></p>
+    </article>
+
+    <article class="card">
+      <h3>Claim limits are enforced in the code <span class="state s-live">Live</span></h3>
+      <p class="what">The strings the interface is allowed to use are constrained on purpose. The colony produces
+        <em>exemplars</em>. It does not produce speech, and it does not generate.</p>
+      <p>Anything that would let the demo be described as talking is blocked at the source, because the gap between
+        "a model stitched units that resemble a syllable" and "a model spoke" is exactly the gap this whole lab
+        exists to refuse to cross.</p>
+    </article>
+  </div>
+
+  <div class="note warn">
+    <h3>Published trap: a hash that could never match</h3>
+    <p>Corpus manifests stored an audio hash computed <em>after</em> conversion to floating point. The round trip
+      re-quantises the samples, so that hash can never equal the hash of the raw source file — and code that used it
+      to detect "already ingested" was silently always wrong.</p>
+    <p>Cost: one aborted training run before anyone noticed. Freshness is now decided by session date, never by
+      content hash. Written here because a negative result nobody publishes gets rediscovered by everyone.</p>
+  </div>
+</div></section>
+
+<!-- ============ NEXT ============ -->
+<section id="next"><div class="wrap">
+  <h2>Next milestone — the board <span class="state s-concept">Planned</span></h2>
+  <div class="note">
+    <p>Give the ants a tiny <strong>eye</strong> and a classroom board. When the sound "ah" occurs in the
+      environment, the letter <span class="rtl">א</span> is visible at the same moment. Ants that come to associate
+      the sound with the symbol <em>on their own</em> would be performing the first cross-modal binding — the
+      smallest real instance of the <a href="eran.html#holobrain">HoloBrain</a> idea.</p>
+    <p>Crucially this stays inside the autonomy law: it is <strong>environment enrichment</strong>, not labelling.
+      The world simply contains sight and sound together, the way an infant's world does. Nobody tells an ant that
+      the shape means the sound. If none of them work it out, that is the result, and it gets published too.</p>
+  </div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <p><a href="./">← back to the hub</a></p>
+  <p class="ded">לזכרה של עלמה ז״ל <span class="dim" dir="ltr">— in memory of Alma z"l.</span></p>
+  <p class="small">© 2026 ALMAWARE · all figures on this page are from the fixed held-out protocol described above.</p>
+</div></footer>
+
+</body>
+</html>

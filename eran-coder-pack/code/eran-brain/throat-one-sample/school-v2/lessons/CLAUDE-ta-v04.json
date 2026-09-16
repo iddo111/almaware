@@ -1,0 +1,167 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "ta",
+ "letter": "tet",
+ "hebrew": "ט",
+ "facts": {
+  "place": "tip",
+  "manner": "stop",
+  "nasal": 0,
+  "voiced": 0
+ },
+ "decisions": {
+  "knots": "AH",
+  "constr": "seal",
+  "nasal": 0,
+  "voice": "on",
+  "release": "gap",
+  "burst": 1,
+  "pre": 0
+ },
+ "amounts": {
+  "c_pos": 0.9450490597863948,
+  "c_area": 2.0,
+  "velum": 0.0,
+  "ten": 0.6,
+  "voi": 1.0,
+  "d_pre": 0.0,
+  "d_cons": 0.07772841137204108,
+  "d_trans": 0.014692817620259792,
+  "d_gap": 0.04208271291125919,
+  "gap_pos": 0.95,
+  "gap_area": 0.8022367456206,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.025257507856647845,
+  "d_vowel": 0.3942155616283922,
+  "glide": 0.3715440575366499,
+  "gain": 6.377900858442878,
+  "f0": 100.5574830033521,
+  "trans_voi": null
+ },
+ "live_amounts": [
+  "c_pos",
+  "d_bridge",
+  "d_cons",
+  "d_gap",
+  "d_trans",
+  "d_vowel",
+  "f0",
+  "gain",
+  "gap_area",
+  "gap_pos",
+  "gap_ten",
+  "gap_voi",
+  "glide",
+  "ten",
+  "trans_voi",
+  "voi"
+ ],
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.945,
+    0.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.945,
+    0.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.95,
+    0.8022,
+    0.0,
+    0.6,
+    0.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.0777,
+   0.0147,
+   0.0421,
+   0.0253,
+   0.3942
+  ],
+  "f0_knots": [
+   100.5574830033521,
+   100.5574830033521,
+   93.51845919311747
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.3715440575366499,
+  "burst": {
+   "gain": 6.377900858442878,
+   "tau_s": 0.003
+  },
+  "backend": "c",
+  "seed": 0
+ },
+ "ruler": "school-v2/ruler.py (09-02 family rulers + verifiers' objections)",
+ "brief": "ok   closure -16.6 dB <= -16; ok   burst jump 27.0 dB > 15; ok   burst peak 10.8 dB re vowel >= +5; ok   VOT gap 42 ms at -6.5 dB (-8..0) hnr -3.8 < 3; ok   F3 high (2781 >= 2780) in the aspirated transition +10..+40 ms; F3 at voicing onset 2662 (t 144 ms); ok   voicing starts within 40 ms after the gap (at 144 ms)",
+ "attempt": 35
+}

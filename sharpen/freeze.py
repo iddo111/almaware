@@ -1,0 +1,92 @@
+# -*- coding: utf-8 -*-
+"""
+> BROKEN WINDOWS LAW: if it's not working, fix it IMMEDIATELY. Test the REAL output.
+
+THE RULER DID NOT MOVE. Three ways of proving it, not one.
+
+Every fidelity number TZELEM has ever published is an MSE against
+`tzelem.stage.Stage.shade`. A sharpening pass that quietly edited that function
+would raise every score and mean nothing, so this file refuses to let that happen
+silently:
+
+  1. SOURCE  - the exact bytes of `Stage.shade` and `Stage.gbuffer`, hashed.
+  2. NUMBERS - `ShadedStage` with every strength set to zero must reproduce
+               `Stage`'s image to the last bit, on the same camera.
+  3. GIT     - `stage.py` must have no uncommitted modification.
+
+Run it before and after any change to the occlusion path.
+"""
+from __future__ import annotations
+
+import hashlib
+import inspect
+import os
+import subprocess
+import sys
+
+import numpy as np
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+if HERE not in sys.path:
+    sys.path.insert(0, HERE)
+sys.stdout.reconfigure(encoding="utf-8")
+
+import occlusion                                            # noqa: E402
+import stage as S                                           # noqa: E402
+
+# Recorded 2026-09-06 from the working tree, and cross-checked against the copy in
+# git HEAD (`git show HEAD:...stage.py`) so this is the committed ruler, not a
+# hash of whatever happened to be on disk when the occlusion work began.
+EXPECTED = {
+    "Stage.shade": "2ee51c66396f8300",
+    "Stage.gbuffer": "6cd34e73af85f531",
+}
+
+
+def h(fn) -> str:
+    return hashlib.sha256(inspect.getsource(fn).encode("utf-8")).hexdigest()[:16]
+
+
+def main() -> int:
+    bad = 0
+    got = {"Stage.shade": h(S.Stage.shade), "Stage.gbuffer": h(S.Stage.gbuffer)}
+    for k, v in got.items():
+        known = EXPECTED.get(k)
+        mark = "RECORD" if known in (None, "") else ("OK" if known == v else "CHANGED")
+        if mark == "CHANGED":
+            bad += 1
+        print(f"  {mark:<8} {k:<16} {v}")
+
+    # 2. the numbers, on the stage the ruler was born on
+    cam = S.orbit(0.0, 320, 240)
+    plain = S.Stage()
+    null = occlusion.ShadedStage(shadow_strength=0.0, ao_strength=0.0,
+                                 texture_strength=0.0)
+    a = plain.shade(plain.gbuffer(cam))
+    b = null.shade(null.gbuffer(cam))
+    same = np.array_equal(a, b)
+    print(f"  {'OK' if same else 'DIFFERS':<8} ShadedStage(all strengths 0) == Stage"
+          f"   max|diff| {np.abs(a - b).max():.3e}")
+    if not same:
+        bad += 1
+
+    # 3. the file itself
+    try:
+        p = os.path.abspath(S.__file__)
+        r = subprocess.run(["git", "status", "--porcelain", "--", p],
+                           cwd=os.path.dirname(p), capture_output=True, text=True,
+                           timeout=30)
+        dirty = r.stdout.strip()
+        print(f"  {'OK' if not dirty else 'DIRTY':<8} git status stage.py"
+              f"   {dirty or '(clean)'}")
+        if dirty:
+            bad += 1
+    except Exception as e:
+        print(f"  SKIP     git status unavailable: {e}")
+
+    print("FROZEN" if not bad else f"{bad} PROBLEM(S) -- the ruler moved")
+    return 1 if bad else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,67 @@
+{
+  "input_device": "USBAudio",
+  "fallback_devices": [
+    "BRIO",
+    "Scarlett",
+    "USBAudio1.0",
+    "USBAudio",
+    "USB"
+  ],
+  "never_use_devices": [
+    "WH-1000XM4",
+    "Hands-Free",
+    "Headset",
+    "Bluetooth"
+  ],
+  "idle_if_no_good_mic": true,
+  "smart_engine": false,
+  "corrections_enabled": false,
+  "output": "type",
+  "model": "ivrit-ai/whisper-large-v3-turbo-ct2",
+  "cpu_model": "base",
+  "device": "cuda",
+  "language": null,
+  "lang_detect": "dual",
+  "base_model": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+  "lang_detect_min_prob": 0.55,
+  "hotkey": "ctrl+alt+space",
+  "vad_hotkey": "ctrl+alt+v",
+  "mode": "vad",
+  "auto_enter": true,
+  "duck_pct": 100,
+  "ducking_enabled": false,
+  "duck_target": "all_media",
+  "duck_exclude": [
+    "python.exe",
+    "ffplay.exe",
+    "claude.exe",
+    "WindowsTerminal.exe"
+  ],
+  "max_secs": 30,
+  "min_secs": 0.6,
+  "silence_secs": 1.0,
+  "vad_rms_threshold": 150,
+  "max_no_speech_prob": 0.6,
+  "min_avg_logprob": -1.0,
+  "initial_prompt": "",
+  "default_target": "focused",
+  "char_delay": 0.004,
+  "use_clipboard_paste": true,
+  "terminal_paste": false,
+  "gpu_maestro_url": "http://127.0.0.1:8078",
+  "allow_gpu": true,
+  "auto_focus_target": null,
+  "shortcuts": {
+    "git push": "git push origin HEAD",
+    "git status": "git status",
+    "git pull": "git pull",
+    "npm start": "npm start",
+    "npm install": "npm install",
+    "run tests": "npm test",
+    "python run": "python main.py"
+  },
+  "lang_whitelist": [
+    "he",
+    "en"
+  ]
+}

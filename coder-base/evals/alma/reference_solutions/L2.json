@@ -1,0 +1,55 @@
+{
+  "alma": "0.1",
+  "weave": "L2_and_perceptron",
+  "knots": [
+    {
+      "name": "x1"
+    },
+    {
+      "name": "x2"
+    },
+    {
+      "name": "lin",
+      "verb": "sum",
+      "trigger": "count 2",
+      "bias": -1.5
+    },
+    {
+      "name": "sgn",
+      "verb": "spell",
+      "spell": "sign"
+    },
+    {
+      "name": "y",
+      "verb": "fringe"
+    }
+  ],
+  "threads": [
+    {
+      "from": "x1",
+      "to": "lin"
+    },
+    {
+      "from": "x2",
+      "to": "lin"
+    },
+    {
+      "from": "lin",
+      "to": "sgn"
+    },
+    {
+      "from": "sgn",
+      "to": "y"
+    }
+  ],
+  "seeds": [
+    {
+      "to": "x1",
+      "value": 1.0
+    },
+    {
+      "to": "x2",
+      "value": 1.0
+    }
+  ]
+}

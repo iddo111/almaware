@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>QUORUM · הורדה ומקור</title>
+  <style>
+    :root{--ink:#10152a;--paper:#f7f8fc;--card:#fff;--line:#dce2ef;--blue:#245eea;--muted:#5f6880;--green:#087f6e;--amber:#8b5b00}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 system-ui,"Segoe UI",Arial,sans-serif}.wrap{max-width:940px;margin:auto;padding:0 22px}
+    header{padding:72px 0 54px;background:linear-gradient(135deg,#e8efff,#f5fffd);border-bottom:1px solid var(--line)}h1{font-size:clamp(52px,11vw,96px);line-height:.9;margin:.25em 0}.lead{max-width:700px;color:var(--muted);font-size:21px}
+    section{padding:46px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:23px}.card p{color:var(--muted)}
+    .state{display:inline-block;padding:5px 10px;border-radius:999px;font-size:13px;font-weight:800}.ok{background:#daf3ea;color:var(--green)}.wait{background:#fff0c8;color:var(--amber)}
+    a.btn,.btn-disabled{display:inline-block;margin:8px 0 0 8px;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:800}.btn{background:var(--blue);color:#fff}.secondary{background:#e6ecfa!important;color:var(--ink)!important}.btn-disabled{background:#eee;color:#777;border:1px dashed #aaa;cursor:not-allowed}
+    code{direction:ltr;display:inline-block;background:#edf1f8;padding:2px 6px;border-radius:5px}footer{border-top:1px solid var(--line);padding:28px 0 42px;color:var(--muted)}
+  </style>
+</head>
+<body>
+<header><div class="wrap">
+  <span class="state ok">מנוע שקלא־וטריא נבדק מקומית</span>
+  <h1>QUORUM</h1>
+  <p class="lead">מועצת מודלים מקומית שמנהלת טיעון מובנה: עמדה, קושיה, תירוץ ומסקנה. האתר הציבורי והיישום למחשב הם שני דברים נפרדים.</p>
+  <a class="btn" href="https://arena.iddoperez.ai/">פתחו את הזירה החיה</a>
+</div></header>
+
+<main>
+  <section><div class="wrap">
+    <h2>הורדות Windows וקוד מקור</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="state wait">טרם שוחרר</span>
+        <h3>מתקין Windows MSI</h3>
+        <p>ה־MSI יופעל כאן רק לאחר בדיקת Windows Application Control, התקנה, הפעלה מקומית, הסרה ו־SHA-256 על מחשב נקי. הקובץ הקודם היה ZIP של קוד — לא תוכנה להפעלה.</p>
+        <span class="btn-disabled" aria-disabled="true" data-planned-href="./downloads/Quorum-Setup.msi">Quorum-Setup.msi — בבדיקה</span>
+      </article>
+      <article class="card">
+        <span class="state ok">זמין לעיון</span>
+        <h3>קוד מקור</h3>
+        <p>Python ו־PowerShell, נפרדים מהמתקין. להפעלה ידנית נדרש Python 3.13 וכלי מודלים מקומיים שהמשתמש התקין בעצמו.</p>
+        <a class="btn secondary" href="./downloads/quorum-source.zip">הורדת מקור ZIP</a>
+      </article>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>מה באמת נבדק</h2>
+    <ul>
+      <li>מנוע הדיון עבר בדיקת offline מלאה: תכנון, עמדות, סבבי קושיה/תירוץ ומסקנה.</li>
+      <li>השרת נקשר ל־<code>127.0.0.1:8099</code>; הוא אינו שירות ציבורי.</li>
+      <li>קריאה למודלים דורשת כלים מקומיים זמינים. אין הבטחה שכל מודל מותקן בכל מחשב.</li>
+      <li>אין fallback שקט למודל אחר: כשל צריך להופיע ככשל.</li>
+    </ul>
+  </div></section>
+</main>
+
+<footer><div class="wrap">QUORUM · ALMAWARE · מקור ומתקין מופרדים · © 2026</div></footer>
+</body>
+</html>

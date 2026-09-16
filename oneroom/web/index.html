@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>הסדנה בלילה — חדר אחד · The Workshop at Night</title>
+<style>
+  :root{ --ink:#151109; --paper:#fbf6ea; --line:#d9cfb9; --gold:#8a6a1f;
+         --amber:#c2610a; --dim:#6c6353; --good:#0a7d32; }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;overflow:hidden;background:#07080b;
+    font:14px/1.5 "Segoe UI",system-ui,-apple-system,sans-serif;color:var(--ink)}
+  canvas{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+
+  .panel{position:fixed;background:rgba(251,246,234,.95);border:1px solid var(--line);
+    border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.45);backdrop-filter:blur(6px)}
+
+  #hud{top:12px;left:12px;max-width:314px;padding:11px 14px}
+  #hud h1{margin:0 0 2px;font-size:16px}
+  #hud h1 small{display:block;font-weight:400;font-size:11.5px;color:var(--dim)}
+  #keys{margin:8px 0 0;font-size:11.5px;color:var(--dim);line-height:1.75}
+  #keys kbd{display:inline-block;min-width:16px;text-align:center;padding:1px 5px;
+    background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;
+    font:11px ui-monospace,Consolas,monospace;color:var(--ink)}
+  #power{margin-top:8px;padding:6px 9px;border-radius:7px;font-size:12px;font-weight:600;
+    background:#efe6d2;border-left:3px solid var(--dim)}
+  #power.on{background:#e4f4e8;border-left-color:var(--good);color:var(--good)}
+
+  #say{bottom:12px;left:50%;transform:translateX(-50%);width:min(720px,calc(100% - 24px));
+    padding:11px 16px;text-align:center}
+  #say .he{font-size:16px;font-weight:600}
+  #say .en{font-size:12px;color:var(--dim);margin-top:2px}
+
+  #look{top:12px;right:12px;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+  button.b{padding:9px 15px;font:600 13px system-ui;cursor:pointer;color:#fff;border:0;
+    border-radius:9px;background:linear-gradient(180deg,#3d6ea8,#27507d);
+    box-shadow:0 4px 16px rgba(0,0,0,.4)}
+  button.b:hover{filter:brightness(1.12)}
+  #tip{max-width:246px;padding:8px 11px;font-size:11px;color:var(--dim);line-height:1.55}
+  #tip b{color:var(--ink)}
+
+  #cross{position:fixed;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;
+    pointer-events:none;opacity:.7;transition:opacity .15s,transform .15s}
+  #cross.hot{opacity:1;transform:scale(1.45)}
+  #cross:before,#cross:after{content:"";position:absolute;background:#fff;
+    box-shadow:0 0 3px rgba(0,0,0,.95)}
+  #cross:before{left:8px;top:0;width:2px;height:18px}
+  #cross:after{top:8px;left:0;height:2px;width:18px}
+  #cross.hot:before,#cross.hot:after{background:#ffd166}
+
+  #veil{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+    background:rgba(6,8,12,.9);color:#f2ecdd;text-align:center;cursor:pointer;z-index:9}
+  #veil div{max-width:520px;padding:0 26px}
+  #veil h2{margin:0 0 6px;font-size:22px}
+  #veil p{margin:6px 0;font-size:13px;opacity:.86;line-height:1.65}
+  #veil .go{margin-top:18px;display:inline-block;padding:11px 24px;border:1px solid #6d6555;
+    border-radius:9px;font-size:13px}
+  #veil .load{font:12px ui-monospace,Consolas,monospace;opacity:.6;margin-top:12px}
+
+  #sheetwrap{position:fixed;inset:0;background:rgba(6,8,12,.86);z-index:10;overflow:auto;
+    padding:26px 16px;display:none}
+  #sheet{max-width:940px;margin:0 auto;background:var(--paper);border-radius:14px;
+    padding:24px 28px 34px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+  #sheet h2{margin:0 0 4px;font-size:23px}
+  #sheet h3{margin:24px 0 6px;font-size:16px;padding-top:14px;border-top:1px solid var(--line)}
+  #sheet p{margin:7px 0;font-size:13.5px;line-height:1.65}
+  #sheet .en{color:var(--dim);font-size:12.5px}
+  #sheet table{border-collapse:collapse;width:100%;margin:10px 0;font-size:13px}
+  #sheet td,#sheet th{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left}
+  #sheet th{color:var(--dim);font-weight:600;font-size:11.5px;text-transform:uppercase;
+    letter-spacing:.4px}
+  #sheet .num{font:700 14px ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums}
+  #sheet .win{color:var(--good)} #sheet .lose{color:#b3261e}
+  #sheet .shots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+  #sheet .shots figure{margin:0}
+  #sheet .shots img{width:100%;border-radius:9px;border:1px solid var(--line);display:block}
+  #sheet .shots figcaption{font-size:11.5px;color:var(--dim);margin-top:4px}
+  #sheet .fake{background:#fff4e0;border-left:3px solid var(--amber);padding:10px 14px;
+    border-radius:8px;margin:10px 0}
+  #sheet .fake b{color:var(--amber)}
+  #sheet code{background:#efe8d8;padding:1px 5px;border-radius:4px;font-size:12px}
+  #closesheet{float:right;background:#ded4bd;color:var(--ink);border:0;border-radius:8px;
+    padding:7px 14px;font:600 13px system-ui;cursor:pointer}
+  .hide{display:none !important}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="cross" class="hide"></div>
+
+<div id="hud" class="panel">
+  <h1>הסדנה בלילה<small>One room &middot; The workshop at night &middot; TZELEM brushstrokes, live</small></h1>
+  <div id="keys">
+    <kbd>W</kbd><kbd>S</kbd> להתקרב ולסגת / step in and back &middot; עכבר להסתכל<br>
+    <kbd>לחיצה</kbd> לפעול על מה שהכוונת עליו / click what the crosshair is on<br>
+    <kbd>&larr;</kbd><kbd>&rarr;</kbd> או גרירה — להסתכל / arrows or drag also look<br>
+    <kbd>Esc</kbd> לשחרר עכבר &middot; <kbd>M</kbd> המידות / the measurements
+  </div>
+  <div id="power">⚡ אין חשמל · the power is off</div>
+  <div id="stat" style="margin-top:6px;font:11px ui-monospace,Consolas,monospace;color:#6c6353"></div>
+</div>
+
+<div id="look">
+  <button class="b" id="sheetbtn">המידות · the measurements</button>
+  <div id="tip" class="panel">
+    <b>מה לעשות כאן:</b> יש דבר אחד. תמצא אותו.<br>
+    <span style="color:#6c6353">There is exactly one thing to do in this room.</span>
+  </div>
+</div>
+
+<div id="say" class="panel">
+  <div class="he" id="sayhe">&mdash;</div>
+  <div class="en" id="sayen"></div>
+</div>
+
+<div id="veil"><div>
+  <h2>חדר אחד · One Room</h2>
+  <p>סדנה. לילה. אין חשמל — רק החלון.<br>
+     A workshop, at night. No power — only the window.</p>
+  <p style="opacity:.62">כל מה שאתה רואה הוא משיחות מכחול של TZELEM המעוגנות בעולם, לא טקסטורות:
+     כ־<span id="nstroke">…</span> משיחות שנשתלו פעם אחת ומצוירות מחדש בכל פריים מהמצלמה שלך.<br>
+     Everything you see is TZELEM's world-anchored brushstrokes, not textures:
+     <span id="nstroke2">…</span> strokes planted once and re-seen every frame.</p>
+  <span class="go" id="gobtn">לחץ להיכנס &middot; click to enter</span>
+  <div class="load" id="loadmsg">loading…</div>
+</div></div>
+
+<div id="sheetwrap"><div id="sheet">
+  <button id="closesheet">סגור · close</button>
+  <h2>מה נמדד בחדר הזה</h2>
+  <p class="en">What was measured — in THIS room, on the rail you just walked. Nothing on this
+     page is quoted from another scene.</p>
+  <div id="gatebox">טוען…</div>
+
+  <div class="fake" style="border-left-color:#8a6a1f;background:#f6efdd">
+    <p><b>איך לקרוא את המספרים, בלי לייפות.</b> היתרון של TZELEM <i>חוזר על עצמו כאן</i> — שני
+       השערים עוברים בשני מצבי התאורה — <b>אבל הוא קטן יותר מאשר בשדרות רוטשילד</b>:
+       פי 2.07 (חשוך) ופי 2.31 (מואר) יציב יותר מהרצפה, לעומת פי 4.55 בחוץ. לעומת זאת דווקא
+       הנאמנות טובה כאן <i>יותר</i>: פי 4.69 מול צבע שטוח, לעומת פי 3.30 בחוץ.</p>
+    <p class="en"><b>The advantage reproduces here — but it is smaller on the coherence axis
+       than it was on the boulevard, and that is said before anyone asks.</b> &times;2.07 (dark)
+       and &times;2.31 (lit) steadier than a repaint-every-frame painter, against &times;4.55
+       outdoors. The reason is visible in the FLOOR column itself: the floor's own residual
+       collapses from 0.06305 outdoors to 0.0063 in here. That number is how much two
+       INDEPENDENT paintings of the same view differ, and in a dim room of grey walls and
+       brown bench two independent paintings differ far less than two paintings of a sunlit
+       boulevard. A smaller gap to beat is a smaller ratio when you beat it — TZELEM's own
+       residual fell too (0.01387 &rarr; 0.0031). On the other axis the room is the harder
+       test and TZELEM wins by more: &times;4.69 over the single best flat colour, against
+       &times;3.30 outdoors.</p>
+  </div>
+
+  <h3>ארבעת המתמודדים, בחדר הזה · the four contestants, in this room</h3>
+  <p class="en">Frame <i>b</i> of the last pose pair on the rail, lit state. These are the actual
+     images the numbers above were computed from — written by the gate, not re-made for the page.</p>
+  <div class="shots">
+    <figure><a href="gate/lit-truth_b.jpg" target="_blank"><img src="gate/lit-truth_b.jpg" alt="truth"></a>
+      <figcaption>TRUTH — <code>Stage.shade</code>, the flat Lambert TZELEM is judged against</figcaption></figure>
+    <figure><a href="gate/lit-tz_b.jpg" target="_blank"><img src="gate/lit-tz_b.jpg" alt="tzelem"></a>
+      <figcaption>TZELEM — one set of strokes, planted once, re-seen from the new pose</figcaption></figure>
+    <figure><a href="gate/lit-fl_b.jpg" target="_blank"><img src="gate/lit-fl_b.jpg" alt="floor"></a>
+      <figcaption>FLOOR — repainted from scratch, as a 2D painter must. It boils.</figcaption></figure>
+    <figure><a href="gate/lit-ce_b.jpg" target="_blank"><img src="gate/lit-ce_b.jpg" alt="the cheat"></a>
+      <figcaption>THE CHEAT — warp the old frame, paint nothing. Perfectly coherent, and it TEARS.</figcaption></figure>
+  </div>
+
+  <h3>הציור עצמו · the painting itself</h3>
+  <p class="en">The same strokes the browser is drawing, painted here by
+     <code>tzelem/canvas.py</code> on the CPU — untouched, not a screenshot of the game.</p>
+  <div class="shots">
+    <figure><a href="room-dark.jpg" target="_blank"><img src="room-dark.jpg" alt="the workshop, power off"></a>
+      <figcaption>לפני · before — the breaker is down, the window is the only light</figcaption></figure>
+    <figure><a href="room-lit.jpg" target="_blank"><img src="room-lit.jpg" alt="the workshop, power on"></a>
+      <figcaption>אחרי · after — the same strokes, the other baked solution</figcaption></figure>
+  </div>
+  <p class="en">1600&times;900 JPEG, painted on the CPU in ~15 s each. The same two files also live in
+     the deliverables hub, where the tidy task cannot sweep them:
+     <a href="http://127.0.0.1:8868/oneroom-workshop-lit.jpg" target="_blank">lit</a> &middot;
+     <a href="http://127.0.0.1:8868/oneroom-workshop-dark.jpg" target="_blank">dark</a> (port 8868).</p>
+
+  <h3>מה מזויף כאן · what is faked</h3>
+  <div class="fake" id="fakebox"></div>
+
+  <h3>מה אמיתי · what is not faked</h3>
+  <div id="realbox"></div>
+</div></div>
+
+<script src="oneroom.js"></script>
+</body>
+</html>

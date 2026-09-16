@@ -1,0 +1,22 @@
+{
+  "name": "real-audio-190m-resumable-training-session",
+  "seed": 190071,
+  "segment_samples": 32000,
+  "batch_size": 1,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "grad_clip_norm": 1.0,
+  "steps_per_session": 1000000,
+  "max_wall_seconds": 21600,
+  "checkpoint_every_steps": 1000,
+  "eval_every_steps": 1000,
+  "guard_every_steps": 10,
+  "heartbeat_every_steps": 10,
+  "max_eval_batches": 16,
+  "precision": "bf16",
+  "num_workers": 0,
+  "min_free_gib": 100.0,
+  "min_free_percent": 10.0,
+  "max_gpu_temp_c": 80.0,
+  "require_verified_hebrew": true
+}

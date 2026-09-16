@@ -1,0 +1,272 @@
+{
+ "units": [
+  "aa",
+  "ah",
+  "ba",
+  "da",
+  "ga",
+  "ha",
+  "ka",
+  "kha",
+  "la",
+  "ma",
+  "na",
+  "pa",
+  "qa",
+  "ra",
+  "sa",
+  "sha",
+  "ta",
+  "tha",
+  "tsa",
+  "va",
+  "ya",
+  "za"
+ ],
+ "wccn_condition": 6.194444795438533,
+ "human_bar": {
+  "OLD  nearest single clip": 0.0,
+  "OLD  ear3 wdist (per-class spread)": 13.648509610194283,
+  "NEW  syllable centroid": 0.40759692990842844,
+  "NEW  WCCN whiten + centroid": 0.24053376897561649
+ },
+ "verdict_counts": {
+  "ma": {
+   "1": 12,
+   "2": 13,
+   "3": 26
+  },
+  "ba": {
+   "1": 2,
+   "2": 13,
+   "3": 16
+  },
+  "ah": {
+   "1": 19,
+   "2": 0,
+   "3": 6
+  }
+ },
+ "test1": {
+  "OLD  nearest single clip": {
+   "auc_1v3": 0.4419,
+   "auc_1v23": 0.5049,
+   "pairs_1v3": 1584,
+   "per_unit": {
+    "ah": {
+     "auc_1v3": 1.0,
+     "n_yes": 19,
+     "n_no": 6
+    },
+    "ba": {
+     "auc_1v3": 0.125,
+     "n_yes": 2,
+     "n_no": 16
+    },
+    "ma": {
+     "auc_1v3": 0.276,
+     "n_yes": 12,
+     "n_no": 26
+    }
+   }
+  },
+  "OLD  ear3 wdist (per-class spread)": {
+   "auc_1v3": 0.524,
+   "auc_1v23": 0.5799,
+   "pairs_1v3": 1584,
+   "per_unit": {
+    "ah": {
+     "auc_1v3": 1.0,
+     "n_yes": 19,
+     "n_no": 6
+    },
+    "ba": {
+     "auc_1v3": 0.188,
+     "n_yes": 2,
+     "n_no": 16
+    },
+    "ma": {
+     "auc_1v3": 0.34,
+     "n_yes": 12,
+     "n_no": 26
+    }
+   }
+  },
+  "NEW  syllable centroid": {
+   "auc_1v3": 0.4495,
+   "auc_1v23": 0.5262,
+   "pairs_1v3": 1584,
+   "per_unit": {
+    "ah": {
+     "auc_1v3": 1.0,
+     "n_yes": 19,
+     "n_no": 6
+    },
+    "ba": {
+     "auc_1v3": 0.125,
+     "n_yes": 2,
+     "n_no": 16
+    },
+    "ma": {
+     "auc_1v3": 0.256,
+     "n_yes": 12,
+     "n_no": 26
+    }
+   }
+  },
+  "NEW  WCCN whiten + centroid": {
+   "auc_1v3": 0.4274,
+   "auc_1v23": 0.4934,
+   "pairs_1v3": 1584,
+   "per_unit": {
+    "ah": {
+     "auc_1v3": 0.921,
+     "n_yes": 19,
+     "n_no": 6
+    },
+    "ba": {
+     "auc_1v3": 0.156,
+     "n_yes": 2,
+     "n_no": 16
+    },
+    "ma": {
+     "auc_1v3": 0.234,
+     "n_yes": 12,
+     "n_no": 26
+    }
+   }
+  }
+ },
+ "test2": {
+  "OLD  nearest single clip": {
+   "human_bar": 0.0,
+   "eran_median": 1.3563,
+   "eran_max": 1.7226,
+   "median_over_bar": Infinity,
+   "n": 19
+  },
+  "OLD  ear3 wdist (per-class spread)": {
+   "human_bar": 13.6485,
+   "eran_median": 91.2443,
+   "eran_max": 108.6969,
+   "median_over_bar": 6.69,
+   "n": 19
+  },
+  "NEW  syllable centroid": {
+   "human_bar": 0.4076,
+   "eran_median": 1.4198,
+   "eran_max": 1.7742,
+   "median_over_bar": 3.48,
+   "n": 19
+  },
+  "NEW  WCCN whiten + centroid": {
+   "human_bar": 0.2405,
+   "eran_median": 0.7488,
+   "eran_max": 1.0547,
+   "median_over_bar": 3.11,
+   "n": 19
+  }
+ },
+ "test3": {
+  "OLD  nearest single clip": {
+   "correct": 0,
+   "total": 19,
+   "called": {
+    "ah-1kf-2": "ga",
+    "ah-1kf-3": "ya",
+    "ah-free-0": "ga",
+    "ah-free-1": "ga",
+    "ba-cv-10": "ga",
+    "ba-cv-11": "ga",
+    "ba-cv-12": "ga",
+    "ba-cv-13": "ga",
+    "ba-cv-3": "ga",
+    "ba-cv-4": "ga",
+    "ba-free-4": "ga",
+    "ba-free-5": "ga",
+    "ba-free-6": "ga",
+    "ba-free-7": "ga",
+    "control-ah-1kf-0": "ga",
+    "control-ba-cv-2": "ga",
+    "control-ba-free-0": "ga",
+    "ma-nasal-3": "ga",
+    "ma-nasal-4": "ga"
+   }
+  },
+  "OLD  ear3 wdist (per-class spread)": {
+   "correct": 0,
+   "total": 19,
+   "called": {
+    "ah-1kf-2": "na",
+    "ah-1kf-3": "ya",
+    "ah-free-0": "na",
+    "ah-free-1": "na",
+    "ba-cv-10": "na",
+    "ba-cv-11": "na",
+    "ba-cv-12": "na",
+    "ba-cv-13": "na",
+    "ba-cv-3": "na",
+    "ba-cv-4": "na",
+    "ba-free-4": "na",
+    "ba-free-5": "na",
+    "ba-free-6": "na",
+    "ba-free-7": "na",
+    "control-ah-1kf-0": "na",
+    "control-ba-cv-2": "na",
+    "control-ba-free-0": "na",
+    "ma-nasal-3": "na",
+    "ma-nasal-4": "na"
+   }
+  },
+  "NEW  syllable centroid": {
+   "correct": 0,
+   "total": 19,
+   "called": {
+    "ah-1kf-2": "sha",
+    "ah-1kf-3": "za",
+    "ah-free-0": "ha",
+    "ah-free-1": "ha",
+    "ba-cv-10": "na",
+    "ba-cv-11": "na",
+    "ba-cv-12": "na",
+    "ba-cv-13": "na",
+    "ba-cv-3": "na",
+    "ba-cv-4": "na",
+    "ba-free-4": "na",
+    "ba-free-5": "sha",
+    "ba-free-6": "na",
+    "ba-free-7": "na",
+    "control-ah-1kf-0": "na",
+    "control-ba-cv-2": "na",
+    "control-ba-free-0": "na",
+    "ma-nasal-3": "na",
+    "ma-nasal-4": "na"
+   }
+  },
+  "NEW  WCCN whiten + centroid": {
+   "correct": 2,
+   "total": 19,
+   "called": {
+    "ah-1kf-2": "qa",
+    "ah-1kf-3": "za",
+    "ah-free-0": "ah",
+    "ah-free-1": "ha",
+    "ba-cv-10": "ba",
+    "ba-cv-11": "na",
+    "ba-cv-12": "ha",
+    "ba-cv-13": "na",
+    "ba-cv-3": "ha",
+    "ba-cv-4": "na",
+    "ba-free-4": "na",
+    "ba-free-5": "ha",
+    "ba-free-6": "na",
+    "ba-free-7": "ha",
+    "control-ah-1kf-0": "tsa",
+    "control-ba-cv-2": "ah",
+    "control-ba-free-0": "na",
+    "ma-nasal-3": "ah",
+    "ma-nasal-4": "na"
+   }
+  }
+ }
+}

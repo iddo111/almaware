@@ -1,0 +1,155 @@
+{
+  "wdist": 9.707490677200216,
+  "gate_pass": true,
+  "gate_detail": {
+    "G1_dip": true,
+    "G2_voiced": true,
+    "G3_f0": true,
+    "G4_occupancy": true,
+    "G5_hnr": true,
+    "G6_duration": true,
+    "G7_clean_tail": true,
+    "G8_voiced_dominance": true
+  },
+  "gate_stats": {
+    "humps": 5,
+    "dip": 0.08939437820565099,
+    "voiced_frac": 1.0,
+    "median_f0": 260.1797990481227,
+    "occupancy": 1.0,
+    "hnr": 11.648001306486362,
+    "span_s": 0.5,
+    "core_s": 0.492,
+    "tail_rms_ratio": 0.5332691787729066,
+    "tail_max_ratio": 0.5846215023413283,
+    "voiced_energy_share": 1.0
+  },
+  "review_flagged": false,
+  "real_wdist_mean": 3.7971687893737216,
+  "real_wdist_min": 2.697495401165337,
+  "real_wdist_max": 9.362949556759256,
+  "win_bar_1p3x_mean": 4.936319426185838,
+  "multi_glottis_seed": {
+    "n": 5,
+    "mean": 9.663807174858382,
+    "sd": 0.09860260594964768
+  },
+  "nearest": [
+    {
+      "unit": "na",
+      "wdist": 17.425
+    },
+    {
+      "unit": "ah",
+      "wdist": 17.9323
+    },
+    {
+      "unit": "ga",
+      "wdist": 17.9842
+    },
+    {
+      "unit": "ba",
+      "wdist": 18.0164
+    },
+    {
+      "unit": "da",
+      "wdist": 18.3456
+    },
+    {
+      "unit": "ta",
+      "wdist": 18.5186
+    },
+    {
+      "unit": "la",
+      "wdist": 18.5199
+    },
+    {
+      "unit": "pa",
+      "wdist": 18.6258
+    },
+    {
+      "unit": "ka",
+      "wdist": 18.6531
+    },
+    {
+      "unit": "ma",
+      "wdist": 19.0856
+    },
+    {
+      "unit": "ra",
+      "wdist": 19.1368
+    },
+    {
+      "unit": "aa",
+      "wdist": 19.5956
+    }
+  ],
+  "gesture": {
+    "keyframes": [
+      [
+        -2.73697,
+        -1.55273,
+        -0.46825,
+        0.76757,
+        1.25971,
+        -2.73697,
+        -2.73697,
+        -2.04062,
+        0.97951,
+        1.81378,
+        0.0,
+        0.95,
+        0.76528
+      ]
+    ],
+    "durations": [
+      0.5
+    ],
+    "f0_knots": [
+      104.58,
+      259.62,
+      328.85
+    ],
+    "glide": 0.35,
+    "burst": null
+  },
+  "organs": {
+    "ear3_spec_hash": "4a6864faab1a86d925012f1b49b1438778a10dcbe1f6b400d0752df5db8e4170",
+    "carfac_sha": "4cdb95ee",
+    "patch_id": "0001-jax-5tap-agc",
+    "cortex": "none-v0 (Judge B pending)",
+    "mouth2_sha256": "c7360cad7df3316d416a80d229a321b65d795542fbc3188ed65ec36e6626f100",
+    "libvoc_sha256": "149e324cc371f6e08caee2324338c985dfcfc3c20b5a33be8db7d2b3c84b6bc1",
+    "geometry": "story-bunton-child-60mo",
+    "backend": "c",
+    "sanity_file": "SANITY0-V3-20260901T013120Z.json"
+  },
+  "arm": "ih-1kf",
+  "seed": 20,
+  "unit": "ih",
+  "guided": true,
+  "evals": 38455,
+  "restarts": 3,
+  "utc": "2026-09-01T02:11:22Z",
+  "best_f_with_penalty": 26.292024463256542,
+  "x": [
+    -4.548465855458177,
+    -1.5527296923047635,
+    -0.4682479874152321,
+    0.7675722181827707,
+    1.2597095873446758,
+    -2.7756800905332155,
+    -4.2139818604254895,
+    -2.0406195629298507,
+    0.9795117230070245,
+    1.8137770040563947,
+    -0.9021361214704721,
+    1.2149663652013993,
+    0.7652837274449773,
+    104.58419397215299,
+    259.6228282333573,
+    328.8510081604513
+  ],
+  "nearest_ruler": "R5-WCCN",
+  "nearest_ruler_note": "Rebuilt 2026-09-07 from sibling-ear's corrected R5-WCCN whitener (fit_whitener/build_refs_flat/wdist_matrix, lam=0.7, train takes t00-t04, EXAM_TAKE=5 never touched). Targets limited to the 12 CORPUS_UNITS the human corpus actually has (abba/ima/ih dropped as TARGETS -- NO_HUMAN_MATERIAL in sibling_ear.py -- same honesty rule the dowry already applies to itself."
+}

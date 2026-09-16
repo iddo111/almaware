@@ -1,0 +1,12 @@
+{
+  "id": "movie-hq-eran3", "order": 11,
+  "title_he": "סרט באיכות גבוהה", "title_en": "MOVIE-HQ",
+  "subtitle_he": "LTX-2.3-22b על ערן3",
+  "box_hint": "eran3",
+  "want": ["eran3/comfyui-MISSING"],
+  "concede": ["eran3/qwen-rpc"],
+  "note_he": "ערכת LTX-2.3 מלאה על הדיסק: 147 GB — 22b dev + distilled + לורה + מגדילי רזולוציה x1.5/x2 + זמני x2.",
+  "honesty": "אין יחידת systemd ל-ComfyUI על ערן3. הוא מופעל ביד דרך ~/comfy/run.sh. אי אפשר להריץ את זה בלחיצה עד שנכתוב את היחידה.",
+  "demonstrated": {"status": "planned", "evidence": "NEVER RUN. The unit it needs does not exist — eran3/comfyui-MISSING is deliberately an unresolvable id so this mode fails validation loudly instead of pretending."},
+  "runnable": false
+}

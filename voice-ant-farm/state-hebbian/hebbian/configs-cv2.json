@@ -1,0 +1,12 @@
+[
+  {"name": "hebbian-no-neighbourhood", "kind": "hebbian", "epochs": 20, "scaled": true, "sigma0": 0.05, "sigma_min": 0.05},
+  {"name": "hebbian-no-nbr-no-conscience", "kind": "hebbian", "epochs": 20, "scaled": true, "sigma0": 0.05, "sigma_min": 0.05, "conscience": 0.0},
+  {"name": "hebbian-sigma-min-0.05", "kind": "hebbian", "epochs": 20, "scaled": true, "sigma_min": 0.05},
+  {"name": "hebbian-sigma-min-0.10", "kind": "hebbian", "epochs": 20, "scaled": true, "sigma_min": 0.10},
+  {"name": "hebbian-sigma-min-0.15", "kind": "hebbian", "epochs": 20, "scaled": true, "sigma_min": 0.15},
+  {"name": "hebbian-sigma-min-0.35", "kind": "hebbian", "epochs": 20, "scaled": true, "sigma_min": 0.35},
+  {"name": "hebbian-s0.25-epochs-40", "kind": "hebbian", "epochs": 40, "scaled": true, "sigma_min": 0.25},
+  {"name": "hebbian-s0.25-cons-0.0", "kind": "hebbian", "epochs": 20, "scaled": true, "sigma_min": 0.25, "conscience": 0.0},
+  {"name": "hebbian-s0.25-cons-0.5", "kind": "hebbian", "epochs": 20, "scaled": true, "sigma_min": 0.25, "conscience": 0.5},
+  {"name": "hebbian-s0.25-etamin-0.005", "kind": "hebbian", "epochs": 20, "scaled": true, "sigma_min": 0.25, "eta_min": 0.005}
+]

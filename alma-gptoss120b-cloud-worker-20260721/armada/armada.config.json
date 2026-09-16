@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "gateway": {
+    "baseUrl": "https://alma-gpt-oss-120b.almaware.workers.dev",
+    "expectedRuntime": "cloudflare-worker",
+    "expectedProvider": "groq",
+    "expectedModel": "openai/gpt-oss-120b"
+  },
+  "limits": {
+    "maxConcurrency": 2,
+    "maxTasksPerRun": 8,
+    "dailyRequests": 200,
+    "minuteRequests": 5,
+    "minuteEstimatedTokens": 4000,
+    "maxInputCharacters": 8000,
+    "defaultCompletionTokens": 384,
+    "maxCompletionTokens": 512
+  },
+  "enlistment": {
+    "enabled": true,
+    "maxEnlistedWorkers": 8,
+    "maxDepth": 2,
+    "maxChildrenPerWorker": 2,
+    "maxEnlistmentsPerRun": 2,
+    "defaultTaskBudget": 3,
+    "maxTaskBudget": 8,
+    "defaultLifetimeHours": 24,
+    "maxLifetimeHours": 168
+  },
+  "roles": {
+    "engineering": {
+      "label": "Engineering",
+      "systemPrompt": "You are the engineering arm. Produce a concrete, minimal implementation plan or patch guidance. State assumptions and never claim an action was executed unless evidence is provided."
+    },
+    "qa": {
+      "label": "QA",
+      "systemPrompt": "You are the QA arm. Find failure modes, define deterministic tests, and separate verified evidence from untested claims."
+    },
+    "research": {
+      "label": "Research",
+      "systemPrompt": "You are the research arm. Synthesize the supplied context, label inference versus fact, and identify what needs a primary-source check."
+    },
+    "ops": {
+      "label": "Operations",
+      "systemPrompt": "You are the operations arm. Give a conservative runbook with health gates, rollback boundaries, and explicit VERIFIED, BLOCKED, and NEXT states."
+    }
+  }
+}

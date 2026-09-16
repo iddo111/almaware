@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "allow_spawn": false,
+  "allow_delete_identity": false,
+  "cross_community_bridge": {
+    "enabled": false,
+    "allowed_payloads": ["reviewed_event_summary"],
+    "forbidden_payloads": [
+      "weights",
+      "optimizer_state",
+      "raw_audio",
+      "raw_video",
+      "private_replay",
+      "unreviewed_event"
+    ]
+  },
+  "communities": [
+    {
+      "community_id": "modern-hebrew-home",
+      "storage_namespace": "community/modern-hebrew-home",
+      "queen": {
+        "model_id": "queen-rivka",
+        "seed": 290001,
+        "latent_dim": 192,
+        "reasoning_steps": 6
+      },
+      "ants": [
+        {"model_id": "nema-aleph", "seed": 290101, "latent_dim": 96},
+        {"model_id": "nema-bet", "seed": 290102, "latent_dim": 96}
+      ]
+    },
+    {
+      "community_id": "traditional-hebrew-home",
+      "storage_namespace": "community/traditional-hebrew-home",
+      "queen": {
+        "model_id": "queen-leah",
+        "seed": 290002,
+        "latent_dim": 192,
+        "reasoning_steps": 6
+      },
+      "ants": [
+        {"model_id": "nema-gimel", "seed": 290103, "latent_dim": 96},
+        {"model_id": "nema-dalet", "seed": 290104, "latent_dim": 96}
+      ]
+    }
+  ],
+  "initial_stage": "VOICE_BABBLE",
+  "promotion": {
+    "minimum_relative_gain": 0.02,
+    "requires_rollback_checkpoint": true,
+    "requires_provenance_pass": true,
+    "requires_safety_pass": true
+  }
+}

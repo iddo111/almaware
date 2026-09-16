@@ -1,0 +1,42 @@
+[
+ {
+  "row": 113,
+  "ts": "2026-08-30T21:22:00+03:00",
+  "clip_desc": "ba-cv-9 (wdist 3.7253) + ma-nasal-0 (4.1547), heard via 127.0.0.1:8846",
+  "verdict_field": 3,
+  "words_he": "הבה לא בכלל זה WAH. המה זה לא גם כן. ההקלטות שלי מלאות ברעש",
+  "meaning": "REJECTED at the ear despite the 0.0625 metric margin. NEW: the human reference set (eran-cortex/data/t06) is noisy - the metric has been chasing a noisy target.",
+  "numeric_label": null,
+  "why_excluded": "hand-appended prose row; verdict field conflicts with station scale"
+ },
+ {
+  "row": 114,
+  "ts": "2026-09-01T04:03:23+03:00",
+  "clip_desc": "ERAN-ba-cv-9.wav + ERAN-ba-cv-0.wav (sent as files into the chat, 04:01)",
+  "verdict_field": 1,
+  "words_he": "מה זה גרוע אין שום בית שום פיצוץ כלום גרוע מאוד",
+  "meaning": "NO BET, NO PLOSIVE, nothing - very bad. The top-ranked ba candidates carry no audible /b/ burst; the ruler scored them in the human band anyway. The metric rewards the vowel and is deaf to the burst - this is the deaf-judge failure the queue already suspected.",
+  "numeric_label": null,
+  "why_excluded": "hand-appended prose row; verdict field conflicts with station scale"
+ },
+ {
+  "row": 115,
+  "ts": "2026-09-01T04:38:24+03:00",
+  "clip_desc": "ERAN-ba-RESCUED-burst43dB-cv12 (= queue 20260827T040404Z_eran3_ba-cv-12, wdist 8.435, rise 43dB)",
+  "verdict_field": 1,
+  "words_he": "זה גרוע ביותר",
+  "meaning": "The burstiest rescued candidate FAILS his ear too. Joint truth now proven from both sides: the 3.93 clip = vowel without burst (rejected), this = burst without vowel (rejected). NO candidate on disk holds both. v4 never searched for both (anti-rewarded burst). ba-v5 with the fixed judge is the first search that will.",
+  "numeric_label": null,
+  "why_excluded": "hand-appended prose row; verdict field conflicts with station scale"
+ },
+ {
+  "row": 116,
+  "ts": "2026-09-01T05:48:18+03:00",
+  "clip_desc": "ERAN-pa-CROSSED-4.861 + ERAN-ta-CROSSED-5.095 + ERAN-ga-5.197 + ERAN-na-5.247 (sweep bests, gates PASS, pa+ta above win bars)",
+  "verdict_field": 1,
+  "words_he": "כולם לא שווים כלום",
+  "meaning": "ALL FOUR rejected, including two that CROSSED their win bars. Sixth consecutive ear-rejection of metric-approved output. The verdict is no longer about one syllable: the wdist feature space + gates + win bars do not measure what his ear hears. Crossing the bar means nothing. The judging stack is bankrupt as a proxy for the only judge that matters.",
+  "numeric_label": null,
+  "why_excluded": "hand-appended prose row; verdict field conflicts with station scale"
+ }
+]

@@ -1,0 +1,90 @@
+{
+  "_header": "לזכרה של עלמה ז\"ל",
+  "_about": "Master Modeler — unified endpoint registry (single source of truth for `status`/`endpoints`). One entry per REACHABLE thing the control plane can see: cloud model CLIs (claude/grok/gemini), local model servers, and the DGX trainers (probed by ssh-port reach ONLY, no remote exec). Health checks here are READ-ONLY: cli => `--version`, http => GET, tcp => connect. Add an endpoint by appending; no code change needed.",
+  "endpoints": [
+    {
+      "name": "claude-cli",
+      "kind": "cloud-cli",
+      "check": "cli",
+      "command": ["claude", "--version"],
+      "provider": "anthropic",
+      "notes": "Claude Code CLI (subscription). Used by the fleet + DGX agents."
+    },
+    {
+      "name": "grok-cli",
+      "kind": "cloud-cli",
+      "check": "cli",
+      "command": ["grok", "--version"],
+      "provider": "xai",
+      "notes": "Grok CLI. xAI. Blocked on credits for API calls; --version is local."
+    },
+    {
+      "name": "gemini-cli",
+      "kind": "cloud-cli",
+      "check": "cli",
+      "command": ["gemini", "--version"],
+      "provider": "google",
+      "notes": "Gemini CLI. Needs GEMINI_API_KEY for real calls; --version is local."
+    },
+    {
+      "name": "ollama-local",
+      "kind": "local-http",
+      "check": "http",
+      "url": "http://localhost:11434/api/version",
+      "provider": "ollama",
+      "notes": "Local Ollama server (gemma2:2b, phi3). Cheap/free bulk worker."
+    },
+    {
+      "name": "eran-local",
+      "kind": "local-http",
+      "check": "http",
+      "url": "http://localhost:7800/health",
+      "provider": "eran",
+      "notes": "ALMAWARE Eran v1 byte-LM chat server. OURS. SACRED — observe only."
+    },
+    {
+      "name": "quorum-local",
+      "kind": "local-http",
+      "check": "http",
+      "url": "http://localhost:8099/",
+      "provider": "alma",
+      "notes": "Quorum multi-AI council orchestrator (root=200; /health is 404). Read-only GET probe."
+    },
+    {
+      "name": "eran1-dgx",
+      "kind": "dgx-trainer",
+      "check": "tcp",
+      "host": "<lan-ip>",
+      "port": 22,
+      "provider": "eran",
+      "notes": "DGX Spark eran1. Trainer node. Probe ssh-port reach ONLY (no exec)."
+    },
+    {
+      "name": "eran2-dgx",
+      "kind": "dgx-trainer",
+      "check": "tcp",
+      "host": "<lan-ip>",
+      "port": 22,
+      "provider": "eran",
+      "notes": "DGX Spark eran2. Trainer + GIST arm. Probe reach only."
+    },
+    {
+      "name": "eran3-dgx",
+      "kind": "dgx-trainer",
+      "check": "tcp",
+      "host": "<lan-ip>",
+      "port": 22,
+      "provider": "eran",
+      "notes": "DGX Spark eran3. Trainer node. Probe reach only."
+    },
+    {
+      "name": "eran4-dgx",
+      "kind": "dgx-trainer",
+      "check": "tcp",
+      "host": "<lan-ip>",
+      "port": 22,
+      "provider": "eran",
+      "notes": "DGX Spark eran4. Trainer node (GPU needs reset). Probe reach only."
+    }
+  ]
+}

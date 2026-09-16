@@ -1,0 +1,31 @@
+{
+ "section": "ALMA_ADAPT",
+ "tag": "Local\\ALMA_ADAPT_8MB",
+ "size": 8388608,
+ "kind": "jsonl",
+ "header_text": "ALMA-ENHANCER v1 :: ALMA_ADAPT :: adapter events {\"ai\",\"kind\",\"rule\",\"ts\"} kind=style|correction|skill|fact :: init 2026-07-07T02:39:34\n",
+ "head": 1363,
+ "used_bytes": 339,
+ "saved_at": "2026-07-07T02:40:49",
+ "records": [
+  {
+   "ai": "GEMINI",
+   "kind": "style",
+   "rule": "Answer in short bullet points, Hebrew first",
+   "ts": 1783381208.4703162
+  },
+  {
+   "ai": "GEMINI",
+   "kind": "fact",
+   "rule": "Iddo is called Iddo, never \"the user\"",
+   "ts": 1783381208.7940347
+  },
+  {
+   "ai": "GEMINI",
+   "kind": "style",
+   "rule": "answer in short bullet points hebrew first",
+   "ts": 1783381209.0463476
+  }
+ ],
+ "bad_lines": 0
+}

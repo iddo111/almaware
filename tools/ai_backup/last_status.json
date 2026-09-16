@@ -1,0 +1,197 @@
+{
+  "started": "2026-05-22T09:35:40",
+  "finished": "2026-05-22T09:40:59",
+  "manifest_summary": {
+    "alma-face-refs": {
+      "size": "607.5MB",
+      "files": 825
+    },
+    "alma-facerec-out": {
+      "size": "111.6MB",
+      "files": 35
+    },
+    "alma-tools": {
+      "size": "853.4KB",
+      "files": 63
+    },
+    "simpletracker-models": {
+      "size": "145.1MB",
+      "files": 9
+    },
+    "simpletracker-runs": {
+      "size": "307.1MB",
+      "files": 93
+    },
+    "simpletracker-scripts": {
+      "size": "67.7KB",
+      "files": 14
+    },
+    "simpletracker-root": {
+      "size": "618.0MB",
+      "files": 621
+    },
+    "maimon-light": {
+      "size": "134.9MB",
+      "files": 95
+    },
+    "kabbalah-ai": {
+      "size": "26.1KB",
+      "files": 9
+    },
+    "agriculture-chapters": {
+      "size": "4.5MB",
+      "files": 56
+    },
+    "agriculture-scripts": {
+      "size": "272.0KB",
+      "files": 8
+    },
+    "agriculture-pdf": {
+      "size": "28.6MB",
+      "files": null
+    }
+  },
+  "local_mirror": {
+    "snapshot_dir": "N:\\backups\\ai-progress\\2026-05-22",
+    "items": {
+      "alma-face-refs": {
+        "status": "ok",
+        "rc": 0,
+        "bytes": 636972435,
+        "size": "607.5MB",
+        "files": 825
+      },
+      "alma-facerec-out": {
+        "status": "ok",
+        "rc": 0,
+        "bytes": 117023947,
+        "size": "111.6MB",
+        "files": 35
+      },
+      "alma-tools": {
+        "status": "ok",
+        "rc": 0,
+        "bytes": 830827,
+        "size": "811.4KB",
+        "files": 58
+      },
+      "simpletracker-models": {
+        "status": "ok",
+        "rc": 0,
+        "bytes": 152195683,
+        "size": "145.1MB",
+        "files": 9
+      },
+      "simpletracker-runs": {
+        "status": "ok",
+        "rc": 0,
+        "bytes": 321726206,
+        "size": "306.8MB",
+        "files": 84
+      },
+      "simpletracker-scripts": {
+        "status": "ok",
+        "rc": 0,
+        "bytes": 69335,
+        "size": "67.7KB",
+        "files": 14
+      },
+      "maimon-light": {
+        "status": "ok",
+        "rc": 0,
+        "bytes": 141420630,
+        "size": "134.9MB",
+        "files": 95
+      },
+      "kabbalah-ai": {
+        "status": "ok",
+        "rc": 0,
+        "bytes": 26754,
+        "size": "26.1KB",
+        "files": 9
+      },
+      "agriculture-chapters": {
+        "status": "ok",
+        "rc": 0,
+        "bytes": 4668520,
+        "size": "4.5MB",
+        "files": 56
+      },
+      "agriculture-scripts": {
+        "status": "ok",
+        "rc": 0,
+        "bytes": 278510,
+        "size": "272.0KB",
+        "files": 8
+      },
+      "agriculture-pdf": {
+        "status": "ok",
+        "rc": 0,
+        "bytes": 29990683,
+        "size": "28.6MB",
+        "files": 1
+      }
+    },
+    "total_bytes": 1405203530,
+    "errors": [],
+    "total_size": "1.3GB",
+    "pruned": []
+  },
+  "git": {
+    "repo": "D:\\CLAUDE\\_ai_backups_git",
+    "items": {
+      "alma-facerec-out": {
+        "files": 33,
+        "bytes": 85132899,
+        "size": "81.2MB"
+      },
+      "alma-tools": {
+        "files": 58,
+        "bytes": 830827,
+        "size": "811.4KB"
+      },
+      "simpletracker-scripts": {
+        "files": 14,
+        "bytes": 69335,
+        "size": "67.7KB"
+      },
+      "simpletracker-root": {
+        "files": 590,
+        "bytes": 27313909,
+        "size": "26.0MB"
+      },
+      "maimon-light": {
+        "files": 89,
+        "bytes": 97918568,
+        "size": "93.4MB"
+      },
+      "kabbalah-ai": {
+        "files": 9,
+        "bytes": 26754,
+        "size": "26.1KB"
+      },
+      "agriculture-chapters": {
+        "files": 56,
+        "bytes": 4668520,
+        "size": "4.5MB"
+      },
+      "agriculture-scripts": {
+        "files": 8,
+        "bytes": 278510,
+        "size": "272.0KB"
+      }
+    },
+    "total_files": 857,
+    "total_bytes": 216239322,
+    "commit": "no-change",
+    "push": "DEFERRED: no remote configured. RUN: cd D:\\CLAUDE\\_ai_backups_git && git remote add origin https://github.com/iddo111/claude-ai-backups.git && git push -u origin main",
+    "errors": [],
+    "total_size": "206.2MB"
+  },
+  "rclone": {
+    "remote": "gdrive:claude-ai-backups",
+    "status": "DEFERRED: rclone remote 'gdrive:' not configured. RUN: rclone config (create new -> drive -> name=gdrive)",
+    "errors": []
+  },
+  "errors": []
+}

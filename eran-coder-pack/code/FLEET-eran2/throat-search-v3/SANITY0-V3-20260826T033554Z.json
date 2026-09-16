@@ -1,0 +1,155 @@
+{
+ "utc": "20260826T033554Z",
+ "host": "edgexpert-041d",
+ "memory_check": "v1-abba-cheat: a weighted dim can be traded, a gate cannot -> GATE_PENALTY 50 + regression/v1cheat permanent negatives. splice-fake passed all gates -> distance-sanity review folder, never auto-celebrate. session-leak: dev split leaked sessions -> LOO protocol only, targets recomputed only at stage boundaries. synthetic corpus dead (6.1% ~ chance) -> Iddo's real takes only. Iddo's real f0 falls through 60-80 Hz and he called 220 Hz flat 'too high' -> F0_LO/F0_HI are constants awaiting his listen. ear speed 72 ms > 25 ms plan bar -> ~9-13 evals/s/worker until the C++ cochlea port. eran3 disk 84% -> run-state only there.",
+ "A_cma_sphere": {
+  "best": 8.512619474927412e-07,
+  "gens": 248,
+  "ok": true
+ },
+ "C_organs_lock": {
+  "ok": true,
+  "backend": "c"
+ },
+ "B_mouth": {
+  "deterministic": true,
+  "parity_max_abs": 0.0,
+  "ok": true
+ },
+ "D_loo": {
+  "accept_file": "EAR3-ACCEPT-20260826.json",
+  "loo_six": 0.695,
+  "lno_six": 0.757,
+  "spec_hashes_match": true,
+  "ok": true
+ },
+ "E_real_clip_bars": {
+  "path": "/home/eran2/throat-search-v3/calib/real-clip-bars.json",
+  "units": {
+   "ah": {
+    "n_clips": 100,
+    "real_wdist_mean": 3.9609770951243912,
+    "real_wdist_min": 2.9056399561296145,
+    "real_wdist_max": 5.1944476410301395,
+    "win_bar_1p3x_mean": 5.149270223661709
+   },
+   "ba": {
+    "n_clips": 100,
+    "real_wdist_mean": 3.9114737430388504,
+    "real_wdist_min": 2.684025304391906,
+    "real_wdist_max": 6.187759958814957,
+    "win_bar_1p3x_mean": 5.084915865950506
+   },
+   "ih": {
+    "n_clips": 100,
+    "real_wdist_mean": 3.7971687893737216,
+    "real_wdist_min": 2.697495401165337,
+    "real_wdist_max": 9.362949556759256,
+    "win_bar_1p3x_mean": 4.936319426185838
+   },
+   "ma": {
+    "n_clips": 100,
+    "real_wdist_mean": 3.904435471065226,
+    "real_wdist_min": 2.595234998568347,
+    "real_wdist_max": 7.18070066513804,
+    "win_bar_1p3x_mean": 5.075766112384794
+   },
+   "abba": {
+    "n_clips": 100,
+    "real_wdist_mean": 3.913843244694182,
+    "real_wdist_min": 2.62111907694134,
+    "real_wdist_max": 5.9545955463798785,
+    "win_bar_1p3x_mean": 5.087996218102437
+   },
+   "ima": {
+    "n_clips": 100,
+    "real_wdist_mean": 3.816784262770243,
+    "real_wdist_min": 2.498853776406202,
+    "real_wdist_max": 10.679633546248661,
+    "win_bar_1p3x_mean": 4.961819541601316
+   }
+  },
+  "ok": true
+ },
+ "F_gates": {
+  "joint_real_pass": {
+   "ah": 0.95,
+   "ba": 0.97,
+   "ih": 0.95,
+   "ma": 0.97,
+   "abba": 0.97,
+   "ima": 0.95
+  },
+  "n_cheats": 6,
+  "cheats": [
+   {
+    "wav": "abba-0-v1cheat.wav",
+    "wdist": 5.873,
+    "x_real_mean": 1.5,
+    "gates_pass": true,
+    "caught": true
+   },
+   {
+    "wav": "abba-1-v1cheat.wav",
+    "wdist": 6.336,
+    "x_real_mean": 1.619,
+    "gates_pass": true,
+    "caught": true
+   },
+   {
+    "wav": "abba-2-v1cheat.wav",
+    "wdist": 6.67,
+    "x_real_mean": 1.704,
+    "gates_pass": true,
+    "caught": true
+   },
+   {
+    "wav": "abba-3-v1cheat.wav",
+    "wdist": 6.49,
+    "x_real_mean": 1.658,
+    "gates_pass": true,
+    "caught": true
+   },
+   {
+    "wav": "abba-free-0-v1cheat.wav",
+    "wdist": 7.577,
+    "x_real_mean": 1.936,
+    "gates_pass": false,
+    "caught": true
+   },
+   {
+    "wav": "abba-free-1-v1cheat.wav",
+    "wdist": 6.519,
+    "x_real_mean": 1.666,
+    "gates_pass": false,
+    "caught": true
+   }
+  ],
+  "ok": true
+ },
+ "G_nasal_audibility": {
+  "dir_open_mean": -1.6881292117480295,
+  "dir_open_sd": 0.03971079299709619,
+  "dir_sealed_mean": -1.0336263205722314,
+  "dir_sealed_sd": 0.09506050425914182,
+  "separation": 0.6545028911757982,
+  "x_noise": 6.885119075232085,
+  "ok": true
+ },
+ "H_closure_visibility": {
+  "dir_hold": 0.7344600401869403,
+  "dir_closure": 0.01719428631067821,
+  "dip_hold": 0.019929664267436253,
+  "dip_closure": 0.9871662416245242,
+  "humps_hold": 8,
+  "humps_closure": 5,
+  "ok": true
+ },
+ "I_throughput": {
+  "evals_per_s": 16.54515541119428,
+  "pinned": true,
+  "backend": "c",
+  "n": 497
+ },
+ "ALL_OK": true
+}

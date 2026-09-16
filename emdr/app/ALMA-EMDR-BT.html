@@ -1,0 +1,1181 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ALMA · EMDR + באזרים — גירוי דו-צדדי · עמותת המלאכים של ערן</title>
+<!--
+  ALMA · EMDR — BT edition.
+  ============================================================================
+  Adds Web Bluetooth buzzer output to ALMA-EMDR.html, speaking the 9-byte
+  ALMA-EMDR buzzer protocol v1.0 (D:\CLAUDE\emdr\PROTOCOL-buzzers-20260901.md).
+
+  STATUS: no hardware exists yet. Everything that touches a real ball is
+  UNTESTED AGAINST REAL HARDWARE and is marked as such in the UI. The built-in
+  simulator ("כדורים מדומים") is a reference implementation of the ball's
+  firmware rules (pending tap, hysteresis, dead-man, duty limiter, clamps) and
+  IS testable right now, with zero hardware, in this file.
+
+  Self-contained. No CDN, no framework, no network access of any kind.
+  Not deployed anywhere. Publishing is Iddo's decision.
+  ============================================================================
+-->
+<style>
+  :root{
+    --bg1:#16324a; --bg2:#0c1c2e; --bg3:#060e18;
+    --ink:#dfeaf3; --ink-dim:#9fb4c6; --ink-faint:#7f97ab;
+    --line:#2f5f86; --surface:#1d3d59; --surface-hi:#27547a;
+    --accent:#e08a44; --accent-hi:#f0a35c; --ok:#2e7d5b; --ok-hi:#43a97d;
+    --bad:#b4442f; --bad-hi:#e0644a;
+    --orb-a:#ffffff; --orb-b:#ffd9a0; --orb-c:#ff9d5c; --orb-d:#7a3b1e;
+    --orb-glow:255,180,110;
+    --orb-size:64px;
+  }
+  html[data-theme="light"]{
+    --bg1:#eaf2f8; --bg2:#dce9f2; --bg3:#cfe0ec;
+    --ink:#12222f; --ink-dim:#3c5a70; --ink-faint:#5b7789;
+    --line:#a8c4d8; --surface:#ffffff; --surface-hi:#eef5fa;
+    --accent:#c96a1e; --accent-hi:#e08a44; --ok:#1f6b4a; --ok-hi:#2e8f65;
+    --bad:#9c3520; --bad-hi:#c14b30;
+    --orb-a:#fff3d8; --orb-b:#ff9d5c; --orb-c:#d9541f; --orb-d:#7a2f0e;
+    --orb-glow:220,110,40;
+  }
+  html[data-theme="contrast"]{
+    --bg1:#000000; --bg2:#000000; --bg3:#000000;
+    --ink:#ffffff; --ink-dim:#c8d4dd; --ink-faint:#9aa8b2;
+    --line:#4a4a4a; --surface:#161616; --surface-hi:#242424;
+    --orb-a:#ffffff; --orb-b:#ffffff; --orb-c:#e8e8e8; --orb-d:#8a8a8a;
+    --orb-glow:255,255,255;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+  html,body{ height:100%; overflow:hidden;
+    font-family:"Assistant","Segoe UI","Noto Sans Hebrew",Arial,sans-serif; }
+  body{
+    background:radial-gradient(120% 90% at 50% 40%, var(--bg1) 0%, var(--bg2) 55%, var(--bg3) 100%);
+    color:var(--ink); display:flex; flex-direction:column;
+    -webkit-user-select:none; user-select:none;
+  }
+
+  /* ---------- gate ---------- */
+  #gate{ position:fixed; inset:0; z-index:50; display:flex; align-items:center; justify-content:center;
+         padding:20px; background:radial-gradient(120% 90% at 50% 40%, var(--bg1), var(--bg3)); overflow:auto; }
+  .card{ max-width:680px; width:100%; background:rgba(255,255,255,.045); border:1px solid var(--line);
+         border-radius:20px; padding:26px 28px; line-height:1.65; }
+  html[data-theme="light"] .card{ background:#fff; box-shadow:0 8px 32px rgba(20,50,80,.12); }
+  .card h1{ font-size:26px; margin-bottom:4px; }
+  .card .sub{ color:var(--ink-dim); font-size:14px; margin-bottom:18px; }
+  .warn{ border-inline-start:4px solid var(--accent); background:rgba(224,138,68,.10);
+         border-radius:10px; padding:12px 14px; margin:14px 0; font-size:14.5px; }
+  .warn b{ color:var(--accent-hi); }
+  html[data-theme="light"] .warn b{ color:var(--accent); }
+  .warn.cool{ border-inline-start-color:var(--ok-hi); background:rgba(67,169,125,.10); }
+  .warn.cool b{ color:var(--ok); }
+  .card ul{ margin:8px 22px 0; font-size:14.5px; color:var(--ink-dim); }
+  .card li{ margin-bottom:5px; }
+
+  /* ---------- stage ---------- */
+  .stage{ flex:1; position:relative; overflow:hidden; }
+  .orb{ position:absolute; top:50%; left:50%; width:var(--orb-size); height:var(--orb-size);
+        border-radius:50%; transform:translate(-50%,-50%); will-change:transform;
+        background:radial-gradient(circle at 38% 34%, var(--orb-a) 0%, var(--orb-b) 30%, var(--orb-c) 65%, var(--orb-d) 100%);
+        box-shadow:0 0 40px 14px rgba(var(--orb-glow),.55), 0 0 120px 40px rgba(var(--orb-glow),.22); }
+  .orb.flat{ box-shadow:none; }
+  .breath{ position:absolute; top:20%; inset-inline:0; text-align:center; font-size:30px; letter-spacing:3px;
+           color:var(--ink); opacity:0; transition:opacity 1s; pointer-events:none; }
+  .setnote{ position:absolute; bottom:16%; inset-inline:0; text-align:center; font-size:22px;
+            color:var(--ink-dim); opacity:0; transition:opacity .5s; pointer-events:none; }
+  .setnote.show{ opacity:1; }
+
+  /* ---------- buzzer lamps ---------- */
+  /* Top, not bottom: the control panel is fixed to the bottom and grows to ~200px when
+     its row wraps, which buried these completely. Here they clear the topbar (~31px)
+     and sit above the breath text (20% of the stage). */
+  #lamps{ position:absolute; top:46px; inset-inline:0; display:none;
+          justify-content:center; gap:34px; pointer-events:none; }
+  #lamps.show{ display:flex; }
+  .lamp{ display:flex; flex-direction:column; align-items:center; gap:5px;
+         font-size:11.5px; color:var(--ink-faint); }
+  .lamp i{ display:block; width:26px; height:26px; border-radius:50%;
+           background:transparent; border:2px solid var(--line); transition:none; }
+  .lamp.hit i{ background:var(--ok-hi); border-color:var(--ok-hi);
+               box-shadow:0 0 18px 5px rgba(67,169,125,.6); }
+
+  /* ---------- chrome ---------- */
+  .top{ position:fixed; top:0; inset-inline:0; text-align:center; padding:7px 12px; font-size:12.5px;
+        color:var(--ink-dim); z-index:5; pointer-events:none; transition:opacity .4s; }
+  .top b{ color:var(--accent-hi); }
+  html[data-theme="light"] .top b{ color:var(--accent); }
+
+  .panel{ position:fixed; bottom:0; inset-inline:0; z-index:6; padding:12px 14px 16px;
+          background:linear-gradient(transparent, var(--bg3) 45%); transition:opacity .4s, transform .4s; }
+  .row{ display:flex; gap:10px; align-items:center; justify-content:center; flex-wrap:wrap;
+        max-width:1000px; margin:0 auto; }
+  button{ font-family:inherit; font-size:15px; color:var(--ink); background:var(--surface);
+          border:1px solid var(--line); border-radius:12px; padding:10px 18px; cursor:pointer;
+          transition:.15s; white-space:nowrap; }
+  button:hover{ background:var(--surface-hi); }
+  button:disabled{ opacity:.45; cursor:default; }
+  button.primary{ background:var(--accent); border-color:var(--accent-hi); color:#fff; font-weight:700; min-width:132px; }
+  html[data-theme="light"] button.primary{ color:#fff; }
+  button.on{ background:var(--ok); border-color:var(--ok-hi); color:#fff; }
+  button.big{ font-size:17px; padding:13px 26px; }
+  button.small{ font-size:13px; padding:7px 13px; min-width:0; }
+  .ctl{ display:flex; flex-direction:column; gap:3px; align-items:center; font-size:11.5px; color:var(--ink-dim); }
+  input[type=range]{ width:130px; accent-color:var(--accent-hi); }
+  select,input[type=number]{ font-family:inherit; background:var(--surface); color:var(--ink);
+          border:1px solid var(--line); border-radius:9px; padding:7px 9px; font-size:14px; }
+  input[type=number]{ width:74px; }
+  .readout{ font-variant-numeric:tabular-nums; font-size:14px; color:var(--ink); min-width:56px; text-align:center; }
+  .hint{ text-align:center; font-size:11.5px; color:var(--ink-faint); margin-top:9px; }
+  .chips{ display:flex; gap:6px; justify-content:center; margin-bottom:9px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; padding:6px 13px; border-radius:999px; background:transparent;
+         border:1px solid var(--line); color:var(--ink-dim); cursor:pointer; }
+  .chip.sel{ background:var(--surface-hi); color:var(--ink); border-color:var(--accent); }
+  .dot{ display:inline-block; width:8px; height:8px; border-radius:50%; background:#77808a; margin-inline-end:6px; }
+  .dot.live{ background:#43a97d; box-shadow:0 0 8px #43a97d; }
+  .dot.bad{ background:var(--bad-hi); box-shadow:0 0 8px var(--bad-hi); }
+
+  /* ---------- drawer ---------- */
+  #drawer{ position:fixed; inset-block:0; inset-inline-end:0; width:min(430px,94vw); z-index:20;
+           background:var(--bg3); border-inline-start:1px solid var(--line); padding:20px;
+           overflow:auto; transition:transform .28s; }
+  /* The drawer is pinned to the inline-END edge. In RTL that is the LEFT edge, so it
+     must hide to the LEFT (-104%); in LTR it is the right edge and hides right (+104%).
+     Getting this backwards leaves the drawer parked in the middle of a wide screen. */
+  #drawer{ transform:translateX(104%); }
+  html[dir="rtl"] #drawer{ transform:translateX(-104%); }
+  #drawer.open{ transform:none !important; }
+  #drawer h2{ font-size:19px; margin-bottom:14px; }
+  #drawer h3{ font-size:14px; color:var(--accent-hi); margin:20px 0 8px;
+              border-bottom:1px solid var(--line); padding-bottom:5px; }
+  html[data-theme="light"] #drawer h3{ color:var(--accent); }
+  .field{ display:flex; justify-content:space-between; align-items:center; gap:10px;
+          padding:9px 0; border-bottom:1px solid rgba(128,150,170,.16); font-size:14px; }
+  .field label{ color:var(--ink-dim); }
+  .note{ font-size:12px; color:var(--ink-faint); margin-top:8px; line-height:1.65; }
+  .note b{ color:var(--ink-dim); }
+  .note.alert{ color:var(--bad-hi); }
+  .logbox{ font-size:12.5px; color:var(--ink-dim); background:rgba(128,150,170,.10);
+           border-radius:10px; padding:10px; max-height:190px; overflow:auto;
+           white-space:pre-wrap; line-height:1.55; font-variant-numeric:tabular-nums; }
+  .mono{ font-family:"Cascadia Mono",Consolas,"Courier New",monospace; direction:ltr; text-align:left; }
+  #devices{ display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+  .dev{ border:1px solid var(--line); border-radius:12px; padding:9px 11px; font-size:13px;
+        background:rgba(128,150,170,.07); }
+  .dev .nm{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px; }
+  .dev .nm b{ font-size:13.5px; }
+  .dev .meta{ font-size:11.5px; color:var(--ink-faint); margin-bottom:7px; }
+  .dev .acts{ display:flex; gap:6px; flex-wrap:wrap; }
+  #btStatus{ border-radius:12px; padding:11px 13px; font-size:13px; line-height:1.6;
+             border:1px solid var(--line); background:rgba(128,150,170,.08); }
+  #btStatus.good{ border-color:var(--ok-hi); background:rgba(67,169,125,.10); }
+  #btStatus.bad{ border-color:var(--bad-hi); background:rgba(224,100,74,.10); }
+  #btStatus b{ display:block; margin-bottom:3px; font-size:13.5px; }
+
+  /* ---------- SUD modal ---------- */
+  #sud{ position:fixed; inset:0; z-index:40; display:none; align-items:center; justify-content:center;
+        padding:20px; background:rgba(6,14,24,.90); }
+  html[data-theme="light"] #sud{ background:rgba(220,233,242,.94); }
+  #sud.show{ display:flex; }
+  .sud-scale{ display:flex; gap:7px; justify-content:center; flex-wrap:wrap; margin:18px 0 6px; }
+  .sud-scale button{ width:52px; height:52px; padding:0; font-size:18px; border-radius:14px; }
+  .sud-scale button.sel{ background:var(--accent); color:#fff; border-color:var(--accent-hi); font-weight:700; }
+
+  /* ---------- toast ---------- */
+  #toast{ position:fixed; top:44px; inset-inline:0; z-index:30; display:flex; justify-content:center;
+          pointer-events:none; opacity:0; transition:opacity .3s; }
+  #toast.show{ opacity:1; }
+  #toast span{ background:var(--surface); border:1px solid var(--accent); color:var(--ink);
+               border-radius:999px; padding:8px 18px; font-size:13.5px;
+               box-shadow:0 6px 22px rgba(0,0,0,.25); }
+
+  .hidden{ display:none !important; }
+  .faded{ opacity:0; pointer-events:none; }
+  @media (max-width:640px){
+    .row{ gap:8px; } button{ font-size:14px; padding:9px 14px; } input[type=range]{ width:104px; }
+    .card{ padding:20px; } .card h1{ font-size:22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ GATE ══════════════ -->
+<div id="gate">
+  <div class="card">
+    <h1>ALMA · EMDR — גירוי דו-צדדי + באזרים</h1>
+    <div class="sub">כלי חינמי לוויסות עצמי · נבנה לעמותת המלאכים של ערן · לע״נ שיפרה ז״ל</div>
+
+    <div class="warn">
+      <b>קראו לפני שמתחילים.</b> זהו <b>כלי עזר לוויסות עצמי</b> — גירוי דו-צדדי, נשימה והארקה.
+      <b>זה אינו טיפול EMDR</b> ואינו תחליף למטפל/ת מוסמך/ת. EMDR אמיתי הוא פרוטוקול בן 8 שלבים
+      שמבוצע על ידי מטפל/ת שהוכשר/ה לכך, ועיבוד זיכרון טראומטי לא נעשה לבד מול מסך.
+    </div>
+
+    <div class="warn">
+      <b>בטיחות.</b> אם יש רגישות לאור מהבהב או אפילפסיה פוטו-סנסיטיבית — אל תשתמשו בגירוי החזותי;
+      השתמשו בצליל או ברטט בלבד. עצרו מיד אם עולה מצוקה, סחרחורת, בחילה או ניתוק.
+      <b>במצוקה נפשית: ער״ן 1201</b> (24/7) · קו הסיוע של נט״ל 1-800-363-363.
+    </div>
+
+    <div class="warn cool">
+      <b>הכדורים המרטטים.</b> הכלי הזה יודע לדבר עם כדורים אלחוטיים — אחד לכל יד.
+      <b>עדיין אין חומרה כזו.</b> עד שתהיה, יש כאן <b>הדמיה</b> שמראה בדיוק מתי כל כדור
+      היה פועם, ומריצה את אותם חוקי בטיחות. הכלי עובד מצוין גם בלי שום חומרה.
+    </div>
+
+    <ul>
+      <li><b>עקבו בעיניים אחרי הכדור</b> — שמאל↔ימין, בלי להזיז את הראש.</li>
+      <li>סטים קצרים (ברירת מחדל 24 מעברים), ואז עצירה, נשימה, ו״מה עולה?״.</li>
+      <li>אפשר להוסיף <b>צליל בסטריאו</b> (אוזניות) ו<b>רטט</b> (כדורים / קופסה).</li>
+      <li>למקרן: <b>מקש F</b> = מסך מלא, <b>רווח</b> = התחל/עצור, <b>←/→</b> = מהירות, <b>H</b> = הסתר תפריט.</li>
+    </ul>
+
+    <div class="row" style="margin-top:22px;">
+      <button class="primary big" id="gateGo">הבנתי — התחל</button>
+      <button id="gateDark">🌙 כהה (למפגש)</button>
+      <button id="gateTheme">🌓 ערכת צבע</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TOP ══════════════ -->
+<div class="top" id="topbar">
+  עקבו בעיניים אחרי הכדור, שמאל–ימין, ונשמו לאט &nbsp;·&nbsp;
+  <b>כלי לוויסות עצמי — לא תחליף למטפל/ת</b> &nbsp;·&nbsp; במצוקה: ער״ן 1201
+</div>
+
+<!-- ══════════════ STAGE ══════════════ -->
+<div class="stage" id="stage">
+  <div class="breath" id="breath">שאאאף</div>
+  <div class="orb" id="orb"></div>
+  <div class="setnote" id="setnote">קחו נשימה עמוקה. מה עולה עכשיו?</div>
+  <div id="lamps">
+    <div class="lamp" id="lampR"><i></i><span>ימין</span></div>
+    <div class="lamp" id="lampL"><i></i><span>שמאל</span></div>
+  </div>
+</div>
+
+<!-- ══════════════ PANEL ══════════════ -->
+<div class="panel" id="panel">
+  <div class="chips" id="chips">
+    <div class="chip" data-hz="0.25">איטי מאוד · 0.25Hz</div>
+    <div class="chip sel" data-hz="0.5">רגוע · 0.5Hz</div>
+    <div class="chip" data-hz="0.8">בינוני · 0.8Hz</div>
+    <div class="chip" data-hz="1.1">מהיר · 1.1Hz</div>
+  </div>
+  <div class="row">
+    <button class="primary" id="btnPlay">▶ התחל</button>
+    <div class="ctl"><span>מהירות</span><input type="range" id="speed" min="0.15" max="1.5" step="0.01" value="0.5"></div>
+    <div class="readout" id="hzOut">0.50Hz</div>
+    <button id="btnSound">🔈 צליל</button>
+    <button id="btnBuzz">📳 באזרים</button>
+    <button id="btnBreath">🫁 נשימה</button>
+    <div class="ctl"><span>סט</span>
+      <select id="setLen">
+        <option value="0">רצוף</option><option value="12">12 מעברים</option>
+        <option value="24" selected>24 מעברים</option><option value="30">30 מעברים</option>
+        <option value="40">40 מעברים</option>
+      </select>
+    </div>
+    <div class="readout" id="passOut">0/24</div>
+    <div class="readout" id="clock">0:00</div>
+    <button id="btnFull">⛶ מסך מלא</button>
+    <button id="btnMore">☰ הגדרות</button>
+  </div>
+  <div class="hint" id="hint">💛 אור עמום, ישיבה נוחה, נשימה איטית. עצרו בכל רגע. &nbsp;·&nbsp; לע״נ שיפרה ז״ל</div>
+</div>
+
+<!-- ══════════════ DRAWER ══════════════ -->
+<div id="drawer">
+  <h2>הגדרות</h2>
+
+  <h3>📳 באזרים — הכדורים המרטטים</h3>
+  <div id="btStatus"><b>בודק…</b></div>
+
+  <div class="field" style="margin-top:10px;">
+    <label>כדורים אלחוטיים (Bluetooth)</label>
+    <button id="btnBle" class="small">🔗 חבר כדור</button>
+  </div>
+  <div id="devices"></div>
+  <div class="note" id="bleNote">
+    חיבור דורש <b>לחיצה שלך</b> בכל פעם — כך הדפדפן בנוי, ואי אפשר לעקוף את זה.
+    כדור אחד לכל יד = שתי לחיצות. <b>עד 4 כדורים</b> (2 אנשים) בחיבור ישיר;
+    מעבר לזה צריך את הקופסה־גשר.
+  </div>
+
+  <div class="field" style="margin-top:14px;">
+    <label><span class="dot" id="serDot"></span><span id="serTxt">קופסת USB — לא מחוברת</span></label>
+    <button id="btnSerial" class="small">חיבור</button>
+  </div>
+  <div class="field"><label>קופסה ישנה (פקודות ASCII)</label>
+    <input type="checkbox" id="legacyAscii"></div>
+
+  <div class="field"><label>🧪 כדורים מדומים (בדיקה בלי חומרה)</label>
+    <input type="checkbox" id="simOn" checked></div>
+
+  <h3>עוצמה ותזמון</h3>
+  <div class="field"><label>עוצמת רטט</label>
+    <span><input type="range" id="buzzPow" min="40" max="255" step="5" value="200">
+    <span class="readout" id="powOut">200</span></span></div>
+  <div class="field"><label>אורך פעימה (מ״ש)</label>
+    <span><input type="range" id="buzzMs" min="40" max="400" step="4" value="160">
+    <span class="readout" id="msOut">160</span></span></div>
+  <div class="note" id="durNote"></div>
+
+  <div class="field" style="margin-top:12px;"><label>קוד חדר (0 = כולם)</label>
+    <input type="number" id="room" min="0" max="255" step="1" value="1"></div>
+
+  <div class="field"><label>כיול אוזניות בלוטות׳ (מ״ש)</label>
+    <span><input type="range" id="btLag" min="0" max="500" step="10" value="0">
+    <span class="readout" id="lagOut">0</span></span></div>
+  <div class="note" id="lagNote">
+    אוזניות בלוטות׳ מאחרות את הצליל ב-<b>300 מ״ש ויותר</b>. הזיזו את המחוון עד
+    שהרטט והנקישה מרגישים כמו דבר אחד. <b>0 = אוזניות בחוט או רמקולים.</b>
+  </div>
+  <div class="field"><label>מבחן כיול (נקישה + רטט יחד)</label>
+    <button id="btnCal" class="small">▶ הפעל</button></div>
+
+  <div class="field"><label>בדיקה מהירה</label>
+    <span><button id="testL" class="small">שמאל</button>
+    <button id="testR" class="small">ימין</button>
+    <button id="testStop" class="small">עצור הכל</button></span></div>
+
+  <div class="field"><label>📡 מסגרות אחרונות</label>
+    <button id="btnMon" class="small">הצג/הסתר</button></div>
+  <div class="logbox mono hidden" id="monbox">—</div>
+
+  <h3>מראה — למקרן</h3>
+  <div class="field"><label>ערכת צבע</label>
+    <select id="theme"><option value="light" selected>בהיר</option>
+      <option value="dark">כהה (מומלץ למפגש)</option>
+      <option value="contrast">ניגודיות מרבית</option></select></div>
+  <div class="field"><label>גודל הכדור</label><input type="range" id="orbSize" min="28" max="220" step="2" value="64"></div>
+  <div class="field"><label>הילה (זוהר)</label><input type="range" id="glow" min="0" max="1" step="1" value="1"></div>
+  <div class="field"><label>שוליים מהקצה</label><input type="range" id="margin" min="20" max="240" step="5" value="70"></div>
+
+  <h3>צליל</h3>
+  <div class="field"><label>סוג</label>
+    <select id="soundType"><option value="tone">צליל רך</option><option value="click">נקישה עדינה</option></select></div>
+  <div class="field"><label>עוצמה</label><input type="range" id="vol" min="0" max="0.30" step="0.005" value="0.06"></div>
+  <div class="field"><label>גובה הצליל</label><input type="range" id="freq" min="120" max="520" step="5" value="210"></div>
+
+  <h3>מדד המצוקה (SUD 0–10)</h3>
+  <div class="field"><label>שאל בין סטים</label>
+    <select id="askSud"><option value="1" selected>כן</option><option value="0">לא</option></select></div>
+  <div class="logbox" id="log">אין רישום עדיין.</div>
+  <div class="row" style="margin-top:10px;justify-content:flex-start;">
+    <button id="btnExport" class="small">💾 שמור רישום</button>
+    <button id="btnClear" class="small">נקה</button>
+  </div>
+
+  <h3>על הכלי</h3>
+  <div class="note" style="line-height:1.75;">
+    ALMA · EMDR — כלי חינמי, עובד ללא אינטרנט, לא אוסף שום מידע ולא שולח דבר לשום מקום.
+    כל הרישום נשאר במחשב הזה בלבד.<br><br>
+    <b>אינו מכשיר רפואי.</b> כלי לוויסות עצמי בלבד.<br>
+    <b>מצב החומרה:</b> אין עדיין כדורים אמיתיים. כל מה שנוגע לחומרה כאן
+    <b>לא נבדק מול חומרה אמיתית</b>. ההדמיה כן נבדקה.<br>
+    <b>אבטחה, בגילוי לב:</b> אין הצפנה על הקו לכדור — זה כדור שרוטט, אין עליו שום מידע רפואי.
+    מישהו במרחק 10 מטר עם האפליקציה הנכונה יכול לגרום לכדור לרטוט. המגן הוא קוד החדר
+    ומתג פיזי על הכדור.<br><br>
+    במצוקה: <b>ער״ן 1201</b> · נט״ל 1-800-363-363.<br>
+    נבנה לעמותת המלאכים של ערן · לע״נ שיפרה ז״ל.
+  </div>
+  <div class="row" style="margin-top:18px;"><button id="btnCloseDrawer">סגור</button></div>
+</div>
+
+<!-- ══════════════ SUD ══════════════ -->
+<div id="sud">
+  <div class="card" style="max-width:560px;text-align:center;">
+    <h1 style="font-size:22px;" id="sudTitle">כמה מטריד זה עכשיו?</h1>
+    <div class="sub">0 = רגוע לגמרי &nbsp;·&nbsp; 10 = המצוקה הגדולה ביותר שאפשר לדמיין</div>
+    <div class="sud-scale" id="sudScale"></div>
+    <div class="row" style="margin-top:16px;">
+      <button class="primary" id="sudNext">המשך לסט הבא</button>
+      <button id="sudSkip">דלג</button>
+      <button id="sudEnd">סיים מפגש</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"><span></span></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ═════════════════════════════════════════════════════════════════════════
+   ALMA-EMDR buzzer protocol v1.0 — see PROTOCOL-buzzers-20260901.md
+   One 9-byte frame, byte-identical on USB-CDC, BLE and ESP-NOW.
+   ═════════════════════════════════════════════════════════════════════════ */
+const P = {
+  MAGIC:0xE1,
+  TAP:0x01, STOP:0x02, KEEP:0x03, SET:0x04, HELLO:0x05, STATUS:0x06,
+  L:0x4C, R:0x52, BOTH:0x42, NONE:0x00,
+  SVC:'d5ffea00-0555-4abc-b5f0-734ccd124d13',
+  RX :'d5ffea01-0555-4abc-b5f0-734ccd124d13',   // write without response  client -> ball
+  TX :'d5ffea02-0555-4abc-b5f0-734ccd124d13',   // notify                  ball -> client
+  /* firmware constants (§D.5) — mirrored here so the client never asks for
+     something the ball will refuse. */
+  DEADMAN_MS:1500, HYSTERESIS_MS:30, DUR_MIN_MS:40, DUR_MAX_MS:600,
+  DELAY_MAX_MS:8000, INTENSITY_FLOOR:40, DUTY_MAX_PCT:60, ERM_LEAD_MS:30,
+  /* client rules (§C.1) */
+  REPEAT:3, REPEAT_STOP:5, REPEAT_GAP_MS:8,
+  /* conductor */
+  MIN_LEAD_MS:60, WHISPER_MAX_MS:333, KEEP_EVERY_MS:500, MAX_BALLS:4
+};
+
+let seqCounter = 0;
+const nextSeq = () => (seqCounter = (seqCounter + 1) & 0xFF);
+
+function encode(op, seq, room, side, intensity, durMs, delayMs){
+  const dur4 = Math.max(0, Math.min(255, Math.round((durMs||0) / 4)));
+  const d    = Math.max(0, Math.min(65535, Math.round(delayMs||0)));
+  return new Uint8Array([ P.MAGIC, op & 0xFF, seq & 0xFF, room & 0xFF,
+                          side & 0xFF, intensity & 0xFF, dur4, d & 0xFF, (d >> 8) & 0xFF ]);
+}
+function decode(b){
+  if(b.length !== 9 || b[0] !== P.MAGIC) return null;
+  return { op:b[1], seq:b[2], room:b[3], side:b[4], intensity:b[5],
+           dur_ms:b[6]*4, delay_ms:b[7] | (b[8] << 8) };
+}
+const hexOf = b => Array.from(b).map(x => x.toString(16).padStart(2,'0').toUpperCase()).join(' ');
+const sideByte = s => (s < 0 ? P.L : P.R);
+const OPNAME = {1:'TAP',2:'STOP',3:'KEEP',4:'SET',5:'HELLO',6:'STATUS'};
+
+/* ═════════ elements ═════════ */
+const $ = id => document.getElementById(id);
+const stage=$('stage'), orb=$('orb'), breath=$('breath'), setnote=$('setnote');
+const btnPlay=$('btnPlay'), btnSound=$('btnSound'), btnBuzz=$('btnBuzz'), btnBreath=$('btnBreath'),
+      btnFull=$('btnFull'), btnMore=$('btnMore'), drawer=$('drawer');
+const speedEl=$('speed'), volEl=$('vol'), freqEl=$('freq'), soundTypeEl=$('soundType'),
+      setLenEl=$('setLen'), orbSizeEl=$('orbSize'), glowEl=$('glow'), marginEl=$('margin'),
+      themeEl=$('theme'), askSudEl=$('askSud'), buzzPowEl=$('buzzPow'), buzzMsEl=$('buzzMs'),
+      roomEl=$('room'), btLagEl=$('btLag'), simEl=$('simOn'), legacyEl=$('legacyAscii');
+const hzOut=$('hzOut'), passOut=$('passOut'), clock=$('clock'), logBox=$('log'),
+      serDot=$('serDot'), serTxt=$('serTxt'), monbox=$('monbox');
+
+/* ═════════ state ═════════ */
+let running=false, soundOn=false, breathOn=false;
+let phase=0, phaseAtMs=0, lastNow=0, t0=0, elapsed=0;
+let passes=0, sets=0, lastCross=null;
+let sessionLog=[], sessionStart=null, chromeHidden=false;
+
+const room   = () => Math.max(0, Math.min(255, +roomEl.value || 0));
+const power  = () => Math.max(P.INTENSITY_FLOOR, Math.min(255, +buzzPowEl.value));
+const btLag  = () => Math.max(0, Math.min(500, +btLagEl.value));
+
+/* §D.5 — "150 ms <= dur <= min(400, 250/hz)". Above ~1.6 Hz the window is
+   empty and the taps stop feeling distinct. Clamp, and SAY SO. */
+function effectiveDur(){
+  const hz = +speedEl.value;
+  const hi = Math.min(400, 250 / hz);
+  let d = +buzzMsEl.value;
+  let why = '';
+  if(hi < 150){
+    d = Math.max(P.DUR_MIN_MS, Math.round(hi));
+    why = 'מעל ~1.6Hz הפעימות מתחילות להתמזג — הרטט מאבד חדות. הכדור והצליל תקינים, היד פחות.';
+  } else {
+    if(d > hi){ d = hi; why = 'אורך הפעימה הוגבל בגלל הקצב (מקסימום ' + Math.round(hi) + ' מ״ש ב-' + hz.toFixed(2) + 'Hz).'; }
+    if(d < 150){ why = why || 'מתחת ל-150 מ״ש מנוע ה-ERM בקושי מספיק להתרומם.'; }
+  }
+  d = Math.max(P.DUR_MIN_MS, Math.min(P.DUR_MAX_MS, 4 * Math.round(d / 4)));
+  return { ms:d, why:why };
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   THE BUS — one frame, fanned out to every live transport (§C.1 triple-send)
+   ═════════════════════════════════════════════════════════════════════════ */
+const bus = {
+  transports: [],
+  add(t){ this.transports.push(t); renderDevices(); },
+  drop(t){ const i=this.transports.indexOf(t); if(i>=0) this.transports.splice(i,1); renderDevices(); },
+  live(){ return this.transports.filter(t => t.alive()); },
+  any(){ return this.live().length > 0; },
+
+  emit(frame, repeat){
+    const live = this.live();
+    if(!live.length) return;
+    for(let i = 0; i < repeat; i++){
+      const go = () => live.forEach(t => { try{ t.send(frame); }catch(e){} });
+      if(i === 0) go(); else setTimeout(go, i * P.REPEAT_GAP_MS);
+    }
+    monitor(frame);
+    lastSendAt = performance.now();
+  },
+  tap(side, delayMs, durMs, pow){
+    const f = encode(P.TAP, nextSeq(), room(), sideByte(side), pow, durMs, delayMs);
+    this.emit(f, P.REPEAT);
+    scheduleLamp(side, delayMs, durMs);
+  },
+  stop(){ this.emit(encode(P.STOP,  nextSeq(), room(), P.NONE, 0, 0, 0), P.REPEAT_STOP); },
+  keep(){ this.emit(encode(P.KEEP,  nextSeq(), room(), P.NONE, 0, 0, 0), 1); },
+  hello(){ this.emit(encode(P.HELLO,nextSeq(), room(), P.NONE, 0, 0, 0), P.REPEAT); }
+};
+
+/* frame monitor — hex + decode, so whoever writes the firmware can read it */
+let monLines = [];
+function monitor(frame){
+  const d = decode(frame);
+  const t = new Date().toLocaleTimeString('he-IL',{hour12:false});
+  let tail = '';
+  if(d.op === P.TAP) tail = ' ' + (d.side===P.L?'L':'R') + ' pow=' + d.intensity +
+                             ' dur=' + d.dur_ms + 'ms in=' + d.delay_ms + 'ms';
+  monLines.push(t + '  ' + hexOf(frame) + '   ' + (OPNAME[d.op]||'??') + tail);
+  if(monLines.length > 14) monLines.shift();
+  if(!monbox.classList.contains('hidden')) monbox.textContent = monLines.join('\n');
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   TRANSPORT 1 — the simulator. A reference implementation of the ball's
+   firmware, in JS. This is the ONLY part of the buzzer path that is actually
+   testable today, because no hardware exists.
+   ═════════════════════════════════════════════════════════════════════════ */
+function makeSim(){
+  const ball = { L:mkBall(-1), R:mkBall(1) };
+  function mkBall(side){
+    return { side, pendingTarget:null, pendingDur:0, pendingPow:0, timer:null,
+             deadman:null, seen:[], duty:[], refused:0 };
+  }
+  function dedup(b, op, seq){
+    const now = performance.now();
+    b.seen = b.seen.filter(s => now - s.t < 2000);
+    if(b.seen.some(s => s.op === op && s.seq === seq)) return true;
+    b.seen.push({op, seq, t:now});
+    if(b.seen.length > 8) b.seen.shift();
+    return false;
+  }
+  function armDeadman(b){
+    clearTimeout(b.deadman);
+    b.deadman = setTimeout(() => { allOff(b, 'dead-man'); }, P.DEADMAN_MS);
+  }
+  function allOff(b, why){
+    clearTimeout(b.timer); b.timer = null; b.pendingTarget = null;
+    if(why === 'dead-man') logEvent('🧪 הדמיה: הכדור ' + (b.side<0?'שמאל':'ימין') + ' נעצר לבד (dead-man 1500 מ״ש)');
+  }
+  function fire(b){
+    const now = performance.now();
+    b.duty = b.duty.filter(x => now - x.t < 2000);
+    const used = b.duty.reduce((s,x) => s + x.d, 0);
+    if(used + b.pendingDur > 2000 * P.DUTY_MAX_PCT / 100){
+      b.refused++; b.pendingTarget = null;
+      logEvent('🧪 הדמיה: פעימה נדחתה — מגביל מחזור עבודה 60%');
+      return;
+    }
+    b.duty.push({t:now, d:b.pendingDur});
+    b.pendingTarget = null;
+    lamp(b.side, b.pendingDur);
+  }
+  return {
+    name:'sim', kind:'sim',
+    alive(){ return simEl.checked; },
+    send(frame){
+      const d = decode(frame); if(!d) return;
+      if(d.room !== 0 && room() !== 0 && d.room !== room()) return;
+      const targets = d.op === P.TAP
+        ? [d.side === P.L ? ball.L : ball.R]
+        : [ball.L, ball.R];
+      targets.forEach(b => {
+        if(dedup(b, d.op, d.seq)) return;
+        if(d.op === P.STOP){ allOff(b, 'stop'); return; }
+        if(d.op === P.KEEP){ armDeadman(b); return; }
+        if(d.op !== P.TAP)  return;
+        armDeadman(b);
+        const dur = Math.max(P.DUR_MIN_MS, Math.min(P.DUR_MAX_MS, d.dur_ms));
+        const delay = Math.min(P.DELAY_MAX_MS, d.delay_ms);
+        const target = performance.now() + delay;
+        if(b.pendingTarget !== null && Math.abs(target - b.pendingTarget) < P.HYSTERESIS_MS) return; // jitter, not tempo
+        clearTimeout(b.timer);
+        b.pendingTarget = target; b.pendingDur = dur;
+        b.pendingPow = Math.max(P.INTENSITY_FLOOR, d.intensity);
+        b.timer = setTimeout(() => fire(b), Math.max(0, delay));
+      });
+    },
+    close(){ [ball.L, ball.R].forEach(b => { clearTimeout(b.timer); clearTimeout(b.deadman); b.pendingTarget=null; }); }
+  };
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   TRANSPORT 2 — Web Bluetooth. One connection per ball.
+   ═════════════════════════════════════════════════════════════════════════ */
+function bleEnv(){
+  const ua = navigator.userAgent;
+  const iOS = /iPad|iPhone|iPod/.test(ua) ||
+              (/Macintosh/.test(ua) && (navigator.maxTouchPoints || 0) > 1);
+  const firefox = /Firefox|FxiOS/.test(ua);
+  const safari  = /Safari/.test(ua) && !/Chrome|Chromium|CriOS|Edg|OPR|SamsungBrowser/.test(ua);
+  const webview = /; wv\)/.test(ua);
+  const android = /Android/.test(ua);
+  if(iOS)  return {ok:false, cls:'bad', h:'אייפון / אייפד — הבאזרים לא יעבדו כאן',
+    t:'אפל חוסמת את Web Bluetooth בכל הדפדפנים באייפון ובאייפד — גם בכרום ובאדג׳, כי הם עטיפה של ספארי. ' +
+      'זו החלטה של אפל, לא באג שלנו, ואי אפשר לעקוף אותה מהאתר.<br>' +
+      '<b>כאן תקבלו כדור וצליל, מלאים ותקינים.</b> לרטט: המחשב, או האפליקציה לאנדרואיד.'};
+  if(firefox) return {ok:false, cls:'bad', h:'פיירפוקס לא תומך',
+    t:'מוזילה הצהירה שאין לה תוכנית לתמוך ב-Web Bluetooth. <b>פתחו ב-Chrome או ב-Edge.</b><br>הכדור והצליל עובדים כאן במלואם.'};
+  if(safari)  return {ok:false, cls:'bad', h:'ספארי לא תומך',
+    t:'ספארי לא תומך ב-Web Bluetooth ואין תוכנית לכך. <b>פתחו ב-Chrome או ב-Edge.</b><br>הכדור והצליל עובדים כאן במלואם.'};
+  if(webview) return {ok:false, cls:'bad', h:'WebView של אנדרואיד — אין Web Bluetooth',
+    t:'גוגל השמיטה את Web Bluetooth מ-WebView בכוונה — זו לא תקלה אצלכם. ' +
+      '<b>פתחו בכרום עצמו</b>, או השתמשו באפליקציה הנייטיבית.<br>' +
+      '<b>כאן הכדור והצליל עובדים במלואם.</b>'};
+  if(!window.isSecureContext) return {ok:false, cls:'bad', h:'הדף לא נטען מכתובת מאובטחת',
+    t:'Web Bluetooth דורש <b>https://</b> או <b>localhost</b>. הדף הזה נפתח מ-<code>file://</code>, ולכן הבאזרים חסומים כאן.<br>' +
+      '<b>באתר עצמו זה יעבוד.</b> בינתיים: ההדמיה למטה פעילה, ומראה בדיוק מה היה נשלח.'};
+  if(!('bluetooth' in navigator)) return {ok:false, cls:'bad', h:'הדפדפן הזה לא תומך ב-Web Bluetooth',
+    t:'<b>פתחו ב-Chrome או ב-Edge</b> (מחשב או אנדרואיד). הכדור והצליל עובדים כאן במלואם.'};
+  return {ok:true, cls:'good', h:'הדפדפן תומך ✔',
+    t:'לחצו “חבר כדור”, ובחרו כדור בשם <code>EMDR-…</code>. ' +
+      (android ? '<b>באנדרואיד:</b> צריך שירותי מיקום דלוקים כדי לסרוק Bluetooth — זו דרישה של אנדרואיד, לא שלנו. ' : '') +
+      '<b>עדיין אין חומרה כזו בעולם</b>, אז החיפוש יהיה ריק — זה תקין. סמנו “כדורים מדומים” כדי לראות את המערכת עובדת.'};
+}
+
+function makeBle(device, rx, tx){
+  const q = []; let busy = false, dead = false;
+  const t = {
+    name: device.name || 'EMDR ball', kind:'ble', dev:device,
+    side:null, batt:null, fw:null, flags:0, errors:0,
+    alive(){ return !dead && device.gatt && device.gatt.connected; },
+    send(frame){
+      if(!t.alive()) return;
+      q.push(frame); if(q.length > 24) q.shift();
+      drain();
+    },
+    async setSide(side){
+      const f = encode(P.SET, nextSeq(), room(), sideByte(side), power(), 0, 0);
+      q.push(f); drain(); monitor(f);
+      t.side = side; renderDevices();
+      logEvent('כדור "' + t.name + '" הוגדר כ' + (side < 0 ? 'שמאל' : 'ימין') + ' (חדר ' + room() + ')');
+    },
+    close(){
+      dead = true; q.length = 0;
+      try{ device.gatt.disconnect(); }catch(e){}
+      bus.drop(t);
+    }
+  };
+  async function drain(){
+    if(busy) return; busy = true;
+    while(q.length && t.alive()){
+      const f = q.shift();
+      try{
+        if(rx.writeValueWithoutResponse) await rx.writeValueWithoutResponse(f);
+        else await rx.writeValue(f);
+      }catch(e){ t.errors++; if(!t.alive()){ q.length = 0; break; } }
+    }
+    busy = false;
+  }
+  if(tx){
+    tx.addEventListener('characteristicvaluechanged', ev => {
+      const b = new Uint8Array(ev.target.value.buffer);
+      const d = decode(b); if(!d || d.op !== P.STATUS) return;
+      t.side = d.side === P.L ? -1 : (d.side === P.R ? 1 : null);
+      t.batt = d.intensity; t.fw = d.dur_ms / 4; t.flags = d.delay_ms;
+      renderDevices();
+    });
+  }
+  device.addEventListener('gattserverdisconnected', () => {
+    if(dead) return;
+    logEvent('⚠ כדור "' + t.name + '" התנתק — הוא ייעצר לבד תוך 1.5 שניות');
+    toast('כדור התנתק. הכדור והצליל ממשיכים.');
+    renderDevices();
+    setTimeout(async () => {                      /* one silent retry, no gesture needed */
+      if(dead || t.alive()) return;
+      try{ await device.gatt.connect(); logEvent('כדור "' + t.name + '" חזר'); }
+      catch(e){ logEvent('כדור "' + t.name + '" לא חזר — לחצו "חבר כדור" שוב'); }
+      renderDevices();
+    }, 1500);
+  });
+  return t;
+}
+
+async function connectBle(){
+  const env = bleEnv();
+  if(!env.ok){ toast('Bluetooth לא זמין בדפדפן הזה'); drawer.classList.add('open'); return; }
+  if(bus.transports.filter(x => x.kind === 'ble').length >= P.MAX_BALLS){
+    toast('מקסימום ' + P.MAX_BALLS + ' כדורים בחיבור ישיר'); return;
+  }
+  try{
+    const device = await navigator.bluetooth.requestDevice({
+      filters:[{ services:[P.SVC] }, { namePrefix:'EMDR-' }],
+      optionalServices:[P.SVC]
+    });
+    const server = await device.gatt.connect();
+    const svc = await server.getPrimaryService(P.SVC);
+    const rx  = await svc.getCharacteristic(P.RX);
+    let tx = null;
+    try{ tx = await svc.getCharacteristic(P.TX); await tx.startNotifications(); }catch(e){}
+    const t = makeBle(device, rx, tx);
+    bus.add(t);
+    logEvent('כדור "' + t.name + '" חובר ב-Bluetooth');
+    toast('כדור חובר');
+    bus.hello();
+  }catch(e){
+    if(e && e.name === 'NotFoundError'){ logEvent('לא נבחר כדור (או שלא נמצא אף אחד — אין עדיין חומרה)'); }
+    else { logEvent('חיבור Bluetooth נכשל: ' + (e && e.message ? e.message : e)); toast('החיבור נכשל'); }
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   TRANSPORT 3 — Web Serial (the wired USB box). Kept from the original app.
+   Binary frames by default; legacy ASCII for a day-one box, in which case
+   the PC does the ball's job (§C.3) itself and says so.
+   ═════════════════════════════════════════════════════════════════════════ */
+let port=null, writer=null, serialT=null;
+const serialSupported = () => 'serial' in navigator;
+
+function makeSerial(){
+  const shim = { L:{timer:null, target:null}, R:{timer:null, target:null} };
+  const enc = new TextEncoder();
+  function raw(str){ if(writer) writer.write(enc.encode(str + '\n')).catch(()=>{}); }
+  return {
+    name:'קופסת USB', kind:'serial',
+    alive(){ return !!writer; },
+    send(frame){
+      if(!writer) return;
+      if(!legacyEl.checked){ writer.write(frame).catch(()=>{}); return; }
+      /* ---- legacy ASCII box: emulate the ball's pending-tap rule here ---- */
+      const d = decode(frame); if(!d) return;
+      if(d.op === P.STOP){ ['L','R'].forEach(k => { clearTimeout(shim[k].timer); shim[k].target=null; }); raw('X'); return; }
+      if(d.op !== P.TAP) return;
+      const k = d.side === P.L ? 'L' : 'R';
+      const target = performance.now() + d.delay_ms;
+      if(shim[k].target !== null && Math.abs(target - shim[k].target) < P.HYSTERESIS_MS) return;
+      clearTimeout(shim[k].timer);
+      shim[k].target = target;
+      shim[k].timer = setTimeout(() => {
+        shim[k].target = null;
+        raw('I' + d.intensity); raw('P' + d.dur_ms); raw(k);
+      }, Math.max(0, d.delay_ms - 2));
+    },
+    close(){ ['L','R'].forEach(k => clearTimeout(shim[k].timer)); }
+  };
+}
+
+async function connectSerial(){
+  if(!serialSupported()){
+    toast('Web Serial לא נתמך — נסו Chrome או Edge במחשב');
+    return;
+  }
+  try{
+    port = await navigator.serial.requestPort();
+    await port.open({ baudRate:115200 });
+    writer = port.writable.getWriter();
+    serialT = makeSerial(); bus.add(serialT);
+    if(legacyEl.checked){ serialT.send(encode(P.STOP, nextSeq(), room(), P.NONE,0,0,0)); }
+    bus.hello();
+    serDot.classList.add('live'); serTxt.textContent='קופסת USB — מחוברת';
+    $('btnSerial').textContent='נתק';
+    logEvent('קופסת ה-USB חוברה (' + (legacyEl.checked ? 'ASCII ישן' : 'מסגרות בינאריות') + ')');
+    toast('הקופסה חוברה');
+  }catch(e){
+    serTxt.textContent='קופסת USB — החיבור נכשל';
+    logEvent('חיבור לקופסה נכשל: ' + (e && e.message ? e.message : e));
+  }
+}
+async function disconnectSerial(){
+  try{ if(writer){ bus.stop(); await new Promise(r => setTimeout(r, 60)); writer.releaseLock(); } }catch(e){}
+  try{ if(port) await port.close(); }catch(e){}
+  if(serialT){ serialT.close(); bus.drop(serialT); serialT=null; }
+  port=null; writer=null;
+  serDot.classList.remove('live'); serTxt.textContent='קופסת USB — לא מחוברת';
+  $('btnSerial').textContent='חיבור';
+  logEvent('קופסת ה-USB נותקה');
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   THE CONDUCTOR — §C.3 + §D.4.
+   Three times a beat we whisper "next buzz: side, in D ms". We never say
+   "on" and we never say "off". If the whispering stops, every ball stops
+   by itself inside 1500 ms. That one sentence is the whole safety story
+   and the whole synchronisation story.
+   ═════════════════════════════════════════════════════════════════════════ */
+let lastSendAt = 0, lastWhisperAt = 0;
+
+const phaseAt = now => phase + (Math.max(0, now - phaseAtMs) / 1000) * (+speedEl.value) * 2 * Math.PI;
+
+/* Closed form: the next crossing k such that the BUZZ (edge + btLag) is at
+   least MIN_LEAD_MS from now. Monotone in `now`, so we always whisper about
+   exactly one pending tap — which is all a ball can hold. */
+function planNextBuzz(now){
+  const hz = +speedEl.value, w = 2 * Math.PI * hz, p = phaseAt(now), lag = btLag();
+  const need = (P.MIN_LEAD_MS - lag) / 1000;                    // seconds the EDGE must be ahead
+  const k = Math.ceil((need * w + p - Math.PI/2) / Math.PI - 1e-9);
+  const tEdge = now + ((Math.PI/2 + k * Math.PI) - p) / w * 1000;
+  return { side: (((k % 2) + 2) % 2) === 0 ? 1 : -1, delay: tEdge + lag - now };
+}
+const whisperEvery = () => Math.max(90, Math.min(P.WHISPER_MAX_MS, (500 / (+speedEl.value)) / 3));
+
+function conduct(){
+  const now = performance.now();
+  if(!bus.any()){ lastWhisperAt = 0; return; }
+  if(!running){
+    if(now - lastSendAt > P.KEEP_EVERY_MS) bus.keep();   /* stay awake, stay silent */
+    return;
+  }
+  if(now - lastWhisperAt < whisperEvery()){
+    if(now - lastSendAt > P.KEEP_EVERY_MS) bus.keep();
+    return;
+  }
+  const plan = planNextBuzz(now);
+  if(plan.delay > P.DELAY_MAX_MS){
+    if(now - lastSendAt > P.KEEP_EVERY_MS) bus.keep();
+    return;
+  }
+  lastWhisperAt = now;
+  bus.tap(plan.side, plan.delay, effectiveDur().ms, power());
+}
+setInterval(conduct, 40);
+
+/* lamps: show what was COMMANDED, at the commanded moment. With real hardware
+   we cannot know the motor actually moved — the lamp is the command, not a
+   confirmation, and it is labelled that way. */
+function lamp(side, durMs){
+  const el = side < 0 ? $('lampL') : $('lampR');
+  el.classList.add('hit');
+  setTimeout(() => el.classList.remove('hit'), Math.max(90, Math.min(600, durMs)));
+}
+function scheduleLamp(side, delayMs, durMs){
+  if(bus.transports.some(t => t.kind === 'sim' && t.alive())) return;  /* the sim lights it itself */
+  setTimeout(() => lamp(side, durMs), Math.max(0, delayMs));
+}
+
+/* ═════════ audio ═════════ */
+let AC=null, master=null, panner=null, tone=null, toneGain=null;
+function initAudio(){
+  if(AC) return;
+  const Ctor = window.AudioContext || window.webkitAudioContext;
+  if(!Ctor) return;
+  AC = new Ctor();
+  master = AC.createGain(); master.gain.value = 1;
+  panner = AC.createStereoPanner ? AC.createStereoPanner() : null;
+  if(panner){ master.connect(panner); panner.connect(AC.destination); }
+  else { master.connect(AC.destination); }
+  tone = AC.createOscillator(); tone.type='sine'; tone.frequency.value = +freqEl.value;
+  toneGain = AC.createGain(); toneGain.gain.value = 0;
+  tone.connect(toneGain); toneGain.connect(master); tone.start();
+}
+function resumeAudio(){ if(AC && AC.state==='suspended') AC.resume(); }
+function clickAt(pan){
+  if(!AC) return;
+  const t=AC.currentTime;
+  const o=AC.createOscillator(), g=AC.createGain(),
+        p = AC.createStereoPanner ? AC.createStereoPanner() : null;
+  o.type='sine'; o.frequency.setValueAtTime(+freqEl.value*1.7, t);
+  o.frequency.exponentialRampToValueAtTime(Math.max(60,+freqEl.value*0.7), t+0.09);
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(+volEl.value*2.2, t+0.006);
+  g.gain.exponentialRampToValueAtTime(0.0001, t+0.13);
+  o.connect(g);
+  if(p){ p.pan.value=pan; g.connect(p); p.connect(AC.destination); } else { g.connect(AC.destination); }
+  o.start(t); o.stop(t+0.16);
+}
+
+/* ═════════ the loop ═════════ */
+function fmt(s){ s=Math.max(0,Math.floor(s)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+
+function frame(now){
+  if(!running) return;
+  if(!lastNow) lastNow=now;
+  const dt=Math.min(0.1,(now-lastNow)/1000); lastNow=now;
+
+  const hz=+speedEl.value;
+  const prevPhase = phase;
+  phase += dt*hz*Math.PI*2; phaseAtMs = now;
+  const pos = Math.sin(phase);
+  const amp = Math.max(40, stage.clientWidth/2 - (+marginEl.value));
+  orb.style.transform = 'translate(calc(-50% + '+(pos*amp).toFixed(1)+'px), -50%)';
+
+  if(soundOn && AC && soundTypeEl.value==='tone'){
+    if(panner) panner.pan.value = pos;
+    tone.frequency.value = +freqEl.value;
+    toneGain.gain.value = +volEl.value * (0.35 + 0.65*Math.abs(pos));
+  }
+
+  /* §D.4 — taps come from PHASE CROSSING, never from a pixel threshold.
+     A position band can be missed entirely (it is, in the PyQt widget, for
+     ~33% of seeds) and can be skipped by one late frame. This cannot. */
+  const cNow  = Math.floor((phase     - Math.PI/2) / Math.PI);
+  const cPrev = Math.floor((prevPhase - Math.PI/2) / Math.PI);
+  if(lastCross === null) lastCross = cPrev;
+  if(cNow > lastCross){
+    for(let k = lastCross + 1; k <= cNow; k++){
+      const side = (((k % 2) + 2) % 2) === 0 ? 1 : -1;
+      passes++;
+      if(soundOn && AC && soundTypeEl.value==='click') clickAt(side);
+      if(navigator.vibrate && !bus.any()){ try{ navigator.vibrate(Math.min(200, effectiveDur().ms)); }catch(e){} }
+      const lim = +setLenEl.value;
+      passOut.textContent = passes + (lim ? '/'+lim : '');
+      if(lim && passes >= lim){ lastCross = cNow; endSet(); return; }
+    }
+    lastCross = cNow;
+  }
+
+  if(breathOn){
+    const bc=(now/1000)%11;
+    if(bc<4.5){ breath.textContent='שאאאף'; breath.style.opacity=Math.min(1,bc/1.2); }
+    else if(bc<5.4){ breath.style.opacity=1; }
+    else { breath.textContent='נשוווף'; breath.style.opacity=Math.max(0,1-(bc-5.4)/4.8); }
+  }
+
+  elapsed=(now-t0)/1000; clock.textContent=fmt(elapsed);
+  requestAnimationFrame(frame);
+}
+
+function start(){
+  running=true; lastNow=0; phaseAtMs=performance.now(); lastCross=null;
+  t0=performance.now()-elapsed*1000;
+  btnPlay.textContent='⏸ עצור'; btnPlay.classList.remove('primary');
+  setnote.classList.remove('show');
+  if(soundOn){ initAudio(); resumeAudio(); }
+  if(!sessionStart){ sessionStart=new Date(); logEvent('תחילת מפגש'); }
+  lastWhisperAt = 0; conduct();
+  requestAnimationFrame(frame);
+}
+function pause(){
+  running=false;
+  btnPlay.textContent='▶ המשך'; btnPlay.classList.add('primary');
+  if(toneGain) toneGain.gain.value=0;
+  breath.style.opacity=0;
+  bus.stop();
+}
+function endSet(){
+  sets++; pause();
+  logEvent('סט '+sets+' הסתיים — '+passes+' מעברים');
+  passes=0; passOut.textContent='0/'+(setLenEl.value||'∞');
+  setnote.classList.add('show');
+  if(askSudEl.value==='1') setTimeout(openSud, 900);
+}
+function resetAll(){
+  pause(); elapsed=0; passes=0; sets=0; phase=0; lastCross=null;
+  clock.textContent='0:00'; passOut.textContent='0/'+(setLenEl.value||'∞');
+  btnPlay.textContent='▶ התחל';
+}
+
+/* ═════════ dead-man, client side (§D.5) ═════════ */
+function hardStop(why){
+  if(running) pause(); else bus.stop();
+  if(why) logEvent('עצירת חירום: ' + why);
+}
+document.addEventListener('visibilitychange', () => { if(document.hidden) hardStop('הדף הוסתר'); });
+window.addEventListener('pagehide', () => hardStop('הדף נסגר'));
+window.addEventListener('beforeunload', () => { try{ bus.stop(); }catch(e){} });
+
+/* ═════════ device list ═════════ */
+function renderDevices(){
+  const wrap = $('devices'); wrap.innerHTML = '';
+  const balls = bus.transports.filter(t => t.kind === 'ble');
+  $('lamps').classList.toggle('show', bus.any());
+  if(!balls.length){
+    wrap.innerHTML = '<div class="note">אין כדורים מחוברים.</div>';
+    return;
+  }
+  balls.forEach(t => {
+    const d = document.createElement('div'); d.className = 'dev';
+    const ok = t.alive();
+    const meta = [];
+    if(t.side !== null && t.side !== undefined) meta.push('צד: ' + (t.side < 0 ? 'שמאל' : 'ימין'));
+    if(t.batt !== null) meta.push('סוללה ' + t.batt + '%');
+    if(t.fw !== null)   meta.push('קושחה v' + t.fw);
+    if(t.errors)        meta.push(t.errors + ' שגיאות כתיבה');
+    d.innerHTML =
+      '<div class="nm"><b>' + esc(t.name) + '</b>' +
+      '<span><span class="dot ' + (ok ? 'live' : 'bad') + '"></span>' + (ok ? 'מחובר' : 'מנותק') + '</span></div>' +
+      '<div class="meta">' + (meta.join(' · ') || 'לא דיווח על עצמו עדיין') + '</div>';
+    const acts = document.createElement('div'); acts.className = 'acts';
+    const bL = mkBtn('הגדר: שמאל', () => t.setSide(-1));
+    const bR = mkBtn('הגדר: ימין',  () => t.setSide(1));
+    const bX = mkBtn('נתק',         () => { t.close(); logEvent('כדור "' + t.name + '" נותק'); });
+    [bL, bR, bX].forEach(b => { b.disabled = !ok && b !== bX; acts.appendChild(b); });
+    d.appendChild(acts); wrap.appendChild(d);
+  });
+}
+function mkBtn(txt, fn){ const b=document.createElement('button'); b.className='small'; b.textContent=txt; b.onclick=fn; return b; }
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* ═════════ toast ═════════ */
+let toastT=null;
+function toast(msg){
+  const el=$('toast'); el.firstElementChild.textContent=msg; el.classList.add('show');
+  clearTimeout(toastT); toastT=setTimeout(()=>el.classList.remove('show'), 2600);
+}
+
+/* ═════════ SUD ═════════ */
+let sudPick=null;
+(function buildSud(){
+  const wrap=$('sudScale');
+  for(let i=0;i<=10;i++){
+    const b=document.createElement('button'); b.textContent=i;
+    b.onclick=()=>{ sudPick=i; [...wrap.children].forEach(c=>c.classList.remove('sel')); b.classList.add('sel'); };
+    wrap.appendChild(b);
+  }
+})();
+function openSud(){ sudPick=null; [...$('sudScale').children].forEach(c=>c.classList.remove('sel')); $('sud').classList.add('show'); }
+function closeSud(){ $('sud').classList.remove('show'); }
+$('sudNext').onclick = ()=>{ if(sudPick!==null) logEvent('SUD = '+sudPick); closeSud(); start(); };
+$('sudSkip').onclick = ()=>{ closeSud(); };
+$('sudEnd').onclick  = ()=>{ if(sudPick!==null) logEvent('SUD בסיום = '+sudPick);
+                             logEvent('סוף מפגש — '+sets+' סטים, '+fmt(elapsed)); closeSud(); resetAll(); };
+
+/* ═════════ log ═════════ */
+function logEvent(text){
+  const stamp=new Date().toLocaleTimeString('he-IL',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  sessionLog.push(stamp+'  '+text);
+  logBox.textContent = sessionLog.slice(-40).join('\n');
+  logBox.scrollTop = logBox.scrollHeight;
+}
+$('btnExport').onclick = ()=>{
+  const head='ALMA · EMDR — רישום מפגש\n'+new Date().toLocaleString('he-IL')+
+             '\nכלי לוויסות עצמי — אינו מסמך רפואי.\n'+'-'.repeat(46)+'\n';
+  const blob=new Blob([head+sessionLog.join('\n')+'\n'],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='emdr-session-'+new Date().toISOString().slice(0,19).replace(/[:T]/g,'-')+'.txt';
+  a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+};
+$('btnClear').onclick = ()=>{ sessionLog=[]; logBox.textContent='אין רישום עדיין.'; };
+
+/* ═════════ controls ═════════ */
+btnPlay.onclick = ()=> running ? pause() : start();
+btnSound.onclick = ()=>{
+  soundOn=!soundOn; btnSound.classList.toggle('on',soundOn);
+  btnSound.textContent = soundOn ? '🔊 צליל דלוק' : '🔈 צליל';
+  if(soundOn){ initAudio(); resumeAudio(); } else if(toneGain){ toneGain.gain.value=0; }
+};
+btnBuzz.onclick = ()=>{ drawer.classList.add('open'); $('btStatus').scrollIntoView({block:'nearest'}); };
+btnBreath.onclick = ()=>{
+  breathOn=!breathOn; btnBreath.classList.toggle('on',breathOn);
+  if(!breathOn) breath.style.opacity=0;
+};
+btnFull.onclick = ()=>{
+  if(!document.fullscreenElement){ (document.documentElement.requestFullscreen||function(){}).call(document.documentElement); }
+  else { (document.exitFullscreen||function(){}).call(document); }
+};
+btnMore.onclick = ()=> drawer.classList.toggle('open');
+$('btnCloseDrawer').onclick = ()=> drawer.classList.remove('open');
+$('btnBle').onclick = connectBle;                 /* user gesture — mandatory, by design */
+$('btnSerial').onclick = ()=> port ? disconnectSerial() : connectSerial();
+$('btnMon').onclick = ()=>{ monbox.classList.toggle('hidden');
+  monbox.textContent = monLines.length ? monLines.join('\n') : 'עדיין לא נשלחה אף מסגרת.'; };
+
+function testTap(side){
+  const d = effectiveDur();
+  bus.tap(side, 120, d.ms, power());
+  if(!bus.any()) toast('אין באזרים מחוברים — סמנו “כדורים מדומים”');
+}
+$('testL').onclick = ()=> testTap(-1);
+$('testR').onclick = ()=> testTap(1);
+$('testStop').onclick = ()=>{ bus.stop(); toast('נשלחה עצירה'); };
+
+/* calibration: a click and a buzz, together, every 1.2 s (§D.3) */
+let calTimer=null;
+$('btnCal').onclick = ()=>{
+  if(calTimer){ clearInterval(calTimer); calTimer=null; $('btnCal').textContent='▶ הפעל'; bus.stop(); return; }
+  initAudio(); resumeAudio();
+  $('btnCal').textContent='⏹ עצור';
+  let s=1;
+  calTimer=setInterval(()=>{
+    const lead=200, d=effectiveDur();
+    bus.tap(s, lead + btLag(), d.ms, power());
+    setTimeout(()=>clickAt(s*0.8), lead);
+    s=-s;
+  }, 1200);
+};
+
+speedEl.oninput = ()=>{ hzOut.textContent = (+speedEl.value).toFixed(2)+'Hz';
+  [...$('chips').children].forEach(c=>c.classList.toggle('sel', Math.abs(+c.dataset.hz - +speedEl.value)<0.005));
+  refreshDur(); };
+[...$('chips').children].forEach(c=> c.onclick = ()=>{ speedEl.value=c.dataset.hz; speedEl.oninput(); });
+setLenEl.onchange = ()=>{ passes=0; passOut.textContent='0/'+(setLenEl.value||'∞'); };
+orbSizeEl.oninput = ()=> document.documentElement.style.setProperty('--orb-size', orbSizeEl.value+'px');
+glowEl.oninput    = ()=> orb.classList.toggle('flat', glowEl.value==='0');
+themeEl.onchange  = ()=> document.documentElement.setAttribute('data-theme', themeEl.value);
+freqEl.oninput    = ()=>{ if(tone) tone.frequency.value=+freqEl.value; };
+buzzPowEl.oninput = ()=> $('powOut').textContent = power();
+buzzMsEl.oninput  = refreshDur;
+btLagEl.oninput   = ()=>{
+  $('lagOut').textContent = btLag();
+  $('lagNote').classList.toggle('alert', btLag() > 250);
+  $('lagNote').innerHTML = btLag() > 250
+    ? '⚠ <b>מעל 250 מ״ש.</b> זו השהיה גדולה מדי לעבודה טיפולית — עברו לאוזניות בחוט. הכיול יעבוד, אבל התזמון יהיה שברירי.'
+    : 'אוזניות בלוטות׳ מאחרות את הצליל ב-<b>300 מ״ש ויותר</b>. הזיזו את המחוון עד שהרטט והנקישה מרגישים כמו דבר אחד. <b>0 = אוזניות בחוט או רמקולים.</b>';
+};
+function refreshDur(){
+  const d = effectiveDur();
+  $('msOut').textContent = d.ms;
+  $('durNote').textContent = d.why;
+}
+simEl.onchange = ()=>{ $('lamps').classList.toggle('show', bus.any()); renderDevices();
+  logEvent(simEl.checked ? 'הדמיית כדורים: דלוקה' : 'הדמיית כדורים: כבויה'); };
+legacyEl.onchange = ()=>{
+  if(port) toast('נתקו וחברו מחדש כדי להחליף מצב');
+  logEvent('מצב קופסה: ' + (legacyEl.checked ? 'ASCII ישן (המחשב מתזמן)' : 'מסגרות בינאריות (הכדור מתזמן)'));
+};
+roomEl.onchange = ()=> logEvent('קוד חדר: ' + room());
+
+/* ═════════ gate ═════════ */
+$('gateGo').onclick = ()=>{
+  $('gate').classList.add('hidden');
+  initAudio(); resumeAudio();
+  logEvent('הכלי נפתח');
+};
+$('gateDark').onclick = ()=>{ document.documentElement.setAttribute('data-theme','dark'); themeEl.value='dark'; };
+$('gateTheme').onclick = ()=>{
+  const order=['light','dark','contrast'];
+  const cur=document.documentElement.getAttribute('data-theme')||'light';
+  const next=order[(order.indexOf(cur)+1)%3];
+  document.documentElement.setAttribute('data-theme', next); themeEl.value=next;
+};
+
+/* ═════════ keyboard ═════════ */
+window.addEventListener('keydown', e=>{
+  if($('gate').classList.contains('hidden')===false){
+    if(e.code==='Space'||e.code==='Enter'){ e.preventDefault(); $('gateGo').click(); }
+    return;
+  }
+  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT') return;
+  switch(e.code){
+    case 'Space':      e.preventDefault(); btnPlay.click(); break;
+    case 'ArrowRight': e.preventDefault(); speedEl.value=Math.min(1.5,+speedEl.value+0.05); speedEl.oninput(); break;
+    case 'ArrowLeft':  e.preventDefault(); speedEl.value=Math.max(0.15,+speedEl.value-0.05); speedEl.oninput(); break;
+    case 'ArrowUp':    e.preventDefault(); orbSizeEl.value=Math.min(220,+orbSizeEl.value+8); orbSizeEl.oninput(); break;
+    case 'ArrowDown':  e.preventDefault(); orbSizeEl.value=Math.max(28,+orbSizeEl.value-8); orbSizeEl.oninput(); break;
+    case 'KeyF':       btnFull.click(); break;
+    case 'KeyS':       btnSound.click(); break;
+    case 'KeyB':       btnBreath.click(); break;
+    case 'KeyR':       resetAll(); break;
+    case 'Escape':     drawer.classList.remove('open'); closeSud(); break;
+    case 'KeyH':
+      chromeHidden=!chromeHidden;
+      $('panel').classList.toggle('faded',chromeHidden);
+      $('topbar').classList.toggle('faded',chromeHidden);
+      break;
+  }
+});
+
+/* ═════════ init ═════════ */
+speedEl.oninput(); buzzPowEl.oninput(); btLagEl.oninput();
+passOut.textContent='0/'+setLenEl.value;
+bus.add(makeSim());
+renderDevices();
+
+(function initBt(){
+  const env = bleEnv(), box = $('btStatus');
+  box.className = env.cls;
+  box.innerHTML = '<b>' + env.h + '</b>' + env.t;
+  $('btnBle').disabled = !env.ok;
+  if(!serialSupported()) serTxt.textContent = 'קופסת USB — לא נתמכת בדפדפן זה';
+  if(navigator.bluetooth && navigator.bluetooth.getAvailability){
+    navigator.bluetooth.getAvailability().then(av => {
+      if(!av && env.ok){
+        box.className='bad';
+        box.innerHTML='<b>הבלוטות׳ כבוי או שאין מתאם</b>הדליקו Bluetooth במחשב/בטלפון ורעננו את הדף. ' +
+                      'עד אז: כדור, צליל, והדמיה.';
+        $('btnBle').disabled = true;
+      }
+    }).catch(()=>{});
+  }
+})();
+
+})();
+</script>
+</body>
+</html>

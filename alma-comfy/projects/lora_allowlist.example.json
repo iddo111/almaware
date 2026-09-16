@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "project_id": "example-film",
+  "approved_by": "REPLACE_WITH_HUMAN_APPROVER",
+  "approved_at": "2026-07-22T00:00:00Z",
+  "loras": []
+}

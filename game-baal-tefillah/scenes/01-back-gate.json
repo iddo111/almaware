@@ -1,0 +1,127 @@
+{
+  "_law": "BROKEN WINDOWS: if it's not working, fix it IMMEDIATELY. Test the REAL output.",
+  "_written": "2026-09-02 07:47 JDT, while Iddo was out. Scene 1 of מעשה מבעל תפילה.",
+
+  "_provenance_rule": "EVERY line carries `src`. VERIFIED = the detail is in the tale and is cited in source/. WRITTEN = composed for the game, consistent with the tale, inventing nothing about it. The sacred text is never put into a character's mouth as if it were dialogue it does not contain.",
+
+  "id": "01-back-gate",
+  "title_he": "השער האחורי",
+  "title_en": "The Back Gate",
+  "land": "מדינת העשירות / The Land of Riches",
+
+  "goal": {
+    "text": "Get inside the city. NOT to save anyone.",
+    "why": "The tale is explicit: they were already so lost that they could not listen to anybody, and the Master of Prayer is eventually captured and imprisoned here. A scene 1 in which the player wins an argument would be a different story. He gets IN. That is all.",
+    "src": "VERIFIED"
+  },
+
+  "background": {
+    "for": "TZELEM",
+    "camera": "fixed, slightly low, looking up the mountain road at the wall",
+    "time": "dusk",
+    "description": "A fortified city on a mountain. The main gate is lit and busy — carried chairs, guards checking arrivals. Far to the side, where the wall meets the rock, a smaller opening where refuse leaves and the poor are permitted to wait. Thirty or forty people sit against the wall in the cold. Above the main gate, painted portraits of enormous men hang in gilt frames, and the paint at their lower edges is worn pale where thousands of mouths have kissed them.",
+    "verified_elements": [
+      {"what": "fortified mountain cities, inaccessible, guards question all who approach", "src": "VERIFIED"},
+      {"what": "portraits of the rich are displayed and worshipped by kissing and embracing them", "src": "VERIFIED"},
+      {"what": "the paint worn pale by mouths", "src": "WRITTEN — a physical consequence of a verified practice"},
+      {"what": "the refuse gate specifically", "src": "WRITTEN — the tale says he disguised himself to enter; it does not name this gate"}
+    ]
+  },
+
+  "people": [
+    {
+      "id": "shimon",
+      "name_he": "שמעון",
+      "name_en": "Shimon",
+      "src": "WRITTEN — an ordinary inhabitant, invented; the tale names no one here",
+      "what_he_is": "Classified 'human'. The lowest rank there is.",
+      "what_he_wants": "To be reclassified as an ANIMAL. It is the next rank up. He is four hundred short.",
+      "why_this_is_the_scene": "The player does not have to explain that money is not the purpose — the tale already proves that speech fails. The player has to survive hearing a man beg to be called an animal, and get through the gate anyway.",
+      "hierarchy_src": "VERIFIED — human < animal < planetary < angel < god < god of gods, by accumulated wealth"
+    }
+  ],
+
+  "player_has": [
+    {"item": "a disguise", "src": "VERIFIED — he disguises himself in various forms to enter"},
+    {"item": "the hand", "note": "the map screen; lines on the palm are all the roads of the world", "src": "VERIFIED"},
+    {"item": "no money", "src": "WRITTEN"}
+  ],
+
+  "dialogue": [
+    {
+      "who": "shimon", "src": "WRITTEN",
+      "he": "אתה חדש. אל תעמוד שם, זה מקום של מישהו.",
+      "en": "You're new. Don't stand there, that spot belongs to someone."
+    },
+    {
+      "who": "player", "options": [
+        {
+          "id": "ask_rank",
+          "he": "ומה המקום שלך?",
+          "en": "And what's your spot?",
+          "leads": "rank"
+        },
+        {
+          "id": "ask_gate",
+          "he": "איך נכנסים?",
+          "en": "How does a person get in?",
+          "leads": "gate_cold"
+        },
+        {
+          "id": "preach",
+          "he": "הכסף איננו תכלית כלל.",
+          "en": "Money is not a purpose at all.",
+          "leads": "rejected",
+          "src": "VERIFIED — this is the Master of Prayer's actual claim, quoted from the tale",
+          "design_note": "This option is available from the first line and it FAILS, every time, permanently. It is here so the player discovers by doing that the true thing said at the wrong moment closes the door. That failure is the tale's own finding, not a punishment invented by the game."
+        }
+      ]
+    },
+    {
+      "id": "rank", "who": "shimon", "src": "WRITTEN",
+      "he": "אני אדם. עוד ארבע מאות ואני חיה.",
+      "en": "I'm a human. Four hundred more and I'm an animal.",
+      "beat": "He says it the way a man says he is close to buying a house.",
+      "then": "The player is given no reply here. The line sits."
+    },
+    {
+      "id": "gate_cold", "who": "shimon", "src": "WRITTEN",
+      "he": "לא נכנסים. מביאים אותך.",
+      "en": "You don't get in. You get brought in."
+    },
+    {
+      "id": "rejected", "who": "shimon", "src": "WRITTEN — the REACTION is written; that it fails is VERIFIED",
+      "he": "…אתה יודע מה עושים פה למי שמדבר ככה?",
+      "en": "...you know what they do here to someone who talks like that?",
+      "effect": "shimon_closes",
+      "note": "He does not argue. He looks away and will not speak again this scene. The tale: they could not listen to anybody."
+    }
+  ],
+
+  "the_way_through": {
+    "src": "WRITTEN — the tale gives the method (disguise, one person, entry through the poor) but not this particular solution",
+    "solution": "Charity is FORBIDDEN in this land because it reduces a man's wealth. So nobody has ever given Shimon anything. The player owns nothing worth money — and that is the point: the only thing he can give is something that is not money, and giving it is the one act this city has no rank for.",
+    "verified_hook": "strict prohibition on charity, because it diminishes accumulated wealth",
+    "result": "Shimon walks him in past the refuse gate. Not converted. Not saved. Confused, and a little afraid of himself.",
+    "explicitly_not": "He is NOT persuaded. Nothing he believes has changed. The scene must not end with a man seeing the light, because the tale says plainly that they could not listen."
+  },
+
+  "acceptance_check": {
+    "passes_if": [
+      "the player can reach the inside of the city",
+      "the 'money is not a purpose' line is sayable and fails",
+      "no character states a moral the player has not already worked out",
+      "no line marked VERIFIED contains a word not in source/quotes.md",
+      "the scene ends with nobody saved"
+    ],
+    "fails_if": [
+      "Shimon changes his mind",
+      "any invented detail is presented as being from the tale"
+    ]
+  },
+
+  "open": [
+    "The Hand map screen is not used in this scene yet — it should be, and I have not decided how without inventing.",
+    "Hebrew and English are both written here; the game's language is not yet decided."
+  ]
+}

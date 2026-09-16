@@ -1,0 +1,1260 @@
+{
+ "a": {
+  "attempts": 300,
+  "passes": 300,
+  "written": 12,
+  "best_canon_conf": 0.9513,
+  "best_top3": [
+   [
+    "a",
+    0.9441322198834875
+   ],
+   [
+    "wa",
+    0.016243282446677384
+   ],
+   [
+    "na",
+    0.007969838932956412
+   ]
+  ],
+  "best_phones": "",
+  "threshold": 0.5,
+  "secs": 15.5,
+  "kept": [
+   {
+    "file": "CLAUDE-a-judge-v00.wav",
+    "canon_conf": 0.9513,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-a-judge-v01.wav",
+    "canon_conf": 0.9512,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-a-judge-v02.wav",
+    "canon_conf": 0.9512,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-a-judge-v03.wav",
+    "canon_conf": 0.9487,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-a-judge-v04.wav",
+    "canon_conf": 0.9474,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-a-judge-v05.wav",
+    "canon_conf": 0.9472,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-a-judge-v06.wav",
+    "canon_conf": 0.9465,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-a-judge-v07.wav",
+    "canon_conf": 0.9452,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-a-judge-v08.wav",
+    "canon_conf": 0.945,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-a-judge-v09.wav",
+    "canon_conf": 0.9448,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-a-judge-v10.wav",
+    "canon_conf": 0.9447,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-a-judge-v11.wav",
+    "canon_conf": 0.9443,
+    "old_ruler_pass": true
+   }
+  ]
+ },
+ "aya": {
+  "attempts": 300,
+  "passes": 299,
+  "written": 12,
+  "best_canon_conf": 0.9362,
+  "best_top3": [
+   [
+    "a",
+    0.8757939635863323
+   ],
+   [
+    "aya",
+    0.06035943260601403
+   ],
+   [
+    "ha",
+    0.008560726697624858
+   ]
+  ],
+  "best_phones": "",
+  "threshold": 0.5,
+  "secs": 3.7,
+  "kept": [
+   {
+    "file": "CLAUDE-aya-judge-v00.wav",
+    "canon_conf": 0.9362,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-aya-judge-v01.wav",
+    "canon_conf": 0.9307,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-aya-judge-v02.wav",
+    "canon_conf": 0.9292,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-aya-judge-v03.wav",
+    "canon_conf": 0.9285,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-aya-judge-v04.wav",
+    "canon_conf": 0.9284,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-aya-judge-v05.wav",
+    "canon_conf": 0.9276,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-aya-judge-v06.wav",
+    "canon_conf": 0.9257,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-aya-judge-v07.wav",
+    "canon_conf": 0.9251,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-aya-judge-v08.wav",
+    "canon_conf": 0.925,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-aya-judge-v09.wav",
+    "canon_conf": 0.9247,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-aya-judge-v10.wav",
+    "canon_conf": 0.9228,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-aya-judge-v11.wav",
+    "canon_conf": 0.9228,
+    "old_ruler_pass": true
+   }
+  ]
+ },
+ "ba": {
+  "attempts": 300,
+  "passes": 58,
+  "written": 12,
+  "best_canon_conf": 0.8123,
+  "best_top3": [
+   [
+    "ba",
+    0.8122796435145211
+   ],
+   [
+    "la",
+    0.11922402199284104
+   ],
+   [
+    "pa",
+    0.042794617629215645
+   ]
+  ],
+  "best_phones": "b l a",
+  "threshold": 0.5,
+  "secs": 2.4,
+  "kept": [
+   {
+    "file": "CLAUDE-ba-judge-v00.wav",
+    "canon_conf": 0.8123,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ba-judge-v01.wav",
+    "canon_conf": 0.7808,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ba-judge-v02.wav",
+    "canon_conf": 0.7782,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ba-judge-v03.wav",
+    "canon_conf": 0.7603,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ba-judge-v04.wav",
+    "canon_conf": 0.7547,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ba-judge-v05.wav",
+    "canon_conf": 0.7475,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ba-judge-v06.wav",
+    "canon_conf": 0.7417,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ba-judge-v07.wav",
+    "canon_conf": 0.7414,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ba-judge-v08.wav",
+    "canon_conf": 0.7372,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ba-judge-v09.wav",
+    "canon_conf": 0.7345,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ba-judge-v10.wav",
+    "canon_conf": 0.7199,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ba-judge-v11.wav",
+    "canon_conf": 0.7196,
+    "old_ruler_pass": false
+   }
+  ]
+ },
+ "va": {
+  "attempts": 300,
+  "passes": 0,
+  "written": 0,
+  "best_canon_conf": 0.045,
+  "best_top3": [
+   [
+    "a",
+    0.2087516099646118
+   ],
+   [
+    "sha",
+    0.1913054716299563
+   ],
+   [
+    "sa",
+    0.12886903215496087
+   ]
+  ],
+  "best_phones": "s. a5",
+  "threshold": 0.5,
+  "secs": 2.6,
+  "kept": []
+ },
+ "ga": {
+  "attempts": 300,
+  "passes": 0,
+  "written": 0,
+  "best_canon_conf": 0.015,
+  "best_top3": [
+   [
+    "da",
+    0.4006137441800713
+   ],
+   [
+    "ta",
+    0.3244074054574537
+   ],
+   [
+    "a",
+    0.1189712791106918
+   ]
+  ],
+  "best_phones": "d aː",
+  "threshold": 0.5,
+  "secs": 2.3,
+  "kept": []
+ },
+ "da": {
+  "attempts": 300,
+  "passes": 0,
+  "written": 0,
+  "best_canon_conf": 0.014,
+  "best_top3": [
+   [
+    "pa",
+    0.41632810732451775
+   ],
+   [
+    "ba",
+    0.37589608604127234
+   ],
+   [
+    "a",
+    0.07292059037140593
+   ]
+  ],
+  "best_phones": "p aː",
+  "threshold": 0.5,
+  "secs": 2.2,
+  "kept": []
+ },
+ "ha": {
+  "attempts": 300,
+  "passes": 0,
+  "written": 0,
+  "best_canon_conf": 0.2133,
+  "best_top3": [
+   [
+    "a",
+    0.6433449437724937
+   ],
+   [
+    "ha",
+    0.2132526933280019
+   ],
+   [
+    "aya",
+    0.03134438103201332
+   ]
+  ],
+  "best_phones": "",
+  "threshold": 0.5,
+  "secs": 2.1,
+  "kept": []
+ },
+ "wa": {
+  "attempts": 300,
+  "passes": 0,
+  "written": 0,
+  "best_canon_conf": 0.3021,
+  "best_top3": [
+   [
+    "wa",
+    0.29336503193380636
+   ],
+   [
+    "a",
+    0.1664868847057555
+   ],
+   [
+    "ra",
+    0.12132884223489844
+   ]
+  ],
+  "best_phones": "w aː",
+  "threshold": 0.5,
+  "secs": 2.5,
+  "kept": []
+ },
+ "za": {
+  "attempts": 300,
+  "passes": 12,
+  "written": 12,
+  "best_canon_conf": 0.7697,
+  "best_top3": [
+   [
+    "za",
+    0.7696966570508762
+   ],
+   [
+    "sa",
+    0.1219929017541144
+   ],
+   [
+    "a",
+    0.026362983563702713
+   ]
+  ],
+  "best_phones": "z aː",
+  "threshold": 0.5,
+  "secs": 2.4,
+  "kept": [
+   {
+    "file": "CLAUDE-za-judge-v00.wav",
+    "canon_conf": 0.7697,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-za-judge-v01.wav",
+    "canon_conf": 0.754,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-za-judge-v02.wav",
+    "canon_conf": 0.729,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-za-judge-v03.wav",
+    "canon_conf": 0.7159,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-za-judge-v04.wav",
+    "canon_conf": 0.7077,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-za-judge-v05.wav",
+    "canon_conf": 0.6126,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-za-judge-v06.wav",
+    "canon_conf": 0.5982,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-za-judge-v07.wav",
+    "canon_conf": 0.5978,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-za-judge-v08.wav",
+    "canon_conf": 0.561,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-za-judge-v09.wav",
+    "canon_conf": 0.5381,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-za-judge-v10.wav",
+    "canon_conf": 0.5378,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-za-judge-v11.wav",
+    "canon_conf": 0.5047,
+    "old_ruler_pass": false
+   }
+  ]
+ },
+ "cha": {
+  "attempts": 300,
+  "passes": 0,
+  "written": 0,
+  "best_canon_conf": 0.1839,
+  "best_top3": [
+   [
+    "a",
+    0.6195185604802409
+   ],
+   [
+    "cha",
+    0.09195969327208374
+   ],
+   [
+    "kha",
+    0.09195969327208374
+   ]
+  ],
+  "best_phones": "ɑ5",
+  "threshold": 0.5,
+  "secs": 2.2,
+  "kept": []
+ },
+ "ta": {
+  "attempts": 300,
+  "passes": 0,
+  "written": 0,
+  "best_canon_conf": 0.1046,
+  "best_top3": [
+   [
+    "a",
+    0.31831352830902515
+   ],
+   [
+    "pa",
+    0.1577927940001819
+   ],
+   [
+    "ka",
+    0.12689706765196768
+   ]
+  ],
+  "best_phones": "aː",
+  "threshold": 0.5,
+  "secs": 2.4,
+  "kept": []
+ },
+ "ya": {
+  "attempts": 300,
+  "passes": 108,
+  "written": 12,
+  "best_canon_conf": 0.7367,
+  "best_top3": [
+   [
+    "ya",
+    0.7366989399280064
+   ],
+   [
+    "a",
+    0.21390121670953818
+   ],
+   [
+    "la",
+    0.013130344497220307
+   ]
+  ],
+  "best_phones": "j",
+  "threshold": 0.5,
+  "secs": 2.1,
+  "kept": [
+   {
+    "file": "CLAUDE-ya-judge-v00.wav",
+    "canon_conf": 0.7367,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ya-judge-v01.wav",
+    "canon_conf": 0.7288,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ya-judge-v02.wav",
+    "canon_conf": 0.7137,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ya-judge-v03.wav",
+    "canon_conf": 0.7077,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ya-judge-v04.wav",
+    "canon_conf": 0.7014,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ya-judge-v05.wav",
+    "canon_conf": 0.7011,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ya-judge-v06.wav",
+    "canon_conf": 0.7,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ya-judge-v07.wav",
+    "canon_conf": 0.6985,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ya-judge-v08.wav",
+    "canon_conf": 0.6974,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ya-judge-v09.wav",
+    "canon_conf": 0.6851,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ya-judge-v10.wav",
+    "canon_conf": 0.6801,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ya-judge-v11.wav",
+    "canon_conf": 0.6783,
+    "old_ruler_pass": true
+   }
+  ]
+ },
+ "ka": {
+  "attempts": 300,
+  "passes": 67,
+  "written": 12,
+  "best_canon_conf": 0.9362,
+  "best_top3": [
+   [
+    "ka",
+    0.4681169827428196
+   ],
+   [
+    "qa",
+    0.4681169827428196
+   ],
+   [
+    "a",
+    0.012963227975117725
+   ]
+  ],
+  "best_phones": "k ɑ5",
+  "threshold": 0.5,
+  "secs": 2.5,
+  "kept": [
+   {
+    "file": "CLAUDE-ka-judge-v00.wav",
+    "canon_conf": 0.9362,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ka-judge-v01.wav",
+    "canon_conf": 0.9271,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ka-judge-v02.wav",
+    "canon_conf": 0.9158,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ka-judge-v03.wav",
+    "canon_conf": 0.9151,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ka-judge-v04.wav",
+    "canon_conf": 0.9145,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ka-judge-v05.wav",
+    "canon_conf": 0.914,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ka-judge-v06.wav",
+    "canon_conf": 0.913,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ka-judge-v07.wav",
+    "canon_conf": 0.9035,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ka-judge-v08.wav",
+    "canon_conf": 0.9017,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ka-judge-v09.wav",
+    "canon_conf": 0.9004,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ka-judge-v10.wav",
+    "canon_conf": 0.8998,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ka-judge-v11.wav",
+    "canon_conf": 0.8913,
+    "old_ruler_pass": false
+   }
+  ]
+ },
+ "kha": {
+  "attempts": 300,
+  "passes": 0,
+  "written": 0,
+  "best_canon_conf": 0.3649,
+  "best_top3": [
+   [
+    "a",
+    0.4873630221935282
+   ],
+   [
+    "cha",
+    0.18243888817428192
+   ],
+   [
+    "kha",
+    0.18243888817428192
+   ]
+  ],
+  "best_phones": "ɑ5",
+  "threshold": 0.5,
+  "secs": 2.4,
+  "kept": []
+ },
+ "la": {
+  "attempts": 300,
+  "passes": 161,
+  "written": 12,
+  "best_canon_conf": 0.9662,
+  "best_top3": [
+   [
+    "la",
+    0.9661763243178842
+   ],
+   [
+    "a",
+    0.02098317362466773
+   ],
+   [
+    "na",
+    0.003344858203831906
+   ]
+  ],
+  "best_phones": "l",
+  "threshold": 0.5,
+  "secs": 2.3,
+  "kept": [
+   {
+    "file": "CLAUDE-la-judge-v00.wav",
+    "canon_conf": 0.9662,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-la-judge-v01.wav",
+    "canon_conf": 0.9563,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-la-judge-v02.wav",
+    "canon_conf": 0.9529,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-la-judge-v03.wav",
+    "canon_conf": 0.9519,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-la-judge-v04.wav",
+    "canon_conf": 0.951,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-la-judge-v05.wav",
+    "canon_conf": 0.9496,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-la-judge-v06.wav",
+    "canon_conf": 0.9494,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-la-judge-v07.wav",
+    "canon_conf": 0.9484,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-la-judge-v08.wav",
+    "canon_conf": 0.9462,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-la-judge-v09.wav",
+    "canon_conf": 0.9447,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-la-judge-v10.wav",
+    "canon_conf": 0.9444,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-la-judge-v11.wav",
+    "canon_conf": 0.9437,
+    "old_ruler_pass": true
+   }
+  ]
+ },
+ "ma": {
+  "attempts": 300,
+  "passes": 80,
+  "written": 12,
+  "best_canon_conf": 0.9522,
+  "best_top3": [
+   [
+    "ma",
+    0.9522209152057369
+   ],
+   [
+    "a",
+    0.02204002439086867
+   ],
+   [
+    "na",
+    0.010355315517565826
+   ]
+  ],
+  "best_phones": "m",
+  "threshold": 0.5,
+  "secs": 2.8,
+  "kept": [
+   {
+    "file": "CLAUDE-ma-judge-v00.wav",
+    "canon_conf": 0.9522,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ma-judge-v01.wav",
+    "canon_conf": 0.9296,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ma-judge-v02.wav",
+    "canon_conf": 0.9221,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ma-judge-v03.wav",
+    "canon_conf": 0.9219,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ma-judge-v04.wav",
+    "canon_conf": 0.9208,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ma-judge-v05.wav",
+    "canon_conf": 0.9208,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ma-judge-v06.wav",
+    "canon_conf": 0.917,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ma-judge-v07.wav",
+    "canon_conf": 0.9143,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ma-judge-v08.wav",
+    "canon_conf": 0.9098,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ma-judge-v09.wav",
+    "canon_conf": 0.906,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ma-judge-v10.wav",
+    "canon_conf": 0.896,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-ma-judge-v11.wav",
+    "canon_conf": 0.8844,
+    "old_ruler_pass": true
+   }
+  ]
+ },
+ "na": {
+  "attempts": 300,
+  "passes": 93,
+  "written": 12,
+  "best_canon_conf": 0.9708,
+  "best_top3": [
+   [
+    "na",
+    0.9707646598760825
+   ],
+   [
+    "a",
+    0.014412027639827511
+   ],
+   [
+    "ma",
+    0.008666816169597339
+   ]
+  ],
+  "best_phones": "n a",
+  "threshold": 0.5,
+  "secs": 2.7,
+  "kept": [
+   {
+    "file": "CLAUDE-na-judge-v00.wav",
+    "canon_conf": 0.9708,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-na-judge-v01.wav",
+    "canon_conf": 0.9551,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-na-judge-v02.wav",
+    "canon_conf": 0.954,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-na-judge-v03.wav",
+    "canon_conf": 0.9539,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-na-judge-v04.wav",
+    "canon_conf": 0.9523,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-na-judge-v05.wav",
+    "canon_conf": 0.9466,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-na-judge-v06.wav",
+    "canon_conf": 0.9419,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-na-judge-v07.wav",
+    "canon_conf": 0.9368,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-na-judge-v08.wav",
+    "canon_conf": 0.9308,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-na-judge-v09.wav",
+    "canon_conf": 0.9274,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-na-judge-v10.wav",
+    "canon_conf": 0.9196,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-na-judge-v11.wav",
+    "canon_conf": 0.9165,
+    "old_ruler_pass": false
+   }
+  ]
+ },
+ "sa": {
+  "attempts": 300,
+  "passes": 0,
+  "written": 0,
+  "best_canon_conf": 0.1515,
+  "best_top3": [
+   [
+    "a",
+    0.3635878402940893
+   ],
+   [
+    "ta",
+    0.2778088056899145
+   ],
+   [
+    "sa",
+    0.15153062440946788
+   ]
+  ],
+  "best_phones": "ɑ5",
+  "threshold": 0.5,
+  "secs": 2.3,
+  "kept": []
+ },
+ "pa": {
+  "attempts": 300,
+  "passes": 113,
+  "written": 12,
+  "best_canon_conf": 0.9013,
+  "best_top3": [
+   [
+    "pa",
+    0.9013010216761376
+   ],
+   [
+    "ba",
+    0.03509286368477741
+   ],
+   [
+    "a",
+    0.01958145146909659
+   ]
+  ],
+  "best_phones": "p",
+  "threshold": 0.5,
+  "secs": 2.7,
+  "kept": [
+   {
+    "file": "CLAUDE-pa-judge-v00.wav",
+    "canon_conf": 0.9013,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-pa-judge-v01.wav",
+    "canon_conf": 0.8908,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-pa-judge-v02.wav",
+    "canon_conf": 0.8616,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-pa-judge-v03.wav",
+    "canon_conf": 0.8233,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-pa-judge-v04.wav",
+    "canon_conf": 0.811,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-pa-judge-v05.wav",
+    "canon_conf": 0.8006,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-pa-judge-v06.wav",
+    "canon_conf": 0.8002,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-pa-judge-v07.wav",
+    "canon_conf": 0.7962,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-pa-judge-v08.wav",
+    "canon_conf": 0.7894,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-pa-judge-v09.wav",
+    "canon_conf": 0.7885,
+    "old_ruler_pass": true
+   },
+   {
+    "file": "CLAUDE-pa-judge-v10.wav",
+    "canon_conf": 0.7884,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-pa-judge-v11.wav",
+    "canon_conf": 0.779,
+    "old_ruler_pass": false
+   }
+  ]
+ },
+ "fa": {
+  "attempts": 300,
+  "passes": 0,
+  "written": 0,
+  "best_canon_conf": 0.0141,
+  "best_top3": [
+   [
+    "la",
+    0.2123263612971662
+   ],
+   [
+    "pa",
+    0.20247593898408583
+   ],
+   [
+    "ya",
+    0.18450990367520634
+   ]
+  ],
+  "best_phones": "p l aː",
+  "threshold": 0.5,
+  "secs": 2.5,
+  "kept": []
+ },
+ "tza": {
+  "attempts": 300,
+  "passes": 0,
+  "written": 0,
+  "best_canon_conf": 0.3045,
+  "best_top3": [
+   [
+    "tza",
+    0.30451650231320593
+   ],
+   [
+    "sa",
+    0.2233750453217355
+   ],
+   [
+    "a",
+    0.18853094917901134
+   ]
+  ],
+  "best_phones": "ts",
+  "threshold": 0.5,
+  "secs": 2.3,
+  "kept": []
+ },
+ "qa": {
+  "attempts": 300,
+  "passes": 12,
+  "written": 12,
+  "best_canon_conf": 0.7044,
+  "best_top3": [
+   [
+    "ka",
+    0.35222121871933154
+   ],
+   [
+    "qa",
+    0.35222121871933154
+   ],
+   [
+    "a",
+    0.1190287170009247
+   ]
+  ],
+  "best_phones": "k",
+  "threshold": 0.5,
+  "secs": 2.7,
+  "kept": [
+   {
+    "file": "CLAUDE-qa-judge-v00.wav",
+    "canon_conf": 0.7044,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-qa-judge-v01.wav",
+    "canon_conf": 0.6763,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-qa-judge-v02.wav",
+    "canon_conf": 0.676,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-qa-judge-v03.wav",
+    "canon_conf": 0.6543,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-qa-judge-v04.wav",
+    "canon_conf": 0.6328,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-qa-judge-v05.wav",
+    "canon_conf": 0.6102,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-qa-judge-v06.wav",
+    "canon_conf": 0.593,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-qa-judge-v07.wav",
+    "canon_conf": 0.5794,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-qa-judge-v08.wav",
+    "canon_conf": 0.5666,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-qa-judge-v09.wav",
+    "canon_conf": 0.5365,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-qa-judge-v10.wav",
+    "canon_conf": 0.5266,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-qa-judge-v11.wav",
+    "canon_conf": 0.5185,
+    "old_ruler_pass": false
+   }
+  ]
+ },
+ "ra": {
+  "attempts": 300,
+  "passes": 2,
+  "written": 2,
+  "best_canon_conf": 0.5307,
+  "best_top3": [
+   [
+    "ra",
+    0.5307315604046818
+   ],
+   [
+    "la",
+    0.28186980726456495
+   ],
+   [
+    "a",
+    0.126849337484314
+   ]
+  ],
+  "best_phones": "r l a",
+  "threshold": 0.5,
+  "secs": 2.4,
+  "kept": [
+   {
+    "file": "CLAUDE-ra-judge-v00.wav",
+    "canon_conf": 0.5307,
+    "old_ruler_pass": false
+   },
+   {
+    "file": "CLAUDE-ra-judge-v01.wav",
+    "canon_conf": 0.5042,
+    "old_ruler_pass": false
+   }
+  ]
+ },
+ "sha": {
+  "attempts": 300,
+  "passes": 0,
+  "written": 0,
+  "best_canon_conf": 0.065,
+  "best_top3": [
+   [
+    "a",
+    0.36596306326189065
+   ],
+   [
+    "sa",
+    0.23302093832013204
+   ],
+   [
+    "sha",
+    0.06503883312991744
+   ]
+  ],
+  "best_phones": "",
+  "threshold": 0.5,
+  "secs": 2.5,
+  "kept": []
+ }
+}

@@ -1,0 +1,206 @@
+{
+  "when": "2026-09-06T02:01:41",
+  "settings": {
+    "resolution": [
+      1920,
+      1080
+    ],
+    "strokes": 30000,
+    "size": 0.006,
+    "poses": 5
+  },
+  "runs": [
+    {
+      "label": "PLAIN",
+      "state": "dark",
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.006334563127572527,
+        "TZELEM_world_anchored": 0.0030640404940675955,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.010484231095811161,
+        "FLOOR_repaint_every_frame": 0.001398321689090595,
+        "TZELEM_world_anchored": 0.0022343874494482707,
+        "CEILING_warp_only": 0.00844454145416712
+      },
+      "pass": true,
+      "verdict": [
+        "PASS  coherence: TZELEM 0.00306 vs floor 0.00633 = x2.07 steadier",
+        "PASS  fidelity: TZELEM 0.00223 beats BLANK 0.01048 = x4.69",
+        "PASS  the cheat is caught: warp-only is perfectly coherent (0.00000) and tears on fidelity (0.00844)"
+      ],
+      "sharpness": {
+        "truth_b": {
+          "lapvar": 53.9,
+          "lapvar_norm": 167.1
+        },
+        "tz_b": {
+          "lapvar": 115.7,
+          "lapvar_norm": 354.4
+        },
+        "fl_b": {
+          "lapvar": 63.8,
+          "lapvar_norm": 203.4
+        },
+        "ce_b": {
+          "lapvar": 3705.3,
+          "lapvar_norm": 12071.1
+        }
+      },
+      "steadier_than_floor": 2.067388841576054,
+      "better_than_blank": 4.692217143629228,
+      "seconds": 252.9,
+      "made": {
+        "truth_b": "/home/eran1/sharpen-run/lab/gate-out/gate-PLAIN-dark-truth_b.jpg",
+        "tz_b": "/home/eran1/sharpen-run/lab/gate-out/gate-PLAIN-dark-tz_b.jpg",
+        "fl_b": "/home/eran1/sharpen-run/lab/gate-out/gate-PLAIN-dark-fl_b.jpg",
+        "ce_b": "/home/eran1/sharpen-run/lab/gate-out/gate-PLAIN-dark-ce_b.jpg"
+      }
+    },
+    {
+      "label": "SHARP",
+      "state": "dark",
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.007905922384132071,
+        "TZELEM_world_anchored": 0.003036253882850443,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.007456733397938552,
+        "FLOOR_repaint_every_frame": 0.0010183137989841502,
+        "TZELEM_world_anchored": 0.0018997403070923288,
+        "CEILING_warp_only": 0.005556175271823094
+      },
+      "pass": true,
+      "verdict": [
+        "PASS  coherence: TZELEM 0.00304 vs floor 0.00791 = x2.60 steadier",
+        "PASS  fidelity: TZELEM 0.00190 beats BLANK 0.00746 = x3.93",
+        "PASS  the cheat is caught: warp-only is perfectly coherent (0.00000) and tears on fidelity (0.00556)"
+      ],
+      "sharpness": {
+        "truth_b": {
+          "lapvar": 33.8,
+          "lapvar_norm": 151.8
+        },
+        "tz_b": {
+          "lapvar": 108.1,
+          "lapvar_norm": 461.3
+        },
+        "fl_b": {
+          "lapvar": 53.6,
+          "lapvar_norm": 241.4
+        },
+        "ce_b": {
+          "lapvar": 2478.0,
+          "lapvar_norm": 12094.8
+        }
+      },
+      "steadier_than_floor": 2.603841012369483,
+      "better_than_blank": 3.9251330142863305,
+      "seconds": 753.9,
+      "made": {
+        "truth_b": "/home/eran1/sharpen-run/lab/gate-out/gate-SHARP-dark-truth_b.jpg",
+        "tz_b": "/home/eran1/sharpen-run/lab/gate-out/gate-SHARP-dark-tz_b.jpg",
+        "fl_b": "/home/eran1/sharpen-run/lab/gate-out/gate-SHARP-dark-fl_b.jpg",
+        "ce_b": "/home/eran1/sharpen-run/lab/gate-out/gate-SHARP-dark-ce_b.jpg"
+      }
+    },
+    {
+      "label": "PLAIN",
+      "state": "lit",
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.009016779311797011,
+        "TZELEM_world_anchored": 0.003906888469637594,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.007845628731937395,
+        "FLOOR_repaint_every_frame": 0.0017326515298981585,
+        "TZELEM_world_anchored": 0.002504038063508523,
+        "CEILING_warp_only": 0.013114135805109513
+      },
+      "pass": true,
+      "verdict": [
+        "PASS  coherence: TZELEM 0.00391 vs floor 0.00902 = x2.31 steadier",
+        "PASS  fidelity: TZELEM 0.00250 beats BLANK 0.00785 = x3.13",
+        "PASS  the cheat is caught: warp-only is perfectly coherent (0.00000) and tears on fidelity (0.01311)"
+      ],
+      "sharpness": {
+        "truth_b": {
+          "lapvar": 72.5,
+          "lapvar_norm": 279.3
+        },
+        "tz_b": {
+          "lapvar": 105.2,
+          "lapvar_norm": 410.8
+        },
+        "fl_b": {
+          "lapvar": 66.3,
+          "lapvar_norm": 268.4
+        },
+        "ce_b": {
+          "lapvar": 6483.4,
+          "lapvar_norm": 17632.4
+        }
+      },
+      "steadier_than_floor": 2.3079182786688084,
+      "better_than_blank": 3.1331906835890995,
+      "seconds": 258.9,
+      "made": {
+        "truth_b": "/home/eran1/sharpen-run/lab/gate-out/gate-PLAIN-lit-truth_b.jpg",
+        "tz_b": "/home/eran1/sharpen-run/lab/gate-out/gate-PLAIN-lit-tz_b.jpg",
+        "fl_b": "/home/eran1/sharpen-run/lab/gate-out/gate-PLAIN-lit-fl_b.jpg",
+        "ce_b": "/home/eran1/sharpen-run/lab/gate-out/gate-PLAIN-lit-ce_b.jpg"
+      }
+    },
+    {
+      "label": "SHARP",
+      "state": "lit",
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.013162539775153456,
+        "TZELEM_world_anchored": 0.004639533418244682,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.007868061221654886,
+        "FLOOR_repaint_every_frame": 0.0017522919359893494,
+        "TZELEM_world_anchored": 0.0026958830940440152,
+        "CEILING_warp_only": 0.009068827964764919
+      },
+      "pass": true,
+      "verdict": [
+        "PASS  coherence: TZELEM 0.00464 vs floor 0.01316 = x2.84 steadier",
+        "PASS  fidelity: TZELEM 0.00270 beats BLANK 0.00787 = x2.92",
+        "PASS  the cheat is caught: warp-only is perfectly coherent (0.00000) and tears on fidelity (0.00907)"
+      ],
+      "sharpness": {
+        "truth_b": {
+          "lapvar": 64.2,
+          "lapvar_norm": 233.3
+        },
+        "tz_b": {
+          "lapvar": 114.8,
+          "lapvar_norm": 430.0
+        },
+        "fl_b": {
+          "lapvar": 66.8,
+          "lapvar_norm": 260.7
+        },
+        "ce_b": {
+          "lapvar": 4460.6,
+          "lapvar_norm": 15173.0
+        }
+      },
+      "steadier_than_floor": 2.8370395444060326,
+      "better_than_blank": 2.9185468906414034,
+      "seconds": 743.6,
+      "made": {
+        "truth_b": "/home/eran1/sharpen-run/lab/gate-out/gate-SHARP-lit-truth_b.jpg",
+        "tz_b": "/home/eran1/sharpen-run/lab/gate-out/gate-SHARP-lit-tz_b.jpg",
+        "fl_b": "/home/eran1/sharpen-run/lab/gate-out/gate-SHARP-lit-fl_b.jpg",
+        "ce_b": "/home/eran1/sharpen-run/lab/gate-out/gate-SHARP-lit-ce_b.jpg"
+      }
+    }
+  ]
+}

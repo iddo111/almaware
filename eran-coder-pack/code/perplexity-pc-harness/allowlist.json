@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "workspace_root": "D:\\CLAUDE",
+  "blocked_path_parts": [
+    ".git",
+    "_secrets",
+    "rbshatz-private",
+    "credentials",
+    "secrets"
+  ],
+  "allowed_text_extensions": [
+    ".md",
+    ".txt",
+    ".json",
+    ".jsonl",
+    ".py",
+    ".ps1",
+    ".sh",
+    ".yaml",
+    ".yml",
+    ".toml"
+  ],
+  "max_read_bytes": 65536,
+  "tools": [
+    {
+      "type": "function",
+      "name": "pc_status",
+      "description": "Return a minimal read-only Windows/Python capability summary. It omits usernames, IP addresses, environment variables, and credentials.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    {
+      "type": "function",
+      "name": "list_workspace",
+      "description": "List a bounded non-recursive directory under D:\\CLAUDE after local user approval. Sensitive directory names are blocked.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "relative_path": {"type": "string", "maxLength": 240},
+          "limit": {"type": "integer", "minimum": 1, "maximum": 100}
+        },
+        "required": ["relative_path"],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    {
+      "type": "function",
+      "name": "read_workspace_text",
+      "description": "Read at most 65536 bytes from an allowlisted text file under D:\\CLAUDE after local user approval. Path escape and sensitive directories are blocked.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "relative_path": {"type": "string", "maxLength": 240}
+        },
+        "required": ["relative_path"],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    {
+      "type": "function",
+      "name": "run_diagnostic",
+      "description": "Run one fixed read-only diagnostic after local user approval. No arbitrary command or arguments are accepted.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "diagnostic": {"type": "string", "enum": ["git_status", "tailscale_self"]}
+        },
+        "required": ["diagnostic"],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    {
+      "type": "function",
+      "name": "list_windows",
+      "description": "List targetable visible Windows top-level windows through the trusted Computer Use adapter. Security, terminal, credential, and agent-control windows are excluded.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    {
+      "type": "function",
+      "name": "observe_window",
+      "description": "Capture a bounded fresh PNG observation for exactly one previously returned window. Returns dimensions, DPI, a screenshot hash, and an expiring observation ID.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "window_id": {"type": "string", "maxLength": 512}
+        },
+        "required": ["window_id"],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    {
+      "type": "function",
+      "name": "computer_action",
+      "description": "Perform exactly one approved safe action against the exact window and fresh observation, then return a fresh screenshot observation. No shell, security UI, credentials, destructive actions, or stale coordinates.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "window_id": {"type": "string", "maxLength": 512},
+          "observation_id": {"type": "string", "maxLength": 64},
+          "action": {
+            "type": "string",
+            "enum": ["focus", "click", "double_click", "right_click", "type_text", "press_key", "scroll", "wait"]
+          },
+          "x": {"type": "integer", "minimum": 0, "maximum": 32767},
+          "y": {"type": "integer", "minimum": 0, "maximum": 32767},
+          "text": {"type": "string", "maxLength": 4000},
+          "key": {"type": "string", "maxLength": 80},
+          "scroll_x": {"type": "integer", "minimum": -2000, "maximum": 2000},
+          "scroll_y": {"type": "integer", "minimum": -2000, "maximum": 2000},
+          "duration_ms": {"type": "integer", "minimum": 0, "maximum": 5000}
+        },
+        "required": ["window_id", "observation_id", "action"],
+        "additionalProperties": false
+      },
+      "strict": true
+    }
+  ]
+}

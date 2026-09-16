@@ -1,0 +1,437 @@
+{
+ "what": "mouth school v2, stage 1 (the teacher): verified variants per syllable under school-v2/ruler.py",
+ "target_per_syllable": 12,
+ "per_syllable": {
+  "a": {
+   "verified": 14,
+   "attempts": 14,
+   "pass_rate": 1.0,
+   "top_fail_reasons": [],
+   "seconds": 0.3
+  },
+  "aya": {
+   "verified": 14,
+   "attempts": 14,
+   "pass_rate": 1.0,
+   "top_fail_reasons": [],
+   "seconds": 0.2
+  },
+  "ba": {
+   "verified": 14,
+   "attempts": 39,
+   "pass_rate": 0.359,
+   "top_fail_reasons": [
+    [
+     "burst_centroid",
+     22
+    ],
+    [
+     "burst_no_jump",
+     3
+    ],
+    [
+     "burst_late",
+     3
+    ],
+    [
+     "F2_not_flat",
+     2
+    ]
+   ],
+   "seconds": 0.4
+  },
+  "va": {
+   "verified": 14,
+   "attempts": 77,
+   "pass_rate": 0.182,
+   "top_fail_reasons": [
+    [
+     "noise_weak",
+     63
+    ]
+   ],
+   "seconds": 1.0
+  },
+  "ga": {
+   "verified": 14,
+   "attempts": 82,
+   "pass_rate": 0.171,
+   "top_fail_reasons": [
+    [
+     "burst centroid 586 ",
+     3
+    ],
+    [
+     "burst centroid 647 ",
+     2
+    ],
+    [
+     "burst centroid 518 ",
+     2
+    ],
+    [
+     "burst centroid 835 ",
+     1
+    ]
+   ],
+   "seconds": 1.0
+  },
+  "da": {
+   "verified": 14,
+   "attempts": 33,
+   "pass_rate": 0.424,
+   "top_fail_reasons": [
+    [
+     "FAIL closure -15.3 dB <= -16",
+     3
+    ],
+    [
+     "FAIL closure -15.7 dB <= -16",
+     2
+    ],
+    [
+     "FAIL closure -15.9 dB <= -16",
+     1
+    ],
+    [
+     "FAIL F3 onset 2517 high ",
+     1
+    ]
+   ],
+   "seconds": 0.3
+  },
+  "ha": {
+   "verified": 14,
+   "attempts": 32,
+   "pass_rate": 0.438,
+   "top_fail_reasons": [
+    [
+     "FAIL noise 50-90 ms, HNR < 0, centroid 3700-5100, ",
+     18
+    ]
+   ],
+   "seconds": 0.3
+  },
+  "wa": {
+   "verified": 14,
+   "attempts": 19,
+   "pass_rate": 0.737,
+   "top_fail_reasons": [
+    [
+     "F2_high",
+     5
+    ],
+    [
+     "F2_not_rising",
+     4
+    ]
+   ],
+   "seconds": 0.2
+  },
+  "za": {
+   "verified": 14,
+   "attempts": 35,
+   "pass_rate": 0.4,
+   "top_fail_reasons": [
+    [
+     "FAIL >2k frac 0.13 >= 0.15",
+     3
+    ],
+    [
+     "FAIL >2k frac 0.12 >= 0.15",
+     3
+    ],
+    [
+     "FAIL >2k frac 0.09 >= 0.15",
+     2
+    ],
+    [
+     "FAIL >2k frac 0.07 >= 0.15",
+     2
+    ]
+   ],
+   "seconds": 0.4
+  },
+  "cha": {
+   "verified": 14,
+   "attempts": 22,
+   "pass_rate": 0.636,
+   "top_fail_reasons": [
+    [
+     "FAIL noise >= 80 ms, centroid 1900-2500, 1-3 kHz f",
+     8
+    ]
+   ],
+   "seconds": 0.2
+  },
+  "ta": {
+   "verified": 14,
+   "attempts": 122,
+   "pass_rate": 0.115,
+   "top_fail_reasons": [
+    [
+     "STRICT gap is voiced: VERIFIER-BACK procedure HNR ",
+     99
+    ],
+    [
+     "FAIL F3 high ",
+     33
+    ],
+    [
+     "FAIL voicing starts within 40 ms after the gap ",
+     16
+    ],
+    [
+     "FAIL VOT gap 43 ms at -9.3 dB ",
+     1
+    ]
+   ],
+   "seconds": 1.6
+  },
+  "ya": {
+   "verified": 14,
+   "attempts": 27,
+   "pass_rate": 0.519,
+   "top_fail_reasons": [
+    [
+     "FAIL onset F1<=300 F2>=1900; F2 slides to ~1205 ov",
+     13
+    ]
+   ],
+   "seconds": 0.3
+  },
+  "ka": {
+   "verified": 12,
+   "attempts": 90,
+   "pass_rate": 0.133,
+   "top_fail_reasons": [
+    [
+     "gap level -1.9 ",
+     4
+    ],
+    [
+     "gap level -1.0 ",
+     4
+    ],
+    [
+     "gap level -1.6 ",
+     3
+    ],
+    [
+     "gap level -0.8 ",
+     3
+    ]
+   ],
+   "seconds": 1.6
+  },
+  "kha": {
+   "verified": 14,
+   "attempts": 22,
+   "pass_rate": 0.636,
+   "top_fail_reasons": [
+    [
+     "noise 76 ms < 80",
+     2
+    ],
+    [
+     "centroid 1876 ",
+     1
+    ],
+    [
+     "centroid 1858 ",
+     1
+    ],
+    [
+     "centroid 1875 ",
+     1
+    ]
+   ],
+   "seconds": 0.3
+  },
+  "la": {
+   "verified": 14,
+   "attempts": 14,
+   "pass_rate": 1.0,
+   "top_fail_reasons": [],
+   "seconds": 0.1
+  },
+  "ma": {
+   "verified": 14,
+   "attempts": 16,
+   "pass_rate": 0.875,
+   "top_fail_reasons": [
+    [
+     "F1_not_rising",
+     2
+    ]
+   ],
+   "seconds": 0.3
+  },
+  "na": {
+   "verified": 14,
+   "attempts": 17,
+   "pass_rate": 0.824,
+   "top_fail_reasons": [
+    [
+     "FAIL antiformant 1812 in 1.9-2.6 kHz",
+     1
+    ],
+    [
+     "FAIL antiformant 1843 in 1.9-2.6 kHz",
+     1
+    ],
+    [
+     "FAIL antiformant 1875 in 1.9-2.6 kHz",
+     1
+    ]
+   ],
+   "seconds": 0.3
+  },
+  "sa": {
+   "verified": 14,
+   "attempts": 20,
+   "pass_rate": 0.7,
+   "top_fail_reasons": [
+    [
+     "FAIL noise 76 ms >= 80",
+     1
+    ],
+    [
+     "FAIL noise 69 ms >= 80",
+     1
+    ],
+    [
+     "FAIL noise 73 ms >= 80",
+     1
+    ],
+    [
+     "FAIL noise 78 ms >= 80",
+     1
+    ]
+   ],
+   "seconds": 0.2
+  },
+  "pa": {
+   "verified": 14,
+   "attempts": 14,
+   "pass_rate": 1.0,
+   "top_fail_reasons": [],
+   "seconds": 0.3
+  },
+  "fa": {
+   "verified": 14,
+   "attempts": 19,
+   "pass_rate": 0.737,
+   "top_fail_reasons": [
+    [
+     "noise_not_broad",
+     5
+    ]
+   ],
+   "seconds": 0.2
+  },
+  "tza": {
+   "verified": 14,
+   "attempts": 62,
+   "pass_rate": 0.226,
+   "top_fail_reasons": [
+    [
+     "STRICT voiced blip after the closure: HNR -2.1, <5",
+     3
+    ],
+    [
+     "STRICT voiced blip after the closure: HNR -1.2, <5",
+     3
+    ],
+    [
+     "STRICT voiced blip after the closure: HNR 0.1, <50",
+     2
+    ],
+    [
+     "STRICT voiced blip after the closure: HNR -2.7, <5",
+     2
+    ]
+   ],
+   "seconds": 0.6
+  },
+  "qa": {
+   "verified": 13,
+   "attempts": 160,
+   "pass_rate": 0.081,
+   "top_fail_reasons": [
+    [
+     "gap level -1.8 ",
+     11
+    ],
+    [
+     "gap level -1.9 ",
+     8
+    ],
+    [
+     "gap level -1.4 ",
+     8
+    ],
+    [
+     "gap level -1.6 ",
+     5
+    ]
+   ],
+   "seconds": 2.8
+  },
+  "ra": {
+   "verified": 14,
+   "attempts": 20,
+   "pass_rate": 0.7,
+   "top_fail_reasons": [
+    [
+     "FAIL voicing continuous around ",
+     5
+    ],
+    [
+     "FAIL no burst pop ",
+     2
+    ],
+    [
+     "FAIL tap dip -2.9 dB <= -10",
+     1
+    ],
+    [
+     "FAIL tap dip -7.4 dB <= -10",
+     1
+    ]
+   ],
+   "seconds": 0.2
+  },
+  "sha": {
+   "verified": 14,
+   "attempts": 24,
+   "pass_rate": 0.583,
+   "top_fail_reasons": [
+    [
+     "FAIL 2-4k frac 0.64 >= 0.65",
+     2
+    ],
+    [
+     "FAIL >4k frac 0.33 <= 0.3",
+     2
+    ],
+    [
+     "FAIL >4k frac 0.35 <= 0.3",
+     2
+    ],
+    [
+     "FAIL >4k frac 0.30 <= 0.3",
+     2
+    ]
+   ],
+   "seconds": 0.3
+  }
+ },
+ "gate1": {
+  "syllables_full": 24,
+  "of": 24,
+  "variants_total": 333,
+  "attempts_total": 994
+ },
+ "written_by": "claude-cli-MOREH lessons.py 2026-09-03 09:39"
+}

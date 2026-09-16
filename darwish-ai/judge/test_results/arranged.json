@@ -1,0 +1,58 @@
+{
+ "meta": {
+  "scale": "freygish",
+  "midi": null,
+  "audio": "D:/CLAUDE/_deliverables/psytrance/psy_render-v4-ARRANGED-chai-20260912-023406.wav",
+  "audio_sr": 44100,
+  "audio_s_analysed": 216.19
+ },
+ "components": {
+  "kick_bass_energy": {
+   "kick_band_hz": [
+    20.0,
+    100.0
+   ],
+   "bass_band_hz": [
+    100.0,
+    300.0
+   ],
+   "frac_energy_kick": 0.1056,
+   "frac_energy_bass": 0.1865,
+   "frac_energy_low_20_300hz": 0.292,
+   "score": 0.355
+  },
+  "loudness": {
+   "integrated_lufs": -18.93,
+   "target_lufs": -8.0,
+   "score": 0.0
+  },
+  "similarity_to_reference": {
+   "basis": "STFT pitch-class-energy cosine similarity vs mean of human1/2/3.mp3 (_deliverables/darwish-ab/clips2)",
+   "cosine_vs_reference": 0.7923,
+   "score": 0.7923
+  },
+  "scale_fit": {
+   "estimated_from_audio": true,
+   "method": "STFT pitch-class energy (this file's chroma_vector()) outside the chosen scale's pitch classes, rooted at A (project convention)",
+   "frac_energy_outside_scale": 0.4466,
+   "score": 0.5534
+  }
+ },
+ "overall_score_0to100": 50.4,
+ "components_used": [
+  "kick_bass_energy",
+  "loudness",
+  "scale_fit",
+  "similarity_to_reference"
+ ],
+ "components_unavailable": [
+  "independent_voice",
+  "rhythm_regularity"
+ ],
+ "weights_renormalised": {
+  "scale_fit": 0.4,
+  "kick_bass_energy": 0.2,
+  "loudness": 0.133,
+  "similarity_to_reference": 0.267
+ }
+}

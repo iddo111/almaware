@@ -1,0 +1,138 @@
+{
+ "label": "ערן מצא לבד",
+ "provenance": {
+  "box": "eran2",
+  "arm": "ih-1kf-1",
+  "kind": "early-riser",
+  "source_path": "throat-search-v3/run/ih-1kf-1/best.json",
+  "pulled_utc": "2026-08-26T19:55:14Z"
+ },
+ "candidate": {
+  "wdist": 6.555896812852082,
+  "gate_pass": true,
+  "gate_detail": {
+   "G1_dip": true,
+   "G2_voiced": true,
+   "G3_f0": true,
+   "G4_occupancy": true,
+   "G5_hnr": true,
+   "G6_duration": true,
+   "G7_clean_tail": true,
+   "G8_voiced_dominance": true
+  },
+  "gate_stats": {
+   "humps": 6,
+   "dip": 0.0783488627749599,
+   "voiced_frac": 0.9361702127659575,
+   "median_f0": 190.71945508727117,
+   "occupancy": 1.0,
+   "hnr": 4.408832850224559,
+   "span_s": 0.5,
+   "core_s": 0.492,
+   "tail_rms_ratio": 0.6531227551776843,
+   "tail_max_ratio": 0.676688249072184,
+   "voiced_energy_share": 0.9747326633506869
+  },
+  "review_flagged": false,
+  "real_wdist_mean": 3.7971687893737216,
+  "real_wdist_min": 2.697495401165337,
+  "real_wdist_max": 9.362949556759256,
+  "win_bar_1p3x_mean": 4.936319426185838,
+  "multi_glottis_seed": {
+   "n": 5,
+   "mean": 6.700321526579723,
+   "sd": 0.12687086994115107
+  },
+  "nearest": [
+   {
+    "unit": "ih",
+    "wdist": 6.5559
+   },
+   {
+    "unit": "ma",
+    "wdist": 6.7111
+   },
+   {
+    "unit": "ah",
+    "wdist": 7.1321
+   },
+   {
+    "unit": "ba",
+    "wdist": 7.17
+   },
+   {
+    "unit": "abba",
+    "wdist": 7.3499
+   },
+   {
+    "unit": "ima",
+    "wdist": 11.9079
+   }
+  ],
+  "gesture": {
+   "keyframes": [
+    [
+     -2.73697,
+     -0.52477,
+     0.39628,
+     0.05396,
+     -2.73453,
+     1.72688,
+     -2.69028,
+     1.23303,
+     1.0,
+     1.85006,
+     0.06463,
+     0.72739,
+     0.0
+    ]
+   ],
+   "durations": [
+    0.5
+   ],
+   "f0_knots": [
+    287.63,
+    118.58,
+    350.0
+   ],
+   "glide": 0.35
+  },
+  "organs": {
+   "ear3_spec_hash": "4a6864faab1a86d925012f1b49b1438778a10dcbe1f6b400d0752df5db8e4170",
+   "carfac_sha": "4cdb95ee",
+   "patch_id": "0001-jax-5tap-agc",
+   "cortex": "none-v0 (Judge B pending)",
+   "mouth2_sha256": "031900418107761e83cedb4ec6419455eaec992b35da61a07dd858dba291a76a",
+   "libvoc_sha256": "149e324cc371f6e08caee2324338c985dfcfc3c20b5a33be8db7d2b3c84b6bc1",
+   "geometry": "story-bunton-child-60mo",
+   "backend": "c",
+   "sanity_file": "SANITY0-V3-20260826T033554Z.json"
+  },
+  "arm": "ih-1kf",
+  "seed": 1,
+  "unit": "ih",
+  "guided": true,
+  "evals": 222198,
+  "restarts": 10,
+  "utc": "2026-08-26T19:53:01Z",
+  "best_f_with_penalty": 6.575446206917021,
+  "x": [
+   -2.746529833988491,
+   -0.5247705904565362,
+   0.39627857645319764,
+   0.0539619616949355,
+   -2.734527422729032,
+   1.7268843345583125,
+   -2.690275735661694,
+   1.2330272282905563,
+   1.0016133692200997,
+   1.8500599708219867,
+   0.06463311442602968,
+   0.7273893916417338,
+   -0.03708038768733901,
+   287.62846049657617,
+   118.57618115961377,
+   356.2106564664915
+  ]
+ }
+}

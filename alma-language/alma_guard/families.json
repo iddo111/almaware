@@ -1,0 +1,57 @@
+{
+ "alma-1L-3f": [
+  "alma-1L-3f-m2",
+  "alma-1L-3f-m4"
+ ],
+ "alma-h8-pert": [
+  "alma-h8-pert-s0.3-e0.01",
+  "alma-h8-pert-s0.3-e0.04",
+  "alma-h8-pert-s0.3-e0.16",
+  "alma-h8-pert-s1.0-e0.01",
+  "alma-h8-pert-s1.0-e0.04",
+  "alma-h8-pert-s1.0-e0.16"
+ ],
+ "alma-h8-3f": [
+  "alma-h8-3f-m4"
+ ],
+ "perceptron-w1024": [
+  "perceptron-w1024-lr0.01-pw2",
+  "perceptron-w1024-lr0.01-pw4",
+  "perceptron-w1024-lr0.05-pw2",
+  "perceptron-w1024-lr0.05-pw4",
+  "perceptron-w1024-lr0.2-pw2",
+  "perceptron-w1024-lr0.2-pw4"
+ ],
+ "perceptron-w9232": [
+  "perceptron-w9232-lr0.01-pw2",
+  "perceptron-w9232-lr0.01-pw4",
+  "perceptron-w9232-lr0.05-pw2",
+  "perceptron-w9232-lr0.05-pw4",
+  "perceptron-w9232-lr0.2-pw2",
+  "perceptron-w9232-lr0.2-pw4"
+ ],
+ "logreg-w1024": [
+  "logreg-w1024-lr0.01-pw2",
+  "logreg-w1024-lr0.01-pw4",
+  "logreg-w1024-lr0.05-pw2",
+  "logreg-w1024-lr0.05-pw4",
+  "logreg-w1024-lr0.2-pw2",
+  "logreg-w1024-lr0.2-pw4"
+ ],
+ "logreg-w9232": [
+  "logreg-w9232-lr0.01-pw2",
+  "logreg-w9232-lr0.01-pw4",
+  "logreg-w9232-lr0.05-pw2",
+  "logreg-w9232-lr0.05-pw4",
+  "logreg-w9232-lr0.2-pw2",
+  "logreg-w9232-lr0.2-pw4"
+ ],
+ "mlp-w1024-h8": [
+  "mlp-w1024-h8-lr0.01-pw2",
+  "mlp-w1024-h8-lr0.01-pw4",
+  "mlp-w1024-h8-lr0.05-pw2",
+  "mlp-w1024-h8-lr0.05-pw4",
+  "mlp-w1024-h8-lr0.2-pw2",
+  "mlp-w1024-h8-lr0.2-pw4"
+ ]
+}

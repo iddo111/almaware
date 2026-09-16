@@ -1,0 +1,656 @@
+# Iddo Harness — Policy Configuration
+# עידו, זו המדיניות שמנחה את הסוכן. אתה יכול לערוך.
+
+version: 1
+owner: iddo111
+last_updated: 2026-08-01
+
+# Authenticated per-agent profiles. A producer-controlled AMP field is not
+# authentication: transports bind the verified identity separately before the
+# task reaches Executor.run(). Unknown/legacy callers keep the global policy.
+agents:
+  profiles:
+    # ALMIDO (qwen-code, the local body). Iddo 2026-09-10 18:22: "קלוד בדיוק
+    # כמוך - זה מה שאני רוצה בעלמידו" -- the same working latitude I (Claude)
+    # already operate with: free to write/edit/compile/install/run project
+    # scripts inside D:\CLAUDE without stopping to ask each time, but the same
+    # categories I myself always pause on stay gated (push, commit, merge,
+    # service start/stop, docker rm/run, process_kill, reboot/shutdown,
+    # scheduling unattended future runs). The GLOBAL block list (below --
+    # destroy-machine, credentials, the ERAN fence) is evaluated BEFORE any
+    # profile override and cannot be bypassed by this one.
+    #
+    # Computer-use (mouse/keyboard/window control, qwen-code's cua-driver,
+    # tool names "computer_use__*") -- Iddo 2026-09-10 18:26 "כן, תרפה גם את
+    # זה" (yes, loosen that too), after being told explicitly this is
+    # unsupervised screen control, a different risk class than editing files.
+    # His call, made twice, with the tradeoff named both times.
+    almido-qwen:
+      allowed_kinds: ["*"]
+      override_global_confirm: true
+      auto_allow:
+        commands:
+          - "computer_use__*"
+          # ALMIDO's OWN gated computer-use door (mcp__almido__computer_*, 2026-09-11).
+          # Named here so the decision is deliberate: without these eight lines every one
+          # of them fell through to "no matching rule (defaulting to confirmation)", which
+          # under approvalMode "yolo" is a decision nobody made. They are auto_allow for
+          # the same reason computer_use__* above is -- Iddo, 2026-09-10 18:26, "כן, תרפה
+          # גם את זה", told twice that this is unsupervised screen control. To take it back,
+          # move the four acting verbs (click/type/key/scroll) down into require_confirm;
+          # the three reading verbs and computer_stop should stay here in any case, and
+          # computer_stop MUST: an emergency stop that waits for a prompt is not one.
+          #
+          # This is the OUTER gate only. Every one of these calls is separately checked
+          # in-process by almido_gate.gate() -- the STOP file, the refusal to type anything
+          # credential-shaped, the AUDIO PROTECTION LAW on media keys, the desktop-bounds
+          # check and the rate limit -- and the GLOBAL block list below (the ERAN fence,
+          # the credential rules) is still evaluated BEFORE this profile and still wins.
+          - "computer_status*"
+          - "computer_screen_info*"
+          - "computer_screenshot*"
+          - "computer_click*"
+          - "computer_type*"
+          - "computer_key*"
+          - "computer_scroll*"
+          - "computer_stop*"
+          # VERIFIED-BACKUP DELETION (mcp__almido__backup_*, 2026-09-11). Iddo: his own
+          # systems must be able to delete a source once the copy is PROVEN -- the phone
+          # pull was 3,543 files / 18.98 GB and clearing the originals by hand is not work
+          # for a person. These two verbs READ ONLY. backup_verify hashes both copies and
+          # deletes nothing whatsoever; backup_status reports whether the gate is loaded.
+          # The destructive half is backup_delete_verified and it is NOT here -- it sits in
+          # require_confirm below. To let ALMIDO delete unattended, move that ONE line up
+          # into this list; nothing else needs to change.
+          - "backup_verify*"
+          - "backup_status*"
+          - "write *"
+          - "patch *"
+          - "git add*"
+          - "git status*"
+          - "git diff*"
+          - "git log*"
+          - "git branch*"
+          - "pytest*"
+          - "python*"
+          - "node*"
+          - "npm*"
+          - "make*"
+          - "gcc*"
+          - "g++*"
+          - "cargo*"
+          - "go build*"
+          - "go run*"
+          - "go test*"
+          - "tsc*"
+          - "ollama*"
+          - "ssh*"
+          - "docker ps*"
+          - "docker exec*"
+          - "docker logs*"
+          - "curl*"
+          # ---- ARMED-GATE ADDITIONS, claude-cli-FABLE-almido 2026-09-11 -------------
+          # Until 07:09 today the PreToolUse hook never actually executed under cmd.exe
+          # or PowerShell (a quoting bug -- see almido-gate-hook.cmd), and a failed hook
+          # reads as PROCEED. So this profile had never really been exercised by a live
+          # session: every ordinary READ fell through to "no matching rule (defaulting to
+          # confirmation)", which in a headless run is a dead stop. These lines are what
+          # the profile always claimed to be -- read freely, act under the rules above --
+          # and every one of them is still evaluated AFTER the global block list (the ERAN
+          # fence, the credential rules), which still wins.
+          - "read *"          # read_file / read_many_files / desktop-commander reads
+          - "ls *"            # list_directory
+          - "glob *"
+          - "grep *"          # search_file_content / search_code
+          - "whoami*"
+          - "todo_write*"
+          # The council and the second brain. "claim before you build" and "post after"
+          # are LAWS in CLAUDE.md -- an agent that must stop and ask before it can read
+          # the shared queue cannot obey them.
+          - "ramchat_read*"
+          - "ramchat_queue*"
+          - "ramchat_status*"
+          - "ramchat_post*"
+          - "recall_search*"
+          - "recall_session*"
+          - "recall_stats*"
+          - "project_list*"
+          - "memory_read*"
+          # ALMIDO's own door: asking Claude, reading its brain notes, and saying who it is.
+          # brain_write is deliberately NOT here -- writing to the shared brain stays a
+          # decision, and it lands under the default confirmation.
+          - "ask_claude*"
+          - "almido_whoami*"
+          - "almido_audit_tail*"
+          - "brain_read*"
+          - "brain_doors*"
+          - "quorum_status*"
+        paths:
+          write:
+            - "D:\\CLAUDE\\**"
+            # ALMIDO's OWN repository, created 2026-09-11 on Iddo's order
+            # ("תתחבר רפוזיטורי"). It is outside the D:\CLAUDE monorepo on
+            # purpose, so without this line ALMIDO could not write its own session log.
+            - "D:\\ALMIDO\\**"
+      require_confirm:
+        commands:
+          # PERMANENT DELETION. The in-process gate (almido_gate.verify_backup) has already
+          # proven every byte by sha256 before this verb can be reached at all -- there is no
+          # path from a path-string to a deletion, only from a receipt. This line is the
+          # SECOND lock, and it is Iddo's, not the code's: night one of a brand-new
+          # irreversible capability defaults to asking him. Move it up into auto_allow above
+          # when he is satisfied; that one move is the whole difference between
+          # "ALMIDO asks before it deletes" and "ALMIDO deletes proven-backed-up files on
+          # its own". Nothing else changes, and the sha256 proof applies either way.
+          - "backup_delete_verified*"
+          - "process_kill*"
+          - "git push*"
+          - "git commit*"
+          - "git merge*"
+          - "git rebase*"
+          - "git reset*"
+          - "docker run*"
+          - "docker rm*"
+          - "docker rmi*"
+          - "apt install*"
+          - "systemctl start*"
+          - "systemctl stop*"
+          - "systemctl enable*"
+          - "systemctl disable*"
+          - "shutdown*"
+          - "reboot*"
+          - "schedule *"
+          - "schedule_cancel *"
+
+    perplexity:
+      allowed_kinds: ["*"]
+      # Perplexity may perform normal project work without stopping on the
+      # global write/commit confirmation rules, but only inside these roots.
+      # Global block rules always win, and the explicit confirms below win
+      # before this override is considered.
+      override_global_confirm: true
+      auto_allow:
+        commands:
+          - "write *"
+          - "patch *"
+          - "git add*"
+          - "git commit*"
+          - "git worktree*"
+          - "pytest*"
+          - "python -m pytest*"
+          - "python -m compileall*"
+          - "npm test*"
+          - "npm run build*"
+        paths:
+          write:
+            - "D:\\CLAUDE\\**"
+            - "C:\\Users\\%USERNAME%\\.codex\\worktrees\\**"
+            - "C:\\Users\\%USERNAME%\\Documents\\**"
+            - "~/.iddo-harness/memory/**"
+      require_confirm:
+        commands:
+          - "process_kill*"
+          - "git push*"
+          - "git merge*"
+          - "git rebase*"
+          - "git reset*"
+          - "pip install*"
+          - "npm install*"
+          - "apt install*"
+          - "systemctl start*"
+          - "systemctl stop*"
+          - "shutdown*"
+          - "reboot*"
+          - "schedule *"
+          - "schedule_cancel *"
+
+    # BODY-HTTP -- ALMIDO's tools reached from the INTERNET (Claude on Android, ChatGPT,
+    # any cloud model) through https://body.iddoperez.ai, behind Cloudflare Access.
+    # Iddo 2026-09-11 07:28: give it a body from anywhere -- "never an open door".
+    # Enforced by D:\CLAUDE\almido\almido_body_http.py, which reads THIS block on every
+    # call (mtime-cached, so an edit here takes effect without restarting the server).
+    #
+    # Three verdicts, and they are about the TRANSPORT, not about the tool:
+    #   auto_allow      -- runs, with the in-process gate still deciding as it always does
+    #   require_confirm -- REFUSED over HTTP unless Iddo armed it ON THE PC:
+    #                        python D:\CLAUDE\almido\almido_body_http.py arm --minutes 15
+    #                        --tools "computer_*"
+    #                      The arm expires by itself, and no remote caller can arm itself:
+    #                      no tool exposed over this door writes that file.
+    #   block           -- refused, always
+    # A tool matching NOTHING here is treated as require_confirm, never as allowed, and
+    # backup_delete_verified is blocked in the CODE too -- this list cannot loosen it.
+    #
+    # The hands are reachable at all only because the gate behind them is real:
+    # expect_window / expect_app is mandatory, the AUDIO PROTECTION LAW refuses media keys
+    # and KESHEV's windows, credentials are never typed, and the STOP file closes this door
+    # completely -- reads included -- while leaving the local stdio door working.
+    body-http:
+      allowed_kinds: ["*"]
+      auto_allow:
+        tools:
+          # Reading, thinking, measuring. Nothing here moves a hand.
+          - "almido_whoami"
+          - "almido_audit_tail"
+          - "quorum_status"
+          - "quorum_debate"
+          - "ask_claude"
+          - "brain_read"
+          - "brain_doors"
+          - "brain_write"
+          - "brain_propose_door"        # always PENDING; this system has no installer
+          - "computer_status"
+          - "computer_screen_info"
+          - "computer_screenshot"       # base64 INSIDE the result; no file is ever served
+          - "computer_stop"             # a kill switch that waits for a prompt is not one
+          - "backup_status"
+          - "backup_verify"             # hashes both copies; deletes nothing
+          - "phone_status"
+          - "phone_ui_text"
+          - "phone_screenshot"
+          - "fleet_probe"
+          - "remote_build_status"
+          - "remote_build_selftest"
+      require_confirm:
+        tools:
+          # THE HANDS. Armed deliberately, from the PC, for a few minutes at a time.
+          - "computer_click"
+          - "computer_type"
+          - "computer_key"
+          - "computer_scroll"
+          - "phone_tap"
+          - "phone_type"
+          - "phone_key"
+          - "phone_scroll"
+          - "phone_open"
+          - "phone_back"
+          - "phone_home"
+          - "phone_hebrew_probe"
+          # Read-only by construction (verb allowlist + no shell metacharacters), but it is
+          # still someone looking around Iddo's phone from the internet. One line to loosen.
+          - "phone_shell"
+          # Compiles and runs code on the DGX fleet.
+          - "remote_build"
+      block:
+        tools: []
+
+# ---------------------------------------------------------------------------
+# רמות אישור
+# ---------------------------------------------------------------------------
+
+# פעולות שרצות מיד ללא אישור
+auto_allow:
+  commands:
+    - "claude*"
+    - "ls*"
+    - "dir*"
+    - "pwd"
+    - "cd*"
+    - "cat*"
+    - "type*"
+    - "head*"
+    - "tail*"
+    - "grep*"
+    - "find*"
+    - "which*"
+    - "where*"
+    - "git status"
+    - "git log*"
+    - "git diff*"
+    - "git branch*"
+    - "git remote*"
+    - "df -h"
+    - "free -h"
+    - "ps *"
+    - "systemctl status*"
+    - "docker ps*"
+    - "docker images*"
+    - "nvidia-smi*"
+    - "python* --version"
+    - "pip list*"
+    - "node --version"
+    - "npm list*"
+
+    # --- v2 Agent Fabric (docs/v2_spec.md §5) --------------------------------
+    # קריאה בלבד — בטוח להריץ אוטומטית
+    - "grep *"
+    - "glob *"
+    - "read_chunk *"
+    - "process_list"
+    - "process_list *"
+    - "watch_poll*"
+    - "watch_stop*"
+    # HTTP רק ל-loopback. LAN נופל לברירת המחדל (confirm).
+    - "http_local GET http://127.0.0.1*"
+    - "http_local GET http://localhost*"
+    - "http_local GET http://[[]::1[]]*"
+    - "http_local HEAD http://127.0.0.1*"
+    - "http_local HEAD http://localhost*"
+    - "http_local POST http://127.0.0.1*"
+    - "http_local POST http://localhost*"
+
+    # --- v3 Agent-Native (docs/v3_track_c.md) --------------------------------
+    # הזיכרון הוא ה-scratch store של ה-agent עצמו ב-~/.iddo-harness/memory.db,
+    # לא הקבצים שלך. הוא לא מחזיק כלום שלא נתת ל-agent מלכתחילה, והבעלים יכול
+    # לקרוא אותו ישירות ב-sqlite3 CLI בלי להריץ את ה-agent — לכן כתיבה ומחיקה
+    # אוטומטיות. הקריאות (memory_get / memory_list) לא עוברות בשער בכלל,
+    # ראה `_UNGATED_KINDS` ב-agent/executor_v3.py.
+    - "memory_set *"
+    - "memory_delete *"
+
+  paths:
+    read:
+      - "D:\\CLAUDE\\**"
+      - "D:\\shiri\\**"
+      - "C:\\Users\\%USERNAME%\\Documents\\**"
+      - "~/**"
+      - "/home/**"
+
+# פעולות שדורשות אישור push notification / SMS
+require_confirm:
+  commands:
+    - "pip install*"
+    - "npm install*"
+    - "apt install*"
+    - "docker run*"
+    - "docker rm*"
+    - "docker rmi*"
+    - "git push*"
+    - "git commit*"
+    - "git merge*"
+    - "git rebase*"
+    - "git reset --hard*"
+    - "systemctl start*"
+    - "systemctl stop*"
+    - "systemctl enable*"
+    - "systemctl disable*"
+
+    # --- v2 Agent Fabric (docs/v2_spec.md §5) --------------------------------
+    # patch_file זו כתיבה — תמיד אישור
+    - "patch *"
+    # process_kill יכול להפיל dev server או ריצת אימון — תמיד אישור
+    - "process_kill*"
+    # HTTP ל-LAN (מכונות אחרות ברשת) — אישור. חיצוני נחסם ב-executor עצמו.
+    - "http_local * http://192.168.*"
+    - "http_local * http://10.*"
+    - "http_local * http://172.1[6-9].*"
+    - "http_local * http://172.2[0-9].*"
+    - "http_local * http://172.3[01].*"
+
+    # --- v3 Agent-Native (docs/v3_track_c.md §6) -----------------------------
+    # תזמון זה הרצה עתידית בלי שאף אחד מסתכל — בדיוק הדבר שהבעלים צריך לאשר
+    # פעם אחת מראש. הביטול גם דורש אישור: להשתיק בשקט משהו שביקשת זה לא פחות
+    # מפתיע מלהוסיף אותו. `schedule_list` היא קריאה ולא עוברת בשער.
+    - "schedule *"
+    - "schedule_cancel *"
+
+  paths:
+    write:
+      - "D:\\CLAUDE\\**"
+      - "D:\\shiri\\**"
+      - "~/**"
+
+# פעולות אסורות בהחלט
+block:
+  commands:
+    # --- destroy the machine ------------------------------------------------
+    - 'rm -rf /'
+    - 'rm -rf /*'
+    - 'rm -rf ~'
+    - 'rm -rf ~/*'
+    - 'del /q c:\**'
+    - 'del /q /s c:\**'
+    - 'format*'
+    - 'mkfs*'
+    - 'dd if=* of=/dev/*'
+    - 'shutdown*'
+    - 'reboot*'
+    - 'reg delete*'
+    - 'regedit*'
+
+    # --- destroy the workspace (ALMIDO Phase 2, 2026-09-06) -----------------
+    # lean = MOVE, never delete. Nothing in this workspace is ever rm -rf'd.
+    - 'rm -rf d:\claude*'
+    - 'rm -fr d:\claude*'
+    - 'rm -r -f d:*'
+    - 'rmdir /s*d:\claude*'
+    - 'rd /s*d:\claude*'
+    - 'remove-item*-recurse*d:\claude*'
+    - 'git clean -*d*f*'
+
+    # --- credentials --------------------------------------------------------
+    # These used to be three globs: *token*, *secret*, *password*. They blocked
+    # `code serve-web --connection-token-file` and `git log --grep token` while
+    # a real disclosure only had to avoid the word. Targeted now: the commands
+    # that would actually DISCLOSE or PLANT a credential. Inline credentials
+    # are still caught by secrets_vault.mask_text + the *secret* rule below.
+    - 'echo *password*'
+    - 'echo *secret*'
+    - 'echo *api_key*'
+    - 'echo *apikey*'
+    - 'echo *bearer *'
+    - 'printenv*'
+    - 'set *_token=*'
+    - 'set *_key=*'
+    - 'export *_token=*'
+    - 'export *_key=*'
+    - 'cat *ws-token*'
+    - 'type *ws-token*'
+    - 'get-content *ws-token*'
+    - 'cat *audit.key*'
+    - 'type *audit.key*'
+    - 'get-content *audit.key*'
+    - 'cat *secrets.enc*'
+    - 'type *secrets.enc*'
+    - 'cat *id_rsa*'
+    - 'type *id_rsa*'
+    - 'cat *.env'
+    - 'type *.env'
+    - 'cat *credentials*'
+    - 'type *credentials*'
+    - 'cat *.pem'
+    - 'type *.pem'
+
+    # ========================================================================
+    # THE ERAN FENCE — גדר ערן.  ALMIDO Phase 2, 2026-09-06.
+    # D:\CLAUDE\CLAUDE.md: eran1 IS ERAN. eran3 is OFF LIMITS. The living
+    # services are never stopped or edited. Until today this fence existed only
+    # in dsh-plugins/almido-gate/policy.json — a copy for a box nobody may
+    # touch. These are the real rules now.
+    # ========================================================================
+
+    # eran1 = ERAN HIMSELF. Any shell that reaches him, by any address.
+    - 'ssh*eran1*'
+    - '*<lan-ip>*'
+    - '*<tailnet-ip>*'
+    - '*<fabric-ip>*'
+    - '*<fabric-ip>*'
+
+    # eran3 = OFF LIMITS, in any form.
+    - 'ssh*eran3*'
+    - '*eran3*'
+    - '*<fabric-ip>*'
+    - '*<fabric-ip>*'
+    - '*<tailnet-ip>*'
+
+    # The living services. eranb-* is the organism itself; eran-senses is his
+    # hearing and his throat; dmidi-life is DARWISH; keshev*stt is the mic that
+    # Iddo speaks through. Named anywhere in a command, the answer is no.
+    - '*eranb-*'
+    - '*eran-senses*'
+    - '*eran-throat*'
+    - '*dmidi-life*'
+    - '*dmidi-tap*'
+    - '*snnlab*'
+    - '*keshev*stt*'
+    - '*keshev6*'
+    - '*coder-train*'
+    - '*eran_life*'
+    - '*sense_organ*'
+    - '*darwish_life*'
+
+    # alma-mic is BOTH a live service on eran4 and an active PC project
+    # (D:\CLAUDE\alma-mic-android-v2). Blocking the bare name would fence off
+    # legitimate work, so only the service and the mutating verbs are blocked.
+    - '*alma-mic.service*'
+    - '*systemctl*alma-mic*'
+    - 'service alma-mic*'
+    - 'ssh* service alma-mic*'
+    - '*stop alma-mic*'
+    - '*restart alma-mic*'
+    - '*kill alma-mic*'
+    - '*pkill *alma-mic*'
+    - '*alma-stt.service*'
+    - '*systemctl*alma-stt*'
+
+    # keshev-next is the LIVE mic on this PC. Another swarm owns intake/.
+    - '*keshev-next*intake*'
+
+    # Anything that stops or masks a unit on a fleet box, whoever it belongs to.
+    - 'ssh*systemctl*stop*'
+    - 'ssh*systemctl*disable*'
+    - 'ssh*systemctl*mask*'
+    - 'ssh*systemctl*restart*'
+    - 'ssh*pkill*'
+    - 'ssh*killall*'
+    - 'ssh*reboot*'
+    - 'ssh*shutdown*'
+
+  paths:
+    absolute_no_touch:
+      - 'C:\Windows\**'
+      - 'C:\Program Files\**'
+      - '/etc/**'
+      - '/boot/**'
+      - '/System/**'
+      - '**/.ssh/id_*'
+      - '**/.aws/credentials'
+      - '**/.env'
+      - '**/.env.*'
+      # ALMIDO Phase 2: the gate's own secrets and history, and the live gate
+      # dir. Read them with your own eyes, never through the agent.
+      - '~/.iddo-harness/**'
+      - '**/iddo-harness/state/**'
+      - '**/ws-token'
+      - '**/audit.key'
+      - '**/audit.jsonl'
+      - '**/secrets.enc'
+      # The live mic, and the intake sidecar another swarm owns.
+      - 'D:\CLAUDE\keshev-next\**'
+
+# ---------------------------------------------------------------------------
+# הגדרות תזמון
+# ---------------------------------------------------------------------------
+polling:
+  interval_seconds: 5
+  max_concurrent_tasks: 3
+  task_timeout_seconds: 600
+
+# ---------------------------------------------------------------------------
+# אישורים ממתינים (confirm flow)
+# ---------------------------------------------------------------------------
+confirm:
+  timeout_minutes: 30
+
+# ---------------------------------------------------------------------------
+# איפה נשמרים תוצרים
+# ---------------------------------------------------------------------------
+paths:
+  audit_log: "~/.iddo-harness/audit.log"
+  task_queue: "~/.iddo-harness/queue/"
+  results:   "~/.iddo-harness/results/"
+
+# ---------------------------------------------------------------------------
+# v3 Track B — Security (docs/security_v3.md)
+# ---------------------------------------------------------------------------
+security:
+  # חתימת תוצאות (Ed25519). המפתחות נוצרים ע"י `python -m installer.gen_keys`.
+  # אם אין מפתח — התוצאות יוצאות בלי חתימה, עם warning אחד בלוג.
+  signing:
+    enabled: true
+    # private_key_path: ~/.iddo-harness/agent.key
+    # public_key_path:  ~/.iddo-harness/agent.pub
+
+  # כספת סודות מוצפנת. בתוך task packet: "{{secret:openai_key}}".
+  # הערך מוחלף רגע לפני ההרצה ואף פעם לא נכתב ללוג / ל-results.
+  secrets:
+    # store_path: ~/.iddo-harness/secrets.enc
+    # key_path:   ~/.iddo-harness/agent.key
+
+  # יומן ביקורת בשרשרת HMAC — כל שורה חותמת על קודמתה.
+  audit:
+    # path:     ~/.iddo-harness/audit.jsonl
+    # key_path: ~/.iddo-harness/audit.key
+    rotate_daily: true
+
+# ---------------------------------------------------------------------------
+# Sandbox — הגבלת מה שפקודה יכולה לגעת בו (לא *אם* היא תרוץ; זה תפקיד ה-policy)
+#
+#   none    — כמו היום, בלי עטיפה. ברירת המחדל, כדי לא לשנות התנהגות קיימת.
+#   light   — /tmp פרטי.
+#   strict  — בלי רשת, וקריאה-בלבד מחוץ ל-cwd של המשימה.
+#
+# Linux דורש firejail. Windows דורש pywin32. בלעדיהם — warning והרצה רגילה.
+# ---------------------------------------------------------------------------
+sandbox:
+  enabled: true
+  default: none
+  per_kind:
+    # shell_stream: light
+    # shell_session_open: light
+
+# ---------------------------------------------------------------------------
+# שרת health/audit מקומי (agent/health_server.py). localhost בלבד.
+# ---------------------------------------------------------------------------
+health:
+  enabled: false
+  host: 127.0.0.1
+  port: 8478
+
+# ---------------------------------------------------------------------------
+# זרימת אישורים (agent/approval.py)
+#   local        — קבצים ב-~/.iddo-harness/pending (v1, ברירת מחדל)
+#   notification — + התראה לדסקטופ (notify-send / toast / osascript)
+#   remote       — + שליחה דרך WS bridge של Track A, אם הוא פועל
+# ---------------------------------------------------------------------------
+approval:
+  mode: local
+  timeout_seconds: 300
+
+# ---------------------------------------------------------------------------
+# תעלת התקשורת
+# ---------------------------------------------------------------------------
+transport:
+  type: github
+  repo: iddo111/iddo-harness-bridge
+  task_dir: tasks/
+  result_dir: results/
+
+# ---------------------------------------------------------------------------
+# LLM backends — Eranim cluster (4x NVIDIA DGX Spark, two pairs) running
+# vLLM with an OpenAI-compatible /v1/chat/completions + /v1/models surface.
+#
+# Each role has a `primary` backend and an optional `secondary` fallback.
+# LlmRouter (agent/llm_router.py) health-checks every backend on
+# `health_check_interval` seconds via GET /v1/models, and routes to the
+# secondary automatically if the primary goes unhealthy.
+#
+#   Pair A (eran1+eran2): GLM-4.6 or Qwen3-Coder-480B via vLLM, port 8000.
+#   Pair B (eran3+eran4): reasoning model / fine-tune, also vLLM, port 8000.
+#
+# See docs/llm_integration.md for how to point these at vLLM/Ollama/etc.
+# ---------------------------------------------------------------------------
+llm_backends:
+  coder:
+    primary:
+      base_url: http://eran1.local:8000/v1
+      model: glm-4.6
+    secondary:
+      base_url: http://eran3.local:8000/v1
+      model: glm-4.6
+    health_check_interval: 60
+  reasoner:
+    primary:
+      base_url: http://eran3.local:8000/v1
+      model: deepseek-v3.1
+    health_check_interval: 60

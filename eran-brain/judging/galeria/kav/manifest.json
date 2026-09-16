@@ -1,0 +1,15 @@
+{
+  "model": "KAV",
+  "status_line_he": "קו נבנה מחדש על אינדקסי קודקודים: קישוריות עלתה מ-4% ל-46%. הדקדוק (CEILING, הבוחר האמיתי) הוכח — 3/3 גופים נכונים משוחזרים מרבע מהצורה. הלומד הפתוח (רידג' זוגי עם שערי מופע) מגיע ל-0.551 מול רצפת המראה 0.571 בשאלות חתומות (הפרש של שאלה אחת מתוך 49) — 0/3 גופים נכונים (2/3 אטומים אך שגויים, קישוריות 0.906). זהו השער הפתוח: הלומד, לא הדקדוק.",
+  "status_line_en": "KAV rebuilt on vertex indices: connectivity 4% -> 46%. The grammar (CEILING, the truth as chooser) is proven -- 3/3 right solids rebuilt from a quarter of each shape. The open learner (phase-gated pairwise ridge) reaches 0.551 vs the mirror floor 0.571 on sealed questions (one question apart of 49) -- 0/3 right solids (2/3 merely watertight but wrong, connectivity 0.906). The learner, not the grammar, is the open gate.",
+  "items": [
+    {
+      "file": "KAV-first-shape.png",
+      "kind": "image",
+      "label_he": "הצורה הראשונה של קו",
+      "note_he": "3 מבטים (חזית / צד / על) של KAV-first-shape.stl -- 12 משולשים, קובייה -- הצורה הראשונה שקו אמר כמשפט (טבלת קודקודים + SEP + פאות אינדקס), נרנדרה כאן מה-STL הגולמי עם matplotlib.",
+      "source": "eran-brain/holobrain/kav/KAV-first-shape.stl"
+    }
+  ],
+  "missing_he": "לא נמצאו על הדיסק קבצי STL/מש נוספים משמורים מבדיקות joiner.py / learn.py / ruler.py (למשל 'נלמד מול מראה' או 'שלושת הגופים הנכונים') -- אלה נמדדים ומודפסים כטקסט/JSON בזמן ריצה (ראו tests/test_joiner.py, joiner.py, ruler.py) ולא נשמרים כקבצי STL. לא הרצנו מחדש כדי לא לחרוג מתקציב הזמן."
+}

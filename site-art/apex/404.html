@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>404 · לא כאן · Not here — iddoperez.ai</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23101820'/%3E%3Ccircle cx='16' cy='16' r='6.5' fill='none' stroke='%230e93a8' stroke-width='2.2'/%3E%3Ccircle cx='16' cy='16' r='2.2' fill='%23b4622d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&family=Heebo:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f9fb; --card:#fff; --ink:#101820; --muted:#5a6b78;
+    --wafer1:#0e93a8; --wafer2:#6d4fe0; --copper:#b4622d; --edge:#dfe7ec; --link:#0a6f80;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:Heebo,"Segoe UI",Arial,sans-serif;line-height:1.6}
+  .wrap{max-width:760px;margin:0 auto;padding:56px 20px 80px}
+  .rule{height:3px;border-radius:2px;margin:18px 0 26px;
+    background:linear-gradient(270deg,#0e93a8 0%,#6d4fe0 52%,#b4622d 100%)}
+  h1{font-family:"Frank Ruhl Libre",Georgia,serif;font-weight:900;
+    font-size:clamp(30px,6vw,46px);line-height:1.15;margin:0 0 8px}
+  .en{direction:ltr;text-align:left;color:var(--muted);font-size:17px;margin:0 0 4px}
+  p{margin:14px 0;max-width:60ch}
+  figure{margin:32px 0}
+  figure img{width:100%;max-width:100%;height:auto;display:block;border-radius:12px;
+    border:1px solid var(--edge);background:#fff}
+  figcaption{color:var(--muted);font-size:13px;margin-top:8px}
+  .path{font-family:"IBM Plex Mono",monospace;font-weight:500;direction:ltr;
+    display:inline-block;background:#fff;border:1px solid var(--edge);
+    border-radius:7px;padding:3px 10px;font-size:14px;word-break:break-all}
+  .cta{display:inline-block;margin:6px 8px 6px 0;padding:12px 20px;border-radius:11px;
+    text-decoration:none;font-weight:600;background:var(--ink);color:#fff}
+  .cta.alt{background:#fff;color:var(--link);border:1px solid var(--edge)}
+  .doors{margin-top:34px;padding-top:20px;border-top:1px solid var(--edge)}
+  .doors ul{list-style:none;padding:0;margin:10px 0 0;
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px 18px}
+  .doors a{color:var(--link);text-decoration:none}
+  .doors a:hover{text-decoration:underline}
+  @media (max-width:560px){.wrap{padding:36px 16px 64px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>אין כאן כלום.</h1>
+  <p class="en">Nothing here.</p>
+  <div class="rule"></div>
+
+  <p>הכתובת <span class="path" id="p">—</span> לא קיימת באתר הזה.</p>
+
+  <p>עד היום הדף הזה לא היה קיים: כל כתובת שגויה החזירה את דף הבית עם קוד 200,
+    כך שקישור שבור נראה תקין לכל בודק־קישורים ולכל סקריפט. עכשיו הוא עונה
+    <span class="path">404</span> ואומר את האמת.</p>
+  <p class="en">Until today every wrong URL here returned the homepage with HTTP&nbsp;200,
+    so a dead link looked alive to every checker. This page now answers 404 and says so.</p>
+
+  <figure>
+    <img src="/page-404.png" alt="כרטיסייה לבנה ריקה על נייר, ולידה מתאר אבק במקום שבו היה פעם משהו.">
+    <figcaption>מתאר האבק במקום שבו היה פעם משהו.</figcaption>
+  </figure>
+
+  <p>
+    <a class="cta" href="/">→ לדף הבית</a>
+    <a class="cta alt" href="/#downloads">⬇ הורדות · Downloads</a>
+  </p>
+
+  <div class="doors">
+    <p style="margin:0;color:var(--muted);font-size:14px">או ישר לאחד העולמות:</p>
+    <ul>
+      <li><a href="https://eran.iddoperez.ai/">ערן · ERAN</a></li>
+      <li><a href="https://alma.iddoperez.ai/">עלמה ז״ל</a></li>
+      <li><a href="https://lab.iddoperez.ai/">ALMA LAB</a></li>
+      <li><a href="https://quorum.iddoperez.ai/">קוורום · QUORUM</a></li>
+      <li><a href="https://arena.iddoperez.ai/">זירה · Arena</a></li>
+      <li><a href="https://erancloud.iddoperez.ai/">ער״ן־קלאוד</a></li>
+      <li><a href="https://helios.iddoperez.ai/">הליוס · HELIOS</a></li>
+      <li><a href="https://pong.iddoperez.ai/">פונג · pong</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  // Show the visitor the path they actually asked for, escaped as text.
+  document.getElementById("p").textContent = location.pathname + location.search;
+</script>
+</body>
+</html>

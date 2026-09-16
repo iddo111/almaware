@@ -1,0 +1,12 @@
+[
+  {
+    "id": "12_honey",
+    "frames": 65,
+    "seconds": 101.3,
+    "seed": 210422,
+    "width": 1536,
+    "height": 864,
+    "length": 65,
+    "route": "flux-plate + composited aleph + LTXVImgToVideo"
+  }
+]

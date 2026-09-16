@@ -1,0 +1,57 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "za",
+ "letter": "zayin",
+ "hebrew": "ז",
+ "gate": "hebrew-judge facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+ "canon_conf": 0.561,
+ "syl_conf": 0.561,
+ "judge_top3": [
+  [
+   "za",
+   0.5610018821939414
+  ],
+  [
+   "sa",
+   0.16092252358663733
+  ],
+  [
+   "tza",
+   0.14823421412345622
+  ]
+ ],
+ "judge_phones": "z",
+ "old_ruler_pass": false,
+ "old_ruler_fails": [
+  "FAIL >2k frac 0.01 >= 0.15",
+  "FAIL centroid 474 ~3 kHz"
+ ],
+ "spec": {
+  "knots": "AH",
+  "constr": "narrow",
+  "nasal": 0,
+  "voice": "part",
+  "release": "plain",
+  "burst": 0,
+  "pre": 0,
+  "c_pos": 0.9354047113889339,
+  "c_area": 0.07500000000000001,
+  "velum": 0.0,
+  "ten": 0.47500000000000003,
+  "voi": 0.55,
+  "d_pre": 0.0,
+  "d_cons": 0.08188892218670678,
+  "d_trans": 0.015,
+  "d_gap": 0.04,
+  "gap_pos": 0.65,
+  "gap_area": 2.0,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.0,
+  "d_vowel": 0.31053124022651934,
+  "glide": 0.3777814061310998,
+  "gain": 6.0,
+  "f0": 97.40951954878425,
+  "trans_voi": null
+ }
+}

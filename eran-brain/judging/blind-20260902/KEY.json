@@ -1,0 +1,11 @@
+{
+  "built": "2026-09-02 05:30",
+  "why": "Iddo asked to judge syllables. Presented BLIND and shuffled: if he can see which one the machine prefers, his ruling stops being independent, and independence is the whole reason his ear is worth more than the metric. MURPHY's standing complaint about this search is exactly `circularity` - the judge was the model itself.",
+  "scale": "1 = good, 2 = close, 3 = no  (his own station scale, unchanged)",
+  "clips": {
+    "ERAN-A": {"file": "ba-cv-10-2026-08-30T074325Z.wav", "unit": "ba", "arm": "ba-cv", "wdist": 4.517, "gate_pass": true, "rank_of_3": "middle"},
+    "ERAN-B": {"file": "ma-nasal-103-2026-09-01T165313Z.wav", "unit": "ma", "arm": "ma-nasal", "wdist": 5.065, "gate_pass": true, "rank_of_3": "worst by the metric - and the newest"},
+    "ERAN-C": {"file": "ba-cv-14-2026-08-29T195956Z.wav", "unit": "ba", "arm": "ba-cv", "wdist": 3.910, "gate_pass": false, "rank_of_3": "best by the metric - and it sits AT the human mean 3.90"}
+  },
+  "the_question_this_answers": "Does the metric order agree with his ear at all? On the 113 clips he judged before, wdist scored AUC 0.4524 against him - a coin flip. Three clips cannot settle that, but disagreement on a spread this wide would be a real signal."
+}

@@ -1,0 +1,475 @@
+{
+  "heldout_items": 132,
+  "comparisons": [
+    {
+      "comparison": "E  big all-256 (40.6 h)  vs  BEFORE 253 s / 64 units",
+      "metric": "cosine",
+      "per_ant": [
+        {
+          "ant": "ant-a",
+          "left_accuracy": 0.3712121212121212,
+          "right_accuracy": 0.2727272727272727,
+          "a_only": 23,
+          "b_only": 10,
+          "p_value": 0.03508203336969018
+        },
+        {
+          "ant": "ant-b",
+          "left_accuracy": 0.3181818181818182,
+          "right_accuracy": 0.26515151515151514,
+          "a_only": 21,
+          "b_only": 14,
+          "p_value": 0.31050465907901525
+        },
+        {
+          "ant": "ant-c",
+          "left_accuracy": 0.29545454545454547,
+          "right_accuracy": 0.1893939393939394,
+          "a_only": 23,
+          "b_only": 9,
+          "p_value": 0.020061607006937265
+        },
+        {
+          "ant": "ant-d",
+          "left_accuracy": 0.2878787878787879,
+          "right_accuracy": 0.2196969696969697,
+          "a_only": 26,
+          "b_only": 17,
+          "p_value": 0.2220528201560228
+        }
+      ],
+      "pooled_left_accuracy": 0.3181818181818182,
+      "pooled_right_accuracy": 0.23674242424242425,
+      "pooled_delta_points": 8.143939393939393,
+      "pooled_mcnemar": {
+        "a_only": 93,
+        "b_only": 50,
+        "p_value": 0.0004059744831388421
+      },
+      "ants_where_left_wins": 4
+    },
+    {
+      "comparison": "F  big all-256 (40.6 h)  vs  synthetic syllable curriculum 256",
+      "metric": "cosine",
+      "per_ant": [
+        {
+          "ant": "ant-a",
+          "left_accuracy": 0.3712121212121212,
+          "right_accuracy": 0.42424242424242425,
+          "a_only": 13,
+          "b_only": 20,
+          "p_value": 0.296206368599087
+        },
+        {
+          "ant": "ant-b",
+          "left_accuracy": 0.3181818181818182,
+          "right_accuracy": 0.4015151515151515,
+          "a_only": 12,
+          "b_only": 23,
+          "p_value": 0.0895310789346695
+        },
+        {
+          "ant": "ant-c",
+          "left_accuracy": 0.29545454545454547,
+          "right_accuracy": 0.4090909090909091,
+          "a_only": 8,
+          "b_only": 23,
+          "p_value": 0.010673840530216694
+        },
+        {
+          "ant": "ant-d",
+          "left_accuracy": 0.2878787878787879,
+          "right_accuracy": 0.4393939393939394,
+          "a_only": 9,
+          "b_only": 29,
+          "p_value": 0.0016580525261815637
+        }
+      ],
+      "pooled_left_accuracy": 0.3181818181818182,
+      "pooled_right_accuracy": 0.4185606060606061,
+      "pooled_delta_points": -10.03787878787879,
+      "pooled_mcnemar": {
+        "a_only": 42,
+        "b_only": 95,
+        "p_value": 6.919784329991297e-06
+      },
+      "ants_where_left_wins": 0
+    },
+    {
+      "comparison": "G  big all-256 k-means  vs  256 random real frames of the same 40.6 h",
+      "metric": "cosine",
+      "per_ant": [
+        {
+          "ant": "ant-a",
+          "left_accuracy": 0.3712121212121212,
+          "right_accuracy": 0.24242424242424243,
+          "a_only": 27,
+          "b_only": 10,
+          "p_value": 0.007632078602910042
+        },
+        {
+          "ant": "ant-b",
+          "left_accuracy": 0.3181818181818182,
+          "right_accuracy": 0.32575757575757575,
+          "a_only": 19,
+          "b_only": 20,
+          "p_value": 1.0
+        },
+        {
+          "ant": "ant-c",
+          "left_accuracy": 0.29545454545454547,
+          "right_accuracy": 0.2878787878787879,
+          "a_only": 17,
+          "b_only": 16,
+          "p_value": 1.0
+        },
+        {
+          "ant": "ant-d",
+          "left_accuracy": 0.2878787878787879,
+          "right_accuracy": 0.36363636363636365,
+          "a_only": 12,
+          "b_only": 22,
+          "p_value": 0.12144948495551944
+        }
+      ],
+      "pooled_left_accuracy": 0.3181818181818182,
+      "pooled_right_accuracy": 0.30492424242424243,
+      "pooled_delta_points": 1.3257575757575746,
+      "pooled_mcnemar": {
+        "a_only": 75,
+        "b_only": 68,
+        "p_value": 0.6160027856918142
+      },
+      "ants_where_left_wins": 2
+    },
+    {
+      "comparison": "H  matched 13.8 h: 15 speakers  vs  1 speaker",
+      "metric": "cosine",
+      "per_ant": [
+        {
+          "ant": "ant-a",
+          "left_accuracy": 0.3409090909090909,
+          "right_accuracy": 0.32575757575757575,
+          "a_only": 19,
+          "b_only": 17,
+          "p_value": 0.8679394004284404
+        },
+        {
+          "ant": "ant-b",
+          "left_accuracy": 0.36363636363636365,
+          "right_accuracy": 0.3106060606060606,
+          "a_only": 19,
+          "b_only": 12,
+          "p_value": 0.28104151505976915
+        },
+        {
+          "ant": "ant-c",
+          "left_accuracy": 0.2727272727272727,
+          "right_accuracy": 0.3560606060606061,
+          "a_only": 13,
+          "b_only": 24,
+          "p_value": 0.09887174959294498
+        },
+        {
+          "ant": "ant-d",
+          "left_accuracy": 0.32575757575757575,
+          "right_accuracy": 0.25757575757575757,
+          "a_only": 19,
+          "b_only": 10,
+          "p_value": 0.13604594767093658
+        }
+      ],
+      "pooled_left_accuracy": 0.32575757575757575,
+      "pooled_right_accuracy": 0.3125,
+      "pooled_delta_points": 1.3257575757575746,
+      "pooled_mcnemar": {
+        "a_only": 70,
+        "b_only": 63,
+        "p_value": 0.6030463891288803
+      },
+      "ants_where_left_wins": 3
+    },
+    {
+      "comparison": "I  40.6 h at 256 units  vs  253 s at 256 units",
+      "metric": "cosine",
+      "per_ant": [
+        {
+          "ant": "ant-a",
+          "left_accuracy": 0.3712121212121212,
+          "right_accuracy": 0.25757575757575757,
+          "a_only": 27,
+          "b_only": 12,
+          "p_value": 0.023702702470473014
+        },
+        {
+          "ant": "ant-b",
+          "left_accuracy": 0.3181818181818182,
+          "right_accuracy": 0.23484848484848486,
+          "a_only": 24,
+          "b_only": 13,
+          "p_value": 0.09887174959294498
+        },
+        {
+          "ant": "ant-c",
+          "left_accuracy": 0.29545454545454547,
+          "right_accuracy": 0.30303030303030304,
+          "a_only": 17,
+          "b_only": 18,
+          "p_value": 1.0
+        },
+        {
+          "ant": "ant-d",
+          "left_accuracy": 0.2878787878787879,
+          "right_accuracy": 0.23484848484848486,
+          "a_only": 23,
+          "b_only": 16,
+          "p_value": 0.3367836351899314
+        }
+      ],
+      "pooled_left_accuracy": 0.3181818181818182,
+      "pooled_right_accuracy": 0.25757575757575757,
+      "pooled_delta_points": 6.0606060606060606,
+      "pooled_mcnemar": {
+        "a_only": 91,
+        "b_only": 59,
+        "p_value": 0.011121593847224862
+      },
+      "ants_where_left_wins": 3
+    },
+    {
+      "comparison": "E  big all-256 (40.6 h)  vs  BEFORE 253 s / 64 units",
+      "metric": "edit",
+      "per_ant": [
+        {
+          "ant": "ant-a",
+          "left_accuracy": 0.3560606060606061,
+          "right_accuracy": 0.16666666666666666,
+          "a_only": 37,
+          "b_only": 12,
+          "p_value": 0.0004697573180081349
+        },
+        {
+          "ant": "ant-b",
+          "left_accuracy": 0.3712121212121212,
+          "right_accuracy": 0.1590909090909091,
+          "a_only": 39,
+          "b_only": 11,
+          "p_value": 9.021490107130603e-05
+        },
+        {
+          "ant": "ant-c",
+          "left_accuracy": 0.3333333333333333,
+          "right_accuracy": 0.15151515151515152,
+          "a_only": 30,
+          "b_only": 6,
+          "p_value": 6.960169412195683e-05
+        },
+        {
+          "ant": "ant-d",
+          "left_accuracy": 0.26515151515151514,
+          "right_accuracy": 0.1590909090909091,
+          "a_only": 28,
+          "b_only": 14,
+          "p_value": 0.04355852192384191
+        }
+      ],
+      "pooled_left_accuracy": 0.3314393939393939,
+      "pooled_right_accuracy": 0.1590909090909091,
+      "pooled_delta_points": 17.234848484848484,
+      "pooled_mcnemar": {
+        "a_only": 134,
+        "b_only": 43,
+        "p_value": 4.4289464995098345e-12
+      },
+      "ants_where_left_wins": 4
+    },
+    {
+      "comparison": "F  big all-256 (40.6 h)  vs  synthetic syllable curriculum 256",
+      "metric": "edit",
+      "per_ant": [
+        {
+          "ant": "ant-a",
+          "left_accuracy": 0.3560606060606061,
+          "right_accuracy": 0.32575757575757575,
+          "a_only": 20,
+          "b_only": 16,
+          "p_value": 0.617719317029696
+        },
+        {
+          "ant": "ant-b",
+          "left_accuracy": 0.3712121212121212,
+          "right_accuracy": 0.3712121212121212,
+          "a_only": 22,
+          "b_only": 22,
+          "p_value": 1.0
+        },
+        {
+          "ant": "ant-c",
+          "left_accuracy": 0.3333333333333333,
+          "right_accuracy": 0.3787878787878788,
+          "a_only": 17,
+          "b_only": 23,
+          "p_value": 0.42959050784338615
+        },
+        {
+          "ant": "ant-d",
+          "left_accuracy": 0.26515151515151514,
+          "right_accuracy": 0.4166666666666667,
+          "a_only": 9,
+          "b_only": 29,
+          "p_value": 0.0016580525261815637
+        }
+      ],
+      "pooled_left_accuracy": 0.3314393939393939,
+      "pooled_right_accuracy": 0.3731060606060606,
+      "pooled_delta_points": -4.166666666666669,
+      "pooled_mcnemar": {
+        "a_only": 68,
+        "b_only": 90,
+        "p_value": 0.09447453522193144
+      },
+      "ants_where_left_wins": 1
+    },
+    {
+      "comparison": "G  big all-256 k-means  vs  256 random real frames of the same 40.6 h",
+      "metric": "edit",
+      "per_ant": [
+        {
+          "ant": "ant-a",
+          "left_accuracy": 0.3560606060606061,
+          "right_accuracy": 0.3333333333333333,
+          "a_only": 23,
+          "b_only": 20,
+          "p_value": 0.7607916425613439
+        },
+        {
+          "ant": "ant-b",
+          "left_accuracy": 0.3712121212121212,
+          "right_accuracy": 0.3484848484848485,
+          "a_only": 20,
+          "b_only": 17,
+          "p_value": 0.7428293587290682
+        },
+        {
+          "ant": "ant-c",
+          "left_accuracy": 0.3333333333333333,
+          "right_accuracy": 0.30303030303030304,
+          "a_only": 23,
+          "b_only": 19,
+          "p_value": 0.6439689563703723
+        },
+        {
+          "ant": "ant-d",
+          "left_accuracy": 0.26515151515151514,
+          "right_accuracy": 0.3484848484848485,
+          "a_only": 9,
+          "b_only": 20,
+          "p_value": 0.06142834573984146
+        }
+      ],
+      "pooled_left_accuracy": 0.3314393939393939,
+      "pooled_right_accuracy": 0.3333333333333333,
+      "pooled_delta_points": -0.18939393939393923,
+      "pooled_mcnemar": {
+        "a_only": 75,
+        "b_only": 76,
+        "p_value": 1.0
+      },
+      "ants_where_left_wins": 3
+    },
+    {
+      "comparison": "H  matched 13.8 h: 15 speakers  vs  1 speaker",
+      "metric": "edit",
+      "per_ant": [
+        {
+          "ant": "ant-a",
+          "left_accuracy": 0.38636363636363635,
+          "right_accuracy": 0.3333333333333333,
+          "a_only": 24,
+          "b_only": 17,
+          "p_value": 0.34888887944907765
+        },
+        {
+          "ant": "ant-b",
+          "left_accuracy": 0.3106060606060606,
+          "right_accuracy": 0.2727272727272727,
+          "a_only": 19,
+          "b_only": 14,
+          "p_value": 0.48685024166479707
+        },
+        {
+          "ant": "ant-c",
+          "left_accuracy": 0.3712121212121212,
+          "right_accuracy": 0.3409090909090909,
+          "a_only": 23,
+          "b_only": 19,
+          "p_value": 0.6439689563703723
+        },
+        {
+          "ant": "ant-d",
+          "left_accuracy": 0.3409090909090909,
+          "right_accuracy": 0.2727272727272727,
+          "a_only": 23,
+          "b_only": 14,
+          "p_value": 0.18774155899882317
+        }
+      ],
+      "pooled_left_accuracy": 0.3522727272727273,
+      "pooled_right_accuracy": 0.30492424242424243,
+      "pooled_delta_points": 4.734848484848486,
+      "pooled_mcnemar": {
+        "a_only": 89,
+        "b_only": 64,
+        "p_value": 0.05198885282686191
+      },
+      "ants_where_left_wins": 4
+    },
+    {
+      "comparison": "I  40.6 h at 256 units  vs  253 s at 256 units",
+      "metric": "edit",
+      "per_ant": [
+        {
+          "ant": "ant-a",
+          "left_accuracy": 0.3560606060606061,
+          "right_accuracy": 0.25,
+          "a_only": 27,
+          "b_only": 13,
+          "p_value": 0.03847730828420026
+        },
+        {
+          "ant": "ant-b",
+          "left_accuracy": 0.3712121212121212,
+          "right_accuracy": 0.19696969696969696,
+          "a_only": 33,
+          "b_only": 10,
+          "p_value": 0.0006061066312668117
+        },
+        {
+          "ant": "ant-c",
+          "left_accuracy": 0.3333333333333333,
+          "right_accuracy": 0.2803030303030303,
+          "a_only": 20,
+          "b_only": 13,
+          "p_value": 0.296206368599087
+        },
+        {
+          "ant": "ant-d",
+          "left_accuracy": 0.26515151515151514,
+          "right_accuracy": 0.19696969696969696,
+          "a_only": 27,
+          "b_only": 18,
+          "p_value": 0.23269319190831084
+        }
+      ],
+      "pooled_left_accuracy": 0.3314393939393939,
+      "pooled_right_accuracy": 0.23106060606060605,
+      "pooled_delta_points": 10.037878787878787,
+      "pooled_mcnemar": {
+        "a_only": 107,
+        "b_only": 54,
+        "p_value": 3.580411441223396e-05
+      },
+      "ants_where_left_wins": 4
+    }
+  ]
+}

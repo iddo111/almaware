@@ -1,0 +1,192 @@
+{
+ "built": "2026-09-01T12:44:39",
+ "by": "claude-cli-JUDGE2-groundB",
+ "human_material": {
+  "food/train": {
+   "path": "D:\\CLAUDE\\eran-brain\\food\\train",
+   "n": 396,
+   "structure": "22 units x 6 takes (t00..t05) x 3",
+   "sr": 16000,
+   "snr_take_vs_floor_db": 24.4,
+   "flatness_in_take": 0.0038,
+   "floor_dbfs": -51.2,
+   "status": "CLEANEST on disk",
+   "note": "the 4 sitting anchors came from here"
+  },
+  "booth/staged/t06": {
+   "path": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t06",
+   "n": 657,
+   "sr": 16000,
+   "snr_take_vs_floor_db": 17.8,
+   "flatness_in_take": 0.0176,
+   "floor_dbfs": -45.3,
+   "units": {
+    "ma": 100,
+    "ima": 100,
+    "ih": 100,
+    "ba": 100,
+    "ah": 100,
+    "abba": 100,
+    "other_19_units": 3
+   },
+   "status": "USABLE",
+   "note": "Iddo 2026-08-30: 'my recordings are full of noise' - measured 4.6x noisier inside the take than food/train, so his complaint checks out"
+  },
+  "booth/staged/t07": {
+   "path": "D:\\CLAUDE\\eran-brain\\booth\\staged\\t07",
+   "n": 128,
+   "trash_n": 4,
+   "sr": 16000,
+   "snr_take_vs_floor_db": 16.5,
+   "flatness_in_take": 0.0055,
+   "floor_dbfs": -45.3,
+   "trash_honoured": true,
+   "trash_files": [
+    "ba_t07_0.wav",
+    "ka_t07_0.wav",
+    "ka_t07_1.wav",
+    "ka_t07_2.wav"
+   ],
+   "status": "USABLE"
+  },
+  "booth/t08-raw": {
+   "path": "D:\\CLAUDE\\eran-brain\\booth\\t08-raw",
+   "n": 117,
+   "sr": 16000,
+   "snr_take_vs_floor_db": 7.1,
+   "floor_dbfs": -30.1,
+   "total_secs": 309.1,
+   "keep_rate_for_human_class": 0.0,
+   "voice_present_n": 112,
+   "status": "QUARANTINE",
+   "why": "SNR 7.1 dB (worst on disk); fixed-length chunks (23x 5.06s, 23x 1.09s) not syllable takes; f0 unverifiable (pyin+yin return degenerate 282.1 Hz, only 9/112 under 180 Hz vs Iddo's measured ~90-113 Hz); captured 08:20-08:34 inside the KESHEV repeat-loop malfunction window reported 08:36",
+   "provenance": "D:\\CLAUDE\\keshev-next\\segments (18,436 wav)"
+  },
+  "eran4 ~/heb-corpus (FLEURS he_il)": {
+   "host": "eran4",
+   "path": "~/heb-corpus",
+   "n": 3242,
+   "speaker_ids": 1502,
+   "hours": 9.47,
+   "sr": 16000,
+   "size": "1.1G",
+   "licence": "CC-BY-4.0",
+   "attribution": "FLEURS (Conneau et al. 2022), Google - CC BY 4.0",
+   "reachable": true,
+   "status": "VERIFIED reachable, index.json + SOURCE.json present"
+  }
+ },
+ "eran_negatives": {
+  "judging/queue": {
+   "path": "D:\\CLAUDE\\eran-brain\\judging\\queue",
+   "wav": 1937,
+   "json": 1937,
+   "by_unit": {
+    "ba": 1626,
+    "ah": 151,
+    "ma": 119,
+    "unparsed_names": 41
+   },
+   "by_arm": {
+    "ba-cv": 876,
+    "ba-free": 750,
+    "ah-free": 151,
+    "ma-nasal": 80,
+    "ma-free": 39
+   },
+   "by_host": {
+    "eran3": 702,
+    "eran2": 624,
+    "eran4": 570
+   },
+   "days": {
+    "20260826": 204,
+    "20260827": 604,
+    "20260828": 525,
+    "20260829": 506,
+    "20260830": 57
+   },
+   "wdist_in_filename": {
+    "n": 1896,
+    "min": 3.725,
+    "median": 4.701,
+    "max": 12.58
+   },
+   "snr_take_vs_floor_db": 18.8,
+   "floor_dbfs": -36.1,
+   "labelled_by_iddo": 112,
+   "unlabelled_pool": 1825
+  },
+  "listen/wav": {
+   "path": "D:\\CLAUDE\\eran-brain\\listen\\wav",
+   "files": 38,
+   "ERAN_wav": 12,
+   "NEZER_wav": 3,
+   "NOW_wav": 3,
+   "TARGET_HUMAN_wav": 4,
+   "note": "TARGET-HUMAN-t06-ba-* are HUMAN, not negatives"
+  },
+  "eran2 ~/syllable-sweep/run/*/best.wav": {
+   "host": "eran2",
+   "runs": 12,
+   "best_wav": 12,
+   "verified": true
+  }
+ },
+ "iddo_labels": {
+  "file": "D:\\CLAUDE\\eran-brain\\judge2\\iddo-labels.jsonl",
+  "total": 137,
+  "station": 113,
+  "sitting": 24,
+  "prose_rulings_excluded": 4,
+  "station_resolve_on_disk": 112,
+  "scales": {
+   "station": "1=good 2=close 3=no (LOWER better)",
+   "sitting": "1=noise .. 5=human (HIGHER better)",
+   "normalised": "iddo_human in [0,1], 1 = closest to a human mouth"
+  },
+  "range": {
+   "0.0": 54,
+   "0.5": 36,
+   "1.0": 33,
+   "0.75": 4,
+   "0.25": 10
+  },
+  "station_per_unit": {
+   "ma": {
+    "3": 26,
+    "1": 12,
+    "2": 13
+   },
+   "ba": {
+    "2": 14,
+    "1": 2,
+    "3": 16
+   },
+   "ah": {
+    "3": 6,
+    "1": 19
+   },
+   "ih": {
+    "3": 4,
+    "2": 1
+   }
+  },
+  "wdist_vs_ear": {
+   "spearman_rho": -0.0055,
+   "p": 0.954,
+   "n": 113,
+   "auc_good_vs_no": 0.483,
+   "reading": "the wdist ruler and Iddo's ear are statistically INDEPENDENT"
+  },
+  "sitting_verdict": {
+   "auc_human_vs_eran": 0.588,
+   "permutation_p": 0.306,
+   "anchor_mean": 2.75,
+   "eran_mean": 2.55,
+   "separation": 0.2,
+   "fives_awarded": 0,
+   "status": "VOID"
+  }
+ }
+}

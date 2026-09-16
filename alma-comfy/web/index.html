@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ALMA Studio — DGX3/DGX4 Workprint</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <p class="kicker">ALMA / LOCAL MOTION PICTURE UNIT</p>
+      <h1>Make the shot.<br><span>Keep the negative.</span></h1>
+    </div>
+    <div class="master-spec" aria-label="Master delivery specification">
+      <span>MASTER</span><strong>3840 × 2160</strong><span>10-bit · BT.2020 · PQ/HLG · 48 kHz</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="exposure" aria-labelledby="farm-title">
+      <div class="section-head">
+        <div><p class="kicker">LIVE EXPOSURE STRIP</p><h2 id="farm-title">Two production workers, one picture.</h2></div>
+        <button id="refresh" type="button">Refresh evidence</button>
+      </div>
+      <div id="node-strip" class="node-strip" aria-live="polite"></div>
+      <p id="checked" class="utility">No live check yet.</p>
+    </section>
+
+    <section class="workbench">
+      <form id="job-form" class="job-card">
+        <div class="section-head compact"><div><p class="kicker">SHOT CONTRACT</p><h2>Build a reproducible job</h2></div><span class="stamp">PLANNED</span></div>
+        <div class="field-grid">
+          <label>Project ID<input name="project_id" value="alma-first-feature" required pattern="[a-z0-9-]+"></label>
+          <label>Shot ID<input name="shot_id" value="sc01-sh010" required pattern="[a-z0-9-]+"></label>
+          <label>Version<input name="version" type="number" min="1" value="1"></label>
+          <label>Worker<select name="worker_class"><option value="image-fast">DGX3 · keyframe / FLUX.2</option><option value="video-fast-fallback">DGX3 · motion / Wan 2.2</option><option value="music">DGX4 · score / ACE-Step</option><option value="tts-and-voice">DGX4 · Hebrew voice / Blue ONNX</option><option value="finishing">DGX4 · finishing / FFmpeg</option></select></label>
+          <label>Aspect<select name="aspect"><option value="2.39:1">2.39:1 scope</option><option value="1.85:1">1.85:1</option><option value="16:9">16:9</option><option value="9:16">9:16 vertical</option></select></label>
+          <label>Delivery FPS<input name="fps" type="number" min="12" max="120" value="24"></label>
+          <label>Duration (seconds)<input name="duration_s" type="number" min="1" max="60" value="5"></label>
+          <label>Seed<input name="seed" type="number" min="0" value="41001"></label>
+        </div>
+        <label>Director's intent<textarea name="intent" rows="4" required>A quiet desert observatory at blue hour. One human silhouette crosses the practical light; restrained camera, tactile dust, no spectacle.</textarea></label>
+        <label>Continuity rules<textarea name="continuity" rows="3">Preserve approved face, coat, observatory geometry, 40 mm lens language, muted cyan shadows, sodium practicals.</textarea></label>
+        <div class="actions"><button type="submit">Build job JSON</button><button id="copy" type="button" class="quiet">Copy JSON</button></div>
+      </form>
+
+      <aside class="project-card">
+        <p class="kicker">PROJECT BIBLE / REQUIRED</p>
+        <h2>Continuity before novelty.</h2>
+        <ul>
+          <li>Character and environment sheets</li>
+          <li>Palette and camera language</li>
+          <li>Voice, face, music rights receipts</li>
+          <li>Approved seeds and control references</li>
+          <li>Model revision, license, workflow hash</li>
+        </ul>
+        <div class="truth-grid">
+          <span>VERIFIED</span><span>Artifact opens and passes checks</span>
+          <span>ACTIVE</span><span>Process is doing measured work</span>
+          <span>BLOCKED</span><span>Named gate prevents acceptance</span>
+          <span>PLANNED</span><span>No runtime claim yet</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="output-card">
+      <div class="section-head compact"><div><p class="kicker">MACHINE-READABLE WORK ORDER</p><h2>Shot job</h2></div><span id="job-state" class="stamp">DRAFT</span></div>
+      <pre id="job-output" tabindex="0">Build a job to see its immutable production contract.</pre>
+    </section>
+
+    <section class="director-card" aria-labelledby="director-title">
+      <div class="section-head compact">
+        <div><p class="kicker">ONE BRAIN / CANONICAL ROUTE</p><h2 id="director-title">Ask the Studio Director</h2></div>
+        <span class="stamp">DGX1 + DGX2 · PP2</span>
+      </div>
+      <p class="director-note">Uses the full saved Studio system prompt through port 8095. It plans work; it does not claim a render was executed.</p>
+      <textarea id="director-prompt" rows="4">Turn the current shot contract into a precise production plan. Name the worker, model, continuity controls, acceptance tests, and blockers.</textarea>
+      <div class="actions"><button id="director-run" type="button">Ask Nemotron</button><span id="director-status" class="utility">Ready to plan.</span></div>
+      <pre id="director-output" tabindex="0">No Studio Director response yet.</pre>
+    </section>
+
+    <section class="pipeline" aria-label="2D-first production pipeline">
+      <p class="kicker">2D-FIRST PIPELINE</p>
+      <ol>
+        <li><strong>Bible</strong><span>rights + continuity</span></li>
+        <li><strong>Boards</strong><span>composition + rhythm</span></li>
+        <li><strong>Keyframes</strong><span>identity + light</span></li>
+        <li><strong>Motion</strong><span>retakes + sync</span></li>
+        <li><strong>Sound</strong><span>voice + score + Foley</span></li>
+        <li><strong>Master</strong><span>EXR → ACES → HDR + SDR</span></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer><span>ALMA Studio / local-only console</span><span>Health is evidence, not completion.</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>

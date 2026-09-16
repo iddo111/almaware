@@ -1,0 +1,124 @@
+{
+ "speaker": "ERAN",
+ "syl": "ha",
+ "how": "leave-one-syllable-out prediction of holobrain/moreh (fit on the other 23 syllables' lessons)",
+ "spec": {
+  "knots": "AH4",
+  "constr": "narrow",
+  "nasal": 0,
+  "voice": "off",
+  "release": "none",
+  "burst": 0,
+  "pre": 1,
+  "c_pos": 0.7027097880838635,
+  "c_area": 0.25,
+  "velum": 0.6499808491316447,
+  "ten": 0.5479714019474888,
+  "voi": 0.8658379193398034,
+  "d_pre": 0.21309751289613757,
+  "d_cons": 0.07999881131220653,
+  "d_trans": 0.0,
+  "d_gap": 0.05588848916520959,
+  "gap_pos": 0.6425089795467075,
+  "gap_area": 0.7172265264836092,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6000000000093125,
+  "d_bridge": 0.00950516454978791,
+  "d_vowel": 0.3078725797457613,
+  "glide": 0.12691042501654132,
+  "gain": 7.142107474170004,
+  "f0": 104.7199885527657,
+  "trans_voi": null
+ },
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -0.9,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.7027,
+    0.25,
+    0.0,
+    0.548,
+    0.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.2131,
+   0.08,
+   0.3079
+  ],
+  "f0_knots": [
+   104.7199885527657,
+   104.7199885527657,
+   97.3895893540721
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.12691042501654132,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "verifier_ok": false,
+ "fails": [
+  "FAIL noise 50-90 ms, HNR < 0, centroid 3700-5100, level -8..-13 dB, no burst, <500 Hz frac < 0.3, then vowel 580/1226"
+ ],
+ "wrong_decisions": {
+  "knots": [
+   "AH4",
+   "AH"
+  ],
+  "voice": [
+   "off",
+   "part"
+  ],
+  "release": [
+   "none",
+   "plain"
+  ],
+  "pre": [
+   1,
+   0
+  ]
+ }
+}

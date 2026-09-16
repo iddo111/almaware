@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "antvoice"
+version = "0.1.0"
+description = "Waveform-only, random-initialized neural scaffold for the Hebrew Ant Farm"
+requires-python = ">=3.11"
+dependencies = ["torch>=2.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

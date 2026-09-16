@@ -1,0 +1,23 @@
+{
+ "t06_loo_plain_pct": 77.33,
+ "t06_loo_w_pct": 92.17,
+ "t06_floor_pct": 16.67,
+ "cross": {
+  "ref_centroids_on_t06_pct": 33.33,
+  "t06_centroids_on_ref_pct": 37.04,
+  "t06_self_pct": 72.67,
+  "ref_self_pct": 100.0,
+  "floor_pct": 33.33
+ },
+ "centre_gap": {
+  "ah": 1.3034,
+  "ba": 1.2776,
+  "ma": 1.4123
+ },
+ "auc_vs_t06": {
+  "OLD  nearest single t06 clip": 0.5044,
+  "OLD  ear3 wdist (per-class spread)": 0.4306,
+  "NEW  t06 unit centroid": 0.4287,
+  "NEW  WCCN + t06 centroid": 0.5505
+ }
+}

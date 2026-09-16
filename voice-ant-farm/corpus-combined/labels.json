@@ -1,0 +1,4493 @@
+{
+  "policy": "provenance and scoring only; never fed to an ant as a token or feature",
+  "labels": {
+    "human_20260618_030226_624906_rec_20260618_060225.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "train"
+    },
+    "human_20260618_030254_806407_rec_20260618_060253.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "train"
+    },
+    "human_20260618_030323_337666_rec_20260618_060320.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "train"
+    },
+    "human_20260618_030536_049066_rec_20260618_060534.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "train"
+    },
+    "human_20260618_030602_054123_rec_20260618_060600.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "train"
+    },
+    "human_20260618_030630_248211_rec_20260618_060628.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "train"
+    },
+    "human_20260618_030659_510213_rec_20260618_060658.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "train"
+    },
+    "human_20260618_030707_831710_rec_20260618_060706.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "train"
+    },
+    "human_20260624_210643_136127_rec_20260625_000641.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "heldout"
+    },
+    "human_20260624_211200_164609_rec_20260625_001158.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "heldout"
+    },
+    "human_20260625_050643_641151_rec_20260625_080642.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "heldout"
+    },
+    "human_20260625_050700_582966_rec_20260625_080659.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "heldout"
+    },
+    "human_20260625_050836_752228_rec_20260625_080834.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "heldout"
+    },
+    "human_20260625_051033_253151_rec_20260625_081031.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "heldout"
+    },
+    "human_20260625_051210_447491_rec_20260625_081208.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "heldout"
+    },
+    "human_20260625_051309_795803_rec_20260625_081308.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "heldout"
+    },
+    "human_20260701_131911_940619_rec_20260701_161911.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "evaluation"
+    },
+    "human_20260701_131919_893308_rec_20260701_161919.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "evaluation"
+    },
+    "human_20260701_131933_726854_rec_20260701_161932.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "evaluation"
+    },
+    "human_20260701_131946_494106_rec_20260701_161945.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "evaluation"
+    },
+    "human_20260701_132022_760176_rec_20260701_162022.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "evaluation"
+    },
+    "human_20260701_132307_726639_rec_20260701_162306.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "evaluation"
+    },
+    "human_20260701_132601_122240_rec_20260701_162600.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "evaluation"
+    },
+    "human_20260701_132608_491684_rec_20260701_162607.wav": {
+      "item_id": null,
+      "item_kind": "human_speech",
+      "split": "evaluation"
+    },
+    "aa_t00_0.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t00_1.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t00_2.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t01_0.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t01_1.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t01_2.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t02_0.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t02_1.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t02_2.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t03_0.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t03_1.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t03_2.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t04_0.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t04_1.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t04_2.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t05_0.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t05_1.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_t05_2.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t00_0.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t00_1.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t00_2.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t01_0.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t01_1.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t01_2.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t02_0.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t02_1.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t02_2.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t03_0.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t03_1.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t03_2.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t04_0.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t04_1.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t04_2.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t05_0.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t05_1.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ah_t05_2.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t00_0.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t00_1.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t00_2.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t01_0.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t01_1.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t01_2.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t02_0.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t02_1.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t02_2.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t03_0.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t03_1.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t03_2.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t04_0.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t04_1.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t04_2.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t05_0.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t05_1.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ba_t05_2.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t00_0.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t00_1.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t00_2.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t01_0.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t01_1.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t01_2.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t02_0.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t02_1.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t02_2.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t03_0.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t03_1.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t03_2.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t04_0.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t04_1.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t04_2.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t05_0.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t05_1.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "da_t05_2.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t00_0.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t00_1.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t00_2.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t01_0.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t01_1.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t01_2.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t02_0.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t02_1.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t02_2.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t03_0.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t03_1.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t03_2.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t04_0.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t04_1.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t04_2.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t05_0.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t05_1.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ga_t05_2.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t00_0.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t00_1.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t00_2.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t01_0.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t01_1.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t01_2.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t02_0.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t02_1.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t02_2.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t03_0.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t03_1.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t03_2.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t04_0.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t04_1.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t04_2.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t05_0.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t05_1.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ha_t05_2.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t00_0.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t00_1.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t00_2.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t01_0.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t01_1.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t01_2.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t02_0.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t02_1.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t02_2.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t03_0.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t03_1.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t03_2.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t04_0.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t04_1.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t04_2.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t05_0.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t05_1.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ka_t05_2.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t00_0.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t00_1.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t00_2.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t01_0.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t01_1.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t01_2.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t02_0.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t02_1.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t02_2.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t03_0.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t03_1.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t03_2.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t04_0.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t04_1.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t04_2.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t05_0.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t05_1.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "kha_t05_2.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t00_0.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t00_1.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t00_2.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t01_0.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t01_1.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t01_2.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t02_0.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t02_1.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t02_2.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t03_0.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t03_1.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t03_2.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t04_0.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t04_1.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t04_2.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t05_0.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t05_1.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "la_t05_2.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t00_0.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t00_1.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t00_2.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t01_0.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t01_1.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t01_2.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t02_0.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t02_1.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t02_2.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t03_0.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t03_1.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t03_2.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t04_0.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t04_1.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t04_2.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t05_0.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t05_1.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ma_t05_2.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t00_0.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t00_1.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t00_2.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t01_0.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t01_1.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t01_2.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t02_0.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t02_1.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t02_2.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t03_0.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t03_1.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t03_2.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t04_0.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t04_1.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t04_2.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t05_0.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t05_1.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "na_t05_2.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t00_0.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t00_1.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t00_2.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t01_0.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t01_1.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t01_2.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t02_0.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t02_1.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t02_2.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t03_0.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t03_1.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t03_2.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t04_0.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t04_1.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t04_2.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t05_0.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t05_1.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "pa_t05_2.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t00_0.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t00_1.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t00_2.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t01_0.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t01_1.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t01_2.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t02_0.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t02_1.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t02_2.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t03_0.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t03_1.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t03_2.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t04_0.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t04_1.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t04_2.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t05_0.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t05_1.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "qa_t05_2.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t00_0.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t00_1.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t00_2.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t01_0.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t01_1.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t01_2.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t02_0.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t02_1.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t02_2.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t03_0.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t03_1.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t03_2.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t04_0.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t04_1.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t04_2.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t05_0.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t05_1.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ra_t05_2.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t00_0.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t00_1.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t00_2.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t01_0.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t01_1.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t01_2.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t02_0.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t02_1.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t02_2.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t03_0.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t03_1.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t03_2.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t04_0.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t04_1.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t04_2.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t05_0.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t05_1.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sa_t05_2.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t00_0.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t00_1.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t00_2.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t01_0.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t01_1.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t01_2.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t02_0.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t02_1.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t02_2.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t03_0.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t03_1.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t03_2.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t04_0.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t04_1.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t04_2.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t05_0.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t05_1.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "sha_t05_2.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t00_0.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t00_1.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t00_2.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t01_0.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t01_1.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t01_2.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t02_0.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t02_1.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t02_2.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t03_0.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t03_1.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t03_2.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t04_0.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t04_1.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t04_2.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t05_0.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t05_1.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ta_t05_2.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t00_0.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t00_1.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t00_2.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t01_0.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t01_1.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t01_2.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t02_0.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t02_1.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t02_2.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t03_0.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t03_1.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t03_2.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t04_0.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t04_1.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t04_2.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t05_0.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t05_1.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tha_t05_2.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t00_0.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t00_1.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t00_2.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t01_0.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t01_1.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t01_2.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t02_0.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t02_1.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t02_2.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t03_0.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t03_1.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t03_2.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t04_0.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t04_1.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t04_2.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t05_0.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t05_1.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "tsa_t05_2.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t00_0.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t00_1.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t00_2.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t01_0.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t01_1.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t01_2.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t02_0.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t02_1.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t02_2.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t03_0.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t03_1.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t03_2.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t04_0.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t04_1.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t04_2.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t05_0.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t05_1.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "va_t05_2.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t00_0.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t00_1.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t00_2.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t01_0.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t01_1.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t01_2.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t02_0.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t02_1.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t02_2.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t03_0.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t03_1.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t03_2.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t04_0.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t04_1.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t04_2.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t05_0.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t05_1.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "ya_t05_2.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t00_0.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t00_1.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t00_2.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b00",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t01_0.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t01_1.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t01_2.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b01",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t02_0.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t02_1.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t02_2.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b02",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t03_0.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t03_1.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t03_2.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b03",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t04_0.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t04_1.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t04_2.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b04",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t05_0.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t05_1.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "za_t05_2.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/train/b05",
+      "split": "train",
+      "source_split": "train"
+    },
+    "aa_h00_0.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "aa_h00_1.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "aa_h00_2.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "aa_h01_0.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "aa_h01_1.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "aa_h01_2.wav": {
+      "item_id": "aa",
+      "item_kind": "syllable",
+      "base_rendering_id": "aa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ah_h00_0.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ah_h00_1.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ah_h00_2.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ah_h01_0.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ah_h01_1.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ah_h01_2.wav": {
+      "item_id": "ah",
+      "item_kind": "syllable",
+      "base_rendering_id": "ah/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ba_h00_0.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ba_h00_1.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ba_h00_2.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ba_h01_0.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ba_h01_1.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ba_h01_2.wav": {
+      "item_id": "ba",
+      "item_kind": "syllable",
+      "base_rendering_id": "ba/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "da_h00_0.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "da_h00_1.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "da_h00_2.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "da_h01_0.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "da_h01_1.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "da_h01_2.wav": {
+      "item_id": "da",
+      "item_kind": "syllable",
+      "base_rendering_id": "da/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ga_h00_0.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ga_h00_1.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ga_h00_2.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ga_h01_0.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ga_h01_1.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ga_h01_2.wav": {
+      "item_id": "ga",
+      "item_kind": "syllable",
+      "base_rendering_id": "ga/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ha_h00_0.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ha_h00_1.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ha_h00_2.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ha_h01_0.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ha_h01_1.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ha_h01_2.wav": {
+      "item_id": "ha",
+      "item_kind": "syllable",
+      "base_rendering_id": "ha/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ka_h00_0.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ka_h00_1.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ka_h00_2.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ka_h01_0.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ka_h01_1.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ka_h01_2.wav": {
+      "item_id": "ka",
+      "item_kind": "syllable",
+      "base_rendering_id": "ka/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "kha_h00_0.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "kha_h00_1.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "kha_h00_2.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "kha_h01_0.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "kha_h01_1.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "kha_h01_2.wav": {
+      "item_id": "kha",
+      "item_kind": "syllable",
+      "base_rendering_id": "kha/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "la_h00_0.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "la_h00_1.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "la_h00_2.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "la_h01_0.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "la_h01_1.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "la_h01_2.wav": {
+      "item_id": "la",
+      "item_kind": "syllable",
+      "base_rendering_id": "la/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ma_h00_0.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ma_h00_1.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ma_h00_2.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ma_h01_0.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ma_h01_1.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ma_h01_2.wav": {
+      "item_id": "ma",
+      "item_kind": "syllable",
+      "base_rendering_id": "ma/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "na_h00_0.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "na_h00_1.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "na_h00_2.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "na_h01_0.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "na_h01_1.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "na_h01_2.wav": {
+      "item_id": "na",
+      "item_kind": "syllable",
+      "base_rendering_id": "na/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "pa_h00_0.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "pa_h00_1.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "pa_h00_2.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "pa_h01_0.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "pa_h01_1.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "pa_h01_2.wav": {
+      "item_id": "pa",
+      "item_kind": "syllable",
+      "base_rendering_id": "pa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "qa_h00_0.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "qa_h00_1.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "qa_h00_2.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "qa_h01_0.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "qa_h01_1.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "qa_h01_2.wav": {
+      "item_id": "qa",
+      "item_kind": "syllable",
+      "base_rendering_id": "qa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ra_h00_0.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ra_h00_1.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ra_h00_2.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ra_h01_0.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ra_h01_1.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ra_h01_2.wav": {
+      "item_id": "ra",
+      "item_kind": "syllable",
+      "base_rendering_id": "ra/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "sa_h00_0.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "sa_h00_1.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "sa_h00_2.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "sa_h01_0.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "sa_h01_1.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "sa_h01_2.wav": {
+      "item_id": "sa",
+      "item_kind": "syllable",
+      "base_rendering_id": "sa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "sha_h00_0.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "sha_h00_1.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "sha_h00_2.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "sha_h01_0.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "sha_h01_1.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "sha_h01_2.wav": {
+      "item_id": "sha",
+      "item_kind": "syllable",
+      "base_rendering_id": "sha/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ta_h00_0.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ta_h00_1.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ta_h00_2.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ta_h01_0.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ta_h01_1.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ta_h01_2.wav": {
+      "item_id": "ta",
+      "item_kind": "syllable",
+      "base_rendering_id": "ta/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "tha_h00_0.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "tha_h00_1.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "tha_h00_2.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "tha_h01_0.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "tha_h01_1.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "tha_h01_2.wav": {
+      "item_id": "tha",
+      "item_kind": "syllable",
+      "base_rendering_id": "tha/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "tsa_h00_0.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "tsa_h00_1.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "tsa_h00_2.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "tsa_h01_0.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "tsa_h01_1.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "tsa_h01_2.wav": {
+      "item_id": "tsa",
+      "item_kind": "syllable",
+      "base_rendering_id": "tsa/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "va_h00_0.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "va_h00_1.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "va_h00_2.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "va_h01_0.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "va_h01_1.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "va_h01_2.wav": {
+      "item_id": "va",
+      "item_kind": "syllable",
+      "base_rendering_id": "va/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ya_h00_0.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ya_h00_1.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ya_h00_2.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ya_h01_0.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ya_h01_1.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "ya_h01_2.wav": {
+      "item_id": "ya",
+      "item_kind": "syllable",
+      "base_rendering_id": "ya/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "za_h00_0.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "za_h00_1.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "za_h00_2.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/heldout/b00",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "za_h01_0.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "za_h01_1.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "za_h01_2.wav": {
+      "item_id": "za",
+      "item_kind": "syllable",
+      "base_rendering_id": "za/heldout/b01",
+      "split": "heldout",
+      "source_split": "heldout"
+    },
+    "aba_w00_0.wav": {
+      "item_id": "aba",
+      "item_kind": "word",
+      "base_rendering_id": "aba/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "aba_w00_1.wav": {
+      "item_id": "aba",
+      "item_kind": "word",
+      "base_rendering_id": "aba/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "aba_w01_0.wav": {
+      "item_id": "aba",
+      "item_kind": "word",
+      "base_rendering_id": "aba/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "aba_w01_1.wav": {
+      "item_id": "aba",
+      "item_kind": "word",
+      "base_rendering_id": "aba/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "aba_w02_0.wav": {
+      "item_id": "aba",
+      "item_kind": "word",
+      "base_rendering_id": "aba/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "aba_w02_1.wav": {
+      "item_id": "aba",
+      "item_kind": "word",
+      "base_rendering_id": "aba/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "aba_w03_0.wav": {
+      "item_id": "aba",
+      "item_kind": "word",
+      "base_rendering_id": "aba/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "aba_w03_1.wav": {
+      "item_id": "aba",
+      "item_kind": "word",
+      "base_rendering_id": "aba/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "bayit_w00_0.wav": {
+      "item_id": "bayit",
+      "item_kind": "word",
+      "base_rendering_id": "bayit/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "bayit_w00_1.wav": {
+      "item_id": "bayit",
+      "item_kind": "word",
+      "base_rendering_id": "bayit/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "bayit_w01_0.wav": {
+      "item_id": "bayit",
+      "item_kind": "word",
+      "base_rendering_id": "bayit/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "bayit_w01_1.wav": {
+      "item_id": "bayit",
+      "item_kind": "word",
+      "base_rendering_id": "bayit/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "bayit_w02_0.wav": {
+      "item_id": "bayit",
+      "item_kind": "word",
+      "base_rendering_id": "bayit/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "bayit_w02_1.wav": {
+      "item_id": "bayit",
+      "item_kind": "word",
+      "base_rendering_id": "bayit/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "bayit_w03_0.wav": {
+      "item_id": "bayit",
+      "item_kind": "word",
+      "base_rendering_id": "bayit/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "bayit_w03_1.wav": {
+      "item_id": "bayit",
+      "item_kind": "word",
+      "base_rendering_id": "bayit/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "gadol_w00_0.wav": {
+      "item_id": "gadol",
+      "item_kind": "word",
+      "base_rendering_id": "gadol/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "gadol_w00_1.wav": {
+      "item_id": "gadol",
+      "item_kind": "word",
+      "base_rendering_id": "gadol/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "gadol_w01_0.wav": {
+      "item_id": "gadol",
+      "item_kind": "word",
+      "base_rendering_id": "gadol/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "gadol_w01_1.wav": {
+      "item_id": "gadol",
+      "item_kind": "word",
+      "base_rendering_id": "gadol/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "gadol_w02_0.wav": {
+      "item_id": "gadol",
+      "item_kind": "word",
+      "base_rendering_id": "gadol/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "gadol_w02_1.wav": {
+      "item_id": "gadol",
+      "item_kind": "word",
+      "base_rendering_id": "gadol/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "gadol_w03_0.wav": {
+      "item_id": "gadol",
+      "item_kind": "word",
+      "base_rendering_id": "gadol/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "gadol_w03_1.wav": {
+      "item_id": "gadol",
+      "item_kind": "word",
+      "base_rendering_id": "gadol/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "ima_w00_0.wav": {
+      "item_id": "ima",
+      "item_kind": "word",
+      "base_rendering_id": "ima/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "ima_w00_1.wav": {
+      "item_id": "ima",
+      "item_kind": "word",
+      "base_rendering_id": "ima/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "ima_w01_0.wav": {
+      "item_id": "ima",
+      "item_kind": "word",
+      "base_rendering_id": "ima/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "ima_w01_1.wav": {
+      "item_id": "ima",
+      "item_kind": "word",
+      "base_rendering_id": "ima/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "ima_w02_0.wav": {
+      "item_id": "ima",
+      "item_kind": "word",
+      "base_rendering_id": "ima/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "ima_w02_1.wav": {
+      "item_id": "ima",
+      "item_kind": "word",
+      "base_rendering_id": "ima/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "ima_w03_0.wav": {
+      "item_id": "ima",
+      "item_kind": "word",
+      "base_rendering_id": "ima/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "ima_w03_1.wav": {
+      "item_id": "ima",
+      "item_kind": "word",
+      "base_rendering_id": "ima/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "lechem_w00_0.wav": {
+      "item_id": "lechem",
+      "item_kind": "word",
+      "base_rendering_id": "lechem/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "lechem_w00_1.wav": {
+      "item_id": "lechem",
+      "item_kind": "word",
+      "base_rendering_id": "lechem/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "lechem_w01_0.wav": {
+      "item_id": "lechem",
+      "item_kind": "word",
+      "base_rendering_id": "lechem/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "lechem_w01_1.wav": {
+      "item_id": "lechem",
+      "item_kind": "word",
+      "base_rendering_id": "lechem/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "lechem_w02_0.wav": {
+      "item_id": "lechem",
+      "item_kind": "word",
+      "base_rendering_id": "lechem/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "lechem_w02_1.wav": {
+      "item_id": "lechem",
+      "item_kind": "word",
+      "base_rendering_id": "lechem/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "lechem_w03_0.wav": {
+      "item_id": "lechem",
+      "item_kind": "word",
+      "base_rendering_id": "lechem/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "lechem_w03_1.wav": {
+      "item_id": "lechem",
+      "item_kind": "word",
+      "base_rendering_id": "lechem/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "mayim_w00_0.wav": {
+      "item_id": "mayim",
+      "item_kind": "word",
+      "base_rendering_id": "mayim/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "mayim_w00_1.wav": {
+      "item_id": "mayim",
+      "item_kind": "word",
+      "base_rendering_id": "mayim/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "mayim_w01_0.wav": {
+      "item_id": "mayim",
+      "item_kind": "word",
+      "base_rendering_id": "mayim/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "mayim_w01_1.wav": {
+      "item_id": "mayim",
+      "item_kind": "word",
+      "base_rendering_id": "mayim/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "mayim_w02_0.wav": {
+      "item_id": "mayim",
+      "item_kind": "word",
+      "base_rendering_id": "mayim/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "mayim_w02_1.wav": {
+      "item_id": "mayim",
+      "item_kind": "word",
+      "base_rendering_id": "mayim/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "mayim_w03_0.wav": {
+      "item_id": "mayim",
+      "item_kind": "word",
+      "base_rendering_id": "mayim/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "mayim_w03_1.wav": {
+      "item_id": "mayim",
+      "item_kind": "word",
+      "base_rendering_id": "mayim/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "rosh_w00_0.wav": {
+      "item_id": "rosh",
+      "item_kind": "word",
+      "base_rendering_id": "rosh/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "rosh_w00_1.wav": {
+      "item_id": "rosh",
+      "item_kind": "word",
+      "base_rendering_id": "rosh/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "rosh_w01_0.wav": {
+      "item_id": "rosh",
+      "item_kind": "word",
+      "base_rendering_id": "rosh/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "rosh_w01_1.wav": {
+      "item_id": "rosh",
+      "item_kind": "word",
+      "base_rendering_id": "rosh/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "rosh_w02_0.wav": {
+      "item_id": "rosh",
+      "item_kind": "word",
+      "base_rendering_id": "rosh/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "rosh_w02_1.wav": {
+      "item_id": "rosh",
+      "item_kind": "word",
+      "base_rendering_id": "rosh/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "rosh_w03_0.wav": {
+      "item_id": "rosh",
+      "item_kind": "word",
+      "base_rendering_id": "rosh/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "rosh_w03_1.wav": {
+      "item_id": "rosh",
+      "item_kind": "word",
+      "base_rendering_id": "rosh/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "shalom_w00_0.wav": {
+      "item_id": "shalom",
+      "item_kind": "word",
+      "base_rendering_id": "shalom/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "shalom_w00_1.wav": {
+      "item_id": "shalom",
+      "item_kind": "word",
+      "base_rendering_id": "shalom/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "shalom_w01_0.wav": {
+      "item_id": "shalom",
+      "item_kind": "word",
+      "base_rendering_id": "shalom/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "shalom_w01_1.wav": {
+      "item_id": "shalom",
+      "item_kind": "word",
+      "base_rendering_id": "shalom/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "shalom_w02_0.wav": {
+      "item_id": "shalom",
+      "item_kind": "word",
+      "base_rendering_id": "shalom/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "shalom_w02_1.wav": {
+      "item_id": "shalom",
+      "item_kind": "word",
+      "base_rendering_id": "shalom/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "shalom_w03_0.wav": {
+      "item_id": "shalom",
+      "item_kind": "word",
+      "base_rendering_id": "shalom/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "shalom_w03_1.wav": {
+      "item_id": "shalom",
+      "item_kind": "word",
+      "base_rendering_id": "shalom/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "tov_w00_0.wav": {
+      "item_id": "tov",
+      "item_kind": "word",
+      "base_rendering_id": "tov/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "tov_w00_1.wav": {
+      "item_id": "tov",
+      "item_kind": "word",
+      "base_rendering_id": "tov/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "tov_w01_0.wav": {
+      "item_id": "tov",
+      "item_kind": "word",
+      "base_rendering_id": "tov/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "tov_w01_1.wav": {
+      "item_id": "tov",
+      "item_kind": "word",
+      "base_rendering_id": "tov/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "tov_w02_0.wav": {
+      "item_id": "tov",
+      "item_kind": "word",
+      "base_rendering_id": "tov/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "tov_w02_1.wav": {
+      "item_id": "tov",
+      "item_kind": "word",
+      "base_rendering_id": "tov/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "tov_w03_0.wav": {
+      "item_id": "tov",
+      "item_kind": "word",
+      "base_rendering_id": "tov/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "tov_w03_1.wav": {
+      "item_id": "tov",
+      "item_kind": "word",
+      "base_rendering_id": "tov/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yad_w00_0.wav": {
+      "item_id": "yad",
+      "item_kind": "word",
+      "base_rendering_id": "yad/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yad_w00_1.wav": {
+      "item_id": "yad",
+      "item_kind": "word",
+      "base_rendering_id": "yad/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yad_w01_0.wav": {
+      "item_id": "yad",
+      "item_kind": "word",
+      "base_rendering_id": "yad/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yad_w01_1.wav": {
+      "item_id": "yad",
+      "item_kind": "word",
+      "base_rendering_id": "yad/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yad_w02_0.wav": {
+      "item_id": "yad",
+      "item_kind": "word",
+      "base_rendering_id": "yad/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yad_w02_1.wav": {
+      "item_id": "yad",
+      "item_kind": "word",
+      "base_rendering_id": "yad/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yad_w03_0.wav": {
+      "item_id": "yad",
+      "item_kind": "word",
+      "base_rendering_id": "yad/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yad_w03_1.wav": {
+      "item_id": "yad",
+      "item_kind": "word",
+      "base_rendering_id": "yad/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yeled_w00_0.wav": {
+      "item_id": "yeled",
+      "item_kind": "word",
+      "base_rendering_id": "yeled/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yeled_w00_1.wav": {
+      "item_id": "yeled",
+      "item_kind": "word",
+      "base_rendering_id": "yeled/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yeled_w01_0.wav": {
+      "item_id": "yeled",
+      "item_kind": "word",
+      "base_rendering_id": "yeled/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yeled_w01_1.wav": {
+      "item_id": "yeled",
+      "item_kind": "word",
+      "base_rendering_id": "yeled/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yeled_w02_0.wav": {
+      "item_id": "yeled",
+      "item_kind": "word",
+      "base_rendering_id": "yeled/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yeled_w02_1.wav": {
+      "item_id": "yeled",
+      "item_kind": "word",
+      "base_rendering_id": "yeled/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yeled_w03_0.wav": {
+      "item_id": "yeled",
+      "item_kind": "word",
+      "base_rendering_id": "yeled/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yeled_w03_1.wav": {
+      "item_id": "yeled",
+      "item_kind": "word",
+      "base_rendering_id": "yeled/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yom_w00_0.wav": {
+      "item_id": "yom",
+      "item_kind": "word",
+      "base_rendering_id": "yom/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yom_w00_1.wav": {
+      "item_id": "yom",
+      "item_kind": "word",
+      "base_rendering_id": "yom/words/b00",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yom_w01_0.wav": {
+      "item_id": "yom",
+      "item_kind": "word",
+      "base_rendering_id": "yom/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yom_w01_1.wav": {
+      "item_id": "yom",
+      "item_kind": "word",
+      "base_rendering_id": "yom/words/b01",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yom_w02_0.wav": {
+      "item_id": "yom",
+      "item_kind": "word",
+      "base_rendering_id": "yom/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yom_w02_1.wav": {
+      "item_id": "yom",
+      "item_kind": "word",
+      "base_rendering_id": "yom/words/b02",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yom_w03_0.wav": {
+      "item_id": "yom",
+      "item_kind": "word",
+      "base_rendering_id": "yom/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    },
+    "yom_w03_1.wav": {
+      "item_id": "yom",
+      "item_kind": "word",
+      "base_rendering_id": "yom/words/b03",
+      "split": "evaluation",
+      "source_split": "words"
+    }
+  }
+}

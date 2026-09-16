@@ -1,0 +1,13 @@
+{
+  "strokes": 40000,
+  "size": 0.005,
+  "seconds": 9.6,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "mse_vs_engine": 0.01468,
+  "mse_blank_floor": 0.07769,
+  "x_better_than_blank": 5.29,
+  "peak_rss_mb": 908
+}

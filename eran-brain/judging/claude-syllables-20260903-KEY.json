@@ -1,0 +1,150 @@
+{
+ "what": "claude-syllables-20260903: 24 syllables made by CLAUDE operating ERAN's adult physics mouth by hand (mouth school 09-02). Blind index k -> truth. Speaker label per the Label Law: CLAUDE (through ERAN's mouth).",
+ "seed": 20260903,
+ "order": {
+  "1": {
+   "truth": "wa",
+   "class": "va",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-wa.wav",
+   "verified_0902": true
+  },
+  "2": {
+   "truth": "ga",
+   "class": "ga",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ga.wav",
+   "verified_0902": true
+  },
+  "3": {
+   "truth": "kha",
+   "class": "kha",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-kha.wav",
+   "verified_0902": true
+  },
+  "4": {
+   "truth": "pa",
+   "class": "pa",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-pa.wav",
+   "verified_0902": true
+  },
+  "5": {
+   "truth": "a",
+   "class": "a",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-a.wav",
+   "verified_0902": true
+  },
+  "6": {
+   "truth": "sa",
+   "class": "sa",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-sa.wav",
+   "verified_0902": true
+  },
+  "7": {
+   "truth": "ta",
+   "class": "ta",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ta.wav",
+   "verified_0902": true
+  },
+  "8": {
+   "truth": "la",
+   "class": "la",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-la.wav",
+   "verified_0902": true
+  },
+  "9": {
+   "truth": "cha",
+   "class": "kha",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-cha.wav",
+   "verified_0902": true
+  },
+  "10": {
+   "truth": "aya",
+   "class": "aya",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-aya.wav",
+   "verified_0902": true
+  },
+  "11": {
+   "truth": "na",
+   "class": "na",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-na.wav",
+   "verified_0902": true
+  },
+  "12": {
+   "truth": "sha",
+   "class": "sha",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-sha.wav",
+   "verified_0902": true
+  },
+  "13": {
+   "truth": "ya",
+   "class": "ya",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ya.wav",
+   "verified_0902": true
+  },
+  "14": {
+   "truth": "ba",
+   "class": "ba",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ba.wav",
+   "verified_0902": true
+  },
+  "15": {
+   "truth": "fa",
+   "class": "fa",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-fa.wav",
+   "verified_0902": true
+  },
+  "16": {
+   "truth": "za",
+   "class": "za",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-za.wav",
+   "verified_0902": true
+  },
+  "17": {
+   "truth": "tza",
+   "class": "tza",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-tza.wav",
+   "verified_0902": false
+  },
+  "18": {
+   "truth": "ma",
+   "class": "ma",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ma.wav",
+   "verified_0902": true
+  },
+  "19": {
+   "truth": "ra",
+   "class": "ra",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ra.wav",
+   "verified_0902": true
+  },
+  "20": {
+   "truth": "ha",
+   "class": "ha",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ha.wav",
+   "verified_0902": true
+  },
+  "21": {
+   "truth": "va",
+   "class": "va",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-va.wav",
+   "verified_0902": true
+  },
+  "22": {
+   "truth": "da",
+   "class": "da",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-da.wav",
+   "verified_0902": true
+  },
+  "23": {
+   "truth": "ka",
+   "class": "ka",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-ka.wav",
+   "verified_0902": false
+  },
+  "24": {
+   "truth": "qa",
+   "class": "ka",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school\\ERAN-qa.wav",
+   "verified_0902": false
+  }
+ }
+}

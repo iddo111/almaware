@@ -1,0 +1,8 @@
+{
+  "name": "dsh-plugin-almido-gate",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.mjs",
+  "private": true,
+  "description": "AlmIdo policy gate for DeepSeek Harness: denies bash commands per the iddo-harness policy (ported from almido_gate.py), audits every decision to ~/dsh-almido/audit.log, STOP-file kill switch."
+}

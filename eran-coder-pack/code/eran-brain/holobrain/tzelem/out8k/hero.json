@@ -1,0 +1,26 @@
+{
+  "counts": {
+    "ground": 2,
+    "cube": 12,
+    "mould": 1630
+  },
+  "strokes": 2400,
+  "made": {
+    "4K": {
+      "path": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out8k\\TZELEM-gate2-4K.png",
+      "seconds": 18.21262526512146,
+      "mb": 0.634356
+    },
+    "8K": {
+      "path": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out8k\\TZELEM-gate2-8K.png",
+      "seconds": 76.80720806121826,
+      "mb": 1.654352
+    },
+    "crop": {
+      "path": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out8k\\TZELEM-gate2-8K-crop1000.png"
+    },
+    "preview": {
+      "path": "D:\\CLAUDE\\eran-brain\\holobrain\\tzelem\\out8k\\TZELEM-gate2-8K-preview.jpg"
+    }
+  }
+}

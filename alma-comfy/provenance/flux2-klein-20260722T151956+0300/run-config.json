@@ -1,0 +1,11 @@
+{
+  "prompt": "A small brass exploration robot studying a luminous blue crystal on a clean wooden workbench, cinematic soft window light, realistic materials, shallow depth of field, uncluttered background, no text, no logo",
+  "seed": 20260722,
+  "width": 512,
+  "height": 512,
+  "num_inference_steps": 4,
+  "guidance_scale": 1.0,
+  "transformer_file": "/home/eran3/models/alma-studio/FLUX.2-klein-4B-fp8/flux-2-klein-4b-fp8.safetensors",
+  "components_dir": "/home/eran3/models/alma-studio/FLUX.2-klein-4B-runtime",
+  "offline_only": true
+}

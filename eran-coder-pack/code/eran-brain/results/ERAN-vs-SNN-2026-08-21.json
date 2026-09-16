@@ -1,0 +1,1176 @@
+{
+  "title": "ERAN prototype organism vs spiking neural network — the fair fight",
+  "date": "2026-08-21",
+  "host": "edgexpert-3636",
+  "chance": 0.045454545454545456,
+  "published_baselines": {
+    "chance": 0.045454545454545456,
+    "duration_only_floor": 0.05303030303030303,
+    "random_real_frames_codebook": 0.4621212121212121,
+    "raw_features_speech_span": 0.5378787878787878,
+    "raw_features_loudest60": 0.6893939393939394,
+    "frozen_cochlea_nearest_centroid": 0.7954545454545454,
+    "prototype_organism_heldout": 0.6287878787878788,
+    "supervised_snn_heldout": 0.8409090909090909
+  },
+  "protocol": {
+    "cochlea": "eran-brain/body/ears.py EAR_REPR=cochlea, 8 slices x 24 bands, dim 192, FROZEN and byte-identical to snn-lab/cochlea.py",
+    "split": "396 train / 132 heldout, corpus-syllables",
+    "dev": "stratified + deterministic: inside each class, files ordered by sha1(filename), first 20% are dev. 308 fit / 88 dev.",
+    "heldout_policy": "opened once per arm, after every choice was fixed on dev",
+    "naming": "each unit/prototype takes the class it won most often on the TRAIN set (proof/measure.py:fit_proto_labels); an unnamed unit scores wrong",
+    "seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "dev_phase": {
+    "organism_exposure": {
+      "epochs1": {
+        "dev_mean": 0.5075757575757575,
+        "dev_seeds": [
+          0.5340909090909091,
+          0.45454545454545453,
+          0.5340909090909091
+        ],
+        "protos": [
+          29,
+          24,
+          26
+        ]
+      },
+      "epochs3": {
+        "dev_mean": 0.5833333333333334,
+        "dev_seeds": [
+          0.5454545454545454,
+          0.5909090909090909,
+          0.6136363636363636
+        ],
+        "protos": [
+          61,
+          60,
+          68
+        ]
+      },
+      "epochs10": {
+        "dev_mean": 0.8106060606060606,
+        "dev_seeds": [
+          0.8409090909090909,
+          0.7954545454545454,
+          0.7954545454545454
+        ],
+        "protos": [
+          127,
+          127,
+          122
+        ]
+      },
+      "epochs30": {
+        "dev_mean": 0.8333333333333334,
+        "dev_seeds": [
+          0.8181818181818182,
+          0.8522727272727273,
+          0.8295454545454546
+        ],
+        "protos": [
+          150,
+          153,
+          146
+        ]
+      }
+    },
+    "organism_exposure_chosen": 30,
+    "arm_a_exploration_before_the_sweep": [
+      "graded lateral inhibition (inh<=1): the layer never breaks symmetry — every unit fires once per sound, every STDP update is identical, weights collapse onto the mean input. dev 9.1%, 2 units ever winning. This is why the circuit is a hard WTA.",
+      "hard WTA + weak inhibition (inh=1): dev 33-56%, winner takes ~4 of 64 spikes.",
+      "hard WTA + strong inhibition (inh>=5): winner takes all 64 spikes, 177/264 units win something, dev 60-70%. inh=20 and inh=100 are numerically identical (saturated).",
+      "learning rate is the strongest knob: lr 0.005 -> dev 18%, lr 2.0 -> dev 70.5%.",
+      "528 units at 20 epochs is undertrained (dev 41%), 264 is the sweet spot at this exposure."
+    ],
+    "arm_a_sweep": [
+      {
+        "name": "act0.5",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 0.5,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.7083333333333334,
+        "dev_seeds": [
+          0.7272727272727273,
+          0.7272727272727273,
+          0.6704545454545454
+        ],
+        "health": {
+          "mean_spikes_per_item": 51.92207717895508,
+          "winner_spikes_mean": 51.181819915771484,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 204,
+          "units_named": 204,
+          "params": 101376
+        }
+      },
+      {
+        "name": "peak0.9",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.9,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.6856060606060606,
+        "dev_seeds": [
+          0.7159090909090909,
+          0.6818181818181818,
+          0.6590909090909091
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 64.0,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 172,
+          "units_named": 172,
+          "params": 101376
+        }
+      },
+      {
+        "name": "epochs120",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 120
+        },
+        "dev_mean": 0.6742424242424242,
+        "dev_seeds": [
+          0.625,
+          0.6704545454545454,
+          0.7272727272727273
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 63.82143020629883,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 176,
+          "units_named": 176,
+          "params": 101376
+        }
+      },
+      {
+        "name": "wnorm20",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 20.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.6704545454545454,
+        "dev_seeds": [
+          0.7045454545454546,
+          0.7159090909090909,
+          0.5909090909090909
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 58.243507385253906,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 152,
+          "units_named": 152,
+          "params": 101376
+        }
+      },
+      {
+        "name": "base",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.6553030303030303,
+        "dev_seeds": [
+          0.7045454545454546,
+          0.625,
+          0.6363636363636364
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 63.941558837890625,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 176,
+          "units_named": 176,
+          "params": 101376
+        }
+      },
+      {
+        "name": "lr8.0",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 8.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.6098484848484849,
+        "dev_seeds": [
+          0.5681818181818182,
+          0.6477272727272727,
+          0.6136363636363636
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 64.0,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 181,
+          "units_named": 181,
+          "params": 101376
+        }
+      },
+      {
+        "name": "lr0.5",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 0.5,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.5984848484848485,
+        "dev_seeds": [
+          0.6590909090909091,
+          0.5795454545454546,
+          0.5568181818181818
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 63.96104049682617,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 177,
+          "units_named": 177,
+          "params": 101376
+        }
+      },
+      {
+        "name": "units528-ep60-lr8",
+        "n_units": 528,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 8.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 60
+        },
+        "dev_mean": 0.5909090909090909,
+        "dev_seeds": [
+          0.5795454545454546,
+          0.625,
+          0.5681818181818182
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 62.71428680419922,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 192,
+          "units_named": 192,
+          "params": 202752
+        }
+      },
+      {
+        "name": "steps128",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 128,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.5871212121212122,
+        "dev_seeds": [
+          0.5681818181818182,
+          0.6136363636363636,
+          0.5795454545454546
+        ],
+        "health": {
+          "mean_spikes_per_item": 127.9610366821289,
+          "winner_spikes_mean": 127.36688232421875,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 138,
+          "units_named": 138,
+          "params": 101376
+        }
+      },
+      {
+        "name": "epochs60",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 60
+        },
+        "dev_mean": 0.587121212121212,
+        "dev_seeds": [
+          0.5909090909090909,
+          0.5340909090909091,
+          0.6363636363636364
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 63.941558837890625,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 172,
+          "units_named": 172,
+          "params": 101376
+        }
+      },
+      {
+        "name": "batch4",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 4,
+          "epochs": 20
+        },
+        "dev_mean": 0.5189393939393939,
+        "dev_seeds": [
+          0.5340909090909091,
+          0.4659090909090909,
+          0.5568181818181818
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 63.824676513671875,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 102,
+          "units_named": 102,
+          "params": 101376
+        }
+      },
+      {
+        "name": "wnorm2",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 2.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.5151515151515151,
+        "dev_seeds": [
+          0.5568181818181818,
+          0.5,
+          0.48863636363636365
+        ],
+        "health": {
+          "mean_spikes_per_item": 63.006492614746094,
+          "winner_spikes_mean": 63.006492614746094,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 92,
+          "units_named": 92,
+          "params": 101376
+        }
+      },
+      {
+        "name": "units88",
+        "n_units": 88,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.5,
+        "dev_seeds": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 63.772727966308594,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 69,
+          "units_named": 69,
+          "params": 33792
+        }
+      },
+      {
+        "name": "weak-inh(control)",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 1.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.45075757575757575,
+        "dev_seeds": [
+          0.4318181818181818,
+          0.5,
+          0.42045454545454547
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 3.691558361053467,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 63,
+          "units_named": 63,
+          "params": 101376
+        }
+      },
+      {
+        "name": "units528",
+        "n_units": 528,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.4166666666666667,
+        "dev_seeds": [
+          0.4090909090909091,
+          0.5568181818181818,
+          0.2840909090909091
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 63.57143020629883,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 166,
+          "units_named": 166,
+          "params": 202752
+        }
+      },
+      {
+        "name": "peak0.3",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.3,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.39772727272727276,
+        "dev_seeds": [
+          0.4318181818181818,
+          0.375,
+          0.38636363636363635
+        ],
+        "health": {
+          "mean_spikes_per_item": 63.20454406738281,
+          "winner_spikes_mean": 61.86688232421875,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 125,
+          "units_named": 125,
+          "params": 101376
+        }
+      },
+      {
+        "name": "noIP(control)",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "static",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.0,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.36742424242424243,
+        "dev_seeds": [
+          0.3068181818181818,
+          0.42045454545454547,
+          0.375
+        ],
+        "health": {
+          "mean_spikes_per_item": 64.0,
+          "winner_spikes_mean": 64.0,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 16,
+          "units_named": 16,
+          "params": 101376
+        }
+      },
+      {
+        "name": "cochlea-time",
+        "n_units": 264,
+        "cfg": {
+          "encoding": "cochlea-time",
+          "steps": 64,
+          "beta": 0.9,
+          "v_thresh": 1.0,
+          "v_reset": 0.0,
+          "v_floor": -1.0,
+          "inh": 20.0,
+          "pre_decay": 0.9,
+          "peak_rate": 0.6,
+          "lr": 2.0,
+          "mu": 0.2,
+          "w_max": 1.0,
+          "w_norm": 8.0,
+          "ltd_offset": 0.05,
+          "theta_lr": 0.05,
+          "act_mult": 1.0,
+          "batch": 16,
+          "epochs": 20
+        },
+        "dev_mean": 0.125,
+        "dev_seeds": [
+          0.14772727272727273,
+          0.125,
+          0.10227272727272728
+        ],
+        "health": {
+          "mean_spikes_per_item": 63.568180084228516,
+          "winner_spikes_mean": 26.555194854736328,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 52,
+          "units_named": 52,
+          "params": 12672
+        }
+      }
+    ],
+    "arm_a_winner": {
+      "name": "act0.5",
+      "n_units": 264,
+      "cfg": {
+        "encoding": "static",
+        "steps": 64,
+        "beta": 0.9,
+        "v_thresh": 1.0,
+        "v_reset": 0.0,
+        "v_floor": -1.0,
+        "inh": 20.0,
+        "pre_decay": 0.9,
+        "peak_rate": 0.6,
+        "lr": 2.0,
+        "mu": 0.2,
+        "w_max": 1.0,
+        "w_norm": 8.0,
+        "ltd_offset": 0.05,
+        "theta_lr": 0.05,
+        "act_mult": 0.5,
+        "batch": 16,
+        "epochs": 20
+      },
+      "dev_mean": 0.7083333333333334
+    },
+    "arm_b_sweep": [
+      {
+        "epochs": 30,
+        "weight_decay": 0.001,
+        "dev_mean": 0.9734848484848486,
+        "dev_seeds": [
+          0.9659090909090909,
+          0.9772727272727273,
+          0.9772727272727273
+        ]
+      },
+      {
+        "epochs": 10,
+        "weight_decay": 0.001,
+        "dev_mean": 0.9696969696969697,
+        "dev_seeds": [
+          0.9659090909090909,
+          0.9659090909090909,
+          0.9772727272727273
+        ]
+      },
+      {
+        "epochs": 3,
+        "weight_decay": 0.001,
+        "dev_mean": 0.9583333333333334,
+        "dev_seeds": [
+          0.9659090909090909,
+          0.9659090909090909,
+          0.9431818181818182
+        ]
+      },
+      {
+        "epochs": 3,
+        "weight_decay": 0.0,
+        "dev_mean": 0.9507575757575758,
+        "dev_seeds": [
+          0.9431818181818182,
+          0.9431818181818182,
+          0.9659090909090909
+        ]
+      },
+      {
+        "epochs": 30,
+        "weight_decay": 0.0,
+        "dev_mean": 0.9507575757575758,
+        "dev_seeds": [
+          0.9545454545454546,
+          0.9545454545454546,
+          0.9431818181818182
+        ]
+      },
+      {
+        "epochs": 10,
+        "weight_decay": 0.0,
+        "dev_mean": 0.9393939393939394,
+        "dev_seeds": [
+          0.9431818181818182,
+          0.9318181818181818,
+          0.9431818181818182
+        ]
+      },
+      {
+        "epochs": 3,
+        "weight_decay": 0.01,
+        "dev_mean": 0.8825757575757575,
+        "dev_seeds": [
+          0.8863636363636364,
+          0.8863636363636364,
+          0.875
+        ]
+      },
+      {
+        "epochs": 10,
+        "weight_decay": 0.01,
+        "dev_mean": 0.8712121212121212,
+        "dev_seeds": [
+          0.7045454545454546,
+          0.9545454545454546,
+          0.9545454545454546
+        ]
+      },
+      {
+        "epochs": 30,
+        "weight_decay": 0.01,
+        "dev_mean": 0.8219696969696969,
+        "dev_seeds": [
+          0.9431818181818182,
+          0.7613636363636364,
+          0.7613636363636364
+        ]
+      }
+    ],
+    "arm_b_winner": {
+      "epochs": 30,
+      "weight_decay": 0.001,
+      "dev_mean": 0.9734848484848486,
+      "dev_seeds": [
+        0.9659090909090909,
+        0.9772727272727273,
+        0.9772727272727273
+      ]
+    }
+  },
+  "final_heldout": {
+    "arm_c_nearest_centroid": {
+      "heldout": 0.7954545454545454,
+      "dev": 0.8977272727272727,
+      "deterministic": true,
+      "reproduces_published_79_55": true,
+      "note": "no learning at all: class mean of the 192-vectors, cosine nearest"
+    },
+    "organism_unsupervised": {
+      "heldout_mean": 0.6944444444444445,
+      "heldout_seeds": [
+        0.6893939393939394,
+        0.7045454545454546,
+        0.6893939393939394
+      ],
+      "prototypes": [
+        184,
+        188,
+        184
+      ],
+      "exposure_epochs": 30,
+      "exposure_utterances": 11880,
+      "published_live_organism": 0.6287878787878788,
+      "note": "faithful port of body/brain.py + body/chemistry.py; sleep and parent taps not ported (no parent in an offline exam, and scars are zero without one)"
+    },
+    "arm_a_unsupervised_snn": {
+      "heldout_mean": 0.6111111111111112,
+      "heldout_seeds": [
+        0.6212121212121212,
+        0.5984848484848485,
+        0.6136363636363636
+      ],
+      "config": {
+        "encoding": "static",
+        "steps": 64,
+        "beta": 0.9,
+        "v_thresh": 1.0,
+        "v_reset": 0.0,
+        "v_floor": -1.0,
+        "inh": 20.0,
+        "pre_decay": 0.9,
+        "peak_rate": 0.6,
+        "lr": 2.0,
+        "mu": 0.2,
+        "w_max": 1.0,
+        "w_norm": 8.0,
+        "ltd_offset": 0.05,
+        "theta_lr": 0.05,
+        "act_mult": 0.5,
+        "batch": 16,
+        "epochs": 20
+      },
+      "n_units": 264,
+      "dev_mean": 0.7083333333333334,
+      "health": [
+        {
+          "mean_spikes_per_item": 42.35353469848633,
+          "winner_spikes_mean": 41.86616134643555,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 215,
+          "units_named": 215,
+          "params": 101376
+        },
+        {
+          "mean_spikes_per_item": 42.43434524536133,
+          "winner_spikes_mean": 42.06565475463867,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 218,
+          "units_named": 218,
+          "params": 101376
+        },
+        {
+          "mean_spikes_per_item": 42.31565475463867,
+          "winner_spikes_mean": 41.65909194946289,
+          "silent_items_frac": 0.0,
+          "units_ever_winning": 217,
+          "units_named": 217,
+          "params": 101376
+        }
+      ],
+      "params": 101376,
+      "exposure_utterances": 7920
+    },
+    "arm_a_budget_matched": {
+      "heldout_mean": 0.6161616161616162,
+      "heldout_seeds": [
+        0.6742424242424242,
+        0.5833333333333334,
+        0.5909090909090909
+      ],
+      "n_units": 184,
+      "note": "the winning ARM A config shrunk to the number of prototypes the organism grew for itself — the closest thing to an equal-brain comparison"
+    },
+    "extra_kmeans_same_protocol": {
+      "heldout_mean": 0.7424242424242425,
+      "heldout_seeds": [
+        0.7575757575757576,
+        0.7424242424242424,
+        0.7272727272727273
+      ],
+      "k": 264,
+      "note": "unsupervised, non-spiking, non-organism. If the SNN cannot beat this, the spikes bought nothing."
+    },
+    "arm_b_organism_supervised_readout": {
+      "heldout_mean": 0.8106060606060606,
+      "heldout_seeds": [
+        0.8181818181818182,
+        0.8106060606060606,
+        0.803030303030303
+      ],
+      "exposure_epochs": 30,
+      "weight_decay": 0.001,
+      "prototypes": [
+        184,
+        188,
+        184
+      ],
+      "readout_params": 4070,
+      "dev_mean": 0.9734848484848486
+    },
+    "extra_raw_supervised_linear": {
+      "heldout_mean": 0.8333333333333334,
+      "heldout_seeds": [
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334
+      ],
+      "weight_decay": 0.001,
+      "note": "does the organism's prototype layer ADD information to the cochlea, or only survive it?"
+    }
+  },
+  "budgets": {
+    "organism_unsupervised": {
+      "learnable_numbers": "184 prototypes x 192 = 35328",
+      "labels_seen_during_learning": 0,
+      "utterance_presentations": 11880,
+      "learning_rule": "spawn-on-surprise + Hebbian pull, chemistry-gated. No optimizer, no gradient."
+    },
+    "arm_a_unsupervised_snn": {
+      "learnable_numbers": 101376,
+      "labels_seen_during_learning": 0,
+      "utterance_presentations": 7920,
+      "learning_rule": "STDP + adaptive threshold + lateral inhibition. No optimizer, no gradient."
+    },
+    "arm_b_organism_plus_readout": {
+      "learnable_numbers": "184 prototypes x 192 (unsupervised) + 4070 readout (supervised)",
+      "labels_seen_during_learning": 396,
+      "utterance_presentations": 11880
+    },
+    "supervised_snn_published": {
+      "learnable_numbers": 110102,
+      "note": "192 -> 512 LIF -> 22 LIF, static encoding, 60 epochs, Adam + surrogate-gradient BPTT",
+      "labels_seen_during_learning": 396,
+      "utterance_presentations": 23760,
+      "heldout_final_mean_3_seeds": 0.8409090909090909,
+      "source": "snn-lab/reports/SWEEP.json (dev-tuned on 308/88, final-epoch heldout, 3 seeds)"
+    },
+    "budgets_not_matched": "Parameter counts and exposure are NOT equal across arms and cannot be: the organism SIZES ITSELF (it grows the prototypes it needs), while both SNNs are given a fixed layer. Exposure in utterances is reported for every arm so the reader can see who was fed more."
+  },
+  "wall_seconds": 344.1,
+  "post_hoc_diagnostics": {
+    "_what_this_is": "POST-HOC diagnostics, run after the heldout was opened. They chose nothing and are not arms. They exist to show how much of every unsupervised number is memorisation.",
+    "nearest_neighbour_raw_1nn": {
+      "heldout": 0.7424242424242424,
+      "note": "keep every training sound as its own prototype. The ceiling a prototype/cluster method walks toward as its unit count grows."
+    },
+    "kmeans_by_k": {
+      "22": {
+        "mean": 0.5151515151515151,
+        "seeds": [
+          0.48484848484848486,
+          0.5,
+          0.5606060606060606
+        ]
+      },
+      "44": {
+        "mean": 0.6237373737373738,
+        "seeds": [
+          0.6590909090909091,
+          0.5151515151515151,
+          0.696969696969697
+        ]
+      },
+      "88": {
+        "mean": 0.702020202020202,
+        "seeds": [
+          0.7348484848484849,
+          0.6893939393939394,
+          0.6818181818181818
+        ]
+      },
+      "184": {
+        "mean": 0.7373737373737373,
+        "seeds": [
+          0.7727272727272727,
+          0.7272727272727273,
+          0.7121212121212122
+        ]
+      },
+      "264": {
+        "mean": 0.7424242424242425,
+        "seeds": [
+          0.7575757575757576,
+          0.7424242424242424,
+          0.7272727272727273
+        ]
+      },
+      "396": {
+        "mean": 0.7424242424242425,
+        "seeds": [
+          0.7424242424242424,
+          0.7424242424242424,
+          0.7424242424242424
+        ]
+      }
+    },
+    "organism_growth_curve": {
+      "epochs1": {
+        "mean": 0.5050505050505051,
+        "seeds": [
+          0.6212121212121212,
+          0.45454545454545453,
+          0.4393939393939394
+        ],
+        "prototypes": [
+          50,
+          29,
+          38
+        ]
+      },
+      "epochs3": {
+        "mean": 0.6363636363636364,
+        "seeds": [
+          0.7121212121212122,
+          0.5606060606060606,
+          0.6363636363636364
+        ],
+        "prototypes": [
+          88,
+          72,
+          80
+        ]
+      },
+      "epochs10": {
+        "mean": 0.6691919191919191,
+        "seeds": [
+          0.6666666666666666,
+          0.6590909090909091,
+          0.6818181818181818
+        ],
+        "prototypes": [
+          155,
+          151,
+          151
+        ]
+      },
+      "epochs30": {
+        "mean": 0.6944444444444445,
+        "seeds": [
+          0.6893939393939394,
+          0.7045454545454546,
+          0.6893939393939394
+        ],
+        "prototypes": [
+          184,
+          188,
+          184
+        ]
+      }
+    }
+  }
+}

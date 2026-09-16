@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171a13">
+  <title>חוות הנמלים — שיחה חיה</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">⌬</span>
+        <div>
+          <p class="eyebrow">ניסוי חברה סגורה · מקומי</p>
+          <h1>חוות הנמלים</h1>
+          <p class="bridge-notice">Project Shlomo · גשר דמו טקסטואלי — המוח מאפס טרם חובר</p>
+        </div>
+      </div>
+      <div class="system-strip" aria-live="polite">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="systemStatus">בודק את הקן…</span>
+        <span class="model-name" id="modelName"></span>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="colony-panel" aria-labelledby="colonyTitle">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">מפת הקן</p>
+            <h2 id="colonyTitle">בחר נמלה לדבר איתה</h2>
+          </div>
+          <button class="quiet-button" id="showNorms" type="button">כללי המושבה</button>
+        </div>
+
+        <div class="nest" id="nest" aria-label="תשע נמלים במפת הקן">
+          <svg class="tunnels" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M24 22 C36 28 39 39 31 49 S33 69 49 78"></path>
+            <path d="M51 17 C55 28 61 33 60 47 S69 63 76 79"></path>
+            <path d="M77 25 C68 33 71 46 84 54"></path>
+            <path d="M31 49 C43 43 49 45 60 47"></path>
+            <path d="M20 76 C30 66 39 71 49 78"></path>
+            <path d="M60 47 C54 60 56 69 49 78"></path>
+            <path d="M84 54 C79 63 80 70 76 79"></path>
+          </svg>
+          <div class="queen-cell" aria-hidden="true">
+            <span>מועצה</span>
+            <b>3</b>
+          </div>
+          <div id="antNodes"></div>
+        </div>
+
+        <div class="judge-rail" id="judgeRail" aria-label="מועצת השופטים"></div>
+      </section>
+
+      <section class="conversation-panel" aria-labelledby="chatTitle">
+        <div class="ant-identity">
+          <div class="portrait" id="portrait" aria-hidden="true">
+            <span class="ant-glyph">●</span>
+          </div>
+          <div>
+            <p class="eyebrow">ערוץ ישיר</p>
+            <h2 id="chatTitle">תמי · מלקטת</h2>
+            <p id="antTemperament">סקרנית, מעשית ומבחינה בפרטים קטנים</p>
+          </div>
+          <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="true">
+            קול פעיל
+          </button>
+        </div>
+
+        <div class="transcript" id="transcript" aria-live="polite" aria-label="תמליל שיחה">
+          <div class="empty-state" id="emptyState">
+            <span class="trail-mark" aria-hidden="true">· · · ⟡</span>
+            <h3>הקן מקשיב</h3>
+            <p>לחץ על כפתור הדיבור ואמור משהו בעברית. אפשר גם להקליד.</p>
+          </div>
+        </div>
+
+        <div class="composer">
+          <label class="sr-only" for="messageInput">הודעה לנמלה</label>
+          <textarea id="messageInput" rows="2" maxlength="1000"
+            placeholder="כתוב לתמי…"></textarea>
+          <button class="send-button" id="sendButton" type="button">שלח</button>
+        </div>
+
+        <div class="voice-dock">
+          <button class="mic-button" id="micButton" type="button" aria-label="התחל דיבור">
+            <span class="mic-core" aria-hidden="true"></span>
+            <span class="mic-label">דבר עם הנמלה</span>
+          </button>
+          <p id="voiceStatus">לחיצה אחת מתחילה האזנה בעברית</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="normsDialog">
+    <button class="dialog-close" id="closeNorms" type="button" aria-label="סגור">×</button>
+    <p class="eyebrow">מועצת הקן</p>
+    <h2>החוקים שחלים על כל נמלה</h2>
+    <ol id="normsList"></ol>
+  </dialog>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# amqtt MQTT broker — pure Python, no admin install needed
+# Listens on all interfaces : 1883 (and websockets 8080 for browser clients)
+
+listeners:
+  default:
+    type: tcp
+    bind: 0.0.0.0:1883
+    max_connections: 50
+  ws-default:
+    type: ws
+    bind: 0.0.0.0:8080
+
+sys_interval: 30
+auth:
+  allow-anonymous: true
+  password-file:
+topic-check:
+  enabled: false

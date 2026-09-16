@@ -1,0 +1,126 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "ya",
+ "letter": "yod",
+ "hebrew": "י",
+ "facts": {
+  "place": "palate",
+  "manner": "approximant",
+  "nasal": 0,
+  "voiced": 1
+ },
+ "decisions": {
+  "knots": "I",
+  "constr": "wide",
+  "nasal": 0,
+  "voice": "on",
+  "release": "plain",
+  "burst": 0,
+  "pre": 0
+ },
+ "amounts": {
+  "c_pos": 0.7541437153145882,
+  "c_area": 0.42243186143135036,
+  "velum": 0.0,
+  "ten": 0.6,
+  "voi": 1.0,
+  "d_pre": 0.0,
+  "d_cons": 0.07018984399597156,
+  "d_trans": 0.01628745008859576,
+  "d_gap": 0.04,
+  "gap_pos": 0.65,
+  "gap_area": 2.0,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.0,
+  "d_vowel": 0.3003672362276264,
+  "glide": 0.5955114567116637,
+  "gain": 6.0,
+  "f0": 103.11727113975053,
+  "trans_voi": null
+ },
+ "live_amounts": [
+  "c_area",
+  "c_pos",
+  "d_cons",
+  "d_trans",
+  "d_vowel",
+  "f0",
+  "glide",
+  "ten",
+  "trans_voi",
+  "voi"
+ ],
+ "gesture": {
+  "keyframes": [
+   [
+    -1.0571,
+    0.957,
+    2.0,
+    2.0,
+    0.8913,
+    -2.5166,
+    0.266,
+    0.5883,
+    0.7541,
+    0.4224,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -1.0571,
+    0.957,
+    2.0,
+    2.0,
+    0.8913,
+    -2.5166,
+    0.266,
+    0.5883,
+    0.7541,
+    0.4224,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.0702,
+   0.0163,
+   0.3004
+  ],
+  "f0_knots": [
+   103.11727113975053,
+   103.11727113975053,
+   95.899062159968
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.5955114567116637,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "ruler": "school-v2/ruler.py (09-02 family rulers + verifiers' objections)",
+ "brief": "{\"onset_F\": [275, 1987, 2765], \"vowel_F\": [544, 1212, 2583], \"hnr_cons_db\": 12.1, \"f0_cons\": 103.9, \"frac_gt2k_cons\": 0.049, \"burst\": {\"max_jump_db\": 8.8, \"at_ms\": 20.0, \"burst\": false}, \"glide_ms\": 179, \"level_cons_db_re_vowel\": 1.4, \"F2_arrives_ms_after_release\": 150}",
+ "attempt": 21
+}

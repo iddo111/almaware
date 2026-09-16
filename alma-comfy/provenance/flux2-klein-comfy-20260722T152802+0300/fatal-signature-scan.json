@@ -1,0 +1,21 @@
+{
+  "scanned_after_server_stop": true,
+  "files": [
+    "comfy-server.log",
+    "driver.log"
+  ],
+  "patterns": [
+    "CUDA error",
+    "CUDA out of memory",
+    "OutOfMemoryError",
+    "illegal memory access",
+    "device-side assert",
+    "CUBLAS_STATUS",
+    "CUDNN_STATUS",
+    "segmentation fault",
+    "segfault",
+    "kernel panic"
+  ],
+  "match_count": 0,
+  "matches": []
+}

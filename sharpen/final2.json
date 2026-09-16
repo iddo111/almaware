@@ -1,0 +1,116 @@
+{
+  "when": "2026-09-06T02:09:09",
+  "rows": [
+    {
+      "name": "N-dark-viewTangent",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final2/N-dark-viewTangent.jpg",
+      "strokes": 1200000,
+      "lapvar": 41.9,
+      "lapvar_norm": 532.2,
+      "coverage": 1.0,
+      "render_s": 3.7
+    },
+    {
+      "name": "N-dark-worldTangent",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final2/N-dark-worldTangent.jpg",
+      "strokes": 1200000,
+      "lapvar": 44.3,
+      "lapvar_norm": 557.5,
+      "coverage": 1.0,
+      "render_s": 3.6
+    },
+    {
+      "name": "N-dark-worldTangent-AA2",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final2/N-dark-worldTangent-AA2.jpg",
+      "strokes": 1200000,
+      "lapvar": 20.1,
+      "lapvar_norm": 254.4,
+      "coverage": 1.0,
+      "render_s": 4.6
+    },
+    {
+      "name": "N-lit-viewTangent",
+      "state": "lit",
+      "file": "/home/eran1/sharpen-run/lab/final2/N-lit-viewTangent.jpg",
+      "strokes": 1200000,
+      "lapvar": 468.0,
+      "lapvar_norm": 758.3,
+      "coverage": 1.0,
+      "render_s": 3.7
+    },
+    {
+      "name": "N-lit-worldTangent",
+      "state": "lit",
+      "file": "/home/eran1/sharpen-run/lab/final2/N-lit-worldTangent.jpg",
+      "strokes": 1200000,
+      "lapvar": 371.7,
+      "lapvar_norm": 577.3,
+      "coverage": 1.0,
+      "render_s": 3.7
+    },
+    {
+      "name": "N-lit-worldTangent-AA2",
+      "state": "lit",
+      "file": "/home/eran1/sharpen-run/lab/final2/N-lit-worldTangent-AA2.jpg",
+      "strokes": 1200000,
+      "lapvar": 168.4,
+      "lapvar_norm": 264.2,
+      "coverage": 1.0,
+      "render_s": 4.6
+    },
+    {
+      "name": "O-dark-grade1.6",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final2/O-dark-grade1.6.jpg",
+      "strokes": 1200000,
+      "lapvar": 112.4,
+      "lapvar_norm": 555.5,
+      "coverage": 1.0,
+      "render_s": 3.6
+    },
+    {
+      "name": "O-dark-grade2.2",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final2/O-dark-grade2.2.jpg",
+      "strokes": 1200000,
+      "lapvar": 211.0,
+      "lapvar_norm": 554.6,
+      "coverage": 1.0,
+      "render_s": 3.6
+    },
+    {
+      "name": "O-dark-grade2.2-AA2",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final2/O-dark-grade2.2-AA2.jpg",
+      "strokes": 1200000,
+      "lapvar": 93.3,
+      "lapvar_norm": 246.8,
+      "coverage": 1.0,
+      "render_s": 4.5
+    },
+    {
+      "name": "O-dark-grade3.0",
+      "state": "dark",
+      "file": "/home/eran1/sharpen-run/lab/final2/O-dark-grade3.0.jpg",
+      "strokes": 1200000,
+      "lapvar": 377.7,
+      "lapvar_norm": 549.2,
+      "coverage": 1.0,
+      "render_s": 3.6
+    },
+    {
+      "name": "P-lit-4K-worldTangent",
+      "state": "lit",
+      "file": "/home/eran1/sharpen-run/lab/final2/P-lit-4K-worldTangent.jpg",
+      "strokes": 1200000,
+      "lapvar": 127.4,
+      "lapvar_norm": 199.1,
+      "coverage": 1.0,
+      "render_s": 4.9
+    }
+  ],
+  "seconds": 251.2
+}

@@ -1,0 +1,233 @@
+{
+ "what": "sitting3-20260903: settles two open questions from HEBREW-JUDGE-20260903.md -- does Iddo still hear ma on the na candidates the judge scores as na, and does he hear the syllable the corpus filename claims, on clips the judge got systematically wrong. 20 clips, 4 groups (na_candidates, na_v3_best, na_original, corpus, anchor).",
+ "seed": 20260903,
+ "groups": [
+  "na_candidates",
+  "na_v3_best",
+  "na_original",
+  "corpus",
+  "anchor"
+ ],
+ "order": {
+  "1": {
+   "group": "corpus",
+   "truth": "ma",
+   "wav": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\ma_h01_1.wav",
+   "source": "proof/heldout-vault",
+   "label_hint": "corpus-ma_h01_1",
+   "judge_top1": "la",
+   "judge_conf": 0.7442,
+   "judge_note": "ma→la (M→L) confusion (val-human132.json row)",
+   "iddo_prior": null
+  },
+  "2": {
+   "group": "corpus",
+   "truth": "ha",
+   "wav": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\ha_h00_0.wav",
+   "source": "proof/heldout-vault",
+   "label_hint": "corpus-ha_h00_0",
+   "judge_top1": "ha",
+   "judge_conf": 0.6505,
+   "judge_note": "control: judge got this one RIGHT (val-human132.json row)",
+   "iddo_prior": null
+  },
+  "3": {
+   "group": "na_candidates",
+   "truth": "na",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school-v2\\candidates\\rejected-round1\\CLAUDE-na-cand-A.wav",
+   "source": "school-v2/candidates/rejected-round1",
+   "label_hint": "na-cand-A",
+   "judge_top1": "na",
+   "judge_conf": null,
+   "judge_note": "aggregate from HEBREW-JUDGE-20260903.md: judge heard [n a] on all 6, confidence 0.57-0.96 -- exact per-letter score not saved to disk",
+   "iddo_prior": "round 1 (15:35); Iddo 17:58 said all three round-1 clips still sound like ma (UNCONFIRMED which clips he played)"
+  },
+  "4": {
+   "group": "corpus",
+   "truth": "ta",
+   "wav": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\tha_h00_0.wav",
+   "source": "proof/heldout-vault",
+   "label_hint": "corpus-tha_h00_0",
+   "judge_top1": "ka",
+   "judge_conf": 0.97,
+   "judge_note": "ta→ka (T→K, tet/tav heard as kaf/qof) confusion (val-human132.json row)",
+   "iddo_prior": null
+  },
+  "5": {
+   "group": "na_v3_best",
+   "truth": "na",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school-v3\\lessons\\CLAUDE-na-judge-v00.wav",
+   "source": "school-v3/lessons",
+   "label_hint": "na-v3-best",
+   "judge_top1": "na",
+   "judge_conf": 0.9708,
+   "judge_note": "school-v3 gate3.json: best na, old_ruler_pass=true too",
+   "iddo_prior": null
+  },
+  "6": {
+   "group": "corpus",
+   "truth": "tza",
+   "wav": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\tsa_h01_0.wav",
+   "source": "proof/heldout-vault",
+   "label_hint": "corpus-tsa_h01_0",
+   "judge_top1": "sa",
+   "judge_conf": 0.9054,
+   "judge_note": "tza→sa (TS→S) confusion (val-human132.json row)",
+   "iddo_prior": null
+  },
+  "7": {
+   "group": "corpus",
+   "truth": "tza",
+   "wav": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\tsa_h00_0.wav",
+   "source": "proof/heldout-vault",
+   "label_hint": "corpus-tsa_h00_0",
+   "judge_top1": "sa",
+   "judge_conf": 0.9027,
+   "judge_note": "tza→sa (TS→S) confusion (val-human132.json row)",
+   "iddo_prior": null
+  },
+  "8": {
+   "group": "na_candidates",
+   "truth": "na",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school-v2\\candidates\\rejected-round1\\CLAUDE-na-cand-B.wav",
+   "source": "school-v2/candidates/rejected-round1",
+   "label_hint": "na-cand-B",
+   "judge_top1": "na",
+   "judge_conf": null,
+   "judge_note": "aggregate from HEBREW-JUDGE-20260903.md: judge heard [n a] on all 6, confidence 0.57-0.96 -- exact per-letter score not saved to disk",
+   "iddo_prior": "round 1 (15:35); Iddo 17:58 said all three round-1 clips still sound like ma (UNCONFIRMED which clips he played)"
+  },
+  "9": {
+   "group": "corpus",
+   "truth": "ma",
+   "wav": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\ma_h01_0.wav",
+   "source": "proof/heldout-vault",
+   "label_hint": "corpus-ma_h01_0",
+   "judge_top1": "la",
+   "judge_conf": 0.8039,
+   "judge_note": "ma→la (M→L) confusion (val-human132.json row)",
+   "iddo_prior": null
+  },
+  "10": {
+   "group": "corpus",
+   "truth": "pa",
+   "wav": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\pa_h00_0.wav",
+   "source": "proof/heldout-vault",
+   "label_hint": "corpus-pa_h00_0",
+   "judge_top1": "pa",
+   "judge_conf": 0.7599,
+   "judge_note": "control: judge got this one RIGHT (val-human132.json row)",
+   "iddo_prior": null
+  },
+  "11": {
+   "group": "na_candidates",
+   "truth": "na",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school-v2\\candidates\\rejected-round1\\CLAUDE-na-cand-C.wav",
+   "source": "school-v2/candidates/rejected-round1",
+   "label_hint": "na-cand-C",
+   "judge_top1": "na",
+   "judge_conf": null,
+   "judge_note": "aggregate from HEBREW-JUDGE-20260903.md: judge heard [n a] on all 6, confidence 0.57-0.96 -- exact per-letter score not saved to disk",
+   "iddo_prior": "round 1 (15:35); Iddo 17:58 said all three round-1 clips still sound like ma (UNCONFIRMED which clips he played)"
+  },
+  "12": {
+   "group": "anchor",
+   "truth": "ma",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\LISTEN\\IDDO-ma.wav",
+   "source": "throat-one-sample/LISTEN",
+   "label_hint": "iddo-ma",
+   "judge_top1": "ma",
+   "judge_conf": null,
+   "judge_note": "report: judge got 4/5 of Iddo's own clips right, only ya missed (heard as da) -- ma was one of the correct ones; exact per-clip confidence not saved",
+   "iddo_prior": null
+  },
+  "13": {
+   "group": "corpus",
+   "truth": "sa",
+   "wav": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\sa_h00_1.wav",
+   "source": "proof/heldout-vault",
+   "label_hint": "corpus-sa_h00_1",
+   "judge_top1": "kha",
+   "judge_conf": 0.9749,
+   "judge_note": "sa→kha (S→X) confusion (val-human132.json row)",
+   "iddo_prior": null
+  },
+  "14": {
+   "group": "na_candidates",
+   "truth": "na",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school-v2\\candidates\\CLAUDE-na-cand-D.wav",
+   "source": "school-v2/candidates",
+   "label_hint": "na-cand-D",
+   "judge_top1": "na",
+   "judge_conf": null,
+   "judge_note": "aggregate from HEBREW-JUDGE-20260903.md: judge heard [n a] on all 6, confidence 0.57-0.96 -- exact per-letter score not saved to disk",
+   "iddo_prior": "round 2 (18:02), tongue body fronted during tip closure, knots AI70"
+  },
+  "15": {
+   "group": "na_candidates",
+   "truth": "na",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school-v2\\candidates\\rejected-round1\\CLAUDE-na-cand-F.wav",
+   "source": "school-v2/candidates/rejected-round1",
+   "label_hint": "na-cand-F",
+   "judge_top1": "na",
+   "judge_conf": null,
+   "judge_note": "aggregate from HEBREW-JUDGE-20260903.md: judge heard [n a] on all 6, confidence 0.57-0.96 -- exact per-letter score not saved to disk",
+   "iddo_prior": "round 1 (15:35) as designed, but the WAV is byte-identical to candidate D (a burst-onset variant that measured identical for a nasal and was dropped) -- included as a same-clip repeatability check, not a 7th design"
+  },
+  "16": {
+   "group": "corpus",
+   "truth": "sa",
+   "wav": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\sa_h00_0.wav",
+   "source": "proof/heldout-vault",
+   "label_hint": "corpus-sa_h00_0",
+   "judge_top1": "kha",
+   "judge_conf": 0.9441,
+   "judge_note": "sa→kha (S→X, samekh heard as het/khaf) confusion (val-human132.json row)",
+   "iddo_prior": null
+  },
+  "17": {
+   "group": "na_original",
+   "truth": "na",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school-v2\\lessons\\CLAUDE-na-v10.wav",
+   "source": "school-v2/lessons",
+   "label_hint": "na-orig-v10",
+   "judge_top1": "ma",
+   "judge_conf": 0.385,
+   "judge_note": "one of the 14 original school-v2 na lessons; judge heard ma in 10/14 of them (val-teacher-v2.json)",
+   "iddo_prior": "Iddo 15:27 on the teacher's na lessons in general: \"קלוד NA אתה אומר MA\" (not this specific clip)"
+  },
+  "18": {
+   "group": "na_candidates",
+   "truth": "na",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school-v2\\candidates\\CLAUDE-na-cand-E.wav",
+   "source": "school-v2/candidates",
+   "label_hint": "na-cand-E",
+   "judge_top1": "na",
+   "judge_conf": null,
+   "judge_note": "aggregate from HEBREW-JUDGE-20260903.md: judge heard [n a] on all 6, confidence 0.57-0.96 -- exact per-letter score not saved to disk",
+   "iddo_prior": "round 2 (18:02), tongue body fronted during tip closure, knots AI50"
+  },
+  "19": {
+   "group": "na_original",
+   "truth": "na",
+   "wav": "D:\\CLAUDE\\eran-brain\\throat-one-sample\\school-v2\\lessons\\CLAUDE-na-v13.wav",
+   "source": "school-v2/lessons",
+   "label_hint": "na-orig-v13",
+   "judge_top1": "ma",
+   "judge_conf": 0.368,
+   "judge_note": "one of the 14 original school-v2 na lessons; judge heard ma in 10/14 of them (val-teacher-v2.json)",
+   "iddo_prior": "Iddo 15:27 on the teacher's na lessons in general: \"קלוד NA אתה אומר MA\" (not this specific clip)"
+  },
+  "20": {
+   "group": "corpus",
+   "truth": "ta",
+   "wav": "D:\\CLAUDE\\eran-brain\\proof\\heldout-vault\\tha_h01_0.wav",
+   "source": "proof/heldout-vault",
+   "label_hint": "corpus-tha_h01_0",
+   "judge_top1": "ka",
+   "judge_conf": 0.9379,
+   "judge_note": "ta→ka (T→K) confusion (val-human132.json row)",
+   "iddo_prior": null
+  }
+ }
+}

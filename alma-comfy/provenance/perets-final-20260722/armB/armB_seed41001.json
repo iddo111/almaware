@@ -1,0 +1,43 @@
+{
+  "run": "armB_seed41001",
+  "arm": "B",
+  "seed": 41001,
+  "innovation": null,
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "dataset": "PolyAI/banking77",
+  "tap_layers": [
+    4,
+    9,
+    14,
+    19,
+    24
+  ],
+  "params": {
+    "arm_A": 1251590,
+    "arm_B": 1250693,
+    "rel_diff": 0.0007166883723903195
+  },
+  "metrics": {
+    "accuracy": 0.8709362745285034,
+    "macro_f1": 0.8708172615607201,
+    "nll": 1.211104154586792,
+    "ece": 0.10399929020786658
+  },
+  "wall_seconds": 151.91226482391357,
+  "peak_gpu_gb": 0.04069089889526367,
+  "git": "n/a",
+  "config": {
+    "batch_size": 32,
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "warmup_steps": 50,
+    "epochs": 300
+  },
+  "gate_fix": {
+    "gate_balance_coeff": 0.5,
+    "gate_entropy_coeff": 0.0,
+    "aux_frame_ce_coeff": 0.2,
+    "seat_threshold": 0.2,
+    "quorum": 2
+  }
+}

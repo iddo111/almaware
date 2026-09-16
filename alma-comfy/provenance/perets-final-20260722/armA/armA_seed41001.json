@@ -1,0 +1,63 @@
+{
+  "run": "armA_seed41001",
+  "arm": "A",
+  "seed": 41001,
+  "innovation": "multi_reference_frame_voting (thousand-brains + GIST score==weight)",
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "dataset": "PolyAI/banking77",
+  "tap_layers": [
+    4,
+    9,
+    14,
+    19,
+    24
+  ],
+  "params": {
+    "arm_A": 1251590,
+    "arm_B": 1250693,
+    "rel_diff": 0.0007166883723903195
+  },
+  "metrics": {
+    "accuracy": 0.8709362745285034,
+    "macro_f1": 0.8704218042752413,
+    "nll": 0.983431875705719,
+    "ece": 0.09488397216773592,
+    "quorum": {
+      "mean_w_per_frame": [
+        0.1342,
+        0.1339,
+        0.1339,
+        0.134,
+        0.1338
+      ],
+      "seated_frames_hist": [
+        2666,
+        0,
+        0,
+        1,
+        2,
+        407
+      ],
+      "inquorate_rate": 0.8667100071907043,
+      "coverage": 0.13328999280929565,
+      "selective_accuracy_quorate": 0.7317073345184326
+    }
+  },
+  "wall_seconds": 400.0750296115875,
+  "peak_gpu_gb": 0.08646392822265625,
+  "git": "n/a",
+  "config": {
+    "batch_size": 32,
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "warmup_steps": 50,
+    "epochs": 300
+  },
+  "gate_fix": {
+    "gate_balance_coeff": 0.5,
+    "gate_entropy_coeff": 0.0,
+    "aux_frame_ce_coeff": 0.2,
+    "seat_threshold": 0.2,
+    "quorum": 2
+  }
+}

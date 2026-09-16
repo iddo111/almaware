@@ -1,0 +1,15 @@
+{
+  "prompt": "A single small brass robot walks across a quiet sunlit workbench, cinematic natural light, stable camera, realistic materials, clean background.",
+  "negative_prompt": "text, subtitles, watermark, logo, duplicate subject, deformed limbs, flicker, camera shake, low detail, overexposure",
+  "seed": 20260722,
+  "width": 832,
+  "height": 480,
+  "num_frames": 17,
+  "num_inference_steps": 8,
+  "guidance_scale": 5.0,
+  "fps": 24,
+  "model_dir": "/home/eran3/models/alma-studio/Wan2.2-TI2V-5B-Diffusers",
+  "model_noncache_file_count": 29,
+  "model_noncache_bytes": 34203021834,
+  "model_incomplete_files": []
+}

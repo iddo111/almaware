@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>המקדש העתידי — יחזקאל מ׳–מ״ג · The Future Temple</title>
+<style>
+  :root{
+    --ink:#12100c; --paper:#fbf7ef; --line:#d8cfbe;
+    --gold:#8a6a1f; --amber:#c2610a; --dim:#6b6355;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;overflow:hidden;background:#0d0f14;
+    font:14px/1.45 "Segoe UI",system-ui,-apple-system,sans-serif;color:var(--ink)}
+  canvas{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+
+  .panel{position:fixed;background:rgba(251,247,239,.94);border:1px solid var(--line);
+    border-radius:10px;box-shadow:0 6px 26px rgba(0,0,0,.35);backdrop-filter:blur(6px)}
+
+  #hud{top:12px;left:12px;max-width:330px;padding:12px 14px}
+  #hud h1{margin:0 0 2px;font-size:16px;letter-spacing:.2px}
+  #hud h1 small{display:block;font-weight:400;font-size:11.5px;color:var(--dim);letter-spacing:.3px}
+  #scale{margin:9px 0 0;padding:8px 9px;background:#f3ecdd;border-radius:7px;
+    font-size:11.5px;line-height:1.5;border-left:3px solid var(--gold)}
+  #scale b{color:var(--gold)}
+  #keys{margin:9px 0 0;font-size:11.5px;color:var(--dim);line-height:1.7}
+  #keys kbd{display:inline-block;min-width:16px;text-align:center;padding:1px 5px;
+    background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;
+    font:11px ui-monospace,Consolas,monospace;color:var(--ink)}
+
+  #where{bottom:12px;left:12px;padding:10px 13px;max-width:420px}
+  #where .k{font-size:15px;font-weight:600;margin-bottom:1px}
+  #where .s{font-size:11.5px;color:var(--dim);line-height:1.5}
+  #where .inf{color:var(--amber);font-weight:600}
+  #where .pos{font:11px ui-monospace,Consolas,monospace;color:var(--dim);margin-top:5px;
+    padding-top:5px;border-top:1px solid var(--line)}
+
+  #vrwrap{top:12px;right:12px;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+  #vr{padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;color:#fff;
+    background:linear-gradient(180deg,#2f6b4f,#1f4d38);border:0;border-radius:9px;
+    box-shadow:0 4px 16px rgba(0,0,0,.35)}
+  #vr[disabled]{background:#8d8madd;background:#8f8b82;cursor:not-allowed;opacity:.75}
+  #xrnote{max-width:250px;padding:8px 11px;font-size:11px;color:var(--dim);line-height:1.5}
+
+  #cross{position:fixed;left:50%;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;
+    pointer-events:none;opacity:.75}
+  #cross:before,#cross:after{content:"";position:absolute;background:#fff;
+    box-shadow:0 0 2px rgba(0,0,0,.9)}
+  #cross:before{left:7px;top:0;width:2px;height:16px}
+  #cross:after{top:7px;left:0;height:2px;width:16px}
+
+  #veil{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+    background:rgba(10,12,16,.82);color:#f4efe4;text-align:center;cursor:pointer;z-index:9}
+  #veil div{max-width:460px;padding:0 24px}
+  #veil h2{margin:0 0 8px;font-size:21px;font-weight:600}
+  #veil p{margin:5px 0;font-size:13px;opacity:.85;line-height:1.6}
+  #veil .go{margin-top:16px;display:inline-block;padding:10px 22px;border:1px solid #6d6555;
+    border-radius:8px;font-size:13px}
+  .hide{display:none !important}
+  #legend{bottom:12px;right:12px;padding:9px 12px;font-size:11px;color:var(--dim);line-height:1.6}
+  #legend i{display:inline-block;width:10px;height:10px;border-radius:2px;
+    vertical-align:-1px;margin-right:5px}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="cross" class="hide"></div>
+
+<div id="hud" class="panel">
+  <h1>המקדש העתידי<small>The Future Temple &middot; Yechezkel 40&ndash;43, from the text's own numbers</small></h1>
+  <div id="scale">
+    אמה = <b>0.56 מ׳</b> (7 טפחים &times; 8 ס״מ, ר׳ חיים נאה) &middot; קנה = 6 אמות = 2.02 מ׳<br>
+    <span style="color:var(--dim)">1 cubit = 0.56 m (the long cubit of Yech 40:5, "the cubit and a handbreadth").
+    The blue figure at the east gate is 1.80 m.</span>
+  </div>
+  <div id="keys">
+    <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> ללכת / walk &middot;
+    <kbd>Shift</kbd> לרוץ / run<br>
+    <kbd>I</kbd> להאיר מה שאינו בכתוב / light up what is NOT in the text<br>
+    <kbd>1</kbd>&ndash;<kbd>6</kbd> תחנות הסיור / jump to a station &middot; <kbd>Esc</kbd> לשחרר עכבר
+  </div>
+</div>
+
+<div id="vrwrap">
+  <button id="vr" disabled>בודק VR&hellip;</button>
+  <div id="xrnote" class="panel">בודק תמיכת WebXR&hellip;</div>
+</div>
+
+<div id="where" class="panel">
+  <div class="k" id="wk">&mdash;</div>
+  <div class="s" id="ws">כוון את הכוונת אל בניין כדי לראות מאיזה פסוק המידה שלו באה.<br>
+    Aim the crosshair at anything to see which verse its measurement comes from.</div>
+  <div class="pos" id="wp"></div>
+</div>
+
+<div id="legend" class="panel">
+  <i style="background:#c2610a"></i>כתום = לאלמנט הזה יש לפחות מידה אחת שאינה בכתוב<br>
+  <span style="padding-left:15px">amber = this element has at least one dimension the text does not give
+  (usually its height)</span>
+</div>
+
+<div id="veil"><div>
+  <h2>סיור בבית המקדש העתידי</h2>
+  <p>A walk through the Temple of Yechezkel 40&ndash;43, built only from the measurements the text states.</p>
+  <p style="opacity:.6">אתה מתחיל מחוץ לשער המזרחי, במקום שבו האיש עם קנה המדה עמד.<br>
+     You begin outside the east gate, where the man with the measuring reed stood.</p>
+  <span class="go">לחץ להיכנס &middot; click to enter</span>
+</div></div>
+
+<script src="mikdash.js"></script>
+</body>
+</html>

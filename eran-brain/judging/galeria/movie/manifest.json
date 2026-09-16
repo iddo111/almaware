@@ -1,0 +1,28 @@
+{
+  "model": "MOVIE",
+  "status_line_he": "הגזרה (cut) הראשונה קיימת: PERCEPTRON_LTX_cut01.mp4, 64.7 שניות, 7.4MB -- נבנתה מ-LTX על shots_he.json. גזרות מאוחרות יותר (cut02, cut03) ורינדורים מלאים (PERCEPTRON_FULL, PERCEPTRON_DARWISH, גרסת 4K/HDR, גרסת VR) קיימים גם הם ב-render/ אך גדולים בהרבה (עד 593MB, כ-15 דקות).",
+  "status_line_en": "The first cut exists: PERCEPTRON_LTX_cut01.mp4, 64.7 seconds, 7.4MB -- built from LTX on shots_he.json. Later cuts (cut02, cut03) and full renders (PERCEPTRON_FULL, PERCEPTRON_DARWISH, a 4K/HDR version, a VR version) also exist under render/ but are much larger (up to 593MB, about 15 minutes).",
+  "items": [
+    {
+      "file": "MOVIE-PERCEPTRON_LTX_cut01.mp4",
+      "kind": "video",
+      "label_he": "הגזרה הראשונה -- 64 שניות",
+      "note_he": "העתק ישיר (7.4MB, מתחת ל-60MB) -- הגזרה הראשונה שהורכבה מהצילומים ב-shots_he.json.",
+      "source": "perceptron-movie/render/PERCEPTRON_LTX_cut01.mp4"
+    },
+    {
+      "file": "MOVIE-still-15s.jpg",
+      "kind": "image",
+      "label_he": "פריים מתוך הסרט -- שנייה 15",
+      "note_he": "פריים בודד שחולץ מ-PERCEPTRON_LTX_cut01.mp4 עם ffmpeg.",
+      "source": "extracted from perceptron-movie/render/PERCEPTRON_LTX_cut01.mp4 at 00:00:15"
+    },
+    {
+      "file": "MOVIE-still-45s.jpg",
+      "kind": "image",
+      "label_he": "פריים מתוך הסרט -- שנייה 45",
+      "note_he": "פריים בודד שחולץ מ-PERCEPTRON_LTX_cut01.mp4 עם ffmpeg.",
+      "source": "extracted from perceptron-movie/render/PERCEPTRON_LTX_cut01.mp4 at 00:00:45"
+    }
+  ]
+}

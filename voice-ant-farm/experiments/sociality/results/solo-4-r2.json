@@ -1,0 +1,328 @@
+{
+  "format_version": 1,
+  "experiment": "sociality",
+  "hypothesis_under_test": "many ants forming social bonds increases learning exponentially",
+  "condition": "SOLO",
+  "colony_size": 4,
+  "replicate": 2,
+  "rounds": 5,
+  "units": 64,
+  "ants": [
+    "ant-00",
+    "ant-01",
+    "ant-02",
+    "ant-03"
+  ],
+  "seeds": [
+    2072747562,
+    242584365,
+    2130115353,
+    1220940897
+  ],
+  "seeds_by_ant": {
+    "ant-00": 2072747562,
+    "ant-01": 242584365,
+    "ant-02": 2130115353,
+    "ant-03": 1220940897
+  },
+  "recordings": "D:\\CLAUDE\\voice-ant-farm\\recordings",
+  "corpus_manifest_sha256": "a6c34e0e67de9c590cbc57a7747a7046efbc3a784f26672e29964a23d09188ee",
+  "heldout_measured_against": "real-recordings-only",
+  "heldout_pcm_sha256": [
+    "39ae835f5e2d0d1a66468637657cbff85333f00346f2adb0ed0957c84266655c",
+    "6c98c06584dcfe9d44909c9dcdb01f5f69a535954b66945c9f92008053cffcce",
+    "896bd0858dc49ccc45285616aba86b73ccd4469deeb15358db37dd9b574a0027",
+    "999eb2c4973db6348e43cf6706407823d319696c15b56889805676317bd58c04",
+    "a3dc80bc5efda80f50ba1add1a0f83cefbab60775db9b817cbb7398031bbdfdb",
+    "e19607bfb82d827d06ff5d0c344380cb1a967f6bb8d5630eca1d77e50ef70a86",
+    "e976aecf4d5c7cee1323bdd49e9daaf81eb6f2b892434439e0c78afd18d60e99",
+    "febd95c782a18c1623513cd1980aab5ffdee3a0f2b47a81f8a186eb09058c977"
+  ],
+  "volume_matching": {
+    "donation_slots": 3,
+    "matched_added_samples_per_ant": 0,
+    "reference_added_samples_per_ant": 795280,
+    "matched_conditions": [
+      "SELF_ECHO",
+      "SOCIAL",
+      "NOISE"
+    ],
+    "tolerance": 0.03,
+    "requested_synthetic_proportion": 0.3,
+    "actual_synthetic_proportion": 0.299961,
+    "budget_was_clamped": false,
+    "real_training_samples": 1856000,
+    "segment_plan": [
+      {
+        "slot": 0,
+        "segment_samples": 264743,
+        "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+        "synthetic_samples": 264720,
+        "clamped": false,
+        "segment": "segment-00.wav"
+      },
+      {
+        "slot": 1,
+        "segment_samples": 265143,
+        "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+        "synthetic_samples": 265040,
+        "clamped": false,
+        "segment": "segment-01.wav"
+      },
+      {
+        "slot": 2,
+        "segment_samples": 265543,
+        "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+        "synthetic_samples": 265520,
+        "clamped": false,
+        "segment": "segment-02.wav"
+      }
+    ]
+  },
+  "per_round": [
+    {
+      "round": 0,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9828393459320068,
+        "ant-01": 0.9473502039909363,
+        "ant-02": 0.9667304754257202,
+        "ant-03": 0.9702864289283752
+      },
+      "mean_heldout_error": 0.9668016135692596,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "bc76e5fd24b3d9cf61fce6a9f6a8142193178c436d013503da805f5943bb19a9",
+        "ant-01": "7b9a233b7cb8c5d8f9ca63a8b70a50b3ed73fff81c2931358c74813c83b84690",
+        "ant-02": "c836c56374bd4595f144e09226ba48d5ba13002ab87b775c58632d3920535bff",
+        "ant-03": "894a8a93dc67bf47f03acc46a263805da142fbb9786028324d8e1c5f2044bb20"
+      }
+    },
+    {
+      "round": 1,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9828393459320068,
+        "ant-01": 0.9473502039909363,
+        "ant-02": 0.9667304754257202,
+        "ant-03": 0.9702864289283752
+      },
+      "mean_heldout_error": 0.9668016135692596,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "17292420d5b6dbbf4ad6559925199786f20662e71ba4c8cf56eb4b565e72a68b",
+        "ant-01": "665d3632ff3f8be8e217c9d86b32431b650c7bb3df88ac425dde8d678d3d1635",
+        "ant-02": "40998780542d80332b2aa20f71f13372d12bbf29fc6e7fcb0fa0fee0e4760f5b",
+        "ant-03": "a49377163857c6634cd428f80c6eadd06cfead2b24b5b0c5629f059dfe586c10"
+      }
+    },
+    {
+      "round": 2,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9828393459320068,
+        "ant-01": 0.9473502039909363,
+        "ant-02": 0.9667304754257202,
+        "ant-03": 0.9702864289283752
+      },
+      "mean_heldout_error": 0.9668016135692596,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "426366d6df95affcff1b8f1fdf3ca02b3fac5d4a32891c7596cca76c11b4dc94",
+        "ant-01": "a6c7ba5c5de2d5ab8407c1a801cac9afe33208574ea326b11a75b801b7111d1b",
+        "ant-02": "0b92e80827533e78202da9b1f7a1a7876c41afd0e6bbd1fd557fe542d95100e2",
+        "ant-03": "5415bd441dbdf6abe076b1b71c3dabbedde1b0bd9ccffedaba5f4c1766067bd5"
+      }
+    },
+    {
+      "round": 3,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9828393459320068,
+        "ant-01": 0.9473502039909363,
+        "ant-02": 0.9667304754257202,
+        "ant-03": 0.9702864289283752
+      },
+      "mean_heldout_error": 0.9668016135692596,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "eadd662eab37d94d7bb1e2f601a5505f1be0b746a4635144212a339adeb575ba",
+        "ant-01": "df7e2e0aa1c602b345b8aa21a1f32accf87603c065c3dd222f1781891aa80a77",
+        "ant-02": "10ea1e642b2a4caeb572b28d3b9103423d31e9761653c64ed819941c368a3bdf",
+        "ant-03": "a1e45d250e20c1d8aa00126bd200f400c5e85372d9d9eef7952f451153708e66"
+      }
+    },
+    {
+      "round": 4,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9828393459320068,
+        "ant-01": 0.9473502039909363,
+        "ant-02": 0.9667304754257202,
+        "ant-03": 0.9702864289283752
+      },
+      "mean_heldout_error": 0.9668016135692596,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "1cbd33e77094a5f784976906391361650a2a014a1484778239d038c70d7b61cb",
+        "ant-01": "ff2a19f81885098b0cb9e5cfe4045052c86f92a3c28dbf3ef2aebadeab226c15",
+        "ant-02": "8639f95c20511da14213d9551e956adfaf323374bcab330a6f8d72a042f25966",
+        "ant-03": "17069c22729747879e41c9e5efad8175cf40a0e2ee9b66efdf0904cf94ec69aa"
+      }
+    },
+    {
+      "round": 5,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9828393459320068,
+        "ant-01": 0.9473502039909363,
+        "ant-02": 0.9667304754257202,
+        "ant-03": 0.9702864289283752
+      },
+      "mean_heldout_error": 0.9668016135692596,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "52991e8feceb7aa1bbec8532de57da7873fdecdd74a0d943ddeb1db8b9711ef0",
+        "ant-01": "e3c16c6f2bcda965367c697474c7da18d989378cbecd516701e71ed88711c896",
+        "ant-02": "76b8d487772ce1bc3714ce07ea313bcbb8f61397583af907d76dcd70bf4c5a61",
+        "ant-03": "e6374c5783c1cfd904d4b8a288f9628140c0a1496a6da37e225ba6d4fcbfd980"
+      }
+    }
+  ],
+  "final_mean_heldout_error": 0.9668016135692596,
+  "baseline_round0_mean_heldout_error": 0.9668016135692596,
+  "notes": "round 0 is a real-audio-only bootstrap and is identical across conditions for a given replicate; rounds 1..N are the treatment rounds. Each round retrains from scratch on that round's mix, so added audio does not accumulate.",
+  "claim_limit": "held-out vector-quantization error on real recordings only; not a claim about speech, meaning or conversation"
+}

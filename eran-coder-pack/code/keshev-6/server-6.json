@@ -1,0 +1,15 @@
+{
+  "bind": ["127.0.0.1"],
+  "port": 8738,
+  "model": "ivrit-ai/whisper-large-v3-turbo-ct2",
+  "device": "cuda",
+  "compute_type": "int8_float16",
+  "token_file": "D:/CLAUDE/mic-rebuild/state/stt-token",
+  "lock_file": "D:/CLAUDE/keshev-6/state/keshev6.lock",
+  "inflight_cap": 2,
+  "decode_wall_s": 8.0,
+  "canary_interval_s": 300,
+  "priority": "above",
+  "use_prompt": true,
+  "use_repair": true
+}

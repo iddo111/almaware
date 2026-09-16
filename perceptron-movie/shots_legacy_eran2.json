@@ -1,0 +1,44 @@
+[
+ {
+  "id": "b02_L03",
+  "block": 2,
+  "k": 52,
+  "prompt": "1958 documentary, black and white with warm sepia tint. A cluttered scientist's desk lit by a single lamp, pages of hand-drawn neural diagrams, a slide rule, a cup of cold coffee, cigarette smoke curling in the lamplight, slow push-in. Nostalgic, photorealistic, grain, no people visible, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9926047
+ },
+ {
+  "id": "b17_L06",
+  "block": 17,
+  "k": 55,
+  "prompt": "Abstract documentary, cold light. A stark diagram of an XOR logic problem drawn in chalk on a dark green blackboard, camera slowly pulling back to reveal an empty lecture hall in shadow, melancholic, 1969 winter mood, film grain, photoreal, no people, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9949198
+ },
+ {
+  "id": "b18_L09",
+  "block": 18,
+  "k": 58,
+  "prompt": "Abstract data-cinema. A deep neural network visualized as luminous layered planes of nodes, signals cascading forward layer by layer in electric teal and violet, dark background, elegant slow zoom through the layers, photoreal render, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9972349
+ },
+ {
+  "id": "b29_L12",
+  "block": 29,
+  "k": 61,
+  "prompt": "Tender documentary, soft morning light. An extreme close-up of a small child's hand reaching toward a warm point of light, out-of-focus home background, gentle and hopeful, shallow depth of field, film grain, photoreal, no text, no faces., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9995500
+ },
+ {
+  "id": "b09_L15",
+  "block": 9,
+  "k": 64,
+  "prompt": "intimate. A small handmade desktop robot's single lens iris opening and focusing for the first time, soft LED glow warming, dark workshop bokeh behind, slow push-in, hopeful, photoreal, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 10018651
+ },
+ {
+  "id": "b18_L18",
+  "block": 18,
+  "k": 67,
+  "prompt": "High-contrast documentary, kinetic, graffiti-lit concrete. A dense lattice of glowing nodes in depth: first a clean white pulse SURGES forward left to right through every layer, then a violent red-orange wave tears BACKWARD right to left through the same connections, each junction flaring brighter and shifting as it passes. Hard shadows, spray-paint texture, strobing light, smoke. Aggressive, photorealistic, film grain, no people, no text, no logo, no subtitles., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 10041802
+ }
+]

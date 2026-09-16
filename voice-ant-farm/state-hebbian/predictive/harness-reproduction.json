@@ -1,0 +1,1185 @@
+{
+  "question": "does a predictive-coding objective beat random real frames",
+  "bar": {
+    "trained_kmeans_256_published": 0.419,
+    "random_real_frames_256_published": 0.403,
+    "raw_features_no_codebook_published": 0.538,
+    "chance": 0.045454545454545456
+  },
+  "protocol": "frozen speech span from the legacy log-energy column; run-length-collapsed unit strings; cosine 1-NN over unit histograms; identical downstream code for every arm",
+  "metric_policy": "quantisation error is not computed in this file",
+  "training_audio": "D:\\CLAUDE\\voice-ant-farm\\corpus-combined\\train",
+  "training_frames": {
+    "legacy14": 49356
+  },
+  "training_hours": {
+    "legacy14": 0.139
+  },
+  "classes": [
+    "aa",
+    "ah",
+    "ba",
+    "da",
+    "ga",
+    "ha",
+    "ka",
+    "kha",
+    "la",
+    "ma",
+    "na",
+    "pa",
+    "qa",
+    "ra",
+    "sa",
+    "sha",
+    "ta",
+    "tha",
+    "tsa",
+    "va",
+    "ya",
+    "za"
+  ],
+  "results": [
+    {
+      "arm": "published-kmeans",
+      "units": 256,
+      "config": {
+        "beta": 1.0,
+        "delta": 3,
+        "rounds": 12,
+        "candidates": 8,
+        "negatives": 256,
+        "tau": 1.0,
+        "ridge": 1.0,
+        "max_pairs": null
+      },
+      "ants": [
+        {
+          "ant": "ant-a",
+          "seed": 7007,
+          "train_seconds": 0.0,
+          "history": [],
+          "heldout": {
+            "units": 256,
+            "units_used_heldout": 174,
+            "dead_units_heldout": 82,
+            "dead_units_train": 65,
+            "mean_sequence_length": 25.696969696969695,
+            "cosine": {
+              "top1": 0.42424242424242425,
+              "top5": 0.7348484848484849,
+              "meanlink_top1": 0.4166666666666667,
+              "minimal_pairs": {
+                "ba/pa": 0.25,
+                "ga/ka": 1.0,
+                "da/ta": 0.5833333333333334,
+                "sa/sha": 1.0,
+                "ka/qa": 1.0,
+                "ta/tha": 0.75,
+                "za/sa": 1.0,
+                "ah/aa": 0.4166666666666667
+              },
+              "minimal_pairs_full": [
+                {
+                  "pair": "ba/pa",
+                  "accuracy": 0.25,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 3,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.980712890625,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                },
+                {
+                  "pair": "ga/ka",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "da/ta",
+                  "accuracy": 0.5833333333333334,
+                  "meanlink_accuracy": 0.5,
+                  "correct": 7,
+                  "meanlink_correct": 6,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.38720703125,
+                  "meanlink_p_value_vs_coinflip": 0.61279296875
+                },
+                {
+                  "pair": "sa/sha",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ka/qa",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ta/tha",
+                  "accuracy": 0.75,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 9,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.072998046875,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                },
+                {
+                  "pair": "za/sa",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ah/aa",
+                  "accuracy": 0.4166666666666667,
+                  "meanlink_accuracy": 0.5,
+                  "correct": 5,
+                  "meanlink_correct": 6,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.80615234375,
+                  "meanlink_p_value_vs_coinflip": 0.61279296875
+                }
+              ],
+              "permutation_null_top1": {
+                "draws": 200,
+                "mean": 0.04662878787878789,
+                "p95": 0.07575757575757576,
+                "max": 0.09090909090909091
+              },
+              "heldout_pair_auc": 0.6954972403204727,
+              "heldout_pair_cohens_d": 0.767846972458204
+            },
+            "edit": {
+              "top1": 0.32575757575757575,
+              "top5": 0.7651515151515151,
+              "meanlink_top1": 0.3939393939393939,
+              "minimal_pairs": {
+                "ba/pa": 0.4166666666666667,
+                "ga/ka": 1.0,
+                "da/ta": 0.8333333333333334,
+                "sa/sha": 1.0,
+                "ka/qa": 0.9166666666666666,
+                "ta/tha": 0.8333333333333334,
+                "za/sa": 1.0,
+                "ah/aa": 0.4166666666666667
+              }
+            }
+          }
+        },
+        {
+          "ant": "ant-b",
+          "seed": 7019,
+          "train_seconds": 0.0,
+          "history": [],
+          "heldout": {
+            "units": 256,
+            "units_used_heldout": 168,
+            "dead_units_heldout": 88,
+            "dead_units_train": 71,
+            "mean_sequence_length": 25.477272727272727,
+            "cosine": {
+              "top1": 0.4015151515151515,
+              "top5": 0.7196969696969697,
+              "meanlink_top1": 0.4090909090909091,
+              "minimal_pairs": {
+                "ba/pa": 0.16666666666666666,
+                "ga/ka": 1.0,
+                "da/ta": 0.4166666666666667,
+                "sa/sha": 1.0,
+                "ka/qa": 1.0,
+                "ta/tha": 0.5833333333333334,
+                "za/sa": 1.0,
+                "ah/aa": 0.3333333333333333
+              },
+              "minimal_pairs_full": [
+                {
+                  "pair": "ba/pa",
+                  "accuracy": 0.16666666666666666,
+                  "meanlink_accuracy": 0.6666666666666666,
+                  "correct": 2,
+                  "meanlink_correct": 8,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.996826171875,
+                  "meanlink_p_value_vs_coinflip": 0.19384765625
+                },
+                {
+                  "pair": "ga/ka",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "da/ta",
+                  "accuracy": 0.4166666666666667,
+                  "meanlink_accuracy": 0.5,
+                  "correct": 5,
+                  "meanlink_correct": 6,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.80615234375,
+                  "meanlink_p_value_vs_coinflip": 0.61279296875
+                },
+                {
+                  "pair": "sa/sha",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ka/qa",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ta/tha",
+                  "accuracy": 0.5833333333333334,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 7,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.38720703125,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                },
+                {
+                  "pair": "za/sa",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ah/aa",
+                  "accuracy": 0.3333333333333333,
+                  "meanlink_accuracy": 0.5,
+                  "correct": 4,
+                  "meanlink_correct": 6,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.927001953125,
+                  "meanlink_p_value_vs_coinflip": 0.61279296875
+                }
+              ],
+              "permutation_null_top1": {
+                "draws": 200,
+                "mean": 0.04662878787878788,
+                "p95": 0.08333333333333333,
+                "max": 0.10606060606060606
+              },
+              "heldout_pair_auc": 0.7055441985997541,
+              "heldout_pair_cohens_d": 0.8460056972316287
+            },
+            "edit": {
+              "top1": 0.3712121212121212,
+              "top5": 0.7803030303030303,
+              "meanlink_top1": 0.42424242424242425,
+              "minimal_pairs": {
+                "ba/pa": 0.5833333333333334,
+                "ga/ka": 1.0,
+                "da/ta": 0.75,
+                "sa/sha": 1.0,
+                "ka/qa": 0.8333333333333334,
+                "ta/tha": 0.6666666666666666,
+                "za/sa": 1.0,
+                "ah/aa": 0.3333333333333333
+              }
+            }
+          }
+        },
+        {
+          "ant": "ant-c",
+          "seed": 7039,
+          "train_seconds": 0.0,
+          "history": [],
+          "heldout": {
+            "units": 256,
+            "units_used_heldout": 170,
+            "dead_units_heldout": 86,
+            "dead_units_train": 69,
+            "mean_sequence_length": 25.113636363636363,
+            "cosine": {
+              "top1": 0.4090909090909091,
+              "top5": 0.7575757575757576,
+              "meanlink_top1": 0.42424242424242425,
+              "minimal_pairs": {
+                "ba/pa": 0.25,
+                "ga/ka": 1.0,
+                "da/ta": 0.5,
+                "sa/sha": 1.0,
+                "ka/qa": 1.0,
+                "ta/tha": 0.6666666666666666,
+                "za/sa": 1.0,
+                "ah/aa": 0.5833333333333334
+              },
+              "minimal_pairs_full": [
+                {
+                  "pair": "ba/pa",
+                  "accuracy": 0.25,
+                  "meanlink_accuracy": 0.4166666666666667,
+                  "correct": 3,
+                  "meanlink_correct": 5,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.980712890625,
+                  "meanlink_p_value_vs_coinflip": 0.80615234375
+                },
+                {
+                  "pair": "ga/ka",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "da/ta",
+                  "accuracy": 0.5,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 6,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.61279296875,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                },
+                {
+                  "pair": "sa/sha",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ka/qa",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ta/tha",
+                  "accuracy": 0.6666666666666666,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 8,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.19384765625,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                },
+                {
+                  "pair": "za/sa",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ah/aa",
+                  "accuracy": 0.5833333333333334,
+                  "meanlink_accuracy": 0.5,
+                  "correct": 7,
+                  "meanlink_correct": 6,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.38720703125,
+                  "meanlink_p_value_vs_coinflip": 0.61279296875
+                }
+              ],
+              "permutation_null_top1": {
+                "draws": 200,
+                "mean": 0.04375,
+                "p95": 0.08333333333333333,
+                "max": 0.09848484848484848
+              },
+              "heldout_pair_auc": 0.70427792839409,
+              "heldout_pair_cohens_d": 0.7921192527731054
+            },
+            "edit": {
+              "top1": 0.3787878787878788,
+              "top5": 0.75,
+              "meanlink_top1": 0.4015151515151515,
+              "minimal_pairs": {
+                "ba/pa": 0.3333333333333333,
+                "ga/ka": 0.9166666666666666,
+                "da/ta": 0.75,
+                "sa/sha": 1.0,
+                "ka/qa": 0.8333333333333334,
+                "ta/tha": 0.6666666666666666,
+                "za/sa": 0.9166666666666666,
+                "ah/aa": 0.3333333333333333
+              }
+            }
+          }
+        },
+        {
+          "ant": "ant-d",
+          "seed": 7057,
+          "train_seconds": 0.0,
+          "history": [],
+          "heldout": {
+            "units": 256,
+            "units_used_heldout": 176,
+            "dead_units_heldout": 80,
+            "dead_units_train": 66,
+            "mean_sequence_length": 25.643939393939394,
+            "cosine": {
+              "top1": 0.4393939393939394,
+              "top5": 0.7954545454545454,
+              "meanlink_top1": 0.4015151515151515,
+              "minimal_pairs": {
+                "ba/pa": 0.25,
+                "ga/ka": 1.0,
+                "da/ta": 0.5833333333333334,
+                "sa/sha": 1.0,
+                "ka/qa": 0.8333333333333334,
+                "ta/tha": 0.5,
+                "za/sa": 1.0,
+                "ah/aa": 0.5833333333333334
+              },
+              "minimal_pairs_full": [
+                {
+                  "pair": "ba/pa",
+                  "accuracy": 0.25,
+                  "meanlink_accuracy": 0.5,
+                  "correct": 3,
+                  "meanlink_correct": 6,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.980712890625,
+                  "meanlink_p_value_vs_coinflip": 0.61279296875
+                },
+                {
+                  "pair": "ga/ka",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "da/ta",
+                  "accuracy": 0.5833333333333334,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 7,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.38720703125,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                },
+                {
+                  "pair": "sa/sha",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ka/qa",
+                  "accuracy": 0.8333333333333334,
+                  "meanlink_accuracy": 0.9166666666666666,
+                  "correct": 10,
+                  "meanlink_correct": 11,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.019287109375,
+                  "meanlink_p_value_vs_coinflip": 0.003173828125
+                },
+                {
+                  "pair": "ta/tha",
+                  "accuracy": 0.5,
+                  "meanlink_accuracy": 0.75,
+                  "correct": 6,
+                  "meanlink_correct": 9,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.61279296875,
+                  "meanlink_p_value_vs_coinflip": 0.072998046875
+                },
+                {
+                  "pair": "za/sa",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ah/aa",
+                  "accuracy": 0.5833333333333334,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 7,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.38720703125,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                }
+              ],
+              "permutation_null_top1": {
+                "draws": 200,
+                "mean": 0.045681818181818185,
+                "p95": 0.07575757575757576,
+                "max": 0.09848484848484848
+              },
+              "heldout_pair_auc": 0.6955194076406198,
+              "heldout_pair_cohens_d": 0.7860732087285244
+            },
+            "edit": {
+              "top1": 0.4166666666666667,
+              "top5": 0.8181818181818182,
+              "meanlink_top1": 0.4166666666666667,
+              "minimal_pairs": {
+                "ba/pa": 0.4166666666666667,
+                "ga/ka": 0.9166666666666666,
+                "da/ta": 0.6666666666666666,
+                "sa/sha": 1.0,
+                "ka/qa": 0.75,
+                "ta/tha": 0.6666666666666666,
+                "za/sa": 1.0,
+                "ah/aa": 0.6666666666666666
+              }
+            }
+          }
+        }
+      ],
+      "mean_top1": 0.4185606060606061,
+      "std_top1": 0.014547624522478427,
+      "mean_ba_pa": 0.22916666666666666,
+      "mean_da_ta": 0.5208333333333334,
+      "mean_all_pairs": 0.7265625,
+      "mean_dead_units": 84.0,
+      "mean_train_seconds": 0.0,
+      "mcnemar_vs": {
+        "published-randframes": {
+          "pooled_528_decisions": {
+            "a_only": 69,
+            "b_only": 61,
+            "p_value": 0.539419552281719
+          },
+          "per_ant_p_values": [
+            1.0,
+            0.14961278438568115,
+            0.296206368599087,
+            0.5223973804968409
+          ]
+        }
+      }
+    },
+    {
+      "arm": "published-randframes",
+      "units": 256,
+      "config": {
+        "beta": 1.0,
+        "delta": 3,
+        "rounds": 12,
+        "candidates": 8,
+        "negatives": 256,
+        "tau": 1.0,
+        "ridge": 1.0,
+        "max_pairs": null
+      },
+      "ants": [
+        {
+          "ant": "ant-a",
+          "seed": 7007,
+          "train_seconds": 7.9,
+          "history": [],
+          "heldout": {
+            "units": 256,
+            "units_used_heldout": 181,
+            "dead_units_heldout": 75,
+            "dead_units_train": 58,
+            "mean_sequence_length": 26.87878787878788,
+            "cosine": {
+              "top1": 0.4166666666666667,
+              "top5": 0.803030303030303,
+              "meanlink_top1": 0.4090909090909091,
+              "minimal_pairs": {
+                "ba/pa": 0.4166666666666667,
+                "ga/ka": 0.9166666666666666,
+                "da/ta": 0.6666666666666666,
+                "sa/sha": 1.0,
+                "ka/qa": 0.9166666666666666,
+                "ta/tha": 0.5833333333333334,
+                "za/sa": 1.0,
+                "ah/aa": 0.6666666666666666
+              },
+              "minimal_pairs_full": [
+                {
+                  "pair": "ba/pa",
+                  "accuracy": 0.4166666666666667,
+                  "meanlink_accuracy": 0.25,
+                  "correct": 5,
+                  "meanlink_correct": 3,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.80615234375,
+                  "meanlink_p_value_vs_coinflip": 0.980712890625
+                },
+                {
+                  "pair": "ga/ka",
+                  "accuracy": 0.9166666666666666,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 11,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.003173828125,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "da/ta",
+                  "accuracy": 0.6666666666666666,
+                  "meanlink_accuracy": 0.6666666666666666,
+                  "correct": 8,
+                  "meanlink_correct": 8,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.19384765625,
+                  "meanlink_p_value_vs_coinflip": 0.19384765625
+                },
+                {
+                  "pair": "sa/sha",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ka/qa",
+                  "accuracy": 0.9166666666666666,
+                  "meanlink_accuracy": 0.8333333333333334,
+                  "correct": 11,
+                  "meanlink_correct": 10,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.003173828125,
+                  "meanlink_p_value_vs_coinflip": 0.019287109375
+                },
+                {
+                  "pair": "ta/tha",
+                  "accuracy": 0.5833333333333334,
+                  "meanlink_accuracy": 0.6666666666666666,
+                  "correct": 7,
+                  "meanlink_correct": 8,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.38720703125,
+                  "meanlink_p_value_vs_coinflip": 0.19384765625
+                },
+                {
+                  "pair": "za/sa",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ah/aa",
+                  "accuracy": 0.6666666666666666,
+                  "meanlink_accuracy": 0.75,
+                  "correct": 8,
+                  "meanlink_correct": 9,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.19384765625,
+                  "meanlink_p_value_vs_coinflip": 0.072998046875
+                }
+              ],
+              "permutation_null_top1": {
+                "draws": 200,
+                "mean": 0.047196969696969696,
+                "p95": 0.0761363636363635,
+                "max": 0.09848484848484848
+              },
+              "heldout_pair_auc": 0.7125098993785862,
+              "heldout_pair_cohens_d": 0.8627147162685049
+            },
+            "edit": {
+              "top1": 0.3560606060606061,
+              "top5": 0.7272727272727273,
+              "meanlink_top1": 0.4318181818181818,
+              "minimal_pairs": {
+                "ba/pa": 0.3333333333333333,
+                "ga/ka": 1.0,
+                "da/ta": 0.75,
+                "sa/sha": 0.9166666666666666,
+                "ka/qa": 1.0,
+                "ta/tha": 0.5833333333333334,
+                "za/sa": 1.0,
+                "ah/aa": 0.5833333333333334
+              }
+            }
+          }
+        },
+        {
+          "ant": "ant-b",
+          "seed": 7019,
+          "train_seconds": 0.0,
+          "history": [],
+          "heldout": {
+            "units": 256,
+            "units_used_heldout": 176,
+            "dead_units_heldout": 80,
+            "dead_units_train": 66,
+            "mean_sequence_length": 27.053030303030305,
+            "cosine": {
+              "top1": 0.3333333333333333,
+              "top5": 0.6742424242424242,
+              "meanlink_top1": 0.3106060606060606,
+              "minimal_pairs": {
+                "ba/pa": 0.5833333333333334,
+                "ga/ka": 1.0,
+                "da/ta": 0.4166666666666667,
+                "sa/sha": 1.0,
+                "ka/qa": 0.75,
+                "ta/tha": 0.6666666666666666,
+                "za/sa": 1.0,
+                "ah/aa": 0.4166666666666667
+              },
+              "minimal_pairs_full": [
+                {
+                  "pair": "ba/pa",
+                  "accuracy": 0.5833333333333334,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 7,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.38720703125,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                },
+                {
+                  "pair": "ga/ka",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 0.9166666666666666,
+                  "correct": 12,
+                  "meanlink_correct": 11,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.003173828125
+                },
+                {
+                  "pair": "da/ta",
+                  "accuracy": 0.4166666666666667,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 5,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.80615234375,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                },
+                {
+                  "pair": "sa/sha",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ka/qa",
+                  "accuracy": 0.75,
+                  "meanlink_accuracy": 0.75,
+                  "correct": 9,
+                  "meanlink_correct": 9,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.072998046875,
+                  "meanlink_p_value_vs_coinflip": 0.072998046875
+                },
+                {
+                  "pair": "ta/tha",
+                  "accuracy": 0.6666666666666666,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 8,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.19384765625,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                },
+                {
+                  "pair": "za/sa",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ah/aa",
+                  "accuracy": 0.4166666666666667,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 5,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.80615234375,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                }
+              ],
+              "permutation_null_top1": {
+                "draws": 200,
+                "mean": 0.04363636363636363,
+                "p95": 0.06856060606060593,
+                "max": 0.09090909090909091
+              },
+              "heldout_pair_auc": 0.6720560584196947,
+              "heldout_pair_cohens_d": 0.6891289979370162
+            },
+            "edit": {
+              "top1": 0.42424242424242425,
+              "top5": 0.75,
+              "meanlink_top1": 0.42424242424242425,
+              "minimal_pairs": {
+                "ba/pa": 0.6666666666666666,
+                "ga/ka": 1.0,
+                "da/ta": 0.8333333333333334,
+                "sa/sha": 1.0,
+                "ka/qa": 0.6666666666666666,
+                "ta/tha": 0.6666666666666666,
+                "za/sa": 1.0,
+                "ah/aa": 0.5833333333333334
+              }
+            }
+          }
+        },
+        {
+          "ant": "ant-c",
+          "seed": 7039,
+          "train_seconds": 0.0,
+          "history": [],
+          "heldout": {
+            "units": 256,
+            "units_used_heldout": 175,
+            "dead_units_heldout": 81,
+            "dead_units_train": 62,
+            "mean_sequence_length": 26.507575757575758,
+            "cosine": {
+              "top1": 0.4621212121212121,
+              "top5": 0.7954545454545454,
+              "meanlink_top1": 0.3787878787878788,
+              "minimal_pairs": {
+                "ba/pa": 0.5833333333333334,
+                "ga/ka": 1.0,
+                "da/ta": 0.3333333333333333,
+                "sa/sha": 1.0,
+                "ka/qa": 1.0,
+                "ta/tha": 0.8333333333333334,
+                "za/sa": 1.0,
+                "ah/aa": 0.3333333333333333
+              },
+              "minimal_pairs_full": [
+                {
+                  "pair": "ba/pa",
+                  "accuracy": 0.5833333333333334,
+                  "meanlink_accuracy": 0.6666666666666666,
+                  "correct": 7,
+                  "meanlink_correct": 8,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.38720703125,
+                  "meanlink_p_value_vs_coinflip": 0.19384765625
+                },
+                {
+                  "pair": "ga/ka",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "da/ta",
+                  "accuracy": 0.3333333333333333,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 4,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.927001953125,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                },
+                {
+                  "pair": "sa/sha",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ka/qa",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ta/tha",
+                  "accuracy": 0.8333333333333334,
+                  "meanlink_accuracy": 0.5,
+                  "correct": 10,
+                  "meanlink_correct": 6,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.019287109375,
+                  "meanlink_p_value_vs_coinflip": 0.61279296875
+                },
+                {
+                  "pair": "za/sa",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 0.9166666666666666,
+                  "correct": 12,
+                  "meanlink_correct": 11,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.003173828125
+                },
+                {
+                  "pair": "ah/aa",
+                  "accuracy": 0.3333333333333333,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 4,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.927001953125,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                }
+              ],
+              "permutation_null_top1": {
+                "draws": 200,
+                "mean": 0.04363636363636363,
+                "p95": 0.07575757575757576,
+                "max": 0.09848484848484848
+              },
+              "heldout_pair_auc": 0.7028133669547811,
+              "heldout_pair_cohens_d": 0.7928207315661167
+            },
+            "edit": {
+              "top1": 0.3787878787878788,
+              "top5": 0.7424242424242424,
+              "meanlink_top1": 0.3787878787878788,
+              "minimal_pairs": {
+                "ba/pa": 0.3333333333333333,
+                "ga/ka": 1.0,
+                "da/ta": 0.6666666666666666,
+                "sa/sha": 1.0,
+                "ka/qa": 0.8333333333333334,
+                "ta/tha": 0.5,
+                "za/sa": 1.0,
+                "ah/aa": 0.3333333333333333
+              }
+            }
+          }
+        },
+        {
+          "ant": "ant-d",
+          "seed": 7057,
+          "train_seconds": 0.0,
+          "history": [],
+          "heldout": {
+            "units": 256,
+            "units_used_heldout": 181,
+            "dead_units_heldout": 75,
+            "dead_units_train": 52,
+            "mean_sequence_length": 26.53030303030303,
+            "cosine": {
+              "top1": 0.4015151515151515,
+              "top5": 0.7727272727272727,
+              "meanlink_top1": 0.36363636363636365,
+              "minimal_pairs": {
+                "ba/pa": 0.4166666666666667,
+                "ga/ka": 0.9166666666666666,
+                "da/ta": 0.5833333333333334,
+                "sa/sha": 1.0,
+                "ka/qa": 0.9166666666666666,
+                "ta/tha": 0.5,
+                "za/sa": 1.0,
+                "ah/aa": 0.5833333333333334
+              },
+              "minimal_pairs_full": [
+                {
+                  "pair": "ba/pa",
+                  "accuracy": 0.4166666666666667,
+                  "meanlink_accuracy": 0.6666666666666666,
+                  "correct": 5,
+                  "meanlink_correct": 8,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.80615234375,
+                  "meanlink_p_value_vs_coinflip": 0.19384765625
+                },
+                {
+                  "pair": "ga/ka",
+                  "accuracy": 0.9166666666666666,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 11,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.003173828125,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "da/ta",
+                  "accuracy": 0.5833333333333334,
+                  "meanlink_accuracy": 0.5833333333333334,
+                  "correct": 7,
+                  "meanlink_correct": 7,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.38720703125,
+                  "meanlink_p_value_vs_coinflip": 0.38720703125
+                },
+                {
+                  "pair": "sa/sha",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ka/qa",
+                  "accuracy": 0.9166666666666666,
+                  "meanlink_accuracy": 0.8333333333333334,
+                  "correct": 11,
+                  "meanlink_correct": 10,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.003173828125,
+                  "meanlink_p_value_vs_coinflip": 0.019287109375
+                },
+                {
+                  "pair": "ta/tha",
+                  "accuracy": 0.5,
+                  "meanlink_accuracy": 0.5,
+                  "correct": 6,
+                  "meanlink_correct": 6,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.61279296875,
+                  "meanlink_p_value_vs_coinflip": 0.61279296875
+                },
+                {
+                  "pair": "za/sa",
+                  "accuracy": 1.0,
+                  "meanlink_accuracy": 1.0,
+                  "correct": 12,
+                  "meanlink_correct": 12,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.000244140625,
+                  "meanlink_p_value_vs_coinflip": 0.000244140625
+                },
+                {
+                  "pair": "ah/aa",
+                  "accuracy": 0.5833333333333334,
+                  "meanlink_accuracy": 0.4166666666666667,
+                  "correct": 7,
+                  "meanlink_correct": 5,
+                  "items": 12,
+                  "p_value_vs_coinflip": 0.38720703125,
+                  "meanlink_p_value_vs_coinflip": 0.80615234375
+                }
+              ],
+              "permutation_null_top1": {
+                "draws": 200,
+                "mean": 0.04715909090909091,
+                "p95": 0.07575757575757576,
+                "max": 0.09848484848484848
+              },
+              "heldout_pair_auc": 0.6935468198094461,
+              "heldout_pair_cohens_d": 0.7503069451466845
+            },
+            "edit": {
+              "top1": 0.3787878787878788,
+              "top5": 0.7348484848484849,
+              "meanlink_top1": 0.4318181818181818,
+              "minimal_pairs": {
+                "ba/pa": 0.5833333333333334,
+                "ga/ka": 0.9166666666666666,
+                "da/ta": 0.75,
+                "sa/sha": 1.0,
+                "ka/qa": 0.75,
+                "ta/tha": 0.6666666666666666,
+                "za/sa": 0.9166666666666666,
+                "ah/aa": 0.3333333333333333
+              }
+            }
+          }
+        }
+      ],
+      "mean_top1": 0.40340909090909094,
+      "std_top1": 0.046198147415342686,
+      "mean_ba_pa": 0.5,
+      "mean_da_ta": 0.5,
+      "mean_all_pairs": 0.7500000000000001,
+      "mean_dead_units": 77.75,
+      "mean_train_seconds": 1.975,
+      "mcnemar_vs": {
+        "published-kmeans": {
+          "pooled_528_decisions": {
+            "a_only": 61,
+            "b_only": 69,
+            "p_value": 0.539419552281719
+          },
+          "per_ant_p_values": [
+            1.0,
+            0.14961278438568115,
+            0.296206368599087,
+            0.5223973804968409
+          ]
+        }
+      }
+    }
+  ],
+  "total_seconds": 24.7
+}

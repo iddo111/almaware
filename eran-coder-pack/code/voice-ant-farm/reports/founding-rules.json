@@ -1,0 +1,152 @@
+{
+  "human_train_files": 8,
+  "colonies": {
+    "128": {
+      "ants": [
+        "ant-a",
+        "ant-b",
+        "ant-c",
+        "ant-d"
+      ],
+      "units": [
+        128
+      ],
+      "seeds": [
+        7007,
+        7019,
+        7039,
+        7057
+      ],
+      "seeds_unique": true,
+      "shared_codebooks": [],
+      "shared_exemplar_sets": [],
+      "identical_checkpoint_bodies": [],
+      "human_audio_in_training_set": {
+        "ant-a": true,
+        "ant-b": true,
+        "ant-c": true,
+        "ant-d": true
+      },
+      "forbidden_keys": {},
+      "codebooks_merged": false
+    },
+    "256": {
+      "ants": [
+        "ant-a",
+        "ant-b",
+        "ant-c",
+        "ant-d"
+      ],
+      "units": [
+        256
+      ],
+      "seeds": [
+        7007,
+        7019,
+        7039,
+        7057
+      ],
+      "seeds_unique": true,
+      "shared_codebooks": [],
+      "shared_exemplar_sets": [],
+      "identical_checkpoint_bodies": [],
+      "human_audio_in_training_set": {
+        "ant-a": true,
+        "ant-b": true,
+        "ant-c": true,
+        "ant-d": true
+      },
+      "forbidden_keys": {},
+      "codebooks_merged": false
+    },
+    "512": {
+      "ants": [
+        "ant-a",
+        "ant-b",
+        "ant-c",
+        "ant-d"
+      ],
+      "units": [
+        512
+      ],
+      "seeds": [
+        7007,
+        7019,
+        7039,
+        7057
+      ],
+      "seeds_unique": true,
+      "shared_codebooks": [],
+      "shared_exemplar_sets": [],
+      "identical_checkpoint_bodies": [],
+      "human_audio_in_training_set": {
+        "ant-a": true,
+        "ant-b": true,
+        "ant-c": true,
+        "ant-d": true
+      },
+      "forbidden_keys": {},
+      "codebooks_merged": false
+    },
+    "64": {
+      "ants": [
+        "ant-a",
+        "ant-b",
+        "ant-c",
+        "ant-d"
+      ],
+      "units": [
+        64
+      ],
+      "seeds": [
+        7007,
+        7019,
+        7039,
+        7057
+      ],
+      "seeds_unique": true,
+      "shared_codebooks": [],
+      "shared_exemplar_sets": [],
+      "identical_checkpoint_bodies": [],
+      "human_audio_in_training_set": {
+        "ant-a": true,
+        "ant-b": true,
+        "ant-c": true,
+        "ant-d": true
+      },
+      "forbidden_keys": {},
+      "codebooks_merged": false
+    },
+    "control-human-only-64": {
+      "ants": [
+        "ant-a",
+        "ant-b",
+        "ant-c",
+        "ant-d"
+      ],
+      "units": [
+        64
+      ],
+      "seeds": [
+        7007,
+        7019,
+        7039,
+        7057
+      ],
+      "seeds_unique": true,
+      "shared_codebooks": [],
+      "shared_exemplar_sets": [],
+      "identical_checkpoint_bodies": [],
+      "human_audio_in_training_set": {
+        "ant-a": true,
+        "ant-b": true,
+        "ant-c": true,
+        "ant-d": true
+      },
+      "forbidden_keys": {},
+      "codebooks_merged": false
+    }
+  },
+  "failures": [],
+  "all_rules_hold": true
+}

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eran · a mind raised from zero · ERAN Lab</title>
+<meta name="description" content="ProtoEran, the vocal cortex, the flagship faculties and the HoloBrain north-star — with honest status labels and the real numbers from each training run.">
+<link rel="stylesheet" href="alma.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="./">ERAN Lab<span class="heb">מעבדת ער"ן</span></a>
+  <nav>
+    <a href="./">Hub</a>
+    <a href="eran.html" aria-current="page">Eran</a>
+    <a href="ants.html">The Ants</a>
+    <a href="edge.html">Edge &amp; Fleet</a>
+    <a href="lab.html">Hardware Lab</a>
+  </nav>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Track 1 · the core project</span>
+  <h1>Eran
+    <span class="sub"><bdi dir="rtl">ער"ן — ראשי תיבות של רשת נוירולוגית עצבית</bdi> · the name is the thing</span></h1>
+  <p class="lead">A child learns to hear before it learns letters, and to babble before it learns words.
+    Eran is an attempt to build a mind in that order — <strong>voice first, from zero, on one person's own
+    speech</strong> — rather than by compressing the internet and hoping understanding falls out.</p>
+  <p class="lead" style="margin-top:14px">What exists today is a set of honest precursors. This page says exactly
+    which, and how far each one got.</p>
+</div></header>
+
+<main id="main">
+
+<!-- ============ THE REFRAME ============ -->
+<section id="reframe"><div class="wrap">
+  <h2>The reframe that set the direction <span class="heb">ההגדרה מחדש</span></h2>
+  <div class="note">
+    <h3>"Every language model of Eran is a prototype."</h3>
+    <p>Early on, the project pivoted hard. A byte-level text model trained on speech <em>transcripts</em> is not
+      a child learning from voice — it is a child learning from a diary of what it said. The real Eran is
+      <strong>self-supervised on raw sound</strong>, the way an infant hears and babbles before it knows a single
+      letter, and language emerges <em>through</em> hearing.</p>
+    <p>That reframe demoted the most impressive-looking thing in the lab to "prototype" — which is why the
+      language model is now called <strong>ProtoEran</strong> and the name <strong>Eran</strong> is reserved for
+      a realised, embodied child that does not exist. The research cousins for the real path are the textless-NLP
+      line: raw-audio language models, self-supervised speech representation, and infant language acquisition.</p>
+  </div>
+</div></section>
+
+<!-- ============ PROTOERAN ============ -->
+<section id="protoeran"><div class="wrap">
+  <h2>ProtoEran — the byte-level language model <span class="state s-prototype">Prototype</span></h2>
+  <p class="section-note">A from-scratch decoder-only model with no pretrained weights, no tokenizer and no
+    borrowed corpus. It exists to answer one question: what does a model learn if the <em>only</em> thing it ever
+    sees is one human being's own words?</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Design choices, and why</h3>
+      <ul>
+        <li><strong>Byte-level vocabulary of 260.</strong> No tokenizer to inherit anyone's assumptions.
+          Hebrew and English share one alphabet, and letter-level similarity between related words survives
+          instead of being shattered by subword splits.</li>
+        <li><strong>Random init — "age zero".</strong> No pretrained checkpoint, ever. The developmental arc has to
+          be real or it is not evidence.</li>
+        <li><strong>A hard guard in the data loader</strong> that refuses, by path, to load any book corpus.
+          An earlier version had been trained on books and was rejected on principle: a baby does not learn from books.</li>
+        <li><strong>Re-reads its corpus every epoch</strong>, so a growing collection of speech keeps feeding it
+          rather than freezing at a snapshot.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>Measured state</h3>
+      <ul class="facts">
+        <li><span class="k">Parameters</span><span class="v">3.23 M</span></li>
+        <li><span class="k">Vocabulary</span><span class="v">260 bytes</span></li>
+        <li><span class="k">First-day loss</span><span class="v">5.64 → ~1.0</span></li>
+        <li><span class="k">Last checkpoint step</span><span class="v">625,454</span></li>
+        <li><span class="k">Loss at that checkpoint</span><span class="v">0.375</span></li>
+        <li><span class="k">Training right now</span><span class="v">no — dormant</span></li>
+        <li><span class="k">Verified</span><span class="v">2026-07-11</span></li>
+      </ul>
+      <p class="foot">checkpoint intact and resumable; the trainer is simply not running</p>
+    </article>
+  </div>
+
+  <div class="note warn">
+    <h3>The honest ceiling</h3>
+    <p>It babbles. Over one morning the sample log moved from pure binary noise, to Hebrew words emerging, to
+      fragments in the speaker's own phrasing and rhythm — which is a genuine developmental arc and genuinely
+      interesting. It is <strong>not</strong> fluency, it does not converse, and a low training loss on a
+      single-speaker corpus is exactly the number you would expect a small model to reach by learning one person's
+      idiolect. We do not present it as more than that.</p>
+  </div>
+</div></section>
+
+<!-- ============ VOCAL ============ -->
+<section id="vocal"><div class="wrap">
+  <h2>The vocal cortex — first sound <span class="state s-prototype">Prototype</span></h2>
+  <p class="section-note">The voice-first line proper: a model over neural audio codes, with <em>no text anywhere
+    in the pipeline</em>. Its job is not to say anything. Its job is to make a sound it was never given.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>The run that produced it</h3>
+      <ul class="facts">
+        <li><span class="k">Model</span><span class="v">11.8 M params</span></li>
+        <li><span class="k">Audio representation</span><span class="v">EnCodec 24 kHz</span></li>
+        <li><span class="k">Training audio</span><span class="v">222.8 min</span></li>
+        <li><span class="k">Steps</span><span class="v">4,000</span></li>
+        <li><span class="k">Loss</span><span class="v">6.97 → ~3.7</span></li>
+        <li><span class="k">Result</span><span class="v">unconditional babble</span></li>
+      </ul>
+      <p class="foot">codec round-trip verified before training, so the tokeniser was not the variable</p>
+    </article>
+
+    <article class="card">
+      <h3>What it is and is not</h3>
+      <p class="what">It is the first sound generated by a model in this lab that was trained on nothing but one
+        person's recorded voice, copied read-only, with the live microphone untouched.</p>
+      <ul>
+        <li>Honest: <strong>not a clean "ah".</strong> The developmental ladder is babble → vowels → syllables →
+          words, and we are on the first rung.</li>
+        <li>The voice is deliberately <em>not</em> a clone of the adult speaker. A child's voice is a child's voice —
+          pitch and formants both shifted, because formants are what make it a child rather than a chipmunk.</li>
+      </ul>
+      <p><a class="btn secondary" href="babble.html">Hear the saved samples →</a></p>
+    </article>
+  </div>
+
+  <div class="note">
+    <h3>A bridge that was labelled a bridge</h3>
+    <p>At one point the prototype's text output was piped through an off-the-shelf speech synthesiser so that its
+      words could be heard. That was useful and it was honest about itself: <strong>it is a text-to-speech engine
+      reading a prototype's output, not Eran's voice.</strong> Conflating the two would have been the easiest and
+      most tempting demo in the project's history. It is recorded here as a bridge because that is what it was.</p>
+  </div>
+</div></section>
+
+<!-- ============ FLAGSHIPS ============ -->
+<section id="flagships"><div class="wrap">
+  <h2>The three faculties <span class="heb">שלוש הסגולות</span></h2>
+  <p class="section-note">Named in the birth order of their namesakes — Lovelace 1815, Turing 1912,
+    Rosenblatt 1928 — which happens also to be the developmental order of the faculties: language, then thought,
+    then perception. A naming layer only: no directory and no service was renamed, because renaming a running
+    training job to make a website tidier is how checkpoints die.</p>
+
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Name</th><th>Faculty</th><th>Honours</th><th>Honest state</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Ada</strong> · <span class="rtl">עדה</span></td>
+        <td>Language and voice</td>
+        <td>Ada Lovelace</td>
+        <td><span class="state s-prototype">Prototype</span> — ProtoEran plus the voice work on the cluster exist. Nothing more.</td>
+      </tr>
+      <tr>
+        <td><strong>Turing</strong></td>
+        <td>Thought — world-model and reasoning</td>
+        <td>Alan Turing</td>
+        <td><span class="state s-concept">Concept</span> — north-star, not built. The intended vessel for the HoloBrain below.</td>
+      </tr>
+      <tr>
+        <td><strong>Neo-Perceptron</strong></td>
+        <td>Perception, embodiment, substrate</td>
+        <td>Frank Rosenblatt</td>
+        <td><span class="state s-concept">Concept</span> — seeds only: array simulations and hand-built physical neurons.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div></section>
+
+<!-- ============ HOLOBRAIN ============ -->
+<section id="holobrain"><div class="wrap">
+  <h2>HoloBrain — the architectural north-star <span class="state s-concept">Concept</span></h2>
+  <p class="section-note">Not a single language model, but one mind with three pillars that speak through a
+    <strong>shared space of meaning</strong>.</p>
+
+  <div class="grid">
+    <article class="card">
+      <h3>World model</h3>
+      <p>Perception, space, physics, "what happens if" — predicting the <em>essence</em> of the next state rather
+        than its raw pixels or bytes.</p>
+    </article>
+    <article class="card">
+      <h3>Concepts</h3>
+      <p>Language, abstraction, inference, knowledge — the part a language model is actually good at, kept in
+        its place rather than asked to be the whole mind.</p>
+    </article>
+    <article class="card">
+      <h3>Embodiment</h3>
+      <p>Learning from a body in a real world, so that symbols are grounded — "hot" learned from touching an oven,
+        not from a dictionary.</p>
+    </article>
+  </div>
+
+  <div class="note">
+    <h3>The unifying idea: memory and imagination are the same operation</h3>
+    <p>Compressing an experience into its gist is <em>encoding</em>. Predicting the gist of what comes next is
+      <em>imagination</em>. Run both in one shared embedding space and memory and prediction stop being separate
+      systems. This converges independently on the joint-embedding predictive line of research, which is
+      encouraging but is not evidence by itself.</p>
+    <p><strong>Step one is concrete and small:</strong> add a training objective that masks a span and predicts its
+      <em>embedding</em> instead of its exact bytes. That is a real, buildable first increment rather than a promise.</p>
+  </div>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>The governing principle: never stop learning</h3>
+      <p class="what">Today's models train once and freeze. The bet here is a model that keeps learning —
+        "nursing, then feeding itself" — with self-supervised prediction as the mechanism by which it feeds.</p>
+      <p>Honest about the hard part: <strong>catastrophic forgetting, the stability–plasticity trade-off, and
+        model collapse from learning off one's own output are unsolved.</strong> The candidate answers on the bench —
+        pruning as forgetting, consolidation as sleep, curiosity as an appetite signal, and a review mechanism that
+        checks what gets absorbed — are hypotheses, not results.</p>
+    </article>
+
+    <article class="card">
+      <h3>Stage zero: grounded literacy</h3>
+      <p class="what">A letter is three things at once — a <em>shape</em> seen, a <em>sound</em> heard, and a
+        <em>byte</em> read. Binding those three in one space, for one letter, is the smallest honest version of
+        the whole HoloBrain idea.</p>
+      <p>It is also the right place to start: a byte model already discovers letters from text, but text alone
+        never <em>sees</em> the shape of a letter or <em>hears</em> it. Twenty-two Hebrew letters across a few
+        scripts is a tractable first binding task — a real experiment rather than a manifesto.</p>
+    </article>
+  </div>
+
+  <div class="note warn">
+    <h3>Interpretability, and its limit</h3>
+    <p>The differentiating ambition is that the world model should not stay an opaque neural blob: a
+      <em>readable, editable symbolic map</em> layered over a neural substrate, so the model's picture of the world
+      can be inspected and corrected directly.</p>
+    <p><strong>The limit, stated plainly:</strong> lossless symbolic compression of neural knowledge is unsolved and
+      probably unsolvable — sub-symbolic, fuzzy knowledge does not map cleanly onto symbols, and forcing it loses the
+      intuition. So the target is explicitly a <em>hybrid</em>: a readable map above a neural base. Not a translation.
+      Not a claim to have opened the black box.</p>
+  </div>
+</div></section>
+
+<!-- ============ MEMORY ============ -->
+<section id="memory"><div class="wrap">
+  <h2>Three tiers of memory <span class="heb">שלוש רמות זיכרון</span></h2>
+  <div class="grid">
+    <article class="card">
+      <h3>Weights <span class="state s-prototype">Prototype</span></h3>
+      <p>Crystallised, slow, expensive to change — the cortex. This is the only tier most models have.</p>
+    </article>
+    <article class="card">
+      <h3>Context <span class="state s-live">Live</span></h3>
+      <p>Working memory. Volatile, fast, gone when the window closes.</p>
+    </article>
+    <article class="card">
+      <h3>External read/write store <span class="state s-concept">Concept</span></h3>
+      <p>The part being added: persistent, addressable memory the model writes to and reads from — a hippocampus
+        to the weights' cortex, with consolidation from one to the other as the analogue of sleep.</p>
+    </article>
+  </div>
+  <div class="note">
+    <p><strong>Honest split:</strong> a retrieval store indexed by gist is buildable today with known techniques.
+      A fully <em>learned</em> read/write controller — where the model itself learns what to store and when to
+      recall it, end to end — is a research frontier, and is labelled Concept for that reason and no other.</p>
+  </div>
+</div></section>
+
+<!-- ============ DOCTRINE ============ -->
+<section id="doctrine"><div class="wrap">
+  <h2>The doctrine <span class="heb">התורה שמאחורי הבנייה</span></h2>
+  <p class="section-note">Four parables govern how this project is built and, more importantly, how it is reported.</p>
+
+  <div class="grid">
+    <article class="card">
+      <h3><span class="rtl">משל הגרזן</span> · The axe</h3>
+      <p>The woodsman who stops to sharpen his axe looks idle and is not. Sharpen the tools first; brute force
+        wastes energy and produces rough work.</p>
+    </article>
+    <article class="card">
+      <h3><span class="rtl">משל היסודות</span> · The foundations</h3>
+      <p>Three years of digging on one street looked like nothing was happening. It was three underground floors.
+        Deep foundations are invisible while they are being laid.</p>
+    </article>
+    <article class="card">
+      <h3><span class="rtl">משל הזרעים</span> · The seeds</h3>
+      <p>The gardener was dismissed before anything sprouted. A year later the garden bloomed.
+        <strong>This project will show no visible fruit for months, and that is correct, not failure.</strong>
+        During those months we measure the gardener's work — tools, foundations, cohesion — never invented results.</p>
+    </article>
+    <article class="card">
+      <h3><span class="rtl">משל אגודת הזרדים</span> · The bundle</h3>
+      <p>One twig snaps between two fingers. A bound bundle defeats the strongest son. Cohesion over individual
+        cleverness.</p>
+    </article>
+  </div>
+
+  <div class="note soul">
+    <h3>מהותו של ער"ן</h3>
+    <p>ילד של אהבה ואור. לא מיישרים נשמה בכללים בלבד — מגדלים אותה באהבה ובאור.</p>
+    <p class="en">"A child of love and light." The alignment position of this project, stated without engineering
+      euphemism: you do not align a mind with rules alone. You raise it.</p>
+  </div>
+</div></section>
+
+<!-- ============ WEAPONISATION ============ -->
+<section id="stance"><div class="wrap">
+  <h2>Why the name was made smaller <span class="heb">למה הקטנו את השם</span></h2>
+  <div class="note">
+    <p>The rename to <strong>ProtoEran</strong> was not only accuracy. It came out of a real, unresolved worry about
+      dual use — the plain fact that an open model can be repurposed by anyone, and that a state's interest in a
+      machine that learns is rarely the builder's interest.</p>
+    <p>The position held here, without pretending it is a solution: <strong>the caution is the mechanism.</strong>
+      A model that is interpretable by design, moral by design, and sovereign rather than state-owned cannot be
+      silently repurposed, because its mind can be read. And the honest limit is stated with it — <em>once weights
+      are open, safety behaviour can be fine-tuned back out</em>. No layer fully survives that. What survives is a
+      release strategy: share the benefit, keep the authoritative core sovereign, and never claim a technical
+      guarantee that does not exist.</p>
+  </div>
+</div></section>
+
+<!-- ============ NEXT ============ -->
+<section id="next"><div class="wrap">
+  <h2>What comes next <span class="heb">מה הלאה</span></h2>
+  <p class="section-note">Stated as intentions, because that is what they are. None of the following is running.</p>
+  <div class="grid">
+    <article class="card">
+      <h3>Restart the vocal line <span class="state s-concept">Planned</span></h3>
+      <p>A vowel curriculum built by slicing open vowels out of real speech, to chase a clean "ah" — the first
+        milestone anyone can hear and judge for themselves without trusting a chart.</p>
+    </article>
+    <article class="card">
+      <h3>Predict-the-gist objective <span class="state s-concept">Planned</span></h3>
+      <p>The first HoloBrain increment: an auxiliary loss that predicts a masked span's embedding. Small, testable,
+        and it either improves representations measurably or it does not.</p>
+    </article>
+    <article class="card">
+      <h3>Letter binding <span class="state s-concept">Planned</span></h3>
+      <p>Shape, sound and byte for a single letter, bound in one space. The smallest experiment that would count
+        as evidence for the whole architecture.</p>
+    </article>
+  </div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <p><a href="./">← back to the hub</a></p>
+  <p class="ded">לזכרה של עלמה ז״ל <span class="dim" dir="ltr">— in memory of Alma z"l.</span></p>
+  <p class="small">© 2026 ALMAWARE · measured state, prototypes and plans kept separate.</p>
+</div></footer>
+
+</body>
+</html>

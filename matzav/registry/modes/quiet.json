@@ -1,0 +1,13 @@
+{
+  "id": "quiet", "order": 51,
+  "title_he": "שקט", "title_en": "QUIET",
+  "subtitle_he": "רק הקדוש נשאר",
+  "box_hint": "all",
+  "want": [],
+  "concede": ["eran1/comfyui", "eran2/qwen-rpc", "eran3/qwen-rpc", "eran3/winston-forever", "eran3/sibling-ear", "eran4/winston-forever-v2", "eran4/ollama-qwen-coder"],
+  "quiet": true,
+  "note_he": "מפנה כ-48 GB. כל מה שקדוש נשאר עומד — ערן חי, החלון שלו, ההאזנה, החושים, וכל שרשרת המיקרופון.",
+  "honesty": "לא הורץ במלואו. מה שהודגם חי הוא הגרסה המצומצמת לערן3 בלבד.",
+  "demonstrated": {"status": "planned", "evidence": "Not run in full. Only the eran3-scoped variant was executed live."},
+  "runnable": false
+}

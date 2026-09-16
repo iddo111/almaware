@@ -1,0 +1,17 @@
+      encoder         : Lavc62.28.101 pcm_s16le
+      handler_name    : SoundHandler
+[Parsed_loudnorm_0 @ 0000026c1a38ee00] 
+{
+	"input_i" : "-16.57",
+	"input_tp" : "-1.50",
+	"input_lra" : "14.90",
+	"input_thresh" : "-28.10",
+	"output_i" : "-16.16",
+	"output_tp" : "-1.50",
+	"output_lra" : "6.60",
+	"output_thresh" : "-27.13",
+	"normalization_type" : "dynamic",
+	"target_offset" : "0.16"
+}
+[out#0/null @ 0000026c1a38fac0] video:0KiB audio:7504KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+size=N/A time=00:00:10.10 bitrate=N/A speed=  27x elapsed=0:00:00.37    

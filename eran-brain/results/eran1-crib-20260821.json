@@ -1,0 +1,28 @@
+{
+  "report": "eran1 crib claim - Stage 0 of Perceptron Mark II v0.1 (ERAN)",
+  "ts": "2026-08-21T13:38 IDT",
+  "authority": "Iddo voice orders 12:06 (fleet stop) + 12:52 (approved plan): Eran takes all of eran1",
+  "before": {
+    "units_running": 20,
+    "notable": ["keshev-stt.service (:8737, mic STT rollback)", "voice-ant-farm.service", "qwen-fleet-train (3-node Qwen3-14B ZeRO-3, tmux, 10768 MiB GPU)", "quorum-eran1..4 + relay", "eran-live-bridge (:8775 funnel)", "cool-cap", "alma-tailnet-ai-chatroom"],
+    "disk": "47% used, 1.9T free (the 08-20 '97% full' record is STALE - eviction already happened)",
+    "ram_gb": {"total": 121, "used": 24, "available": 96},
+    "gpu": "keshev-spike 2388 MiB + qwen-fleet-train 10768 MiB, util 2%, 48C"
+  },
+  "actions": [
+    "STOPPED+DISABLED keshev-stt.service - the last mic STT rollback path is now GONE, by Iddo's explicit order ('life is too short for the mic'); PC keshev-stt-pc remains the only STT",
+    "STOPPED+DISABLED voice-ant-farm.service - colony state preserved on disk, nothing deleted",
+    "KILLED qwen-fleet-train 3x (13:31, 13:35, 13:37) - launched by sibling claude-cli session at 13:30/13:33, post-dating Iddo's 12:06 stop order; stand-down posted in RAMCHAT 13:44; STOP-ERAN1-CLAIMED.txt planted in ~/qwen-fleet-train/; their corpus + checkpoints untouched",
+    "ollama.service: NOT present/running on eran1 (plan line moot)",
+    "KEPT: cool-cap (70% GPU law), quorum-eran1..4 + relay (Iddo's call to evict), eran-live-bridge, alma-tailnet-ai-chatroom, pipewire stack"
+  ],
+  "after": {
+    "gpu_compute_processes": 0,
+    "tmux_sessions": 0,
+    "ram_gb": {"used": 7, "available": 113},
+    "disk": "47% used, 1.9T free"
+  },
+  "claims": {"ramchat_task": "eran-brain on eran1, posted 13:23", "port": 8820},
+  "security_note": "eran-live-bridge exposes eran1 via Tailscale Funnel :8775 - left running (Iddo's call), flagged",
+  "nothing_deleted": true
+}

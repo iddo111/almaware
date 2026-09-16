@@ -1,0 +1,406 @@
+{
+ "ts": "2026-08-21T21:45:08",
+ "state_dir": "D:\\CLAUDE\\eran-brain\\state-depth-run",
+ "chance": 0.045454545454545456,
+ "baselines": {
+  "chance": 0.045454545454545456,
+  "duration_only_floor": 0.05303030303030303,
+  "random_real_frames_codebook": 0.4621212121212121,
+  "raw_features_speech_span": 0.5378787878787878,
+  "raw_features_loudest60": 0.6893939393939394
+ },
+ "prior_decomposition_record": {
+  "best_auc": 0.571,
+  "its_random_baseline": 0.59,
+  "note": "never beaten chance at decomposition, to date",
+  "NOT_COMPARABLE": "This run's AUCs are NOT comparable to 0.571/0.590. That figure was measured on a word corpus this session never had: food/words does not exist on the PC mirror and no ssh to eran1 was allowed, so proof/make_words.py BUILT one by concatenating dev-split syllable recordings. Concatenated syllables have no coarticulation and no cross-syllable prosody, which makes them an EASIER target than whatever the 0.571 was measured on. Beating 0.5 here is a real result against this run's own nulls and nothing more; it does not retire the historical failure."
+ },
+ "cortex": {
+  "layers": 3,
+  "layer_protos": [
+   136,
+   833,
+   673
+  ],
+  "beat": 57548,
+  "births": [
+   {
+    "layer": 1,
+    "beat": 30000,
+    "dim": 576,
+    "distinct_sequences": 366,
+    "below_protos": 104,
+    "settle_history": [
+     104,
+     125,
+     132,
+     125,
+     98,
+     132,
+     128,
+     104
+    ],
+    "settle_trend": [
+     118.33333333333333,
+     121.33333333333333
+    ]
+   },
+   {
+    "layer": 2,
+    "beat": 48000,
+    "dim": 1728,
+    "distinct_sequences": 372,
+    "below_protos": 451,
+    "settle_history": [
+     455,
+     448,
+     461,
+     448,
+     488,
+     501,
+     514,
+     451
+    ],
+    "settle_trend": [
+     465.6666666666667,
+     488.6666666666667
+    ]
+   }
+  ],
+  "birth_status_next": {
+   "layer": 3,
+   "born": false,
+   "settled_below": false,
+   "sleep_counts_below": [
+    89,
+    185,
+    214,
+    344
+   ],
+   "settle_trend_below": null,
+   "settle_tolerance_now": 33.65,
+   "distinct_sequences_this_epoch": 1199,
+   "distinct_sequences_best_epoch": 252,
+   "distinct_sequences_total": 7284,
+   "distinct_needed": 200
+  },
+  "layer1_was_FORCED_not_born": null,
+  "percept_dims": [
+   192,
+   576,
+   1728
+  ],
+  "slots": 3,
+  "max_layers": 4
+ },
+ "words": {
+  "n_probed": 48,
+  "word_classes": [
+   "saba",
+   "shana",
+   "tava",
+   "thabaah",
+   "tsaqara",
+   "yaza"
+  ],
+  "honest_note": "SYNTHETIC WORDS. food/words did not exist on the PC mirror, so these were BUILT by concatenating real DEV-split syllable recordings from food/train (tokens school.py never serves) with a 20 ms crossfade. Constituents are exact by construction. They are NOT naturally spoken words: no coarticulation, no cross-syllable prosody. This is an EASIER test than real speech. The 96 wavs are all distinct, but they are built from only 69 distinct syllable recordings (the dev pool is 1-6 tokens per class), so the effective sample is smaller than the file count.",
+  "mean_layer1_units_fired_per_word": 46.354166666666664
+ },
+ "exposure_arm": {
+  "exposed_items": 48,
+  "before": [
+   136,
+   631,
+   384
+  ],
+  "after": [
+   136,
+   833,
+   673
+  ],
+  "exposed_word_classes": [
+   "daga",
+   "gamala",
+   "kara",
+   "khatapa",
+   "mala",
+   "naha"
+  ],
+  "probed_word_classes": [
+   "saba",
+   "shana",
+   "tava",
+   "thabaah",
+   "tsaqara",
+   "yaza"
+  ],
+  "caveat": "word CLASSES are disjoint; individual syllable recordings may recur across the split because the dev pool is 1-6 tokens per syllable class"
+ },
+ "decomposition": {
+  "flat_layer0": {
+   "pooled_auc": 0.5433394160583942,
+   "pairs": 2192,
+   "per_word_auc_mean": 0.5466831140350877,
+   "per_word_auc_sd": 0.20849243513603719,
+   "null_shuffled_constituents": {
+    "null_mean": 0.5006334397810219,
+    "null_sd": 0.02987105454532205,
+    "null_p95": 0.5501824817518248,
+    "p_value": 0.08395802098950525,
+    "permutations": 2000
+   },
+   "null_shuffled_proto_labels": {
+    "null_mean": 0.5009945255474453,
+    "null_sd": 0.06763864598302644,
+    "null_p95": 0.6141423357664233,
+    "p_value": 0.26732673267326734,
+    "permutations": 100
+   },
+   "beats_both_nulls": false
+  },
+  "trace_layer0": {
+   "pooled_auc": 0.7326642335766423,
+   "pairs": 2192,
+   "per_word_auc_mean": 0.7427905701754386,
+   "per_word_auc_sd": 0.17794742843298322,
+   "null_shuffled_constituents": {
+    "null_mean": 0.500575045620438,
+    "null_sd": 0.029529897137059682,
+    "null_p95": 0.5492928832116788,
+    "p_value": 0.0004997501249375312,
+    "permutations": 2000
+   },
+   "null_shuffled_proto_labels": {
+    "null_mean": 0.4957664233576643,
+    "null_sd": 0.06359184951206125,
+    "null_p95": 0.590625,
+    "p_value": 0.009900990099009901,
+    "permutations": 100
+   },
+   "beats_both_nulls": true
+  },
+  "layer1": {
+   "pooled_auc": 0.708941605839416,
+   "pairs": 2192,
+   "per_word_auc_mean": 0.718813961988304,
+   "per_word_auc_sd": 0.16853897076433758,
+   "null_shuffled_constituents": {
+    "null_mean": 0.49894958941605844,
+    "null_sd": 0.02938973630951633,
+    "null_p95": 0.5470118613138686,
+    "p_value": 0.0004997501249375312,
+    "permutations": 2000
+   },
+   "null_shuffled_proto_labels": {
+    "null_mean": 0.49822992700729934,
+    "null_sd": 0.05826286419756786,
+    "null_p95": 0.6072308394160584,
+    "p_value": 0.009900990099009901,
+    "permutations": 100
+   },
+   "beats_both_nulls": true
+  }
+ },
+ "heldout": {
+  "heldout_items": 132,
+  "top1": {
+   "layer0": 0.7196969696969697,
+   "layer1": 0.3939393939393939,
+   "layer0_plus_1": 0.6666666666666666
+  },
+  "layer1_labeled_units": 195,
+  "layer1_exists": true,
+  "per_class": {
+   "aa": {
+    "n": 6,
+    "layer0": 2,
+    "layer1": 4,
+    "layer0_plus_1": 4
+   },
+   "ah": {
+    "n": 6,
+    "layer0": 4,
+    "layer1": 1,
+    "layer0_plus_1": 4
+   },
+   "ba": {
+    "n": 6,
+    "layer0": 4,
+    "layer1": 2,
+    "layer0_plus_1": 2
+   },
+   "da": {
+    "n": 6,
+    "layer0": 5,
+    "layer1": 0,
+    "layer0_plus_1": 1
+   },
+   "ga": {
+    "n": 6,
+    "layer0": 0,
+    "layer1": 1,
+    "layer0_plus_1": 1
+   },
+   "ha": {
+    "n": 6,
+    "layer0": 1,
+    "layer1": 1,
+    "layer0_plus_1": 1
+   },
+   "ka": {
+    "n": 6,
+    "layer0": 5,
+    "layer1": 3,
+    "layer0_plus_1": 4
+   },
+   "kha": {
+    "n": 6,
+    "layer0": 6,
+    "layer1": 0,
+    "layer0_plus_1": 6
+   },
+   "la": {
+    "n": 6,
+    "layer0": 0,
+    "layer1": 1,
+    "layer0_plus_1": 1
+   },
+   "ma": {
+    "n": 6,
+    "layer0": 4,
+    "layer1": 1,
+    "layer0_plus_1": 3
+   },
+   "na": {
+    "n": 6,
+    "layer0": 6,
+    "layer1": 4,
+    "layer0_plus_1": 6
+   },
+   "pa": {
+    "n": 6,
+    "layer0": 4,
+    "layer1": 1,
+    "layer0_plus_1": 4
+   },
+   "qa": {
+    "n": 6,
+    "layer0": 6,
+    "layer1": 2,
+    "layer0_plus_1": 6
+   },
+   "ra": {
+    "n": 6,
+    "layer0": 6,
+    "layer1": 4,
+    "layer0_plus_1": 5
+   },
+   "sa": {
+    "n": 6,
+    "layer0": 6,
+    "layer1": 4,
+    "layer0_plus_1": 6
+   },
+   "sha": {
+    "n": 6,
+    "layer0": 6,
+    "layer1": 4,
+    "layer0_plus_1": 6
+   },
+   "ta": {
+    "n": 6,
+    "layer0": 5,
+    "layer1": 1,
+    "layer0_plus_1": 2
+   },
+   "tha": {
+    "n": 6,
+    "layer0": 1,
+    "layer1": 1,
+    "layer0_plus_1": 2
+   },
+   "tsa": {
+    "n": 6,
+    "layer0": 6,
+    "layer1": 1,
+    "layer0_plus_1": 6
+   },
+   "va": {
+    "n": 6,
+    "layer0": 6,
+    "layer1": 6,
+    "layer0_plus_1": 6
+   },
+   "ya": {
+    "n": 6,
+    "layer0": 6,
+    "layer1": 6,
+    "layer0_plus_1": 6
+   },
+   "za": {
+    "n": 6,
+    "layer0": 6,
+    "layer1": 4,
+    "layer0_plus_1": 6
+   }
+  }
+ },
+ "topography": [
+  {
+   "layer": 0,
+   "n": 136,
+   "pairs": 9180,
+   "n_without_a_position": 0,
+   "positions_backfilled": 0,
+   "pearson_distance_vs_dissimilarity": 0.3292059441865952,
+   "spearman": 0.3197230597581292,
+   "null_mean": -0.0020714208178052706,
+   "null_sd": 0.04000258549586922,
+   "null_p95": 0.06828847573608,
+   "p_value": 0.004975124378109453,
+   "verdict": "a map: neighbours in space are alike",
+   "what_this_null_does_and_does_not_show": "The placement rule PUTS a newborn near what it resembles, so a positive correlation is expected by construction and the shuffled-positions null will always sit near zero. What the measurement can still show is FAILURE: 192 dimensions do not have to fit into 3, and a rule that destroys the structure while placing greedily would land near the null. Read it as 'the embedding survived', never as 'a map was discovered'. Where positions_backfilled > 0 the coordinates were also assigned from TODAY's vectors (the brain predates positions), i.e. fitted to the same matrix they are scored against — weaker still."
+  },
+  {
+   "layer": 1,
+   "n": 833,
+   "pairs": 346528,
+   "n_without_a_position": 0,
+   "positions_backfilled": 0,
+   "pearson_distance_vs_dissimilarity": 0.24750304603440518,
+   "spearman": 0.2512193728305015,
+   "null_mean": -5.137041108706761e-05,
+   "null_sd": 0.01963090207663176,
+   "null_p95": 0.03101939857271453,
+   "p_value": 0.004975124378109453,
+   "verdict": "a map: neighbours in space are alike",
+   "what_this_null_does_and_does_not_show": "The placement rule PUTS a newborn near what it resembles, so a positive correlation is expected by construction and the shuffled-positions null will always sit near zero. What the measurement can still show is FAILURE: 192 dimensions do not have to fit into 3, and a rule that destroys the structure while placing greedily would land near the null. Read it as 'the embedding survived', never as 'a map was discovered'. Where positions_backfilled > 0 the coordinates were also assigned from TODAY's vectors (the brain predates positions), i.e. fitted to the same matrix they are scored against — weaker still."
+  },
+  {
+   "layer": 2,
+   "n": 673,
+   "pairs": 226128,
+   "n_without_a_position": 0,
+   "positions_backfilled": 0,
+   "pearson_distance_vs_dissimilarity": 0.2726084895061661,
+   "spearman": 0.2619122880215846,
+   "null_mean": -0.0014234928498227046,
+   "null_sd": 0.019279842656297678,
+   "null_p95": 0.0319695917871865,
+   "p_value": 0.004975124378109453,
+   "verdict": "a map: neighbours in space are alike",
+   "what_this_null_does_and_does_not_show": "The placement rule PUTS a newborn near what it resembles, so a positive correlation is expected by construction and the shuffled-positions null will always sit near zero. What the measurement can still show is FAILURE: 192 dimensions do not have to fit into 3, and a rule that destroys the structure while placing greedily would land near the null. Read it as 'the embedding survived', never as 'a map was discovered'. Where positions_backfilled > 0 the coordinates were also assigned from TODAY's vectors (the brain predates positions), i.e. fitted to the same matrix they are scored against — weaker still."
+  }
+ ],
+ "verdict": {
+  "depth_beat_chance_at_decomposition": true,
+  "depth_beat_layer0_on_heldout": false,
+  "layer1_alone_beat_layer0_on_heldout": false,
+  "layer1_exists": true,
+  "layer1_born_by_the_organism_itself": true,
+  "arms_that_beat_both_nulls_at_decomposition": [
+   "trace_layer0",
+   "layer1"
+  ]
+ }
+}

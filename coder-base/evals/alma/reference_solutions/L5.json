@@ -1,0 +1,118 @@
+{
+  "alma": "0.1",
+  "weave": "L5_capstone_mlp_xor",
+  "knots": [
+    {
+      "name": "x1"
+    },
+    {
+      "name": "x2"
+    },
+    {
+      "name": "linA",
+      "verb": "sum",
+      "trigger": "count 2"
+    },
+    {
+      "name": "reluA",
+      "verb": "spell",
+      "trigger": "count 2",
+      "spell": "max"
+    },
+    {
+      "name": "linB",
+      "verb": "sum",
+      "trigger": "count 2",
+      "bias": -1.0
+    },
+    {
+      "name": "reluB",
+      "verb": "spell",
+      "trigger": "count 2",
+      "spell": "max"
+    },
+    {
+      "name": "outlin",
+      "verb": "sum",
+      "trigger": "count 2",
+      "bias": -0.5
+    },
+    {
+      "name": "outsign",
+      "verb": "spell",
+      "spell": "sign"
+    },
+    {
+      "name": "y",
+      "verb": "fringe"
+    }
+  ],
+  "threads": [
+    {
+      "from": "x1",
+      "to": "linA"
+    },
+    {
+      "from": "x2",
+      "to": "linA"
+    },
+    {
+      "from": "linA",
+      "to": "reluA"
+    },
+    {
+      "from": "x1",
+      "to": "linB"
+    },
+    {
+      "from": "x2",
+      "to": "linB"
+    },
+    {
+      "from": "linB",
+      "to": "reluB"
+    },
+    {
+      "from": "reluA",
+      "to": "outlin"
+    },
+    {
+      "from": "reluB",
+      "to": "outlin",
+      "strands": [
+        {
+          "weight": -2.0,
+          "delay": 1
+        }
+      ]
+    },
+    {
+      "from": "outlin",
+      "to": "outsign"
+    },
+    {
+      "from": "outsign",
+      "to": "y"
+    }
+  ],
+  "seeds": [
+    {
+      "to": "reluA",
+      "value": 0.0,
+      "beat": 3
+    },
+    {
+      "to": "reluB",
+      "value": 0.0,
+      "beat": 3
+    },
+    {
+      "to": "x1",
+      "value": 1.0
+    },
+    {
+      "to": "x2",
+      "value": 0.0
+    }
+  ]
+}

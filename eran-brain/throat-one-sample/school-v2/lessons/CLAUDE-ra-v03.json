@@ -1,0 +1,126 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "ra",
+ "letter": "resh",
+ "hebrew": "ר",
+ "facts": {
+  "place": "tip",
+  "manner": "tap",
+  "nasal": 0,
+  "voiced": 1
+ },
+ "decisions": {
+  "knots": "AH",
+  "constr": "seal",
+  "nasal": 0,
+  "voice": "on",
+  "release": "plain",
+  "burst": 0,
+  "pre": 1
+ },
+ "amounts": {
+  "c_pos": 0.9303106052076398,
+  "c_area": 2.0,
+  "velum": 0.0,
+  "ten": 0.6,
+  "voi": 1.0,
+  "d_pre": 0.0891285157754167,
+  "d_cons": 0.02747803071987542,
+  "d_trans": 0.0,
+  "d_gap": 0.04,
+  "gap_pos": 0.65,
+  "gap_area": 2.0,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.0,
+  "d_vowel": 0.35873151967328354,
+  "glide": 0.458349768822112,
+  "gain": 6.0,
+  "f0": 109.2123372853649,
+  "trans_voi": null
+ },
+ "live_amounts": [
+  "c_pos",
+  "d_cons",
+  "d_pre",
+  "d_trans",
+  "d_vowel",
+  "f0",
+  "glide",
+  "ten",
+  "trans_voi",
+  "voi"
+ ],
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9303,
+    0.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.0891,
+   0.0275,
+   0.3587
+  ],
+  "f0_knots": [
+   109.2123372853649,
+   109.2123372853649,
+   101.56747367538937
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.458349768822112,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "ruler": "school-v2/ruler.py (09-02 family rulers + verifiers' objections)",
+ "brief": "ok   tap dip -10.7 dB <= -10; ok   dip lasts 10 ms (<= 35); ok   voicing continuous around (hnr 6.8 / 8.2); ok   no burst pop (release peak 2.9 dB re vowel <= +4; jump 13.6); ok   no noise band >2k (0.05)",
+ "attempt": 4
+}

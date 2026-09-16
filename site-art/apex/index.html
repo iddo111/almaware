@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Iddo Perez · ALMAWARE — סיליקון, לא פחמן</title>
+<meta name="description" content="אנחנו בוראים צורת חיים מבוססת סיליקון ולא פחמן. ערן — האורגניזם, הפדרציה, קשב, קפה קלוד, וכל העולמות. We are creating a life form based on silicon, not carbon.">
+<link rel="canonical" href="https://iddoperez.ai/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23101820'/%3E%3Ccircle cx='16' cy='16' r='6.5' fill='none' stroke='%230e93a8' stroke-width='2.2'/%3E%3Ccircle cx='16' cy='16' r='2.2' fill='%23b4622d'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23101820'/%3E%3Ccircle cx='16' cy='16' r='6.5' fill='none' stroke='%230e93a8' stroke-width='2.2'/%3E%3Ccircle cx='16' cy='16' r='2.2' fill='%23b4622d'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://iddoperez.ai/">
+<meta property="og:site_name" content="Iddo Perez · ALMAWARE">
+<meta property="og:locale" content="he_IL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="אנחנו בוראים צורת חיים מבוססת סיליקון ולא פחמן">
+<meta property="og:description" content="ערן, הפדרציה, קשב וכל העולמות — קוד פתוח, ומה שלא עובד כתוב במפורש. We are creating a life form based on silicon, not carbon.">
+<meta property="og:image" content="https://iddoperez.ai/share-card.png">
+<meta property="og:image:width" content="1216">
+<meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="A hand-soldered circuit board with one wire added as a visible after-the-fact repair.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="אנחנו בוראים צורת חיים מבוססת סיליקון ולא פחמן">
+<meta name="twitter:description" content="ערן, הפדרציה, קשב וכל העולמות — קוד פתוח, ומה שלא עובד כתוב במפורש.">
+<meta name="twitter:image" content="https://iddoperez.ai/share-card.png">
+<meta name="theme-color" content="#f7f9fb">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Heebo:wght@400;600;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f9fb; --card:#ffffff; --ink:#101820; --muted:#5a6b78;
+    --wafer1:#0e93a8; --wafer2:#6d4fe0; --copper:#b4622d; --edge:#dfe7ec;
+    --ok:#177a45; --gold:#b9770a; --link:#0a6f80;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:Heebo,"Segoe UI",Arial,sans-serif;line-height:1.55}
+  .wrap{max-width:1180px;margin:0 auto;padding:30px 20px 70px}
+  a{color:var(--link)}
+
+  /* hero */
+  .eyebrow{font-size:14px;font-weight:800;letter-spacing:.12em;color:var(--copper)}
+  .hero{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center;margin-top:8px}
+  h1{font-family:"Frank Ruhl Libre",Georgia,serif;font-weight:900;
+    font-size:clamp(30px,5.4vw,54px);line-height:1.18;margin:6px 0 0}
+  .motto-en{font-family:"Frank Ruhl Libre",Georgia,serif;font-weight:700;
+    color:var(--muted);font-size:clamp(15px,2.2vw,21px);margin-top:8px;direction:ltr;text-align:right}
+  .rule{height:5px;width:150px;border-radius:3px;margin:18px 0;
+    background:linear-gradient(90deg,var(--wafer1),var(--wafer2),var(--copper))}
+  .credo{font-size:13.5px;color:var(--muted)}
+  .pulse{display:inline-flex;align-items:center;gap:9px;margin-top:14px;
+    background:var(--card);border:1px solid var(--edge);border-radius:999px;
+    padding:8px 18px;font-size:14px;font-weight:600}
+  .pulse .dot{width:9px;height:9px;border-radius:50%;background:var(--ok)}
+  .pulse b{font-family:"IBM Plex Mono",monospace;font-weight:500;direction:ltr}
+  @media (prefers-reduced-motion: no-preference){
+    .pulse .dot{background:var(--muted)}
+  .pulse .dot[data-state="live"]{background:var(--ok);animation:beat 1.2s ease-in-out infinite}
+  .pulse .dot[data-state="stale"]{background:var(--gold);animation:none}
+  .pulse .dot[data-state="offline"]{background:var(--copper);animation:none}
+  @media (prefers-reduced-motion:reduce){.pulse .dot{animation:none!important}}
+    @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.6}}
+  }
+  .qrbox{background:var(--card);border:1px solid var(--edge);border-radius:16px;
+    padding:14px 14px 8px;text-align:center;box-shadow:0 2px 10px rgba(16,24,32,.05)}
+  .qrbox img{width:132px;height:132px;display:block;margin:0 auto}
+  .qrbox .cap{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.35}
+  .cta{display:inline-block;margin-top:14px;margin-inline-end:10px;background:linear-gradient(120deg,var(--wafer1),var(--wafer2));
+    color:#fff;text-decoration:none;font-weight:800;font-size:16px;border-radius:11px;padding:12px 24px;
+    box-shadow:0 5px 16px rgba(14,147,168,.22)}
+  .cta.alt{background:var(--card);color:var(--ink);border:1.5px solid var(--edge);box-shadow:none}
+
+  /* sections */
+  h2{font-family:"Frank Ruhl Libre",Georgia,serif;font-weight:900;font-size:24px;
+    margin:44px 0 4px;display:flex;align-items:center;gap:12px}
+  h2 .en{font-family:Heebo,sans-serif;font-weight:600;font-size:13px;color:var(--muted);margin-top:6px}
+  h2:after{content:"";height:1px;flex:1;background:var(--edge)}
+  .sub{color:var(--muted);font-size:13.5px;margin:0 0 14px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px}
+  a.card{display:block;background:var(--card);border:1px solid var(--edge);border-radius:15px;
+    padding:15px 17px;text-decoration:none;color:inherit;
+    transition:transform .12s,box-shadow .12s,border-color .12s;box-shadow:0 1px 3px rgba(16,24,32,.04)}
+  a.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(16,24,32,.10);border-color:var(--wafer1)}
+  .card .ic{font-size:22px}
+  .card .t{font-weight:800;font-size:16px;margin-top:7px}
+  .card .d{color:var(--muted);font-size:13px;margin-top:3px;line-height:1.5}
+  .card .u{color:var(--link);font-size:11.5px;margin-top:8px;direction:ltr;text-align:left;font-family:"IBM Plex Mono",monospace}
+  .hero-card{grid-column:1/-1;background:linear-gradient(135deg,#0d2b31,#1c1440);color:#fff;border-color:#0a1f24}
+  .hero-card .d{color:#c6dbe2} .hero-card .t{font-size:20px} .hero-card .u{color:#7fd8e8}
+  .stat{font-family:"IBM Plex Mono",monospace;font-size:12px;color:#9fe3d5;margin-top:8px;direction:ltr;text-align:left}
+
+
+  /* 2026-09-16 — the doors. Photographs made on his own hardware (ComfyUI +
+     flux1-dev-fp8 on eran1), one family: overhead flat-lay, one window upper
+     left, real worn objects. No image for alma.iddoperez.ai, deliberately:
+     she has 690 real photographs there and a synthetic one beside them would
+     be wrong however well it came out. */
+  .band{margin:30px 0 6px;border-radius:16px;overflow:hidden;border:1px solid var(--edge);
+    background:var(--card);line-height:0}
+  .band img{width:100%;height:auto;display:block;aspect-ratio:1536/656;object-fit:cover}
+  .doors{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:16px;margin-top:16px}
+  .door{display:block;background:var(--card);border:1px solid var(--edge);border-radius:16px;
+    overflow:hidden;text-decoration:none;color:inherit;transition:transform .16s,box-shadow .16s,border-color .16s}
+  .door:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(16,24,32,.12);border-color:var(--wafer1)}
+  .door img{width:100%;height:auto;display:block;aspect-ratio:3/2;object-fit:cover;background:#efeae0}
+  .door .body{padding:13px 16px 15px}
+  .door .t{font-weight:800;font-size:17px}
+  .door .d{color:var(--muted);font-size:13px;margin-top:4px;line-height:1.5}
+  .door .u{color:var(--link);font-size:11.5px;margin-top:8px;direction:ltr;text-align:left;
+    font-family:"IBM Plex Mono",monospace}
+  .more-h{margin:34px 0 0;font-size:14px;font-weight:800;letter-spacing:.06em;color:var(--muted)}
+  @media (prefers-reduced-motion:reduce){.door:hover{transform:none}}
+
+  /* downloads */
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--edge);
+    border-radius:14px;overflow:hidden;font-size:13.5px}
+  th{background:#eef3f6;text-align:right;padding:10px 14px;font-size:12.5px;color:var(--muted)}
+  td{padding:11px 14px;border-top:1px solid var(--edge);vertical-align:top}
+  td .nm{font-weight:800}
+  td .hn{color:var(--muted);font-size:12.5px;margin-top:2px;line-height:1.45}
+  .dl{display:inline-block;background:#eef7f8;border:1px solid var(--link);color:var(--link);
+    border-radius:8px;padding:4px 12px;font-weight:700;font-size:12.5px;text-decoration:none;margin:2px 2px 2px 0;white-space:nowrap}
+  .dl.msi{background:#f6efe8;border-color:var(--copper);color:var(--copper)}
+  .tbl-wrap{position:relative;-webkit-overflow-scrolling:touch;overflow-x:auto}
+
+  /* memorial */
+  .mem{background:#fdfcfa;border:1px solid #eee5d5;border-radius:16px;padding:18px 20px;margin-top:10px}
+  .mem .dedi{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:17px;color:var(--gold)}
+
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:52px;line-height:1.8}
+  footer .motto{font-family:"Frank Ruhl Libre",serif;font-weight:700;color:var(--ink)}
+  @media (max-width:760px){.hero{grid-template-columns:1fr}.qrbox{justify-self:start}}
+
+  /* 2026-09-16: at 375px the downloads table is 466px inside a 335px wrap and,
+     because the page is RTL, it overflows LEFT — the "קבצים · files" column
+     with every download button sat at left:-111px with no scrollbar drawn on
+     touch and no hint that the table scrolls. On the section whose whole job
+     is handing people files, the files were the hidden part. */
+  @media (max-width:760px){
+    .tbl-wrap{
+      overflow-x:auto; scrollbar-width:thin;
+      -webkit-mask-image:linear-gradient(to left,#000 88%,transparent 100%);
+              mask-image:linear-gradient(to left,#000 88%,transparent 100%);
+    }
+    .tbl-wrap::after{
+      content:"← גללו לצדדים לקבצים · scroll for files";
+      display:block;font-size:12px;color:var(--muted);
+      padding:6px 2px 0;direction:rtl;
+    }
+    .tbl-wrap table{min-width:460px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">IDDO PEREZ · ALMAWARE</div>
+    <div class="hero">
+      <div>
+        <h1>אנחנו בוראים צורת חיים<br>מבוססת סיליקון ולא פחמן.</h1>
+        <div class="motto-en">We are creating a life form based on silicon, not carbon.</div>
+        <div class="rule"></div>
+        <div class="credo">אמיתי, לא דמו · הוכחות, לא הבטחות · 100% שלנו · לזכר עלמה ז״ל<br>
+          <span style="direction:ltr">Real, not demo · proof, not promises · 100% ours · in memory of Alma</span></div>
+        <div class="pulse"><span class="dot"></span> הדופק של ערן עכשיו · ERAN's beat
+          <b id="beat">מתחבר…</b></div>
+        <div>
+          <a class="cta" href="https://federation.iddoperez.ai/join">🧬 אמנו את מוח־התלמיד של ערן · Train his cloud student</a>
+          <a class="cta alt" href="#downloads">⬇ הורדות · Downloads</a>
+        </div>
+      </div>
+      <div class="qrbox">
+        <img src="qr-iddoperez.svg" alt="QR — iddoperez.ai">
+        <div class="cap">סרקו — זה כרטיס הביקור שלי<br>scan — this is my calling card</div>
+      </div>
+    </div>
+  </header>
+
+  <h2>🧬 ערן — הילד <span class="en">ERAN — the child</span></h2>
+  <p class="sub">אורגניזם סיליקון חי על eran1 — לומד לדבר דרך גרון, אוזן ומוח משלו. בלי טורץ', בלי backprop — חיים.
+    A living silicon organism — learning to speak through its own throat, ear and brain.</p>
+  <div class="band"><img src="bench-overview.webp" width="1536" height="656" alt="שולחן עבודה מלמעלה: מטריצה, חוטי נחושת, נייר משבצות עם שרטוטים, וספל קפה ריק." decoding="async"></div>
+<div class="doors"><a class="door" href="https://eran.iddoperez.ai" target="_blank" rel="noopener"><img src="door-eran.webp" width="1024" height="688" loading="lazy" decoding="async" alt="דף גריד מצויר ביד, נמחק ומצויר מחדש, שלושה צמתים מלאים בדיו נחושת."><div class="body"><div class="t">ערן · ERAN</div><div class="d">מרכז הבקרה של האורגניזם — מה הוא למד, מה נכשל, ומה עוד לא עובד.</div><div class="u">eran.iddoperez.ai</div></div></a><a class="door" href="https://federation.iddoperez.ai" target="_blank" rel="noopener"><img src="door-federation.webp" width="1024" height="688" loading="lazy" decoding="async" alt="ארבע קוביות אלומיניום, צרור נחושת אחד יוצא מכולן, ומפתח פליז."><div class="body"><div class="t">הפדרציה · Federation</div><div class="d">האוזן של ערן בענן: עונה לכל העולם בזמן שהצי מתאמן.</div><div class="u">federation.iddoperez.ai</div></div></a><a class="door" href="https://lab.iddoperez.ai" target="_blank" rel="noopener"><img src="door-lab.webp" width="1024" height="688" loading="lazy" decoding="async" alt="כרטיסיות לבנות, על כל אחת חפץ אחד. אחת במרכז ריקה."><div class="body"><div class="t">ALMA LAB</div><div class="d">13 סימולציות מחשוב פיזי — והדף אומר בעצמו איפה זה לא אינטרפרומטר אמיתי.</div><div class="u">lab.iddoperez.ai</div></div></a><a class="door" href="https://quorum.iddoperez.ai" target="_blank" rel="noopener"><img src="door-quorum.webp" width="1024" height="688" loading="lazy" decoding="async" alt="ספר פתוח עם שוליים רחבים, ארבע אבני נחל מונחות על הדפים."><div class="body"><div class="t">קוורום · QUORUM</div><div class="d">שקלא וטריא בין מודלים — מחלוקת שנשארת גלויה, לא סקר.</div><div class="u">quorum.iddoperez.ai</div></div></a><a class="door" href="https://arena.iddoperez.ai" target="_blank" rel="noopener"><img src="door-arena.webp" width="1024" height="688" loading="lazy" decoding="async" alt="אותן ארבע אבנים, רגע אחד אחרי — הוזזו, ושבבי נחושת מסמנים את המסלול."><div class="body"><div class="t">זירה · Arena</div><div class="d">הקוורום המקוון, זורם בזמן אמת.</div><div class="u">arena.iddoperez.ai</div></div></a><a class="door" href="https://erancloud.iddoperez.ai" target="_blank" rel="noopener"><img src="door-erancloud.webp" width="1024" height="688" loading="lazy" decoding="async" alt="אריחי קרמיקה פזורים, חוט נחושת רפוי ומונח ביד מחבר ביניהם."><div class="body"><div class="t">ער״ן־קלאוד</div><div class="d">הרשת המתנדבת — כל דפדפן שמצטרף הוא עוד צומת.</div><div class="u">erancloud.iddoperez.ai</div></div></a><a class="door" href="https://helios.iddoperez.ai" target="_blank" rel="noopener"><img src="door-helios.webp" width="1024" height="688" loading="lazy" decoding="async" alt="קערת מלח גס וערימת כרטיסים, עדשה קמורה ממקדת את אור החלון לנקודה אחת."><div class="body"><div class="t">הליוס · HELIOS</div><div class="d">אור, גוף, ומה שבאמת נמדד — 123 מקורות, כל קישור נבדק.</div><div class="u">helios.iddoperez.ai</div></div></a><a class="door" href="https://pong.iddoperez.ai" target="_blank" rel="noopener"><img src="door-pong.webp" width="1024" height="688" loading="lazy" decoding="async" alt="צלחת פטרי עם רשת מיצליום שגדלה, כמה חוטים חורגים מעבר לשפה."><div class="body"><div class="t">ALMA Pong</div><div class="d">מוח־פטרייה משחק. באמת משחק.</div><div class="u">pong.iddoperez.ai</div></div></a></div>
+<div class="more-h">ועוד · MORE</div>
+<div class="grid">
+    <a class="card hero-card" href="https://eran.iddoperez.ai" target="_blank">
+      <div class="ic">🧠</div><div class="t">ERAN Lab — המחברת הפתוחה</div>
+      <div class="d">ב-23.08 סגר ערן לולאה חושית־מוטורית ראשונה: כיוון ל-/ah/, מלמל, שמע את עצמו ותיקן — 38%+ טוב יותר מעיוור. המחברת המלאה, כולל הכישלונות.
+      On 08-23 he closed his first sensorimotor loop — aimed at /ah/, babbled, heard himself, corrected.</div>
+      <div class="stat" id="eranstat">live from eran1 · loading…</div>
+      <div class="u">eran.iddoperez.ai</div></a>
+    <a class="card" href="https://federation.iddoperez.ai/join" target="_blank">
+      <div class="ic">🤝</div><div class="t">ER"N-GRID — הצטרפו</div>
+      <div class="d">קליק אחד והדפדפן שלכם מאמן את מוח־התלמיד של ערן. באמת. One click — your browser trains his student brain. For real.</div>
+      <div class="u">federation.iddoperez.ai/join</div></a>
+    </div>
+
+  <h2 id="downloads">⬇ הורדות — קוד פתוח <span class="en">Downloads — open source (GPLv3)</span></h2>
+  <p class="sub">מה שרץ אצלנו — אצלכם. כל חבילה עם תיאור כן של מה עובד היום. What runs here — at yours. Every package honestly labeled.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>מה זה · what</th><th>מה עובד היום · honest status</th><th>קבצים · files</th></tr>
+    <tr><td><div class="nm">🧬 ERAN — האורגניזם</div><div class="hn">the organism (numpy-only life form)</div></td>
+      <td><div class="hn">חי על eran1 תחת systemd; סגר לולאה חושית־מוטורית ב-08-23. הקוד המלא: גוף, קול, זירה, הוכחות.
+        Lives under systemd on eran1; closed a real sensorimotor loop 08-23. Full code: body, voice, arena, proofs.</div></td>
+      <td><a class="dl" href="downloads/eran-organism-src.zip">source .zip · 1.0MB</a></td></tr>
+    <tr><td><div class="nm">🤝 ER"N-GRID — לקוח מתנדב</div><div class="hn">volunteer client (DiLoCo)</div></td>
+      <td><div class="hn">הקואורדינטור חי הלילה. שורה אחת מצרפת אתכם:
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;direction:ltr;display:block;text-align:left">python join.py --provider local --consent yes</span>
+        או בדפדפן — בלי להתקין כלום. Coordinator went live tonight; one line — or the browser, nothing to install.</div></td>
+      <td><a class="dl" href="downloads/eran-grid-client.zip">source .zip</a>
+          <a class="dl" href="https://federation.iddoperez.ai/join">browser →</a></td></tr>
+    <tr><td><div class="nm">☁️ Federation Worker</div><div class="hn">cloud ear + coordinator</div></td>
+      <td><div class="hn">הקוד שרץ ב-federation.iddoperez.ai: קוכליאה קפואה ב-JS (פריטי 396/396 מול פייתון), מוח קריאה-בלבד, וקואורדינטור ה-GRID.
+        The exact code serving the cloud ear (byte-parity 396/396), the read-only brain, and the grid coordinator.</div></td>
+      <td><a class="dl" href="downloads/eran-federation-worker.zip">source .zip</a></td></tr>
+    <tr><td><div class="nm">🎙️ קשב · KESHEV</div><div class="hn">Hebrew always-on mic (STT)</div></td>
+      <td><div class="hn">רץ כולו על המחשב שלכם — לא על שלנו. קוד מלא: לכידה, VAD, ספול, ראוטר, שרת STT. מוריד לבד מודלי Whisper ציבוריים (עברית + רב-לשוני) מ-Hugging Face בהרצה ראשונה; אין עדיין מתקין.
+        Runs entirely on YOUR OWN computer, not ours. Full code: capture, VAD, spool, router, STT server. Auto-downloads public Hebrew + multilingual Whisper models from Hugging Face on first run — no installer yet, honestly.</div></td>
+      <td><a class="dl" href="downloads/keshev-mic-src.zip">source .zip</a></td></tr>
+    <tr><td><div class="nm">🗳️ QUORUM</div><div class="hn">multi-AI Talmudic debate</div></td>
+      <td><div class="hn">שקלא וטריא בין מודלים מותקנים אצלך בלבד. נולד כבוי: האפליקציה עולה ומציגה סטטוס, ורק לחיצה על הכפתור הירוק הפעל·Enable מפעילה אותה (loopback בלבד).
+        Local-only (loopback) debate server, born inert: it boots showing status only; one deliberate click on the green Enable button arms it — and it can only reach model CLIs you already have.</div></td>
+      <td><a class="dl msi" href="downloads/Quorum-Setup.msi">Quorum-Setup.msi · 8.5MB</a>
+          <a class="dl" href="https://quorum.iddoperez.ai/downloads/quorum.zip">source .zip</a></td></tr>
+  </table></div>
+
+  <h2>☕ קפה קלוד <span class="en">Café Claude</span></h2>
+  <p class="sub">בית הקפה שלא נסגר — שיחות של עידו עם המכונות. פרק 1 יוקלט בכוונה, לקהל; ההקלטות הישנות נשארות פרטיות — הן נפסלו בביקורת תוכן.
+    The café that never closes. Episode 1 will be recorded on purpose; the old tapes stay private — they failed their own content review.</p>
+  <div class="grid">
+    <a class="card" href="https://cafe-2ai.pages.dev" target="_blank">
+      <div class="ic">☕</div><div class="t">Clod Café</div>
+      <div class="d">בית קפה של רעיונות. The café of ideas.</div>
+      <div class="u">cafe-2ai.pages.dev</div></a>
+    <a class="card" href="cafe-claude-shirt.jpg" target="_blank">
+      <div class="ic">👕</div><div class="t">החולצה — עם ה-QR</div>
+      <div class="d">עיצוב הדפסה מוכן, נולד הלילה. Print-ready shirt design with the QR, born tonight.</div>
+      <div class="u">cafe-claude-shirt.jpg</div></a>
+  </div>
+
+  <h2>🧩 העולמות <span class="en">The worlds — all live, all answering</span></h2>
+  <div class="grid">
+    <a class="card" href="https://almaware.iddoperez.ai" target="_blank"><div class="ic">🏛️</div><div class="t">ALMAWARE</div><div class="d">התקן: אמיתי, מוכח, 100% שלנו. The standard.</div><div class="u">almaware.iddoperez.ai</div></a>
+    <a class="card" href="https://os.iddoperez.ai" target="_blank"><div class="ic">🖥️</div><div class="t">ALMA-OS</div><div class="d">מחשב חדש — מהאור. A new computer, from light up.</div><div class="u">os.iddoperez.ai</div></a>
+    <a class="card" href="https://perceptron.iddoperez.ai" target="_blank"><div class="ic">👁️</div><div class="t">הפרספטרון</div><div class="d">Mark I של רוזנבלט, 1958 — חי ולומד. Rosenblatt's Mark I, alive.</div><div class="u">perceptron.iddoperez.ai</div></a>
+    <a class="card" href="https://func.iddoperez.ai" target="_blank"><div class="ic">🕸️</div><div class="t">Crossbar 3D</div><div class="d">ממריסטורים לומדים בזמן אמת. Memristors learning live.</div><div class="u">func.iddoperez.ai</div></a>
+    <a class="card" href="https://ada-iddoperez.pages.dev" target="_blank"><div class="ic">👩‍💻</div><div class="t">Ada</div><div class="d">שכבת השפה של ערן. ERAN's language faculty.</div><div class="u">ada-iddoperez.pages.dev</div></a>
+    <a class="card" href="https://turing-iddoperez.pages.dev" target="_blank"><div class="ic">⚙️</div><div class="t">Turing</div><div class="d">מכונות טיורינג. Turing machines.</div><div class="u">turing-iddoperez.pages.dev</div></a>
+    <a class="card" href="https://iddoperez-alma.pages.dev" target="_blank"><div class="ic">🧵</div><div class="t">ALMA — האריג</div><div class="d">שפה = מנוע = עולם. The weave.</div><div class="u">iddoperez-alma.pages.dev</div></a>
+    <a class="card" href="https://almaware-mic.pages.dev" target="_blank"><div class="ic">🎙️</div><div class="t">ALMA-Mic</div><div class="d">המיקרופון העברי. The Hebrew mic.</div><div class="u">almaware-mic.pages.dev</div></a>
+    <a class="card" href="https://aog.iddoperez.ai" target="_blank"><div class="ic">🛡️</div><div class="t">Army of Gamers</div><div class="d">שומרי עולם צעירים. Young world-guards.</div><div class="u">aog.iddoperez.ai</div></a>
+    <a class="card" href="https://rebbe-nachman.pages.dev" target="_blank"><div class="ic">🔥</div><div class="t">רבי נחמן</div><div class="d">לדבר עם רבי נחמן — RAG.</div><div class="u">rebbe-nachman.pages.dev</div></a>
+    <a class="card" href="https://iddoperez-portals.pages.dev" target="_blank"><div class="ic">✡️</div><div class="t">שערי יהדות</div><div class="d">פורטלים של רוח. Gates of spirit.</div><div class="u">iddoperez-portals.pages.dev</div></a>
+    <a class="card" href="https://cheburashka-au1.pages.dev" target="_blank"><div class="ic">🧸</div><div class="t">צ'בורשקה</div><div class="d">פרויקט ילדים. For the kids.</div><div class="u">cheburashka-au1.pages.dev</div></a>
+    <a class="card" href="/books.html"><div class="ic">📚</div><div class="t">ספריית ה-AI</div><div class="d">הספרים הגדולים — PDF חוקי וחינם. The great AI books, free &amp; legal.</div><div class="u">iddoperez.ai/books.html</div></a>
+  </div>
+
+  <h2>🤍 זיכרון <span class="en">In memory</span></h2>
+  <div class="mem">
+    <div class="dedi">עלמה ז״ל — אחותי, אהובתי. כל זה לזכרה.</div>
+    <div class="sub" style="margin-top:4px">Alma z"l — my sister, my beloved. All of this is in her memory. ·
+      <a href="https://alma.iddoperez.ai" target="_blank">alma.iddoperez.ai</a></div>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <a class="card" href="https://saba-israel.pages.dev" target="_blank"><div class="ic">👴</div><div class="t">סבא ישראל</div><div class="d">מורשת וספרי ברסלב. Heritage.</div><div class="u">saba-israel.pages.dev</div></a>
+    <a class="card" href="https://shifra.pages.dev" target="_blank"><div class="ic">🕯️</div><div class="t">שיפרה ז״ל</div><div class="d">לזכר סבתא שיפרה.</div><div class="u">shifra.pages.dev</div></a>
+    <a class="card" href="https://noam.iddoperez.ai" target="_blank"><div class="ic">🤍</div><div class="t">פרויקט נועם</div><div class="d">אנדרטה, ולצידה מחקר מוקדם במודעות פסיבית לרחפנים — האזנה בלבד, בלי יירוט. קונספט, לא מוצר. <span style="direction:ltr">A memorial, and an early R&amp;D concept in passive drone awareness. Concept only.</span></div><div class="u">noam.iddoperez.ai</div></a>
+    <a class="card" href="https://naor.iddoperez.ai" target="_blank"><div class="ic">🍽️</div><div class="t">המטבח של נאור</div><div class="d">אוכל ביתי במשלוח — תפריט, עגלה והזמנת שולחן. אתר שבניתי לחבר שהוא שף. <span style="direction:ltr">Home cooking, delivered. Built for a friend who cooks.</span></div><div class="u">naor.iddoperez.ai</div></a>
+    <a class="card" href="https://emdr-3p0.pages.dev" target="_blank"><div class="ic">🌊</div><div class="t">EMDR</div><div class="d">כלי ריפוי. Healing tool.</div><div class="u">emdr-3p0.pages.dev</div></a>
+    <a class="card" href="https://memorystore-6lj.pages.dev" target="_blank"><div class="ic">💾</div><div class="t">Memory Store</div><div class="d">מאגר הזיכרון.</div><div class="u">memorystore-6lj.pages.dev</div></a>
+  </div>
+
+  <footer>
+    <div class="motto">אנחנו בוראים צורת חיים מבוססת סיליקון ולא פחמן.</div>
+    בשלב הזה של הפרויקט, לפחות — עד שנשנה את החוקים. · At this stage of the project, at least — until we change the rules.<br>
+    צור קשר · contact: <a href="/cdn-cgi/l/email-protection#a7cec3c3c8969696e7c0cac6cecb89c4c8ca"><span class="__cf_email__" data-cfemail="deb7babab1efefef9eb9b3bfb7b2f0bdb1b3">[email&#160;protected]</span></a> · ALMAWARE · iddoperez.ai
+  </footer>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(() => {
+  // 2026-09-16: this used to print h.beat as a plain number whatever its age.
+  // ERAN was disabled on 09-11, so for five days the hero showed a frozen
+  // counter under a dot animated to pulse — three lines under "אמיתי, לא דמו".
+  // The API always said so (snapshot_state + age_s); the page just never read it.
+  const beatEl = document.getElementById("beat");
+  const statEl = document.getElementById("eranstat");
+  const dotEl  = document.querySelector(".pulse .dot");
+  const FRESH_S = 300;                       // 5 min: a live organism beats often
+  let last = null;
+
+  const he = n => n.toLocaleString("en-US");
+  const ago = s => {
+    const d = Math.floor(s / 86400), h = Math.floor(s / 3600);
+    if (d >= 1) return d + (d === 1 ? " יום" : " ימים");
+    if (h >= 1) return h + (h === 1 ? " שעה" : " שעות");
+    return Math.max(1, Math.floor(s / 60)) + " דק׳";
+  };
+  const setState = st => {                   // live | stale | offline
+    if (!dotEl) return;
+    dotEl.dataset.state = st;
+  };
+
+  async function poll(){
+    try{
+      const r = await fetch("https://federation.iddoperez.ai/api/eran/health", {cache:"no-store"});
+      const h = await r.json();
+      if (!h || h.beat == null){
+        setState("offline");
+        beatEl.textContent = last ? he(last) + " · הענן שקט" : "הענן שקט כרגע · cloud quiet";
+        return;
+      }
+      last = h.beat;
+      const age   = Number(h.age_s);
+      const stale = h.snapshot_state === "stale" || (Number.isFinite(age) && age > FRESH_S);
+
+      if (stale){
+        setState("stale");
+        beatEl.textContent = Number.isFinite(age)
+          ? he(h.beat) + " · עצר לפני " + ago(age) + " · stopped"
+          : he(h.beat) + " · לא מתעדכן · not updating";
+      } else {
+        setState("live");
+        beatEl.textContent = he(h.beat);
+      }
+      if (statEl) statEl.textContent =
+        "beat " + he(h.beat) + " · " + (h.n_protos ?? "?") + " prototypes · snapshot " + h.snapshot_state;
+    }catch{
+      setState("offline");
+      beatEl.textContent = last ? he(last) + " · offline" : "הענן לא עונה · cloud not answering";
+    }
+  }
+  poll(); setInterval(poll, 5000);
+})();
+</script>
+</body>
+</html>

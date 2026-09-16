@@ -1,0 +1,192 @@
+{
+  "when": "2026-09-06T02:12:53",
+  "rows": [
+    {
+      "name": "Q tex=0.0 [dark]",
+      "state": "dark",
+      "lapvar": 40.9,
+      "lapvar_norm": 515.9,
+      "coverage": 1.0,
+      "render_s": 3.5,
+      "file": "/home/eran1/sharpen-run/lab/sweep4/Q tex=0.0 [dark].jpg"
+    },
+    {
+      "name": "Q tex=0.15 [dark]",
+      "state": "dark",
+      "lapvar": 41.6,
+      "lapvar_norm": 525.4,
+      "coverage": 1.0,
+      "render_s": 3.5
+    },
+    {
+      "name": "Q tex=0.3 [dark]",
+      "state": "dark",
+      "lapvar": 44.3,
+      "lapvar_norm": 557.5,
+      "coverage": 1.0,
+      "render_s": 3.6,
+      "file": "/home/eran1/sharpen-run/lab/sweep4/Q tex=0.3 [dark].jpg"
+    },
+    {
+      "name": "Q tex=0.45 [dark]",
+      "state": "dark",
+      "lapvar": 49.0,
+      "lapvar_norm": 612.2,
+      "coverage": 1.0,
+      "render_s": 3.5
+    },
+    {
+      "name": "Q tex=0.6 [dark]",
+      "state": "dark",
+      "lapvar": 55.6,
+      "lapvar_norm": 685.5,
+      "coverage": 1.0,
+      "render_s": 3.6,
+      "file": "/home/eran1/sharpen-run/lab/sweep4/Q tex=0.6 [dark].jpg"
+    },
+    {
+      "name": "Q tex=0.0 [lit]",
+      "state": "lit",
+      "lapvar": 326.1,
+      "lapvar_norm": 510.7,
+      "coverage": 1.0,
+      "render_s": 3.6,
+      "file": "/home/eran1/sharpen-run/lab/sweep4/Q tex=0.0 [lit].jpg"
+    },
+    {
+      "name": "Q tex=0.15 [lit]",
+      "state": "lit",
+      "lapvar": 337.9,
+      "lapvar_norm": 528.7,
+      "coverage": 1.0,
+      "render_s": 3.5
+    },
+    {
+      "name": "Q tex=0.3 [lit]",
+      "state": "lit",
+      "lapvar": 371.7,
+      "lapvar_norm": 577.3,
+      "coverage": 1.0,
+      "render_s": 3.5,
+      "file": "/home/eran1/sharpen-run/lab/sweep4/Q tex=0.3 [lit].jpg"
+    },
+    {
+      "name": "Q tex=0.45 [lit]",
+      "state": "lit",
+      "lapvar": 427.4,
+      "lapvar_norm": 655.0,
+      "coverage": 1.0,
+      "render_s": 3.5
+    },
+    {
+      "name": "Q tex=0.6 [lit]",
+      "state": "lit",
+      "lapvar": 504.2,
+      "lapvar_norm": 758.8,
+      "coverage": 1.0,
+      "render_s": 3.5,
+      "file": "/home/eran1/sharpen-run/lab/sweep4/Q tex=0.6 [lit].jpg"
+    },
+    {
+      "name": "R none [dark]",
+      "state": "dark",
+      "lapvar": 43.4,
+      "lapvar_norm": 504.2,
+      "coverage": 1.0,
+      "render_s": 3.5
+    },
+    {
+      "name": "R shadow [dark]",
+      "state": "dark",
+      "lapvar": 41.8,
+      "lapvar_norm": 531.9,
+      "coverage": 1.0,
+      "render_s": 3.5
+    },
+    {
+      "name": "R AO [dark]",
+      "state": "dark",
+      "lapvar": 40.3,
+      "lapvar_norm": 495.3,
+      "coverage": 1.0,
+      "render_s": 3.5
+    },
+    {
+      "name": "R all [dark]",
+      "state": "dark",
+      "lapvar": 44.3,
+      "lapvar_norm": 557.5,
+      "coverage": 1.0,
+      "render_s": 3.5
+    },
+    {
+      "name": "R none [lit]",
+      "state": "lit",
+      "lapvar": 321.0,
+      "lapvar_norm": 544.2,
+      "coverage": 1.0,
+      "render_s": 3.5
+    },
+    {
+      "name": "R shadow [lit]",
+      "state": "lit",
+      "lapvar": 322.0,
+      "lapvar_norm": 543.7,
+      "coverage": 1.0,
+      "render_s": 3.5
+    },
+    {
+      "name": "R AO [lit]",
+      "state": "lit",
+      "lapvar": 326.3,
+      "lapvar_norm": 511.5,
+      "coverage": 1.0,
+      "render_s": 3.5
+    },
+    {
+      "name": "R all [lit]",
+      "state": "lit",
+      "lapvar": 371.7,
+      "lapvar_norm": 577.3,
+      "coverage": 1.0,
+      "render_s": 3.5
+    },
+    {
+      "name": "S finest=3.50cm",
+      "state": "lit",
+      "lapvar": 371.7,
+      "lapvar_norm": 577.3,
+      "coverage": 1.0,
+      "render_s": 3.5,
+      "file": "/home/eran1/sharpen-run/lab/sweep4/S finest=3.50cm.jpg"
+    },
+    {
+      "name": "S finest=2.10cm",
+      "state": "lit",
+      "lapvar": 377.4,
+      "lapvar_norm": 586.9,
+      "coverage": 1.0,
+      "render_s": 3.5,
+      "file": "/home/eran1/sharpen-run/lab/sweep4/S finest=2.10cm.jpg"
+    },
+    {
+      "name": "S finest=1.22cm",
+      "state": "lit",
+      "lapvar": 395.7,
+      "lapvar_norm": 615.0,
+      "coverage": 1.0,
+      "render_s": 3.5,
+      "file": "/home/eran1/sharpen-run/lab/sweep4/S finest=1.22cm.jpg"
+    },
+    {
+      "name": "S finest=0.70cm",
+      "state": "lit",
+      "lapvar": 402.4,
+      "lapvar_norm": 624.6,
+      "coverage": 1.0,
+      "render_s": 3.5,
+      "file": "/home/eran1/sharpen-run/lab/sweep4/S finest=0.70cm.jpg"
+    }
+  ],
+  "seconds": 275.6
+}

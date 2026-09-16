@@ -1,0 +1,1369 @@
+{
+ "source": "iddo-labels.jsonl",
+ "built": "2026-09-02",
+ "note": "Iddo rulings as an ACCEPT/REJECT target. station 1-2=accept, booth 3+=accept. Each scale in its own direction.",
+ "n": 136,
+ "accept": 72,
+ "clips": [
+  {
+   "file": "20260826T174310Z_eran3_control-ih-1kf-0_8.283.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ih",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 8.28282767237466
+  },
+  {
+   "file": "20260826T174302Z_eran3_ih-1kf-3_6.272.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ih",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 6.271806615724132
+  },
+  {
+   "file": "20260826T174300Z_eran3_control-ba-free-0_6.651.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 6.651432306877976
+  },
+  {
+   "file": "20260826T174258Z_eran3_ah-free-0_6.293.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 6.293075079335583
+  },
+  {
+   "file": "20260826T174257Z_eran3_ah-1kf-2_5.648.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.6477529167399485
+  },
+  {
+   "file": "20260826T174254Z_eran3_ma-nasal-4_5.997.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.996740036975347
+  },
+  {
+   "file": "20260826T174254Z_eran3_ma-nasal-3_4.762.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.761927372440886
+  },
+  {
+   "file": "20260826T174251Z_eran3_ih-1kf-2_7.151.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ih",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 7.1505932363141085
+  },
+  {
+   "file": "20260826T174251Z_eran3_ah-1kf-3_5.600.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.600144586256404
+  },
+  {
+   "file": "20260826T174247Z_eran3_ba-cv-4_5.938.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.938231708426412
+  },
+  {
+   "file": "20260826T174242Z_eran4_ba-free-1_4.896.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.895504276066497
+  },
+  {
+   "file": "20260826T174242Z_eran2_ih-1kf-0_6.203.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ih",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 6.203435220888443
+  },
+  {
+   "file": "20260826T174241Z_eran4_ma-free-0_4.687.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.686643360679088
+  },
+  {
+   "file": "20260826T174241Z_eran2_ah-1kf-0_5.614.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.614180445913687
+  },
+  {
+   "file": "20260826T174240Z_eran4_ba-cv-5_5.938.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.938362457522181
+  },
+  {
+   "file": "20260826T174240Z_eran2_ma-nasal-2_5.432.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.431723797725685
+  },
+  {
+   "file": "20260826T174239Z_eran2_ma-nasal-0_4.481.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.481234972804446
+  },
+  {
+   "file": "20260826T174239Z_eran2_ba-cv-2_4.831.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.830742962445937
+  },
+  {
+   "file": "20260826T174238Z_eran2_ba-cv-0_5.364.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.363600717138228
+  },
+  {
+   "file": "20260826T173253Z_eran3_ma-nasal-3_4.775.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.775337068093369
+  },
+  {
+   "file": "20260826T173253Z_eran3_ah-free-1_6.162.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 6.162071747951134
+  },
+  {
+   "file": "20260826T173242Z_eran4_ma-nasal-5_4.620.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.619754831453713
+  },
+  {
+   "file": "20260826T173242Z_eran4_ba-free-1_4.902.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.902113306277548
+  },
+  {
+   "file": "20260826T173242Z_eran2_ah-1kf-1_10.537.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 10.537089802942946
+  },
+  {
+   "file": "20260826T173241Z_eran4_ma-free-0_4.689.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.689454546346233
+  },
+  {
+   "file": "20260826T173238Z_eran4_control-ma-nasal-1_5.903.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.902645507103679
+  },
+  {
+   "file": "20260826T173238Z_eran2_ma-nasal-0_4.494.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.494058927046574
+  },
+  {
+   "file": "20260826T173238Z_eran2_ba-cv-2_5.060.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.059780550493698
+  },
+  {
+   "file": "20260826T172251Z_eran3_ma-nasal-3_4.860.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.859754188105345
+  },
+  {
+   "file": "20260826T172249Z_eran3_ba-cv-3_5.445.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.445268852979063
+  },
+  {
+   "file": "20260826T172241Z_eran4_ma-nasal-5_4.620.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.62003353443975
+  },
+  {
+   "file": "20260826T172241Z_eran4_ba-free-1_4.923.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.923262222407841
+  },
+  {
+   "file": "20260826T172240Z_eran4_ma-free-0_4.699.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.699370641080237
+  },
+  {
+   "file": "20260826T172237Z_eran2_ma-nasal-0_4.550.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.549938731334234
+  },
+  {
+   "file": "20260826T171240Z_eran4_ma-nasal-5_4.626.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.62569050165711
+  },
+  {
+   "file": "20260826T171240Z_eran4_ma-free-0_4.754.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.754438113478125
+  },
+  {
+   "file": "20260826T171240Z_eran4_ba-free-1_4.958.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.9582309876166635
+  },
+  {
+   "file": "20260826T171236Z_eran2_ba-cv-1_4.862.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.861482900916334
+  },
+  {
+   "file": "20260826T170246Z_eran3_control-ah-1kf-0_7.218.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 7.217785134691369
+  },
+  {
+   "file": "20260826T170239Z_eran4_ma-nasal-5_4.635.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.634735212748901
+  },
+  {
+   "file": "20260826T170239Z_eran4_ma-free-0_4.821.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.821295310290222
+  },
+  {
+   "file": "20260826T170239Z_eran4_ba-free-1_4.979.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.97904269391789
+  },
+  {
+   "file": "20260826T170238Z_eran4_control-ba-cv-1_6.571.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 6.571283642337537
+  },
+  {
+   "file": "20260826T170237Z_eran2_control-ba-cv-0_6.502.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 6.502084097559216
+  },
+  {
+   "file": "20260826T170236Z_eran2_ba-cv-1_4.862.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.862353841225284
+  },
+  {
+   "file": "20260826T165238Z_eran4_ma-nasal-5_4.690.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.689783514421852
+  },
+  {
+   "file": "20260826T165238Z_eran4_ma-free-0_5.068.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.0679098342402495
+  },
+  {
+   "file": "20260826T165238Z_eran4_ba-free-1_5.030.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.029897817214971
+  },
+  {
+   "file": "20260826T165236Z_eran2_ih-1kf-1_8.629.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ih",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 8.62869680575222
+  },
+  {
+   "file": "20260826T165236Z_eran2_control-ma-nasal-0_5.871.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.871110518813714
+  },
+  {
+   "file": "20260826T165235Z_eran2_ba-cv-1_4.894.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.894325206611727
+  },
+  {
+   "file": "20260826T164237Z_eran4_ma-free-1_4.809.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.8085559922231145
+  },
+  {
+   "file": "20260826T164237Z_eran4_ba-free-0_5.358.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.357693242720739
+  },
+  {
+   "file": "20260826T164236Z_eran2_ma-nasal-1_5.364.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.364170949455043
+  },
+  {
+   "file": "20260826T164235Z_eran2_ba-cv-1_4.982.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 4.982428123621983
+  },
+  {
+   "file": "20260826T163237Z_eran4_ma-free-1_5.005.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-26",
+   "wdist": 5.005108044902297
+  },
+  {
+   "file": "20260827T025610Z_eran3_ah-free-1_4.609.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.6086249590055
+  },
+  {
+   "file": "20260827T025555Z_eran3_ma-nasal-4_4.875.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.875486943491995
+  },
+  {
+   "file": "20260827T024552Z_eran3_ma-nasal-4_4.880.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.879463034202281
+  },
+  {
+   "file": "20260827T023608Z_eran3_ah-free-1_4.609.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.608729715950695
+  },
+  {
+   "file": "20260827T023546Z_eran3_ma-nasal-4_4.891.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.890829939892539
+  },
+  {
+   "file": "20260827T023414Z_eran2_ma-nasal-1_4.527.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.526705857644761
+  },
+  {
+   "file": "20260827T022607Z_eran3_ah-free-1_4.609.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.608805338900145
+  },
+  {
+   "file": "20260827T022519Z_eran3_ah-free-0_5.465.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 5.464517570157916
+  },
+  {
+   "file": "20260827T022412Z_eran2_ma-nasal-1_4.527.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.526845277177107
+  },
+  {
+   "file": "20260827T021600Z_eran3_ah-free-1_4.609.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.608921933209133
+  },
+  {
+   "file": "20260827T021411Z_eran2_ma-nasal-1_4.529.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.5286996469198195
+  },
+  {
+   "file": "20260827T020600Z_eran3_ah-free-1_4.609.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.609103029155939
+  },
+  {
+   "file": "20260827T020504Z_eran3_control-ba-free-0_6.237.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 6.2370052451277065
+  },
+  {
+   "file": "20260827T020407Z_eran2_ma-nasal-1_4.555.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.555376124918058
+  },
+  {
+   "file": "20260827T015559Z_eran3_ah-free-1_4.609.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.6094521343620976
+  },
+  {
+   "file": "20260827T015403Z_eran2_ma-nasal-1_4.562.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.561726260996888
+  },
+  {
+   "file": "20260827T014553Z_eran3_ah-free-1_4.610.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.610146555519815
+  },
+  {
+   "file": "20260827T014403Z_eran2_ma-nasal-1_4.567.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.567441432584947
+  },
+  {
+   "file": "20260827T014401Z_eran2_ma-nasal-0_4.155.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.1547412010455735
+  },
+  {
+   "file": "20260827T013551Z_eran3_ah-free-1_4.612.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.61150560495555
+  },
+  {
+   "file": "20260827T013400Z_eran2_ma-nasal-1_4.588.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.588438111402902
+  },
+  {
+   "file": "20260827T013359Z_eran2_ma-nasal-0_4.155.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.154797629723674
+  },
+  {
+   "file": "20260827T012548Z_eran3_ah-free-1_4.620.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.620097627954173
+  },
+  {
+   "file": "20260827T012518Z_eran3_ba-cv-4_5.254.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 5.253799524367445
+  },
+  {
+   "file": "20260827T012357Z_eran2_ma-nasal-0_4.155.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.155033955155968
+  },
+  {
+   "file": "20260827T011546Z_eran3_ah-free-1_4.625.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.624996385247051
+  },
+  {
+   "file": "20260827T011356Z_eran2_ma-nasal-0_4.158.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.158329702858701
+  },
+  {
+   "file": "20260827T010543Z_eran3_ah-free-1_4.627.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.626523493331552
+  },
+  {
+   "file": "20260827T010354Z_eran2_ma-nasal-0_4.173.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.173347189254446
+  },
+  {
+   "file": "20260827T005539Z_eran3_ah-free-1_4.630.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.629680167625685
+  },
+  {
+   "file": "20260827T005457Z_eran3_ah-free-0_5.625.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 5.624471945531129
+  },
+  {
+   "file": "20260827T005352Z_eran2_ma-nasal-1_4.613.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.612934581546687
+  },
+  {
+   "file": "20260827T005351Z_eran2_ma-nasal-0_4.184.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.184440756638253
+  },
+  {
+   "file": "20260827T004536Z_eran3_ah-free-1_4.632.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.63202054162222
+  },
+  {
+   "file": "20260827T004352Z_eran2_ma-nasal-2_4.347.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.346630792796864
+  },
+  {
+   "file": "20260827T004348Z_eran2_ma-nasal-1_4.613.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.612951337045961
+  },
+  {
+   "file": "20260827T004347Z_eran2_ma-nasal-0_4.275.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.274914664414967
+  },
+  {
+   "file": "20260827T003531Z_eran3_ah-free-1_4.634.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.633712631050297
+  },
+  {
+   "file": "20260827T003347Z_eran2_ma-nasal-1_4.613.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.613145901470428
+  },
+  {
+   "file": "20260827T003344Z_eran2_ma-nasal-0_4.300.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.299705350966029
+  },
+  {
+   "file": "20260827T003343Z_eran4_ba-free-0_4.582.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.582109069244798
+  },
+  {
+   "file": "20260827T002528Z_eran3_ah-free-1_4.636.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.63577683993661
+  },
+  {
+   "file": "20260827T002346Z_eran2_ma-nasal-2_4.347.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.346742780585889
+  },
+  {
+   "file": "20260827T002346Z_eran2_ma-nasal-1_4.614.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.61364018941785
+  },
+  {
+   "file": "20260827T001527Z_eran3_ah-free-1_4.639.wav",
+   "scale": "station",
+   "raw": 1,
+   "accept": true,
+   "unit": "ah",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.638978089681239
+  },
+  {
+   "file": "20260827T002341Z_eran2_ma-nasal-0_4.350.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.35005871173875
+  },
+  {
+   "file": "20260827T002341Z_eran4_ba-free-0_4.582.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.582253350138565
+  },
+  {
+   "file": "20260827T001343Z_eran2_ma-nasal-2_4.347.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.346928508668025
+  },
+  {
+   "file": "20260827T001342Z_eran2_ma-nasal-1_4.614.wav",
+   "scale": "station",
+   "raw": 3,
+   "accept": false,
+   "unit": "ma",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.613826012875622
+  },
+  {
+   "file": "20260827T064425Z_eran4_ba-free-1_5.058.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 5.057936429746169
+  },
+  {
+   "file": "20260827T064418Z_eran4_ba-cv-14_4.875.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.8751188063571425
+  },
+  {
+   "file": "20260827T064414Z_eran2_ba-free-2_4.902.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.901939041274965
+  },
+  {
+   "file": "20260827T063417Z_eran4_ba-cv-14_4.876.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.876086292964717
+  },
+  {
+   "file": "20260827T063413Z_eran2_ba-free-2_4.902.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.902044084903332
+  },
+  {
+   "file": "20260827T063402Z_eran2_ba-cv-9_5.448.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 5.44838865581315
+  },
+  {
+   "file": "20260827T062415Z_eran4_ba-cv-14_4.884.wav",
+   "scale": "station",
+   "raw": 2,
+   "accept": true,
+   "unit": "ba",
+   "truth": "ERAN",
+   "date": "2026-08-27",
+   "wdist": 4.884076598349474
+  },
+  {
+   "file": "clip01.wav",
+   "scale": "booth",
+   "raw": 3,
+   "accept": true,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip02.wav",
+   "scale": "booth",
+   "raw": 4,
+   "accept": true,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip03.wav",
+   "scale": "booth",
+   "raw": 3,
+   "accept": true,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip04.wav",
+   "scale": "booth",
+   "raw": 3,
+   "accept": true,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip05.wav",
+   "scale": "booth",
+   "raw": 2,
+   "accept": false,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip06.wav",
+   "scale": "booth",
+   "raw": 2,
+   "accept": false,
+   "unit": null,
+   "truth": "HUMAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip07.wav",
+   "scale": "booth",
+   "raw": 2,
+   "accept": false,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip08.wav",
+   "scale": "booth",
+   "raw": 3,
+   "accept": true,
+   "unit": null,
+   "truth": "HUMAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip09.wav",
+   "scale": "booth",
+   "raw": 3,
+   "accept": true,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip10.wav",
+   "scale": "booth",
+   "raw": 2,
+   "accept": false,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip11.wav",
+   "scale": "booth",
+   "raw": 2,
+   "accept": false,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip12.wav",
+   "scale": "booth",
+   "raw": 1,
+   "accept": false,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip13.wav",
+   "scale": "booth",
+   "raw": 2,
+   "accept": false,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip14.wav",
+   "scale": "booth",
+   "raw": 3,
+   "accept": true,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip15.wav",
+   "scale": "booth",
+   "raw": 3,
+   "accept": true,
+   "unit": null,
+   "truth": "HUMAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip16.wav",
+   "scale": "booth",
+   "raw": 2,
+   "accept": false,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip17.wav",
+   "scale": "booth",
+   "raw": 2,
+   "accept": false,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip18.wav",
+   "scale": "booth",
+   "raw": 4,
+   "accept": true,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip19.wav",
+   "scale": "booth",
+   "raw": 1,
+   "accept": false,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip20.wav",
+   "scale": "booth",
+   "raw": 4,
+   "accept": true,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip21.wav",
+   "scale": "booth",
+   "raw": 4,
+   "accept": true,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip22.wav",
+   "scale": "booth",
+   "raw": 2,
+   "accept": false,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip23.wav",
+   "scale": "booth",
+   "raw": 2,
+   "accept": false,
+   "unit": null,
+   "truth": "ERAN",
+   "date": "2026-09-01",
+   "wdist": null
+  },
+  {
+   "file": "clip24.wav",
+   "scale": "booth",
+   "raw": 3,
+   "accept": true,
+   "unit": null,
+   "truth": "HUMAN",
+   "date": "2026-09-01",
+   "wdist": null
+  }
+ ]
+}

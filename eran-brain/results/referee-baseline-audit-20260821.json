@@ -1,0 +1,68 @@
+{
+ "report": "referee audit of the adversarial objection: where 68.94% came from, and what this repo's ear actually scores",
+ "ts": "2026-08-21 (same-day, per the results/ law)",
+ "corpus": "D:\\CLAUDE\\voice-ant-farm\\corpus-syllables (396 train / 132 heldout / 22 classes) - the identical items the genome baselines were measured on",
+ "chance": 0.045454545454545456,
+
+ "origin_of_68_94": {
+  "found": true,
+  "script": "D:\\CLAUDE\\voice-ant-farm\\feature_bakeoff.py",
+  "results_file": "D:\\CLAUDE\\voice-ant-farm\\state-hebbian\\feature-bakeoff-final.json",
+  "row": "feature_set=legacy14, pooling=loud60",
+  "top1": 0.6893939393939394,
+  "heldout_items": 132,
+  "train_items": 396,
+  "protocol": "legacy14 frames (log-energy + ZCR + 12 LINEAR log bands) -> [mean,std] descriptor (28-dim) -> train-fitted z-score -> 1-NN negative Euclidean",
+  "matched_centroid_number_in_the_same_row": {"meanlink_top1": 0.5378787878787878},
+  "verdict": "the constant is REAL and reproducible. It is NOT the config genome.py names it. It is a 1-NN-over-396-exemplars score on a different feature set."
+ },
+
+ "genome_baselines_retyped": {
+  "raw_features_loudest60 = 0.6894": "MISLABELED - actually legacy14/loud60, mean+std, z-scored, 1-NN Euclidean",
+  "raw_features_speech_span = 0.5379": "MISLABELED - actually legacy14/span, same 1-NN protocol (also collides numerically with legacy14/loud60 meanlink = 0.5379)",
+  "correct_matched_bar_for_a_nearest_prototype_organism": 0.5378787878787878
+ },
+
+ "measured_today_with_this_repo_own_ears_py": {
+  "method": "body/ears.py Ears(exam=True), fit on 396 train, scored on the 132 heldout, 22 classes",
+  "rows": [
+   {"repr": "bands",    "pooling": "loudest60", "dim": 24,  "centroid_top1": 0.4318, "centroid_correct": 57,  "nn1_top1": 0.5455, "nn1_correct": 72},
+   {"repr": "bands",    "pooling": "mean",      "dim": 24,  "centroid_top1": 0.3030, "centroid_correct": 40,  "nn1_top1": 0.5076, "nn1_correct": 67},
+   {"repr": "cepstrum", "pooling": "loudest60", "dim": 12,  "centroid_top1": 0.4015, "centroid_correct": 53,  "nn1_top1": 0.5152, "nn1_correct": 68},
+   {"repr": "onset",    "pooling": "loudest60", "ERROR": "AttributeError: module 'genome' has no attribute 'ONSET_START_FRAC' - ears.py:191-193 references ONSET_START_FRAC and ONSET_MS, neither exists in genome.py. The 'onset' path is dead code that crashes."},
+   {"repr": "cochlea",  "pooling": "loudest60", "dim": 192, "centroid_top1": 0.7955, "centroid_correct": 105, "nn1_top1": 0.7424, "nn1_correct": 98},
+   {"repr": "cochlea",  "pooling": "mean",      "dim": 192, "centroid_top1": 0.7955, "centroid_correct": 105, "nn1_top1": 0.7424, "nn1_correct": 98},
+   {"repr": "cochlea",  "pooling": "loudest40", "dim": 192, "centroid_top1": 0.7955, "centroid_correct": 105, "nn1_top1": 0.7424, "nn1_correct": 98}
+  ],
+  "confirms_reviewer": "bands/loudest60 = 43.18% centroid / 54.55% 1-NN, to the digit",
+  "confirms_genome_cochlea_claim": "79.55% (105/132) reproduces exactly",
+  "corrects_genome_comment": "genome.py:52 attributes 40.15% to 'loudest-60% pooling'. 40.15% is the CEPSTRUM number (53/132). bands/loudest60 is 43.18% (57/132)."
+ },
+
+ "independent_corroboration_of_the_cochlea": {
+  "claim": "the level-free spectrogram result is NOT a heldout-overfit artifact",
+  "evidence": "feature-bakeoff-final.json row logmel26_levelfree/loud60 scores top1 = 0.7954545 (105/132) on these same items, measured earlier, in a different repo, with different features (26 mel bands, per-frame band-mean removed) and a different estimator (mean+std, z-score, 1-NN Euclidean). Two independent feature families and two estimators land on the same 105/132.",
+  "meaning": "the SELECTION of a level-free time-sliced ear replicates. The heldout leak damaged the number's status as a test score, not the architectural conclusion."
+ },
+
+ "tournament_defect_found_by_the_referee": {
+  "file": "body/ears.py pool(), lines 154-171 vs tournament.py lines 34-35, 84-86",
+  "defect": "under EAR_REPR='cochlea' the pooling branch computes `kept` and then discards it - the cochlea path re-derives its own segment from feats/rms. Measured above: loudest60 / mean / loudest40 give byte-identical scores (0.7955 / 0.7424).",
+  "consequence": "the nightly tournament searches N_BANDS x POOLING = 9 cells of which only 3 are distinct. Two thirds of every night's trials are exact duplicates, and a crown write triggers 'the brain will be reborn' (tournament.py:127-128) for a change that provably cannot alter a single vector."
+ },
+
+ "leak_status": {
+  "confirmed": true,
+  "worse_than_stated": [
+   "EAR_REPR was flipped AGAIN after the objection was written: cepstrum -> onset -> cochlea, all on 2026-08-21. genome.py:49-52 states the justification outright: 'Measured ... (132-item heldout, 22 classes, nearest-centroid): frozen cochlea 79.55% vs my onset ear 66.67% vs the best published baseline 68.94% vs loudest-60% pooling 40.15%'.",
+   "results/ still holds exactly one file (eran1-crib-20260821.json, a crib-claim log with no scores). No ERANB-001.json, no tournament-2026-08-21.json. Three architecture decisions today rest on numbers that exist in no results file - the repo's own same-day law broken three times.",
+   "the 132 items were ALREADY a model-selection set before eran-brain existed: feature-bakeoff-final.json ranks 16 feature sets x 2 poolings on them. They were never a virgin test set for choosing a front-end.",
+   "the guard at ears.py:118-121 only stops the ORGANISM. Nothing in the repo constrains the DEVELOPERS, which is the leak that actually happened."
+  ]
+ },
+
+ "what_no_verdict_flip_means": {
+  "organism_heldout_top1": 0.1364,
+  "note": "13.64% fails every candidate bar - 43.18%, 53.79%, 68.94%, 79.55%. No 'beats/fails' verdict printed so far changes under any correction. The active error is false modesty, not false triumph. The false-triumph risk is entirely in the future, which is why the fix is cheap NOW and expensive after the Sukkot milestone claim."
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "meta": {
+  "scale": "freygish",
+  "midi": "D:/CLAUDE/_deliverables/psytrance/darwish-mode-freygish-20260912.mid",
+  "audio": null,
+  "bpm_from_midi": 143.55,
+  "n_notes": 3810,
+  "n_drum_hits": 4149
+ },
+ "components": {
+  "scale_fit": {
+   "n_notes": 3810,
+   "frac_outside_scale": 0.0,
+   "distinct_pitch_classes": 7,
+   "score": 1.0
+  },
+  "independent_voice": {
+   "max_simultaneous": 1,
+   "frac_frames_polyphonic": 0.0,
+   "has_independent_line": false,
+   "note": "monophonic -- no second voice exists to test"
+  },
+  "rhythm_regularity": {
+   "n_steps": 3895,
+   "median_gap_s": 0.1916,
+   "gap_coefficient_of_variation": 0.1087,
+   "frac_gaps_regular": 0.9679,
+   "score": 0.9679
+  },
+  "similarity_to_reference": {
+   "basis": "monophonic bass-interval fallback (no simultaneous notes to build a vertical-interval histogram)",
+   "mean_abs_interval_semitones": 0.502,
+   "corpus_bass_interval": 3.255313739090225,
+   "score": 0.1541
+  }
+ },
+ "overall_score_0to100": 71.3,
+ "components_used": [
+  "rhythm_regularity",
+  "scale_fit",
+  "similarity_to_reference"
+ ],
+ "components_unavailable": [
+  "independent_voice",
+  "kick_bass_energy",
+  "loudness"
+ ],
+ "weights_renormalised": {
+  "scale_fit": 0.5,
+  "rhythm_regularity": 0.167,
+  "similarity_to_reference": 0.333
+ }
+}

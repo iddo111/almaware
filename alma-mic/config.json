@@ -1,0 +1,68 @@
+{
+  "mic": "Microphone (Logitech BRIO)",
+  "prefer": [
+    "usbaudio",
+    "brio",
+    "scarlett"
+  ],
+  "avoid": [
+    "wh-1000xm4",
+    "hands-free",
+    "headset",
+    "bluetooth",
+    "mix",
+    "audiorelay",
+    "sound mapper"
+  ],
+  "language": "auto",
+  "lang_whitelist": [
+    "he",
+    "en"
+  ],
+  "translate_to_english": false,
+  "auto_detect_langs": 2,
+  "lang_confidence": 0.55,
+  "code_switch": true,
+  "lang_lock": true,
+  "speech_rms_gate": 0.0045,
+  "autogain_rms_floor": 0.004,
+  "no_speech_threshold": 0.6,
+  "log_prob_threshold": -1.0,
+  "compression_ratio_threshold": 2.4,
+  "vad_threshold": 0.5,
+  "vad_min_silence_ms": 480,
+  "vad_speech_pad_ms": 100,
+  "arming": "auto",
+  "wake_words": [
+    "ערן",
+    "קלוד",
+    "claude"
+  ],
+  "model": "ivrit-ai/whisper-large-v3-turbo-ct2",
+  "lora_dir": "D:\\CLAUDE\\alma-mic\\models\\iddo-lora-run2-ct2",
+  "en_model": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+  "en_detect_min_prob": 0.55,
+  "en_vad_filter": false,
+  "device": "auto",
+  "compute_type": "int8_float16",
+  "type_output": true,
+  "auto_enter": true,
+  "type_anywhere": true,
+  "type_targets": [],
+  "collect_corpus": true,
+  "brain_backend": "dicta",
+  "brain_auto": false,
+  "dicta_url": "http://127.0.0.1:11500/v1/chat/completions",
+  "enable_voice_commands": true,
+  "voice_commands": {
+    "by the way": "/btw",
+    "דרך אגב": "/btw",
+    "ביי דה וויי": "/btw",
+    "new line": "\n",
+    "שורה חדשה": "\n",
+    "new paragraph": "\n\n"
+  },
+  "beam_size": 1,
+  "initial_prompt_he": "קלוד, תריץ נחיל על ערן ואלמאוור. ממריסטור, שקלא וטריא, קוורום, דארוויש, פדרציה, אינטל אביב, המדפסת, פיליקס, עבור.",
+  "initial_prompt_en": "Claude, run the swarm on Eran and ALMAWARE. Memristor, quorum, Darwish, federation, joint case, over."
+}

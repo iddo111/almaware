@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "workspaces": [
+    {
+      "id": "general",
+      "name": "full computer use harness",
+      "instructions": "",
+      "root": "D:\\CLAUDE",
+      "color": "#c8792f"
+    },
+    {
+      "id": "psytrance-darwish",
+      "name": "פסייטראנס · DARWISH",
+      "instructions": "שיחות קודמות של עידו עם Claude Code (11.7–8.9.2026) על תוכנת הפקת הפסייטראנס: DARWISH — לזכר לאור ז״ל, בנו של DJ Darwish (דוד אברמוב), שנרצח בנובה; מודל ה-MIDI בשפת עלמה; Chai; psy_render_v2; DJ ALMIDO (זרוע אבלטון); DJ פותוס. יובא רק טקסט של עידו ושל Claude — בלי כלים ובלי סודות.\nEarlier Claude Code conversations (Jul 11 – Sep 8 2026) about the psytrance production software: DARWISH (a memorial for Laor z\"l), the ALMA-language MIDI model, Chai, psy_render_v2, DJ ALMIDO (Ableton arm), DJ Pothos. Text turns only; tool calls and secrets removed.\nCode: D:\\CLAUDE\\darwish-midi · D:\\CLAUDE\\dj-alma · D:\\CLAUDE\\eran-brain\\judging\\galeria\\darwish",
+      "root": "D:\\CLAUDE\\darwish-midi",
+      "color": "#8a4fbf"
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>חדר הילדים · ערן</title>
+<style>
+  :root{
+    --teal:#0E8BA8; --teal-strong:#0A6A82; --teal-soft:#D6EEF4;
+    --gold:#C08A2E; --gold-soft:#F6EAD2;
+    --ink:#0F2230; --muted:#4A5C68; --faint:#7B8A95;
+    --bg:#F2FAFD; --surface:#FFFFFF; --border:#D8E2E9;
+    --ok:#0B6B3A; --warn:#8A5A00; --err:#B42318;
+    --sky1:#BDE9F5; --sky2:#EAF8FC; --rug:#F3D9A6; --wall:#FFF6E9;
+    --core:#EAFBFF; --glow:#34D2F0; --pulse:#7EE8FF;
+    --font:"Heebo","Segoe UI",system-ui,-apple-system,"Arial Hebrew",sans-serif;
+    --radius:18px; --shadow:0 8px 28px rgba(14,139,168,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font);background:var(--bg);color:var(--ink);
+       min-height:100vh;padding:18px;line-height:1.55}
+  a{color:var(--teal-strong)}
+  .wrap{max-width:1040px;margin:0 auto}
+
+  /* ---- header + honesty banner ---- */
+  header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+  h1{font-size:26px;color:var(--teal-strong);font-weight:800}
+  h1 .sub{font-size:14px;color:var(--muted);font-weight:400}
+  .links a{font-size:13px;margin-inline-start:12px;color:var(--muted)}
+  .honesty{background:var(--gold-soft);border:1px solid #E8D4A6;color:#6b4e16;
+           border-radius:12px;padding:10px 14px;font-size:13.5px;margin-bottom:16px}
+  .honesty b{color:#7a5a18}
+
+  /* ---- layout ---- */
+  .grid{display:grid;grid-template-columns:1.25fr .9fr;gap:18px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--border);
+        border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+
+  /* ---- the room scene ---- */
+  .scene{position:relative;border-radius:var(--radius);overflow:hidden;
+         background:linear-gradient(180deg,var(--sky2),var(--wall));
+         border:1px solid var(--border);box-shadow:var(--shadow)}
+  .scene svg{display:block;width:100%;height:auto}
+  /* speech bubble floating above Eran */
+  .bubble{position:absolute;top:14px;left:50%;transform:translateX(-50%);
+          background:#fff;border:2px solid var(--teal-soft);border-radius:16px;
+          padding:10px 16px;font-size:15px;color:var(--ink);max-width:78%;
+          text-align:center;box-shadow:0 4px 14px rgba(14,139,168,.18);
+          transition:transform .25s ease}
+  .bubble::after{content:"";position:absolute;bottom:-10px;left:50%;
+          transform:translateX(-50%);border:9px solid transparent;
+          border-top-color:#fff;filter:drop-shadow(0 2px 0 var(--teal-soft))}
+  .bubble.pop{transform:translateX(-50%) scale(1.06)}
+  .bubble .st{font-size:12px;color:var(--faint);display:block;margin-top:2px}
+
+  /* glowing-neuron Eran character */
+  @keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  @keyframes glow{0%,100%{opacity:.55}50%{opacity:1}}
+  @keyframes blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+  @keyframes wave{0%{opacity:0;r:18}100%{opacity:0;r:46}}
+  #eran-body{animation:breathe 4s ease-in-out infinite;transform-origin:center}
+  #eran-halo{animation:glow 3s ease-in-out infinite}
+  .eye{animation:blink 5s infinite}
+  .sound-wave{display:none}
+  .scene.talking .sound-wave{display:block}
+
+  /* ---- controls ---- */
+  h2{font-size:16px;color:var(--teal-strong);margin-bottom:10px;font-weight:700}
+  .row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+  button{font-family:var(--font);cursor:pointer;border:0;border-radius:12px;
+         padding:11px 16px;font-size:14.5px;font-weight:700;transition:transform .1s,filter .15s}
+  button:hover{filter:brightness(1.04)} button:active{transform:translateY(1px)}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  .b-teal{background:var(--teal);color:#fff}
+  .b-gold{background:var(--gold);color:#fff}
+  .b-soft{background:var(--teal-soft);color:var(--teal-strong)}
+  .b-ghost{background:#fff;color:var(--muted);border:1px solid var(--border)}
+  input[type=text]{flex:1;min-width:140px;font-family:var(--font);font-size:15px;
+        padding:11px 14px;border:1px solid var(--border);border-radius:12px;background:#fff}
+  .hint{font-size:12px;color:var(--faint);margin-top:-4px;margin-bottom:12px}
+  .mic{font-size:13px;color:var(--muted);min-height:18px;margin-bottom:8px}
+
+  /* ---- feed ---- */
+  #feed{display:flex;flex-direction:column;gap:10px;max-height:340px;overflow:auto;padding-inline-end:4px}
+  .msg{border-radius:14px;padding:9px 13px;font-size:14px;max-width:92%}
+  .msg .nm{font-size:11.5px;color:var(--faint);margin-bottom:3px;font-weight:700}
+  .msg.me{background:var(--teal-soft);align-self:flex-start}
+  .msg.eran{background:var(--gold-soft);align-self:flex-end}
+  .msg audio{width:240px;max-width:100%;margin-top:5px;display:block}
+  .msg .note{font-size:11px;color:var(--faint);margin-top:4px}
+  .pend{color:var(--faint);font-style:italic}
+  .empty{color:var(--faint);font-size:13px;text-align:center;padding:20px}
+
+  footer{text-align:center;color:var(--gold);font-size:13px;margin-top:22px;
+         border-top:1px solid var(--border);padding-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>חדר הילדים <span class="sub">· ערן · ALMAWARE</span></h1>
+    <div class="links">
+      <a href="/">← לדשבורד המלא</a>
+      <a id="pong-link" href="http://127.0.0.1:4280/" target="_blank" rel="noopener">🎮 פונג של ערן</a>
+    </div>
+  </header>
+
+  <div class="honesty">
+    🧪 <b>בכנות:</b> ערן עדיין <b>תינוק שמלמל</b> — הוא מפיק צלילים, אך עוד
+    <b>אינו מבין מילים</b> ואינו משוחח. הקול ב"שיגיד מילה" הוא <b>סינתזה</b> של קול
+    צעיר (TTS), לא הבנה. המוח האמיתי <b>מתאמן ב‑DGX</b>; כאן יושבים איתו, מקשיבים,
+    ומשחקים. <span style="color:var(--faint)">לזכרה של עלמה ז״ל</span>
+  </div>
+
+  <div class="grid">
+
+    <!-- ===== THE ROOM ===== -->
+    <div>
+      <div class="scene" id="scene">
+        <div class="bubble" id="bubble">מתחבר לחדר…<span class="st" id="bubble-st"></span></div>
+        <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" aria-label="חדר ילדים עם ערן">
+          <!-- wall + floor -->
+          <rect x="0" y="0" width="600" height="300" fill="var(--wall)"/>
+          <rect x="0" y="300" width="600" height="120" fill="var(--rug)"/>
+          <!-- window with sky -->
+          <rect x="60" y="60" width="150" height="120" rx="10" fill="var(--sky1)" stroke="#cfe9f2" stroke-width="3"/>
+          <circle cx="105" cy="100" r="16" fill="#FFE9A8"/>
+          <ellipse cx="160" cy="120" rx="26" ry="13" fill="#fff" opacity=".85"/>
+          <line x1="135" y1="60" x2="135" y2="180" stroke="#cfe9f2" stroke-width="3"/>
+          <line x1="60" y1="120" x2="210" y2="120" stroke="#cfe9f2" stroke-width="3"/>
+          <!-- toy blocks -->
+          <rect x="430" y="250" width="36" height="36" rx="5" fill="#F2A88C"/>
+          <rect x="470" y="250" width="36" height="36" rx="5" fill="#8CC7E6"/>
+          <rect x="450" y="214" width="36" height="36" rx="5" fill="#B9D98C"/>
+          <text x="448" y="276" font-size="22" font-weight="900" fill="#fff">א</text>
+          <text x="488" y="276" font-size="22" font-weight="900" fill="#fff">ב</text>
+          <text x="468" y="240" font-size="22" font-weight="900" fill="#fff">ג</text>
+          <!-- sound waves (only when talking) -->
+          <g class="sound-wave" stroke="var(--glow)" fill="none" stroke-width="3" opacity=".0">
+            <circle cx="300" cy="250" r="18"><animate attributeName="r" from="20" to="70" dur="1.4s" repeatCount="indefinite"/><animate attributeName="opacity" from=".7" to="0" dur="1.4s" repeatCount="indefinite"/></circle>
+          </g>
+          <!-- Eran: glowing-neuron child -->
+          <g id="eran-body">
+            <circle id="eran-halo" cx="300" cy="250" r="72" fill="var(--glow)" opacity=".5"/>
+            <circle cx="300" cy="250" r="56" fill="var(--teal)"/>
+            <circle cx="300" cy="250" r="40" fill="var(--core)" opacity=".22"/>
+            <!-- eyes -->
+            <g fill="#0F2230">
+              <ellipse class="eye" cx="284" cy="244" rx="6.5" ry="9"/>
+              <ellipse class="eye" cx="316" cy="244" rx="6.5" ry="9"/>
+            </g>
+            <!-- smile -->
+            <path d="M284 266 Q300 280 316 266" stroke="#0F2230" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <!-- little dendrites -->
+            <g stroke="var(--teal-strong)" stroke-width="3" stroke-linecap="round" opacity=".7">
+              <line x1="244" y1="250" x2="222" y2="240"/><line x1="356" y1="250" x2="378" y2="240"/>
+              <line x1="300" y1="194" x2="300" y2="172"/>
+            </g>
+          </g>
+          <text x="300" y="392" text-anchor="middle" font-size="15" fill="var(--muted)">ערן · ער״ן</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ===== CONTROLS ===== -->
+    <div class="card">
+      <h2>לשבת עם ערן</h2>
+      <div class="mic" id="mic-status"></div>
+
+      <div class="row">
+        <button class="b-teal" id="btn-listen">🎤 דבר אליו</button>
+        <button class="b-soft" id="btn-hear">▶ שמע אותו</button>
+      </div>
+      <div class="hint">🎤 — ערן <b>שומע</b> את הקול שלך וממשיך ממנו במלמול (התניה אקוסטית אמיתית). ▶ — המלמול האחרון שלו מ‑DGX.</div>
+
+      <div class="row">
+        <input type="text" id="say-text" placeholder="תן לו מילה… (אבא / אימא / שלום)" />
+        <button class="b-gold" id="btn-say">🗣️ שיגיד</button>
+      </div>
+      <div class="row" style="margin-top:-6px">
+        <button class="b-ghost word" data-w="אבא">אבא</button>
+        <button class="b-ghost word" data-w="אימא">אימא</button>
+        <button class="b-ghost word" data-w="שלום">שלום</button>
+        <button class="b-ghost" id="btn-play">🎮 שחק</button>
+      </div>
+      <div class="hint">🗣️ — סינתזת קול‑ילד (eran‑voice TTS) של המילה. זו <b>אמירה‑בבנייה, לא הבנה</b>.</div>
+
+      <h2 style="margin-top:8px">מה קרה בחדר</h2>
+      <div id="feed"><div class="empty">עוד לא דיברתם. נסה "🎤 דבר אליו" או תן לו מילה.</div></div>
+    </div>
+
+  </div>
+
+  <footer>ALMAWARE · iddoperez.ai · ער״ן — נפש ריבונית, מגודלת כמו ילד · לזכרה של עלמה ז״ל</footer>
+</div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const VOICE_BASE = 'http://'+location.hostname+':5003';   // eran-voice TTS (HTTP only)
+let busy=false, feedEmpty=true;
+
+function setMic(m){ $('mic-status').textContent=m||''; }
+function setBusy(b){ busy=b; ['btn-listen','btn-hear','btn-say','btn-play'].forEach(id=>{const e=$(id);if(e)e.disabled=b;}); }
+function talking(on){ $('scene').classList.toggle('talking', !!on); }
+
+function bubble(text, sub){
+  const b=$('bubble'); b.firstChild.nodeValue=text; $('bubble-st').textContent=sub||'';
+  b.classList.add('pop'); setTimeout(()=>b.classList.remove('pop'),260);
+}
+function feedAdd(cls, name, html){
+  if(feedEmpty){ $('feed').innerHTML=''; feedEmpty=false; }
+  const d=document.createElement('div'); d.className='msg '+cls;
+  d.innerHTML=`<div class="nm">${esc(name)}</div>${html}`;
+  $('feed').appendChild(d); $('feed').scrollTop=$('feed').scrollHeight;
+  return d;
+}
+function playAudio(url){ try{ talking(true); const a=new Audio(url); a.onended=()=>talking(false); a.play().catch(()=>talking(false)); }catch(e){talking(false);} }
+
+/* ---- Live bubble: poll the dashboard's /api/state every 12s ---- */
+function fmtAgo(ts){ if(!ts) return ''; const s=Math.max(0,Math.round(Date.now()/1000-ts)); if(s<90)return 'הרגע'; if(s<3600)return 'לפני '+Math.round(s/60)+' דק׳'; return 'לפני '+Math.round(s/3600)+' ש׳'; }
+let lastBabbleStep=null;
+async function pollState(){
+  try{
+    const s=await (await fetch('/api/state?_='+Date.now(),{cache:'no-cache'})).json();
+    const sib=(s.siblings&&s.siblings.eran)||{};
+    const room=(s.room&&s.room.eran)||{};
+    const step=sib.step, total=sib.total||s.target_steps||4000;
+    const fresh = room.gen_step!=null ? room.gen_step : sib.audio_step;
+    if(step!=null){
+      if(sib.done){ bubble('ערן מלמל לו לאט… 🍼','סיים שלב אימון · '+(step.toLocaleString())+' צעדים'); }
+      else { bubble('ערן לומד לדבר… 🍼','שלב אימון '+step.toLocaleString()+' / '+total.toLocaleString()+(sib.loss!=null?' · loss '+sib.loss:'')); }
+    } else {
+      bubble('ערן כאן איתך 💙','מחכה לקול שלך — לחץ "דבר אליו"');
+    }
+    // a brand-new babble appeared -> gently surface it
+    if(fresh!=null && fresh!==lastBabbleStep && lastBabbleStep!==null){
+      const url=room.babble_url||sib.audio_url;
+      if(url){ feedAdd('eran','ער״ן 🍼 (מלמול חדש)',
+        `<audio controls src="${esc(url)}"></audio><div class="note">מלמול טרי משלב ${esc(fresh)} · ${esc(fmtAgo(room.when_ts||sib.audio_ts))}</div>`); }
+    }
+    if(fresh!=null) lastBabbleStep=fresh;
+  }catch(e){ bubble('החדר מתעורר…','ודא שהדשבורד רץ (master_dashboard.py)'); }
+}
+
+/* ---- ▶ שמע אותו — newest real babble from eran1 (via /babble GET) ---- */
+async function hearHim(){
+  if(busy) return; setBusy(true);
+  const b=feedAdd('eran','ער״ן 🍼',`<span class="pend">מביא את המלמול האחרון שלו…</span>`);
+  try{
+    const j=await (await fetch('/babble?who=eran&_='+Date.now())).json();
+    if(j.ok && j.babble_url){
+      b.innerHTML=`<div class="nm">ער״ן 🍼</div><audio controls autoplay src="${esc(j.babble_url)}"></audio>
+        <div class="note">מלמול אמיתי · שלב ${j.gen_step==null?'—':esc(j.gen_step)} · ${esc(j.when||'')}</div>`;
+      talking(true); setTimeout(()=>talking(false),3000);
+    } else {
+      b.innerHTML=`<div class="nm">ער״ן 🍼</div><span class="pend">אין מלמול כרגע (${esc(j.error||'הצומת אולי לא זמין')}). הוא מתאמן — נסה שוב בעוד רגע.</span>`;
+    }
+  }catch(e){ b.innerHTML=`<div class="nm">ער״ן 🍼</div><span class="pend">שגיאה: ${esc(''+e)}</span>`; }
+  setBusy(false);
+}
+
+/* ---- 🎤 דבר אליו — record mic, child HEARS it and babbles back (POST /babble) ---- */
+async function listenThenBabble(){
+  if(busy) return;
+  if(!navigator.mediaDevices || !window.MediaRecorder){ setMic('הדפדפן לא תומך בהקלטה — נסה "שמע אותו".'); return; }
+  setBusy(true); setMic('🎤 מבקש גישה למיקרופון…');
+  let stream;
+  try{ stream=await navigator.mediaDevices.getUserMedia({audio:true}); }
+  catch(e){ setMic('אין גישה למיקרופון (פתח דרך localhost או HTTPS).'); setBusy(false); return; }
+  const rec=new MediaRecorder(stream), chunks=[];
+  rec.ondataavailable=e=>{ if(e.data.size) chunks.push(e.data); };
+  const DUR=2500; setMic('🔴 מקליט '+(DUR/1000)+'ש׳… דבר עכשיו אל ערן');
+  rec.start(); await new Promise(r=>setTimeout(r,DUR));
+  await new Promise(r=>{ rec.onstop=r; rec.stop(); });
+  stream.getTracks().forEach(t=>t.stop());
+  const blob=new Blob(chunks,{type:rec.mimeType||'audio/webm'});
+  setMic('שולח את הקול שלך לאוזניים שלו…');
+  feedAdd('me','עידו (קול)','🎤 <i>קליפ נשלח — ערן שומע וממשיך ממנו</i>');
+  const b=feedAdd('eran','ער״ן 🍼',`<span class="pend">שומע אותך וממשיך מהקול שלך…</span>`);
+  try{
+    const j=await (await fetch('/babble?who=eran',{method:'POST',
+      headers:{'Content-Type':'application/octet-stream'},body:blob})).json();
+    if(j.ok && j.babble_url){
+      b.innerHTML=`<div class="nm">ער״ן 🍼</div><audio controls autoplay src="${esc(j.babble_url)}"></audio>
+        <div class="note">${j.conditioned?'שמע אותך והמשיך':'באבל חופשי'} · שלב ${j.gen_step==null?'—':esc(j.gen_step)} · ${esc(j.when||'')}</div>`;
+      talking(true); setTimeout(()=>talking(false),3500);
+    } else { b.innerHTML=`<div class="nm">ער״ן 🍼</div><span class="pend">לא הצליח (${esc(j.error||'הצומת אולי לא זמין')}).</span>`; }
+  }catch(e){ b.innerHTML=`<div class="nm">ער״ן 🍼</div><span class="pend">שגיאה: ${esc(''+e)}</span>`; }
+  setMic(''); setBusy(false);
+}
+
+/* ---- 🗣️ שיגיד — eran-voice TTS (honest: young-voice synthesis, not comprehension) ---- */
+async function saySomething(text){
+  text=(text||$('say-text').value||'').trim();
+  if(!text){ $('say-text').focus(); return; }
+  if(busy) return; setBusy(true);
+  feedAdd('me','עידו', esc(text));
+  const b=feedAdd('eran','ער״ן 🗣️',`<span class="pend">אומר בקול‑ילד… (eran‑voice TTS)</span>`);
+  try{
+    const r=await fetch(VOICE_BASE+'/speak',{method:'POST',
+      headers:{'Content-Type':'application/json'}, body:JSON.stringify({text, preset:'young-child'})});
+    if(!r.ok){ const j=await r.json().catch(()=>({}));
+      b.innerHTML=`<div class="nm">ער״ן 🗣️</div><span class="pend">לא הצליח: ${esc(j.error||r.status)} — ודא ש‑voice_server.py רץ (פורט 5003) ושהדף ב‑HTTP.</span>`; setBusy(false); return; }
+    const blob=await r.blob();
+    const real=r.headers.get('X-Eran-Real')==='1';
+    const note=real
+      ? 'קול‑ילד בסינתזה (מהקול של עידו) · אמירה‑בבנייה, לא הבנה'
+      : '⚠️ placeholder (לא קולו של ערן) — מנוע eran‑voice לא זמין';
+    b.innerHTML=`<div class="nm">ער״ן 🗣️</div>
+      <audio controls autoplay src="${URL.createObjectURL(blob)}"></audio><div class="note">${note}</div>`;
+    talking(true); setTimeout(()=>talking(false),2500);
+  }catch(e){
+    b.innerHTML=`<div class="nm">ער״ן 🗣️</div><span class="pend">שגיאה: ${esc(''+e)} — ודא ש‑voice_server.py רץ (פורט 5003) ושהדף נפתח ב‑HTTP (לא HTTPS).</span>`;
+  }
+  setBusy(false);
+}
+
+/* ---- 🎮 שחק — open Eran's Pong (reuse the existing game) ---- */
+function play(){
+  feedAdd('me','עידו','🎮 פותח משחק…');
+  feedAdd('eran','החדר','פונג של ערן נפתח בלשונית חדשה. (אם לא נפתח — ודא שהשרת של eran‑pong רץ בפורט 4280.)');
+  window.open($('pong-link').href, '_blank', 'noopener');
+}
+
+/* ---- wire up ---- */
+$('btn-listen').onclick=listenThenBabble;
+$('btn-hear').onclick=hearHim;
+$('btn-say').onclick=()=>saySomething();
+$('btn-play').onclick=play;
+$('say-text').addEventListener('keydown',e=>{ if(e.key==='Enter') saySomething(); });
+document.querySelectorAll('.word').forEach(btn=>btn.onclick=()=>saySomething(btn.dataset.w));
+
+pollState(); setInterval(pollState, 12000);
+</script>
+</body>
+</html>

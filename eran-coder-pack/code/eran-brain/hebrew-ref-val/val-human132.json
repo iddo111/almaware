@@ -1,0 +1,2964 @@
+{
+ "set": "human132",
+ "n": 132,
+ "top1": 30,
+ "acc": 0.22727272727272727,
+ "confusion": {
+  "A>A": 9,
+  "A>F": 3,
+  "B>A": 2,
+  "B>F": 4,
+  "D>H": 1,
+  "D>P": 5,
+  "G>A": 4,
+  "G>P": 2,
+  "H>A": 3,
+  "H>H": 2,
+  "H>X": 1,
+  "K>A": 5,
+  "K>D": 1,
+  "K>H": 1,
+  "K>K": 1,
+  "K>P": 3,
+  "K>T": 1,
+  "L>A": 1,
+  "L>F": 1,
+  "L>P": 3,
+  "L>X": 1,
+  "M>A": 1,
+  "M>H": 2,
+  "M>L": 3,
+  "N>A": 6,
+  "P>A": 1,
+  "P>P": 3,
+  "P>T": 2,
+  "R>A": 2,
+  "R>F": 1,
+  "R>R": 3,
+  "S>F": 1,
+  "S>X": 5,
+  "SH>SH": 6,
+  "T>K": 6,
+  "T>P": 6,
+  "TS>S": 6,
+  "V>F": 1,
+  "V>L": 4,
+  "V>R": 1,
+  "X>A": 1,
+  "X>P": 4,
+  "X>X": 1,
+  "Y>A": 1,
+  "Y>F": 1,
+  "Y>P": 1,
+  "Y>X": 1,
+  "Y>Y": 2,
+  "Z>S": 3,
+  "Z>Z": 3
+ },
+ "rows": [
+  {
+   "file": "aa_h00_0.wav",
+   "truth": "A",
+   "pred": "F",
+   "conf": 0.3764,
+   "hit": false,
+   "top3": [
+    [
+     "fa",
+     0.3764
+    ],
+    [
+     "pa",
+     0.2839
+    ],
+    [
+     "a",
+     0.0915
+    ]
+   ],
+   "phones": "f aː"
+  },
+  {
+   "file": "aa_h00_1.wav",
+   "truth": "A",
+   "pred": "A",
+   "conf": 0.6494,
+   "hit": true,
+   "top3": [
+    [
+     "a",
+     0.6306
+    ],
+    [
+     "fa",
+     0.1266
+    ],
+    [
+     "wa",
+     0.0372
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "aa_h00_2.wav",
+   "truth": "A",
+   "pred": "F",
+   "conf": 0.5836,
+   "hit": false,
+   "top3": [
+    [
+     "fa",
+     0.5836
+    ],
+    [
+     "a",
+     0.1635
+    ],
+    [
+     "pa",
+     0.0872
+    ]
+   ],
+   "phones": "f aː"
+  },
+  {
+   "file": "aa_h01_0.wav",
+   "truth": "A",
+   "pred": "A",
+   "conf": 0.7458,
+   "hit": true,
+   "top3": [
+    [
+     "a",
+     0.7369
+    ],
+    [
+     "cha",
+     0.072
+    ],
+    [
+     "kha",
+     0.072
+    ]
+   ],
+   "phones": "a5"
+  },
+  {
+   "file": "aa_h01_1.wav",
+   "truth": "A",
+   "pred": "F",
+   "conf": 0.8011,
+   "hit": false,
+   "top3": [
+    [
+     "fa",
+     0.8011
+    ],
+    [
+     "a",
+     0.0377
+    ],
+    [
+     "pa",
+     0.0274
+    ]
+   ],
+   "phones": "f a5"
+  },
+  {
+   "file": "aa_h01_2.wav",
+   "truth": "A",
+   "pred": "A",
+   "conf": 0.472,
+   "hit": true,
+   "top3": [
+    [
+     "a",
+     0.4613
+    ],
+    [
+     "cha",
+     0.1671
+    ],
+    [
+     "kha",
+     0.1671
+    ]
+   ],
+   "phones": "ɑ5"
+  },
+  {
+   "file": "ah_h00_0.wav",
+   "truth": "A",
+   "pred": "A",
+   "conf": 0.7902,
+   "hit": true,
+   "top3": [
+    [
+     "a",
+     0.7751
+    ],
+    [
+     "ha",
+     0.1314
+    ],
+    [
+     "cha",
+     0.0211
+    ]
+   ],
+   "phones": "a5"
+  },
+  {
+   "file": "ah_h00_1.wav",
+   "truth": "A",
+   "pred": "A",
+   "conf": 0.9255,
+   "hit": true,
+   "top3": [
+    [
+     "a",
+     0.9162
+    ],
+    [
+     "ha",
+     0.0211
+    ],
+    [
+     "wa",
+     0.0143
+    ]
+   ],
+   "phones": "a5"
+  },
+  {
+   "file": "ah_h00_2.wav",
+   "truth": "A",
+   "pred": "A",
+   "conf": 0.6454,
+   "hit": true,
+   "top3": [
+    [
+     "a",
+     0.6331
+    ],
+    [
+     "ha",
+     0.2973
+    ],
+    [
+     "cha",
+     0.0134
+    ]
+   ],
+   "phones": "əɜ"
+  },
+  {
+   "file": "ah_h01_0.wav",
+   "truth": "A",
+   "pred": "A",
+   "conf": 0.9312,
+   "hit": true,
+   "top3": [
+    [
+     "a",
+     0.8744
+    ],
+    [
+     "aya",
+     0.0569
+    ],
+    [
+     "ha",
+     0.0214
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ah_h01_1.wav",
+   "truth": "A",
+   "pred": "A",
+   "conf": 0.8003,
+   "hit": true,
+   "top3": [
+    [
+     "a",
+     0.783
+    ],
+    [
+     "ha",
+     0.0571
+    ],
+    [
+     "cha",
+     0.0362
+    ]
+   ],
+   "phones": "ɑ5"
+  },
+  {
+   "file": "ah_h01_2.wav",
+   "truth": "A",
+   "pred": "A",
+   "conf": 0.936,
+   "hit": true,
+   "top3": [
+    [
+     "a",
+     0.9157
+    ],
+    [
+     "aya",
+     0.0203
+    ],
+    [
+     "wa",
+     0.0101
+    ]
+   ],
+   "phones": ""
+  },
+  {
+   "file": "ba_h00_0.wav",
+   "truth": "B",
+   "pred": "F",
+   "conf": 0.9395,
+   "hit": false,
+   "top3": [
+    [
+     "fa",
+     0.9395
+    ],
+    [
+     "a",
+     0.018
+    ],
+    [
+     "pa",
+     0.0175
+    ]
+   ],
+   "phones": "f eː"
+  },
+  {
+   "file": "ba_h00_1.wav",
+   "truth": "B",
+   "pred": "F",
+   "conf": 0.9099,
+   "hit": false,
+   "top3": [
+    [
+     "fa",
+     0.9099
+    ],
+    [
+     "pa",
+     0.0328
+    ],
+    [
+     "a",
+     0.0213
+    ]
+   ],
+   "phones": "f eː"
+  },
+  {
+   "file": "ba_h00_2.wav",
+   "truth": "B",
+   "pred": "F",
+   "conf": 0.9036,
+   "hit": false,
+   "top3": [
+    [
+     "fa",
+     0.9036
+    ],
+    [
+     "a",
+     0.0438
+    ],
+    [
+     "pa",
+     0.0146
+    ]
+   ],
+   "phones": "f eː"
+  },
+  {
+   "file": "ba_h01_0.wav",
+   "truth": "B",
+   "pred": "A",
+   "conf": 0.582,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.578
+    ],
+    [
+     "fa",
+     0.2477
+    ],
+    [
+     "pa",
+     0.0609
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ba_h01_1.wav",
+   "truth": "B",
+   "pred": "A",
+   "conf": 0.8625,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.8306
+    ],
+    [
+     "ha",
+     0.0692
+    ],
+    [
+     "aya",
+     0.0319
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ba_h01_2.wav",
+   "truth": "B",
+   "pred": "F",
+   "conf": 0.7062,
+   "hit": false,
+   "top3": [
+    [
+     "fa",
+     0.7062
+    ],
+    [
+     "a",
+     0.1117
+    ],
+    [
+     "pa",
+     0.0881
+    ]
+   ],
+   "phones": "f aː"
+  },
+  {
+   "file": "da_h00_0.wav",
+   "truth": "D",
+   "pred": "P",
+   "conf": 0.5666,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.5666
+    ],
+    [
+     "fa",
+     0.1295
+    ],
+    [
+     "a",
+     0.1055
+    ]
+   ],
+   "phones": "p eː"
+  },
+  {
+   "file": "da_h00_1.wav",
+   "truth": "D",
+   "pred": "H",
+   "conf": 0.7319,
+   "hit": false,
+   "top3": [
+    [
+     "ha",
+     0.7319
+    ],
+    [
+     "a",
+     0.2402
+    ],
+    [
+     "aya",
+     0.0055
+    ]
+   ],
+   "phones": "h eː"
+  },
+  {
+   "file": "da_h00_2.wav",
+   "truth": "D",
+   "pred": "P",
+   "conf": 0.4948,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.4948
+    ],
+    [
+     "fa",
+     0.2273
+    ],
+    [
+     "a",
+     0.1175
+    ]
+   ],
+   "phones": "p eː"
+  },
+  {
+   "file": "da_h01_0.wav",
+   "truth": "D",
+   "pred": "P",
+   "conf": 0.5011,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.5011
+    ],
+    [
+     "fa",
+     0.1054
+    ],
+    [
+     "cha",
+     0.0903
+    ]
+   ],
+   "phones": "p ʌ"
+  },
+  {
+   "file": "da_h01_1.wav",
+   "truth": "D",
+   "pred": "P",
+   "conf": 0.3916,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.3916
+    ],
+    [
+     "cha",
+     0.1362
+    ],
+    [
+     "kha",
+     0.1362
+    ]
+   ],
+   "phones": "p əɜ"
+  },
+  {
+   "file": "da_h01_2.wav",
+   "truth": "D",
+   "pred": "P",
+   "conf": 0.3906,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.3906
+    ],
+    [
+     "a",
+     0.1656
+    ],
+    [
+     "fa",
+     0.1038
+    ]
+   ],
+   "phones": "p a l a"
+  },
+  {
+   "file": "ga_h00_0.wav",
+   "truth": "G",
+   "pred": "A",
+   "conf": 0.8291,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.807
+    ],
+    [
+     "ha",
+     0.0751
+    ],
+    [
+     "aya",
+     0.0221
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ga_h00_1.wav",
+   "truth": "G",
+   "pred": "A",
+   "conf": 0.7004,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.6515
+    ],
+    [
+     "ha",
+     0.1502
+    ],
+    [
+     "aya",
+     0.049
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ga_h00_2.wav",
+   "truth": "G",
+   "pred": "A",
+   "conf": 0.6415,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.6041
+    ],
+    [
+     "ha",
+     0.3138
+    ],
+    [
+     "aya",
+     0.0374
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ga_h01_0.wav",
+   "truth": "G",
+   "pred": "P",
+   "conf": 0.3746,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.3746
+    ],
+    [
+     "a",
+     0.2906
+    ],
+    [
+     "ta",
+     0.0806
+    ]
+   ],
+   "phones": "p eː"
+  },
+  {
+   "file": "ga_h01_1.wav",
+   "truth": "G",
+   "pred": "P",
+   "conf": 0.4776,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.4776
+    ],
+    [
+     "a",
+     0.3321
+    ],
+    [
+     "ta",
+     0.0575
+    ]
+   ],
+   "phones": "p eː"
+  },
+  {
+   "file": "ga_h01_2.wav",
+   "truth": "G",
+   "pred": "A",
+   "conf": 0.4989,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.4938
+    ],
+    [
+     "pa",
+     0.1254
+    ],
+    [
+     "ta",
+     0.091
+    ]
+   ],
+   "phones": "ɛ θ"
+  },
+  {
+   "file": "ha_h00_0.wav",
+   "truth": "H",
+   "pred": "H",
+   "conf": 0.6505,
+   "hit": true,
+   "top3": [
+    [
+     "ha",
+     0.6505
+    ],
+    [
+     "a",
+     0.2326
+    ],
+    [
+     "cha",
+     0.0383
+    ]
+   ],
+   "phones": "h"
+  },
+  {
+   "file": "ha_h00_1.wav",
+   "truth": "H",
+   "pred": "H",
+   "conf": 0.5111,
+   "hit": true,
+   "top3": [
+    [
+     "ha",
+     0.5111
+    ],
+    [
+     "a",
+     0.4044
+    ],
+    [
+     "cha",
+     0.0187
+    ]
+   ],
+   "phones": "h"
+  },
+  {
+   "file": "ha_h00_2.wav",
+   "truth": "H",
+   "pred": "A",
+   "conf": 0.5102,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.4854
+    ],
+    [
+     "ha",
+     0.2065
+    ],
+    [
+     "cha",
+     0.0924
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ha_h01_0.wav",
+   "truth": "H",
+   "pred": "A",
+   "conf": 0.3713,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.3674
+    ],
+    [
+     "ha",
+     0.3401
+    ],
+    [
+     "cha",
+     0.1324
+    ]
+   ],
+   "phones": "əɜ"
+  },
+  {
+   "file": "ha_h01_1.wav",
+   "truth": "H",
+   "pred": "A",
+   "conf": 0.4114,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.4033
+    ],
+    [
+     "cha",
+     0.1679
+    ],
+    [
+     "kha",
+     0.1679
+    ]
+   ],
+   "phones": "aɪ"
+  },
+  {
+   "file": "ha_h01_2.wav",
+   "truth": "H",
+   "pred": "X",
+   "conf": 0.5409,
+   "hit": false,
+   "top3": [
+    [
+     "ha",
+     0.3217
+    ],
+    [
+     "cha",
+     0.2704
+    ],
+    [
+     "kha",
+     0.2704
+    ]
+   ],
+   "phones": "h ɑ5"
+  },
+  {
+   "file": "ka_h00_0.wav",
+   "truth": "K",
+   "pred": "A",
+   "conf": 0.4907,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.4595
+    ],
+    [
+     "ha",
+     0.4418
+    ],
+    [
+     "aya",
+     0.0312
+    ]
+   ],
+   "phones": "a"
+  },
+  {
+   "file": "ka_h00_1.wav",
+   "truth": "K",
+   "pred": "H",
+   "conf": 0.5802,
+   "hit": false,
+   "top3": [
+    [
+     "ha",
+     0.5802
+    ],
+    [
+     "a",
+     0.325
+    ],
+    [
+     "aya",
+     0.0325
+    ]
+   ],
+   "phones": "h a"
+  },
+  {
+   "file": "ka_h00_2.wav",
+   "truth": "K",
+   "pred": "A",
+   "conf": 0.7913,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.7696
+    ],
+    [
+     "ha",
+     0.161
+    ],
+    [
+     "aya",
+     0.0217
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ka_h01_0.wav",
+   "truth": "K",
+   "pred": "D",
+   "conf": 0.538,
+   "hit": false,
+   "top3": [
+    [
+     "da",
+     0.538
+    ],
+    [
+     "ta",
+     0.3373
+    ],
+    [
+     "a",
+     0.0834
+    ]
+   ],
+   "phones": "d aː"
+  },
+  {
+   "file": "ka_h01_1.wav",
+   "truth": "K",
+   "pred": "K",
+   "conf": 0.5006,
+   "hit": true,
+   "top3": [
+    [
+     "ka",
+     0.2503
+    ],
+    [
+     "qa",
+     0.2503
+    ],
+    [
+     "ga",
+     0.2238
+    ]
+   ],
+   "phones": "k aː"
+  },
+  {
+   "file": "ka_h01_2.wav",
+   "truth": "K",
+   "pred": "T",
+   "conf": 0.673,
+   "hit": false,
+   "top3": [
+    [
+     "ta",
+     0.673
+    ],
+    [
+     "da",
+     0.1564
+    ],
+    [
+     "a",
+     0.0555
+    ]
+   ],
+   "phones": "t aː"
+  },
+  {
+   "file": "kha_h00_0.wav",
+   "truth": "X",
+   "pred": "X",
+   "conf": 0.5035,
+   "hit": true,
+   "top3": [
+    [
+     "a",
+     0.3115
+    ],
+    [
+     "cha",
+     0.2518
+    ],
+    [
+     "kha",
+     0.2518
+    ]
+   ],
+   "phones": "a5"
+  },
+  {
+   "file": "kha_h00_1.wav",
+   "truth": "X",
+   "pred": "P",
+   "conf": 0.7552,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.7552
+    ],
+    [
+     "a",
+     0.0775
+    ],
+    [
+     "fa",
+     0.0359
+    ]
+   ],
+   "phones": "p ɑ5"
+  },
+  {
+   "file": "kha_h00_2.wav",
+   "truth": "X",
+   "pred": "A",
+   "conf": 0.6486,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.6458
+    ],
+    [
+     "pa",
+     0.2587
+    ],
+    [
+     "wa",
+     0.0113
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "kha_h01_0.wav",
+   "truth": "X",
+   "pred": "P",
+   "conf": 0.9009,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.9009
+    ],
+    [
+     "a",
+     0.039
+    ],
+    [
+     "fa",
+     0.0106
+    ]
+   ],
+   "phones": "p aː"
+  },
+  {
+   "file": "kha_h01_1.wav",
+   "truth": "X",
+   "pred": "P",
+   "conf": 0.2776,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.2776
+    ],
+    [
+     "a",
+     0.2671
+    ],
+    [
+     "cha",
+     0.1224
+    ]
+   ],
+   "phones": "p əɜ"
+  },
+  {
+   "file": "kha_h01_2.wav",
+   "truth": "X",
+   "pred": "P",
+   "conf": 0.9329,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.9329
+    ],
+    [
+     "a",
+     0.017
+    ],
+    [
+     "fa",
+     0.0086
+    ]
+   ],
+   "phones": "p aː"
+  },
+  {
+   "file": "la_h00_0.wav",
+   "truth": "L",
+   "pred": "X",
+   "conf": 0.5277,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.2712
+    ],
+    [
+     "cha",
+     0.2638
+    ],
+    [
+     "kha",
+     0.2638
+    ]
+   ],
+   "phones": "x ɑ5"
+  },
+  {
+   "file": "la_h00_1.wav",
+   "truth": "L",
+   "pred": "F",
+   "conf": 0.2737,
+   "hit": false,
+   "top3": [
+    [
+     "fa",
+     0.2737
+    ],
+    [
+     "a",
+     0.2072
+    ],
+    [
+     "ka",
+     0.0982
+    ]
+   ],
+   "phones": "f"
+  },
+  {
+   "file": "la_h00_2.wav",
+   "truth": "L",
+   "pred": "A",
+   "conf": 0.2949,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.2918
+    ],
+    [
+     "la",
+     0.1806
+    ],
+    [
+     "cha",
+     0.1331
+    ]
+   ],
+   "phones": ""
+  },
+  {
+   "file": "la_h01_0.wav",
+   "truth": "L",
+   "pred": "P",
+   "conf": 0.5951,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.5951
+    ],
+    [
+     "a",
+     0.2254
+    ],
+    [
+     "cha",
+     0.026
+    ]
+   ],
+   "phones": "p aː"
+  },
+  {
+   "file": "la_h01_1.wav",
+   "truth": "L",
+   "pred": "P",
+   "conf": 0.9028,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.9028
+    ],
+    [
+     "a",
+     0.0272
+    ],
+    [
+     "ka",
+     0.0123
+    ]
+   ],
+   "phones": "p aː"
+  },
+  {
+   "file": "la_h01_2.wav",
+   "truth": "L",
+   "pred": "P",
+   "conf": 0.7867,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.7867
+    ],
+    [
+     "a",
+     0.0896
+    ],
+    [
+     "ka",
+     0.021
+    ]
+   ],
+   "phones": "p aː"
+  },
+  {
+   "file": "ma_h00_0.wav",
+   "truth": "M",
+   "pred": "H",
+   "conf": 0.525,
+   "hit": false,
+   "top3": [
+    [
+     "ha",
+     0.525
+    ],
+    [
+     "a",
+     0.2055
+    ],
+    [
+     "aya",
+     0.105
+    ]
+   ],
+   "phones": "h aː"
+  },
+  {
+   "file": "ma_h00_1.wav",
+   "truth": "M",
+   "pred": "H",
+   "conf": 0.4992,
+   "hit": false,
+   "top3": [
+    [
+     "ha",
+     0.4992
+    ],
+    [
+     "a",
+     0.2252
+    ],
+    [
+     "ta",
+     0.0649
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ma_h00_2.wav",
+   "truth": "M",
+   "pred": "A",
+   "conf": 0.3661,
+   "hit": false,
+   "top3": [
+    [
+     "ha",
+     0.3179
+    ],
+    [
+     "a",
+     0.2709
+    ],
+    [
+     "aya",
+     0.0953
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ma_h01_0.wav",
+   "truth": "M",
+   "pred": "L",
+   "conf": 0.8039,
+   "hit": false,
+   "top3": [
+    [
+     "la",
+     0.8039
+    ],
+    [
+     "ha",
+     0.1281
+    ],
+    [
+     "a",
+     0.0427
+    ]
+   ],
+   "phones": "l h a r"
+  },
+  {
+   "file": "ma_h01_1.wav",
+   "truth": "M",
+   "pred": "L",
+   "conf": 0.7442,
+   "hit": false,
+   "top3": [
+    [
+     "la",
+     0.7442
+    ],
+    [
+     "ha",
+     0.1176
+    ],
+    [
+     "a",
+     0.0975
+    ]
+   ],
+   "phones": "l a r"
+  },
+  {
+   "file": "ma_h01_2.wav",
+   "truth": "M",
+   "pred": "L",
+   "conf": 0.7025,
+   "hit": false,
+   "top3": [
+    [
+     "la",
+     0.7025
+    ],
+    [
+     "ha",
+     0.1916
+    ],
+    [
+     "a",
+     0.0629
+    ]
+   ],
+   "phones": "l h a r"
+  },
+  {
+   "file": "na_h00_0.wav",
+   "truth": "N",
+   "pred": "A",
+   "conf": 0.6721,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.6565
+    ],
+    [
+     "ha",
+     0.2734
+    ],
+    [
+     "aya",
+     0.0157
+    ]
+   ],
+   "phones": "e"
+  },
+  {
+   "file": "na_h00_1.wav",
+   "truth": "N",
+   "pred": "A",
+   "conf": 0.776,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.7619
+    ],
+    [
+     "ha",
+     0.1764
+    ],
+    [
+     "aya",
+     0.0141
+    ]
+   ],
+   "phones": "e"
+  },
+  {
+   "file": "na_h00_2.wav",
+   "truth": "N",
+   "pred": "A",
+   "conf": 0.5374,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.5262
+    ],
+    [
+     "pa",
+     0.0852
+    ],
+    [
+     "fa",
+     0.0818
+    ]
+   ],
+   "phones": ""
+  },
+  {
+   "file": "na_h01_0.wav",
+   "truth": "N",
+   "pred": "A",
+   "conf": 0.691,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.6867
+    ],
+    [
+     "ma",
+     0.064
+    ],
+    [
+     "ba",
+     0.0603
+    ]
+   ],
+   "phones": "eː"
+  },
+  {
+   "file": "na_h01_1.wav",
+   "truth": "N",
+   "pred": "A",
+   "conf": 0.7152,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.71
+    ],
+    [
+     "ma",
+     0.1138
+    ],
+    [
+     "va",
+     0.0299
+    ]
+   ],
+   "phones": "eː"
+  },
+  {
+   "file": "na_h01_2.wav",
+   "truth": "N",
+   "pred": "A",
+   "conf": 0.914,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.9112
+    ],
+    [
+     "ma",
+     0.02
+    ],
+    [
+     "ha",
+     0.0132
+    ]
+   ],
+   "phones": "eː"
+  },
+  {
+   "file": "pa_h00_0.wav",
+   "truth": "P",
+   "pred": "P",
+   "conf": 0.7599,
+   "hit": true,
+   "top3": [
+    [
+     "pa",
+     0.7599
+    ],
+    [
+     "a",
+     0.0576
+    ],
+    [
+     "fa",
+     0.045
+    ]
+   ],
+   "phones": "p a"
+  },
+  {
+   "file": "pa_h00_1.wav",
+   "truth": "P",
+   "pred": "P",
+   "conf": 0.7561,
+   "hit": true,
+   "top3": [
+    [
+     "pa",
+     0.7561
+    ],
+    [
+     "a",
+     0.0833
+    ],
+    [
+     "fa",
+     0.0417
+    ]
+   ],
+   "phones": "p ɑ5"
+  },
+  {
+   "file": "pa_h00_2.wav",
+   "truth": "P",
+   "pred": "P",
+   "conf": 0.4978,
+   "hit": true,
+   "top3": [
+    [
+     "pa",
+     0.4978
+    ],
+    [
+     "fa",
+     0.1261
+    ],
+    [
+     "ta",
+     0.1035
+    ]
+   ],
+   "phones": "p a5 ŋ"
+  },
+  {
+   "file": "pa_h01_0.wav",
+   "truth": "P",
+   "pred": "A",
+   "conf": 0.5009,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.4863
+    ],
+    [
+     "ha",
+     0.3691
+    ],
+    [
+     "ta",
+     0.0296
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "pa_h01_1.wav",
+   "truth": "P",
+   "pred": "T",
+   "conf": 0.3184,
+   "hit": false,
+   "top3": [
+    [
+     "ta",
+     0.3184
+    ],
+    [
+     "a",
+     0.1961
+    ],
+    [
+     "fa",
+     0.1666
+    ]
+   ],
+   "phones": "t"
+  },
+  {
+   "file": "pa_h01_2.wav",
+   "truth": "P",
+   "pred": "T",
+   "conf": 0.4342,
+   "hit": false,
+   "top3": [
+    [
+     "ta",
+     0.4342
+    ],
+    [
+     "a",
+     0.168
+    ],
+    [
+     "da",
+     0.0789
+    ]
+   ],
+   "phones": "t a"
+  },
+  {
+   "file": "qa_h00_0.wav",
+   "truth": "K",
+   "pred": "A",
+   "conf": 0.9235,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.8929
+    ],
+    [
+     "aya",
+     0.0306
+    ],
+    [
+     "ha",
+     0.018
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "qa_h00_1.wav",
+   "truth": "K",
+   "pred": "A",
+   "conf": 0.869,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.8605
+    ],
+    [
+     "pa",
+     0.0501
+    ],
+    [
+     "ba",
+     0.0138
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "qa_h00_2.wav",
+   "truth": "K",
+   "pred": "A",
+   "conf": 0.9221,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.8914
+    ],
+    [
+     "aya",
+     0.0307
+    ],
+    [
+     "ha",
+     0.0186
+    ]
+   ],
+   "phones": ""
+  },
+  {
+   "file": "qa_h01_0.wav",
+   "truth": "K",
+   "pred": "P",
+   "conf": 0.5074,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.5074
+    ],
+    [
+     "a",
+     0.4047
+    ],
+    [
+     "ta",
+     0.0123
+    ]
+   ],
+   "phones": "a5"
+  },
+  {
+   "file": "qa_h01_1.wav",
+   "truth": "K",
+   "pred": "P",
+   "conf": 0.7681,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.7681
+    ],
+    [
+     "a",
+     0.0786
+    ],
+    [
+     "fa",
+     0.0257
+    ]
+   ],
+   "phones": "p a5"
+  },
+  {
+   "file": "qa_h01_2.wav",
+   "truth": "K",
+   "pred": "P",
+   "conf": 0.8438,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.8438
+    ],
+    [
+     "a",
+     0.0387
+    ],
+    [
+     "fa",
+     0.02
+    ]
+   ],
+   "phones": "p a5"
+  },
+  {
+   "file": "ra_h00_0.wav",
+   "truth": "R",
+   "pred": "F",
+   "conf": 0.3079,
+   "hit": false,
+   "top3": [
+    [
+     "fa",
+     0.3079
+    ],
+    [
+     "a",
+     0.2786
+    ],
+    [
+     "wa",
+     0.0645
+    ]
+   ],
+   "phones": "f"
+  },
+  {
+   "file": "ra_h00_1.wav",
+   "truth": "R",
+   "pred": "A",
+   "conf": 0.8558,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.7882
+    ],
+    [
+     "aya",
+     0.0676
+    ],
+    [
+     "ha",
+     0.0495
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ra_h00_2.wav",
+   "truth": "R",
+   "pred": "A",
+   "conf": 0.812,
+   "hit": false,
+   "top3": [
+    [
+     "a",
+     0.7566
+    ],
+    [
+     "ha",
+     0.1008
+    ],
+    [
+     "aya",
+     0.0554
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ra_h01_0.wav",
+   "truth": "R",
+   "pred": "R",
+   "conf": 0.816,
+   "hit": true,
+   "top3": [
+    [
+     "ra",
+     0.816
+    ],
+    [
+     "a",
+     0.1239
+    ],
+    [
+     "la",
+     0.011
+    ]
+   ],
+   "phones": "r aː"
+  },
+  {
+   "file": "ra_h01_1.wav",
+   "truth": "R",
+   "pred": "R",
+   "conf": 0.4504,
+   "hit": true,
+   "top3": [
+    [
+     "ra",
+     0.4504
+    ],
+    [
+     "a",
+     0.3892
+    ],
+    [
+     "ha",
+     0.0262
+    ]
+   ],
+   "phones": "aː"
+  },
+  {
+   "file": "ra_h01_2.wav",
+   "truth": "R",
+   "pred": "R",
+   "conf": 0.7206,
+   "hit": true,
+   "top3": [
+    [
+     "ra",
+     0.7206
+    ],
+    [
+     "a",
+     0.1992
+    ],
+    [
+     "da",
+     0.0129
+    ]
+   ],
+   "phones": "r a"
+  },
+  {
+   "file": "sa_h00_0.wav",
+   "truth": "S",
+   "pred": "X",
+   "conf": 0.9441,
+   "hit": false,
+   "top3": [
+    [
+     "cha",
+     0.472
+    ],
+    [
+     "kha",
+     0.472
+    ],
+    [
+     "qa",
+     0.0146
+    ]
+   ],
+   "phones": "x a"
+  },
+  {
+   "file": "sa_h00_1.wav",
+   "truth": "S",
+   "pred": "X",
+   "conf": 0.9749,
+   "hit": false,
+   "top3": [
+    [
+     "cha",
+     0.4874
+    ],
+    [
+     "kha",
+     0.4874
+    ],
+    [
+     "ha",
+     0.006
+    ]
+   ],
+   "phones": "x a"
+  },
+  {
+   "file": "sa_h00_2.wav",
+   "truth": "S",
+   "pred": "X",
+   "conf": 0.9784,
+   "hit": false,
+   "top3": [
+    [
+     "cha",
+     0.4892
+    ],
+    [
+     "kha",
+     0.4892
+    ],
+    [
+     "a",
+     0.0052
+    ]
+   ],
+   "phones": "x"
+  },
+  {
+   "file": "sa_h01_0.wav",
+   "truth": "S",
+   "pred": "X",
+   "conf": 0.943,
+   "hit": false,
+   "top3": [
+    [
+     "cha",
+     0.4715
+    ],
+    [
+     "kha",
+     0.4715
+    ],
+    [
+     "a",
+     0.016
+    ]
+   ],
+   "phones": "x a"
+  },
+  {
+   "file": "sa_h01_1.wav",
+   "truth": "S",
+   "pred": "X",
+   "conf": 0.7414,
+   "hit": false,
+   "top3": [
+    [
+     "cha",
+     0.3707
+    ],
+    [
+     "kha",
+     0.3707
+    ],
+    [
+     "ha",
+     0.1009
+    ]
+   ],
+   "phones": "x a"
+  },
+  {
+   "file": "sa_h01_2.wav",
+   "truth": "S",
+   "pred": "F",
+   "conf": 0.4545,
+   "hit": false,
+   "top3": [
+    [
+     "fa",
+     0.4545
+    ],
+    [
+     "sa",
+     0.3241
+    ],
+    [
+     "ta",
+     0.0623
+    ]
+   ],
+   "phones": "f a"
+  },
+  {
+   "file": "sha_h00_0.wav",
+   "truth": "SH",
+   "pred": "SH",
+   "conf": 0.9057,
+   "hit": true,
+   "top3": [
+    [
+     "sha",
+     0.9057
+    ],
+    [
+     "a",
+     0.0397
+    ],
+    [
+     "sa",
+     0.0196
+    ]
+   ],
+   "phones": "ʃ aː"
+  },
+  {
+   "file": "sha_h00_1.wav",
+   "truth": "SH",
+   "pred": "SH",
+   "conf": 0.9281,
+   "hit": true,
+   "top3": [
+    [
+     "sha",
+     0.9281
+    ],
+    [
+     "a",
+     0.0287
+    ],
+    [
+     "sa",
+     0.0178
+    ]
+   ],
+   "phones": "ʃ aː"
+  },
+  {
+   "file": "sha_h00_2.wav",
+   "truth": "SH",
+   "pred": "SH",
+   "conf": 0.8185,
+   "hit": true,
+   "top3": [
+    [
+     "sha",
+     0.8185
+    ],
+    [
+     "a",
+     0.0675
+    ],
+    [
+     "sa",
+     0.0305
+    ]
+   ],
+   "phones": "s. ɑ5"
+  },
+  {
+   "file": "sha_h01_0.wav",
+   "truth": "SH",
+   "pred": "SH",
+   "conf": 0.8243,
+   "hit": true,
+   "top3": [
+    [
+     "sha",
+     0.8243
+    ],
+    [
+     "a",
+     0.0655
+    ],
+    [
+     "sa",
+     0.0359
+    ]
+   ],
+   "phones": "s. ɑ5"
+  },
+  {
+   "file": "sha_h01_1.wav",
+   "truth": "SH",
+   "pred": "SH",
+   "conf": 0.6435,
+   "hit": true,
+   "top3": [
+    [
+     "sha",
+     0.6435
+    ],
+    [
+     "a",
+     0.2013
+    ],
+    [
+     "sa",
+     0.0445
+    ]
+   ],
+   "phones": "s. a5"
+  },
+  {
+   "file": "sha_h01_2.wav",
+   "truth": "SH",
+   "pred": "SH",
+   "conf": 0.7422,
+   "hit": true,
+   "top3": [
+    [
+     "sha",
+     0.7422
+    ],
+    [
+     "a",
+     0.0934
+    ],
+    [
+     "sa",
+     0.0464
+    ]
+   ],
+   "phones": "s. ɑ5"
+  },
+  {
+   "file": "ta_h00_0.wav",
+   "truth": "T",
+   "pred": "P",
+   "conf": 0.9483,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.9483
+    ],
+    [
+     "a",
+     0.0099
+    ],
+    [
+     "ba",
+     0.0087
+    ]
+   ],
+   "phones": "p a"
+  },
+  {
+   "file": "ta_h00_1.wav",
+   "truth": "T",
+   "pred": "P",
+   "conf": 0.9673,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.9673
+    ],
+    [
+     "fa",
+     0.0063
+    ],
+    [
+     "a",
+     0.0059
+    ]
+   ],
+   "phones": "p a"
+  },
+  {
+   "file": "ta_h00_2.wav",
+   "truth": "T",
+   "pred": "P",
+   "conf": 0.9055,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.9055
+    ],
+    [
+     "fa",
+     0.0213
+    ],
+    [
+     "a",
+     0.0168
+    ]
+   ],
+   "phones": "p aː"
+  },
+  {
+   "file": "ta_h01_0.wav",
+   "truth": "T",
+   "pred": "P",
+   "conf": 0.8854,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.8854
+    ],
+    [
+     "a",
+     0.0511
+    ],
+    [
+     "fa",
+     0.0149
+    ]
+   ],
+   "phones": "p aː"
+  },
+  {
+   "file": "ta_h01_1.wav",
+   "truth": "T",
+   "pred": "P",
+   "conf": 0.6465,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.6465
+    ],
+    [
+     "a",
+     0.1139
+    ],
+    [
+     "cha",
+     0.0444
+    ]
+   ],
+   "phones": "p"
+  },
+  {
+   "file": "ta_h01_2.wav",
+   "truth": "T",
+   "pred": "P",
+   "conf": 0.8269,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.8269
+    ],
+    [
+     "a",
+     0.0737
+    ],
+    [
+     "fa",
+     0.0166
+    ]
+   ],
+   "phones": "p a"
+  },
+  {
+   "file": "tha_h00_0.wav",
+   "truth": "T",
+   "pred": "K",
+   "conf": 0.97,
+   "hit": false,
+   "top3": [
+    [
+     "ka",
+     0.485
+    ],
+    [
+     "qa",
+     0.485
+    ],
+    [
+     "a",
+     0.0118
+    ]
+   ],
+   "phones": "k aː"
+  },
+  {
+   "file": "tha_h00_1.wav",
+   "truth": "T",
+   "pred": "K",
+   "conf": 0.9551,
+   "hit": false,
+   "top3": [
+    [
+     "ka",
+     0.4775
+    ],
+    [
+     "qa",
+     0.4775
+    ],
+    [
+     "a",
+     0.0156
+    ]
+   ],
+   "phones": "k ɑ5"
+  },
+  {
+   "file": "tha_h00_2.wav",
+   "truth": "T",
+   "pred": "K",
+   "conf": 0.9766,
+   "hit": false,
+   "top3": [
+    [
+     "ka",
+     0.4883
+    ],
+    [
+     "qa",
+     0.4883
+    ],
+    [
+     "a",
+     0.0058
+    ]
+   ],
+   "phones": "k aː"
+  },
+  {
+   "file": "tha_h01_0.wav",
+   "truth": "T",
+   "pred": "K",
+   "conf": 0.9379,
+   "hit": false,
+   "top3": [
+    [
+     "ka",
+     0.4689
+    ],
+    [
+     "qa",
+     0.4689
+    ],
+    [
+     "cha",
+     0.0188
+    ]
+   ],
+   "phones": "k a5"
+  },
+  {
+   "file": "tha_h01_1.wav",
+   "truth": "T",
+   "pred": "K",
+   "conf": 0.9379,
+   "hit": false,
+   "top3": [
+    [
+     "ka",
+     0.469
+    ],
+    [
+     "qa",
+     0.469
+    ],
+    [
+     "cha",
+     0.0181
+    ]
+   ],
+   "phones": "k a5"
+  },
+  {
+   "file": "tha_h01_2.wav",
+   "truth": "T",
+   "pred": "K",
+   "conf": 0.9248,
+   "hit": false,
+   "top3": [
+    [
+     "ka",
+     0.4624
+    ],
+    [
+     "qa",
+     0.4624
+    ],
+    [
+     "cha",
+     0.0234
+    ]
+   ],
+   "phones": "k ɑ5"
+  },
+  {
+   "file": "tsa_h00_0.wav",
+   "truth": "TS",
+   "pred": "S",
+   "conf": 0.9027,
+   "hit": false,
+   "top3": [
+    [
+     "sa",
+     0.9027
+    ],
+    [
+     "a",
+     0.0309
+    ],
+    [
+     "tza",
+     0.0256
+    ]
+   ],
+   "phones": "s"
+  },
+  {
+   "file": "tsa_h00_1.wav",
+   "truth": "TS",
+   "pred": "S",
+   "conf": 0.8706,
+   "hit": false,
+   "top3": [
+    [
+     "sa",
+     0.8706
+    ],
+    [
+     "a",
+     0.0631
+    ],
+    [
+     "tza",
+     0.0284
+    ]
+   ],
+   "phones": "s"
+  },
+  {
+   "file": "tsa_h00_2.wav",
+   "truth": "TS",
+   "pred": "S",
+   "conf": 0.9417,
+   "hit": false,
+   "top3": [
+    [
+     "sa",
+     0.9417
+    ],
+    [
+     "tza",
+     0.0252
+    ],
+    [
+     "a",
+     0.0084
+    ]
+   ],
+   "phones": "s əɜ"
+  },
+  {
+   "file": "tsa_h01_0.wav",
+   "truth": "TS",
+   "pred": "S",
+   "conf": 0.9054,
+   "hit": false,
+   "top3": [
+    [
+     "sa",
+     0.9054
+    ],
+    [
+     "tza",
+     0.0362
+    ],
+    [
+     "a",
+     0.0313
+    ]
+   ],
+   "phones": "s eː"
+  },
+  {
+   "file": "tsa_h01_1.wav",
+   "truth": "TS",
+   "pred": "S",
+   "conf": 0.9239,
+   "hit": false,
+   "top3": [
+    [
+     "sa",
+     0.9239
+    ],
+    [
+     "a",
+     0.0355
+    ],
+    [
+     "tza",
+     0.0224
+    ]
+   ],
+   "phones": "s eː"
+  },
+  {
+   "file": "tsa_h01_2.wav",
+   "truth": "TS",
+   "pred": "S",
+   "conf": 0.8594,
+   "hit": false,
+   "top3": [
+    [
+     "sa",
+     0.8594
+    ],
+    [
+     "a",
+     0.0614
+    ],
+    [
+     "tza",
+     0.041
+    ]
+   ],
+   "phones": "s e"
+  },
+  {
+   "file": "va_h00_0.wav",
+   "truth": "V",
+   "pred": "L",
+   "conf": 0.5181,
+   "hit": false,
+   "top3": [
+    [
+     "la",
+     0.5181
+    ],
+    [
+     "a",
+     0.1484
+    ],
+    [
+     "wa",
+     0.1011
+    ]
+   ],
+   "phones": "uː l aɪ"
+  },
+  {
+   "file": "va_h00_1.wav",
+   "truth": "V",
+   "pred": "R",
+   "conf": 0.7886,
+   "hit": false,
+   "top3": [
+    [
+     "ra",
+     0.7886
+    ],
+    [
+     "a",
+     0.1377
+    ],
+    [
+     "la",
+     0.0282
+    ]
+   ],
+   "phones": "r aɪ"
+  },
+  {
+   "file": "va_h00_2.wav",
+   "truth": "V",
+   "pred": "L",
+   "conf": 0.3026,
+   "hit": false,
+   "top3": [
+    [
+     "la",
+     0.3026
+    ],
+    [
+     "fa",
+     0.1511
+    ],
+    [
+     "a",
+     0.1285
+    ]
+   ],
+   "phones": "f uː l aɪ"
+  },
+  {
+   "file": "va_h01_0.wav",
+   "truth": "V",
+   "pred": "L",
+   "conf": 0.2511,
+   "hit": false,
+   "top3": [
+    [
+     "la",
+     0.2511
+    ],
+    [
+     "fa",
+     0.1922
+    ],
+    [
+     "a",
+     0.1229
+    ]
+   ],
+   "phones": "f ð eː"
+  },
+  {
+   "file": "va_h01_1.wav",
+   "truth": "V",
+   "pred": "F",
+   "conf": 0.204,
+   "hit": false,
+   "top3": [
+    [
+     "fa",
+     0.204
+    ],
+    [
+     "da",
+     0.1724
+    ],
+    [
+     "a",
+     0.1204
+    ]
+   ],
+   "phones": "f ð eː"
+  },
+  {
+   "file": "va_h01_2.wav",
+   "truth": "V",
+   "pred": "L",
+   "conf": 0.2273,
+   "hit": false,
+   "top3": [
+    [
+     "la",
+     0.2273
+    ],
+    [
+     "a",
+     0.1306
+    ],
+    [
+     "da",
+     0.118
+    ]
+   ],
+   "phones": "l aɪ"
+  },
+  {
+   "file": "ya_h00_0.wav",
+   "truth": "Y",
+   "pred": "A",
+   "conf": 0.292,
+   "hit": false,
+   "top3": [
+    [
+     "ra",
+     0.2851
+    ],
+    [
+     "a",
+     0.2494
+    ],
+    [
+     "ha",
+     0.102
+    ]
+   ],
+   "phones": "iː r eː"
+  },
+  {
+   "file": "ya_h00_1.wav",
+   "truth": "Y",
+   "pred": "Y",
+   "conf": 0.5709,
+   "hit": true,
+   "top3": [
+    [
+     "ya",
+     0.5709
+    ],
+    [
+     "a",
+     0.4023
+    ],
+    [
+     "la",
+     0.0081
+    ]
+   ],
+   "phones": ""
+  },
+  {
+   "file": "ya_h00_2.wav",
+   "truth": "Y",
+   "pred": "Y",
+   "conf": 0.7364,
+   "hit": true,
+   "top3": [
+    [
+     "ya",
+     0.7364
+    ],
+    [
+     "a",
+     0.2499
+    ],
+    [
+     "la",
+     0.0049
+    ]
+   ],
+   "phones": "j aɪ"
+  },
+  {
+   "file": "ya_h01_0.wav",
+   "truth": "Y",
+   "pred": "F",
+   "conf": 0.2351,
+   "hit": false,
+   "top3": [
+    [
+     "fa",
+     0.2351
+    ],
+    [
+     "a",
+     0.2073
+    ],
+    [
+     "ya",
+     0.2
+    ]
+   ],
+   "phones": "f iɛ5"
+  },
+  {
+   "file": "ya_h01_1.wav",
+   "truth": "Y",
+   "pred": "X",
+   "conf": 0.3622,
+   "hit": false,
+   "top3": [
+    [
+     "ya",
+     0.3141
+    ],
+    [
+     "a",
+     0.2623
+    ],
+    [
+     "cha",
+     0.1811
+    ]
+   ],
+   "phones": "iɛ5"
+  },
+  {
+   "file": "ya_h01_2.wav",
+   "truth": "Y",
+   "pred": "P",
+   "conf": 0.535,
+   "hit": false,
+   "top3": [
+    [
+     "pa",
+     0.535
+    ],
+    [
+     "ya",
+     0.275
+    ],
+    [
+     "a",
+     0.0846
+    ]
+   ],
+   "phones": "p j iɛ5"
+  },
+  {
+   "file": "za_h00_0.wav",
+   "truth": "Z",
+   "pred": "S",
+   "conf": 0.9619,
+   "hit": false,
+   "top3": [
+    [
+     "sa",
+     0.9619
+    ],
+    [
+     "za",
+     0.0115
+    ],
+    [
+     "a",
+     0.0086
+    ]
+   ],
+   "phones": "s eɪ"
+  },
+  {
+   "file": "za_h00_1.wav",
+   "truth": "Z",
+   "pred": "Z",
+   "conf": 0.7951,
+   "hit": true,
+   "top3": [
+    [
+     "za",
+     0.7951
+    ],
+    [
+     "sa",
+     0.1531
+    ],
+    [
+     "a",
+     0.0256
+    ]
+   ],
+   "phones": "z eɪ"
+  },
+  {
+   "file": "za_h00_2.wav",
+   "truth": "Z",
+   "pred": "S",
+   "conf": 0.9604,
+   "hit": false,
+   "top3": [
+    [
+     "sa",
+     0.9604
+    ],
+    [
+     "a",
+     0.0142
+    ],
+    [
+     "za",
+     0.0119
+    ]
+   ],
+   "phones": "s eɪ"
+  },
+  {
+   "file": "za_h01_0.wav",
+   "truth": "Z",
+   "pred": "Z",
+   "conf": 0.9161,
+   "hit": true,
+   "top3": [
+    [
+     "za",
+     0.9161
+    ],
+    [
+     "sa",
+     0.0474
+    ],
+    [
+     "a",
+     0.0177
+    ]
+   ],
+   "phones": "z eː"
+  },
+  {
+   "file": "za_h01_1.wav",
+   "truth": "Z",
+   "pred": "Z",
+   "conf": 0.9374,
+   "hit": true,
+   "top3": [
+    [
+     "za",
+     0.9374
+    ],
+    [
+     "sa",
+     0.0318
+    ],
+    [
+     "a",
+     0.0163
+    ]
+   ],
+   "phones": "z"
+  },
+  {
+   "file": "za_h01_2.wav",
+   "truth": "Z",
+   "pred": "S",
+   "conf": 0.6635,
+   "hit": false,
+   "top3": [
+    [
+     "sa",
+     0.6635
+    ],
+    [
+     "tza",
+     0.1587
+    ],
+    [
+     "za",
+     0.13
+    ]
+   ],
+   "phones": "s eɪ"
+  }
+ ]
+}

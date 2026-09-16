@@ -1,0 +1,34 @@
+{
+ "n_files": 323,
+ "seconds_of_music": 536996.9,
+ "tokens": {
+  "joint": 17495329,
+  "rhythm": 10641367,
+  "pitch": 12214001
+ },
+ "lane_tokens": {
+  "joint": {
+   "struct": 5360039,
+   "drum": 5281328,
+   "dur": 1533831,
+   "pitch": 5320131
+  },
+  "rhythm": {
+   "struct": 5360039,
+   "drum": 5281328
+  },
+  "pitch": {
+   "struct": 5360039,
+   "dur": 1533831,
+   "pitch": 5320131
+  }
+ },
+ "tokens_per_second": {
+  "joint": 32.58,
+  "rhythm": 19.816,
+  "pitch": 22.745
+ },
+ "split_total_over_joint": 1.3064,
+ "duplicated_clock_tokens": 5360039,
+ "note": "split_total_over_joint > 1 because BOS/STEP/BAR/PHRASE/EOS are carried by BOTH streams. That duplicated clock is the price of the factorisation and is counted in full by the total-nats measurement in split_eval.py - never netted out."
+}

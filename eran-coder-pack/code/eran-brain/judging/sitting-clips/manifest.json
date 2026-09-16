@@ -1,0 +1,122 @@
+[
+ {
+  "n": 1,
+  "kind": "eran-queue",
+  "src": "D:\\CLAUDE\\eran-brain\\judging\\queue\\20260827T050423Z_eran3_ba-cv-11_7.177.wav"
+ },
+ {
+  "n": 2,
+  "kind": "eran-queue",
+  "src": "D:\\CLAUDE\\eran-brain\\judging\\queue\\20260828T075922Z_eran4_ba-free-8_4.946.wav"
+ },
+ {
+  "n": 3,
+  "kind": "eran",
+  "src": "D:\\CLAUDE\\eran-brain\\listen\\wav\\ERAN-ta-CROSSED-5.095.wav"
+ },
+ {
+  "n": 4,
+  "kind": "eran",
+  "src": "D:\\CLAUDE\\eran-brain\\listen\\wav\\ERAN-ba-LONG-4.353.wav"
+ },
+ {
+  "n": 5,
+  "kind": "eran-queue",
+  "src": "D:\\CLAUDE\\eran-brain\\judging\\queue\\20260826T203305Z_eran4_ma-free-0_4.606.wav"
+ },
+ {
+  "n": 6,
+  "kind": "human-anchor",
+  "src": "D:\\CLAUDE\\eran-brain\\food\\train\\ba_t00_0.wav"
+ },
+ {
+  "n": 7,
+  "kind": "eran",
+  "src": "D:\\CLAUDE\\eran-brain\\listen\\wav\\ERAN-ga-5.197.wav"
+ },
+ {
+  "n": 8,
+  "kind": "human-anchor",
+  "src": "D:\\CLAUDE\\eran-brain\\food\\train\\ba_t00_2.wav"
+ },
+ {
+  "n": 9,
+  "kind": "eran-queue",
+  "src": "D:\\CLAUDE\\eran-brain\\judging\\queue\\20260828T073909Z_eran2_ba-cv-8_4.353.wav"
+ },
+ {
+  "n": 10,
+  "kind": "eran-queue",
+  "src": "D:\\CLAUDE\\eran-brain\\judging\\queue\\20260828T223319Z_eran2_ba-cv-8_4.262.wav"
+ },
+ {
+  "n": 11,
+  "kind": "eran",
+  "src": "D:\\CLAUDE\\eran-brain\\listen\\wav\\ERAN-pa-CROSSED-4.861.wav"
+ },
+ {
+  "n": 12,
+  "kind": "eran",
+  "src": "D:\\CLAUDE\\eran-brain\\listen\\wav\\ERAN-ba-RESCUED-burst43dB-cv12.wav"
+ },
+ {
+  "n": 13,
+  "kind": "eran",
+  "src": "D:\\CLAUDE\\eran-brain\\listen\\wav\\ERAN-ba-BREAKTHROUGH-3.931.wav"
+ },
+ {
+  "n": 14,
+  "kind": "eran-queue",
+  "src": "D:\\CLAUDE\\eran-brain\\judging\\queue\\20260827T212648Z_eran3_ah-free-0_4.901.wav"
+ },
+ {
+  "n": 15,
+  "kind": "human-anchor",
+  "src": "D:\\CLAUDE\\eran-brain\\food\\train\\ba_t01_0.wav"
+ },
+ {
+  "n": 16,
+  "kind": "eran",
+  "src": "D:\\CLAUDE\\eran-brain\\listen\\wav\\ERAN-na-5.247.wav"
+ },
+ {
+  "n": 17,
+  "kind": "eran-queue",
+  "src": "D:\\CLAUDE\\eran-brain\\judging\\queue\\20260829T173009Z_eran3_ba-cv-12_4.181.wav"
+ },
+ {
+  "n": 18,
+  "kind": "eran",
+  "src": "D:\\CLAUDE\\eran-brain\\listen\\wav\\ERAN-best-ah-wdist4.609.wav"
+ },
+ {
+  "n": 19,
+  "kind": "eran-queue",
+  "src": "D:\\CLAUDE\\eran-brain\\judging\\queue\\20260829T225614Z_eran4_ba-free-8_4.152.wav"
+ },
+ {
+  "n": 20,
+  "kind": "eran",
+  "src": "D:\\CLAUDE\\eran-brain\\listen\\wav\\ERAN-ba-v4-4.351.wav"
+ },
+ {
+  "n": 21,
+  "kind": "eran",
+  "src": "D:\\CLAUDE\\eran-brain\\listen\\wav\\ERAN-ba-AFTER-fix-4.911.wav"
+ },
+ {
+  "n": 22,
+  "kind": "eran",
+  "src": "D:\\CLAUDE\\eran-brain\\listen\\wav\\ERAN-best-ba-wdist4.353.wav"
+ },
+ {
+  "n": 23,
+  "kind": "eran",
+  "src": "D:\\CLAUDE\\eran-brain\\listen\\wav\\ERAN-ba-NEWEST-4.633.wav"
+ },
+ {
+  "n": 24,
+  "kind": "human-anchor",
+  "src": "D:\\CLAUDE\\eran-brain\\food\\train\\ba_t00_1.wav"
+ }
+]

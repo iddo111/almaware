@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "queen": {
+    "model_id": "queen-rivka",
+    "seed": 290001,
+    "latent_dim": 192,
+    "reasoning_steps": 6
+  },
+  "ants": [
+    {"model_id": "nema-aleph", "seed": 290101, "latent_dim": 96},
+    {"model_id": "nema-bet", "seed": 290102, "latent_dim": 96},
+    {"model_id": "nema-gimel", "seed": 290103, "latent_dim": 96},
+    {"model_id": "nema-dalet", "seed": 290104, "latent_dim": 96}
+  ],
+  "initial_stage": "VOICE_BABBLE",
+  "promotion": {
+    "minimum_relative_gain": 0.02,
+    "requires_rollback_checkpoint": true,
+    "requires_provenance_pass": true,
+    "requires_safety_pass": true
+  }
+}

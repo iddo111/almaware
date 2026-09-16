@@ -1,0 +1,126 @@
+{
+ "syl": "a",
+ "letter": "alef/ayin (vowel)",
+ "signature_ok": true,
+ "attempts": 1,
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.6
+  ],
+  "f0_knots": [
+   105.0,
+   105.0,
+   99.75
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.35,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "params": {
+  "dur": 0.6,
+  "ten": 0.6
+ },
+ "measured": {
+  "F1": 579,
+  "F2": 1202,
+  "F3": 2616,
+  "f0": 104.6,
+  "hnr_db": 15.5,
+  "hnr_whole_db": 9.0,
+  "frac_gt2k": 0.007,
+  "burst": {
+   "max_jump_db": 12.5,
+   "at_ms": 20.0,
+   "burst": false
+  },
+  "onset_overshoot_db": 0.3,
+  "dur_s": 0.6,
+  "env20_db": [
+   -15.3,
+   -12.0,
+   -11.5,
+   -11.2,
+   -11.7,
+   -10.9,
+   -11.0,
+   -10.2,
+   -10.3,
+   -10.7,
+   -11.0,
+   -11.5,
+   -11.0,
+   -10.7,
+   -11.4,
+   -11.4,
+   -10.8,
+   -11.2,
+   -10.9,
+   -10.9,
+   -10.9,
+   -11.1,
+   -10.8,
+   -11.2,
+   -11.7,
+   -11.6,
+   -12.3,
+   -12.5,
+   -12.1,
+   -11.6
+  ],
+  "exp": "F1 580+-60 F2 1226+-80 F3 2550+-150, f0 105+-5, HNR >= 7 (40 ms frames), onset overshoot <= +3 dB (no burst)"
+ },
+ "log": [
+  {
+   "attempt": 1,
+   "params": {
+    "dur": 0.6,
+    "ten": 0.6
+   },
+   "ok": true,
+   "measured": {
+    "F1": 579,
+    "F2": 1202,
+    "F3": 2616,
+    "f0": 104.6,
+    "hnr_db": 15.5,
+    "hnr_whole_db": 9.0,
+    "frac_gt2k": 0.007,
+    "burst": {
+     "max_jump_db": 12.5,
+     "at_ms": 20.0,
+     "burst": false
+    },
+    "onset_overshoot_db": 0.3,
+    "dur_s": 0.6,
+    "exp": "F1 580+-60 F2 1226+-80 F3 2550+-150, f0 105+-5, HNR >= 7 (40 ms frames), onset overshoot <= +3 dB (no burst)"
+   }
+  }
+ ],
+ "speaker": "ERAN",
+ "mouth": "eran2:~/mouth-v2/mouth2.py adult 17.60 cm, backend c",
+ "author": "claude-cli-PEH-GLOTTAL 2026-09-02"
+}

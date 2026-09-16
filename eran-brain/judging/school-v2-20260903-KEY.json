@@ -1,0 +1,500 @@
+{
+ "what": "judging/school-v2-20260903: per syllable A/B = a TEACHER variant (CLAUDE-<syl>-vNN.wav, school-v2/lessons) vs ERAN's leave-one-syllable-out prediction (holobrain/moreh/loo). Shuffled with seed 20260903. Real file names are inside the folder and here only; the page serves /clip/<syl>/A.wav.",
+ "gate2_summary": {
+  "moreh": {
+   "pass": 5,
+   "of": 24,
+   "passed": [
+    "da",
+    "ka",
+    "kha",
+    "pa",
+    "fa"
+   ],
+   "genuine_excluding_twins": 4
+  },
+  "flat": {
+   "pass": 4,
+   "of": 24,
+   "passed": [
+    "la",
+    "ma",
+    "na",
+    "pa"
+   ],
+   "genuine_excluding_twins": 4
+  },
+  "copy": {
+   "pass": 2,
+   "of": 24,
+   "passed": [
+    "cha",
+    "kha"
+   ],
+   "genuine_excluding_twins": 1
+  }
+ },
+ "pairs": {
+  "a": {
+   "A": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-a-v12.wav"
+   },
+   "B": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-a-loo.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL a consonant was predicted for the bare vowel"
+   ],
+   "eran_wrong_decisions": {
+    "knots": [
+     "AH4",
+     "AH"
+    ],
+    "voice": [
+     "part",
+     "on"
+    ],
+    "release": [
+     "plain",
+     "none"
+    ],
+    "pre": [
+     1,
+     0
+    ]
+   }
+  },
+  "aya": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-aya-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-aya-v02.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL no vowel before the glottal stop"
+   ],
+   "eran_wrong_decisions": {
+    "knots": [
+     "AH",
+     "AH4"
+    ],
+    "constr": [
+     "seal",
+     "none"
+    ],
+    "voice": [
+     "on",
+     "off"
+    ],
+    "release": [
+     "gap",
+     "none"
+    ],
+    "burst": [
+     1,
+     0
+    ],
+    "pre": [
+     0,
+     1
+    ]
+   }
+  },
+  "ba": {
+   "A": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-ba-v12.wav"
+   },
+   "B": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-ba-loo.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "burst_centroid",
+    "F2_not_flat"
+   ],
+   "eran_wrong_decisions": {}
+  },
+  "va": {
+   "A": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-va-v05.wav"
+   },
+   "B": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-va-loo.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "noise_weak"
+   ],
+   "eran_wrong_decisions": {}
+  },
+  "ga": {
+   "A": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-ga-v05.wav"
+   },
+   "B": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-ga-loo.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "burst centroid 834 (want 850-1050)"
+   ],
+   "eran_wrong_decisions": {}
+  },
+  "da": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-da-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-da-v11.wav"
+   },
+   "eran_verifier_ok": true,
+   "eran_fails": [],
+   "eran_wrong_decisions": {}
+  },
+  "ha": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-ha-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-ha-v01.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL noise 50-90 ms, HNR < 0, centroid 3700-5100, level -8..-13 dB, no burst, <500 Hz frac < 0.3, then vowel 580/1226"
+   ],
+   "eran_wrong_decisions": {
+    "knots": [
+     "AH4",
+     "AH"
+    ],
+    "voice": [
+     "off",
+     "part"
+    ],
+    "release": [
+     "none",
+     "plain"
+    ],
+    "pre": [
+     1,
+     0
+    ]
+   }
+  },
+  "wa": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-wa-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-wa-v10.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "F1_high",
+    "F2_high",
+    "F2_not_rising"
+   ],
+   "eran_wrong_decisions": {
+    "constr": [
+     "wide",
+     "narrow"
+    ]
+   }
+  },
+  "za": {
+   "A": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-za-v10.wav"
+   },
+   "B": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-za-loo.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL voiced f0 106 hnr -1.5 (1.5-7)",
+    "FAIL centroid 4366 ~3 kHz",
+    "FAIL level -16.3 (-12..-4)"
+   ],
+   "eran_wrong_decisions": {}
+  },
+  "cha": {
+   "A": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-cha-v12.wav"
+   },
+   "B": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-cha-loo.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL noise >= 80 ms, centroid 1900-2500, 1-3 kHz frac >= 0.85, HNR <= 1, level -4..-8 dB, no burst, vowel 580/1226"
+   ],
+   "eran_wrong_decisions": {}
+  },
+  "ta": {
+   "A": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-ta-v04.wav"
+   },
+   "B": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-ta-loo.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL closure -13.6 dB <= -16",
+    "FAIL F3 high (2573 >= 2780) in the aspirated transition +10..+40 ms; F3 at voicing onset 2677 (t 214 ms)",
+    "FAIL voicing starts within 40 ms after the gap (at 214 ms)"
+   ],
+   "eran_wrong_decisions": {}
+  },
+  "ya": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-ya-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-ya-v11.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL onset F1<=300 F2>=1900; F2 slides to ~1205 over 100-150 ms (arrive 60-180 ms); HNR>=4 continuous; no burst; vowel 580/1226"
+   ],
+   "eran_wrong_decisions": {
+    "knots": [
+     "AH",
+     "I"
+    ],
+    "constr": [
+     "narrow",
+     "wide"
+    ]
+   }
+  },
+  "ka": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-ka-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-ka-v04.wav"
+   },
+   "eran_verifier_ok": true,
+   "eran_fails": [],
+   "eran_wrong_decisions": {}
+  },
+  "kha": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-kha-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-kha-v13.wav"
+   },
+   "eran_verifier_ok": true,
+   "eran_fails": [],
+   "eran_wrong_decisions": {}
+  },
+  "la": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-la-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-la-v03.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL no closure (min -6.0 dB > -6)"
+   ],
+   "eran_wrong_decisions": {
+    "constr": [
+     "narrow",
+     "wide"
+    ]
+   }
+  },
+  "ma": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-ma-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-ma-v02.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "nose_weak"
+   ],
+   "eran_wrong_decisions": {}
+  },
+  "na": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-na-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-na-v09.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL antiformant 1812 in 1.9-2.6 kHz"
+   ],
+   "eran_wrong_decisions": {}
+  },
+  "sa": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-sa-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-sa-v12.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL centroid 4186 >= 4300"
+   ],
+   "eran_wrong_decisions": {}
+  },
+  "pa": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-pa-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-pa-v00.wav"
+   },
+   "eran_verifier_ok": true,
+   "eran_fails": [],
+   "eran_wrong_decisions": {}
+  },
+  "fa": {
+   "A": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-fa-v02.wav"
+   },
+   "B": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-fa-loo.wav"
+   },
+   "eran_verifier_ok": true,
+   "eran_fails": [],
+   "eran_wrong_decisions": {}
+  },
+  "tza": {
+   "A": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-tza-v02.wav"
+   },
+   "B": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-tza-loo.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL closure -13.2 <= -18 for 62 ms",
+    "FAIL fricative 40 ms (60-90)",
+    "FAIL fric level -1.8 (-11..-3)",
+    "FAIL fric centroid 839 >= 3500"
+   ],
+   "eran_wrong_decisions": {
+    "release": [
+     "gap",
+     "fric"
+    ],
+    "burst": [
+     0,
+     1
+    ]
+   }
+  },
+  "qa": {
+   "A": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-qa-v05.wav"
+   },
+   "B": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-qa-loo.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "burst centroid 1053 (want 800-1000)",
+    "qa must sit behind ka (c_pos <= 0.49)",
+    "STRICT qof must sit behind kaf (c_pos 0.499 > 0.49)"
+   ],
+   "eran_wrong_decisions": {}
+  },
+  "ra": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-ra-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-ra-v00.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL dip lasts 95 ms (<= 35)",
+    "FAIL voicing continuous around (hnr -6.7 / 7.8)"
+   ],
+   "eran_wrong_decisions": {
+    "pre": [
+     0,
+     1
+    ]
+   }
+  },
+  "sha": {
+   "A": {
+    "kind": "eran-loo-moreh",
+    "file": "ERAN-sha-loo.wav"
+   },
+   "B": {
+    "kind": "teacher-variant",
+    "file": "CLAUDE-sha-v06.wav"
+   },
+   "eran_verifier_ok": false,
+   "eran_fails": [
+    "FAIL noise 71 ms >= 80"
+   ],
+   "eran_wrong_decisions": {
+    "knots": [
+     "I",
+     "AH"
+    ]
+   }
+  }
+ },
+ "skipped": []
+}

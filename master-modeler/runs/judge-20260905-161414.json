@@ -1,0 +1,251 @@
+[
+  {
+    "id": "words-derived",
+    "what": "food/words -- 12 words CONCATENATED from food/train clips",
+    "root": "D:\\CLAUDE\\eran-brain\\food\\words",
+    "n_clips": 96,
+    "notes": [],
+    "ear": "eran-brain/body/ears.py repr=cochlea bands=24 pool=loudest60 dim=192",
+    "provenance": {
+      "verdict": "HUMAN-CLAIMED",
+      "records_read": [
+        "D:\\CLAUDE\\eran-brain\\food\\words\\manifest.json",
+        "D:\\CLAUDE\\README.md"
+      ],
+      "synthetic_evidence": [],
+      "human_markers": [
+        "recording"
+      ]
+    },
+    "n_units": 12,
+    "n_groups": 8,
+    "units": [
+      "daga",
+      "gamala",
+      "kara",
+      "khatapa",
+      "mala",
+      "naha",
+      "saba",
+      "shana",
+      "tava",
+      "thabaah",
+      "tsaqara",
+      "yaza"
+    ],
+    "groups": [
+      "w00",
+      "w01",
+      "w02",
+      "w03",
+      "w04",
+      "w05",
+      "w06",
+      "w07"
+    ],
+    "between_unit_cosine": -0.0716,
+    "per_unit": [
+      {
+        "unit": "daga",
+        "k": 8,
+        "within_cosine": 0.8088,
+        "excess": 0.8215,
+        "n_eff": 1.19,
+        "twin_frac": 0.071
+      },
+      {
+        "unit": "gamala",
+        "k": 8,
+        "within_cosine": 0.8847,
+        "excess": 0.8924,
+        "n_eff": 1.1,
+        "twin_frac": 0.357
+      },
+      {
+        "unit": "kara",
+        "k": 8,
+        "within_cosine": 0.7039,
+        "excess": 0.7237,
+        "n_eff": 1.32,
+        "twin_frac": 0.107
+      },
+      {
+        "unit": "khatapa",
+        "k": 8,
+        "within_cosine": 0.8682,
+        "excess": 0.877,
+        "n_eff": 1.12,
+        "twin_frac": 0.321
+      },
+      {
+        "unit": "mala",
+        "k": 8,
+        "within_cosine": 0.6709,
+        "excess": 0.6929,
+        "n_eff": 1.37,
+        "twin_frac": 0.107
+      },
+      {
+        "unit": "naha",
+        "k": 8,
+        "within_cosine": 0.6358,
+        "excess": 0.6602,
+        "n_eff": 1.42,
+        "twin_frac": 0.107
+      },
+      {
+        "unit": "saba",
+        "k": 8,
+        "within_cosine": 0.7531,
+        "excess": 0.7696,
+        "n_eff": 1.25,
+        "twin_frac": 0.071
+      },
+      {
+        "unit": "shana",
+        "k": 8,
+        "within_cosine": 0.7696,
+        "excess": 0.785,
+        "n_eff": 1.23,
+        "twin_frac": 0.286
+      },
+      {
+        "unit": "tava",
+        "k": 8,
+        "within_cosine": 0.8855,
+        "excess": 0.8931,
+        "n_eff": 1.1,
+        "twin_frac": 0.464
+      },
+      {
+        "unit": "thabaah",
+        "k": 8,
+        "within_cosine": 0.9323,
+        "excess": 0.9368,
+        "n_eff": 1.06,
+        "twin_frac": 0.571
+      },
+      {
+        "unit": "tsaqara",
+        "k": 8,
+        "within_cosine": 0.8776,
+        "excess": 0.8858,
+        "n_eff": 1.11,
+        "twin_frac": 0.357
+      },
+      {
+        "unit": "yaza",
+        "k": 8,
+        "within_cosine": 0.879,
+        "excess": 0.8871,
+        "n_eff": 1.11,
+        "twin_frac": 0.393
+      }
+    ],
+    "within_cosine_mean": 0.8058,
+    "excess_mean": 0.8188,
+    "n_eff_median": 1.16,
+    "k_median": 8,
+    "twin_frac_mean": 0.268,
+    "block": null,
+    "drift": {
+      "floor": 0.6562,
+      "correct": 63,
+      "n": 96,
+      "units_used": 12,
+      "per_unit": [
+        {
+          "unit": "daga",
+          "k": 8,
+          "accuracy": 0.5
+        },
+        {
+          "unit": "gamala",
+          "k": 8,
+          "accuracy": 0.5
+        },
+        {
+          "unit": "kara",
+          "k": 8,
+          "accuracy": 0.75
+        },
+        {
+          "unit": "khatapa",
+          "k": 8,
+          "accuracy": 0.75
+        },
+        {
+          "unit": "mala",
+          "k": 8,
+          "accuracy": 0.875
+        },
+        {
+          "unit": "naha",
+          "k": 8,
+          "accuracy": 0.5
+        },
+        {
+          "unit": "saba",
+          "k": 8,
+          "accuracy": 0.75
+        },
+        {
+          "unit": "shana",
+          "k": 8,
+          "accuracy": 0.625
+        },
+        {
+          "unit": "tava",
+          "k": 8,
+          "accuracy": 0.375
+        },
+        {
+          "unit": "thabaah",
+          "k": 8,
+          "accuracy": 0.75
+        },
+        {
+          "unit": "tsaqara",
+          "k": 8,
+          "accuracy": 0.875
+        },
+        {
+          "unit": "yaza",
+          "k": 8,
+          "accuracy": 0.625
+        }
+      ]
+    },
+    "artefact": [],
+    "artefact_confounded": false,
+    "chance": 0.0833,
+    "signal": {
+      "accuracy": 1.0,
+      "n": 96,
+      "how": "leave-group-out",
+      "p_vs_chance": 2.5038042912396847e-104
+    },
+    "leakage": {
+      "random_split_accuracy": 1.0,
+      "honest_split_accuracy": 1.0,
+      "gap": 0.0
+    },
+    "source": {
+      "path": "D:\\CLAUDE\\eran-brain\\food\\train",
+      "verdict": "REJECT",
+      "by": "eran-brain/proof/make_words.py",
+      "note": "words are concatenated FROM train clips -- rejecting train rejects words"
+    },
+    "flags": [
+      "STARVED",
+      "CASCADE-REJECT"
+    ],
+    "verdict": "REJECT",
+    "reasons": [
+      "STARVED: median unit holds 8 clips but only 1.16 independent examples (within-unit cosine 0.8058, corpus floor -0.0716, excess 0.8188). Below 3 you cannot even estimate what the unit's variation IS.",
+      "CASCADE: built from eran-brain/food/train by eran-brain/proof/make_words.py, and that source is REJECT. words are concatenated FROM train clips -- rejecting train rejects words"
+    ],
+    "prescription": "Revoke the source and everything derived from it (`teachability.py forget <id>`), then re-measure every number that stood on it.",
+    "seconds": 1.1
+  }
+]

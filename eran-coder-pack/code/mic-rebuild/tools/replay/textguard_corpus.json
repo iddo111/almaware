@@ -1,0 +1,515 @@
+{
+ "version": 1,
+ "built_by": "tools/build_textguard_corpus.py",
+ "voice_corpus_dir": "D:\\CLAUDE\\alma-mic\\voice_corpus",
+ "selection": {
+  "rule": "sorted *.txt; whitespace-normalized; kept if len>=12 and hebrew_letters>=8; fixed stride to n — deterministic and guard-blind (no guard call during selection, so the CER measurement cannot be cherry-picked); reviewed-junk exclusions are a named, reasoned ledger (see excluded_as_junk), never a silent filter",
+  "n_requested": 40,
+  "privacy": "scar 49 — filenames + sha256 + lengths only; transcript text never enters git"
+ },
+ "hallucinations": [
+  {
+   "id": "laugh-1",
+   "class": "laughter",
+   "text": "חחח"
+  },
+  {
+   "id": "laugh-2",
+   "class": "laughter",
+   "text": "חחחח"
+  },
+  {
+   "id": "laugh-3",
+   "class": "laughter",
+   "text": "אהה"
+  },
+  {
+   "id": "laugh-4",
+   "class": "laughter",
+   "text": "אההה"
+  },
+  {
+   "id": "laugh-5",
+   "class": "laughter",
+   "text": "חחח."
+  },
+  {
+   "id": "laugh-6",
+   "class": "laughter",
+   "text": "ההה"
+  },
+  {
+   "id": "todah-1",
+   "class": "todah",
+   "text": "תודה"
+  },
+  {
+   "id": "todah-2",
+   "class": "todah",
+   "text": "תודה רבה"
+  },
+  {
+   "id": "todah-3",
+   "class": "todah",
+   "text": "תודה רבה."
+  },
+  {
+   "id": "todah-4",
+   "class": "todah",
+   "text": "תודה על הצפייה"
+  },
+  {
+   "id": "todah-5",
+   "class": "todah",
+   "text": "תודה שצפיתם"
+  },
+  {
+   "id": "todah-6",
+   "class": "todah",
+   "text": "תודה רבה לכם"
+  },
+  {
+   "id": "subs-he-1",
+   "class": "subtitles",
+   "text": "כתוביות"
+  },
+  {
+   "id": "subs-he-2",
+   "class": "subtitles",
+   "text": "כתוביות בעברית"
+  },
+  {
+   "id": "subs-he-3",
+   "class": "subtitles",
+   "text": "תרגום וכתוביות"
+  },
+  {
+   "id": "sub-1",
+   "class": "subscribe",
+   "text": "Subscribe!"
+  },
+  {
+   "id": "sub-2",
+   "class": "subscribe",
+   "text": "please subscribe"
+  },
+  {
+   "id": "sub-3",
+   "class": "subscribe",
+   "text": "Thanks for watching"
+  },
+  {
+   "id": "sub-4",
+   "class": "subscribe",
+   "text": "Thank you for watching"
+  },
+  {
+   "id": "sub-5",
+   "class": "subscribe",
+   "text": "like and subscribe"
+  },
+  {
+   "id": "sub-6",
+   "class": "subscribe",
+   "text": "Subtitles by the Amara.org community"
+  },
+  {
+   "id": "sub-7",
+   "class": "subscribe",
+   "text": "אל תשכחו להירשם לערוץ"
+  },
+  {
+   "id": "sub-8",
+   "class": "subscribe",
+   "text": "www."
+  },
+  {
+   "id": "cjk-1",
+   "class": "cjk",
+   "text": "ご視聴ありがとうございました"
+  },
+  {
+   "id": "cjk-2",
+   "class": "cjk",
+   "text": "請訂閱我的頻道"
+  },
+  {
+   "id": "cjk-3",
+   "class": "cjk",
+   "text": "字幕"
+  },
+  {
+   "id": "cjk-4",
+   "class": "cjk",
+   "text": "チャンネル登録"
+  },
+  {
+   "id": "ru-1",
+   "class": "ru",
+   "text": "Продолжение следует"
+  },
+  {
+   "id": "ru-2",
+   "class": "ru",
+   "text": "Субтитры сделал"
+  },
+  {
+   "id": "ru-3",
+   "class": "ru",
+   "text": "Спасибо за просмотр"
+  },
+  {
+   "id": "ru-4",
+   "class": "ru",
+   "text": "Подписывайтесь на канал"
+  },
+  {
+   "id": "ar-1",
+   "class": "ar",
+   "text": "اشتركوا في القناة"
+  },
+  {
+   "id": "ar-2",
+   "class": "ar",
+   "text": "شكرا للمشاهدة"
+  },
+  {
+   "id": "ar-3",
+   "class": "ar",
+   "text": "ترجمة"
+  },
+  {
+   "id": "rep-1",
+   "class": "repeat",
+   "text": "ма ма ма ма ма"
+  },
+  {
+   "id": "rep-2",
+   "class": "repeat",
+   "text": "אמא אמא אמא אמא אמא"
+  },
+  {
+   "id": "rep-3",
+   "class": "repeat",
+   "text": "amma amma amma amma"
+  },
+  {
+   "id": "rep-4",
+   "class": "repeat",
+   "text": "אבאבאבאבאבאב"
+  },
+  {
+   "id": "run-1",
+   "class": "charrun",
+   "text": "אבגאהההההההה"
+  },
+  {
+   "id": "run-2",
+   "class": "charrun",
+   "text": "aaaaaaaaaaaa"
+  },
+  {
+   "id": "run-3",
+   "class": "charrun",
+   "text": "בבבבבבבבב"
+  },
+  {
+   "id": "todah-wild-1",
+   "class": "todah",
+   "text": "תודה רבה לכם.",
+   "note": "verbatim in voice_corpus 20260630_172208_858661.txt"
+  },
+  {
+   "id": "run-wild-1",
+   "class": "charrun",
+   "text": "‫אוווווווווווו",
+   "note": "219-char vav-run in voice_corpus 20260702_193832_667020.txt (representative prefix)"
+  },
+  {
+   "id": "short-1",
+   "class": "short",
+   "text": "a"
+  },
+  {
+   "id": "short-2",
+   "class": "short",
+   "text": "?"
+  },
+  {
+   "id": "short-3",
+   "class": "short",
+   "text": "1"
+  }
+ ],
+ "must_pass": [
+  {
+   "id": "pass-aba",
+   "class": "real_word",
+   "text": "אבא"
+  },
+  {
+   "id": "pass-ima",
+   "class": "real_word",
+   "text": "אמא"
+  },
+  {
+   "id": "pass-aba-sent",
+   "class": "real_word",
+   "text": "אבא בוא הנה"
+  },
+  {
+   "id": "pass-het",
+   "class": "real_word",
+   "text": "החתול חתך חתיכת חסה"
+  },
+  {
+   "id": "pass-heh",
+   "class": "real_word",
+   "text": "ההר ההוא"
+  },
+  {
+   "id": "pass-ken",
+   "class": "real_word",
+   "text": "כן"
+  },
+  {
+   "id": "pass-lo",
+   "class": "real_word",
+   "text": "לא"
+  },
+  {
+   "id": "pass-en",
+   "class": "real_word",
+   "text": "This is spoken English, plain and simple."
+  },
+  {
+   "id": "pass-mix",
+   "class": "real_word",
+   "text": "תריץ את הסקריפט על eran1 עכשיו בבקשה"
+  },
+  {
+   "id": "pass-url",
+   "class": "real_word",
+   "text": "הכתובת היא www.example.com ותשמור אותה בקובץ"
+  }
+ ],
+ "real_he": [
+  {
+   "file": "20260630_002428_544521.txt",
+   "sha256": "8d18b8d92b6da6863fb0a8ed3f53ca3c07f9398fbb2fe827ef157f429d3b4975",
+   "n_chars": 14
+  },
+  {
+   "file": "20260630_005338_056026.txt",
+   "sha256": "8cc451f042e90902be7de8126e5c7cc8daed9c38f1cbd18cfa70c063a82e54ab",
+   "n_chars": 19
+  },
+  {
+   "file": "20260630_020409_532248.txt",
+   "sha256": "3b5236655f340e899df28f838669bec923da4e70fe0475ee1abfa4d5cf732531",
+   "n_chars": 31
+  },
+  {
+   "file": "20260630_021259_958573.txt",
+   "sha256": "7a1b13f617c0868a2c6d1c7bac262c6d245a832af592bc9adc36c2924e401a8a",
+   "n_chars": 29
+  },
+  {
+   "file": "20260630_025324_171827.txt",
+   "sha256": "9ff2ca876a7fbeb74d6473184de8e32da711e218359c83e542c4da4655930de0",
+   "n_chars": 14
+  },
+  {
+   "file": "20260630_031508_115518.txt",
+   "sha256": "e6073cf5c980aef80a5a36e025931d7ab50bf0b417aeb58327d86c2d8029b31d",
+   "n_chars": 52
+  },
+  {
+   "file": "20260630_033115_639971.txt",
+   "sha256": "12138d3a771cd72da6a2570d2ea36c9004a83e4477545813c99bbc6a4866e9e7",
+   "n_chars": 25
+  },
+  {
+   "file": "20260630_034804_288787.txt",
+   "sha256": "e1499212497d1e32fa6c2b457328f8685559c82193007747a8b3b7bc9d820e71",
+   "n_chars": 46
+  },
+  {
+   "file": "20260630_035019_740436.txt",
+   "sha256": "91bac32ef72d79a6a7bcb7a930caa8f9369db1ff39265c366e854b6c17c1b925",
+   "n_chars": 42
+  },
+  {
+   "file": "20260630_035159_758344.txt",
+   "sha256": "65d5983180648aa9e6548d0ede8e5f72436335adf9b5d5c6fa3e4bff6551a085",
+   "n_chars": 37
+  },
+  {
+   "file": "20260630_035917_490727.txt",
+   "sha256": "952ff190def7cc0b3b8e3cae5bff8c08af2df3260131db7e8785f9bdd48bf7ab",
+   "n_chars": 72
+  },
+  {
+   "file": "20260630_041059_275417.txt",
+   "sha256": "d360a6fce15ff8db538265a29f6eaba2db20ead287eb21206be04e566c8d407b",
+   "n_chars": 41
+  },
+  {
+   "file": "20260630_044819_724965.txt",
+   "sha256": "0fda0130ca0ac03b6540d750c6c5559be17d94a02e49e3cd140f895895a33286",
+   "n_chars": 21
+  },
+  {
+   "file": "20260630_052546_462964.txt",
+   "sha256": "6293da9006bf6c4303548259a9f8a0a68c522b4116032d792c85da9d06168ee0",
+   "n_chars": 12
+  },
+  {
+   "file": "20260630_174309_419044.txt",
+   "sha256": "3d98f16ebe40819c8895dd553305664d9de272fa975a9715d05cbe33f51e5164",
+   "n_chars": 18
+  },
+  {
+   "file": "20260630_174818_016174.txt",
+   "sha256": "68f86b96efd90e3831a1f75c1295c621f85d94653764fc7afb959f3218572666",
+   "n_chars": 37
+  },
+  {
+   "file": "20260630_175352_361626.txt",
+   "sha256": "5c1de9b7ec104219c24c53d3b5bb78b8cfd5b5600f93e18b24852a38287443a6",
+   "n_chars": 27
+  },
+  {
+   "file": "20260630_232242_556505.txt",
+   "sha256": "feb68611f4d6c76b8514ecb7bec26d71559ec3bcbcb5f6a8b8e6adb657891226",
+   "n_chars": 21
+  },
+  {
+   "file": "20260701_000049_142161.txt",
+   "sha256": "3cd5db5245e7e8f260cd69cb1daac86a3875cedacc5580b8d0dc42ce5fe8aa25",
+   "n_chars": 29
+  },
+  {
+   "file": "20260701_012227_423673.txt",
+   "sha256": "a8ad4fc7aa79d1a538625abab47e9c85c228a2205068f1ee6b0b0836c33e0e8f",
+   "n_chars": 28
+  },
+  {
+   "file": "20260701_020523_745099.txt",
+   "sha256": "e9979511b1f471d941472643f2b7e2d29b0414dc55195778f55bf2bc463b34e2",
+   "n_chars": 34
+  },
+  {
+   "file": "20260701_021014_698617.txt",
+   "sha256": "ccba2cf85c1f32d9605196f38170ab84afae4957a8ed757f8466df2e7a15a12c",
+   "n_chars": 23
+  },
+  {
+   "file": "20260701_031041_755350.txt",
+   "sha256": "a3341473347dc576f6f40aaa88729633b5e8d100254232e77b20a01db746f890",
+   "n_chars": 35
+  },
+  {
+   "file": "20260701_033015_278423.txt",
+   "sha256": "13720b71059efc0d36d060c30ef075c1e14f92c387396232044a0054502caca4",
+   "n_chars": 13
+  },
+  {
+   "file": "20260701_034426_560108.txt",
+   "sha256": "8cac7336db86b9aade99b625c7cc1dc9cfc2c8565df12a6f56a53c86def8b2b2",
+   "n_chars": 42
+  },
+  {
+   "file": "20260702_185820_243940.txt",
+   "sha256": "73b8146cc3e30b038c1ab63d22a80b813f263887f6f8ff49d307e8960f0956f9",
+   "n_chars": 24
+  },
+  {
+   "file": "20260702_191656_586402.txt",
+   "sha256": "4c6e5f64cab42a9d4ffe4edc31fe9b0a65946d2a578179ae14b8fdd5599903f6",
+   "n_chars": 23
+  },
+  {
+   "file": "20260702_193223_438437.txt",
+   "sha256": "092acb262c54cec2f08a08bb7164bbcb4a3d3d25c51cae7d10abfba948baa9ce",
+   "n_chars": 38
+  },
+  {
+   "file": "20260702_194023_808313.txt",
+   "sha256": "ea6931b50e0996b09486906d2980bfa435f495aac669b4c4bd6be409aeac1f63",
+   "n_chars": 59
+  },
+  {
+   "file": "20260702_194339_701560.txt",
+   "sha256": "7f4e7e665d4da5971338d7ab924c1ee34efc4927dd20bbe68fff150a862377dd",
+   "n_chars": 29
+  },
+  {
+   "file": "20260702_201206_997604.txt",
+   "sha256": "0b4e206fbe18efdab24e0a017e10acbb19e94cbe32f6dffb41229121e7922404",
+   "n_chars": 54
+  },
+  {
+   "file": "20260702_201408_416760.txt",
+   "sha256": "ed2eb8f2802670c665c51f36f00361b0d26274cad6e258c931f1e8dedf12b2c8",
+   "n_chars": 14
+  },
+  {
+   "file": "20260702_202704_715425.txt",
+   "sha256": "9b25a28904001164a641d8e4b3585eb655ab3aac08fc0cc2a5d398d76be85bd2",
+   "n_chars": 14
+  },
+  {
+   "file": "20260702_205715_997023.txt",
+   "sha256": "a9e6d6d84dc96d6868e9f3889790acf7c9957c18c912f22044cb8779c917d9a8",
+   "n_chars": 38
+  },
+  {
+   "file": "20260702_225209_512710.txt",
+   "sha256": "d408632f0f9df1bbb696fcc340e35b5e99badb9bc2a5b57a9877fa2f1be9148b",
+   "n_chars": 17
+  },
+  {
+   "file": "20260703_015631_480504.txt",
+   "sha256": "66afef696961522fa1071236d8a455e80fb1b233637ec280954c3f647db345c3",
+   "n_chars": 17
+  },
+  {
+   "file": "20260703_072437_303045.txt",
+   "sha256": "f8ad620ce634a7aaca76bc35af0cdc8ed24ec2a975c0e45fefb18f6bf9459565",
+   "n_chars": 40
+  },
+  {
+   "file": "20260703_073222_318628.txt",
+   "sha256": "bd837b106c2e6e3a321337bbd0e00ff6dddb1a14f8c67c6318946d12901d505b",
+   "n_chars": 41
+  },
+  {
+   "file": "20260703_074959_817986.txt",
+   "sha256": "1eb01a8c5ece2a1992321ba7645667909ebcf5db82d9e18414b469e8247b84f8",
+   "n_chars": 31
+  },
+  {
+   "file": "20260703_080317_669733.txt",
+   "sha256": "d73dc61a2d852b5cadf287eb9436b7eda2bcec2b58efd7c22074135039deb7c6",
+   "n_chars": 23
+  }
+ ],
+ "excluded_as_junk": [
+  {
+   "file": "20260630_172208_858661.txt",
+   "class": "todah",
+   "reason": "verbatim תודה-family attractor ('תודה רבה לכם.') — the #1 Hebrew silence hallucination, saved by the old mic into its own corpus; dropped BY DESIGN (scar 28 accepted tradeoff), so it cannot serve as guard-pass ground truth"
+  },
+  {
+   "file": "20260701_020520_635739.txt",
+   "class": "laughter",
+   "reason": "78-char אהה-blob — the laughfix class (scar 28) saved by the old mic as corpus; not speech"
+  },
+  {
+   "file": "20260702_193832_667020.txt",
+   "class": "charrun",
+   "reason": "219-char vav-run ('אוווו…') — a char-run hallucination the old mic saved as corpus; not speech"
+  }
+ ]
+}

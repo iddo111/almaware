@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GPT-OSS 120B Training Console</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <p class="eyebrow">ERAN1 / ATTENTION-ONLY ENGINEERING LANE</p>
+      <h1>GPT-OSS <span>120B</span></h1>
+      <p class="dek">Verify the exact model with a fresh visible nonce. Inspect both checkpoint copies. The Eran1 attention-only experiment and the separate two-node all-parameter engineering lane remain locked until their own proof gates pass.</p>
+    </div>
+    <button id="refresh" class="outline-button" type="button">Refresh instruments</button>
+  </header>
+
+  <main>
+    <section class="instrument-strip" aria-label="Live model identity">
+      <div class="identity-block">
+        <span class="label">Exact model</span>
+        <strong id="model-name">Checking...</strong>
+      </div>
+      <div class="identity-block">
+        <span class="label">Parameters</span>
+        <strong id="model-parameters">--</strong>
+      </div>
+      <div class="identity-block">
+        <span class="label">Weight format</span>
+        <strong id="model-quantization">--</strong>
+      </div>
+      <div class="identity-block status-cell">
+        <span class="label">Inference</span>
+        <strong id="model-state" class="state pending">Checking</strong>
+      </div>
+    </section>
+
+    <div class="workspace-grid">
+      <section class="chat-panel panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-mark">MODEL BENCH</p>
+            <h2>Codex + GPT-OSS</h2>
+          </div>
+          <span id="chat-model-badge" class="badge">gpt-oss:120b</span>
+        </div>
+        <div id="transcript" class="transcript" aria-live="polite">
+          <article class="message system-message">
+            <p class="message-label">Console</p>
+            <p>The console adds a fresh visible nonce to every prompt. Exact model identity, nonempty output, and the returned nonce must all match.</p>
+          </article>
+        </div>
+        <form id="chat-form" class="composer">
+          <label for="prompt">Prompt</label>
+          <textarea id="prompt" rows="4" placeholder="Give GPT-OSS 120B a concrete task..." required></textarea>
+          <div class="composer-footer">
+            <span id="chat-status">Ready when inference is green.</span>
+            <button id="send" class="primary-button" type="submit">Run on 120B</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="control-stack">
+        <section class="panel cluster-panel">
+          <div class="panel-heading compact">
+            <div>
+              <p class="section-mark">CHECKPOINT RAIL</p>
+              <h2>Two-node checkpoint copies</h2>
+            </div>
+            <strong id="cluster-state" class="state pending">Checking</strong>
+          </div>
+          <div id="nodes" class="nodes"></div>
+        </section>
+
+        <section class="panel training-panel">
+          <div class="panel-heading compact">
+            <div>
+              <p class="section-mark">NATIVE WEIGHT TRAINING</p>
+              <h2>Original-tensor SFT gate</h2>
+            </div>
+            <span id="training-lock" class="lock">Locked</span>
+          </div>
+          <div class="form-grid">
+            <label>Method<input value="Native BF16 q/k/v/o projections" disabled></label>
+            <label>Project<input value="Eran1 attention-only q/k/v/o lane" disabled></label>
+            <label>Proof bound<input value="Exactly one optimizer step" disabled></label>
+            <label>Adapters<input value="LoRA / QLoRA / PEFT forbidden" disabled></label>
+          </div>
+          <p id="training-gate" class="gate-copy">Reading the live training gate...</p>
+          <p class="section-mark">TWO-NODE ALL-PARAMETER LANE</p>
+          <p id="fullweights-gate" class="gate-copy">Reading the separate fullweights engineering gate...</p>
+          <div class="curriculum-readout">
+            <span><strong id="seed-count">0</strong> training seeds</span>
+            <span><strong id="eval-count">0</strong> held-out evals</span>
+          </div>
+          <p id="interfaces" class="interfaces">Loading interface curriculum...</p>
+          <div class="button-row">
+            <button id="tool-eval" class="outline-button" type="button">Test tool use</button>
+            <button id="preflight" class="outline-button" type="button">Run native no-load preflight</button>
+            <button id="start-training" class="danger-button" type="button" disabled>Native launch locked</button>
+          </div>
+          <pre id="training-log" class="log">No training job started.</pre>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span>Localhost-only console</span>
+    <span id="last-refresh">Not refreshed</span>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>

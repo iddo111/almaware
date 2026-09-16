@@ -1,0 +1,1914 @@
+{
+  "question": "does competitive Hebbian learning beat random real frames",
+  "metric_policy": "quantisation error is not computed in this file",
+  "chance_top1": 0.045454545454545456,
+  "units": 256,
+  "feature_set": "recommended26",
+  "heldout_items": 132,
+  "train_items": 396,
+  "classes": [
+    "aa",
+    "ah",
+    "ba",
+    "da",
+    "ga",
+    "ha",
+    "ka",
+    "kha",
+    "la",
+    "ma",
+    "na",
+    "pa",
+    "qa",
+    "ra",
+    "sa",
+    "sha",
+    "ta",
+    "tha",
+    "tsa",
+    "va",
+    "ya",
+    "za"
+  ],
+  "baselines_published_legacy14": {
+    "trained_kmeans_256_cosine_top1": 0.419,
+    "random_real_frames_256_cosine_top1": 0.403,
+    "random_gaussian_256_cosine_top1": 0.258,
+    "raw_features_no_codebook_top1": 0.538,
+    "kmeans_256_units_used_heldout": 172
+  },
+  "rows": [
+    {
+      "units": 256,
+      "units_used_heldout": 174,
+      "dead_units_heldout": 82,
+      "mean_sequence_length": 25.696969696969695,
+      "cosine": {
+        "top1": 0.42424242424242425,
+        "top5": 0.7348484848484849,
+        "meanlink_top1": 0.4166666666666667,
+        "minimal_pairs": {
+          "ba/pa": 0.25,
+          "ga/ka": 1.0,
+          "da/ta": 0.5833333333333334,
+          "sa/sha": 1.0,
+          "ka/qa": 1.0,
+          "ta/tha": 0.75,
+          "za/sa": 1.0,
+          "ah/aa": 0.4166666666666667
+        },
+        "permutation_null": {
+          "draws": 200,
+          "mean": 0.04662878787878789,
+          "p95": 0.07575757575757576,
+          "max": 0.09090909090909091
+        },
+        "top_confusions": [
+          {
+            "pair": "ba/tha",
+            "errors": 5
+          },
+          {
+            "pair": "ah/ma",
+            "errors": 4
+          },
+          {
+            "pair": "la/qa",
+            "errors": 4
+          },
+          {
+            "pair": "da/ga",
+            "errors": 3
+          },
+          {
+            "pair": "da/pa",
+            "errors": 3
+          },
+          {
+            "pair": "da/tha",
+            "errors": 3
+          },
+          {
+            "pair": "ha/qa",
+            "errors": 3
+          },
+          {
+            "pair": "ka/ra",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ra",
+            "errors": 2
+          },
+          {
+            "pair": "ah/qa",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ga",
+            "errors": 2
+          },
+          {
+            "pair": "ba/va",
+            "errors": 2
+          }
+        ]
+      },
+      "edit": {
+        "top1": 0.32575757575757575,
+        "top5": 0.7651515151515151,
+        "meanlink_top1": 0.3939393939393939,
+        "minimal_pairs": {
+          "ba/pa": 0.4166666666666667,
+          "ga/ka": 1.0,
+          "da/ta": 0.8333333333333334,
+          "sa/sha": 1.0,
+          "ka/qa": 0.9166666666666666,
+          "ta/tha": 0.8333333333333334,
+          "za/sa": 1.0,
+          "ah/aa": 0.4166666666666667
+        },
+        "separation": {
+          "within_same_syllable_diff_base": 0.11252884813003607,
+          "within_same_syllable_same_base_twins": 0.13775689860879914,
+          "between_syllables": 0.050536780645537696,
+          "separation": 0.06199206748449837,
+          "cohens_d": 0.6490897236773197,
+          "auc": 0.6700995646702718,
+          "pairs_within": 198,
+          "pairs_between": 8316
+        },
+        "top_confusions": [
+          {
+            "pair": "la/qa",
+            "errors": 5
+          },
+          {
+            "pair": "aa/ah",
+            "errors": 4
+          },
+          {
+            "pair": "da/ga",
+            "errors": 4
+          },
+          {
+            "pair": "ka/ma",
+            "errors": 4
+          },
+          {
+            "pair": "kha/va",
+            "errors": 3
+          },
+          {
+            "pair": "la/ta",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ka",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ba",
+            "errors": 2
+          },
+          {
+            "pair": "ah/kha",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ra",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ga",
+            "errors": 2
+          },
+          {
+            "pair": "ba/sha",
+            "errors": 2
+          }
+        ]
+      },
+      "group": "kmeans-shipped-checkpoint",
+      "feature_set": "legacy14",
+      "ant": "ant-a",
+      "seed": 7007
+    },
+    {
+      "units": 256,
+      "units_used_heldout": 181,
+      "dead_units_heldout": 75,
+      "mean_sequence_length": 26.87878787878788,
+      "cosine": {
+        "top1": 0.4166666666666667,
+        "top5": 0.803030303030303,
+        "meanlink_top1": 0.4090909090909091,
+        "minimal_pairs": {
+          "ba/pa": 0.4166666666666667,
+          "ga/ka": 0.9166666666666666,
+          "da/ta": 0.6666666666666666,
+          "sa/sha": 1.0,
+          "ka/qa": 0.9166666666666666,
+          "ta/tha": 0.5833333333333334,
+          "za/sa": 1.0,
+          "ah/aa": 0.6666666666666666
+        },
+        "permutation_null": {
+          "draws": 200,
+          "mean": 0.047196969696969696,
+          "p95": 0.0761363636363635,
+          "max": 0.09848484848484848
+        },
+        "top_confusions": [
+          {
+            "pair": "ah/ma",
+            "errors": 4
+          },
+          {
+            "pair": "ka/ma",
+            "errors": 4
+          },
+          {
+            "pair": "aa/ra",
+            "errors": 3
+          },
+          {
+            "pair": "ba/pa",
+            "errors": 3
+          },
+          {
+            "pair": "ha/na",
+            "errors": 3
+          },
+          {
+            "pair": "kha/ta",
+            "errors": 3
+          },
+          {
+            "pair": "la/qa",
+            "errors": 3
+          },
+          {
+            "pair": "ta/tha",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ma",
+            "errors": 2
+          },
+          {
+            "pair": "aa/sa",
+            "errors": 2
+          },
+          {
+            "pair": "ah/qa",
+            "errors": 2
+          },
+          {
+            "pair": "ba/va",
+            "errors": 2
+          }
+        ]
+      },
+      "edit": {
+        "top1": 0.3560606060606061,
+        "top5": 0.7272727272727273,
+        "meanlink_top1": 0.4318181818181818,
+        "minimal_pairs": {
+          "ba/pa": 0.3333333333333333,
+          "ga/ka": 1.0,
+          "da/ta": 0.75,
+          "sa/sha": 0.9166666666666666,
+          "ka/qa": 1.0,
+          "ta/tha": 0.5833333333333334,
+          "za/sa": 1.0,
+          "ah/aa": 0.5833333333333334
+        },
+        "separation": {
+          "within_same_syllable_diff_base": 0.12419717564951392,
+          "within_same_syllable_same_base_twins": 0.15717466209695527,
+          "between_syllables": 0.05909422603228155,
+          "separation": 0.06510294961723237,
+          "cohens_d": 0.7072227590203348,
+          "auc": 0.6822967530038238,
+          "pairs_within": 198,
+          "pairs_between": 8316
+        },
+        "top_confusions": [
+          {
+            "pair": "la/qa",
+            "errors": 4
+          },
+          {
+            "pair": "ra/sa",
+            "errors": 4
+          },
+          {
+            "pair": "da/ga",
+            "errors": 3
+          },
+          {
+            "pair": "ka/ma",
+            "errors": 3
+          },
+          {
+            "pair": "qa/sha",
+            "errors": 3
+          },
+          {
+            "pair": "aa/sa",
+            "errors": 2
+          },
+          {
+            "pair": "ah/qa",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ra",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ta",
+            "errors": 2
+          },
+          {
+            "pair": "ga/la",
+            "errors": 2
+          },
+          {
+            "pair": "ha/na",
+            "errors": 2
+          },
+          {
+            "pair": "ka/ra",
+            "errors": 2
+          }
+        ]
+      },
+      "group": "random-real-frames",
+      "feature_set": "legacy14",
+      "ant": "ant-a",
+      "seed": 7007
+    },
+    {
+      "units": 256,
+      "units_used_heldout": 66,
+      "dead_units_heldout": 190,
+      "mean_sequence_length": 21.310606060606062,
+      "cosine": {
+        "top1": 0.25,
+        "top5": 0.5757575757575758,
+        "meanlink_top1": 0.19696969696969696,
+        "minimal_pairs": {
+          "ba/pa": 0.5,
+          "ga/ka": 0.75,
+          "da/ta": 0.5833333333333334,
+          "sa/sha": 0.9166666666666666,
+          "ka/qa": 0.6666666666666666,
+          "ta/tha": 0.75,
+          "za/sa": 0.75,
+          "ah/aa": 0.4166666666666667
+        },
+        "permutation_null": {
+          "draws": 200,
+          "mean": 0.04837121212121212,
+          "p95": 0.08333333333333333,
+          "max": 0.09848484848484848
+        },
+        "top_confusions": [
+          {
+            "pair": "aa/ah",
+            "errors": 3
+          },
+          {
+            "pair": "da/ga",
+            "errors": 3
+          },
+          {
+            "pair": "da/pa",
+            "errors": 3
+          },
+          {
+            "pair": "ha/la",
+            "errors": 3
+          },
+          {
+            "pair": "ah/ha",
+            "errors": 2
+          },
+          {
+            "pair": "ah/va",
+            "errors": 2
+          },
+          {
+            "pair": "ba/da",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ga",
+            "errors": 2
+          },
+          {
+            "pair": "ba/tha",
+            "errors": 2
+          },
+          {
+            "pair": "ba/va",
+            "errors": 2
+          },
+          {
+            "pair": "ga/ta",
+            "errors": 2
+          },
+          {
+            "pair": "ha/kha",
+            "errors": 2
+          }
+        ]
+      },
+      "edit": {
+        "top1": 0.26515151515151514,
+        "top5": 0.6136363636363636,
+        "meanlink_top1": 0.26515151515151514,
+        "minimal_pairs": {
+          "ba/pa": 0.5833333333333334,
+          "ga/ka": 0.75,
+          "da/ta": 0.8333333333333334,
+          "sa/sha": 1.0,
+          "ka/qa": 0.6666666666666666,
+          "ta/tha": 0.9166666666666666,
+          "za/sa": 0.5833333333333334,
+          "ah/aa": 0.3333333333333333
+        },
+        "separation": {
+          "within_same_syllable_diff_base": 0.21077833112134534,
+          "within_same_syllable_same_base_twins": 0.24264358312582063,
+          "between_syllables": 0.14981200764180544,
+          "separation": 0.0609663234795399,
+          "cohens_d": 0.5092196821566233,
+          "auc": 0.6352066844491087,
+          "pairs_within": 198,
+          "pairs_between": 8316
+        },
+        "top_confusions": [
+          {
+            "pair": "ha/na",
+            "errors": 5
+          },
+          {
+            "pair": "aa/ah",
+            "errors": 3
+          },
+          {
+            "pair": "ba/qa",
+            "errors": 3
+          },
+          {
+            "pair": "aa/la",
+            "errors": 2
+          },
+          {
+            "pair": "aa/ra",
+            "errors": 2
+          },
+          {
+            "pair": "ah/da",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ga",
+            "errors": 2
+          },
+          {
+            "pair": "ah/kha",
+            "errors": 2
+          },
+          {
+            "pair": "ah/pa",
+            "errors": 2
+          },
+          {
+            "pair": "ah/za",
+            "errors": 2
+          },
+          {
+            "pair": "ba/tha",
+            "errors": 2
+          },
+          {
+            "pair": "da/pa",
+            "errors": 2
+          }
+        ]
+      },
+      "group": "random-gaussian",
+      "feature_set": "legacy14",
+      "ant": "ant-a",
+      "seed": 7007
+    },
+    {
+      "units": 256,
+      "units_used_heldout": 168,
+      "dead_units_heldout": 88,
+      "mean_sequence_length": 25.477272727272727,
+      "cosine": {
+        "top1": 0.4015151515151515,
+        "top5": 0.7196969696969697,
+        "meanlink_top1": 0.4090909090909091,
+        "minimal_pairs": {
+          "ba/pa": 0.16666666666666666,
+          "ga/ka": 1.0,
+          "da/ta": 0.4166666666666667,
+          "sa/sha": 1.0,
+          "ka/qa": 1.0,
+          "ta/tha": 0.5833333333333334,
+          "za/sa": 1.0,
+          "ah/aa": 0.3333333333333333
+        },
+        "permutation_null": {
+          "draws": 200,
+          "mean": 0.04662878787878788,
+          "p95": 0.08333333333333333,
+          "max": 0.10606060606060606
+        },
+        "top_confusions": [
+          {
+            "pair": "aa/ra",
+            "errors": 4
+          },
+          {
+            "pair": "ha/la",
+            "errors": 4
+          },
+          {
+            "pair": "aa/ka",
+            "errors": 3
+          },
+          {
+            "pair": "da/pa",
+            "errors": 3
+          },
+          {
+            "pair": "da/ta",
+            "errors": 3
+          },
+          {
+            "pair": "kha/pa",
+            "errors": 3
+          },
+          {
+            "pair": "la/qa",
+            "errors": 3
+          },
+          {
+            "pair": "ta/tha",
+            "errors": 3
+          },
+          {
+            "pair": "aa/sa",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ma",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ga",
+            "errors": 2
+          },
+          {
+            "pair": "ba/tha",
+            "errors": 2
+          }
+        ]
+      },
+      "edit": {
+        "top1": 0.3712121212121212,
+        "top5": 0.7803030303030303,
+        "meanlink_top1": 0.42424242424242425,
+        "minimal_pairs": {
+          "ba/pa": 0.5833333333333334,
+          "ga/ka": 1.0,
+          "da/ta": 0.75,
+          "sa/sha": 1.0,
+          "ka/qa": 0.8333333333333334,
+          "ta/tha": 0.6666666666666666,
+          "za/sa": 1.0,
+          "ah/aa": 0.3333333333333333
+        },
+        "separation": {
+          "within_same_syllable_diff_base": 0.12266612126450374,
+          "within_same_syllable_same_base_twins": 0.1387151715466266,
+          "between_syllables": 0.050767429671047026,
+          "separation": 0.07189869159345672,
+          "cohens_d": 0.7262360897440514,
+          "auc": 0.6778326191204979,
+          "pairs_within": 198,
+          "pairs_between": 8316
+        },
+        "top_confusions": [
+          {
+            "pair": "ah/ba",
+            "errors": 4
+          },
+          {
+            "pair": "la/qa",
+            "errors": 4
+          },
+          {
+            "pair": "ka/ma",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ah",
+            "errors": 2
+          },
+          {
+            "pair": "aa/sa",
+            "errors": 2
+          },
+          {
+            "pair": "ah/tha",
+            "errors": 2
+          },
+          {
+            "pair": "da/ga",
+            "errors": 2
+          },
+          {
+            "pair": "da/pa",
+            "errors": 2
+          },
+          {
+            "pair": "da/qa",
+            "errors": 2
+          },
+          {
+            "pair": "ga/pa",
+            "errors": 2
+          },
+          {
+            "pair": "ga/ta",
+            "errors": 2
+          },
+          {
+            "pair": "ha/na",
+            "errors": 2
+          }
+        ]
+      },
+      "group": "kmeans-shipped-checkpoint",
+      "feature_set": "legacy14",
+      "ant": "ant-b",
+      "seed": 7019
+    },
+    {
+      "units": 256,
+      "units_used_heldout": 176,
+      "dead_units_heldout": 80,
+      "mean_sequence_length": 27.053030303030305,
+      "cosine": {
+        "top1": 0.3333333333333333,
+        "top5": 0.6742424242424242,
+        "meanlink_top1": 0.3106060606060606,
+        "minimal_pairs": {
+          "ba/pa": 0.5833333333333334,
+          "ga/ka": 1.0,
+          "da/ta": 0.4166666666666667,
+          "sa/sha": 1.0,
+          "ka/qa": 0.75,
+          "ta/tha": 0.6666666666666666,
+          "za/sa": 1.0,
+          "ah/aa": 0.4166666666666667
+        },
+        "permutation_null": {
+          "draws": 200,
+          "mean": 0.04363636363636363,
+          "p95": 0.06856060606060593,
+          "max": 0.09090909090909091
+        },
+        "top_confusions": [
+          {
+            "pair": "kha/ta",
+            "errors": 5
+          },
+          {
+            "pair": "ba/da",
+            "errors": 4
+          },
+          {
+            "pair": "aa/ra",
+            "errors": 3
+          },
+          {
+            "pair": "ba/tha",
+            "errors": 3
+          },
+          {
+            "pair": "da/ga",
+            "errors": 3
+          },
+          {
+            "pair": "ga/va",
+            "errors": 3
+          },
+          {
+            "pair": "ha/na",
+            "errors": 3
+          },
+          {
+            "pair": "ka/ma",
+            "errors": 3
+          },
+          {
+            "pair": "la/qa",
+            "errors": 3
+          },
+          {
+            "pair": "qa/tha",
+            "errors": 3
+          },
+          {
+            "pair": "ta/tha",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ka",
+            "errors": 2
+          }
+        ]
+      },
+      "edit": {
+        "top1": 0.42424242424242425,
+        "top5": 0.75,
+        "meanlink_top1": 0.42424242424242425,
+        "minimal_pairs": {
+          "ba/pa": 0.6666666666666666,
+          "ga/ka": 1.0,
+          "da/ta": 0.8333333333333334,
+          "sa/sha": 1.0,
+          "ka/qa": 0.6666666666666666,
+          "ta/tha": 0.6666666666666666,
+          "za/sa": 1.0,
+          "ah/aa": 0.5833333333333334
+        },
+        "separation": {
+          "within_same_syllable_diff_base": 0.11839443095633946,
+          "within_same_syllable_same_base_twins": 0.13841168892268876,
+          "between_syllables": 0.05527539136224908,
+          "separation": 0.06311903959409038,
+          "cohens_d": 0.6738710110069506,
+          "auc": 0.6776151971859042,
+          "pairs_within": 198,
+          "pairs_between": 8316
+        },
+        "top_confusions": [
+          {
+            "pair": "ka/ma",
+            "errors": 4
+          },
+          {
+            "pair": "ah/pa",
+            "errors": 3
+          },
+          {
+            "pair": "da/ga",
+            "errors": 3
+          },
+          {
+            "pair": "ga/ta",
+            "errors": 3
+          },
+          {
+            "pair": "ha/qa",
+            "errors": 3
+          },
+          {
+            "pair": "la/qa",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ba",
+            "errors": 2
+          },
+          {
+            "pair": "aa/ka",
+            "errors": 2
+          },
+          {
+            "pair": "ba/pa",
+            "errors": 2
+          },
+          {
+            "pair": "ba/tha",
+            "errors": 2
+          },
+          {
+            "pair": "da/kha",
+            "errors": 2
+          },
+          {
+            "pair": "ga/qa",
+            "errors": 2
+          }
+        ]
+      },
+      "group": "random-real-frames",
+      "feature_set": "legacy14",
+      "ant": "ant-b",
+      "seed": 7019
+    },
+    {
+      "units": 256,
+      "units_used_heldout": 68,
+      "dead_units_heldout": 188,
+      "mean_sequence_length": 19.166666666666668,
+      "cosine": {
+        "top1": 0.26515151515151514,
+        "top5": 0.6515151515151515,
+        "meanlink_top1": 0.13636363636363635,
+        "minimal_pairs": {
+          "ba/pa": 0.5,
+          "ga/ka": 0.8333333333333334,
+          "da/ta": 0.4166666666666667,
+          "sa/sha": 1.0,
+          "ka/qa": 0.75,
+          "ta/tha": 0.6666666666666666,
+          "za/sa": 0.9166666666666666,
+          "ah/aa": 0.5833333333333334
+        },
+        "permutation_null": {
+          "draws": 200,
+          "mean": 0.04481060606060606,
+          "p95": 0.07575757575757576,
+          "max": 0.09848484848484848
+        },
+        "top_confusions": [
+          {
+            "pair": "ga/pa",
+            "errors": 4
+          },
+          {
+            "pair": "ra/sa",
+            "errors": 4
+          },
+          {
+            "pair": "tsa/za",
+            "errors": 4
+          },
+          {
+            "pair": "ba/va",
+            "errors": 3
+          },
+          {
+            "pair": "da/pa",
+            "errors": 3
+          },
+          {
+            "pair": "ha/na",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ah",
+            "errors": 2
+          },
+          {
+            "pair": "aa/ra",
+            "errors": 2
+          },
+          {
+            "pair": "ah/pa",
+            "errors": 2
+          },
+          {
+            "pair": "ba/da",
+            "errors": 2
+          },
+          {
+            "pair": "ba/pa",
+            "errors": 2
+          },
+          {
+            "pair": "da/la",
+            "errors": 2
+          }
+        ]
+      },
+      "edit": {
+        "top1": 0.25757575757575757,
+        "top5": 0.6363636363636364,
+        "meanlink_top1": 0.3106060606060606,
+        "minimal_pairs": {
+          "ba/pa": 0.5,
+          "ga/ka": 0.75,
+          "da/ta": 0.75,
+          "sa/sha": 1.0,
+          "ka/qa": 0.8333333333333334,
+          "ta/tha": 0.9166666666666666,
+          "za/sa": 0.9166666666666666,
+          "ah/aa": 0.5833333333333334
+        },
+        "separation": {
+          "within_same_syllable_diff_base": 0.20226519530473527,
+          "within_same_syllable_same_base_twins": 0.24759779475766572,
+          "between_syllables": 0.14399016139302653,
+          "separation": 0.05827503391170874,
+          "cohens_d": 0.5615038566681678,
+          "auc": 0.6647727272727273,
+          "pairs_within": 198,
+          "pairs_between": 8316
+        },
+        "top_confusions": [
+          {
+            "pair": "ah/ma",
+            "errors": 3
+          },
+          {
+            "pair": "ha/na",
+            "errors": 3
+          },
+          {
+            "pair": "ma/ya",
+            "errors": 3
+          },
+          {
+            "pair": "qa/tha",
+            "errors": 3
+          },
+          {
+            "pair": "ah/ga",
+            "errors": 2
+          },
+          {
+            "pair": "ah/kha",
+            "errors": 2
+          },
+          {
+            "pair": "ah/pa",
+            "errors": 2
+          },
+          {
+            "pair": "ba/da",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ga",
+            "errors": 2
+          },
+          {
+            "pair": "ba/va",
+            "errors": 2
+          },
+          {
+            "pair": "da/la",
+            "errors": 2
+          },
+          {
+            "pair": "da/qa",
+            "errors": 2
+          }
+        ]
+      },
+      "group": "random-gaussian",
+      "feature_set": "legacy14",
+      "ant": "ant-b",
+      "seed": 7019
+    },
+    {
+      "units": 256,
+      "units_used_heldout": 170,
+      "dead_units_heldout": 86,
+      "mean_sequence_length": 25.113636363636363,
+      "cosine": {
+        "top1": 0.4090909090909091,
+        "top5": 0.7575757575757576,
+        "meanlink_top1": 0.42424242424242425,
+        "minimal_pairs": {
+          "ba/pa": 0.25,
+          "ga/ka": 1.0,
+          "da/ta": 0.5,
+          "sa/sha": 1.0,
+          "ka/qa": 1.0,
+          "ta/tha": 0.6666666666666666,
+          "za/sa": 1.0,
+          "ah/aa": 0.5833333333333334
+        },
+        "permutation_null": {
+          "draws": 200,
+          "mean": 0.04375,
+          "p95": 0.08333333333333333,
+          "max": 0.09848484848484848
+        },
+        "top_confusions": [
+          {
+            "pair": "aa/ra",
+            "errors": 5
+          },
+          {
+            "pair": "ba/tha",
+            "errors": 4
+          },
+          {
+            "pair": "da/pa",
+            "errors": 4
+          },
+          {
+            "pair": "da/va",
+            "errors": 3
+          },
+          {
+            "pair": "ga/ta",
+            "errors": 3
+          },
+          {
+            "pair": "ha/qa",
+            "errors": 3
+          },
+          {
+            "pair": "la/qa",
+            "errors": 3
+          },
+          {
+            "pair": "ra/sa",
+            "errors": 3
+          },
+          {
+            "pair": "ah/ba",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ma",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ga",
+            "errors": 2
+          },
+          {
+            "pair": "ba/pa",
+            "errors": 2
+          }
+        ]
+      },
+      "edit": {
+        "top1": 0.3787878787878788,
+        "top5": 0.75,
+        "meanlink_top1": 0.4015151515151515,
+        "minimal_pairs": {
+          "ba/pa": 0.3333333333333333,
+          "ga/ka": 0.9166666666666666,
+          "da/ta": 0.75,
+          "sa/sha": 1.0,
+          "ka/qa": 0.8333333333333334,
+          "ta/tha": 0.6666666666666666,
+          "za/sa": 0.9166666666666666,
+          "ah/aa": 0.3333333333333333
+        },
+        "separation": {
+          "within_same_syllable_diff_base": 0.11613020997257908,
+          "within_same_syllable_same_base_twins": 0.1430834281442703,
+          "between_syllables": 0.05082710417794658,
+          "separation": 0.0653031057946325,
+          "cohens_d": 0.691018538729282,
+          "auc": 0.6758752143853154,
+          "pairs_within": 198,
+          "pairs_between": 8316
+        },
+        "top_confusions": [
+          {
+            "pair": "ga/ta",
+            "errors": 4
+          },
+          {
+            "pair": "ah/ba",
+            "errors": 3
+          },
+          {
+            "pair": "ha/na",
+            "errors": 3
+          },
+          {
+            "pair": "ka/sa",
+            "errors": 3
+          },
+          {
+            "pair": "kha/va",
+            "errors": 3
+          },
+          {
+            "pair": "ra/sa",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ka",
+            "errors": 2
+          },
+          {
+            "pair": "ah/pa",
+            "errors": 2
+          },
+          {
+            "pair": "ah/tha",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ta",
+            "errors": 2
+          },
+          {
+            "pair": "ba/tha",
+            "errors": 2
+          },
+          {
+            "pair": "da/ga",
+            "errors": 2
+          }
+        ]
+      },
+      "group": "kmeans-shipped-checkpoint",
+      "feature_set": "legacy14",
+      "ant": "ant-c",
+      "seed": 7039
+    },
+    {
+      "units": 256,
+      "units_used_heldout": 175,
+      "dead_units_heldout": 81,
+      "mean_sequence_length": 26.507575757575758,
+      "cosine": {
+        "top1": 0.4621212121212121,
+        "top5": 0.7954545454545454,
+        "meanlink_top1": 0.3787878787878788,
+        "minimal_pairs": {
+          "ba/pa": 0.5833333333333334,
+          "ga/ka": 1.0,
+          "da/ta": 0.3333333333333333,
+          "sa/sha": 1.0,
+          "ka/qa": 1.0,
+          "ta/tha": 0.8333333333333334,
+          "za/sa": 1.0,
+          "ah/aa": 0.3333333333333333
+        },
+        "permutation_null": {
+          "draws": 200,
+          "mean": 0.04363636363636363,
+          "p95": 0.07575757575757576,
+          "max": 0.09848484848484848
+        },
+        "top_confusions": [
+          {
+            "pair": "ba/tha",
+            "errors": 4
+          },
+          {
+            "pair": "ah/ma",
+            "errors": 3
+          },
+          {
+            "pair": "da/pa",
+            "errors": 3
+          },
+          {
+            "pair": "ka/ra",
+            "errors": 3
+          },
+          {
+            "pair": "ka/sa",
+            "errors": 3
+          },
+          {
+            "pair": "la/qa",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ma",
+            "errors": 2
+          },
+          {
+            "pair": "aa/ra",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ga",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ta",
+            "errors": 2
+          },
+          {
+            "pair": "ba/va",
+            "errors": 2
+          },
+          {
+            "pair": "da/qa",
+            "errors": 2
+          }
+        ]
+      },
+      "edit": {
+        "top1": 0.3787878787878788,
+        "top5": 0.7424242424242424,
+        "meanlink_top1": 0.3787878787878788,
+        "minimal_pairs": {
+          "ba/pa": 0.3333333333333333,
+          "ga/ka": 1.0,
+          "da/ta": 0.6666666666666666,
+          "sa/sha": 1.0,
+          "ka/qa": 0.8333333333333334,
+          "ta/tha": 0.5,
+          "za/sa": 1.0,
+          "ah/aa": 0.3333333333333333
+        },
+        "separation": {
+          "within_same_syllable_diff_base": 0.12605533554142134,
+          "within_same_syllable_same_base_twins": 0.15059322551080984,
+          "between_syllables": 0.05538203775499152,
+          "separation": 0.07067329778642982,
+          "cohens_d": 0.7325806634990525,
+          "auc": 0.6821509952823084,
+          "pairs_within": 198,
+          "pairs_between": 8316
+        },
+        "top_confusions": [
+          {
+            "pair": "la/qa",
+            "errors": 5
+          },
+          {
+            "pair": "ah/tha",
+            "errors": 3
+          },
+          {
+            "pair": "ba/ka",
+            "errors": 3
+          },
+          {
+            "pair": "ba/pa",
+            "errors": 3
+          },
+          {
+            "pair": "ha/na",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ba",
+            "errors": 2
+          },
+          {
+            "pair": "aa/ka",
+            "errors": 2
+          },
+          {
+            "pair": "aa/ra",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ma",
+            "errors": 2
+          },
+          {
+            "pair": "ah/pa",
+            "errors": 2
+          },
+          {
+            "pair": "ah/qa",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ra",
+            "errors": 2
+          }
+        ]
+      },
+      "group": "random-real-frames",
+      "feature_set": "legacy14",
+      "ant": "ant-c",
+      "seed": 7039
+    },
+    {
+      "units": 256,
+      "units_used_heldout": 67,
+      "dead_units_heldout": 189,
+      "mean_sequence_length": 20.901515151515152,
+      "cosine": {
+        "top1": 0.32575757575757575,
+        "top5": 0.6742424242424242,
+        "meanlink_top1": 0.21212121212121213,
+        "minimal_pairs": {
+          "ba/pa": 0.5833333333333334,
+          "ga/ka": 1.0,
+          "da/ta": 0.8333333333333334,
+          "sa/sha": 1.0,
+          "ka/qa": 1.0,
+          "ta/tha": 0.6666666666666666,
+          "za/sa": 1.0,
+          "ah/aa": 0.4166666666666667
+        },
+        "permutation_null": {
+          "draws": 200,
+          "mean": 0.04492424242424242,
+          "p95": 0.0761363636363635,
+          "max": 0.11363636363636363
+        },
+        "top_confusions": [
+          {
+            "pair": "ka/sa",
+            "errors": 5
+          },
+          {
+            "pair": "ga/va",
+            "errors": 4
+          },
+          {
+            "pair": "aa/ra",
+            "errors": 3
+          },
+          {
+            "pair": "ba/tha",
+            "errors": 3
+          },
+          {
+            "pair": "da/ga",
+            "errors": 3
+          },
+          {
+            "pair": "ma/ya",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ya",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ga",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ta",
+            "errors": 2
+          },
+          {
+            "pair": "da/pa",
+            "errors": 2
+          },
+          {
+            "pair": "ga/pa",
+            "errors": 2
+          },
+          {
+            "pair": "ga/qa",
+            "errors": 2
+          }
+        ]
+      },
+      "edit": {
+        "top1": 0.25757575757575757,
+        "top5": 0.5757575757575758,
+        "meanlink_top1": 0.29545454545454547,
+        "minimal_pairs": {
+          "ba/pa": 0.5833333333333334,
+          "ga/ka": 0.8333333333333334,
+          "da/ta": 0.6666666666666666,
+          "sa/sha": 0.8333333333333334,
+          "ka/qa": 0.75,
+          "ta/tha": 0.5,
+          "za/sa": 1.0,
+          "ah/aa": 0.3333333333333333
+        },
+        "separation": {
+          "within_same_syllable_diff_base": 0.20159704194035033,
+          "within_same_syllable_same_base_twins": 0.2522101067090969,
+          "between_syllables": 0.14437594711329518,
+          "separation": 0.05722109482705515,
+          "cohens_d": 0.48714435159277486,
+          "auc": 0.6211000699637064,
+          "pairs_within": 198,
+          "pairs_between": 8316
+        },
+        "top_confusions": [
+          {
+            "pair": "ah/ba",
+            "errors": 5
+          },
+          {
+            "pair": "da/ga",
+            "errors": 4
+          },
+          {
+            "pair": "ma/ra",
+            "errors": 4
+          },
+          {
+            "pair": "ah/va",
+            "errors": 3
+          },
+          {
+            "pair": "ba/pa",
+            "errors": 3
+          },
+          {
+            "pair": "la/qa",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ka",
+            "errors": 2
+          },
+          {
+            "pair": "aa/ra",
+            "errors": 2
+          },
+          {
+            "pair": "ah/da",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ma",
+            "errors": 2
+          },
+          {
+            "pair": "da/la",
+            "errors": 2
+          },
+          {
+            "pair": "da/ta",
+            "errors": 2
+          }
+        ]
+      },
+      "group": "random-gaussian",
+      "feature_set": "legacy14",
+      "ant": "ant-c",
+      "seed": 7039
+    },
+    {
+      "units": 256,
+      "units_used_heldout": 176,
+      "dead_units_heldout": 80,
+      "mean_sequence_length": 25.643939393939394,
+      "cosine": {
+        "top1": 0.4393939393939394,
+        "top5": 0.7954545454545454,
+        "meanlink_top1": 0.4015151515151515,
+        "minimal_pairs": {
+          "ba/pa": 0.25,
+          "ga/ka": 1.0,
+          "da/ta": 0.5833333333333334,
+          "sa/sha": 1.0,
+          "ka/qa": 0.8333333333333334,
+          "ta/tha": 0.5,
+          "za/sa": 1.0,
+          "ah/aa": 0.5833333333333334
+        },
+        "permutation_null": {
+          "draws": 200,
+          "mean": 0.045681818181818185,
+          "p95": 0.07575757575757576,
+          "max": 0.09848484848484848
+        },
+        "top_confusions": [
+          {
+            "pair": "ka/sa",
+            "errors": 4
+          },
+          {
+            "pair": "ah/ma",
+            "errors": 3
+          },
+          {
+            "pair": "ba/da",
+            "errors": 3
+          },
+          {
+            "pair": "da/ga",
+            "errors": 3
+          },
+          {
+            "pair": "da/pa",
+            "errors": 3
+          },
+          {
+            "pair": "da/va",
+            "errors": 3
+          },
+          {
+            "pair": "ha/la",
+            "errors": 3
+          },
+          {
+            "pair": "ka/ma",
+            "errors": 3
+          },
+          {
+            "pair": "ta/tha",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ka",
+            "errors": 2
+          },
+          {
+            "pair": "ah/sa",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ta",
+            "errors": 2
+          }
+        ]
+      },
+      "edit": {
+        "top1": 0.4166666666666667,
+        "top5": 0.8181818181818182,
+        "meanlink_top1": 0.4166666666666667,
+        "minimal_pairs": {
+          "ba/pa": 0.4166666666666667,
+          "ga/ka": 0.9166666666666666,
+          "da/ta": 0.6666666666666666,
+          "sa/sha": 1.0,
+          "ka/qa": 0.75,
+          "ta/tha": 0.6666666666666666,
+          "za/sa": 1.0,
+          "ah/aa": 0.6666666666666666
+        },
+        "separation": {
+          "within_same_syllable_diff_base": 0.111890487509797,
+          "within_same_syllable_same_base_twins": 0.13309983681441429,
+          "between_syllables": 0.05174014138406151,
+          "separation": 0.060150346125735485,
+          "cohens_d": 0.6792423944267685,
+          "auc": 0.6822038324563577,
+          "pairs_within": 198,
+          "pairs_between": 8316
+        },
+        "top_confusions": [
+          {
+            "pair": "ra/sa",
+            "errors": 5
+          },
+          {
+            "pair": "aa/ah",
+            "errors": 3
+          },
+          {
+            "pair": "ah/ba",
+            "errors": 3
+          },
+          {
+            "pair": "da/ga",
+            "errors": 3
+          },
+          {
+            "pair": "ta/tha",
+            "errors": 3
+          },
+          {
+            "pair": "ah/ka",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ra",
+            "errors": 2
+          },
+          {
+            "pair": "ba/da",
+            "errors": 2
+          },
+          {
+            "pair": "ba/tha",
+            "errors": 2
+          },
+          {
+            "pair": "da/pa",
+            "errors": 2
+          },
+          {
+            "pair": "ga/qa",
+            "errors": 2
+          },
+          {
+            "pair": "ha/na",
+            "errors": 2
+          }
+        ]
+      },
+      "group": "kmeans-shipped-checkpoint",
+      "feature_set": "legacy14",
+      "ant": "ant-d",
+      "seed": 7057
+    },
+    {
+      "units": 256,
+      "units_used_heldout": 181,
+      "dead_units_heldout": 75,
+      "mean_sequence_length": 26.53030303030303,
+      "cosine": {
+        "top1": 0.4015151515151515,
+        "top5": 0.7727272727272727,
+        "meanlink_top1": 0.36363636363636365,
+        "minimal_pairs": {
+          "ba/pa": 0.4166666666666667,
+          "ga/ka": 0.9166666666666666,
+          "da/ta": 0.5833333333333334,
+          "sa/sha": 1.0,
+          "ka/qa": 0.9166666666666666,
+          "ta/tha": 0.5,
+          "za/sa": 1.0,
+          "ah/aa": 0.5833333333333334
+        },
+        "permutation_null": {
+          "draws": 200,
+          "mean": 0.04715909090909091,
+          "p95": 0.07575757575757576,
+          "max": 0.09848484848484848
+        },
+        "top_confusions": [
+          {
+            "pair": "aa/ra",
+            "errors": 4
+          },
+          {
+            "pair": "ba/tha",
+            "errors": 4
+          },
+          {
+            "pair": "ha/na",
+            "errors": 4
+          },
+          {
+            "pair": "la/qa",
+            "errors": 4
+          },
+          {
+            "pair": "ah/ba",
+            "errors": 3
+          },
+          {
+            "pair": "da/ta",
+            "errors": 3
+          },
+          {
+            "pair": "ga/kha",
+            "errors": 3
+          },
+          {
+            "pair": "ga/pa",
+            "errors": 3
+          },
+          {
+            "pair": "ka/sa",
+            "errors": 3
+          },
+          {
+            "pair": "ta/tha",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ka",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ga",
+            "errors": 2
+          }
+        ]
+      },
+      "edit": {
+        "top1": 0.3787878787878788,
+        "top5": 0.7348484848484849,
+        "meanlink_top1": 0.4318181818181818,
+        "minimal_pairs": {
+          "ba/pa": 0.5833333333333334,
+          "ga/ka": 0.9166666666666666,
+          "da/ta": 0.75,
+          "sa/sha": 1.0,
+          "ka/qa": 0.75,
+          "ta/tha": 0.6666666666666666,
+          "za/sa": 0.9166666666666666,
+          "ah/aa": 0.3333333333333333
+        },
+        "separation": {
+          "within_same_syllable_diff_base": 0.10915962273022124,
+          "within_same_syllable_same_base_twins": 0.14191592565628125,
+          "between_syllables": 0.05403538364744287,
+          "separation": 0.05512423908277837,
+          "cohens_d": 0.6500447601698852,
+          "auc": 0.6715416551275137,
+          "pairs_within": 198,
+          "pairs_between": 8316
+        },
+        "top_confusions": [
+          {
+            "pair": "la/qa",
+            "errors": 4
+          },
+          {
+            "pair": "aa/ka",
+            "errors": 3
+          },
+          {
+            "pair": "da/ga",
+            "errors": 3
+          },
+          {
+            "pair": "ka/ma",
+            "errors": 3
+          },
+          {
+            "pair": "ra/sa",
+            "errors": 3
+          },
+          {
+            "pair": "ah/ba",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ma",
+            "errors": 2
+          },
+          {
+            "pair": "ah/tha",
+            "errors": 2
+          },
+          {
+            "pair": "ba/da",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ga",
+            "errors": 2
+          },
+          {
+            "pair": "ba/tha",
+            "errors": 2
+          },
+          {
+            "pair": "da/pa",
+            "errors": 2
+          }
+        ]
+      },
+      "group": "random-real-frames",
+      "feature_set": "legacy14",
+      "ant": "ant-d",
+      "seed": 7057
+    },
+    {
+      "units": 256,
+      "units_used_heldout": 65,
+      "dead_units_heldout": 191,
+      "mean_sequence_length": 16.772727272727273,
+      "cosine": {
+        "top1": 0.1893939393939394,
+        "top5": 0.553030303030303,
+        "meanlink_top1": 0.12121212121212122,
+        "minimal_pairs": {
+          "ba/pa": 0.25,
+          "ga/ka": 0.6666666666666666,
+          "da/ta": 0.5,
+          "sa/sha": 0.9166666666666666,
+          "ka/qa": 1.0,
+          "ta/tha": 0.8333333333333334,
+          "za/sa": 0.6666666666666666,
+          "ah/aa": 0.5
+        },
+        "permutation_null": {
+          "draws": 200,
+          "mean": 0.04670454545454545,
+          "p95": 0.07575757575757576,
+          "max": 0.09090909090909091
+        },
+        "top_confusions": [
+          {
+            "pair": "ka/ma",
+            "errors": 4
+          },
+          {
+            "pair": "ma/ra",
+            "errors": 4
+          },
+          {
+            "pair": "aa/va",
+            "errors": 3
+          },
+          {
+            "pair": "ah/ga",
+            "errors": 3
+          },
+          {
+            "pair": "ba/ta",
+            "errors": 3
+          },
+          {
+            "pair": "da/ga",
+            "errors": 3
+          },
+          {
+            "pair": "ha/na",
+            "errors": 3
+          },
+          {
+            "pair": "kha/qa",
+            "errors": 3
+          },
+          {
+            "pair": "tsa/za",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ra",
+            "errors": 2
+          },
+          {
+            "pair": "ah/tha",
+            "errors": 2
+          },
+          {
+            "pair": "ba/pa",
+            "errors": 2
+          }
+        ]
+      },
+      "edit": {
+        "top1": 0.21212121212121213,
+        "top5": 0.5984848484848485,
+        "meanlink_top1": 0.29545454545454547,
+        "minimal_pairs": {
+          "ba/pa": 0.3333333333333333,
+          "ga/ka": 0.75,
+          "da/ta": 0.5833333333333334,
+          "sa/sha": 1.0,
+          "ka/qa": 0.75,
+          "ta/tha": 0.6666666666666666,
+          "za/sa": 1.0,
+          "ah/aa": 0.3333333333333333
+        },
+        "separation": {
+          "within_same_syllable_diff_base": 0.2576341675487146,
+          "within_same_syllable_same_base_twins": 0.29702510002086563,
+          "between_syllables": 0.18343161288986307,
+          "separation": 0.07420255465885153,
+          "cohens_d": 0.5669186795617229,
+          "auc": 0.6578677588778599,
+          "pairs_within": 198,
+          "pairs_between": 8316
+        },
+        "top_confusions": [
+          {
+            "pair": "aa/ah",
+            "errors": 3
+          },
+          {
+            "pair": "ah/ra",
+            "errors": 3
+          },
+          {
+            "pair": "ba/kha",
+            "errors": 3
+          },
+          {
+            "pair": "ba/tha",
+            "errors": 3
+          },
+          {
+            "pair": "aa/ba",
+            "errors": 2
+          },
+          {
+            "pair": "aa/ta",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ba",
+            "errors": 2
+          },
+          {
+            "pair": "ah/da",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ga",
+            "errors": 2
+          },
+          {
+            "pair": "ah/ha",
+            "errors": 2
+          },
+          {
+            "pair": "ba/ta",
+            "errors": 2
+          },
+          {
+            "pair": "da/ga",
+            "errors": 2
+          }
+        ]
+      },
+      "group": "random-gaussian",
+      "feature_set": "legacy14",
+      "ant": "ant-d",
+      "seed": 7057
+    }
+  ]
+}

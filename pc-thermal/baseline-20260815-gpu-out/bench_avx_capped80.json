@@ -1,0 +1,18 @@
+{
+  "matrix_N": 3072,
+  "aborted": false,
+  "single_thread_gflops": 34.5,
+  "all_core_gflops": 73.5,
+  "idle_pkg_c": 73.6,
+  "allcore_max_c": 86.0,
+  "allcore_avg_c": 83.3,
+  "allcore_max_w": 38.8,
+  "allcore_avg_w": 34.9,
+  "allcore_min_mhz": 3400.0,
+  "allcore_max_mhz": 3400.0,
+  "allcore_avg_load": 99.7,
+  "fan2_max": 2106.0,
+  "fan3_max": 1810.0,
+  "cooldown_end_c": 75.0,
+  "samples": 115
+}

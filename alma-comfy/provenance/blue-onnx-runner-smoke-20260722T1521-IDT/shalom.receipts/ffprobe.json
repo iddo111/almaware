@@ -1,0 +1,55 @@
+{
+  "format": {
+    "bit_rate": "1058821",
+    "duration": "0.835918",
+    "filename": "/home/eran4/alma-studio/canaries/blue-runner-smoke-20260722T1521-IDT/shalom.wav",
+    "format_long_name": "WAV / WAVE (Waveform Audio)",
+    "format_name": "wav",
+    "nb_programs": 0,
+    "nb_streams": 1,
+    "probe_score": 99,
+    "size": "110636"
+  },
+  "streams": [
+    {
+      "avg_frame_rate": "0/0",
+      "bit_rate": "1058400",
+      "bits_per_raw_sample": "24",
+      "bits_per_sample": 24,
+      "channels": 1,
+      "codec_long_name": "PCM signed 24-bit little-endian",
+      "codec_name": "pcm_s24le",
+      "codec_tag": "0x0001",
+      "codec_tag_string": "[1][0][0][0]",
+      "codec_type": "audio",
+      "disposition": {
+        "attached_pic": 0,
+        "captions": 0,
+        "clean_effects": 0,
+        "comment": 0,
+        "default": 0,
+        "dependent": 0,
+        "descriptions": 0,
+        "dub": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "karaoke": 0,
+        "lyrics": 0,
+        "metadata": 0,
+        "non_diegetic": 0,
+        "original": 0,
+        "still_image": 0,
+        "timed_thumbnails": 0,
+        "visual_impaired": 0
+      },
+      "duration": "0.835918",
+      "duration_ts": 36864,
+      "index": 0,
+      "initial_padding": 0,
+      "r_frame_rate": "0/0",
+      "sample_fmt": "s32",
+      "sample_rate": "44100",
+      "time_base": "1/44100"
+    }
+  ]
+}

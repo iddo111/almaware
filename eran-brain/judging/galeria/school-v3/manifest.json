@@ -1,0 +1,198 @@
+{
+ "model": "school-v3 -- the teacher under the Hebrew judge",
+ "status_line_he": "שער 3: 12/24 הברות שהשופט העברי קיבל בכלל (סף 0.50 על ההסתברות הקנונית). 7,200 עיצובים, 300 לכל הברה, 1,305 מעברים. עוברות: אַ עַ בַּ זַ יַ כַּ לַ מַ נַ פַּ קַ רַ. נדחות — כל החוככים וכל הסותמים שאינם שפתיים: בַ גַ דַ הַ וַ חַ טַ כַ סַ פַ צַ שַׁ. הסרגל הישן אישר את כל 24; השופט העברי לא. השופט: facebook/wav2vec2-xlsr-53-espeak-cv-ft. שום דבר לא חווט לערן החי.",
+ "items": [
+  {
+   "file": "CLAUDE-a-judge-v00.wav",
+   "spectrogram": "CLAUDE-a-judge-v00.png",
+   "kind": "audio",
+   "label_he": "המורה תחת השופט העברי — אַ (a)",
+   "note_he": "✅ השופט העברי שמע אַ. ביטחון 0.951 · 300/300 ניסיונות עברו · השופט שמע: a 0.94 · wa 0.02 · na 0.01 · הסרגל הישן: נכשל",
+   "source": "throat-one-sample/school-v3/lessons/CLAUDE-a-judge-v00.wav"
+  },
+  {
+   "file": "CLAUDE-aya-judge-v00.wav",
+   "spectrogram": "CLAUDE-aya-judge-v00.png",
+   "kind": "audio",
+   "label_he": "המורה תחת השופט העברי — עַ (aya)",
+   "note_he": "✅ השופט העברי שמע עַ. ביטחון 0.936 · 299/300 ניסיונות עברו · השופט שמע: a 0.88 · aya 0.06 · ha 0.01 · הסרגל הישן: עובר",
+   "source": "throat-one-sample/school-v3/lessons/CLAUDE-aya-judge-v00.wav"
+  },
+  {
+   "file": "CLAUDE-ba-judge-v00.wav",
+   "spectrogram": "CLAUDE-ba-judge-v00.png",
+   "kind": "audio",
+   "label_he": "המורה תחת השופט העברי — בַּ (ba)",
+   "note_he": "✅ השופט העברי שמע בַּ. ביטחון 0.812 · 58/300 ניסיונות עברו · השופט שמע: ba 0.81 · la 0.12 · pa 0.04 · הסרגל הישן: נכשל",
+   "source": "throat-one-sample/school-v3/lessons/CLAUDE-ba-judge-v00.wav"
+  },
+  {
+   "file": "CLAUDE-va-v2last.wav",
+   "spectrogram": "CLAUDE-va-v2last.png",
+   "kind": "audio",
+   "label_he": "נדחה — בַ (va)",
+   "note_he": "❌ השופט העברי דחה את כל 300 הניסיונות (הטוב ביותר 0.045, סף 0.50). מה שהוא שמע במקום: a 0.21 · sha 0.19 · sa 0.13 · [s. a5]. הקובץ כאן הוא השיעור של school-v2 (עבר את הסרגל הישן) — כדי שתשמע בעצמך מה הסרגל אישר והשופט לא.",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-va-v2last.wav (school-v3 לא מצא מעבר)"
+  },
+  {
+   "file": "CLAUDE-ga-v2last.wav",
+   "spectrogram": "CLAUDE-ga-v2last.png",
+   "kind": "audio",
+   "label_he": "נדחה — גַ (ga)",
+   "note_he": "❌ השופט העברי דחה את כל 300 הניסיונות (הטוב ביותר 0.015, סף 0.50). מה שהוא שמע במקום: da 0.40 · ta 0.32 · a 0.12 · [d aː]. הקובץ כאן הוא השיעור של school-v2 (עבר את הסרגל הישן) — כדי שתשמע בעצמך מה הסרגל אישר והשופט לא.",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-ga-v2last.wav (school-v3 לא מצא מעבר)"
+  },
+  {
+   "file": "CLAUDE-da-v2last.wav",
+   "spectrogram": "CLAUDE-da-v2last.png",
+   "kind": "audio",
+   "label_he": "נדחה — דַ (da)",
+   "note_he": "❌ השופט העברי דחה את כל 300 הניסיונות (הטוב ביותר 0.014, סף 0.50). מה שהוא שמע במקום: pa 0.42 · ba 0.38 · a 0.07 · [p aː]. הקובץ כאן הוא השיעור של school-v2 (עבר את הסרגל הישן) — כדי שתשמע בעצמך מה הסרגל אישר והשופט לא.",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-da-v2last.wav (school-v3 לא מצא מעבר)"
+  },
+  {
+   "file": "CLAUDE-ha-v2last.wav",
+   "spectrogram": "CLAUDE-ha-v2last.png",
+   "kind": "audio",
+   "label_he": "נדחה — הַ (ha)",
+   "note_he": "❌ השופט העברי דחה את כל 300 הניסיונות (הטוב ביותר 0.213, סף 0.50). מה שהוא שמע במקום: a 0.64 · ha 0.21 · aya 0.03 · [—]. הקובץ כאן הוא השיעור של school-v2 (עבר את הסרגל הישן) — כדי שתשמע בעצמך מה הסרגל אישר והשופט לא.",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-ha-v2last.wav (school-v3 לא מצא מעבר)"
+  },
+  {
+   "file": "CLAUDE-wa-v2last.wav",
+   "spectrogram": "CLAUDE-wa-v2last.png",
+   "kind": "audio",
+   "label_he": "נדחה — וַ (wa)",
+   "note_he": "❌ השופט העברי דחה את כל 300 הניסיונות (הטוב ביותר 0.302, סף 0.50). מה שהוא שמע במקום: wa 0.29 · a 0.17 · ra 0.12 · [w aː]. הקובץ כאן הוא השיעור של school-v2 (עבר את הסרגל הישן) — כדי שתשמע בעצמך מה הסרגל אישר והשופט לא.",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-wa-v2last.wav (school-v3 לא מצא מעבר)"
+  },
+  {
+   "file": "CLAUDE-za-judge-v00.wav",
+   "spectrogram": "CLAUDE-za-judge-v00.png",
+   "kind": "audio",
+   "label_he": "המורה תחת השופט העברי — זַ (za)",
+   "note_he": "✅ השופט העברי שמע זַ. ביטחון 0.770 · 12/300 ניסיונות עברו · השופט שמע: za 0.77 · sa 0.12 · a 0.03 · הסרגל הישן: נכשל",
+   "source": "throat-one-sample/school-v3/lessons/CLAUDE-za-judge-v00.wav"
+  },
+  {
+   "file": "CLAUDE-cha-v2last.wav",
+   "spectrogram": "CLAUDE-cha-v2last.png",
+   "kind": "audio",
+   "label_he": "נדחה — חַ (cha)",
+   "note_he": "❌ השופט העברי דחה את כל 300 הניסיונות (הטוב ביותר 0.184, סף 0.50). מה שהוא שמע במקום: a 0.62 · cha 0.09 · kha 0.09 · [ɑ5]. הקובץ כאן הוא השיעור של school-v2 (עבר את הסרגל הישן) — כדי שתשמע בעצמך מה הסרגל אישר והשופט לא.",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-cha-v2last.wav (school-v3 לא מצא מעבר)"
+  },
+  {
+   "file": "CLAUDE-ta-v2last.wav",
+   "spectrogram": "CLAUDE-ta-v2last.png",
+   "kind": "audio",
+   "label_he": "נדחה — טַ (ta)",
+   "note_he": "❌ השופט העברי דחה את כל 300 הניסיונות (הטוב ביותר 0.105, סף 0.50). מה שהוא שמע במקום: a 0.32 · pa 0.16 · ka 0.13 · [aː]. הקובץ כאן הוא השיעור של school-v2 (עבר את הסרגל הישן) — כדי שתשמע בעצמך מה הסרגל אישר והשופט לא.",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-ta-v2last.wav (school-v3 לא מצא מעבר)"
+  },
+  {
+   "file": "CLAUDE-ya-judge-v00.wav",
+   "spectrogram": "CLAUDE-ya-judge-v00.png",
+   "kind": "audio",
+   "label_he": "המורה תחת השופט העברי — יַ (ya)",
+   "note_he": "✅ השופט העברי שמע יַ. ביטחון 0.737 · 108/300 ניסיונות עברו · השופט שמע: ya 0.74 · a 0.21 · la 0.01 · הסרגל הישן: עובר",
+   "source": "throat-one-sample/school-v3/lessons/CLAUDE-ya-judge-v00.wav"
+  },
+  {
+   "file": "CLAUDE-ka-judge-v00.wav",
+   "spectrogram": "CLAUDE-ka-judge-v00.png",
+   "kind": "audio",
+   "label_he": "המורה תחת השופט העברי — כַּ (ka)",
+   "note_he": "✅ השופט העברי שמע כַּ. ביטחון 0.936 · 67/300 ניסיונות עברו · השופט שמע: ka 0.47 · qa 0.47 · a 0.01 · הסרגל הישן: נכשל",
+   "source": "throat-one-sample/school-v3/lessons/CLAUDE-ka-judge-v00.wav"
+  },
+  {
+   "file": "CLAUDE-kha-v2last.wav",
+   "spectrogram": "CLAUDE-kha-v2last.png",
+   "kind": "audio",
+   "label_he": "נדחה — כַ (kha)",
+   "note_he": "❌ השופט העברי דחה את כל 300 הניסיונות (הטוב ביותר 0.365, סף 0.50). מה שהוא שמע במקום: a 0.49 · cha 0.18 · kha 0.18 · [ɑ5]. הקובץ כאן הוא השיעור של school-v2 (עבר את הסרגל הישן) — כדי שתשמע בעצמך מה הסרגל אישר והשופט לא.",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-kha-v2last.wav (school-v3 לא מצא מעבר)"
+  },
+  {
+   "file": "CLAUDE-la-judge-v00.wav",
+   "spectrogram": "CLAUDE-la-judge-v00.png",
+   "kind": "audio",
+   "label_he": "המורה תחת השופט העברי — לַ (la)",
+   "note_he": "✅ השופט העברי שמע לַ. ביטחון 0.966 · 161/300 ניסיונות עברו · השופט שמע: la 0.97 · a 0.02 · na 0.00 · הסרגל הישן: נכשל",
+   "source": "throat-one-sample/school-v3/lessons/CLAUDE-la-judge-v00.wav"
+  },
+  {
+   "file": "CLAUDE-ma-judge-v00.wav",
+   "spectrogram": "CLAUDE-ma-judge-v00.png",
+   "kind": "audio",
+   "label_he": "המורה תחת השופט העברי — מַ (ma)",
+   "note_he": "✅ השופט העברי שמע מַ. ביטחון 0.952 · 80/300 ניסיונות עברו · השופט שמע: ma 0.95 · a 0.02 · na 0.01 · הסרגל הישן: עובר",
+   "source": "throat-one-sample/school-v3/lessons/CLAUDE-ma-judge-v00.wav"
+  },
+  {
+   "file": "CLAUDE-na-judge-v00.wav",
+   "spectrogram": "CLAUDE-na-judge-v00.png",
+   "kind": "audio",
+   "label_he": "המורה תחת השופט העברי — נַ (na)",
+   "note_he": "✅ השופט העברי שמע נַ. ביטחון 0.971 · 93/300 ניסיונות עברו · השופט שמע: na 0.97 · a 0.01 · ma 0.01 · הסרגל הישן: עובר",
+   "source": "throat-one-sample/school-v3/lessons/CLAUDE-na-judge-v00.wav"
+  },
+  {
+   "file": "CLAUDE-sa-v2last.wav",
+   "spectrogram": "CLAUDE-sa-v2last.png",
+   "kind": "audio",
+   "label_he": "נדחה — סַ (sa)",
+   "note_he": "❌ השופט העברי דחה את כל 300 הניסיונות (הטוב ביותר 0.151, סף 0.50). מה שהוא שמע במקום: a 0.36 · ta 0.28 · sa 0.15 · [ɑ5]. הקובץ כאן הוא השיעור של school-v2 (עבר את הסרגל הישן) — כדי שתשמע בעצמך מה הסרגל אישר והשופט לא.",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-sa-v2last.wav (school-v3 לא מצא מעבר)"
+  },
+  {
+   "file": "CLAUDE-pa-judge-v00.wav",
+   "spectrogram": "CLAUDE-pa-judge-v00.png",
+   "kind": "audio",
+   "label_he": "המורה תחת השופט העברי — פַּ (pa)",
+   "note_he": "✅ השופט העברי שמע פַּ. ביטחון 0.901 · 113/300 ניסיונות עברו · השופט שמע: pa 0.90 · ba 0.04 · a 0.02 · הסרגל הישן: נכשל",
+   "source": "throat-one-sample/school-v3/lessons/CLAUDE-pa-judge-v00.wav"
+  },
+  {
+   "file": "CLAUDE-fa-v2last.wav",
+   "spectrogram": "CLAUDE-fa-v2last.png",
+   "kind": "audio",
+   "label_he": "נדחה — פַ (fa)",
+   "note_he": "❌ השופט העברי דחה את כל 300 הניסיונות (הטוב ביותר 0.014, סף 0.50). מה שהוא שמע במקום: la 0.21 · pa 0.20 · ya 0.18 · [p l aː]. הקובץ כאן הוא השיעור של school-v2 (עבר את הסרגל הישן) — כדי שתשמע בעצמך מה הסרגל אישר והשופט לא.",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-fa-v2last.wav (school-v3 לא מצא מעבר)"
+  },
+  {
+   "file": "CLAUDE-tza-v2last.wav",
+   "spectrogram": "CLAUDE-tza-v2last.png",
+   "kind": "audio",
+   "label_he": "נדחה — צַ (tza)",
+   "note_he": "❌ השופט העברי דחה את כל 300 הניסיונות (הטוב ביותר 0.304, סף 0.50). מה שהוא שמע במקום: tza 0.30 · sa 0.22 · a 0.19 · [ts]. הקובץ כאן הוא השיעור של school-v2 (עבר את הסרגל הישן) — כדי שתשמע בעצמך מה הסרגל אישר והשופט לא.",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-tza-v2last.wav (school-v3 לא מצא מעבר)"
+  },
+  {
+   "file": "CLAUDE-qa-judge-v00.wav",
+   "spectrogram": "CLAUDE-qa-judge-v00.png",
+   "kind": "audio",
+   "label_he": "המורה תחת השופט העברי — קַ (qa)",
+   "note_he": "✅ השופט העברי שמע קַ. ביטחון 0.704 · 12/300 ניסיונות עברו · השופט שמע: ka 0.35 · qa 0.35 · a 0.12 · הסרגל הישן: נכשל",
+   "source": "throat-one-sample/school-v3/lessons/CLAUDE-qa-judge-v00.wav"
+  },
+  {
+   "file": "CLAUDE-ra-judge-v00.wav",
+   "spectrogram": "CLAUDE-ra-judge-v00.png",
+   "kind": "audio",
+   "label_he": "המורה תחת השופט העברי — רַ (ra)",
+   "note_he": "✅ השופט העברי שמע רַ. ביטחון 0.531 · 2/300 ניסיונות עברו · השופט שמע: ra 0.53 · la 0.28 · a 0.13 · הסרגל הישן: נכשל",
+   "source": "throat-one-sample/school-v3/lessons/CLAUDE-ra-judge-v00.wav"
+  },
+  {
+   "file": "CLAUDE-sha-v2last.wav",
+   "spectrogram": "CLAUDE-sha-v2last.png",
+   "kind": "audio",
+   "label_he": "נדחה — שַׁ (sha)",
+   "note_he": "❌ השופט העברי דחה את כל 300 הניסיונות (הטוב ביותר 0.065, סף 0.50). מה שהוא שמע במקום: a 0.37 · sa 0.23 · sha 0.07 · [—]. הקובץ כאן הוא השיעור של school-v2 (עבר את הסרגל הישן) — כדי שתשמע בעצמך מה הסרגל אישר והשופט לא.",
+   "source": "throat-one-sample/school-v2/lessons/CLAUDE-sha-v2last.wav (school-v3 לא מצא מעבר)"
+  }
+ ]
+}

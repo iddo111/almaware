@@ -1,0 +1,15 @@
+# AlmIdo dsh wiring — this exact block is the content of
+# /home/eran3/.dsh/profiles/web/cordis.patch.yml on eran3 (layer 2, live-reload).
+# Plugin names are absolute file paths (dsh requires absolute for local files).
+- insert:
+    - id: almido-organs
+      name: '/home/eran3/dsh-almido/almido-organs/index.mjs'
+      config:
+        shamashBase: 'http://<lan-ip>:8850'
+        shamashFallback: 'http://<fabric-ip>:8850'
+    - id: almido-gate
+      name: '/home/eran3/dsh-almido/almido-gate/index.mjs'
+      config:
+        policyPath: '/home/eran3/dsh-almido/policy.json'
+        auditPath: '/home/eran3/dsh-almido/audit.log'
+        stopPath: '/home/eran3/dsh-almido/STOP'

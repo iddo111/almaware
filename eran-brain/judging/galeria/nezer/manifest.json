@@ -1,0 +1,14 @@
+{
+  "model": "NEZER (נצר) — the holobrain shoot, eran3",
+  "status_line_he": "131 סבבים מאז 2026-09-01 05:15; ציון held-out אחרון 0.6441 (סבב 74), נולד מ-0.4861, רצפה 0.4982, תקרה 0.6771 — הסבב הכי חדש (75) נסוג ל-0.6163.",
+  "note_en": "MEASURED 2026-09-03 from eran3:~/nezer/journal.jsonl (131 'round' entries, 2026-09-01T05:18 through 2026-09-03T18:16). The task-brief numbers (held-out 0.6441, born 0.4861, floor 0.4982, ceiling 0.6771) match round n=74 exactly (2026-09-03T17:46:12). The very latest round on disk, n=75 (2026-09-03T18:16:21), regressed slightly to metric=0.6163 after a 4-file feed (murphy verdict both rounds: 'FOOLING ITSELF'). Best single round ever logged was an early one, n=3 (2026-09-01T18:39:04, metric=0.8239) -- baseline/born was still recalibrating in the first few rounds, so that peak is not comparable to the stabilized 0.48-0.68 band seen from round ~10 onward. Full round-by-round curve plotted from all 131 entries.",
+  "items": [
+    {
+      "file": "NEZER-score-curve.png",
+      "kind": "image",
+      "label_he": "עקומת ציון held-out לפי סבב",
+      "note_he": "131 נקודות, קווי רצפה/תקרה/לידה מסומנים, הציון הטוב ביותר מודגש",
+      "source": "eran3:~/nezer/journal.jsonl, kind=round entries, plotted locally with matplotlib"
+    }
+  ]
+}

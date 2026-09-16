@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ערנים · דשבורד חי · 4× DGX Spark</title>
+<style>
+  :root{--blue:#0038b8;--ink:#0b1320;--line:#dbe3f4;--bg:#f5f8ff;
+        --green:#1aa251;--amber:#e8a317;--red:#d6293e;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI","Heebo",Arial,sans-serif;background:var(--bg);color:var(--ink);padding:24px}
+  header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+  h1{font-size:28px;color:var(--blue)}
+  h1 small{font-size:15px;color:var(--ink);opacity:.6;font-weight:400}
+  .stamp{font-size:14px;opacity:.7}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);margin-inline-start:6px;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 2px 12px rgba(0,56,184,.06)}
+  .card.off{opacity:.55;border-style:dashed}
+  .ctop{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px}
+  .name{font-size:22px;font-weight:900;color:var(--blue)}
+  .host{font-size:12px;opacity:.55}
+  .badge{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
+  .b-train{background:#e7f6ee;color:var(--green)}
+  .b-idle{background:#eef1f7;color:#69748a}
+  .b-off{background:#fdecee;color:var(--red)}
+  .temp{display:flex;align-items:baseline;gap:8px;margin:6px 0 14px}
+  .temp .v{font-size:52px;font-weight:900;line-height:1}
+  .temp .u{font-size:20px;opacity:.6}
+  .temp .lbl{font-size:13px;opacity:.6;margin-inline-start:auto}
+  .rows{display:grid;grid-template-columns:1fr;gap:10px}
+  .row .rl{display:flex;justify-content:space-between;font-size:13px;margin-bottom:3px}
+  .row .rl b{font-weight:700}
+  .bar{height:9px;border-radius:6px;background:#eef1f7;overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:6px}
+  .meta{display:flex;justify-content:space-between;font-size:12px;opacity:.65;margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
+  footer{margin-top:22px;font-size:12px;opacity:.55;text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <h1>ערנים — דשבורד חי <small>4× NVIDIA DGX Spark (GB10)</small></h1>
+  <div class="stamp">מתעדכן בזמן אמת<span class="dot"></span> · <span id="ago">—</span></div>
+</header>
+<div class="grid" id="grid"></div>
+<footer>נמשך מ-nvidia-smi + thermal zones דרך SSH · רענון כל 5ש׳ · iddoperez.ai</footer>
+
+<script>
+const tcolor = t => t>=80 ? 'var(--red)' : t>=70 ? 'var(--amber)' : 'var(--green)';
+function fmtUp(s){const d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);
+  return (d?d+'d ':'')+h+'h '+m+'m';}
+function card(n){
+  if(!n.online) return `<div class="card off"><div class="ctop"><span class="name">${n.name}</span>
+    <span class="badge b-off">OFFLINE</span></div><div style="opacity:.6;font-size:14px">לא נגיש</div></div>`;
+  const tc=tcolor(n.gtemp), sc=tcolor(n.soc);
+  return `<div class="card">
+    <div class="ctop"><div><span class="name">${n.name}</span> <span class="host">${n.host}</span></div>
+      <span class="badge ${n.train? 'b-train':'b-idle'}">${n.train?'● TRAINING':'idle'}</span></div>
+    <div class="temp"><span class="v" style="color:${tc}">${n.gtemp}</span><span class="u">°C</span>
+      <span class="lbl">GPU</span></div>
+    <div class="rows">
+      <div class="row"><div class="rl"><span>ניצול GPU</span><b>${n.gutil}%</b></div>
+        <div class="bar"><i style="width:${n.gutil}%;background:var(--blue)"></i></div></div>
+      <div class="row"><div class="rl"><span>חום SoC</span><b style="color:${sc}">${n.soc}°C</b></div>
+        <div class="bar"><i style="width:${Math.min(n.soc,100)}%;background:${sc}"></i></div></div>
+    </div>
+    <div class="meta"><span>⚡ ${Math.round(n.gpow)}W</span><span>load ${n.load}</span><span>⏱ ${fmtUp(n.up)}</span></div>
+  </div>`;
+}
+async function tick(){
+  try{
+    const r=await fetch('status.json?_='+Date.now());
+    const d=await r.json();
+    document.getElementById('grid').innerHTML=d.nodes.map(card).join('');
+    const ago=Math.max(0,Math.round(Date.now()/1000-d.ts));
+    document.getElementById('ago').textContent='לפני '+ago+'ש׳';
+  }catch(e){document.getElementById('ago').textContent='ממתין לנתונים…';}
+}
+tick(); setInterval(tick,5000);
+</script>
+</body>
+</html>

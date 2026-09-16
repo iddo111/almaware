@@ -1,0 +1,465 @@
+{
+ "v1": [
+  {
+   "n_tokens": 561,
+   "distinct_tokens": 94,
+   "vocab": 108,
+   "token_entropy_bits": 6.0268,
+   "n_steps": 552,
+   "n_notes": 497,
+   "n_drums": 779,
+   "poly_max": 1,
+   "poly_mean_sounding": 1.0,
+   "poly_frac_steps_2plus": 0.0,
+   "pc_entropy_bits": 3.2088,
+   "bass_interval": 3.276,
+   "lead_interval": 0.0,
+   "vertical_interval_pct": {},
+   "seed": 17,
+   "entropy_by_window": [
+    5.137,
+    5.77,
+    5.417
+   ]
+  },
+  {
+   "n_tokens": 561,
+   "distinct_tokens": 98,
+   "vocab": 108,
+   "token_entropy_bits": 5.9023,
+   "n_steps": 526,
+   "n_notes": 486,
+   "n_drums": 448,
+   "poly_max": 1,
+   "poly_mean_sounding": 1.0,
+   "poly_frac_steps_2plus": 0.0,
+   "pc_entropy_bits": 3.3692,
+   "bass_interval": 3.231,
+   "lead_interval": 0.0,
+   "vertical_interval_pct": {},
+   "seed": 118,
+   "entropy_by_window": [
+    4.412,
+    5.543,
+    5.668
+   ]
+  },
+  {
+   "n_tokens": 561,
+   "distinct_tokens": 105,
+   "vocab": 108,
+   "token_entropy_bits": 6.355,
+   "n_steps": 526,
+   "n_notes": 443,
+   "n_drums": 774,
+   "poly_max": 1,
+   "poly_mean_sounding": 1.0,
+   "poly_frac_steps_2plus": 0.0,
+   "pc_entropy_bits": 3.5281,
+   "bass_interval": 4.0,
+   "lead_interval": 0.0,
+   "vertical_interval_pct": {},
+   "seed": 219,
+   "entropy_by_window": [
+    5.722,
+    5.868,
+    5.894
+   ]
+  }
+ ],
+ "v2": [
+  {
+   "n_tokens": 1801,
+   "distinct_tokens": 81,
+   "vocab": 138,
+   "token_entropy_bits": 4.7204,
+   "n_steps": 526,
+   "n_notes": 859,
+   "n_drums": 190,
+   "poly_max": 7,
+   "poly_mean_sounding": 2.613,
+   "poly_frac_steps_2plus": 0.7764,
+   "pc_entropy_bits": 3.4056,
+   "bass_interval": 3.682,
+   "lead_interval": 7.429,
+   "vertical_interval_pct": {
+    "0": 5.14,
+    "1": 9.07,
+    "2": 15.62,
+    "3": 10.94,
+    "4": 10.38,
+    "5": 11.13,
+    "6": 7.02,
+    "7": 9.45,
+    "8": 5.71,
+    "9": 7.11,
+    "10": 4.68,
+    "11": 3.74
+   },
+   "seed": 17,
+   "entropy_by_window": [
+    3.723,
+    3.674,
+    3.772,
+    3.636,
+    3.509,
+    3.764,
+    3.565,
+    3.877
+   ]
+  },
+  {
+   "n_tokens": 1801,
+   "distinct_tokens": 79,
+   "vocab": 138,
+   "token_entropy_bits": 4.914,
+   "n_steps": 428,
+   "n_notes": 867,
+   "n_drums": 272,
+   "poly_max": 8,
+   "poly_mean_sounding": 2.986,
+   "poly_frac_steps_2plus": 0.8352,
+   "pc_entropy_bits": 3.4582,
+   "bass_interval": 3.986,
+   "lead_interval": 7.276,
+   "vertical_interval_pct": {
+    "0": 4.25,
+    "1": 11.49,
+    "2": 14.32,
+    "3": 11.96,
+    "4": 11.72,
+    "5": 9.05,
+    "6": 9.52,
+    "7": 6.45,
+    "8": 6.45,
+    "9": 5.04,
+    "10": 5.11,
+    "11": 4.64
+   },
+   "seed": 118,
+   "entropy_by_window": [
+    3.675,
+    3.608,
+    3.78,
+    3.727,
+    3.876,
+    3.879,
+    3.844,
+    3.886
+   ]
+  },
+  {
+   "n_tokens": 1801,
+   "distinct_tokens": 74,
+   "vocab": 138,
+   "token_entropy_bits": 4.8704,
+   "n_steps": 435,
+   "n_notes": 916,
+   "n_drums": 224,
+   "poly_max": 7,
+   "poly_mean_sounding": 2.908,
+   "poly_frac_steps_2plus": 0.8796,
+   "pc_entropy_bits": 3.4017,
+   "bass_interval": 2.726,
+   "lead_interval": 6.984,
+   "vertical_interval_pct": {
+    "0": 4.53,
+    "1": 10.44,
+    "2": 12.86,
+    "3": 10.84,
+    "4": 12.38,
+    "5": 10.6,
+    "6": 6.47,
+    "7": 8.17,
+    "8": 6.23,
+    "9": 6.96,
+    "10": 5.66,
+    "11": 4.85
+   },
+   "seed": 219,
+   "entropy_by_window": [
+    3.671,
+    3.578,
+    3.679,
+    3.8,
+    3.788,
+    3.805,
+    3.692,
+    3.829
+   ]
+  }
+ ],
+ "mean": {
+  "v1": {
+   "n_tokens": 561.0,
+   "distinct_tokens": 99.0,
+   "token_entropy_bits": 6.0947,
+   "n_steps": 534.6667,
+   "n_notes": 475.3333,
+   "n_drums": 667.0,
+   "poly_max": 1.0,
+   "poly_mean_sounding": 1.0,
+   "poly_frac_steps_2plus": 0.0,
+   "pc_entropy_bits": 3.3687,
+   "bass_interval": 3.5023,
+   "lead_interval": 0.0,
+   "vertical_interval_pct": {}
+  },
+  "v2": {
+   "n_tokens": 1801.0,
+   "distinct_tokens": 78.0,
+   "token_entropy_bits": 4.8349,
+   "n_steps": 463.0,
+   "n_notes": 880.6667,
+   "n_drums": 228.6667,
+   "poly_max": 7.3333,
+   "poly_mean_sounding": 2.8357,
+   "poly_frac_steps_2plus": 0.8304,
+   "pc_entropy_bits": 3.4218,
+   "bass_interval": 3.4647,
+   "lead_interval": 7.2297,
+   "vertical_interval_pct": {
+    "0": 4.64,
+    "1": 10.33,
+    "2": 14.27,
+    "3": 11.25,
+    "4": 11.49,
+    "5": 10.26,
+    "6": 7.67,
+    "7": 8.02,
+    "8": 6.13,
+    "9": 6.37,
+    "10": 5.15,
+    "11": 4.41
+   }
+  },
+  "v1_ref": {
+   "n_tokens": 520.6667,
+   "distinct_tokens": 73.6667,
+   "token_entropy_bits": 5.1982,
+   "n_steps": 488.3333,
+   "n_notes": 425.6667,
+   "n_drums": 360.6667,
+   "poly_max": 1.0,
+   "poly_mean_sounding": 1.0,
+   "poly_frac_steps_2plus": 0.0,
+   "pc_entropy_bits": 3.0989,
+   "bass_interval": 3.1633,
+   "lead_interval": 0.0,
+   "vertical_interval_pct": {}
+  }
+ },
+ "v1_ref": [
+  {
+   "n_tokens": 561,
+   "distinct_tokens": 82,
+   "vocab": 108,
+   "token_entropy_bits": 5.5631,
+   "n_steps": 526,
+   "n_notes": 436,
+   "n_drums": 474,
+   "poly_max": 1,
+   "poly_mean_sounding": 1.0,
+   "poly_frac_steps_2plus": 0.0,
+   "pc_entropy_bits": 3.1505,
+   "bass_interval": 4.048,
+   "lead_interval": 0.0,
+   "vertical_interval_pct": {},
+   "seed": 17,
+   "entropy_by_window": [
+    4.286,
+    4.705,
+    4.336
+   ],
+   "train_step": 7400,
+   "best_held": 2.440658926963806
+  },
+  {
+   "n_tokens": 440,
+   "distinct_tokens": 56,
+   "vocab": 108,
+   "token_entropy_bits": 4.2562,
+   "n_steps": 413,
+   "n_notes": 370,
+   "n_drums": 156,
+   "poly_max": 1,
+   "poly_mean_sounding": 1.0,
+   "poly_frac_steps_2plus": 0.0,
+   "pc_entropy_bits": 2.7171,
+   "bass_interval": 2.119,
+   "lead_interval": 0.0,
+   "vertical_interval_pct": {},
+   "seed": 118,
+   "entropy_by_window": [
+    2.685,
+    4.424
+   ],
+   "train_step": 7400,
+   "best_held": 2.440658926963806
+  },
+  {
+   "n_tokens": 561,
+   "distinct_tokens": 83,
+   "vocab": 108,
+   "token_entropy_bits": 5.7754,
+   "n_steps": 526,
+   "n_notes": 471,
+   "n_drums": 452,
+   "poly_max": 1,
+   "poly_mean_sounding": 1.0,
+   "poly_frac_steps_2plus": 0.0,
+   "pc_entropy_bits": 3.4291,
+   "bass_interval": 3.323,
+   "lead_interval": 0.0,
+   "vertical_interval_pct": {},
+   "seed": 219,
+   "entropy_by_window": [
+    4.736,
+    5.209,
+    5.511
+   ],
+   "train_step": 7400,
+   "best_held": 2.440658926963806
+  }
+ ],
+ "v1_train": {
+  "best_heldout_ce": 2.7048251628875732,
+  "unigram_nats": 4.294368937356955,
+  "tokens_per_second": 10.087627923724803,
+  "vocab": 108,
+  "n_params": 1358336,
+  "history": [
+   {
+    "step": 250,
+    "train_ce": 3.5015016198158264,
+    "heldout_ce": 3.4006872177124023,
+    "heldout_ppl": 29.984698984852432,
+    "bits_per_second": 49.49146198580383,
+    "nats_below_unigram": 0.8936817196445528
+   },
+   {
+    "step": 500,
+    "train_ce": 2.682937651872635,
+    "heldout_ce": 2.9469525516033173,
+    "heldout_ppl": 19.047817948062445,
+    "bits_per_second": 42.888093154228365,
+    "nats_below_unigram": 1.3474163857536379
+   },
+   {
+    "step": 750,
+    "train_ce": 2.8097994327545166,
+    "heldout_ce": 2.8234913051128387,
+    "heldout_ppl": 16.835526144055766,
+    "bits_per_second": 41.09131585710494,
+    "nats_below_unigram": 1.4708776322441164
+   },
+   {
+    "step": 1000,
+    "train_ce": 2.409324064850807,
+    "heldout_ce": 2.7806500792503357,
+    "heldout_ppl": 16.129502995793317,
+    "bits_per_second": 40.46783161246289,
+    "nats_below_unigram": 1.5137188581066194
+   },
+   {
+    "step": 1250,
+    "train_ce": 2.606176197528839,
+    "heldout_ce": 2.718643546104431,
+    "heldout_ppl": 15.15974479704358,
+    "bits_per_second": 39.565427544814945,
+    "nats_below_unigram": 1.575725391252524
+   },
+   {
+    "step": 1500,
+    "train_ce": 2.5694671124219894,
+    "heldout_ce": 2.7048251628875732,
+    "heldout_ppl": 14.951702349526139,
+    "bits_per_second": 39.36432349028139,
+    "nats_below_unigram": 1.5895437744693819
+   }
+  ]
+ },
+ "v2_train": {
+  "best_heldout_ce": 2.0588286072015762,
+  "unigram_nats": 3.293195794555287,
+  "tokens_per_second": 32.7034415379955,
+  "vocab": 138,
+  "n_params": 1366016,
+  "history": [
+   {
+    "step": 250,
+    "train_ce": 2.6602197885513306,
+    "heldout_ce": 2.57438725233078,
+    "heldout_ppl": 13.123273439144176,
+    "bits_per_second": 121.46240418196355,
+    "nats_below_unigram": 0.7188085422245072
+   },
+   {
+    "step": 500,
+    "train_ce": 2.2285763919353485,
+    "heldout_ce": 2.300838202238083,
+    "heldout_ppl": 9.982546341696052,
+    "bits_per_second": 108.55606102948347,
+    "nats_below_unigram": 0.9923575923172043
+   },
+   {
+    "step": 750,
+    "train_ce": 2.2547639310359955,
+    "heldout_ce": 2.19042432308197,
+    "heldout_ppl": 8.939005336372333,
+    "bits_per_second": 103.34661353660292,
+    "nats_below_unigram": 1.102771471473317
+   },
+   {
+    "step": 1000,
+    "train_ce": 2.07166750729084,
+    "heldout_ce": 2.127973794937134,
+    "heldout_ppl": 8.39783382768982,
+    "bits_per_second": 100.40012936486939,
+    "nats_below_unigram": 1.1652219996181534
+   },
+   {
+    "step": 1250,
+    "train_ce": 2.0272845178842545,
+    "heldout_ce": 2.0974900871515274,
+    "heldout_ppl": 8.145699238331954,
+    "bits_per_second": 98.96187471508118,
+    "nats_below_unigram": 1.1957057074037598
+   },
+   {
+    "step": 1500,
+    "train_ce": 2.0971165746450424,
+    "heldout_ce": 2.0588286072015762,
+    "heldout_ppl": 7.836784478651987,
+    "bits_per_second": 97.13778383687229,
+    "nats_below_unigram": 1.234367187353711
+   }
+  ]
+ },
+ "corpus": {
+  "files": 323,
+  "tokens": 17495329,
+  "hours": 149.1658055555556,
+  "tok_per_s": 33.21424148606811,
+  "poly_mean": 2.2385851393188854,
+  "poly_max_median": 5.0,
+  "poly_frac_2plus": 0.7025291021671827,
+  "pc_entropy_bits": 3.247948932108986,
+  "bass_interval": 3.255313739090225,
+  "lead_interval": 9.100605854016667,
+  "vertical_interval_pct": {
+   "0": 4.57,
+   "1": 8.48,
+   "2": 12.34,
+   "3": 11.22,
+   "4": 11.61,
+   "5": 12.27,
+   "6": 6.41,
+   "7": 11.1,
+   "8": 6.17,
+   "9": 7.29,
+   "10": 5.02,
+   "11": 3.52
+  }
+ }
+}

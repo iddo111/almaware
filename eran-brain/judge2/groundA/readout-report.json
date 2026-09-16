@@ -1,0 +1,72 @@
+{
+ "legacy192": {
+  "d": 192,
+  "auc": 0.9739,
+  "auc_shuffled": 0.4345
+ },
+ "level": {
+  "d": 10,
+  "auc": 0.8809,
+  "auc_shuffled": 0.4591
+ },
+ "coch_slice0": {
+  "d": 65,
+  "auc": 0.9522,
+  "auc_shuffled": 0.503
+ },
+ "coch_slice1": {
+  "d": 65,
+  "auc": 0.8847,
+  "auc_shuffled": 0.5489
+ },
+ "coch_slice2-7": {
+  "d": 390,
+  "auc": 0.9163,
+  "auc_shuffled": 0.4181
+ },
+ "pitch": {
+  "d": 131,
+  "auc": 0.9415,
+  "auc_shuffled": 0.6061
+ },
+ "mod_energy": {
+  "d": 55,
+  "auc": 0.6374,
+  "auc_shuffled": 0.515
+ },
+ "onset_slice0": {
+  "d": 11,
+  "auc": 0.7807,
+  "auc_shuffled": 0.521
+ },
+ "onset_slice1": {
+  "d": 11,
+  "auc": 0.7501,
+  "auc_shuffled": 0.5251
+ },
+ "onset_slice2-7": {
+  "d": 66,
+  "auc": 0.7967,
+  "auc_shuffled": 0.5076
+ },
+ "ALL 996": {
+  "d": 996,
+  "auc": 0.9958,
+  "auc_shuffled": 0.5058
+ },
+ "192:996 no legacy": {
+  "d": 804,
+  "auc": 0.9908,
+  "auc_shuffled": 0.4911
+ },
+ "0:192 legacy only": {
+  "d": 192,
+  "auc": 0.9739,
+  "auc_shuffled": 0.4345
+ },
+ "first-slice only": {
+  "d": 75,
+  "auc": 0.968,
+  "auc_shuffled": 0.4944
+ }
+}

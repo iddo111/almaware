@@ -1,0 +1,32 @@
+{
+  "provenance": {
+    "mnist": "sklearn.datasets.fetch_openml('mnist_784', version=1) -- standard MNIST, 70000 x 784. No local cache was found on this PC (checked ~/.keras, ~/scikit_learn_data, torchvision caches, and filesystem search); fetched fresh.",
+    "shapes": "Self-generated: 3 classes (square/circle/triangle), 1500 each, 20x20, ~12px shapes centered with +/-3px position jitter + 5% salt noise. 100% ours, no download."
+  },
+  "mnist": {
+    "markI_test_acc": 0.8646,
+    "vanilla_test_acc": 0.8699,
+    "markI_train_secs": 46.4,
+    "vanilla_train_secs": 43.5,
+    "n_train": 60000,
+    "n_test": 10000,
+    "epochs": 20,
+    "a_frac_active_train": 0.42116988932291666
+  },
+  "shapes": {
+    "markI_test_acc": 0.9377777777777778,
+    "vanilla_test_acc": 0.9777777777777777,
+    "markI_train_secs": 2.0,
+    "vanilla_train_secs": 2.2,
+    "n_train": 3600,
+    "n_test": 900,
+    "epochs": 30,
+    "a_frac_active_train": 0.44368760850694444,
+    "classes": [
+      "square",
+      "circle",
+      "triangle"
+    ]
+  },
+  "shapes_note": "Position regime matters and is reported honestly: at FIXED position the Mark I gets 100% (3-way); with the +/-3px jitter used here it stays high; under FREE placement anywhere on the 20x20 retina accuracy collapses to ~chance (~41% 3-way) because a single linear readout cannot be position-invariant -- the classic Minsky-Papert limitation. Rosenblatt's real demos operated in the modest-jitter regime, which is what we reproduce."
+}

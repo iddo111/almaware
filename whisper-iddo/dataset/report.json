@@ -1,0 +1,86 @@
+{
+  "total_pairs": 13110,
+  "total_hours": 14.673,
+  "by_split": {
+    "train": {
+      "pairs": 10323,
+      "hours": 11.767
+    },
+    "eval": {
+      "pairs": 1682,
+      "hours": 1.467
+    },
+    "retain": {
+      "pairs": 306,
+      "hours": 0.855
+    },
+    "unusable_inherited_eval": {
+      "pairs": 799,
+      "hours": 0.584
+    }
+  },
+  "by_tier": {
+    "A": {
+      "pairs": 836,
+      "hours": 1.498
+    },
+    "B": {
+      "pairs": 10711,
+      "hours": 11.617
+    },
+    "C": {
+      "pairs": 1563,
+      "hours": 1.559
+    }
+  },
+  "by_source": {
+    "alma-mic/voice_corpus": {
+      "pairs": 8616,
+      "hours": 6.248
+    },
+    "kafe-clod": {
+      "pairs": 1563,
+      "hours": 1.559
+    },
+    "voice-input/iddo1": {
+      "pairs": 2931,
+      "hours": 6.867
+    }
+  },
+  "sessions": 180,
+  "eval_sessions": 35,
+  "retain_sessions": 3,
+  "rejected_total": 1741,
+  "rejected": {
+    "two decodes disagree badly (<0.60)": 592,
+    "stock phrase (hallucination over silence)": 420,
+    "pure filler vocalisation": 241,
+    "audio under 0.50s": 151,
+    "text far too short for audio (<1.2 chars/s) - misalignment": 108,
+    "duplicate audio (identical sha256)": 82,
+    "impossible speech rate (>28 chars/s) - misalignment": 38,
+    "degenerate: word repeated 4+ times": 26,
+    "audio over 30s (exceeds whisper window)": 15,
+    "foreign script (language mis-detect)": 10,
+    "kafe: text far too short for audio (<1.2 chars/s) - misalignment": 10,
+    "no letters in transcript": 9,
+    "degenerate: single character smear": 7,
+    "kafe: impossible speech rate (>28 chars/s) - misalignment": 7,
+    "kafe: audio over 30s (exceeds whisper window)": 7,
+    "kafe: pure filler vocalisation": 6,
+    "kafe: foreign script (language mis-detect)": 4,
+    "degenerate: phrase looped": 2,
+    "kafe: stock phrase (hallucination over silence)": 2,
+    "kafe: audio under 0.50s": 2,
+    "kafe: degenerate: word repeated 4+ times": 1,
+    "kafe: degenerate: character run 8+": 1
+  },
+  "train_tier_A_only": {
+    "pairs": 464,
+    "hours": 0.554
+  },
+  "train_tier_AB": {
+    "pairs": 8760,
+    "hours": 10.208
+  }
+}

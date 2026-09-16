@@ -1,0 +1,145 @@
+{
+  "activation_attempted": false,
+  "assets": [
+    {
+      "bytes": 10091993427,
+      "completed_at": "2026-07-22T13:16:38.321177+00:00",
+      "critical_hashes": 0,
+      "files": 26,
+      "hash_scope": "critical-files-and-cached-etags",
+      "id": "ace-step-1.5",
+      "node": "dgx4",
+      "revision": "19671f406d603126926c1b7e2adc169acbcade22",
+      "revision_metadata": {
+        "absent": 0,
+        "matched": 26
+      },
+      "started_at": "2026-07-22T13:16:38.320379+00:00",
+      "status": "VERIFIED_SHAPE_REVISION_CRITICAL_HASHES"
+    },
+    {
+      "bytes": 390619119,
+      "completed_at": "2026-07-22T13:16:38.642932+00:00",
+      "critical_hashes": 7,
+      "files": 13,
+      "hash_scope": "critical-files-and-cached-etags",
+      "id": "blue-onnx-v2",
+      "node": "dgx4",
+      "revision": "45dc85f1ac045ea62458a7492c5ae387610ac0af",
+      "revision_metadata": {
+        "absent": 0,
+        "matched": 13
+      },
+      "started_at": "2026-07-22T13:16:38.505527+00:00",
+      "status": "VERIFIED_SHAPE_REVISION_CRITICAL_HASHES"
+    },
+    {
+      "bytes": 20621453,
+      "completed_at": "2026-07-22T13:16:39.017995+00:00",
+      "critical_hashes": 1,
+      "files": 2,
+      "hash_scope": "critical-files-and-cached-etags",
+      "id": "renikud-hebrew-g2p",
+      "node": "dgx4",
+      "revision": "b80cab616c972b6a87de86044f50b597ee2c53fd",
+      "revision_metadata": {
+        "absent": 0,
+        "matched": 2
+      },
+      "started_at": "2026-07-22T13:16:39.003418+00:00",
+      "status": "VERIFIED_SHAPE_REVISION_CRITICAL_HASHES"
+    }
+  ],
+  "comfy_links": [],
+  "completed_at": "2026-07-22T13:16:39.228815+00:00",
+  "environments": [
+    {
+      "id": "dgx4-ace-step",
+      "packages": {
+        "accelerate": "1.12.0",
+        "ace-step": "1.5.0",
+        "diffusers": "0.37.1",
+        "huggingface-hub": "0.36.0",
+        "numpy": "2.3.5",
+        "safetensors": "0.7.0",
+        "soundfile": "0.13.1",
+        "torch": "2.10.0+cu130",
+        "torchaudio": "2.10.0+cu130",
+        "torchvision": "0.25.0+cu130",
+        "transformers": "4.57.6"
+      },
+      "policy": "preserve-and-verify",
+      "python": "3.12.3",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "dgx4-blue-onnx",
+      "packages": {
+        "blue-onnx": "0.2.4",
+        "huggingface-hub": "1.24.0",
+        "numpy": "2.5.1",
+        "onnxruntime": "1.27.0",
+        "soundfile": "0.14.0"
+      },
+      "policy": "preserve-and-verify",
+      "python": "3.12.3",
+      "status": "VERIFIED"
+    }
+  ],
+  "lock_id": "alma-studio-assets-20260722-v1",
+  "lock_sha256": "ebf93263cceef756e250e6ee65c817d68c43711069ec098bb6d6dfc0a03a2ef3",
+  "mode": "audit",
+  "node": "dgx4",
+  "remote_code_executed": false,
+  "runtime_bindings": [
+    {
+      "created": false,
+      "executed": false,
+      "id": "ace-step-turbo-config-binding",
+      "sha256": "5f15aa79fe793bba3c00b6992dd193a269954950603d5031ecd7703b0fa69da1",
+      "status": "VERIFIED"
+    },
+    {
+      "created": false,
+      "executed": false,
+      "id": "ace-step-turbo-model-binding",
+      "sha256": "71b22e01b490bd9e149e4c0c5da2e1f512126f3ab3316e0ae97779af84d19512",
+      "status": "VERIFIED"
+    }
+  ],
+  "schema_version": 1,
+  "sources": [
+    {
+      "commit": "6d467e4b5081ccb0abf1ec1bf4fdf9051a2d34b0",
+      "id": "ace-step-runtime",
+      "origin": "https://github.com/ace-step/ACE-Step-1.5.git",
+      "status": "VERIFIED"
+    },
+    {
+      "commit": "f071b9100e15c24575f6e2919312f67057c7b589",
+      "id": "blue-tts-runtime",
+      "origin": "https://github.com/maxmelichov/BlueTTS.git",
+      "status": "VERIFIED"
+    }
+  ],
+  "started_at": "2026-07-22T13:16:37.889117+00:00",
+  "status": "VERIFIED",
+  "system_tools": [
+    {
+      "features": [
+        "libx265",
+        "hevc_nvenc",
+        "zscale"
+      ],
+      "id": "dgx4-ffmpeg",
+      "status": "VERIFIED",
+      "version": "ffmpeg version 6.1.1-3ubuntu5+esm10 Copyright (c) 2000-2023 the FFmpeg developers"
+    },
+    {
+      "features": [],
+      "id": "dgx4-ffprobe",
+      "status": "VERIFIED",
+      "version": "ffprobe version 6.1.1-3ubuntu5+esm10 Copyright (c) 2007-2023 the FFmpeg developers"
+    }
+  ]
+}

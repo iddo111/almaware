@@ -1,0 +1,55 @@
+{
+  "bpm": 143.55,
+  "renderer": "voice/psy_synth.py (RBJ resonant-lowpass kick/bass/acid-lead, sidechain duck, convolution reverb, ping-pong delay, bus comp + true-peak-aware limiter)",
+  "songs": [
+    {
+      "path": "chai-20260821-170231.wav",
+      "sr": 44100,
+      "channels": 2,
+      "duration_s": 55.1,
+      "rms_dbfs": -17.06,
+      "peak_dbfs": -0.82,
+      "true_peak_dbfs": -0.81,
+      "spectral_centroid_hz": 2336.4,
+      "energy_below_80hz_fraction": 0.05945,
+      "song_id": "chai-20260821-170231"
+    },
+    {
+      "path": "chai-20260821-201640-x0.wav",
+      "sr": 44100,
+      "channels": 2,
+      "duration_s": 55.1,
+      "rms_dbfs": -17.39,
+      "peak_dbfs": -0.82,
+      "true_peak_dbfs": -0.82,
+      "spectral_centroid_hz": 2416.8,
+      "energy_below_80hz_fraction": 0.07214,
+      "song_id": "chai-20260821-201640-x0"
+    },
+    {
+      "path": "chai-20260821-201642-x1.wav",
+      "sr": 44100,
+      "channels": 2,
+      "duration_s": 55.1,
+      "rms_dbfs": -16.73,
+      "peak_dbfs": -0.82,
+      "true_peak_dbfs": -0.81,
+      "spectral_centroid_hz": 2337.1,
+      "energy_below_80hz_fraction": 0.06635,
+      "song_id": "chai-20260821-201642-x1"
+    }
+  ],
+  "kick_oneshot_check": {
+    "note": "the kick one-shot in isolation, before mixing with hats/lead/noise which dilute the mix-level fraction below",
+    "energy_below_80hz_fraction": 0.99971,
+    "peak_freq_hz": 50.0
+  },
+  "method_notes": {
+    "kick": "sine, pitch env 150->50Hz tau=14ms, amp env tau=90ms, + differentiated-noise click transient",
+    "bass": "saw one octave below corpus pitch, RBJ resonant lowpass (Q=2.2) w/ decaying cutoff envelope, sidechain duck ~82% dip / ~90ms recovery per kick, tanh saturation",
+    "acid_lead": "saw one octave above corpus pitch (v0 corpus has one pitched channel only, see module docstring), RBJ resonant lowpass (Q=7.5), accent on beat-1/4 steps, portamento slide on legato (no-rest) note pairs, tanh drive, ping-pong tempo-synced delay",
+    "atmosphere": "slow-LFO filtered noise bed + per-phrase (16-bar) filtered noise riser",
+    "reverb": "convolution with a synthesised bandpassed-noise impulse response (no sampled IRs)",
+    "master": "28Hz highpass, RMS envelope-follower bus compression (thresh -9dB linear 0.35, ratio 3:1), 4x-oversampled true-peak-aware gain + soft-knee limiter (identity below 0.85*ceiling, asymptotic to -0.5dBFS ceiling above it)"
+  }
+}

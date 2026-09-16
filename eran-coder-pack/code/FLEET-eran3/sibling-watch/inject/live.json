@@ -1,0 +1,35 @@
+[
+ {
+  "name": "decoy",
+  "what": "DECOY organism - exists only to be killed",
+  "root": "/home/eran3/sibling-watch/inject/live",
+  "code": "/home/eran3/sibling_watch_decoy.py",
+  "unit": "sibling-watch-decoy.service",
+  "journal": "journal.jsonl",
+  "round_kind": [
+   "kind",
+   "round"
+  ],
+  "period_s": 20,
+  "objective": "exam",
+  "floors": {
+   "chance": 0.0833
+  },
+  "born_field": "born",
+  "series": {
+   "exam": {
+    "must_move": true
+   },
+   "ruler": {
+    "must_move": true
+   },
+   "gate": {
+    "must_move": true
+   },
+   "born": {
+    "must_move": false,
+    "why": "birth constant"
+   }
+  }
+ }
+]

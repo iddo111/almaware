@@ -1,0 +1,102 @@
+<!doctype html>
+<!-- לזכרה של עלמה ז״ל -->
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8">
+<title>QUORUM · Worker — ALMAWARE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2a6f97">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+ body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a1a2e;margin:0;padding:20px;max-width:860px;margin-inline:auto}
+ h1{color:#2a6f97;margin:0 0 4px;font-size:26px}
+ .sub{color:#5a8;font-size:13px;margin-bottom:14px}
+ .card{background:#fff;border:1px solid #b8d4e8;border-radius:12px;padding:14px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+ .card h3{margin:0 0 10px;color:#2a6f97;font-size:15px}
+ .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+ label{font-size:14px}
+ input[type=text],input[type=password],select{background:#fff;border:1px solid #b8d4e8;border-radius:8px;padding:8px 10px;font-size:14px;min-width:220px}
+ input.grow{flex:1;min-width:260px}
+ button{background:#ff6b6b;color:#fff;border:0;border-radius:10px;padding:12px 22px;font-size:16px;cursor:pointer}
+ button:disabled{background:#ccc;cursor:default}
+ button.stop{background:#c94c4c}
+ button.small{padding:8px 14px;font-size:14px;background:#2a6f97}
+ .chip{display:inline-block;background:#e8f4f8;border:1px solid #b8d4e8;border-radius:14px;padding:4px 10px;font-size:12px;margin:2px}
+ .chip.ok{background:#e6f6e6;border-color:#7fb069;color:#2d5a27}
+ .chip.err{background:#fde;border-color:#c94c4c;color:#c94c4c}
+ .chip.warn{background:#fff3cd;border-color:#ffe08a;color:#7a5b00}
+ #bar{height:10px;background:#e8f4f8;border:1px solid #b8d4e8;border-radius:6px;overflow:hidden;flex:1;min-width:200px}
+ #barfill{height:100%;width:0%;background:#7fb069;transition:width .3s}
+ #log{background:#0f1b2d;color:#cfe8ff;border-radius:10px;padding:10px 12px;font-family:Consolas,monospace;font-size:12px;line-height:1.6;max-height:260px;overflow-y:auto;direction:ltr;text-align:left;white-space:pre-wrap;word-break:break-word}
+ #testout{white-space:pre-wrap;line-height:1.55;background:#fff7ec;border:1px solid #f4a261;border-radius:10px;padding:10px 12px;min-height:24px;margin-top:8px}
+ textarea{width:100%;box-sizing:border-box;background:#fff;border:1px solid #b8d4e8;border-radius:10px;padding:10px;font-size:15px;font-family:inherit}
+ .stats{display:flex;gap:14px;flex-wrap:wrap}
+ .stat{background:#e8f4f8;border:1px solid #b8d4e8;border-radius:10px;padding:8px 14px;text-align:center;min-width:90px}
+ .stat b{display:block;font-size:20px;color:#2a6f97}
+ .stat span{font-size:12px;color:#456}
+</style>
+</head>
+<body>
+<h1>🐝 QUORUM · Worker</h1>
+<div class="sub">לחיצה אחת — והמחשב הזה תורם כוח־חישוב לפדרציה · ALMAWARE · לזכרה של עלמה ז״ל</div>
+
+<div class="card">
+ <h3>⚙️ חיבור</h3>
+ <div class="row">
+  <label>מרכז (hub): <input type="text" id="hub" class="grow" dir="ltr" placeholder="ברירת מחדל: המקור הנוכחי"></label>
+ </div>
+ <div class="row">
+  <label>שם עובד: <input type="text" id="wname" dir="ltr"></label>
+  <label>Token (אם נדרש): <input type="password" id="token" dir="ltr" placeholder="X-Token"></label>
+ </div>
+ <div class="row">
+  <label>מודל מקומי (WebGPU):
+   <select id="model" dir="ltr">
+    <option value="gemma-2-2b-it-q4f16_1-MLC" selected>Gemma-2 2B (מומלץ, ~1.4GB)</option>
+    <option value="gemma-2-9b-it-q4f16_1-MLC">Gemma-2 9B (כבד, ~5GB)</option>
+    <option value="Qwen2.5-0.5B-Instruct-q4f16_1-MLC">Qwen2.5 0.5B (קליל)</option>
+    <option value="none">בלי מודל — משימות שירות בלבד</option>
+   </select>
+  </label>
+ </div>
+ <div class="row">
+  <button id="go">▶ התחל לעבוד</button>
+  <button id="halt" class="stop" disabled>⏹ עצור</button>
+  <span id="conn" class="chip">מנותק</span>
+  <span id="gpu" class="chip">בודק WebGPU…</span>
+ </div>
+ <div class="row">
+  <div id="bar"><div id="barfill"></div></div>
+  <span id="barlabel" class="chip" style="display:none"></span>
+ </div>
+</div>
+
+<div class="card">
+ <h3>📊 מצב</h3>
+ <div class="stats">
+  <div class="stat"><b id="s-done">0</b><span>הושלמו</span></div>
+  <div class="stat"><b id="s-fail">0</b><span>נכשלו</span></div>
+  <div class="stat"><b id="s-tok">0</b><span>טוקנים</span></div>
+  <div class="stat"><b id="s-up">—</b><span>זמן פעיל</span></div>
+ </div>
+</div>
+
+<div class="card">
+ <h3>🧪 בדיקה מקומית (לא דרך המרכז)</h3>
+ <textarea id="testq" rows="2" placeholder="שאל את המודל המקומי משהו — מוכיח שהוא באמת רץ בדפדפן"></textarea>
+ <div class="row" style="margin-top:8px">
+  <button id="testgo" class="small">שאל מקומית</button>
+ </div>
+ <div id="testout"></div>
+</div>
+
+<div class="card">
+ <h3>📜 יומן</h3>
+ <div id="log"></div>
+</div>
+
+<script src="worker.js" defer></script>
+</body>
+</html>

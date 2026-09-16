@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almaware — Alma's Memory & Legacy Platform</title>
+    <meta name="description" content="Almaware: Open-source tools and memories honoring Alma's legacy. לזכרה של עלמה ז״ל">
+    <meta name="author" content="Iddo Perez">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa94d 25%, #ffd43b 50%, #38d9a9 75%, #4dabf7 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .memorial-text {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+        }
+
+        /* Trust Banner */
+        .trust-banner {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            border: 2px solid #e94560;
+            border-radius: 16px;
+            padding: 20px 28px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 8px 32px rgba(233, 69, 96, 0.3);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .trust-banner-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .trust-banner-text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .trust-banner-text h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.3px;
+        }
+
+        .trust-banner-text p {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+        }
+
+        .trust-copy-btn {
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(233, 69, 96, 0.4);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .trust-copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.55);
+        }
+
+        /* Category sections */
+        .category-section {
+            margin-bottom: 48px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        .category-label {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.25);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .category-count {
+            background: rgba(255,255,255,0.25);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+
+        .category-divider {
+            flex: 1;
+            height: 2px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        /* LEGO brick card */
+        .card {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 16px;
+            padding: 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13), 0 2px 0 0 rgba(0,0,0,0.08);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            overflow: hidden;
+            position: relative;
+            /* LEGO stud effect via top border */
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        /* LEGO stud strip at top */
+        .card-stud-strip {
+            height: 18px;
+            display: flex;
+            align-items: center;
+            padding: 0 14px;
+            gap: 8px;
+        }
+
+        .card-stud {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.45);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+        }
+
+        .card-body {
+            padding: 20px 26px 26px;
+        }
+
+        .card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .card-icon {
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .category-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            flex-shrink: 0;
+        }
+
+        .badge-whatsapp {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+
+        .badge-core {
+            background: #ede9fe;
+            color: #5b21b6;
+            border: 1px solid #c4b5fd;
+        }
+
+        .badge-games {
+            background: #fef3c7;
+            color: #92400e;
+            border: 1px solid #fcd34d;
+        }
+
+        .badge-bio {
+            background: #fce7f3;
+            color: #9d174d;
+            border: 1px solid #f9a8d4;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: #1f2937;
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.3;
+        }
+
+        .card-desc {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 22px;
+            font-size: 0.9rem;
+        }
+
+        .card-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.88rem;
+            flex: 1;
+            justify-content: center;
+            min-width: 110px;
+        }
+
+        .card-link.source {
+            background: linear-gradient(135deg, #1a1a2e, #2d2d5e);
+            color: white;
+            box-shadow: 0 4px 14px rgba(26, 26, 46, 0.3);
+        }
+
+        .card-link.source:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(26, 26, 46, 0.4);
+            background: linear-gradient(135deg, #2d2d5e, #1a1a2e);
+        }
+
+        .card-link.zip {
+            background: linear-gradient(135deg, #38d9a9, #20c997);
+            color: white;
+            box-shadow: 0 4px 14px rgba(56, 217, 169, 0.3);
+        }
+
+        .card-link.zip:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(56, 217, 169, 0.45);
+        }
+
+        /* Category-specific stud strip colors */
+        .card.cat-whatsapp .card-stud-strip { background: linear-gradient(135deg, #25d366, #128c7e); }
+        .card.cat-core .card-stud-strip { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+        .card.cat-games .card-stud-strip { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+        .card.cat-bio .card-stud-strip { background: linear-gradient(135deg, #ec4899, #f43f5e); }
+
+        /* Card animation */
+        .card {
+            animation: slideUp 0.6s ease-out both;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            margin-top: 20px;
+        }
+
+        .info-section h2 {
+            color: #1f2937;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .info-section p {
+            color: #6b7280;
+            line-height: 1.8;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Code Audit Widget Styles */
+        .code-audit-widget {
+            margin: 40px 0;
+            background: linear-gradient(135deg, rgba(255,107,107,.08), rgba(255,170,77,.08));
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(255,140,90,.25);
+        }
+
+        .audit-banner {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 24px;
+            background: linear-gradient(135deg, #ff6b6b, #ffa94d);
+            cursor: pointer;
+            color: white;
+        }
+
+        .audit-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .audit-content {
+            flex: 1;
+        }
+
+        .audit-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .audit-content p {
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        .audit-toggle {
+            background: rgba(255,255,255,.25);
+            border: 1px solid rgba(255,255,255,.5);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .audit-toggle:hover {
+            background: rgba(255,255,255,.35);
+            transform: translateY(-2px);
+        }
+
+        .audit-panel {
+            padding: 24px;
+            background: rgba(255,255,255,.97);
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .audit-prompt-section {
+            margin-bottom: 24px;
+        }
+
+        .audit-prompt-section h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1f2937;
+        }
+
+        .audit-prompt-text {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #495057;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .audit-prompt-text p { margin-bottom: 12px; }
+        .audit-prompt-text ul, .audit-prompt-text ol { margin-left: 20px; margin-bottom: 12px; }
+        .audit-prompt-text li { margin-bottom: 6px; }
+
+        .audit-controls {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .audit-btn {
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .audit-btn.primary {
+            background: linear-gradient(135deg, #ff6b6b, #ffa94d);
+            color: white;
+            box-shadow: 0 4px 14px rgba(255,107,107,.3);
+        }
+
+        .audit-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,107,107,.4);
+        }
+
+        .audit-btn.secondary {
+            background: #f0f1f3;
+            color: #1f2937;
+            border: 1px solid #dee2e6;
+        }
+
+        .audit-btn.secondary:hover { background: #e9ecef; }
+
+        .audit-results {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #dee2e6;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+        }
+
+        .result-card {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 12px;
+            background: linear-gradient(135deg, rgba(255,107,107,.08), rgba(255,170,77,.08));
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .result-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ff6b6b;
+        }
+
+        .copy-feedback {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #ff6b6b, #38d9a9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(255,107,107,.4);
+            animation: slideInRight 0.3s ease-out, slideOutRight 0.3s ease-in 2.7s forwards;
+            z-index: 9999;
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideOutRight {
+            to { opacity: 0; transform: translateX(20px); }
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .tagline { font-size: 1rem; }
+            .grid { grid-template-columns: 1fr; }
+            .info-section { padding: 25px; }
+            .trust-banner { flex-direction: column; align-items: flex-start; gap: 14px; }
+            .trust-copy-btn { width: 100%; text-align: center; }
+            .audit-banner { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .audit-toggle { align-self: flex-end; }
+            .audit-controls { flex-direction: column; }
+            .audit-btn { width: 100%; }
+            .card-links { flex-direction: column; }
+            .card-link { min-width: unset; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🕯️ Almaware</h1>
+            <p class="memorial-text">לזכרה של עלמה ז״ל — In memory of Alma</p>
+            <p class="tagline">Open-source tools, platforms, and memories</p>
+        </header>
+
+        <!-- Trust Banner -->
+        <div class="trust-banner" id="trustBanner">
+            <div class="trust-banner-icon">🔓</div>
+            <div class="trust-banner-text">
+                <h3>Open Source — Don't trust anyone. Ask your Claude to audit this code first.</h3>
+                <p>Click the button to copy an audit prompt. Paste it into Claude with any repo link before running code on your machine.</p>
+            </div>
+            <button class="trust-copy-btn" id="trustCopyBtn">📋 Copy Audit Prompt</button>
+        </div>
+
+        <!-- WhatsApp Category -->
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-label">💬 WhatsApp</span>
+                <span class="category-count">6 repos</span>
+                <div class="category-divider"></div>
+            </div>
+            <div class="grid">
+
+                <div class="card cat-whatsapp" style="animation-delay:0.05s">
+                    <div class="card-stud-strip">
+                        <div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div class="card-icon">🔗</div>
+                            <span class="category-badge badge-whatsapp">WhatsApp</span>
+                        </div>
+                        <h3 class="card-title">WhatsApp Bridge (Go)</h3>
+                        <p class="card-desc">Production WhatsApp bridge via whatsmeow — no browser needed. Reliable, headless, and built for automation.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iddo111/wa-whatsmeow" target="_blank" rel="noopener" class="card-link source">📂 Source Code</a>
+                            <a href="https://github.com/iddo111/wa-whatsmeow/archive/refs/heads/master.zip" class="card-link zip">⬇️ ZIP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card cat-whatsapp" style="animation-delay:0.10s">
+                    <div class="card-stud-strip">
+                        <div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div class="card-icon">🤖</div>
+                            <span class="category-badge badge-whatsapp">WhatsApp</span>
+                        </div>
+                        <h3 class="card-title">WhatsApp MCP Server</h3>
+                        <p class="card-desc">MCP server exposing WhatsApp to Claude and other AI models. Integrate your chats as a first-class AI resource.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iddo111/wa-mcp" target="_blank" rel="noopener" class="card-link source">📂 Source Code</a>
+                            <a href="https://github.com/iddo111/wa-mcp/archive/refs/heads/master.zip" class="card-link zip">⬇️ ZIP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card cat-whatsapp" style="animation-delay:0.15s">
+                    <div class="card-stud-strip">
+                        <div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div class="card-icon">🎭</div>
+                            <span class="category-badge badge-whatsapp">WhatsApp</span>
+                        </div>
+                        <h3 class="card-title">WhatsApp Puppeteer</h3>
+                        <p class="card-desc">Browser-based WhatsApp automation via Puppeteer. Full web client control for scripted messaging and scraping.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iddo111/wa-puppeteer" target="_blank" rel="noopener" class="card-link source">📂 Source Code</a>
+                            <a href="https://github.com/iddo111/wa-puppeteer/archive/refs/heads/master.zip" class="card-link zip">⬇️ ZIP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card cat-whatsapp" style="animation-delay:0.20s">
+                    <div class="card-stud-strip">
+                        <div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div class="card-icon">⚡</div>
+                            <span class="category-badge badge-whatsapp">WhatsApp</span>
+                        </div>
+                        <h3 class="card-title">WhatsApp Baileys</h3>
+                        <p class="card-desc">Lightweight WhatsApp Web API — the fastest path. Pure Node.js, zero Chromium, low memory footprint.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iddo111/wa-baileys" target="_blank" rel="noopener" class="card-link source">📂 Source Code</a>
+                            <a href="https://github.com/iddo111/wa-baileys/archive/refs/heads/master.zip" class="card-link zip">⬇️ ZIP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card cat-whatsapp" style="animation-delay:0.25s">
+                    <div class="card-stud-strip">
+                        <div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div class="card-icon">📡</div>
+                            <span class="category-badge badge-whatsapp">WhatsApp</span>
+                        </div>
+                        <h3 class="card-title">WhatsApp Relay</h3>
+                        <p class="card-desc">Relay server bridging all WA connectors to one unified API. One endpoint, any backend — swap connectors without changing your app.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iddo111/wa-relay" target="_blank" rel="noopener" class="card-link source">📂 Source Code</a>
+                            <a href="https://github.com/iddo111/wa-relay/archive/refs/heads/master.zip" class="card-link zip">⬇️ ZIP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card cat-whatsapp" style="animation-delay:0.30s">
+                    <div class="card-stud-strip">
+                        <div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div class="card-icon">💬</div>
+                            <span class="category-badge badge-whatsapp">WhatsApp</span>
+                        </div>
+                        <h3 class="card-title">WA Companion (AI Chat)</h3>
+                        <p class="card-desc">Self-chat WhatsApp companion powered by local AI (Gemma). Your personal AI assistant living inside WhatsApp — fully private.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iddo111/wa-companion" target="_blank" rel="noopener" class="card-link source">📂 Source Code</a>
+                            <a href="https://github.com/iddo111/wa-companion/archive/refs/heads/master.zip" class="card-link zip">⬇️ ZIP</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Core Category -->
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-label">🧩 Core</span>
+                <span class="category-count">2 repos</span>
+                <div class="category-divider"></div>
+            </div>
+            <div class="grid">
+
+                <div class="card cat-core" style="animation-delay:0.10s">
+                    <div class="card-stud-strip">
+                        <div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div class="card-icon">🌐</div>
+                            <span class="category-badge badge-core">Core</span>
+                        </div>
+                        <h3 class="card-title">Messenger Hub</h3>
+                        <p class="card-desc">Unified multi-channel hub: WhatsApp + Telegram + SMS + Email + MQTT. One API to rule all your messaging channels.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iddo111/messenger-hub" target="_blank" rel="noopener" class="card-link source">📂 Source Code</a>
+                            <a href="https://github.com/iddo111/messenger-hub/archive/refs/heads/main.zip" class="card-link zip">⬇️ ZIP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card cat-core" style="animation-delay:0.20s">
+                    <div class="card-stud-strip">
+                        <div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div class="card-icon">🧠</div>
+                            <span class="category-badge badge-core">Core</span>
+                        </div>
+                        <h3 class="card-title">Glock GUI (Multi-AI)</h3>
+                        <p class="card-desc">Desktop tray app for multi-AI collaboration (Claude + Grok + Hermes). Route tasks to the right model automatically.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iddo111/glock-gui-mvp" target="_blank" rel="noopener" class="card-link source">📂 Source Code</a>
+                            <a href="https://github.com/iddo111/glock-gui-mvp/archive/refs/heads/master.zip" class="card-link zip">⬇️ ZIP</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Games Category -->
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-label">🎮 Games</span>
+                <span class="category-count">3 repos</span>
+                <div class="category-divider"></div>
+            </div>
+            <div class="grid">
+
+                <div class="card cat-games" style="animation-delay:0.05s">
+                    <div class="card-stud-strip">
+                        <div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div class="card-icon">🏓</div>
+                            <span class="category-badge badge-games">Games</span>
+                        </div>
+                        <h3 class="card-title">Pong Arena (AI)</h3>
+                        <p class="card-desc">Self-learning Pong AI — evolutionary MLP trains live in browser. Watch the neural net evolve in real-time, no server needed.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iddo111/pong-arena" target="_blank" rel="noopener" class="card-link source">📂 Source Code</a>
+                            <a href="https://github.com/iddo111/pong-arena/archive/refs/heads/master.zip" class="card-link zip">⬇️ ZIP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card cat-games" style="animation-delay:0.15s">
+                    <div class="card-stud-strip">
+                        <div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div class="card-icon">🎮</div>
+                            <span class="category-badge badge-games">Games</span>
+                        </div>
+                        <h3 class="card-title">Gist Pong</h3>
+                        <p class="card-desc">Classic Pong in a single HTML file — 2-player or AI opponent. Drop it anywhere and play. Zero dependencies, pure fun.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iddo111/gist-pong-202606" target="_blank" rel="noopener" class="card-link source">📂 Source Code</a>
+                            <a href="https://github.com/iddo111/gist-pong-202606/archive/refs/heads/master.zip" class="card-link zip">⬇️ ZIP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card cat-games" style="animation-delay:0.25s">
+                    <div class="card-stud-strip">
+                        <div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div class="card-icon">🥽</div>
+                            <span class="category-badge badge-games">Games</span>
+                        </div>
+                        <h3 class="card-title">VR Pong (Godot)</h3>
+                        <p class="card-desc">WebXR immersive Pong in VR — play in your headset. Built in Godot, runs in browser, no app store required.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iddo111/vr-pong-godot" target="_blank" rel="noopener" class="card-link source">📂 Source Code</a>
+                            <a href="https://github.com/iddo111/vr-pong-godot/archive/refs/heads/master.zip" class="card-link zip">⬇️ ZIP</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bio Category -->
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-label">🧬 Bio</span>
+                <span class="category-count">1 repo</span>
+                <div class="category-divider"></div>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 380px));">
+
+                <div class="card cat-bio" style="animation-delay:0.10s">
+                    <div class="card-stud-strip">
+                        <div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div><div class="card-stud"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div class="card-icon">💪</div>
+                            <span class="category-badge badge-bio">Bio</span>
+                        </div>
+                        <h3 class="card-title">EMG Pong (Muscle Control)</h3>
+                        <p class="card-desc">Control Pong with your muscles via Arduino AD8232 EMG sensor. Biosignal gaming — your body is the controller.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iddo111/emg-pong" target="_blank" rel="noopener" class="card-link source">📂 Source Code</a>
+                            <a href="https://github.com/iddo111/emg-pong/archive/refs/heads/master.zip" class="card-link zip">⬇️ ZIP</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Code Audit Widget -->
+        <div class="code-audit-widget">
+            <div class="audit-banner">
+                <div class="audit-icon">🔍</div>
+                <div class="audit-content">
+                    <h3>Code Audit Tool</h3>
+                    <p>Real-time analysis & prompt inspection for Almaware projects</p>
+                </div>
+                <button class="audit-toggle" id="auditToggle">Expand</button>
+            </div>
+
+            <div class="audit-panel" id="auditPanel" style="display: none;">
+                <div class="audit-prompt-section">
+                    <h4>System Prompt (Full Text)</h4>
+                    <div class="audit-prompt-text" id="auditPromptText">
+                        <p><strong>Almaware Code Audit Tool</strong> — Inspect open-source project code, analyze system architectures, and verify implementation integrity for WhatsApp bridges, MCP connectors, and all Almaware tools.</p>
+                        <p><strong>Features:</strong></p>
+                        <ul>
+                            <li>Full source code inspection & analysis</li>
+                            <li>Copy-to-clipboard for code snippets</li>
+                            <li>Format validation & structure checking</li>
+                            <li>Token counting & size estimation</li>
+                            <li>Architecture visualization & comparison</li>
+                        </ul>
+                        <p><strong>Supported Projects (12 repos):</strong></p>
+                        <ul>
+                            <li>wa-whatsmeow — WhatsApp Bridge (Go)</li>
+                            <li>wa-mcp — WhatsApp MCP Server</li>
+                            <li>wa-puppeteer — WhatsApp Puppeteer</li>
+                            <li>wa-baileys — WhatsApp Baileys</li>
+                            <li>wa-relay — WhatsApp Relay</li>
+                            <li>wa-companion — WA Companion (AI Chat)</li>
+                            <li>messenger-hub — Messenger Hub</li>
+                            <li>glock-gui-mvp — Glock GUI (Multi-AI)</li>
+                            <li>pong-arena — Pong Arena (AI)</li>
+                            <li>gist-pong-202606 — Gist Pong</li>
+                            <li>emg-pong — EMG Pong (Muscle Control)</li>
+                            <li>vr-pong-godot — VR Pong (Godot)</li>
+                        </ul>
+                        <p><strong>How to use:</strong></p>
+                        <ol>
+                            <li>Clone the project from GitHub (links in cards above)</li>
+                            <li>Extract source code locally</li>
+                            <li>Paste code snippets below for analysis</li>
+                            <li>Click "Analyze" to inspect structure</li>
+                            <li>Export analysis or copy for documentation</li>
+                        </ol>
+                        <p><em>All analysis is performed client-side only — nothing is logged, stored, or sent to any server. Your code stays yours.</em></p>
+                    </div>
+
+                    <div class="audit-controls">
+                        <button class="audit-btn primary" id="auditCopyBtn">📋 Copy Full Text</button>
+                        <button class="audit-btn secondary" id="auditAnalyzeBtn">🔬 Analyze</button>
+                        <button class="audit-btn secondary" id="auditExportBtn">⬇️ Export</button>
+                    </div>
+                </div>
+
+                <div class="audit-results" id="auditResults" style="display: none;">
+                    <h4>Analysis Results</h4>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <span class="result-label">Lines:</span>
+                            <span class="result-value" id="lineCount">0</span>
+                        </div>
+                        <div class="result-card">
+                            <span class="result-label">Words:</span>
+                            <span class="result-value" id="wordCount">0</span>
+                        </div>
+                        <div class="result-card">
+                            <span class="result-label">Characters:</span>
+                            <span class="result-value" id="charCount">0</span>
+                        </div>
+                        <div class="result-card">
+                            <span class="result-label">Est. Tokens:</span>
+                            <span class="result-value" id="tokenCount">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>Built with Transparency</h2>
+            <p>
+                No executables. No tracking. No lock-in. Every tool is open-source on GitHub.
+                Clone, modify, deploy, or integrate freely.
+            </p>
+            <p style="margin-top: 20px; font-size: 0.95rem; color: #999;">
+                Almaware is built to honor Alma's spirit: open, transparent, and always accessible.
+            </p>
+        </div>
+
+        <footer>
+            <p>🕯️ Almaware — Open-source tools and memories | iddoperez.ai</p>
+        </footer>
+    </div>
+
+    <script>
+    // Trust Banner copy button
+    (function() {
+        const btn = document.getElementById('trustCopyBtn');
+        if (!btn) return;
+        const AUDIT_PROMPT = 'Please audit this GitHub repo for safety before I run it: https://github.com/iddo111/REPONAME — check for malware, backdoors, credential theft, or destructive operations.';
+        btn.addEventListener('click', function() {
+            navigator.clipboard.writeText(AUDIT_PROMPT).then(function() {
+                showCopyFeedback('✓ Audit prompt copied! Paste it into Claude.');
+            }).catch(function() {
+                showCopyFeedback('⚠ Copy failed — please copy manually.');
+            });
+        });
+    })();
+
+    // Code Audit Widget
+    (function() {
+        const toggle = document.getElementById('auditToggle');
+        const panel = document.getElementById('auditPanel');
+        const promptText = document.getElementById('auditPromptText');
+        const copyBtn = document.getElementById('auditCopyBtn');
+        const analyzeBtn = document.getElementById('auditAnalyzeBtn');
+        const exportBtn = document.getElementById('auditExportBtn');
+        const resultsDiv = document.getElementById('auditResults');
+
+        if (!toggle || !panel) return;
+
+        toggle.addEventListener('click', function() {
+            var isHidden = panel.style.display === 'none';
+            panel.style.display = isHidden ? 'block' : 'none';
+            toggle.textContent = isHidden ? 'Collapse' : 'Expand';
+            toggle.style.background = isHidden ? 'rgba(255,255,255,.35)' : 'rgba(255,255,255,.25)';
+        });
+
+        function getPromptText() {
+            return promptText.innerText || promptText.textContent || '';
+        }
+
+        function analyzePrompt() {
+            var text = getPromptText();
+            var lines = text.split('\n').length;
+            var words = text.trim().split(/\s+/).length;
+            var chars = text.length;
+            var tokens = Math.ceil(chars / 4);
+
+            document.getElementById('lineCount').textContent = lines.toLocaleString();
+            document.getElementById('wordCount').textContent = words.toLocaleString();
+            document.getElementById('charCount').textContent = chars.toLocaleString();
+            document.getElementById('tokenCount').textContent = tokens.toLocaleString();
+
+            resultsDiv.style.display = 'block';
+        }
+
+        copyBtn.addEventListener('click', function() {
+            var text = getPromptText();
+            navigator.clipboard.writeText(text).then(function() {
+                showCopyFeedback('✓ Copied to clipboard!');
+            }).catch(function() {
+                showCopyFeedback('⚠ Copy failed');
+            });
+        });
+
+        analyzeBtn.addEventListener('click', analyzePrompt);
+
+        exportBtn.addEventListener('click', function() {
+            var text = getPromptText();
+            var blob = new Blob([text], { type: 'text/plain' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'code-audit-prompt.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showCopyFeedback('⬇️ Exported!');
+        });
+
+        analyzePrompt();
+    })();
+
+    function showCopyFeedback(message) {
+        var existing = document.querySelector('.copy-feedback');
+        if (existing) existing.remove();
+        var feedback = document.createElement('div');
+        feedback.className = 'copy-feedback';
+        feedback.textContent = message;
+        document.body.appendChild(feedback);
+        setTimeout(function() { if (feedback.parentNode) feedback.remove(); }, 3000);
+    }
+    </script>
+</body>
+</html>

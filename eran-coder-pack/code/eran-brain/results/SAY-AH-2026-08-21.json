@@ -1,0 +1,42 @@
+{
+ "ts": "2026-08-21T17:56:15",
+ "wav": "say-ah-20260821-175513.wav",
+ "intended": "ah",
+ "sims_to_centroids": {
+  "aa": 0.60537,
+  "ah": 0.62974,
+  "ba": 0.67351,
+  "da": 0.60902,
+  "ga": 0.63028,
+  "ha": 0.56963,
+  "ka": 0.59242,
+  "kha": 0.63654,
+  "la": 0.57437,
+  "ma": 0.6221,
+  "na": 0.59453,
+  "pa": 0.68844,
+  "qa": 0.56279,
+  "ra": 0.61852,
+  "sa": 0.5298,
+  "sha": 0.23968,
+  "ta": 0.56128,
+  "tha": 0.6007,
+  "tsa": 0.49083,
+  "va": 0.5438,
+  "ya": 0.35947,
+  "za": 0.16427
+ },
+ "argmax_class": "pa",
+ "argmax_is_intended": false,
+ "null_control": {
+  "n": 200,
+  "mean": -0.01462,
+  "sd": 0.24152,
+  "p95": 0.39311,
+  "max": 0.54287
+ },
+ "sim_to_intended_centroid": 0.62974,
+ "beats_null_p95": true,
+ "pass": false,
+ "pass_rule": "argmax_class == intended AND sim_to_intended_centroid > null p95 (200 random articulator settings)"
+}

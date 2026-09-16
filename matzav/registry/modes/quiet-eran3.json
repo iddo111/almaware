@@ -1,0 +1,13 @@
+{
+  "id": "quiet-eran3", "order": 50,
+  "title_he": "שקט בערן3", "title_en": "QUIET-eran3",
+  "subtitle_he": "לפנות את ערן3",
+  "box_hint": "eran3",
+  "want": [],
+  "concede": ["eran3/qwen-rpc", "eran3/winston-forever", "eran3/sibling-ear"],
+  "quiet": true,
+  "note_he": "מוריד את מה שערן3 מחזיק לחינם. qwen-rpc רץ 3 ימים בלי אף לקוח אחד.",
+  "honesty": "מוריד רק מה שרשום בשמו. אין 'כל השאר יורד' — על צי שבו בני אדם מפעילים דברים ביד, תקרה כזאת הורגת ניסוי חי.",
+  "demonstrated": {"status": "planned", "evidence": "not yet run"},
+  "runnable": false
+}

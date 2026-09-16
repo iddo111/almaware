@@ -1,0 +1,10 @@
+{
+ "name": "perceptron-w9232-lr0.05-pw4",
+ "kind": "perceptron",
+ "task": "binary",
+ "width": 9232,
+ "epochs": 30,
+ "lr": 0.05,
+ "l2": 0.0001,
+ "pos_weight": 4.0
+}

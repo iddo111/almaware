@@ -1,0 +1,55 @@
+{
+  "revision": {
+    "type": "int",
+    "min": 0
+  },
+  "mic_name": {
+    "type": "str"
+  },
+  "server_url": {
+    "type": "url",
+    "fleet_hosts": [
+      "127.0.0.1",
+      "<lan-ip>",
+      "<lan-ip>"
+    ]
+  },
+  "auth_token_file": {
+    "type": "str"
+  },
+  "gate_rms": {
+    "type": "calibration"
+  },
+  "stale_sec": {
+    "type": "int",
+    "min": 5,
+    "max": 120
+  },
+  "hotkey_pause": {
+    "type": "str"
+  },
+  "auto_enter": {
+    "type": "bool"
+  },
+  "clipboard_restore": {
+    "type": "bool"
+  },
+  "extra_avoid": {
+    "type": "list[str]"
+  },
+  "corpus_capture": {
+    "type": "bool"
+  },
+  "owner_gate_typing": {
+    "type": "bool"
+  },
+  "lang_hint": {
+    "type": "str",
+    "optional": true,
+    "choices": [
+      "auto",
+      "he",
+      "en"
+    ]
+  }
+}

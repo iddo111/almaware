@@ -1,0 +1,27 @@
+{
+  "sandbox": "~/keshev7",
+  "eval_dir": "~/keshev7-eval",
+  "brain_urls": [
+    "http://<tailnet-ip>:8010/v1/chat/completions",
+    "http://<tailnet-ip>:8000/v1/chat/completions"
+  ],
+  "router_base": "http://<tailnet-ip>:8010",
+  "model": "gpt-oss-120b",
+  "reasoning_effort": "low",
+  "gpu": "off",
+  "mem_max": "16G",
+  "cpu_quota": "800%",
+  "cpu_threads": 8,
+  "cmd_timeout_s": 3600,
+  "mem_floor_gib": 32.0,
+  "mem_hard_floor_gib": 16.0,
+  "sandbox_disk_cap_gib": 60.0,
+  "host_disk_free_floor_gib": 200.0,
+  "eval_bar_cer": 0.25,
+  "eval_clip_timeout_s": 60,
+  "eval_every_rounds": 30,
+  "ramchat_url": "",
+  "ramchat_token_file": "",
+  "ramchat_who": "kof-coder",
+  "_comment": "gpu off and CPU-only by default: eran1 GPU is at ~81% from Iddo's live jobs (vipass/targ/comfyui). ramchat_url empty until the PC RAMCHAT door (:8876) is reachable from eran1 - it is not on the tailnet, so posting is skipped and never fails the loop. To let the rally use the GPU Iddo must set gpu:on knowingly."
+}

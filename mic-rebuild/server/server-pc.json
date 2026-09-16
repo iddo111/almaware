@@ -1,0 +1,15 @@
+{
+  "bind": [
+    "127.0.0.1"
+  ],
+  "port": 8737,
+  "models": {
+    "stock": "D:/CLAUDE/mic-rebuild/models/large-v3-turbo-ct2",
+    "lora": "D:/CLAUDE/mic-rebuild/models/iddo-lora-run2-ct2"
+  },
+  "device": "cuda",
+  "compute_type": "float16",
+  "token_file": "D:/CLAUDE/mic-rebuild/state/stt-token",
+  "inflight_cap": 2,
+  "decode_wall_s": 15.0
+}

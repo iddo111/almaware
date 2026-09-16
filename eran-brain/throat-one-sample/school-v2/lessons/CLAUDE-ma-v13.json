@@ -1,0 +1,126 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "ma",
+ "letter": "mem",
+ "hebrew": "מ",
+ "facts": {
+  "place": "lips",
+  "manner": "nasal",
+  "nasal": 1,
+  "voiced": 1
+ },
+ "decisions": {
+  "knots": "AH",
+  "constr": "seal",
+  "nasal": 1,
+  "voice": "on",
+  "release": "plain",
+  "burst": 0,
+  "pre": 0
+ },
+ "amounts": {
+  "c_pos": 0.9601076558845302,
+  "c_area": 2.0,
+  "velum": 0.5129434851680247,
+  "ten": 0.6,
+  "voi": 1.0,
+  "d_pre": 0.0,
+  "d_cons": 0.08578404475668724,
+  "d_trans": 0.01802625449062208,
+  "d_gap": 0.04,
+  "gap_pos": 0.65,
+  "gap_area": 2.0,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.0,
+  "d_vowel": 0.33799481661762115,
+  "glide": 0.3125148600960272,
+  "gain": 6.0,
+  "f0": 98.46738036387201,
+  "trans_voi": null
+ },
+ "live_amounts": [
+  "c_pos",
+  "d_cons",
+  "d_trans",
+  "d_vowel",
+  "f0",
+  "glide",
+  "ten",
+  "trans_voi",
+  "velum",
+  "voi"
+ ],
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9601,
+    0.0,
+    0.5129,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9601,
+    0.0,
+    0.5129,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.0858,
+   0.018,
+   0.338
+  ],
+  "f0_knots": [
+   98.46738036387201,
+   98.46738036387201,
+   91.57466373840097
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.3125148600960272,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "ruler": "school-v2/ruler.py (09-02 family rulers + verifiers' objections)",
+ "brief": "cons lvl -1.6 dB cen 266 hnr 8.8 f0 99 low500 0.99 >2k 0.00 F [192, 972, 1563] | close min -2.7 (<=-25: 0 ms) | burst 1.9 dB @1.0 ms jump 1.3 cen 346 | on [497, 1223, 2650] -> vowel [549, 1174, 2608] | nose/lip 32.0 dB",
+ "attempt": 16
+}

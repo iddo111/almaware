@@ -1,0 +1,113 @@
+======================================================================
+ALMA PONG ARENA — train 3 primitives, round-robin their LEARNED brains
+======================================================================
+[seed] locked MASTER_SEED=42 (reproducible run)
+[train] BEIT-DIN (3 judges, quorum) ...
+[train] GIST (context->gist retrieval) ...
+[train] MULTI-WEIGHT (amp/phase/gate edges) ...
+
+----------------------------------------------------------------------
+FITNESS vs RANDOM BASELINE  (LEFT ctrl vs random RIGHT; hits-misses/seed)
+----------------------------------------------------------------------
+  RANDOM (control):  -24.00
+  BEIT-DIN        : birth  -21.40  ->  end   +3.80   (gain +25.20, BEATS random)
+  GIST            : birth  -35.40  ->  end  +26.80   (gain +62.20, BEATS random)
+  MULTI-WEIGHT    : birth  -35.40  ->  end  +20.40   (gain +55.80, BEATS random)
+
+----------------------------------------------------------------------
+ROUND ROBIN  (symmetric duels; each pair plays both sides)
+----------------------------------------------------------------------
+  BEIT-DIN       -64.0   vs    +251.0 GIST          -> GIST WINS
+  BEIT-DIN       -54.0   vs    +209.0 MULTI-WEIGHT  -> MULTI-WEIGHT WINS
+  GIST          +251.0   vs    +199.0 MULTI-WEIGHT  -> GIST WINS
+
+----------------------------------------------------------------------
+STANDINGS  (match pts, then net score differential)
+----------------------------------------------------------------------
+  1. GIST           pts=6   net=  +367.0  vsRandom(end)=+26.80
+  2. MULTI-WEIGHT   pts=3   net=  +211.0  vsRandom(end)=+20.40
+  3. BEIT-DIN       pts=0   net=  -578.0  vsRandom(end)=+3.80
+
+======================================================================
+CHAMPION: GIST
+======================================================================
+
+[RESULT-JSON]
+{
+  "random_baseline": -24.0,
+  "vs_random_birth": {
+    "BEIT-DIN": -21.4,
+    "GIST": -35.4,
+    "MULTI-WEIGHT": -35.4
+  },
+  "vs_random_end": {
+    "BEIT-DIN": 3.8,
+    "GIST": 26.8,
+    "MULTI-WEIGHT": 20.4
+  },
+  "native": {
+    "beitdin": {
+      "birth_native": -5.666666666666667,
+      "end_native": 1.3333333333333333,
+      "native_base": -3.3333333333333335
+    },
+    "gist": {
+      "birth_native": 0.14285714285714285,
+      "end_native": 4.0
+    },
+    "multiweight": {
+      "birth_native": 0.14285714285714285,
+      "end_native": 2.9285714285714284
+    }
+  },
+  "duels": [
+    {
+      "a": "BEIT-DIN",
+      "b": "GIST",
+      "sa": -64.0,
+      "sb": 251.0,
+      "res": "GIST WINS"
+    },
+    {
+      "a": "BEIT-DIN",
+      "b": "MULTI-WEIGHT",
+      "sa": -54.0,
+      "sb": 209.0,
+      "res": "MULTI-WEIGHT WINS"
+    },
+    {
+      "a": "GIST",
+      "b": "MULTI-WEIGHT",
+      "sa": 251.0,
+      "sb": 199.0,
+      "res": "GIST WINS"
+    }
+  ],
+  "standings": [
+    {
+      "rank": 1,
+      "name": "GIST",
+      "pts": 6,
+      "net": 367.0,
+      "vs_random_end": 26.8,
+      "vs_random_birth": -35.4
+    },
+    {
+      "rank": 2,
+      "name": "MULTI-WEIGHT",
+      "pts": 3,
+      "net": 211.0,
+      "vs_random_end": 20.4,
+      "vs_random_birth": -35.4
+    },
+    {
+      "rank": 3,
+      "name": "BEIT-DIN",
+      "pts": 0,
+      "net": -578.0,
+      "vs_random_end": 3.8,
+      "vs_random_birth": -21.4
+    }
+  ],
+  "champion": "GIST"
+}

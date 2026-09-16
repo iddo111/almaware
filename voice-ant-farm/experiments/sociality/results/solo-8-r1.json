@@ -1,0 +1,516 @@
+{
+  "format_version": 1,
+  "experiment": "sociality",
+  "hypothesis_under_test": "many ants forming social bonds increases learning exponentially",
+  "condition": "SOLO",
+  "colony_size": 8,
+  "replicate": 1,
+  "rounds": 5,
+  "units": 64,
+  "ants": [
+    "ant-00",
+    "ant-01",
+    "ant-02",
+    "ant-03",
+    "ant-04",
+    "ant-05",
+    "ant-06",
+    "ant-07"
+  ],
+  "seeds": [
+    1946210044,
+    1146735078,
+    722647013,
+    839789582,
+    1518435018,
+    2030654524,
+    1945323994,
+    1288561159
+  ],
+  "seeds_by_ant": {
+    "ant-00": 1946210044,
+    "ant-01": 1146735078,
+    "ant-02": 722647013,
+    "ant-03": 839789582,
+    "ant-04": 1518435018,
+    "ant-05": 2030654524,
+    "ant-06": 1945323994,
+    "ant-07": 1288561159
+  },
+  "recordings": "D:\\CLAUDE\\voice-ant-farm\\recordings",
+  "corpus_manifest_sha256": "a6c34e0e67de9c590cbc57a7747a7046efbc3a784f26672e29964a23d09188ee",
+  "heldout_measured_against": "real-recordings-only",
+  "heldout_pcm_sha256": [
+    "39ae835f5e2d0d1a66468637657cbff85333f00346f2adb0ed0957c84266655c",
+    "6c98c06584dcfe9d44909c9dcdb01f5f69a535954b66945c9f92008053cffcce",
+    "896bd0858dc49ccc45285616aba86b73ccd4469deeb15358db37dd9b574a0027",
+    "999eb2c4973db6348e43cf6706407823d319696c15b56889805676317bd58c04",
+    "a3dc80bc5efda80f50ba1add1a0f83cefbab60775db9b817cbb7398031bbdfdb",
+    "e19607bfb82d827d06ff5d0c344380cb1a967f6bb8d5630eca1d77e50ef70a86",
+    "e976aecf4d5c7cee1323bdd49e9daaf81eb6f2b892434439e0c78afd18d60e99",
+    "febd95c782a18c1623513cd1980aab5ffdee3a0f2b47a81f8a186eb09058c977"
+  ],
+  "volume_matching": {
+    "donation_slots": 7,
+    "matched_added_samples_per_ant": 0,
+    "reference_added_samples_per_ant": 794960,
+    "matched_conditions": [
+      "SELF_ECHO",
+      "SOCIAL",
+      "NOISE"
+    ],
+    "tolerance": 0.03,
+    "requested_synthetic_proportion": 0.3,
+    "actual_synthetic_proportion": 0.299876,
+    "budget_was_clamped": false,
+    "real_training_samples": 1856000,
+    "segment_plan": [
+      {
+        "slot": 0,
+        "segment_samples": 112433,
+        "segment_pcm_sha256": "23cc9d7bdeaf8a09b32699f7d39a1ddb8086e79548ed04baedf13241e60d77c6",
+        "synthetic_samples": 112400,
+        "clamped": false,
+        "segment": "segment-00.wav"
+      },
+      {
+        "slot": 1,
+        "segment_samples": 112833,
+        "segment_pcm_sha256": "2c38d1965edb030011bb00d1b5fc19108dc522610b9460414495e19e6beb5251",
+        "synthetic_samples": 112720,
+        "clamped": false,
+        "segment": "segment-01.wav"
+      },
+      {
+        "slot": 2,
+        "segment_samples": 113233,
+        "segment_pcm_sha256": "f40c355777464c341c7a4ebf86c31040dabe9dd424d2a2ff3954562b3a306acb",
+        "synthetic_samples": 113200,
+        "clamped": false,
+        "segment": "segment-02.wav"
+      },
+      {
+        "slot": 3,
+        "segment_samples": 113633,
+        "segment_pcm_sha256": "be9e0785965df9a60f519d813ebc7fdc9c73f30efdc8157b9cb39d62c0465941",
+        "synthetic_samples": 113520,
+        "clamped": false,
+        "segment": "segment-03.wav"
+      },
+      {
+        "slot": 4,
+        "segment_samples": 114033,
+        "segment_pcm_sha256": "27e92601e9551ad5bfad7f2f23baeba387474290509143e94ddeceffbcf57a60",
+        "synthetic_samples": 114000,
+        "clamped": false,
+        "segment": "segment-04.wav"
+      },
+      {
+        "slot": 5,
+        "segment_samples": 114433,
+        "segment_pcm_sha256": "191e77bf58146d52b17f30d5dcfcbc4fba8a9244d4696f3883de2e2e2972e012",
+        "synthetic_samples": 114320,
+        "clamped": false,
+        "segment": "segment-05.wav"
+      },
+      {
+        "slot": 6,
+        "segment_samples": 114833,
+        "segment_pcm_sha256": "6eace9d8a712038db14db193d3c86c52076f60e20acba334f61d896bdd322552",
+        "synthetic_samples": 114800,
+        "clamped": false,
+        "segment": "segment-06.wav"
+      }
+    ]
+  },
+  "per_round": [
+    {
+      "round": 0,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9333475232124329,
+        "ant-01": 0.9345400929450989,
+        "ant-02": 1.0052649974822998,
+        "ant-03": 0.9791091680526733,
+        "ant-04": 1.014284610748291,
+        "ant-05": 0.9366634488105774,
+        "ant-06": 0.9707848429679871,
+        "ant-07": 0.9559047222137451
+      },
+      "mean_heldout_error": 0.9662374258041382,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0,
+        "ant-04": 0,
+        "ant-05": 0,
+        "ant-06": 0,
+        "ant-07": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0,
+        "ant-04": 0.0,
+        "ant-05": 0.0,
+        "ant-06": 0.0,
+        "ant-07": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": [],
+        "ant-04": [],
+        "ant-05": [],
+        "ant-06": [],
+        "ant-07": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902,
+        "ant-04": 4.632498741149902,
+        "ant-05": 4.632498741149902,
+        "ant-06": 4.632498741149902,
+        "ant-07": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "04772578d745313aeefc129624eb697ca6d11bb8a1e0d7fbca1ba50004dae57f",
+        "ant-01": "aef75fb75458886d6cb711a31a317be2b3c62ee4a9b82306574eef269906f26b",
+        "ant-02": "ac98c6a4d23fa5496b81fa9bdbf97987a6b61c143d4359a36b6496bbdc9738b4",
+        "ant-03": "3824202f1d18668c3e3bd667117f83f03900e745b8c6887b89f28536904387f9",
+        "ant-04": "3c3a15202cac9b6dfbc385ef9f39d3d7793b4314070d4a0603b8bc433e47685b",
+        "ant-05": "46054967a298e8571acc3e850d80cfca9019ecec3026b559a171676cec2b308f",
+        "ant-06": "681e99ac670d2cd5c3e79ef9ee2da9613f21c0f1fdc2751e70c2267e37df3cfe",
+        "ant-07": "bc72111d8a3e6f391d8f16672cba512b1d76577f31d9e5869b6560290ea82811"
+      }
+    },
+    {
+      "round": 1,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9333475232124329,
+        "ant-01": 0.9345400929450989,
+        "ant-02": 1.0052649974822998,
+        "ant-03": 0.9791091680526733,
+        "ant-04": 1.014284610748291,
+        "ant-05": 0.9366634488105774,
+        "ant-06": 0.9707848429679871,
+        "ant-07": 0.9559047222137451
+      },
+      "mean_heldout_error": 0.9662374258041382,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0,
+        "ant-04": 0,
+        "ant-05": 0,
+        "ant-06": 0,
+        "ant-07": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0,
+        "ant-04": 0.0,
+        "ant-05": 0.0,
+        "ant-06": 0.0,
+        "ant-07": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": [],
+        "ant-04": [],
+        "ant-05": [],
+        "ant-06": [],
+        "ant-07": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902,
+        "ant-04": 4.632498741149902,
+        "ant-05": 4.632498741149902,
+        "ant-06": 4.632498741149902,
+        "ant-07": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "043a07e3a117af4a812fea506c5a7f85e6b98f9e1da0bc43aa3e75aa2c2b7ba2",
+        "ant-01": "a8c91cc10bc1913b079046a2ac8f30678e887811ee2ba63b6df71f6993a2ef5d",
+        "ant-02": "270ed82135732dd429b681b9238001a2efbb674b7775da6957143c0c298349c5",
+        "ant-03": "88ae61d846b34d104c552c30e1daead9a51dcb6ab0f3424353224ad70c50f773",
+        "ant-04": "293a5bbb548c3821320c44766ac0663aaa8b6e21aca29bf60fa90053eba2c3dc",
+        "ant-05": "b614b9c04d47098b25f51cc8215866eaa0de27b81f271e3b795974008fdfd4fe",
+        "ant-06": "d627044e818287434d0df4d247927dd25f733188b99fc328d7ed0846067afd76",
+        "ant-07": "9af1f5fae220f2f886665ef7fb9c553fca5c85617dd12615d31e9d24cae7b126"
+      }
+    },
+    {
+      "round": 2,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9333475232124329,
+        "ant-01": 0.9345400929450989,
+        "ant-02": 1.0052649974822998,
+        "ant-03": 0.9791091680526733,
+        "ant-04": 1.014284610748291,
+        "ant-05": 0.9366634488105774,
+        "ant-06": 0.9707848429679871,
+        "ant-07": 0.9559047222137451
+      },
+      "mean_heldout_error": 0.9662374258041382,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0,
+        "ant-04": 0,
+        "ant-05": 0,
+        "ant-06": 0,
+        "ant-07": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0,
+        "ant-04": 0.0,
+        "ant-05": 0.0,
+        "ant-06": 0.0,
+        "ant-07": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": [],
+        "ant-04": [],
+        "ant-05": [],
+        "ant-06": [],
+        "ant-07": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902,
+        "ant-04": 4.632498741149902,
+        "ant-05": 4.632498741149902,
+        "ant-06": 4.632498741149902,
+        "ant-07": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "5f2b8c88d3496aae729d9036c8e7c6b75d818ddf0b7d123dd4b58fcae27d4ea6",
+        "ant-01": "4ee5df7b9a65bdb4bfcd611757e3566eb80daa7eadade8f7e763ffa096627e12",
+        "ant-02": "d0592b1884eb91d21a5c8dcc98c57609c678d5ac28d64747afe0b13995ffffa9",
+        "ant-03": "949c4e9bed8016d39fe60bc8702629cb8f2f4d2ac4ecf102b97b20a8a731c576",
+        "ant-04": "2985c36b11fe29eff0df939c4f96b642565e368a7afdaaf506e01724354221b8",
+        "ant-05": "40fda08ed8c22edd264e186b17c829f4a3def3789285bd0b02cdcedba890e72f",
+        "ant-06": "f02268d7bb27c24b33835a363865366b47df54d074e9f29971f0b65a05a5685b",
+        "ant-07": "584bc49952ba11bb783004b21705dc66ddf6ce180c89536d1808559db56c6165"
+      }
+    },
+    {
+      "round": 3,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9333475232124329,
+        "ant-01": 0.9345400929450989,
+        "ant-02": 1.0052649974822998,
+        "ant-03": 0.9791091680526733,
+        "ant-04": 1.014284610748291,
+        "ant-05": 0.9366634488105774,
+        "ant-06": 0.9707848429679871,
+        "ant-07": 0.9559047222137451
+      },
+      "mean_heldout_error": 0.9662374258041382,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0,
+        "ant-04": 0,
+        "ant-05": 0,
+        "ant-06": 0,
+        "ant-07": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0,
+        "ant-04": 0.0,
+        "ant-05": 0.0,
+        "ant-06": 0.0,
+        "ant-07": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": [],
+        "ant-04": [],
+        "ant-05": [],
+        "ant-06": [],
+        "ant-07": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902,
+        "ant-04": 4.632498741149902,
+        "ant-05": 4.632498741149902,
+        "ant-06": 4.632498741149902,
+        "ant-07": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "f9a2f78a921d9e7b8f109a3bfcbb0aaef6b6b42e5f3b994d7606fb7e4e5bb19e",
+        "ant-01": "748436cd60f0f208d72c2735e3e2de36b3723bed8720ab7ed3d4876aec5a5ba8",
+        "ant-02": "452b6ec4e5b9fe51573b9cf570f14a490fda893f427d9ab0605d70e93878f7fb",
+        "ant-03": "85a541c0bc653bbf3c6dd6b43c5eaea481f53d55991fe865c6e3a570b47b5fa0",
+        "ant-04": "43469b70922b02b735ed0e85923044cfe1d220adab637008927a0105426b4997",
+        "ant-05": "013652f706d86b4b7b19356e24faaf3a8065d9e372d9f245723638221b1f1b7e",
+        "ant-06": "5cd94c62c3ef35cec7015d8b9a4405db5f4c3505037cac82fff02afd9fbd91c4",
+        "ant-07": "bc346380448aecbd4e7852ddfa3270ca9deebac7112647cbf0f1f3bf733cebf2"
+      }
+    },
+    {
+      "round": 4,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9333475232124329,
+        "ant-01": 0.9345400929450989,
+        "ant-02": 1.0052649974822998,
+        "ant-03": 0.9791091680526733,
+        "ant-04": 1.014284610748291,
+        "ant-05": 0.9366634488105774,
+        "ant-06": 0.9707848429679871,
+        "ant-07": 0.9559047222137451
+      },
+      "mean_heldout_error": 0.9662374258041382,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0,
+        "ant-04": 0,
+        "ant-05": 0,
+        "ant-06": 0,
+        "ant-07": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0,
+        "ant-04": 0.0,
+        "ant-05": 0.0,
+        "ant-06": 0.0,
+        "ant-07": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": [],
+        "ant-04": [],
+        "ant-05": [],
+        "ant-06": [],
+        "ant-07": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902,
+        "ant-04": 4.632498741149902,
+        "ant-05": 4.632498741149902,
+        "ant-06": 4.632498741149902,
+        "ant-07": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "585eabc53ac1d92ec55aa418a741479d0221ac7bbec19d9be75795f2c039b3f8",
+        "ant-01": "45745d84959876017c98b2be184cb82c74375ffb777dc550fdc54eae4478d5f1",
+        "ant-02": "bbc8cabac0e5b8da802dd6424ffcfd64f870a3c425e61899387e08ecf32e8809",
+        "ant-03": "58d9f78604cf6c37f5d062bbb93f7ec2c4aebc566df7a765e1b8508d64843319",
+        "ant-04": "d35d055266e3fa8887182bb5017e6a1dd3478b3e2eca790b9bbd61bbac6ea091",
+        "ant-05": "5d6476e3dbe2133f4e3602c8fa6030f3185ceb699c9037d5221685d00f1f4bf3",
+        "ant-06": "70f0ca32f911f982809abe818991ceee689473f7dd125e5902b64f530cfd69bc",
+        "ant-07": "f11dcc038d505616b4983e793e891c2d671db377b9a1d78a5846c2cc0a9cfbb7"
+      }
+    },
+    {
+      "round": 5,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9333475232124329,
+        "ant-01": 0.9345400929450989,
+        "ant-02": 1.0052649974822998,
+        "ant-03": 0.9791091680526733,
+        "ant-04": 1.014284610748291,
+        "ant-05": 0.9366634488105774,
+        "ant-06": 0.9707848429679871,
+        "ant-07": 0.9559047222137451
+      },
+      "mean_heldout_error": 0.9662374258041382,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0,
+        "ant-04": 0,
+        "ant-05": 0,
+        "ant-06": 0,
+        "ant-07": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0,
+        "ant-04": 0.0,
+        "ant-05": 0.0,
+        "ant-06": 0.0,
+        "ant-07": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": [],
+        "ant-04": [],
+        "ant-05": [],
+        "ant-06": [],
+        "ant-07": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902,
+        "ant-04": 4.632498741149902,
+        "ant-05": 4.632498741149902,
+        "ant-06": 4.632498741149902,
+        "ant-07": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "cb840f9fc5c4e67cd94c7a0de4a6742504d0c022e6631c6bd2263f4876f8987a",
+        "ant-01": "f4f956c00d8757ad2e5477b209956d9e3eeb2ff902a8f3728c920d01d2a82d3a",
+        "ant-02": "d5b397a91d9db60c82c70c52a3fbe428d6f70a09f06cf7c37e14f1408dc51998",
+        "ant-03": "a9a8a9e73435b5c0e9c6ccc0ae3f5b1feb346e860caa07c02833d0ed05d0f033",
+        "ant-04": "4d3a4b0fd5d5df09ec1c1bd85f723560328085131f3a2fd60e640003f74adcd8",
+        "ant-05": "2f357e64143a19aea4c35202dd3e89d7bda2ad7baabc05c406c67daf3bbbbef1",
+        "ant-06": "511ab7ab5a796b558c7aeb2dcc4dd7cdbe0ba3cb56a771f3567e677537844cb8",
+        "ant-07": "1f4fa0aa8e40909c09af9eff8869afdaae44d9f61d0b12d2e8212ec11c0bfa20"
+      }
+    }
+  ],
+  "final_mean_heldout_error": 0.9662374258041382,
+  "baseline_round0_mean_heldout_error": 0.9662374258041382,
+  "notes": "round 0 is a real-audio-only bootstrap and is identical across conditions for a given replicate; rounds 1..N are the treatment rounds. Each round retrains from scratch on that round's mix, so added audio does not accumulate.",
+  "claim_limit": "held-out vector-quantization error on real recordings only; not a claim about speech, meaning or conversation"
+}

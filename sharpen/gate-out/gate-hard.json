@@ -1,0 +1,105 @@
+{
+  "when": "2026-09-06T02:14:32",
+  "runs": [
+    {
+      "label": "SOFT",
+      "state": "dark",
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.006334563127572527,
+        "TZELEM_world_anchored": 0.0030640404940675955,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.010484231095811161,
+        "FLOOR_repaint_every_frame": 0.001398321689090595,
+        "TZELEM_world_anchored": 0.0022343874494482707,
+        "CEILING_warp_only": 0.00844454145416712
+      },
+      "pass": true,
+      "verdict": [
+        "PASS  coherence: TZELEM 0.00306 vs floor 0.00633 = x2.07 steadier",
+        "PASS  fidelity: TZELEM 0.00223 beats BLANK 0.01048 = x4.69",
+        "PASS  the cheat is caught: warp-only is perfectly coherent (0.00000) and tears on fidelity (0.00844)"
+      ],
+      "lapvar_tzelem": 130.85,
+      "steadier_than_floor": 2.067388841576054,
+      "better_than_blank": 4.692217143629228,
+      "seconds": 256.2
+    },
+    {
+      "label": "HARD",
+      "state": "dark",
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.007202766605274038,
+        "TZELEM_world_anchored": 0.0032211599058671377,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.010484231095811161,
+        "FLOOR_repaint_every_frame": 0.002053963281630652,
+        "TZELEM_world_anchored": 0.0029251236197673316,
+        "CEILING_warp_only": 0.009029133128483368
+      },
+      "pass": true,
+      "verdict": [
+        "PASS  coherence: TZELEM 0.00322 vs floor 0.00720 = x2.24 steadier",
+        "PASS  fidelity: TZELEM 0.00293 beats BLANK 0.01048 = x3.58",
+        "PASS  the cheat is caught: warp-only is perfectly coherent (0.00000) and tears on fidelity (0.00903)"
+      ],
+      "lapvar_tzelem": 171.075,
+      "steadier_than_floor": 2.236078560444844,
+      "better_than_blank": 3.5842010316969413,
+      "seconds": 246.7
+    },
+    {
+      "label": "SOFT",
+      "state": "lit",
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.009016779311797011,
+        "TZELEM_world_anchored": 0.003906888469637594,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.007845628731937395,
+        "FLOOR_repaint_every_frame": 0.0017326515298981585,
+        "TZELEM_world_anchored": 0.002504038063508523,
+        "CEILING_warp_only": 0.013114135805109513
+      },
+      "pass": true,
+      "verdict": [
+        "PASS  coherence: TZELEM 0.00391 vs floor 0.00902 = x2.31 steadier",
+        "PASS  fidelity: TZELEM 0.00250 beats BLANK 0.00785 = x3.13",
+        "PASS  the cheat is caught: warp-only is perfectly coherent (0.00000) and tears on fidelity (0.01311)"
+      ],
+      "lapvar_tzelem": 124.45,
+      "steadier_than_floor": 2.3079182786688084,
+      "better_than_blank": 3.1331906835890995,
+      "seconds": 257.2
+    },
+    {
+      "label": "HARD",
+      "state": "lit",
+      "coherence": {
+        "FLOOR_repaint_every_frame": 0.009760073201832732,
+        "TZELEM_world_anchored": 0.0039163388627614665,
+        "CEILING_warp_only": 0.0
+      },
+      "fidelity_mse": {
+        "BLANK_best_flat_colour": 0.007845628731937395,
+        "FLOOR_repaint_every_frame": 0.0027513579569315135,
+        "TZELEM_world_anchored": 0.003503108663901977,
+        "CEILING_warp_only": 0.013928568227344531
+      },
+      "pass": true,
+      "verdict": [
+        "PASS  coherence: TZELEM 0.00392 vs floor 0.00976 = x2.49 steadier",
+        "PASS  fidelity: TZELEM 0.00350 beats BLANK 0.00785 = x2.24",
+        "PASS  the cheat is caught: warp-only is perfectly coherent (0.00000) and tears on fidelity (0.01393)"
+      ],
+      "lapvar_tzelem": 183.55,
+      "steadier_than_floor": 2.492142162323197,
+      "better_than_blank": 2.239619002625643,
+      "seconds": 247.5
+    }
+  ]
+}

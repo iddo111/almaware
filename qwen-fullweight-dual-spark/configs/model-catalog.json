@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "models": {
+    "smoke_2b": {
+      "upstream_id": "Qwen/Qwen3.5-2B-Base",
+      "total_parameters": 2000000000,
+      "active_parameters": 2000000000,
+      "architecture": "dense",
+      "modalities": ["image_text"],
+      "full_checkpoint_multimodal": true,
+      "parameter_count_is_lower_bound": true,
+      "role": "two-node smoke only",
+      "qualification_predecessor": null
+    },
+    "target_9b": {
+      "upstream_id": "Qwen/Qwen3.5-9B-Base",
+      "total_parameters": 10000000000,
+      "active_parameters": 10000000000,
+      "architecture": "dense",
+      "modalities": ["image_text"],
+      "full_checkpoint_multimodal": true,
+      "parameter_count_is_lower_bound": true,
+      "role": "dense current target",
+      "parameter_count_note": "Official card names the language model as 9B; Hugging Face reports the complete multimodal checkpoint as approximately 10B. Full-weight planning uses 10B.",
+      "qualification_predecessor": "smoke_2b"
+    },
+    "max_text_30b_a3b": {
+      "upstream_id": "Qwen/Qwen3-30B-A3B-Base",
+      "total_parameters": 30500000000,
+      "active_parameters": 3300000000,
+      "architecture": "sparse_moe",
+      "modalities": ["text"],
+      "full_checkpoint_multimodal": false,
+      "parameter_count_is_lower_bound": false,
+      "role": "maximum text-only candidate",
+      "qualification_predecessor": "target_9b"
+    },
+    "max_multimodal_35b_a3b": {
+      "upstream_id": "Qwen/Qwen3.5-35B-A3B-Base",
+      "total_parameters": 36000000000,
+      "active_parameters": 4000000000,
+      "architecture": "sparse_moe_multimodal",
+      "modalities": ["image_text"],
+      "full_checkpoint_multimodal": true,
+      "parameter_count_is_lower_bound": true,
+      "role": "maximum multimodal candidate",
+      "parameter_count_note": "Official card names the language model as 35B total and 3B activated; Hugging Face reports the complete multimodal checkpoint as approximately 36B. Full-weight planning uses 36B and conservatively budgets 4B active with vision.",
+      "qualification_predecessor": "target_9b",
+      "hard_condition": "dataset modality must be image_text and vision gradient coverage must pass"
+    }
+  }
+}

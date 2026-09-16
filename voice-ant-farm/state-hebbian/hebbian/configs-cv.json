@@ -1,0 +1,15 @@
+[
+  {"name": "random-real-frames", "kind": "random-real-frames"},
+  {"name": "random-gaussian", "kind": "random-gaussian"},
+  {"name": "kmeans-scaled", "kind": "kmeans", "scaled": true},
+  {"name": "kmeans-unscaled", "kind": "kmeans", "scaled": false},
+  {"name": "hebbian-default", "kind": "hebbian", "epochs": 20, "scaled": true},
+  {"name": "hebbian-unscaled", "kind": "hebbian", "epochs": 20, "scaled": false},
+  {"name": "hebbian-no-conscience", "kind": "hebbian", "epochs": 20, "scaled": true, "conscience": 0.0},
+  {"name": "hebbian-conscience-0.5", "kind": "hebbian", "epochs": 20, "scaled": true, "conscience": 0.5},
+  {"name": "hebbian-sigma-min-1.0", "kind": "hebbian", "epochs": 20, "scaled": true, "sigma_min": 1.0},
+  {"name": "hebbian-sigma-min-0.25", "kind": "hebbian", "epochs": 20, "scaled": true, "sigma_min": 0.25},
+  {"name": "hebbian-snap", "kind": "hebbian", "epochs": 20, "scaled": true, "snap": true},
+  {"name": "hebbian-epochs-5", "kind": "hebbian", "epochs": 5, "scaled": true},
+  {"name": "hebbian-epochs-40", "kind": "hebbian", "epochs": 40, "scaled": true}
+]

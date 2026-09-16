@@ -1,0 +1,201 @@
+{
+  "alma": "0.1",
+  "weave": "heat",
+  "knots": [
+    {
+      "name": "c"
+    },
+    {
+      "name": "c2f",
+      "verb": "sum",
+      "bias": 32.0
+    },
+    {
+      "name": "show",
+      "verb": "fringe"
+    }
+  ],
+  "threads": [
+    {
+      "from": "c",
+      "to": "c2f",
+      "strands": [
+        {
+          "weight": 1.8,
+          "delay": 1
+        }
+      ]
+    },
+    {
+      "from": "c2f",
+      "to": "show"
+    }
+  ],
+  "seeds": [
+    {
+      "to": "c",
+      "value": 100.0
+    },
+    {
+      "to": "c",
+      "value": 0.0,
+      "beat": 3
+    },
+    {
+      "to": "c",
+      "value": 37.0,
+      "beat": 5
+    }
+  ],
+  "run": 8,
+  "scene": {
+    "seed": 1337,
+    "layout": "bfs-layer",
+    "positions": {
+      "c": [
+        0.0824,
+        3.0233,
+        0.0
+      ],
+      "c2f": [
+        -0.0939,
+        3.0601,
+        6.0
+      ],
+      "show": [
+        -0.234,
+        3.2271,
+        12.0
+      ]
+    }
+  },
+  "trace": {
+    "beats": 7,
+    "finished": true,
+    "fires": [
+      {
+        "beat": 1,
+        "knot": "c",
+        "spoke": 100.0
+      },
+      {
+        "beat": 2,
+        "knot": "c2f",
+        "spoke": 212.0
+      },
+      {
+        "beat": 3,
+        "knot": "c",
+        "spoke": 0.0
+      },
+      {
+        "beat": 3,
+        "knot": "show",
+        "spoke": 212.0
+      },
+      {
+        "beat": 4,
+        "knot": "c2f",
+        "spoke": 32.0
+      },
+      {
+        "beat": 5,
+        "knot": "c",
+        "spoke": 37.0
+      },
+      {
+        "beat": 5,
+        "knot": "show",
+        "spoke": 32.0
+      },
+      {
+        "beat": 6,
+        "knot": "c2f",
+        "spoke": 98.60000000000001
+      },
+      {
+        "beat": 7,
+        "knot": "show",
+        "spoke": 98.60000000000001
+      }
+    ],
+    "fringes": {
+      "show": [
+        [
+          3,
+          212.0
+        ],
+        [
+          5,
+          32.0
+        ],
+        [
+          7,
+          98.60000000000001
+        ]
+      ]
+    },
+    "sparks": [
+      {
+        "from": "c",
+        "to": "c2f",
+        "port": "in",
+        "weight": 1.8,
+        "delay": 1,
+        "depart_beat": 1,
+        "arrival_beat": 2,
+        "value": 180.0
+      },
+      {
+        "from": "c2f",
+        "to": "show",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 2,
+        "arrival_beat": 3,
+        "value": 212.0
+      },
+      {
+        "from": "c",
+        "to": "c2f",
+        "port": "in",
+        "weight": 1.8,
+        "delay": 1,
+        "depart_beat": 3,
+        "arrival_beat": 4,
+        "value": 0.0
+      },
+      {
+        "from": "c2f",
+        "to": "show",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 4,
+        "arrival_beat": 5,
+        "value": 32.0
+      },
+      {
+        "from": "c",
+        "to": "c2f",
+        "port": "in",
+        "weight": 1.8,
+        "delay": 1,
+        "depart_beat": 5,
+        "arrival_beat": 6,
+        "value": 66.60000000000001
+      },
+      {
+        "from": "c2f",
+        "to": "show",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 6,
+        "arrival_beat": 7,
+        "value": 98.60000000000001
+      }
+    ]
+  }
+}

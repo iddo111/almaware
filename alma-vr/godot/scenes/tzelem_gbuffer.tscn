@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctzelemgbuffer1"]
+
+; THE G-BUFFER SCENE. Same shape as boulevard_shots.tscn and for the same reasons:
+; the world builds itself, the exporter makes its own SubViewport and photographs the
+; world through that, and the visible window renders nothing but the clear colour --
+; so no pixel outside this process is ever read.
+;
+; TZELEM then loads what this writes with tzelem/gbuffer.py and does not need to know
+; an engine was involved: the dict it gets back has the same keys and shapes as our
+; own numpy stage.gbuffer().
+
+[ext_resource type="Script" path="res://scripts/boulevard_cafe.gd" id="1_world"]
+[ext_resource type="Script" path="res://scripts/tzelem_gbuffer.gd" id="2_gbuf"]
+
+[node name="TzelemGBuffer" type="Node3D"]
+
+[node name="World" type="Node3D" parent="."]
+script = ExtResource("1_world")
+
+[node name="Export" type="Node" parent="."]
+script = ExtResource("2_gbuf")

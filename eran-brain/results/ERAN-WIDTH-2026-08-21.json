@@ -1,0 +1,3510 @@
+{
+  "title": "ERAN prototypes with WIDTH — does a shaped unit break the 74.24% ceiling?",
+  "date": "2026-08-21",
+  "host": "edgexpert-3636",
+  "chance": 0.045454545454545456,
+  "published_baselines": {
+    "chance": 0.045454545454545456,
+    "duration_only_floor": 0.05303030303030303,
+    "random_real_frames_codebook": 0.4621212121212121,
+    "raw_features_speech_span": 0.5378787878787878,
+    "raw_features_loudest60": 0.6893939393939394,
+    "frozen_cochlea_nearest_centroid": 0.7954545454545454,
+    "prototype_organism_heldout": 0.6287878787878788,
+    "supervised_snn_heldout": 0.8409090909090909
+  },
+  "measured_baselines": {
+    "prototype_family_ceiling_1nn_kmeans": 0.7424242424242424,
+    "no_learning_control_nearest_centroid": 0.7954545454545454,
+    "organism_unsupervised_30_passes": 0.6944444444444445
+  },
+  "motivating_result": "results/ERAN-vs-SNN-2026-08-21.json",
+  "hypothesis": "A prototype is a POINT with an isotropic cosine. A real neuron's receptive field is a tuning curve with a WIDTH — it prefers a region, more strongly along some directions than others. ERAN already has a scalar version (Brain.tolerance = mean - k*sd of a unit's own absorbed similarities). This experiment makes that width PER-DIRECTION and asks whether it breaks the ceiling.",
+  "protocol": {
+    "cochlea": "eran-brain/body/ears.py EAR_REPR=cochlea, 8x24, dim 192, FROZEN; byte-identical snn-lab/cochlea.py",
+    "split": "396 train / 132 heldout, corpus-syllables — identical to the fair fight",
+    "dev": "stratified + deterministic by sha1(filename), first 20% per class. 308 fit / 88 dev.",
+    "heldout_policy": "opened once per arm, after every choice was fixed on dev",
+    "naming": "each unit takes the class it won most often on TRAIN (proof/measure.py:fit_proto_labels); an unnamed unit scores WRONG",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "exposure": "30 passes over the training audio — inherited from the fair fight's dev choice, NOT re-tuned here",
+    "statistics": "Wilson 95% intervals; exact two-sided McNemar on the same 132 items for every headline comparison"
+  },
+  "dev_phase": {
+    "arm1_baseline": {
+      "dev_mean": 0.8333333333333334,
+      "dev_seeds": [
+        0.8181818181818182,
+        0.8522727272727273,
+        0.8295454545454546
+      ]
+    },
+    "arm2_diagonal_width_sweep": [
+      {
+        "kind": "mah",
+        "lam": 0.0,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8598484848484849,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.0,
+        "adaptive": true,
+        "floor": 0.25,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8598484848484849,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.5,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8598484848484849,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.5,
+        "adaptive": true,
+        "floor": 0.25,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8598484848484849,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.5,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": true,
+        "logdet": true,
+        "dev_mean": 0.8598484848484849,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8863636363636364,
+          0.8409090909090909
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.5,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 1,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8598484848484849,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.5,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 2,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8598484848484849,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.5,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": false,
+        "dev_mean": 0.8598484848484849,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.0,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.0,
+        "adaptive": true,
+        "floor": 0.25,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.5,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.5,
+        "adaptive": true,
+        "floor": 0.25,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.99,
+        "adaptive": false,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.99,
+        "adaptive": false,
+        "floor": 0.25,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.9,
+        "adaptive": false,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.875,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.9,
+        "adaptive": false,
+        "floor": 0.25,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.875,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.99,
+        "adaptive": false,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.99,
+        "adaptive": false,
+        "floor": 0.25,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.5,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 1,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.5,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 2,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.5,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": true,
+        "logdet": true,
+        "dev_mean": 0.8560606060606061,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.3,
+        "adaptive": false,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8522727272727274,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.875,
+          0.8181818181818182
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.6,
+        "adaptive": false,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8522727272727272,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.875,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.6,
+        "adaptive": false,
+        "floor": 0.25,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8522727272727272,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.875,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.9,
+        "adaptive": false,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8522727272727272,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.875,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.9,
+        "adaptive": false,
+        "floor": 0.25,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8522727272727272,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.875,
+          0.8295454545454546
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.3,
+        "adaptive": false,
+        "floor": 0.25,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8371212121212123,
+        "dev_seeds": [
+          0.8409090909090909,
+          0.8522727272727273,
+          0.8181818181818182
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.6,
+        "adaptive": false,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.7954545454545455,
+        "dev_seeds": [
+          0.7954545454545454,
+          0.8181818181818182,
+          0.7727272727272727
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.6,
+        "adaptive": false,
+        "floor": 0.25,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.7954545454545455,
+        "dev_seeds": [
+          0.7954545454545454,
+          0.8181818181818182,
+          0.7727272727272727
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.3,
+        "adaptive": false,
+        "floor": 0.25,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.6780303030303031,
+        "dev_seeds": [
+          0.6818181818181818,
+          0.7045454545454546,
+          0.6477272727272727
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.3,
+        "adaptive": false,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.6628787878787877,
+        "dev_seeds": [
+          0.6704545454545454,
+          0.6818181818181818,
+          0.6363636363636364
+        ]
+      }
+    ],
+    "arm2_winner": {
+      "kind": "mah",
+      "lam": 0.0,
+      "adaptive": true,
+      "floor": 0.05,
+      "em": 0,
+      "refit_mean": false,
+      "logdet": true,
+      "dev_mean": 0.8598484848484849,
+      "dev_seeds": [
+        0.8636363636363636,
+        0.8863636363636364,
+        0.8295454545454546
+      ]
+    },
+    "arm3_shrinkage_cov_sweep": [
+      {
+        "lam": 0.99,
+        "adaptive": false,
+        "dev_mean": 0.8863636363636364,
+        "dev_seeds": [
+          0.8863636363636364,
+          0.9204545454545454,
+          0.8522727272727273
+        ]
+      },
+      {
+        "lam": 0.99,
+        "adaptive": true,
+        "dev_mean": 0.8825757575757575,
+        "dev_seeds": [
+          0.8863636363636364,
+          0.9204545454545454,
+          0.8409090909090909
+        ]
+      },
+      {
+        "lam": 0.5,
+        "adaptive": true,
+        "dev_mean": 0.875,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.9090909090909091,
+          0.8522727272727273
+        ]
+      },
+      {
+        "lam": 0.9,
+        "adaptive": true,
+        "dev_mean": 0.875,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.9090909090909091,
+          0.8522727272727273
+        ]
+      },
+      {
+        "lam": 0.9,
+        "adaptive": false,
+        "dev_mean": 0.8522727272727274,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.875,
+          0.8181818181818182
+        ]
+      },
+      {
+        "lam": 0.5,
+        "adaptive": false,
+        "dev_mean": 0.8257575757575757,
+        "dev_seeds": [
+          0.8068181818181818,
+          0.8863636363636364,
+          0.7840909090909091
+        ]
+      }
+    ],
+    "arm3_winner": {
+      "lam": 0.99,
+      "adaptive": false,
+      "dev_mean": 0.8863636363636364,
+      "dev_seeds": [
+        0.8863636363636364,
+        0.9204545454545454,
+        0.8522727272727273
+      ]
+    },
+    "arm4_shared_whitening_sweep": [
+      {
+        "cov_source": "total",
+        "alpha": 0.75,
+        "shrink": 0.3,
+        "dev_mean": 0.9696969696969697,
+        "dev_seeds": [
+          0.9659090909090909,
+          0.9772727272727273,
+          0.9659090909090909
+        ]
+      },
+      {
+        "cov_source": "total",
+        "alpha": 0.5,
+        "shrink": 0.1,
+        "dev_mean": 0.9659090909090909,
+        "dev_seeds": [
+          0.9545454545454546,
+          0.9772727272727273,
+          0.9659090909090909
+        ]
+      },
+      {
+        "cov_source": "total",
+        "alpha": 0.5,
+        "shrink": 0.01,
+        "dev_mean": 0.9583333333333334,
+        "dev_seeds": [
+          0.9659090909090909,
+          0.9659090909090909,
+          0.9431818181818182
+        ]
+      },
+      {
+        "cov_source": "total",
+        "alpha": 0.5,
+        "shrink": 0.3,
+        "dev_mean": 0.9583333333333334,
+        "dev_seeds": [
+          0.9431818181818182,
+          0.9545454545454546,
+          0.9772727272727273
+        ]
+      },
+      {
+        "cov_source": "total",
+        "alpha": 1.0,
+        "shrink": 0.3,
+        "dev_mean": 0.9545454545454546,
+        "dev_seeds": [
+          0.9431818181818182,
+          0.9545454545454546,
+          0.9659090909090909
+        ]
+      },
+      {
+        "cov_source": "total",
+        "alpha": 0.75,
+        "shrink": 0.01,
+        "dev_mean": 0.9393939393939394,
+        "dev_seeds": [
+          0.8977272727272727,
+          0.9659090909090909,
+          0.9545454545454546
+        ]
+      },
+      {
+        "cov_source": "total",
+        "alpha": 0.75,
+        "shrink": 0.1,
+        "dev_mean": 0.9393939393939394,
+        "dev_seeds": [
+          0.9318181818181818,
+          0.9659090909090909,
+          0.9204545454545454
+        ]
+      },
+      {
+        "cov_source": "total",
+        "alpha": 1.0,
+        "shrink": 0.1,
+        "dev_mean": 0.9242424242424242,
+        "dev_seeds": [
+          0.9204545454545454,
+          0.9204545454545454,
+          0.9318181818181818
+        ]
+      },
+      {
+        "cov_source": "within",
+        "alpha": 0.5,
+        "shrink": 0.3,
+        "dev_mean": 0.9242424242424242,
+        "dev_seeds": [
+          0.9204545454545454,
+          0.9545454545454546,
+          0.8977272727272727
+        ]
+      },
+      {
+        "cov_source": "total",
+        "alpha": 0.25,
+        "shrink": 0.01,
+        "dev_mean": 0.9166666666666666,
+        "dev_seeds": [
+          0.9204545454545454,
+          0.8977272727272727,
+          0.9318181818181818
+        ]
+      },
+      {
+        "cov_source": "total",
+        "alpha": 0.25,
+        "shrink": 0.1,
+        "dev_mean": 0.9166666666666666,
+        "dev_seeds": [
+          0.9204545454545454,
+          0.8977272727272727,
+          0.9318181818181818
+        ]
+      },
+      {
+        "cov_source": "within",
+        "alpha": 0.25,
+        "shrink": 0.01,
+        "dev_mean": 0.9166666666666666,
+        "dev_seeds": [
+          0.9090909090909091,
+          0.9318181818181818,
+          0.9090909090909091
+        ]
+      },
+      {
+        "cov_source": "within",
+        "alpha": 0.25,
+        "shrink": 0.3,
+        "dev_mean": 0.9166666666666666,
+        "dev_seeds": [
+          0.9204545454545454,
+          0.8977272727272727,
+          0.9318181818181818
+        ]
+      },
+      {
+        "cov_source": "within",
+        "alpha": 0.75,
+        "shrink": 0.3,
+        "dev_mean": 0.9128787878787877,
+        "dev_seeds": [
+          0.9204545454545454,
+          0.9204545454545454,
+          0.8977272727272727
+        ]
+      },
+      {
+        "cov_source": "total",
+        "alpha": 0.25,
+        "shrink": 0.3,
+        "dev_mean": 0.8977272727272728,
+        "dev_seeds": [
+          0.8863636363636364,
+          0.8977272727272727,
+          0.9090909090909091
+        ]
+      },
+      {
+        "cov_source": "within",
+        "alpha": 0.5,
+        "shrink": 0.1,
+        "dev_mean": 0.8977272727272728,
+        "dev_seeds": [
+          0.9090909090909091,
+          0.9090909090909091,
+          0.875
+        ]
+      },
+      {
+        "cov_source": "within",
+        "alpha": 0.25,
+        "shrink": 0.1,
+        "dev_mean": 0.8939393939393939,
+        "dev_seeds": [
+          0.875,
+          0.9204545454545454,
+          0.8863636363636364
+        ]
+      },
+      {
+        "cov_source": "within",
+        "alpha": 0.75,
+        "shrink": 0.1,
+        "dev_mean": 0.8901515151515151,
+        "dev_seeds": [
+          0.8977272727272727,
+          0.9090909090909091,
+          0.8636363636363636
+        ]
+      },
+      {
+        "cov_source": "within",
+        "alpha": 1.0,
+        "shrink": 0.3,
+        "dev_mean": 0.8901515151515151,
+        "dev_seeds": [
+          0.8977272727272727,
+          0.9090909090909091,
+          0.8636363636363636
+        ]
+      },
+      {
+        "cov_source": "within",
+        "alpha": 0.5,
+        "shrink": 0.01,
+        "dev_mean": 0.8863636363636364,
+        "dev_seeds": [
+          0.8977272727272727,
+          0.9090909090909091,
+          0.8522727272727273
+        ]
+      },
+      {
+        "cov_source": "within",
+        "alpha": 1.0,
+        "shrink": 0.01,
+        "dev_mean": 0.8863636363636364,
+        "dev_seeds": [
+          0.8863636363636364,
+          0.9090909090909091,
+          0.8636363636363636
+        ]
+      },
+      {
+        "cov_source": "within",
+        "alpha": 1.0,
+        "shrink": 0.1,
+        "dev_mean": 0.8863636363636364,
+        "dev_seeds": [
+          0.9090909090909091,
+          0.8977272727272727,
+          0.8522727272727273
+        ]
+      },
+      {
+        "cov_source": "within",
+        "alpha": 0.75,
+        "shrink": 0.01,
+        "dev_mean": 0.875,
+        "dev_seeds": [
+          0.8863636363636364,
+          0.8977272727272727,
+          0.8409090909090909
+        ]
+      },
+      {
+        "cov_source": "total",
+        "alpha": 1.0,
+        "shrink": 0.01,
+        "dev_mean": 0.8636363636363636,
+        "dev_seeds": [
+          0.8295454545454546,
+          0.9090909090909091,
+          0.8522727272727273
+        ]
+      }
+    ],
+    "arm4_winner": {
+      "cov_source": "total",
+      "alpha": 0.75,
+      "shrink": 0.3,
+      "dev_mean": 0.9696969696969697,
+      "dev_seeds": [
+        0.9659090909090909,
+        0.9772727272727273,
+        0.9659090909090909
+      ]
+    },
+    "arm2b_online_width_sweep": [
+      {
+        "kind": "mah",
+        "lam": 0.9,
+        "adaptive": false,
+        "dev_mean": 0.8787878787878789,
+        "dev_seeds": [
+          0.875,
+          0.8636363636363636,
+          0.8977272727272727
+        ],
+        "protos": [
+          165,
+          154,
+          168
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.9,
+        "adaptive": false,
+        "dev_mean": 0.8219696969696969,
+        "dev_seeds": [
+          0.8181818181818182,
+          0.875,
+          0.7727272727272727
+        ],
+        "protos": [
+          134,
+          138,
+          144
+        ]
+      },
+      {
+        "kind": "wcos",
+        "lam": 0.5,
+        "adaptive": true,
+        "dev_mean": 0.8068181818181818,
+        "dev_seeds": [
+          0.8522727272727273,
+          0.8181818181818182,
+          0.75
+        ],
+        "protos": [
+          134,
+          130,
+          129
+        ]
+      },
+      {
+        "kind": "mah",
+        "lam": 0.5,
+        "adaptive": true,
+        "dev_mean": 0.7727272727272728,
+        "dev_seeds": [
+          0.7613636363636364,
+          0.7840909090909091,
+          0.7727272727272727
+        ],
+        "protos": [
+          131,
+          120,
+          135
+        ]
+      }
+    ],
+    "arm2b_winner": {
+      "kind": "mah",
+      "lam": 0.9,
+      "adaptive": false,
+      "dev_mean": 0.8787878787878789,
+      "dev_seeds": [
+        0.875,
+        0.8636363636363636,
+        0.8977272727272727
+      ],
+      "protos": [
+        165,
+        154,
+        168
+      ]
+    }
+  },
+  "final_heldout": {
+    "ARM1_baseline_cosine_point": {
+      "name": "ARM1_baseline_cosine_point",
+      "mean": 0.6944444444444445,
+      "seeds": [
+        0.6893939393939394,
+        0.7045454545454546,
+        0.6893939393939394
+      ],
+      "pooled_correct": 275,
+      "pooled_n": 396,
+      "wilson95_pooled": [
+        0.6473866304664545,
+        0.737766025924438
+      ],
+      "wilson95_single_seed": [
+        0.6060376671248224,
+        0.7620384742393411
+      ],
+      "predictions_correct_mask_seed0": [
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "prototypes": [
+        184,
+        188,
+        184
+      ]
+    },
+    "ARM2_diagonal_width": {
+      "name": "ARM2_diagonal_width",
+      "mean": 0.7272727272727272,
+      "seeds": [
+        0.696969696969697,
+        0.75,
+        0.7348484848484849
+      ],
+      "pooled_correct": 288,
+      "pooled_n": 396,
+      "wilson95_pooled": [
+        0.6813813363662068,
+        0.7687970931815896
+      ],
+      "wilson95_single_seed": [
+        0.6139164910834847,
+        0.7688826959352455
+      ],
+      "predictions_correct_mask_seed0": [
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "config": {
+        "kind": "mah",
+        "lam": 0.0,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.8598484848484849,
+        "dev_seeds": [
+          0.8636363636363636,
+          0.8863636363636364,
+          0.8295454545454546
+        ]
+      }
+    },
+    "ARM3_shrinkage_covariance": {
+      "name": "ARM3_shrinkage_covariance",
+      "mean": 0.6035353535353535,
+      "seeds": [
+        0.5833333333333334,
+        0.6212121212121212,
+        0.6060606060606061
+      ],
+      "pooled_correct": 239,
+      "pooled_n": 396,
+      "wilson95_pooled": [
+        0.5545837301844738,
+        0.6504975543873
+      ],
+      "wilson95_single_seed": [
+        0.4980375063078832,
+        0.6639159958923488
+      ],
+      "predictions_correct_mask_seed0": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "config": {
+        "lam": 0.99,
+        "adaptive": false,
+        "dev_mean": 0.8863636363636364,
+        "dev_seeds": [
+          0.8863636363636364,
+          0.9204545454545454,
+          0.8522727272727273
+        ]
+      }
+    },
+    "ARM4_shared_whitening": {
+      "name": "ARM4_shared_whitening",
+      "mean": 0.7626262626262627,
+      "seeds": [
+        0.7727272727272727,
+        0.7424242424242424,
+        0.7727272727272727
+      ],
+      "pooled_correct": 302,
+      "pooled_n": 396,
+      "wilson95_pooled": [
+        0.7183229606407648,
+        0.8018832246144667
+      ],
+      "wilson95_single_seed": [
+        0.6941217129003106,
+        0.8359079306640849
+      ],
+      "predictions_correct_mask_seed0": [
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "config": {
+        "cov_source": "total",
+        "alpha": 0.75,
+        "shrink": 0.3,
+        "dev_mean": 0.9696969696969697,
+        "dev_seeds": [
+          0.9659090909090909,
+          0.9772727272727273,
+          0.9659090909090909
+        ]
+      },
+      "prototypes": [
+        202,
+        194,
+        197
+      ]
+    },
+    "ARM2b_online_width": {
+      "name": "ARM2b_online_width",
+      "mean": 0.7070707070707071,
+      "seeds": [
+        0.6893939393939394,
+        0.7196969696969697,
+        0.7121212121212122
+      ],
+      "pooled_correct": 280,
+      "pooled_n": 396,
+      "wilson95_pooled": [
+        0.660428508319062,
+        0.749734060824486
+      ],
+      "wilson95_single_seed": [
+        0.6060376671248224,
+        0.7620384742393411
+      ],
+      "predictions_correct_mask_seed0": [
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "config": {
+        "kind": "mah",
+        "lam": 0.9,
+        "adaptive": false,
+        "dev_mean": 0.8787878787878789,
+        "dev_seeds": [
+          0.875,
+          0.8636363636363636,
+          0.8977272727272727
+        ],
+        "protos": [
+          165,
+          154,
+          168
+        ]
+      },
+      "prototypes": [
+        190,
+        198,
+        202
+      ]
+    },
+    "CONTROL_nearest_class_centroid": {
+      "name": "CONTROL_nearest_class_centroid",
+      "mean": 0.7954545454545454,
+      "seeds": [
+        0.7954545454545454
+      ],
+      "pooled_correct": 105,
+      "pooled_n": 132,
+      "wilson95_pooled": [
+        0.7187547727810396,
+        0.8554440077470554
+      ],
+      "wilson95_single_seed": [
+        0.7187547727810396,
+        0.8554440077470554
+      ],
+      "predictions_correct_mask_seed0": [
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "CONTROL_1nn": {
+      "name": "CONTROL_1nn",
+      "mean": 0.7424242424242424,
+      "seeds": [
+        0.7424242424242424
+      ],
+      "pooled_correct": 98,
+      "pooled_n": 132,
+      "wilson95_pooled": [
+        0.661712096021106,
+        0.8094253649250231
+      ],
+      "wilson95_single_seed": [
+        0.661712096021106,
+        0.8094253649250231
+      ],
+      "predictions_correct_mask_seed0": [
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "CONTROL_kmeans_matched_k": {
+      "name": "CONTROL_kmeans_matched_k",
+      "mean": 0.7373737373737373,
+      "seeds": [
+        0.7727272727272727,
+        0.7272727272727273,
+        0.7121212121212122
+      ],
+      "pooled_correct": 292,
+      "pooled_n": 396,
+      "wilson95_pooled": [
+        0.6918991960990132,
+        0.7782871636509076
+      ],
+      "wilson95_single_seed": [
+        0.6941217129003106,
+        0.8359079306640849
+      ],
+      "predictions_correct_mask_seed0": [
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "CONTROL_kmeans_k264": {
+      "name": "CONTROL_kmeans_k264",
+      "mean": 0.7424242424242425,
+      "seeds": [
+        0.7575757575757576,
+        0.7424242424242424,
+        0.7272727272727273
+      ],
+      "pooled_correct": 294,
+      "pooled_n": 396,
+      "wilson95_pooled": [
+        0.697168912786024,
+        0.7830214120649589
+      ],
+      "wilson95_single_seed": [
+        0.6778581786350323,
+        0.8227253736202301
+      ],
+      "predictions_correct_mask_seed0": [
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "statistics": {
+    "mcnemar_paired": {
+      "ARM2_diagonal_width__vs__ARM1_baseline_cosine_point": {
+        "delta_points": 3.28,
+        "mcnemar_p_per_seed": [
+          1.0,
+          0.109375,
+          0.109375
+        ],
+        "arm_right_ref_wrong_per_seed": [
+          5,
+          8,
+          8
+        ],
+        "ref_right_arm_wrong_per_seed": [
+          4,
+          2,
+          2
+        ],
+        "verdict": "no significant difference at p<0.05 on any seed"
+      },
+      "ARM2_diagonal_width__vs__CONTROL_1nn": {
+        "delta_points": -1.52,
+        "mcnemar_p_per_seed": [
+          0.28627872467041016
+        ],
+        "arm_right_ref_wrong_per_seed": [
+          8
+        ],
+        "ref_right_arm_wrong_per_seed": [
+          14
+        ],
+        "verdict": "no significant difference at p<0.05 on any seed"
+      },
+      "ARM2_diagonal_width__vs__CONTROL_nearest_class_centroid": {
+        "delta_points": -6.82,
+        "mcnemar_p_per_seed": [
+          0.004425048828125
+        ],
+        "arm_right_ref_wrong_per_seed": [
+          3
+        ],
+        "ref_right_arm_wrong_per_seed": [
+          16
+        ],
+        "verdict": "significant on 1/1 seeds"
+      },
+      "ARM3_shrinkage_covariance__vs__ARM1_baseline_cosine_point": {
+        "delta_points": -9.09,
+        "mcnemar_p_per_seed": [
+          0.009355306625366211,
+          0.052238985896110535,
+          0.052238985896110535
+        ],
+        "arm_right_ref_wrong_per_seed": [
+          6,
+          8,
+          8
+        ],
+        "ref_right_arm_wrong_per_seed": [
+          20,
+          19,
+          19
+        ],
+        "verdict": "significant on 1/3 seeds"
+      },
+      "ARM3_shrinkage_covariance__vs__CONTROL_1nn": {
+        "delta_points": -13.89,
+        "mcnemar_p_per_seed": [
+          1.9431114196777344e-05
+        ],
+        "arm_right_ref_wrong_per_seed": [
+          2
+        ],
+        "ref_right_arm_wrong_per_seed": [
+          23
+        ],
+        "verdict": "significant on 1/1 seeds"
+      },
+      "ARM3_shrinkage_covariance__vs__CONTROL_nearest_class_centroid": {
+        "delta_points": -19.19,
+        "mcnemar_p_per_seed": [
+          5.774199962615967e-08
+        ],
+        "arm_right_ref_wrong_per_seed": [
+          1
+        ],
+        "ref_right_arm_wrong_per_seed": [
+          29
+        ],
+        "verdict": "significant on 1/1 seeds"
+      },
+      "ARM4_shared_whitening__vs__ARM1_baseline_cosine_point": {
+        "delta_points": 6.82,
+        "mcnemar_p_per_seed": [
+          0.052238985896110535,
+          0.45825831964612007,
+          0.07075554598122835
+        ],
+        "arm_right_ref_wrong_per_seed": [
+          19,
+          17,
+          21
+        ],
+        "ref_right_arm_wrong_per_seed": [
+          8,
+          12,
+          10
+        ],
+        "verdict": "no significant difference at p<0.05 on any seed"
+      },
+      "ARM4_shared_whitening__vs__CONTROL_1nn": {
+        "delta_points": 2.02,
+        "mcnemar_p_per_seed": [
+          0.5034446716308594
+        ],
+        "arm_right_ref_wrong_per_seed": [
+          12
+        ],
+        "ref_right_arm_wrong_per_seed": [
+          8
+        ],
+        "verdict": "no significant difference at p<0.05 on any seed"
+      },
+      "ARM4_shared_whitening__vs__CONTROL_nearest_class_centroid": {
+        "delta_points": -3.28,
+        "mcnemar_p_per_seed": [
+          0.7011080384254456
+        ],
+        "arm_right_ref_wrong_per_seed": [
+          12
+        ],
+        "ref_right_arm_wrong_per_seed": [
+          15
+        ],
+        "verdict": "no significant difference at p<0.05 on any seed"
+      },
+      "ARM2b_online_width__vs__ARM1_baseline_cosine_point": {
+        "delta_points": 1.26,
+        "mcnemar_p_per_seed": [
+          1.0,
+          0.803619384765625,
+          0.5078125
+        ],
+        "arm_right_ref_wrong_per_seed": [
+          6,
+          9,
+          6
+        ],
+        "ref_right_arm_wrong_per_seed": [
+          6,
+          7,
+          3
+        ],
+        "verdict": "no significant difference at p<0.05 on any seed"
+      },
+      "ARM2b_online_width__vs__CONTROL_1nn": {
+        "delta_points": -3.54,
+        "mcnemar_p_per_seed": [
+          0.1670684814453125
+        ],
+        "arm_right_ref_wrong_per_seed": [
+          6
+        ],
+        "ref_right_arm_wrong_per_seed": [
+          13
+        ],
+        "verdict": "no significant difference at p<0.05 on any seed"
+      },
+      "ARM2b_online_width__vs__CONTROL_nearest_class_centroid": {
+        "delta_points": -8.84,
+        "mcnemar_p_per_seed": [
+          0.006610751152038574
+        ],
+        "arm_right_ref_wrong_per_seed": [
+          5
+        ],
+        "ref_right_arm_wrong_per_seed": [
+          19
+        ],
+        "verdict": "significant on 1/1 seeds"
+      }
+    },
+    "note": "Exact two-sided McNemar on the same 132 heldout items, seed by seed. n10 = the arm was right where the reference was wrong; n01 = the reverse. Deterministic references (1-NN, centroid) are compared against each of the arm's three seeds."
+  },
+  "budgets": {
+    "ARM1_baseline_cosine_point": {
+      "prototypes": [
+        184,
+        188,
+        184
+      ],
+      "numbers_per_unit": 192,
+      "learnable_numbers": 35328,
+      "labels_seen": 0,
+      "utterance_presentations": 11880
+    },
+    "ARM2_diagonal_width": {
+      "prototypes": [
+        184,
+        188,
+        184
+      ],
+      "numbers_per_unit": 384,
+      "learnable_numbers": 70656,
+      "cost_vs_baseline": "2x per unit (a mean AND a per-dimension variance)",
+      "labels_seen": 0,
+      "utterance_presentations": 11880
+    },
+    "ARM3_shrinkage_covariance": {
+      "prototypes": [
+        184,
+        188,
+        184
+      ],
+      "numbers_per_unit": 18720,
+      "learnable_numbers": 3444480,
+      "cost_vs_baseline": "98x per unit — a full covariance is 18528 numbers on top of a 192-number mean",
+      "labels_seen": 0,
+      "utterance_presentations": 11880
+    },
+    "ARM4_shared_whitening": {
+      "prototypes": [
+        202,
+        194,
+        197
+      ],
+      "numbers_per_unit": 192,
+      "shared_numbers": 37056,
+      "learnable_numbers": 75840,
+      "cost_vs_baseline": "1x per unit + ONE shared 192x192 transform for the whole brain",
+      "labels_seen": 0,
+      "utterance_presentations": 11880
+    },
+    "ARM2b_online_width": {
+      "prototypes": [
+        190,
+        198,
+        202
+      ],
+      "numbers_per_unit": 384,
+      "learnable_numbers": 72960,
+      "labels_seen": 0,
+      "utterance_presentations": 11880
+    },
+    "CONTROL_nearest_class_centroid": {
+      "prototypes": [
+        22
+      ],
+      "numbers_per_unit": 192,
+      "learnable_numbers": 4224,
+      "labels_seen": 396,
+      "note": "uses LABELS to place its 22 units. That is why it is a control and not an arm."
+    },
+    "CONTROL_1nn": {
+      "prototypes": [
+        396
+      ],
+      "numbers_per_unit": 192,
+      "learnable_numbers": 76032,
+      "labels_seen": 396
+    },
+    "budget_honesty": "A width-carrying unit costs 2x a point unit; a full covariance costs ~97x. The shared whitening costs 1x per unit plus one 192x192 matrix for the entire brain. Any accuracy claim has to be read next to these numbers."
+  },
+  "post_hoc_diagnostics": {
+    "whitened_nearest_centroid": 0.803030303030303,
+    "whitened_1nn": 0.7348484848484849,
+    "whitening_strength_curve": {
+      "0.0": {
+        "nearest_centroid": 0.7954545454545454,
+        "one_nn": 0.7196969696969697
+      },
+      "0.25": {
+        "nearest_centroid": 0.8181818181818182,
+        "one_nn": 0.7651515151515151
+      },
+      "0.5": {
+        "nearest_centroid": 0.8257575757575758,
+        "one_nn": 0.7575757575757576
+      },
+      "0.75": {
+        "nearest_centroid": 0.803030303030303,
+        "one_nn": 0.7348484848484849
+      },
+      "1.0": {
+        "nearest_centroid": 0.7878787878787878,
+        "one_nn": 0.7121212121212122
+      }
+    },
+    "supervised_diagonal_gaussian_per_class": {
+      "0.0": 0.7651515151515151,
+      "0.3": 0.8409090909090909,
+      "0.5": 0.8333333333333334,
+      "0.9": 0.803030303030303
+    },
+    "_what_the_supervised_gaussian_tells_you": "22 class-conditional diagonal Gaussians, fitted with LABELS, on the same 396 training files. If per-direction width cannot beat the plain class centroid even when the grouping is perfect and every unit has 18 members, then width is not the missing ingredient for this ear on this task, and no unsupervised version of it can be.",
+    "prototype_occupancy": [
+      {
+        "units": 184,
+        "members_mean": 2.152173913043478,
+        "members_median": 1.0,
+        "units_with_1_member": 108,
+        "units_with_0_members": 0
+      },
+      {
+        "units": 188,
+        "members_mean": 2.106382978723404,
+        "members_median": 1.0,
+        "units_with_1_member": 106,
+        "units_with_0_members": 0
+      },
+      {
+        "units": 184,
+        "members_mean": 2.152173913043478,
+        "members_median": 1.0,
+        "units_with_1_member": 101,
+        "units_with_0_members": 0
+      }
+    ],
+    "_why_occupancy_matters": "A diagonal width needs 192 variances per unit. Seed 0's units hold 1 training sounds each (median). That is the whole reason the shrinkage has to be near 1, and the reason a per-unit width collapses onto the shared one.",
+    "shared_whitening_strength_vs_heldout": {
+      "total_alpha0.0": {
+        "heldout_mean": 0.7575757575757575,
+        "heldout_seeds": [
+          0.75,
+          0.7727272727272727,
+          0.75
+        ],
+        "prototypes": [
+          210,
+          204,
+          188
+        ]
+      },
+      "total_alpha0.25": {
+        "heldout_mean": 0.7323232323232324,
+        "heldout_seeds": [
+          0.7348484848484849,
+          0.7196969696969697,
+          0.7424242424242424
+        ],
+        "prototypes": [
+          197,
+          196,
+          204
+        ]
+      },
+      "total_alpha0.5": {
+        "heldout_mean": 0.7575757575757575,
+        "heldout_seeds": [
+          0.7424242424242424,
+          0.7878787878787878,
+          0.7424242424242424
+        ],
+        "prototypes": [
+          206,
+          191,
+          198
+        ]
+      },
+      "total_alpha0.75": {
+        "heldout_mean": 0.7626262626262627,
+        "heldout_seeds": [
+          0.7727272727272727,
+          0.7424242424242424,
+          0.7727272727272727
+        ],
+        "prototypes": [
+          202,
+          194,
+          197
+        ]
+      },
+      "total_alpha1.0": {
+        "heldout_mean": 0.6969696969696969,
+        "heldout_seeds": [
+          0.6893939393939394,
+          0.6666666666666666,
+          0.7348484848484849
+        ],
+        "prototypes": [
+          185,
+          187,
+          188
+        ]
+      },
+      "within_alpha0.0": {
+        "heldout_mean": 0.7575757575757575,
+        "heldout_seeds": [
+          0.75,
+          0.7727272727272727,
+          0.75
+        ],
+        "prototypes": [
+          210,
+          204,
+          188
+        ]
+      },
+      "within_alpha0.25": {
+        "heldout_mean": 0.7651515151515151,
+        "heldout_seeds": [
+          0.7651515151515151,
+          0.7727272727272727,
+          0.7575757575757576
+        ],
+        "prototypes": [
+          191,
+          182,
+          186
+        ]
+      },
+      "within_alpha0.5": {
+        "heldout_mean": 0.76010101010101,
+        "heldout_seeds": [
+          0.7196969696969697,
+          0.7803030303030303,
+          0.7803030303030303
+        ],
+        "prototypes": [
+          181,
+          201,
+          184
+        ]
+      },
+      "within_alpha0.75": {
+        "heldout_mean": 0.7424242424242425,
+        "heldout_seeds": [
+          0.7045454545454546,
+          0.7651515151515151,
+          0.7575757575757576
+        ],
+        "prototypes": [
+          176,
+          185,
+          179
+        ]
+      },
+      "within_alpha1.0": {
+        "heldout_mean": 0.7222222222222223,
+        "heldout_seeds": [
+          0.7424242424242424,
+          0.7196969696969697,
+          0.7045454545454546
+        ],
+        "prototypes": [
+          169,
+          184,
+          164
+        ]
+      }
+    },
+    "_read_this_as": "POST HOC. The primary ARM 4 number (alpha 0.75, cov total, shrink 0.3) was chosen on dev before the exam. This curve is printed afterwards so the reader can see whether that number stood on a knife edge or on a plateau. It selects nothing.",
+    "paired_tests": {
+      "mean_centering_only_heldout": {
+        "mean": 0.7575757575757575,
+        "seeds": [
+          0.75,
+          0.7727272727272727,
+          0.75
+        ],
+        "vs_baseline": {
+          "p_per_seed": [
+            0.1153,
+            0.049,
+            0.0574
+          ],
+          "arm_right_ref_wrong": [
+            14,
+            13,
+            11
+          ],
+          "ref_right_arm_wrong": [
+            6,
+            4,
+            3
+          ]
+        },
+        "vs_1nn": {
+          "p_per_seed": [
+            1.0,
+            0.4545,
+            1.0
+          ],
+          "arm_right_ref_wrong": [
+            7,
+            10,
+            10
+          ],
+          "ref_right_arm_wrong": [
+            6,
+            6,
+            9
+          ]
+        },
+        "vs_centroid": {
+          "p_per_seed": [
+            0.2379,
+            0.6291,
+            0.2101
+          ],
+          "arm_right_ref_wrong": [
+            6,
+            7,
+            5
+          ],
+          "ref_right_arm_wrong": [
+            12,
+            10,
+            11
+          ]
+        },
+        "note": "identity transform + global mean removal + renormalise. This is the alpha=0 row of ARM 4's whitening curve, isolated. POST HOC on the 132 items; the clean evidence is the leave-one-session-out test."
+      },
+      "supervised_diagonal_gaussian_vs_centroid": {
+        "gaussian": 0.8409090909090909,
+        "centroid": 0.7954545454545454,
+        "mcnemar": {
+          "p_per_seed": [
+            0.0312
+          ],
+          "arm_right_ref_wrong": [
+            6
+          ],
+          "ref_right_arm_wrong": [
+            0
+          ]
+        },
+        "note": "22 class-conditional diagonal Gaussians vs 22 plain class means, both fitted WITH labels on the same 396 files. The decisive diagnostic: width works when the grouping is perfect."
+      }
+    }
+  },
+  "wall_seconds": 92.6,
+  "headline": {
+    "best_width_arm": "ARM4_shared_whitening",
+    "best_width_arm_heldout": 0.7626262626262627,
+    "broke_family_ceiling_7424": true,
+    "beat_no_learning_control_7955": false,
+    "delta_vs_ceiling_points": 2.02,
+    "delta_vs_control_points": -3.28,
+    "baseline_heldout": 0.6944444444444445
+  },
+  "secondary_protocol_session_grouped_dev": {
+    "arm1_baseline": {
+      "dev_mean": 0.7205387205387206,
+      "dev_all": [
+        0.7424242424242424,
+        0.7272727272727273,
+        0.7575757575757576,
+        0.7727272727272727,
+        0.7121212121212122,
+        0.7575757575757576,
+        0.6060606060606061,
+        0.6818181818181818,
+        0.6363636363636364,
+        0.7424242424242424,
+        0.7424242424242424,
+        0.7727272727272727,
+        0.6666666666666666,
+        0.6818181818181818,
+        0.6818181818181818,
+        0.7424242424242424,
+        0.8181818181818182,
+        0.7272727272727273
+      ]
+    },
+    "arm2_diagonal_width": {
+      "sweep": [
+        {
+          "kind": "wcos",
+          "lam": 0.0,
+          "adaptive": true,
+          "floor": 0.05,
+          "em": 0,
+          "refit_mean": false,
+          "logdet": true,
+          "dev_mean": 0.7205387205387206
+        },
+        {
+          "kind": "wcos",
+          "lam": 0.5,
+          "adaptive": true,
+          "floor": 0.05,
+          "em": 0,
+          "refit_mean": false,
+          "logdet": true,
+          "dev_mean": 0.7205387205387206
+        },
+        {
+          "kind": "wcos",
+          "lam": 0.99,
+          "adaptive": false,
+          "floor": 0.05,
+          "em": 0,
+          "refit_mean": false,
+          "logdet": true,
+          "dev_mean": 0.7205387205387206
+        },
+        {
+          "kind": "mah",
+          "lam": 0.99,
+          "adaptive": false,
+          "floor": 0.05,
+          "em": 0,
+          "refit_mean": false,
+          "logdet": true,
+          "dev_mean": 0.718013468013468
+        },
+        {
+          "kind": "wcos",
+          "lam": 0.9,
+          "adaptive": false,
+          "floor": 0.05,
+          "em": 0,
+          "refit_mean": false,
+          "logdet": true,
+          "dev_mean": 0.7146464646464648
+        },
+        {
+          "kind": "wcos",
+          "lam": 0.6,
+          "adaptive": false,
+          "floor": 0.05,
+          "em": 0,
+          "refit_mean": false,
+          "logdet": true,
+          "dev_mean": 0.7095959595959597
+        },
+        {
+          "kind": "mah",
+          "lam": 0.0,
+          "adaptive": true,
+          "floor": 0.05,
+          "em": 0,
+          "refit_mean": false,
+          "logdet": true,
+          "dev_mean": 0.7062289562289563
+        },
+        {
+          "kind": "mah",
+          "lam": 0.5,
+          "adaptive": true,
+          "floor": 0.05,
+          "em": 0,
+          "refit_mean": false,
+          "logdet": true,
+          "dev_mean": 0.7062289562289563
+        },
+        {
+          "kind": "wcos",
+          "lam": 0.3,
+          "adaptive": false,
+          "floor": 0.05,
+          "em": 0,
+          "refit_mean": false,
+          "logdet": true,
+          "dev_mean": 0.7045454545454546
+        },
+        {
+          "kind": "mah",
+          "lam": 0.9,
+          "adaptive": false,
+          "floor": 0.05,
+          "em": 0,
+          "refit_mean": false,
+          "logdet": true,
+          "dev_mean": 0.6944444444444445
+        },
+        {
+          "kind": "mah",
+          "lam": 0.6,
+          "adaptive": false,
+          "floor": 0.05,
+          "em": 0,
+          "refit_mean": false,
+          "logdet": true,
+          "dev_mean": 0.5774410774410774
+        },
+        {
+          "kind": "mah",
+          "lam": 0.3,
+          "adaptive": false,
+          "floor": 0.05,
+          "em": 0,
+          "refit_mean": false,
+          "logdet": true,
+          "dev_mean": 0.47558922558922556
+        }
+      ],
+      "winner": {
+        "kind": "wcos",
+        "lam": 0.0,
+        "adaptive": true,
+        "floor": 0.05,
+        "em": 0,
+        "refit_mean": false,
+        "logdet": true,
+        "dev_mean": 0.7205387205387206
+      }
+    },
+    "arm4_shared_whitening": {
+      "sweep": [
+        {
+          "cov_source": "total",
+          "alpha": 0.5,
+          "shrink": 0.3,
+          "dev_mean": 0.8038720538720538
+        },
+        {
+          "cov_source": "total",
+          "alpha": 0.25,
+          "shrink": 0.1,
+          "dev_mean": 0.7954545454545454
+        },
+        {
+          "cov_source": "within",
+          "alpha": 0.25,
+          "shrink": 0.3,
+          "dev_mean": 0.7946127946127945
+        },
+        {
+          "cov_source": "total",
+          "alpha": 0.5,
+          "shrink": 0.1,
+          "dev_mean": 0.7912457912457912
+        },
+        {
+          "cov_source": "within",
+          "alpha": 0.25,
+          "shrink": 0.1,
+          "dev_mean": 0.7853535353535354
+        },
+        {
+          "cov_source": "total",
+          "alpha": 0.25,
+          "shrink": 0.01,
+          "dev_mean": 0.7836700336700336
+        },
+        {
+          "cov_source": "within",
+          "alpha": 0.5,
+          "shrink": 0.3,
+          "dev_mean": 0.781986531986532
+        },
+        {
+          "cov_source": "total",
+          "alpha": 0.5,
+          "shrink": 0.01,
+          "dev_mean": 0.7819865319865319
+        },
+        {
+          "cov_source": "total",
+          "alpha": 0.25,
+          "shrink": 0.3,
+          "dev_mean": 0.7794612794612795
+        },
+        {
+          "cov_source": "within",
+          "alpha": 0.25,
+          "shrink": 0.01,
+          "dev_mean": 0.7794612794612795
+        },
+        {
+          "cov_source": "within",
+          "alpha": 0.5,
+          "shrink": 0.1,
+          "dev_mean": 0.7727272727272728
+        },
+        {
+          "cov_source": "within",
+          "alpha": 0.75,
+          "shrink": 0.3,
+          "dev_mean": 0.7702020202020201
+        },
+        {
+          "cov_source": "within",
+          "alpha": 0.75,
+          "shrink": 0.1,
+          "dev_mean": 0.7617845117845117
+        },
+        {
+          "cov_source": "total",
+          "alpha": 0.75,
+          "shrink": 0.3,
+          "dev_mean": 0.7609427609427609
+        },
+        {
+          "cov_source": "within",
+          "alpha": 1.0,
+          "shrink": 0.3,
+          "dev_mean": 0.7533670033670034
+        },
+        {
+          "cov_source": "within",
+          "alpha": 0.5,
+          "shrink": 0.01,
+          "dev_mean": 0.7525252525252525
+        },
+        {
+          "cov_source": "total",
+          "alpha": 0.75,
+          "shrink": 0.1,
+          "dev_mean": 0.7213804713804715
+        },
+        {
+          "cov_source": "total",
+          "alpha": 1.0,
+          "shrink": 0.3,
+          "dev_mean": 0.7205387205387206
+        },
+        {
+          "cov_source": "within",
+          "alpha": 1.0,
+          "shrink": 0.1,
+          "dev_mean": 0.7205387205387204
+        },
+        {
+          "cov_source": "within",
+          "alpha": 0.75,
+          "shrink": 0.01,
+          "dev_mean": 0.6936026936026936
+        },
+        {
+          "cov_source": "total",
+          "alpha": 0.75,
+          "shrink": 0.01,
+          "dev_mean": 0.6708754208754208
+        },
+        {
+          "cov_source": "within",
+          "alpha": 1.0,
+          "shrink": 0.01,
+          "dev_mean": 0.6574074074074074
+        },
+        {
+          "cov_source": "total",
+          "alpha": 1.0,
+          "shrink": 0.1,
+          "dev_mean": 0.6203703703703702
+        },
+        {
+          "cov_source": "total",
+          "alpha": 1.0,
+          "shrink": 0.01,
+          "dev_mean": 0.4267676767676768
+        }
+      ],
+      "winner": {
+        "cov_source": "total",
+        "alpha": 0.5,
+        "shrink": 0.3,
+        "dev_mean": 0.8038720538720538
+      }
+    },
+    "arm3_shrinkage_cov": {
+      "sweep": [
+        {
+          "lam": 0.5,
+          "adaptive": false,
+          "dev_mean": 0.6186868686868686,
+          "folds": 2
+        },
+        {
+          "lam": 0.99,
+          "adaptive": false,
+          "dev_mean": 0.5883838383838383,
+          "folds": 2
+        },
+        {
+          "lam": 0.9,
+          "adaptive": false,
+          "dev_mean": 0.5858585858585857,
+          "folds": 2
+        }
+      ],
+      "winner": {
+        "lam": 0.5,
+        "adaptive": false,
+        "dev_mean": 0.6186868686868686,
+        "folds": 2
+      }
+    },
+    "_what_this_shows": "Every arm re-tuned on a dev split that has the SAME structure as the real exam (a whole unseen recording session), instead of the primary harness's filename-hash split which leaves the same session on both sides. Compare the ordering here with dev_phase in the primary run.",
+    "_dev_gap": "The primary dev split scores every arm roughly 14 points higher than the heldout does. That gap is session leakage, not overfitting to 88 items, and it is a property of the inherited harness, not of this experiment. Tomorrow's runs should use this session-grouped dev."
+  },
+  "corpus_structure": {
+    "train_sessions": [
+      "t00",
+      "t01",
+      "t02",
+      "t03",
+      "t04",
+      "t05"
+    ],
+    "heldout_sessions": [
+      "h00",
+      "h01"
+    ],
+    "files_per_session": 66,
+    "note": "22 classes x 3 repeats per session. The heldout is two sessions never heard. The primary dev split is by sha1 of the filename, so it shares sessions with fit — measured as a ~14 point optimism."
+  },
+  "supp_wall_seconds": 56.9,
+  "confirmation_global_mean_removal": {
+    "_what_this_is": "An INDEPENDENT confirmation of the one thing the width experiment actually found. Leave-one-session-out over the 6 training sessions; the 132-item heldout is never opened here. 6 folds x 3 seeds = 396 judgements, every one of them on a recording session the organism had not heard.",
+    "_the_change": "Subtract the mean of every percept heard so far, then re-normalise to unit length, before the cosine. 192 shared numbers for the whole brain. No per-unit width of any kind.",
+    "protocol": {
+      "folds": [
+        "t00",
+        "t01",
+        "t02",
+        "t03",
+        "t04",
+        "t05"
+      ],
+      "files_per_fold": 66,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "exposure_epochs": 30,
+      "mean_estimated_from": "the 5 training sessions in each fold, never the held-out one"
+    },
+    "leave_one_session_out": {
+      "organism_baseline_mean": 0.7205387205387206,
+      "organism_centered_mean": 0.7777777777777779,
+      "delta_points": 5.72,
+      "organism_baseline_all": [
+        0.7424242424242424,
+        0.7272727272727273,
+        0.7575757575757576,
+        0.7727272727272727,
+        0.7121212121212122,
+        0.7575757575757576,
+        0.6060606060606061,
+        0.6818181818181818,
+        0.6363636363636364,
+        0.7424242424242424,
+        0.7424242424242424,
+        0.7727272727272727,
+        0.6666666666666666,
+        0.6818181818181818,
+        0.6818181818181818,
+        0.7424242424242424,
+        0.8181818181818182,
+        0.7272727272727273
+      ],
+      "organism_centered_all": [
+        0.803030303030303,
+        0.7575757575757576,
+        0.803030303030303,
+        0.7878787878787878,
+        0.7878787878787878,
+        0.803030303030303,
+        0.6666666666666666,
+        0.696969696969697,
+        0.6363636363636364,
+        0.8333333333333334,
+        0.8484848484848485,
+        0.7878787878787878,
+        0.7272727272727273,
+        0.6515151515151515,
+        0.7272727272727273,
+        0.8939393939393939,
+        0.8939393939393939,
+        0.8939393939393939
+      ],
+      "nearest_centroid_mean": 0.8080808080808081,
+      "nearest_centroid_centered_mean": 0.8207070707070706,
+      "one_nn_mean": 0.7828282828282829,
+      "one_nn_centered_mean": 0.797979797979798,
+      "paired_sign_test": {
+        "wins": 16,
+        "losses": 1,
+        "ties": 1,
+        "p": 0.000274658203125
+      },
+      "per_fold": [
+        {
+          "session_out": "t00",
+          "organism_baseline": [
+            0.7424242424242424,
+            0.7272727272727273,
+            0.7575757575757576
+          ],
+          "organism_centered": [
+            0.803030303030303,
+            0.7575757575757576,
+            0.803030303030303
+          ],
+          "nearest_centroid": 0.9242424242424242,
+          "nearest_centroid_centered": 0.8787878787878788,
+          "one_nn": 0.803030303030303,
+          "one_nn_centered": 0.8181818181818182
+        },
+        {
+          "session_out": "t01",
+          "organism_baseline": [
+            0.7727272727272727,
+            0.7121212121212122,
+            0.7575757575757576
+          ],
+          "organism_centered": [
+            0.7878787878787878,
+            0.7878787878787878,
+            0.803030303030303
+          ],
+          "nearest_centroid": 0.8787878787878788,
+          "nearest_centroid_centered": 0.8939393939393939,
+          "one_nn": 0.7575757575757576,
+          "one_nn_centered": 0.7878787878787878
+        },
+        {
+          "session_out": "t02",
+          "organism_baseline": [
+            0.6060606060606061,
+            0.6818181818181818,
+            0.6363636363636364
+          ],
+          "organism_centered": [
+            0.6666666666666666,
+            0.696969696969697,
+            0.6363636363636364
+          ],
+          "nearest_centroid": 0.696969696969697,
+          "nearest_centroid_centered": 0.7727272727272727,
+          "one_nn": 0.7575757575757576,
+          "one_nn_centered": 0.6818181818181818
+        },
+        {
+          "session_out": "t03",
+          "organism_baseline": [
+            0.7424242424242424,
+            0.7424242424242424,
+            0.7727272727272727
+          ],
+          "organism_centered": [
+            0.8333333333333334,
+            0.8484848484848485,
+            0.7878787878787878
+          ],
+          "nearest_centroid": 0.7878787878787878,
+          "nearest_centroid_centered": 0.803030303030303,
+          "one_nn": 0.8181818181818182,
+          "one_nn_centered": 0.8636363636363636
+        },
+        {
+          "session_out": "t04",
+          "organism_baseline": [
+            0.6666666666666666,
+            0.6818181818181818,
+            0.6818181818181818
+          ],
+          "organism_centered": [
+            0.7272727272727273,
+            0.6515151515151515,
+            0.7272727272727273
+          ],
+          "nearest_centroid": 0.7121212121212122,
+          "nearest_centroid_centered": 0.7424242424242424,
+          "one_nn": 0.696969696969697,
+          "one_nn_centered": 0.7272727272727273
+        },
+        {
+          "session_out": "t05",
+          "organism_baseline": [
+            0.7424242424242424,
+            0.8181818181818182,
+            0.7272727272727273
+          ],
+          "organism_centered": [
+            0.8939393939393939,
+            0.8939393939393939,
+            0.8939393939393939
+          ],
+          "nearest_centroid": 0.8484848484848485,
+          "nearest_centroid_centered": 0.8333333333333334,
+          "one_nn": 0.8636363636363636,
+          "one_nn_centered": 0.9090909090909091
+        }
+      ]
+    },
+    "_honesty": "The lead came from a POST-HOC row of the whitening curve (alpha=0 is the identity matrix, so that row was mean-centering all along) and the heldout number for it was already visible when we noticed. This leave-one-session-out test is the clean evidence: it uses only training data, 396 judgements, and a paired sign test across 18 independent runs. Read the 132-item heldout number for mean-centering (75.76%) as consistent with this, not as its proof.",
+    "wall_seconds": 2.6
+  },
+  "verdict": {
+    "one_line_en": "NO. Giving a prototype per-direction width did not break the 74.24% prototype-family ceiling (best true width arm 72.73%, BELOW it), and nothing came near the 79.55% no-learning control. The only thing that moved was the cheap control, and inside that control the whole gain was global mean removal, not whitening.",
+    "one_line_he": "לא. לתת לאב-טיפוס רוחב לכל כיוון לא שבר את תקרת 74.24% (הזרוע הכי טובה של רוחב אמיתי: 72.73%, מתחת לתקרה), ואף אחד לא התקרב לביקורת של 79.55% שלא לומדת כלום. הדבר היחיד שזז היה הביקורת הזולה — ובתוכה כל הרווח היה הורדת הממוצע הגלובלי, לא הלבנה.",
+    "did_width_break_the_ceiling": false,
+    "did_anything_beat_the_no_learning_control": false,
+    "why_the_auto_headline_says_yes": "headline.broke_family_ceiling_7424 is computed mechanically over ALL arms including ARM 4, the cheap control. ARM 4 is not a width arm — it grows no shape on any unit. Its +2.02 points over the ceiling is 2.7 files out of 132 and McNemar gives p=0.50 on the pooled comparison. Read `verdict`, not `headline`.",
+    "arms_ranked_heldout": {
+      "ARM4_shared_whitening (NOT a width arm — the cheap control)": 0.7626262626262627,
+      "CONTROL_1nn / kmeans (the family ceiling)": 0.7424242424242424,
+      "ARM2_diagonal_width (the hypothesis)": 0.7272727272727273,
+      "ARM2b_online_width": 0.7070707070707071,
+      "ARM1_baseline": 0.6944444444444445,
+      "ARM3_shrinkage_covariance": 0.6035353535353535,
+      "CONTROL_nearest_centroid (no learning)": 0.7954545454545454
+    },
+    "what_redirects_tomorrow": [
+      "The unit was NOT the ceiling. Per-direction width is the wrong knob for this ear on this task: the honest width arm landed 1.5 points BELOW the ceiling it was supposed to break, and the expensive version (full covariance) lost 9 points.",
+      "Width is starved, not wrong. With PERFECT groups and labels, 22 class-conditional diagonal Gaussians score 84.09% against 79.55% for the same 22 class means — width is worth +4.5 points when a unit has 18 members. Unsupervised units have a MEDIAN OF 1 member (108 of 184 units win exactly one training file). You cannot estimate 192 variances from one sample, and no regulariser rescues that.",
+      "The real lever found here is upstream of the unit: subtract the mean of everything heard, then renormalise. +5.72 points on leave-one-session-out (16 wins / 1 loss / 1 tie over 18 runs, sign test p=0.0003). 192 shared numbers for the whole brain, no per-unit state at all.",
+      "But it does not close the gap: mean removal lifts the controls too (centroid 80.81% -> 82.07%, 1-NN 78.28% -> 79.80% leave-one-session-out). The organism stays below the thing that does no learning.",
+      "The harness's dev split is session-contaminated and ~14 points optimistic: train is 6 sessions t00..t05, the heldout is 2 unseen sessions, but ff_lib.dev_mask splits by sha1 of the FILENAME so the same session sits on both sides. ARM 3 scored dev 88.64% and heldout 60.35% — a 28-point collapse, which is exactly what a per-unit covariance that memorises a session looks like. Future runs should use the leave-one-session-out dev in width_supp.py."
+    ]
+  }
+}

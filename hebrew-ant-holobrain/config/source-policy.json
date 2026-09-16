@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "allowed": [
+    "operator_owned_voice",
+    "operator_owned_camera",
+    "licensed_local_media",
+    "open_ml_dataset",
+    "isaac_sim_synthetic"
+  ],
+  "conditional": {
+    "youtube_or_podcast": "local file plus ownership, written permission, or explicit open training license",
+    "heder_or_minor_voice": "written institution and guardian consent plus privacy review"
+  },
+  "forbidden": [
+    "google_maps_content",
+    "google_street_view_training",
+    "unlicensed_youtube_download",
+    "pretrained_learned_weights",
+    "cross_split_parent_recording",
+    "cross_ant_weight_copy"
+  ]
+}

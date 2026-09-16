@@ -1,0 +1,108 @@
+{
+ "corpus": "D:\\CLAUDE\\eran-brain\\holobrain\\ear-human.npz",
+ "n_clips": 396,
+ "n_syllables": 22,
+ "n_takes": 6,
+ "dim": 192,
+ "chance_pct": 4.55,
+ "lam": 0.1,
+ "rulers": {
+  "R0  nearest single CLIP       (THE OLD RULER)": {
+   "loto_mean_pct": 78.28,
+   "loto_sd_pct": 5.3,
+   "per_take": {
+    "take0": 80.3,
+    "take1": 75.76,
+    "take2": 75.76,
+    "take3": 81.82,
+    "take4": 69.7,
+    "take5": 86.36
+   }
+  },
+  "R1  mean distance to clips": {
+   "loto_mean_pct": 72.98,
+   "loto_sd_pct": 4.9,
+   "per_take": {
+    "take0": 80.3,
+    "take1": 74.24,
+    "take2": 63.64,
+    "take3": 74.24,
+    "take4": 72.73,
+    "take5": 72.73
+   }
+  },
+  "R2  CENTROID of the syllable  (the fix, plain)": {
+   "loto_mean_pct": 80.81,
+   "loto_sd_pct": 8.38,
+   "per_take": {
+    "take0": 92.42,
+    "take1": 87.88,
+    "take2": 69.7,
+    "take3": 78.79,
+    "take4": 71.21,
+    "take5": 84.85
+   }
+  },
+  "R3  centroid + pooled spread  (diag Mahalanobis)": {
+   "loto_mean_pct": 79.29,
+   "loto_sd_pct": 8.14,
+   "per_take": {
+    "take0": 87.88,
+    "take1": 84.85,
+    "take2": 65.15,
+    "take3": 78.79,
+    "take4": 72.73,
+    "take5": 86.36
+   }
+  },
+  "R4  centroid + PER-CLASS spread (ear3.judge today)": {
+   "loto_mean_pct": 68.69,
+   "loto_sd_pct": 6.29,
+   "per_take": {
+    "take0": 69.7,
+    "take1": 78.79,
+    "take2": 57.58,
+    "take3": 68.18,
+    "take4": 71.21,
+    "take5": 66.67
+   }
+  },
+  "R5  WCCN whiten + centroid    (the manifold fix)": {
+   "loto_mean_pct": 85.35,
+   "loto_sd_pct": 5.98,
+   "per_take": {
+    "take0": 81.82,
+    "take1": 90.91,
+    "take2": 80.3,
+    "take3": 87.88,
+    "take4": 77.27,
+    "take5": 93.94
+   }
+  }
+ },
+ "lam_sweep": {
+  "0.02": 82.58,
+  "0.05": 83.59,
+  "0.10": 85.35,
+  "0.20": 84.85,
+  "0.35": 86.11,
+  "0.50": 86.87,
+  "0.75": 87.63
+ },
+ "within_between_raw": {
+  "within_same_syllable_diff_take": 0.6020472125208131,
+  "within_same_syllable_same_take": 0.3601810564837225,
+  "between_diff_syllable": 0.9028222616733108,
+  "signal_between_minus_within": 0.30077504915249775,
+  "ratio_within_over_between": 0.6668502074870921,
+  "dprime": 1.4159790439701516
+ },
+ "within_between_wccn_all_takes_descriptive": {
+  "within_same_syllable_diff_take": 16.454084348527488,
+  "within_same_syllable_same_take": 12.301491177251206,
+  "between_diff_syllable": 27.60697294370534,
+  "signal_between_minus_within": 11.152888595177853,
+  "ratio_within_over_between": 0.5960118982287473,
+  "dprime": 2.6008851063056686
+ }
+}

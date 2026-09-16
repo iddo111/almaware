@@ -1,0 +1,128 @@
+[
+ {
+  "id": "b01_L01",
+  "block": 1,
+  "k": 50,
+  "prompt": "Documentary real archival texture, Dust motes drifting slowly through a shaft of warm late-afternoon light in an empty 1950s laboratory, rows of dark equipment in soft focus, the camera drifting slowly right. Warm amber and deep brown, subtle film grain, photorealistic, no people, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9910613
+ },
+ {
+  "id": "b12_L02",
+  "block": 12,
+  "k": 51,
+  "prompt": "Extreme close-up, documentary, shallow depth of field. Hand-soldered copper wires and small brass potentiometers on a dark phenolic circuit board, each joint catching a warm tungsten highlight, slow rack focus across the rows like neurons in a cortex. Amber and grey, film grain, photorealistic, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9918330
+ },
+ {
+  "id": "b02_L03",
+  "block": 2,
+  "k": 52,
+  "prompt": "1958 documentary, black and white with warm sepia tint. A cluttered scientist's desk lit by a single lamp, pages of hand-drawn neural diagrams, a slide rule, a cup of cold coffee, cigarette smoke curling in the lamplight, slow push-in. Nostalgic, photorealistic, grain, no people visible, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9926047
+ },
+ {
+  "id": "b11_L04",
+  "block": 11,
+  "k": 53,
+  "prompt": "Documentary, museum lighting. A room-sized 1950s analog computer with panels of dials and patch cables, cool grey steel, one operator's chair empty, slow wide dolly revealing its scale. photoreal, faint dust in the air, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9933764
+ },
+ {
+  "id": "b07_L05",
+  "block": 7,
+  "k": 54,
+  "prompt": "Macro bio-cinema, glowing. A single neuron firing in slow motion, electric blue signal traveling down a branching dendrite against deep black, soft bokeh of other neurons pulsing behind, hyper-detailed, wet organic sheen, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9941481
+ },
+ {
+  "id": "b17_L06",
+  "block": 17,
+  "k": 55,
+  "prompt": "Abstract documentary, cold light. A stark diagram of an XOR logic problem drawn in chalk on a dark green blackboard, camera slowly pulling back to reveal an empty lecture hall in shadow, melancholic, 1969 winter mood, film grain, photoreal, no people, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9949198
+ },
+ {
+  "id": "b17_L07",
+  "block": 17,
+  "k": 56,
+  "prompt": "desolate. Snow falling slowly over a shuttered research building at dusk, one lit window, cold blue palette, the long AI winter, slow static shot with drifting snow, photoreal, grain, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9956915
+ },
+ {
+  "id": "b19_L08",
+  "block": 19,
+  "k": 57,
+  "prompt": "Modern documentary, sleek. Rows of GPU server racks glowing with green and blue status LEDs in a dark data center, cool reflections on polished floor, slow tracking shot down the aisle, photoreal, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9964632
+ },
+ {
+  "id": "b18_L09",
+  "block": 18,
+  "k": 58,
+  "prompt": "Abstract data-cinema. A deep neural network visualized as luminous layered planes of nodes, signals cascading forward layer by layer in electric teal and violet, dark background, elegant slow zoom through the layers, photoreal render, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9972349
+ },
+ {
+  "id": "b23_L10",
+  "block": 23,
+  "k": 59,
+  "prompt": "Macro documentary, physical AI. A silicon memristor crossbar array under a microscope, grid of tiny metal junctions glinting, faint current shimmering along the wires, cool clinical light with warm accents, slow pan, hyper-detailed, photoreal, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9980066
+ },
+ {
+  "id": "b27_L11",
+  "block": 27,
+  "k": 60,
+  "prompt": "futuristic. Beams of laser light routing through a holographic optical computing chip, refracting into rainbow interference patterns in a dark lab, slow orbit around the chip, elegant, photoreal, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9987783
+ },
+ {
+  "id": "b29_L12",
+  "block": 29,
+  "k": 61,
+  "prompt": "Tender documentary, soft morning light. An extreme close-up of a small child's hand reaching toward a warm point of light, out-of-focus home background, gentle and hopeful, shallow depth of field, film grain, photoreal, no text, no faces., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 9995500
+ },
+ {
+  "id": "b30_L13",
+  "block": 30,
+  "k": 62,
+  "prompt": "landscape, golden hour. The Negev desert at dawn, red-gold dunes and distant acacia trees, long shadows, a single solar panel catching first light on a ridge, slow aerial drift, warm and vast, photoreal, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 10003217
+ },
+ {
+  "id": "b25_L14",
+  "block": 25,
+  "k": 63,
+  "prompt": "Maker documentary, warm. Close-up of a soldering iron touching a joint on a small robot circuit board, a curl of solder smoke rising through a work-lamp beam, tools scattered, hands out of frame, cozy amber light, photoreal, grain, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 10010934
+ },
+ {
+  "id": "b09_L15",
+  "block": 9,
+  "k": 64,
+  "prompt": "intimate. A small handmade desktop robot's single lens iris opening and focusing for the first time, soft LED glow warming, dark workshop bokeh behind, slow push-in, hopeful, photoreal, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 10018651
+ },
+ {
+  "id": "b29_L16",
+  "block": 29,
+  "k": 65,
+  "prompt": "Documentary, night. A large campfire in the desert with sparks rising like beacons into a star-filled sky, warm orange light, silhouettes of people gathered around at the edges of frame, slow gentle handheld, photoreal, no text., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 10026368
+ },
+ {
+  "id": "b21_L17",
+  "block": 21,
+  "k": 66,
+  "prompt": "Extreme macro, documentary, deep black background. A clear glass bulb whose filament is not a wire but a fine lattice of dark memristor crossbars; the junctions glow white-hot one after another, small flares erupting and dying along the lattice, molten light crawling between the crossings, thin smoke curling inside the glass. Ember orange, white-hot cores, photorealistic, film grain, no people, no text, no logo, no subtitles., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 10034085
+ },
+ {
+  "id": "b18_L18",
+  "block": 18,
+  "k": 67,
+  "prompt": "High-contrast documentary, kinetic, graffiti-lit concrete. A dense lattice of glowing nodes in depth: first a clean white pulse SURGES forward left to right through every layer, then a violent red-orange wave tears BACKWARD right to left through the same connections, each junction flaring brighter and shifting as it passes. Hard shadows, spray-paint texture, strobing light, smoke. Aggressive, photorealistic, film grain, no people, no text, no logo, no subtitles., full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 10041802
+ }
+]

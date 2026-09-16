@@ -1,0 +1,112 @@
+[
+  {
+    "id": "01_dawn_window",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 117.3,
+    "seed": 110411,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/01_dawn_window"
+  },
+  {
+    "id": "02_the_line",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 101.7,
+    "seed": 110412,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/02_the_line"
+  },
+  {
+    "id": "03_lamp_on",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 91.0,
+    "seed": 110413,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/03_lamp_on"
+  },
+  {
+    "id": "04_name_cards",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 136.5,
+    "seed": 110414,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/04_name_cards"
+  },
+  {
+    "id": "05_rope_circle",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 181.6,
+    "seed": 110415,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/05_rope_circle"
+  },
+  {
+    "id": "07_walking_line",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 183.5,
+    "seed": 110417,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/07_walking_line"
+  },
+  {
+    "id": "11_body_letter",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 185.9,
+    "seed": 110421,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/11_body_letter"
+  },
+  {
+    "id": "13_board_threads",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 165.6,
+    "seed": 110423,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/13_board_threads"
+  },
+  {
+    "id": "14_disc_pouch",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 95.3,
+    "seed": 110424,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/14_disc_pouch"
+  },
+  {
+    "id": "15_lamp_off",
+    "node": "eran1",
+    "frames": 97,
+    "seconds": 90.3,
+    "seed": 110425,
+    "width": 1536,
+    "height": 864,
+    "length": 97,
+    "subfolder": "almido/15_lamp_off"
+  }
+]

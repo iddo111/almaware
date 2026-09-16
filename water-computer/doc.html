@@ -1,0 +1,106 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8">
+<title>מחשב מים אנלוגי — ALMAWARE</title>
+<style>
+@page { size: A4; margin: 12mm; }
+body{font-family:"Segoe UI",Arial,sans-serif;background:#fff;color:#12203a;margin:0;padding:0 6mm;line-height:1.5}
+h1{font-size:30px;margin:6px 0 2px;color:#0b4da2}
+h2{font-size:19px;margin:16px 0 6px;color:#0b4da2;border-bottom:2px solid #cfe0f7;padding-bottom:3px}
+.sub{color:#5b6b85;font-size:14px;margin:0 0 8px}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:6px 0}
+th,td{border:1px solid #cfe0f7;padding:5px 7px;text-align:right}
+th{background:#eaf3ff}
+.en{direction:ltr;text-align:left;color:#33445e;font-size:12.5px}
+.box{background:#f5faff;border:1px solid #cfe0f7;border-radius:8px;padding:8px 12px;margin:8px 0}
+.warn{background:#fff7e6;border-color:#ffd591}
+ol,ul{margin:6px 22px 6px 0;padding:0}
+li{margin:3px 0;font-size:13.5px}
+.big{font-size:16px;font-weight:bold;color:#0b4da2}
+svg{display:block;margin:6px auto}
+.page{page-break-after:always}
+</style></head><body>
+
+<h1>מחשב מים אנלוגי — נוירון שאפשר לראות</h1>
+<p class="sub">ALMAWARE · לוח בנייה · 18.08.2026 · רעיון #— מתוך ספר 1000 הרעיונות: "מחשב אנלוגי ממים — אינטגרלים בצינורות שקופים"</p>
+
+<div class="box"><b>הרעיון בשורה:</b> גובה המים = מספר. זרימה = חיבור. ברז = משקל. פייה בגובה מסוים = סף.
+מיכל אחד עם שלושה צינורות נכנסים <b>הוא נוירון</b> — הוא מסכם לבד, ומרעיף רק כשעבר את הסף. בלי שבב אחד.
+<div class="en">Water height = a number. Flow = addition. Valve = weight. A spout at height h = threshold. One tank with three inlets <b>is a neuron</b> — it sums by itself and fires only above threshold. Zero chips.</div></div>
+
+<h2>הסכמה — נוירון מים אחד</h2>
+<svg width="720" height="290" viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#0b4da2"/></marker></defs>
+  <!-- source tanks -->
+  <g stroke="#0b4da2" fill="#eaf3ff" stroke-width="2">
+    <rect x="20" y="20" width="70" height="45" rx="4"/><rect x="20" y="85" width="70" height="45" rx="4"/><rect x="20" y="150" width="70" height="45" rx="4"/>
+  </g>
+  <g font-size="12" fill="#12203a" text-anchor="middle">
+    <text x="55" y="47">x₁</text><text x="55" y="112">x₂</text><text x="55" y="177">x₃</text>
+  </g>
+  <!-- valves -->
+  <g stroke="#0b4da2" stroke-width="2" fill="none" marker-end="url(#a)">
+    <path d="M90,42 L200,42 L200,120 L300,120"/><path d="M90,107 L230,107 L230,130 L300,130"/><path d="M90,172 L260,172 L260,140 L300,140"/>
+  </g>
+  <g fill="#ff8c00" stroke="#a35a00" stroke-width="1.5">
+    <circle cx="140" cy="42" r="8"/><circle cx="160" cy="107" r="8"/><circle cx="180" cy="172" r="8"/>
+  </g>
+  <g font-size="11" fill="#a35a00" text-anchor="middle">
+    <text x="140" y="30">w₁</text><text x="160" y="95">w₂</text><text x="180" y="160">w₃</text>
+  </g>
+  <!-- summing tank -->
+  <rect x="300" y="60" width="120" height="180" rx="6" fill="#dbeeff" stroke="#0b4da2" stroke-width="2.5"/>
+  <rect x="303" y="150" width="114" height="87" fill="#7cc3ff" opacity="0.75"/>
+  <line x1="300" y1="120" x2="420" y2="120" stroke="#d1004b" stroke-dasharray="6 4" stroke-width="2"/>
+  <text x="360" y="112" font-size="12" fill="#d1004b" text-anchor="middle">סף θ  (threshold)</text>
+  <text x="360" y="258" font-size="13" fill="#12203a" text-anchor="middle">מיכל סכימה Σ</text>
+  <!-- overflow spout -->
+  <path d="M420,120 L470,120 L470,200 L560,200" stroke="#0b4da2" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+  <text x="500" y="112" font-size="12" fill="#0b4da2">פייה = יורה</text>
+  <!-- output -->
+  <rect x="560" y="180" width="90" height="55" rx="4" fill="#eaf3ff" stroke="#0b4da2" stroke-width="2"/>
+  <text x="605" y="212" font-size="12" text-anchor="middle">y (פלט)</text>
+  <!-- inhibition -->
+  <path d="M300,215 L240,215 L240,262" stroke="#8b0000" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+  <text x="205" y="266" font-size="11.5" fill="#8b0000">ניקוז = משקל שלילי</text>
+  <text x="360" y="30" font-size="14" fill="#0b4da2" text-anchor="middle" font-weight="bold">y = ReLU( w₁x₁ + w₂x₂ + w₃x₃ − θ )</text>
+</svg>
+
+<h2>מה קונים (הכל מחנות אקווריום / עלי)</h2>
+<table><tr><th>פריט</th><th>לְמה</th><th>כמות</th><th>מחיר משוער</th></tr>
+<tr><td>צינור סיליקון 4/6 מ"מ</td><td>הסינפסות</td><td>5 מ'</td><td>₪15</td></tr>
+<tr><td>ברז מחט לאוויר (אקווריום)</td><td><b>המשקלים</b> — כוונון זרימה</td><td>6</td><td>₪18</td></tr>
+<tr><td>מבחנות/כוסות שקופות ⌀2.5–5 ס"מ</td><td>מיכלי סכימה</td><td>6</td><td>₪25</td></tr>
+<tr><td>מזלג-T ומחבר Y</td><td>הסתעפויות</td><td>6</td><td>₪12</td></tr>
+<tr><td>משאבת מזרקה 12V (600 ל'/ש')</td><td>מקור "מתח" קבוע</td><td>1</td><td>₪45</td></tr>
+<tr><td>מגש + סרגל דבק לכל מיכל</td><td>קריאה + הצפה</td><td>1</td><td>₪20</td></tr>
+<tr><td colspan="3"><b>סה"כ</b></td><td><b>≈ ₪135</b></td></tr></table>
+
+<div class="box warn"><b>בטיחות:</b> מים והמחשב לא נפגשים. הכל על מגש עם שוליים, רחוק מהשקעים ומה-PC. משאבה 12V בלבד — לא 220V.
+<div class="en">Water and the PC never meet. Everything on a rimmed tray, away from sockets. 12 V pump only.</div></div>
+
+<h2>הבנייה — 6 צעדים</h2>
+<ol>
+<li><b>מיכל אחד:</b> קדח חור בגובה 5 ס"מ בדופן המבחנה, הכנס צינור קצר, אטום בדבק חם. זו <b>הפייה = הסף</b>.</li>
+<li><b>שלושה כניסות:</b> שלושה צינורות מלמעלה לתוך המיכל, לכל אחד ברז מחט = <b>המשקל</b> שלו.</li>
+<li><b>מקור קבוע:</b> משאבה מדלי לתוך "מיכל עליון" עם הצפה חוזרת — כך הלחץ קבוע ולא יורד (זה קריטי!).</li>
+<li><b>קלט = פתוח/סגור:</b> x=1 פותח ברז, x=0 סוגר. אחר כך x רציף לפי פתיחת הברז.</li>
+<li><b>עיכוב:</b> צינור ניקוז דק בתחתית = משקל שלילי / שכחה (leak = decay).</li>
+<li><b>שכבה:</b> הפייה של נוירון א' נכנסת כקלט לנוירון ב'. שתי שכבות = XOR. תראה את זה בעיניים.</li>
+</ol>
+
+<h2 class="big">כמה מהר זה? — האמת, נמדדה</h2>
+<table><tr><th>מיכל</th><th>שטח חתך</th><th>זרימה</th><th>זמן ל-5 ס"מ (פעולה אחת)</th></tr>
+<tr><td>בקבוק 1.5 ל'</td><td>78 סמ"ר</td><td>טפטוף 100 מ"ל/דק'</td><td>236 שניות</td></tr>
+<tr><td>צנצנת ⌀5</td><td>20 סמ"ר</td><td>500 מ"ל/דק'</td><td>12 שניות</td></tr>
+<tr><td>מבחנה ⌀2.5</td><td>4.9 סמ"ר</td><td>משאבה 2000 מ"ל/דק'</td><td><b>0.7 שניות</b></td></tr></table>
+<div class="box"><b>כן — איטי רצח.</b> נוירון אחד ≈ 1 פעולה בשנייה. מעבד = מיליארד בשנייה. פי <b>מיליארד</b> יותר איטי.
+<br><b>אבל:</b> כל מיכל <b>מאנטגרל בחינם, ברציפות, בלי שעון</b>, וכולם עובדים <b>במקביל</b> — 100 מיכלים = 100 פעולות בו-זמנית, אותו זמן בדיוק. זה לא מחשב מהיר; זה מחשב <b>שרואים אותו חושב</b>.
+<div class="en">Yes — murderously slow: ~1 op/second vs a CPU's billion. But each tank integrates continuously, free, with no clock, and all of them run in parallel — 100 tanks = 100 simultaneous operations in the same time. It is not a fast computer; it is a computer you can <b>watch</b> thinking.</div></div>
+
+<h2>סולם הניסויים</h2>
+<ul>
+<li><b>ניסוי 1:</b> נוירון אחד, סף 5 ס"מ. פתח קלט אחד — לא יורה. פתח שניים — יורה. <i>זה AND.</i></li>
+<li><b>ניסוי 2:</b> הורד את הסף ל-2 ס"מ. עכשיו קלט אחד מספיק. <i>זה OR.</i> אותה חומרה, סף אחר — <b>למידה</b>.</li>
+<li><b>ניסוי 3:</b> הוסף ניקוז מנוירון שני = עיכוב. שתי שכבות → <b>XOR</b>, שאף שכבה אחת לא יודעת לפתור.</li>
+<li><b>ניסוי 4:</b> אינטגרטור לוקיאנוב — גובה = ∫זרימה dt. פתור <i>dx/dt = −kx</i> וצלם את העקומה. זה 1936 בסלון שלך.</li>
+</ul>
+</body></html>

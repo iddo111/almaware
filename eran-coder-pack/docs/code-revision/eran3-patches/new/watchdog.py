@@ -1,0 +1,1313 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+coder-train watchdog -- one run = one check pass.
+
+Watches the Qwen3.5-4B-Base full-weight continued-pretraining run in
+~/coder-train/ on eran3. Detects: dead process, HUNG process (status.json
+stale while process alive -- the failure that matters most), non-finite or
+stalled loss, GPU idle-but-alive, low disk, checkpoint freshness.
+
+Fixes what it safely can:
+  - restarts a dead or hung run with --resume auto (gated behind ~/coder-train/ENABLED)
+  - deletes the OLDEST checkpoints when disk is tight (never the newest 2)
+
+Refuses to fix, and escalates instead:
+  - crash-loops (more than MAX_RESTARTS_PER_HOUR restarts/hour) -> writes
+    WATCHDOG-ESCALATED and stops touching the process until a human clears it
+  - bad loss (NaN/Inf, stalled, increasing) -- reported only, never "fixed"
+    by a restart, since a restart cannot repair a hyperparameter problem
+  - disk still low after cleanup with only 2 checkpoints left
+
+See WATCHDOG.md for the full contract. Never touches voice-ant-farm.service
+or chef.service -- this script only ever manages the coder-train process
+(directly, or via a "coder-train.service" user unit if one exists).
+
+PYTHONIOENCODING=utf-8 is set by the systemd unit; this file is pure ASCII
+regardless, but status.json / logs may carry Hebrew from elsewhere on the box.
+"""
+
+import json
+import math
+import os
+import re
+import shutil
+import signal
+import subprocess
+import sys
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+# --------------------------------------------------------------------------
+# Paths
+# --------------------------------------------------------------------------
+BASE = Path.home() / "coder-train"
+STATUS = BASE / "status.json"
+CKPT_DIR = BASE / "ckpt"
+ENABLED_FILE = BASE / "ENABLED"
+PIDFILE = BASE / "train.pid"
+STDOUT_LOG = BASE / "train.stdout.log"
+WATCHDOG_LOG = BASE / "watchdog.log"
+WATCHDOG_STATE = BASE / "watchdog-state.json"
+WATCHDOG_STATUS = BASE / "watchdog-status.json"
+LOSS_HISTORY = BASE / "watchdog-loss-history.jsonl"
+ESCALATION_FLAG = BASE / "WATCHDOG-ESCALATED"
+
+TRAIN_UNIT = "coder-train.service"  # used ONLY if such a user unit already exists
+
+# --------------------------------------------------------------------------
+# Thresholds -- tune here, not scattered through the logic below
+# --------------------------------------------------------------------------
+# THE CAP MUST BE LONGER THAN ONE STEP. This is the bug under all the others.
+#
+# Measured 2026-09-06 05:20: this run is micro_batch 1 x grad_accum 128 x
+# seq_len 4096 = 524,288 tokens per step, at 522.6 tok/s. **One step takes
+# 1003 s = 16.7 minutes.** log_every=1, so status.json is legitimately written
+# only once every 16.7 minutes -- against a 15-minute cap.
+#
+# So a perfectly healthy run crossed "stale" on almost every step, and the
+# watchdog killed it as `reason=hung` five times tonight. Four earlier fixes
+# (checkpointing exemption, resume re-basing, tri-state liveness, the full
+# status classifier) each closed a real hole and NONE of them touched this,
+# because I never asked the simplest question: how long is one step?
+#
+# Do not hand-tune this number. Derive it from the run's own reported rate, so
+# it cannot go stale again when the batch size or the hardware changes.
+STALE_FLOOR_SECONDS = 60 * 60      # never less patient than an hour
+STALE_STEP_MULTIPLE = 3.0          # three steps of silence before we call it hung
+STALE_SECONDS = STALE_FLOOR_SECONDS  # replaced per-pass by stale_cap_for()
+
+
+def stale_cap_for(status_data):
+    """Patience for a 'running' run, in seconds: max(1 hour, 3 x one step).
+
+    tokens_per_sec and the batch shape both come from status.json, written by
+    the training itself -- so this tracks the real run rather than an assumption
+    baked in months earlier.
+    """
+    try:
+        tps = float((status_data or {}).get("tokens_per_sec") or 0)
+        seen = float((status_data or {}).get("tokens_seen") or 0)
+        step = float((status_data or {}).get("step") or 0)
+        if tps > 0 and step > 0 and seen > 0:
+            tok_per_step = seen / step
+            return max(STALE_FLOOR_SECONDS, STALE_STEP_MULTIPLE * tok_per_step / tps)
+    except Exception:
+        pass
+    return STALE_FLOOR_SECONDS
+BUSY_STATES   = frozenset({"starting", "checkpointing", "resuming"})
+EXITED_STATES = frozenset({"stopped", "finished"})
+CRASH_STATES  = frozenset({"crash_nonfinite_loss", "crash_nonfinite_grad",
+                           "crash_oom"})
+BUSY_STALE_SECONDS = 45 * 60   # loading or writing 50 GB legitimately takes
+                               # ~19 min here; only silence far past that is a hang
+NO_STATUS_GRACE_SECONDS = 20 * 60  # allow this long after process start before
+                                    # requiring status.json to exist at all
+LOSS_TREND_WINDOW_SECONDS = 2 * 3600   # ~2h window to judge loss trend
+# CODER-06 2026-09-06: the old rule was "earliest single step vs latest single
+# step, 0.1% relative". Per-step loss sd on this run is 0.085 -- 85x that
+# threshold -- so the verdict was reading noise: it said "increasing" on 30+
+# passes this morning while the block means fell 1.214 -> 1.107. A trend that
+# cannot see learning is not a learning signal. Judge it the way loss_blocks.py
+# does: OLS over BLOCK MEANS with a standard error, and refuse to name a
+# direction the data cannot support.
+LOSS_STALL_REL_EPS = 1e-3          # kept for compatibility; no longer decides
+LOSS_BLOCK_STEPS = 10              # steps per block mean (matches loss_blocks.py)
+LOSS_MIN_BLOCKS = 3                # fewer than this and no direction is claimable
+LOSS_SIGMA_REQUIRED = 2.0          # |slope| must beat this many SE to be named
+GPU_IDLE_THRESHOLD = 5             # percent; below this counts as "idle"
+# CODER-11 2026-09-06: 50 GB was below what ONE checkpoint cycle costs. The new
+# 47 GB checkpoint is written in full BEFORE the old one is pruned (peak 3 x 47 GB
+# at keep=2), and save_checkpoint has no try/except -- so "free" must cover a
+# whole extra checkpoint or the save dies mid-write. Warn with a spare checkpoint
+# of headroom; call it BROKEN when barely one save still fits.
+DISK_WARN_GB = 150.0               # one spare checkpoint of headroom
+MIN_DISK_FREE_GB = 100.0           # below this the next 47 GB save is not safe
+KEEP_CKPTS = 2                     # never delete down to fewer than this many
+CKPT_STALE_WARN_SECONDS = 6 * 3600 # informational only -- interval is unknown
+MAX_RESTARTS_PER_HOUR = 4          # crash-loop cap -> escalate instead of retry
+BACKOFF_BASE_SECONDS = 60
+BACKOFF_CAP_SECONDS = 30 * 60
+STABLE_RESET_SECONDS = 30 * 60     # this long healthy since last restart => reset backoff
+# CODER-01: a restart job we queued is not finished when systemctl returns. The
+# graceful stop alone writes 47 GB (measured 365-453 s) and the resume reads it
+# back (~8 min more). Until this long has passed, a not-alive unit is OUR restart
+# still happening -- not a new failure to book a second restart for.
+RESTART_PENDING_GRACE_SECONDS = 20 * 60
+
+LAUNCH_CMD = ["python3", "train.py", "--resume", "auto"]
+
+MAX_LOSS_HISTORY_LINES = 2000
+
+
+# --------------------------------------------------------------------------
+# Small helpers
+# --------------------------------------------------------------------------
+def now_iso():
+    return datetime.now(timezone.utc).astimezone().isoformat()
+
+
+def log(msg, level="INFO"):
+    line = f"[{now_iso()}] {level:8s} {msg}"
+    print(line)
+    try:
+        with open(WATCHDOG_LOG, "a", encoding="utf-8") as f:
+            f.write(line + "\n")
+    except Exception:
+        pass
+
+
+def load_json(path, default):
+    try:
+        return json.loads(Path(path).read_text(encoding="utf-8"))
+    except Exception:
+        return default
+
+
+def json_safe_number(x):
+    """Python's json module happily writes bare NaN/Infinity tokens (its own
+    allow_nan default) -- valid for another Python reader, but not strict
+    JSON, and this file is read by "any other agent" per the spec. Keep the
+    watchdog-status.json output strictly parseable everywhere by swapping a
+    non-finite float for its string name."""
+    if isinstance(x, float) and (math.isnan(x) or math.isinf(x)):
+        return "NaN" if math.isnan(x) else ("Infinity" if x > 0 else "-Infinity")
+    return x
+
+
+def save_json(path, data):
+    tmp = str(path) + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False, default=str)
+    os.replace(tmp, path)
+
+
+def append_jsonl(path, obj, max_lines=MAX_LOSS_HISTORY_LINES):
+    try:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(obj, ensure_ascii=False) + "\n")
+        # trim occasionally so this never grows unbounded over a multi-day run
+        if os.path.getsize(path) > 2_000_000:
+            lines = Path(path).read_text(encoding="utf-8").splitlines()[-max_lines:]
+            Path(path).write_text("\n".join(lines) + "\n", encoding="utf-8")
+    except Exception as e:
+        log(f"loss-history append failed: {e}", "WARN")
+
+
+def run_cmd(args, timeout=15):
+    try:
+        p = subprocess.run(args, capture_output=True, text=True, timeout=timeout)
+        return p.returncode, p.stdout, p.stderr
+    except Exception as e:
+        return 1, "", str(e)
+
+
+# --------------------------------------------------------------------------
+# Process discovery -- pidfile first, then a /proc scan (pgrep-equivalent)
+# scoped to cmdline containing "train.py" AND cwd == BASE, so we never
+# mistake someone else's train.py (qwen-fleet-train/, whisper-iddo/,
+# vaada-miko/ all have one) for ours.
+# --------------------------------------------------------------------------
+def is_pid_alive(pid):
+    try:
+        os.kill(pid, 0)
+        return True
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+    except Exception:
+        return False
+
+
+def read_cmdline(pid):
+    """Human-readable joined command line, for logging only -- NOT for
+    identity matching (a shell invocation that merely mentions "train.py"
+    as a string, e.g. `bash -c "...train.py..."`, would falsely match a
+    naive substring check on this)."""
+    try:
+        raw = Path(f"/proc/{pid}/cmdline").read_bytes()
+        return raw.replace(b"\x00", b" ").decode(errors="replace")
+    except Exception:
+        return ""
+
+
+def read_argv(pid):
+    """argv as a list of real tokens (empty trailing token from the
+    NUL-terminated /proc format dropped)."""
+    try:
+        raw = Path(f"/proc/{pid}/cmdline").read_bytes()
+        parts = raw.split(b"\x00")
+        return [p.decode(errors="replace") for p in parts if p != b""]
+    except Exception:
+        return []
+
+
+def is_train_process(pid):
+    """True identity check: argv[0] must look like a python interpreter AND
+    some argv token must be exactly train.py (or end in /train.py) -- a
+    whole-token match, not a substring of the joined command line. This is
+    what keeps us from mistaking a shell wrapper, an editor, or a `grep
+    train.py` sitting in this directory for the real trainer."""
+    argv = read_argv(pid)
+    if not argv:
+        return False
+    exe = os.path.basename(argv[0])
+    looks_python = "python" in exe
+    has_train_token = any(a == "train.py" or a.endswith("/train.py") for a in argv)
+    return looks_python and has_train_token
+
+
+def read_cwd(pid):
+    try:
+        return os.readlink(f"/proc/{pid}/cwd")
+    except Exception:
+        return None
+
+
+def read_proc_start_age_seconds(pid):
+    """Best-effort process age via /proc/<pid> ctime (not exact, good enough
+    for a grace-period check)."""
+    try:
+        return time.time() - os.stat(f"/proc/{pid}").st_ctime
+    except Exception:
+        return None
+
+
+def find_train_pid():
+    if PIDFILE.exists():
+        try:
+            pid = int(PIDFILE.read_text().strip())
+            if is_pid_alive(pid) and is_train_process(pid):
+                return pid
+        except Exception:
+            pass
+    try:
+        for entry in os.listdir("/proc"):
+            if not entry.isdigit():
+                continue
+            pid = int(entry)
+            if not is_train_process(pid):
+                continue
+            if read_cwd(pid) == str(BASE):
+                return pid
+    except Exception:
+        pass
+    return None
+
+
+def systemd_unit_exists(name):
+    rc, out, _ = run_cmd(["systemctl", "--user", "list-unit-files", name, "--no-legend"])
+    return rc == 0 and name in out
+
+
+BUSY_UNIT_STATES = frozenset({"deactivating", "activating", "reloading"})
+
+
+def map_systemd_state(out):
+    """Pure mapping of `systemctl is-active` output -> one of four names.
+
+    CODER-01 2026-09-06: "deactivating" and "activating" used to map to False,
+    i.e. DEAD. They are not death, they are WORK IN PROGRESS -- and on this unit
+    that work takes 7-8 minutes, because a graceful stop finishes the current step
+    and writes a 47 GB checkpoint (TimeoutStopSec is 900 s for exactly that
+    reason). The watchdog runs every 5 minutes, so one real restart was counted
+    twice: once as "restart FAILED, timed out after 15 seconds" (systemctl's
+    client-side wait, while the restart itself succeeded -- 9 such lines in
+    watchdog.log, 0 lines saying "restart OK") and again five minutes later as
+    "dead", booking a SECOND restart for the same event. One real event therefore
+    burned two of the four crash-loop slots per hour, and two real events in an
+    hour escalated a perfectly healthy run to BROKEN.
+
+    Same shape as every other kill this watchdog has been fixed for: a state it
+    could not name was scored as the worst state it knew. Name it.
+    """
+    out = (out or "").strip()
+    if not out:
+        return "unknown"
+    if out == "active":
+        return "active"
+    if out in BUSY_UNIT_STATES:
+        return "busy"
+    if out in ("inactive", "failed"):
+        return "inactive"
+    return "unknown"
+
+
+def unit_exec_main_status(name=TRAIN_UNIT):
+    """Last exit code of the unit's main process, or None if unreadable."""
+    rc, out, _ = run_cmd(
+        ["systemctl", "--user", "show", "-p", "ExecMainStatus", "--value", name])
+    if rc != 0:
+        return None
+    try:
+        return int((out or "").strip())
+    except (TypeError, ValueError):
+        return None
+
+
+def systemd_is_active(name):
+    """FOUR-STATE: True / "busy" / False / None.
+
+    None means "I could not ask" -- systemctl timed out, errored, or printed
+    nothing. It does NOT mean "not active".
+
+    "busy" means mid-stop or mid-start: not alive yet, and not dead. The only
+    correct action on "busy" is to wait and look again (CODER-01).
+
+    2026-09-06 02:18: the previous version returned `out.strip() == "active"`,
+    so a systemctl call that timed out on a loaded box produced out="" and the
+    watchdog concluded the training was DEAD. It restarted a process that was
+    training normally at step 22. That is the second run this watchdog killed
+    tonight, and the first fix (checkpointing/resume staleness) did not touch
+    this path at all, because the kill came in as reason=dead, not hung.
+
+    "I could not ask" scored as "the answer is no" is the same bug shape that
+    made a sibling agent's judge report a live model as answering 0/209: its
+    HTTP client scored every 400 as an empty transcript.
+    """
+    rc, out, _ = run_cmd(["systemctl", "--user", "is-active", name])
+    mapped = map_systemd_state(out)
+    if mapped == "active":
+        return True
+    if mapped == "busy":
+        return "busy"                    # in motion -- neither alive nor dead
+    if mapped == "inactive":
+        return False
+    return None                          # could not ask: refuse to judge
+
+
+def determine_liveness():
+    """Returns (alive, pid, via_systemd, unit_busy).
+
+    unit_busy is True while systemd reports deactivating/activating/reloading --
+    a 47 GB stop or a 47 GB resume in progress. A busy unit is never restarted
+    (CODER-01).
+
+    systemd is the preferred witness, but it is not the only one, and it is
+    allowed to be unavailable. When it cannot answer, fall back to the /proc
+    scan, which reads the filesystem directly and is scoped to a cmdline
+    containing train.py AND cwd == BASE. Only when NEITHER witness can speak do
+    we report dead -- and even then the caller must treat that as weak.
+    """
+    pid = find_train_pid()
+    if systemd_unit_exists(TRAIN_UNIT):
+        state = systemd_is_active(TRAIN_UNIT)
+        if state is None:
+            # Could not ask systemd. The process scan is the surviving witness.
+            log("systemctl could not answer is-active; falling back to the "
+                "/proc scan (pid=%s)" % pid, "WARN")
+            return pid is not None, pid, True, False
+        if state == "busy":
+            # CODER-01: mid stop/start. Report it; never call it dead.
+            return False, pid, True, True
+        return bool(state), pid, True, False
+    return pid is not None, pid, False, False
+
+
+# --------------------------------------------------------------------------
+# GPU / disk
+# --------------------------------------------------------------------------
+def get_gpu_util():
+    rc, out, _ = run_cmd(
+        ["nvidia-smi", "--query-gpu=utilization.gpu", "--format=csv,noheader,nounits"]
+    )
+    if rc != 0:
+        return None
+    vals = []
+    for line in out.strip().splitlines():
+        line = line.strip()
+        if line.isdigit():
+            vals.append(int(line))
+    return vals or None
+
+
+def get_disk_free_gb(path="/"):
+    du = shutil.disk_usage(path)
+    return du.free / (1024 ** 3)
+
+
+# --------------------------------------------------------------------------
+# Checkpoints
+# --------------------------------------------------------------------------
+def live_ckpt_dir():
+    """The directory the RUNNING job actually writes to.
+
+    CKPT_DIR was hardcoded to BASE/"ckpt". The live run writes to BASE/"ckpt2",
+    so every checkpoint reading this watchdog produced described a DEAD directory
+    from an abandoned run: on 2026-09-06 it reported "newest checkpoint is 11.2h
+    old" eleven minutes after a checkpoint was written. Nothing was deleted only
+    because the stale dir held fewer entries than KEEP_CKPTS -- i.e. the guard
+    that saved us was luck, not design.
+
+    Each checkpoint records its own ckpt_dir in train_state.json, written by the
+    training itself, so ask the run rather than assume. Falls back to CKPT_DIR.
+    """
+    best, best_mtime = None, -1.0
+    try:
+        for child in BASE.iterdir():
+            if not child.is_dir() or not child.name.startswith("ckpt"):
+                continue
+            for step in child.iterdir():
+                ts = step / "train_state.json"
+                if not ts.is_file():
+                    continue
+                m = ts.stat().st_mtime
+                if m > best_mtime:
+                    try:
+                        recorded = json.loads(ts.read_text(encoding="utf-8"))                             .get("args", {}).get("ckpt_dir")
+                    except Exception:
+                        recorded = None
+                    best_mtime = m
+                    best = Path(recorded) if recorded else child
+    except Exception:
+        pass
+    if best is not None and best.exists():
+        return best
+    return CKPT_DIR
+
+
+def is_ckpt_entry(name):
+    """CODER-11: only `step_NNNNNNNN` is a checkpoint.
+
+    train.py writes to `.tmp_step_NNNNNNNN.<pid>` and renames on success, and it
+    only ever sweeps a tmp dir carrying its OWN pid -- so after a restart an
+    orphan tmp dir is never cleaned by the trainer. list_ckpts() used to return
+    every entry in the directory, so an orphan counted toward KEEP_CKPTS (blocking
+    a delete that was needed), could be picked as the "oldest checkpoint" and
+    deleted, or be reported as the newest checkpoint's age.
+    """
+    return name.startswith("step_")
+
+
+def list_ckpts():
+    d = live_ckpt_dir()
+    if not d.exists():
+        return []
+    return sorted((p for p in d.iterdir() if is_ckpt_entry(p.name)),
+                  key=lambda p: p.stat().st_mtime)
+
+
+def newest_ckpt_age_seconds():
+    entries = list_ckpts()
+    if not entries:
+        return None
+    return time.time() - entries[-1].stat().st_mtime
+
+
+def cleanup_checkpoints_if_needed():
+    """Always allowed, regardless of ENABLED -- protecting shared disk on the
+    box is not the same authority question as starting/stopping training."""
+    actions = []
+    try:
+        free_gb = get_disk_free_gb()
+    except Exception as e:
+        log(f"disk check failed: {e}", "ERROR")
+        return actions, None
+
+    if free_gb >= MIN_DISK_FREE_GB:
+        return actions, free_gb
+
+    entries = list_ckpts()
+    while free_gb < MIN_DISK_FREE_GB and len(entries) > KEEP_CKPTS:
+        victim = entries.pop(0)  # oldest first, newest N always survive
+        try:
+            if victim.is_dir():
+                shutil.rmtree(victim)
+            else:
+                victim.unlink()
+            free_gb = get_disk_free_gb()
+            msg = f"disk tight ({MIN_DISK_FREE_GB:.0f}GB floor) -- deleted oldest checkpoint {victim.name}; free now {free_gb:.1f}GB"
+            actions.append(msg)
+            log(msg, "WARN")
+        except Exception as e:
+            log(f"failed to delete checkpoint {victim}: {e}", "ERROR")
+            break
+
+    if free_gb < MIN_DISK_FREE_GB and len(list_ckpts()) <= KEEP_CKPTS:
+        log(
+            f"disk still low ({free_gb:.1f}GB free) but only {len(list_ckpts())} "
+            f"checkpoint(s) remain -- refusing to delete the newest {KEEP_CKPTS}",
+            "CRITICAL",
+        )
+    return actions, free_gb
+
+
+# --------------------------------------------------------------------------
+# status.json / loss trend
+# --------------------------------------------------------------------------
+def read_status():
+    try:
+        raw = STATUS.read_text(encoding="utf-8")
+        data = json.loads(raw)
+        mtime = STATUS.stat().st_mtime
+        return data, mtime
+    except FileNotFoundError:
+        return None, None
+    except Exception as e:
+        log(f"status.json unreadable: {e}", "ERROR")
+        return None, None
+
+
+def last_history_step(path=None):
+    """Step of the last line already in the loss history, or None.
+
+    CODER-06: the history was appended on EVERY pass, so one 16.7-minute step
+    produced 3-4 identical rows (321 lines covering steps 49-52). Duplicates do
+    not add information, they only make a two-point comparison land on the same
+    step twice. Append once per step.
+    """
+    p = Path(path or LOSS_HISTORY)
+    try:
+        lines = p.read_text(encoding="utf-8").splitlines()
+    except Exception:
+        return None
+    for line in reversed(lines):
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            return json.loads(line).get("step")
+        except Exception:
+            continue
+    return None
+
+
+def trend_from_points(points, block=None, min_blocks=None, sigma=None):
+    """(verdict, detail) from [(step, loss), ...]. Pure -- no files, no clock.
+
+    CODER-06. Blocks of `block` consecutive distinct steps are averaged, then an
+    ordinary least-squares line is fitted through the block means and its slope is
+    reported per 1000 steps together with its standard error. A direction is named
+    only when |slope| > sigma * SE; otherwise the answer is "underpowered", which
+    is the honest answer and the one loss_blocks.py already gives.
+
+    Verdicts: decreasing (learning) / increasing (getting worse) / stalled (flat
+    with enough power to say so) / underpowered / insufficient_data.
+    """
+    block = LOSS_BLOCK_STEPS if block is None else block
+    min_blocks = LOSS_MIN_BLOCKS if min_blocks is None else min_blocks
+    sigma = LOSS_SIGMA_REQUIRED if sigma is None else sigma
+
+    by_step = {}
+    for st, ls in points:
+        if st is None or ls is None:
+            continue
+        if not isinstance(ls, (int, float)) or math.isnan(ls) or math.isinf(ls):
+            continue
+        by_step[int(st)] = float(ls)          # last write for a step wins
+    steps = sorted(by_step)
+    if len(steps) < min_blocks * 2:
+        return "insufficient_data", ("only %d distinct step(s); need >= %d"
+                                     % (len(steps), min_blocks * 2))
+
+    blocks = []
+    for i in range(0, len(steps) - block + 1, block):
+        grp = steps[i:i + block]
+        mid = sum(grp) / len(grp)
+        mean = sum(by_step[s] for s in grp) / len(grp)
+        blocks.append((mid, mean))
+    if len(blocks) < min_blocks:
+        # not enough full blocks: fall back to one point per step
+        blocks = [(float(s), by_step[s]) for s in steps]
+    n = len(blocks)
+    if n < 3:
+        return "insufficient_data", "only %d block(s) of loss" % n
+
+    xm = sum(b[0] for b in blocks) / n
+    ym = sum(b[1] for b in blocks) / n
+    sxx = sum((b[0] - xm) ** 2 for b in blocks)
+    if sxx <= 0:
+        return "insufficient_data", "all blocks at the same step"
+    slope = sum((b[0] - xm) * (b[1] - ym) for b in blocks) / sxx
+    intercept = ym - slope * xm
+    resid = [b[1] - (intercept + slope * b[0]) for b in blocks]
+    dof = n - 2
+    if dof <= 0:
+        return "underpowered", "only %d blocks -- no degrees of freedom" % n
+    s2 = sum(r * r for r in resid) / dof
+    se = math.sqrt(s2 / sxx) if s2 > 0 else 0.0
+    per_k = slope * 1000.0
+    se_k = se * 1000.0
+    detail = ("%d blocks of <=%d steps, %.3f -> %.3f, slope %+.3f +/- %.3f "
+              "per 1000 steps" % (n, block, blocks[0][1], blocks[-1][1],
+                                  per_k, se_k))
+    if se_k <= 0:
+        return ("decreasing" if per_k < 0 else "increasing" if per_k > 0
+                else "stalled"), detail + " (exact fit)"
+    if abs(per_k) < sigma * se_k:
+        if abs(per_k) < se_k:
+            return "stalled", detail + " -- flat within noise"
+        return "underpowered", (detail + " -- |slope| < %.0f SE, not enough "
+                                "steps to name a direction" % sigma)
+    return ("decreasing" if per_k < 0 else "increasing"), detail
+
+
+def compute_loss_trend():
+    try:
+        lines = Path(LOSS_HISTORY).read_text(encoding="utf-8").splitlines()
+    except Exception:
+        return "insufficient_data", "no loss history yet"
+
+    now = time.time()
+    points = []
+    for line in lines:
+        try:
+            obj = json.loads(line)
+        except Exception:
+            continue
+        if now - obj.get("ts", 0) <= LOSS_TREND_WINDOW_SECONDS:
+            points.append((obj.get("step"), obj.get("loss")))
+    return trend_from_points(points)
+
+
+# --------------------------------------------------------------------------
+# Start / stop / restart
+# --------------------------------------------------------------------------
+def start_via_systemd():
+    rc, out, err = run_cmd(["systemctl", "--user", "start", TRAIN_UNIT])
+    return rc == 0, (out + err).strip()
+
+
+def restart_via_systemd():
+    """Queue the restart; do NOT wait for it.
+
+    CODER-01: `systemctl restart` blocks until the unit has actually stopped and
+    started again. Here that is 7-8 minutes (47 GB checkpoint out, 47 GB back in)
+    against run_cmd's 15 s timeout, so every successful restart was recorded as
+    "restart FAILED ... timed out after 15 seconds" and the post-restart liveness
+    re-check never ran. --no-block returns as soon as the job is enqueued: rc == 0
+    then means "queued", which is the truth, and liveness is confirmed on the next
+    5-minute pass instead of by a 5-second poll that could never have succeeded.
+    """
+    rc, out, err = run_cmd(
+        ["systemctl", "--user", "--no-block", "restart", TRAIN_UNIT])
+    detail = (out + err).strip()
+    if rc == 0:
+        return True, (detail or "restart job queued (--no-block); the graceful "
+                                "stop writes a 47 GB checkpoint first")
+    return False, detail
+
+
+def start_direct():
+    BASE.mkdir(parents=True, exist_ok=True)
+    train_py = BASE / "train.py"
+    if not train_py.exists():
+        return False, f"{train_py} does not exist -- nothing to start"
+    env = dict(os.environ)
+    env["PYTHONIOENCODING"] = "utf-8"
+    try:
+        with open(STDOUT_LOG, "a", encoding="utf-8") as logf:
+            proc = subprocess.Popen(
+                LAUNCH_CMD,
+                cwd=str(BASE),
+                stdout=logf,
+                stderr=subprocess.STDOUT,
+                stdin=subprocess.DEVNULL,
+                start_new_session=True,
+                env=env,
+            )
+        PIDFILE.write_text(str(proc.pid))
+        return True, f"started pid {proc.pid} ({' '.join(LAUNCH_CMD)})"
+    except Exception as e:
+        return False, f"start failed: {e}"
+
+
+def stop_direct(pid):
+    if pid is None:
+        return
+    try:
+        os.kill(pid, signal.SIGTERM)
+    except ProcessLookupError:
+        return
+    except Exception as e:
+        log(f"SIGTERM to {pid} failed: {e}", "WARN")
+        return
+    for _ in range(10):
+        time.sleep(1)
+        if not is_pid_alive(pid):
+            return
+    try:
+        os.kill(pid, signal.SIGKILL)
+        log(f"pid {pid} did not exit on SIGTERM, sent SIGKILL", "WARN")
+    except ProcessLookupError:
+        pass
+
+
+def do_restart(hung, pid, via_systemd):
+    """Returns (ok, detail)."""
+    if via_systemd:
+        detail_prefix = ""
+        if hung:
+            detail_prefix = "hung (via systemd unit) -- "
+        ok, detail = restart_via_systemd()
+        return ok, detail_prefix + (detail or f"systemctl --user restart {TRAIN_UNIT}")
+    else:
+        if hung and pid:
+            log(f"stopping hung pid {pid} before relaunch", "WARN")
+            stop_direct(pid)
+        return start_direct()
+
+
+# --------------------------------------------------------------------------
+# When a restart is the WRONG answer (CODER-02 / CODER-03)
+# --------------------------------------------------------------------------
+NO_RESTART_EXIT_CODES = frozenset({1, 3, 5, 6})
+NO_RESTART_STATES = frozenset({"crash_nonfinite_loss", "crash_nonfinite_grad"})
+
+
+def refuse_restart_reason(reported_status, exec_main_status):
+    """Why this dead run must NOT be restarted -- or None if a restart is fine.
+
+    CODER-02. train.py documents an exit-code contract: 1 = config error (fix the
+    flags), 3 = non-finite loss/grad ("do not restart blindly, investigate"),
+    5 = hold-out leak (never restart). The unit voids all of it -- Restart=on-failure
+    with an empty RestartPreventExitStatus restarts every non-zero exit every 60 s --
+    and the watchdog compounded it: the whole status classifier lives inside
+    `if alive:`, so when the process was DEAD, status.json saying
+    "crash_nonfinite_loss" was never read at all and `needs_restart = not alive`
+    fired regardless. Its own docstring says bad loss is "reported only, never
+    fixed by a restart"; when it mattered most, it did the opposite.
+
+    This matters because the data order is a pure function of (seed, step): a
+    data-caused NaN comes back identically on every resume, so the loop never ends
+    -- ~9 minutes of 47 GB reload per iteration, forever.
+
+    crash_oom (exit 4) is NOT in this set: an OOM can genuinely clear when the
+    other job on the GPU finishes, so it stays restartable.
+    """
+    if reported_status in NO_RESTART_STATES:
+        return ("training exited reporting %s -- the data order is a pure function "
+                "of (seed, step), so a restart replays the same batch and "
+                "reproduces it" % reported_status)
+    try:
+        code = int(exec_main_status)
+    except (TypeError, ValueError):
+        return None
+    if code in NO_RESTART_EXIT_CODES:
+        return ("unit exited %d (1=config error, 3=non-finite, 5=hold-out leak, "
+                "6=checkpoint save failed) -- train.py says these need a human, "
+                "not a restart" % code)
+    return None
+
+
+def run_completed(status_data):
+    """True when the run reached max_steps and exited on purpose.
+
+    CODER-03. max-steps is 1600. At step 1600 train.py writes status "finished"
+    and exits 0; systemd (Restart=on-failure) correctly leaves the unit inactive;
+    the watchdog then saw "not alive" + ENABLED and restarted it. train.py would
+    reload the 47 GB checkpoint (~8 min), run `for step in range(1600, 1600)` --
+    zero iterations -- write "finished", exit 0, and be restarted again, through
+    the 60/120/240/480 s backoff until the 4/hour cap escalated the run to BROKEN.
+    A completed run is not a failure. What happens after step 1600 (a second
+    cosine cycle, a new corpus, or a stop with the model exported) is Iddo's call,
+    not a restart loop's.
+    """
+    d = status_data or {}
+    if d.get("status") != "finished":
+        return False
+    try:
+        step = int(d.get("step") or 0)
+        mx = int(d.get("max_steps") or 0)
+    except (TypeError, ValueError):
+        return False
+    return mx > 0 and step >= mx
+
+
+def pending_restart_active(state, now=None):
+    """True while a restart WE queued is still working through its 47 GB stop.
+
+    CODER-01: without this, the same real restart is booked twice -- once when it
+    is queued and again 5 minutes later while the unit is still deactivating.
+    """
+    now = time.time() if now is None else now
+    ts = (state or {}).get("restart_pending_ts") or 0
+    return bool(ts) and (now - ts) < RESTART_PENDING_GRACE_SECONDS
+
+
+def restarts_last_hour(state, now=None):
+    """CODER-10: the hour filter used to live ONLY inside restart_allowed(), which
+    is reached only when a restart is needed -- so a healthy run reported a stale
+    count forever (watchdog-status.json still said 4 at 12:03 for restarts that
+    happened at 04:23-05:16). Filter where the number is REPORTED, not only where
+    it is enforced."""
+    now = time.time() if now is None else now
+    return len([t for t in (state or {}).get("restart_history", [])
+                if now - t < 3600])
+
+
+EVAL_JSONL = Path.home() / "coder-base-logs" / "eval.jsonl"
+EVAL_STALE_STEPS = 400          # complain if the newest eval is this far behind
+
+
+def newest_eval(path=None):
+    """Last line of eval.jsonl as a dict, or None.
+
+    CODER-04: this is the only number that answers "is the coder better than the
+    base model on code it has never seen". Until eval_ckpt.py has run there is no
+    such number at all -- the one file in ~/coder-base-logs was written on
+    2026-09-04 07:30, on the BASE model, twelve hours before training started.
+    A watchdog that reports a falling training loss and never mentions that the
+    held-out set has not been scored is reporting the easy half.
+    """
+    p = Path(path or EVAL_JSONL)
+    try:
+        lines = [l for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
+    except Exception:
+        return None
+    for line in reversed(lines):
+        try:
+            return json.loads(line)
+        except Exception:
+            continue
+    return None
+
+
+def eval_lag_problem(eval_row, current_step, stale_steps=EVAL_STALE_STEPS):
+    """Pure: what to say about the held-out score, or None if it is current."""
+    if eval_row is None:
+        return ("the held-out set has NEVER been scored on trained weights -- "
+                "no export exists and eval.jsonl is empty, so 'is it better than "
+                "base' has no answer (CODER-04)")
+    try:
+        es = int(eval_row.get("step") or 0)
+        cs = int(current_step or 0)
+    except (TypeError, ValueError):
+        return None
+    if cs - es > stale_steps:
+        return ("newest held-out eval is from step %d, training is at step %d "
+                "(%d steps stale)" % (es, cs, cs - es))
+    return None
+
+
+def sync_pidfile(status_data, pid, path=None):
+    """CODER-09: keep train.pid honest, or remove it.
+
+    train.pid held 3905469 -- written by start_direct() on the very first launch
+    on 2026-09-04 and never updated since, because every launch after that went
+    through systemd. That pid does not exist. This watchdog survives it (the
+    pidfile check fails and the /proc scan finds the real pid) but WATCHDOG.md
+    still lists train.pid as a liveness source, so any other tool or human reading
+    it sees a dead job. status.json's pid is the truth; write that.
+    """
+    p = Path(path or PIDFILE)
+    truth = (status_data or {}).get("pid") or pid
+    try:
+        if truth is None:
+            if p.exists():
+                p.unlink()
+                return "removed stale train.pid (no live trainer)"
+            return None
+        cur = p.read_text().strip() if p.exists() else None
+        if cur != str(truth):
+            p.write_text(str(truth))
+            return "train.pid %s -> %s (from status.json)" % (cur, truth)
+    except Exception as e:
+        return "train.pid sync failed: %s" % e
+    return None
+
+
+# --------------------------------------------------------------------------
+# Backoff / crash-loop
+# --------------------------------------------------------------------------
+def restart_allowed(state):
+    now = time.time()
+    hist = [t for t in state.get("restart_history", []) if now - t < 3600]
+    state["restart_history"] = hist
+    if len(hist) >= MAX_RESTARTS_PER_HOUR:
+        return False, f"crash-loop cap reached ({len(hist)} restarts in the last hour, cap={MAX_RESTARTS_PER_HOUR})"
+    consecutive = state.get("consecutive_restarts", 0)
+    backoff = min(BACKOFF_BASE_SECONDS * (2 ** consecutive), BACKOFF_CAP_SECONDS)
+    last_ts = state.get("last_restart_ts", 0)
+    remaining = backoff - (now - last_ts)
+    if remaining > 0:
+        return False, f"backoff active, {int(remaining)}s remaining before restart #{consecutive + 1} is allowed"
+    return True, None
+
+
+# --------------------------------------------------------------------------
+# Main
+# --------------------------------------------------------------------------
+def main():
+    BASE.mkdir(parents=True, exist_ok=True)
+    CKPT_DIR.mkdir(parents=True, exist_ok=True)
+
+    state = load_json(WATCHDOG_STATE, {})
+    problems = []
+    actions = []
+
+    # 1. disk cleanup -- always allowed, protects the shared host regardless
+    #    of whether training is authorized to run.
+    cleanup_actions, disk_free_gb = cleanup_checkpoints_if_needed()
+    actions += cleanup_actions
+    if disk_free_gb is not None and disk_free_gb < MIN_DISK_FREE_GB:
+        problems.append(f"disk free {disk_free_gb:.1f}GB is below the {MIN_DISK_FREE_GB:.0f}GB floor even after cleanup")
+    elif disk_free_gb is not None and disk_free_gb < DISK_WARN_GB:
+        # CODER-11: one checkpoint cycle needs ~2x47 GB before the prune runs.
+        problems.append(f"disk free {disk_free_gb:.1f}GB is under the {DISK_WARN_GB:.0f}GB "
+                        "warning line -- one checkpoint cycle needs ~94 GB (new 47 GB "
+                        "written before the old one is pruned)")
+
+    # 2. liveness
+    alive, pid, via_systemd, unit_busy = determine_liveness()
+
+    # 3. status.json
+    status_data, status_mtime = read_status()
+    status_age = (time.time() - status_mtime) if status_mtime else None
+    enabled = ENABLED_FILE.exists()
+
+    # CODER-09: train.pid is a published liveness source; keep it true every pass.
+    _pidmsg = sync_pidfile(status_data, pid)
+    if _pidmsg:
+        actions.append(_pidmsg)
+
+    if unit_busy:
+        problems.append(
+            "systemd reports the unit busy (deactivating/activating) -- a 47 GB "
+            "checkpoint is being written or read back; NOT dead, NOT restarting")
+
+    hung = False
+    if alive:
+        # A RESUME IS NOT A HANG EITHER. Loading this run's 50 GB optimizer state
+        # takes minutes, during which status.json still holds the PREVIOUS
+        # process's last line -- which is both stale and says "stopped". Measuring
+        # staleness from that timestamp would make every legitimate restart look
+        # hung and start a kill loop. Staleness is only meaningful since THIS
+        # process started, so re-base the age on process start when the status
+        # predates it.
+        _proc_age = read_proc_start_age_seconds(pid) if pid else None
+        if status_age is not None and _proc_age is not None and _proc_age < status_age:
+            status_age = _proc_age
+        # ---------------------------------------------------------------
+        # STALENESS IS ONLY MEANINGFUL IN A STATE THAT PROMISES A HEARTBEAT.
+        #
+        # This watchdog killed a healthy run THREE times on 2026-09-06 -- 01:18
+        # ("hung", mid 50 GB checkpoint), 02:18 ("dead", systemctl timed out on a
+        # loaded box), 02:44 ("hung", status.json 904s > 900s while the run was
+        # 19 minutes into LOADING that same 50 GB back). The first two fixes were
+        # narrow: they exempted "checkpointing", then fixed liveness. Neither
+        # asked the general question, so "starting" walked straight through.
+        #
+        # The trainer's full vocabulary, read out of train.py rather than guessed:
+        #   starting / running / checkpointing / stopped / finished
+        #   crash_nonfinite_loss / crash_nonfinite_grad / crash_oom
+        #
+        # So classify all of it. Act only where the state itself means trouble;
+        # in a BUSY state the absence of a heartbeat is expected, not evidence.
+        # ---------------------------------------------------------------
+        reported = (status_data or {}).get("status")
+
+        if reported in CRASH_STATES:
+            hung = True
+            problems.append(
+                "training reports %s -- a real crash, restart is the right answer"
+                % reported)
+
+        elif reported in BUSY_STATES:
+            # Loading or writing 50 GB. No heartbeat is due. Only a silence far
+            # longer than either operation has ever taken counts as a hang.
+            if status_age is not None and status_age > BUSY_STALE_SECONDS:
+                hung = True
+                problems.append(
+                    "status.json is stale (%.0fs > %ds) while the process still "
+                    "reports '%s' -- past any checkpoint or resume we have seen, "
+                    "so this looks HUNG" % (status_age, BUSY_STALE_SECONDS, reported))
+            else:
+                problems.append(
+                    "'%s' for %.0fs -- NOT restarting; a busy state is not a hang"
+                    % (reported, status_age if status_age is not None else -1))
+
+        elif reported in EXITED_STATES:
+            # It ended on purpose. systemd owns what happens next, not us.
+            problems.append(
+                "training reports '%s' -- an intentional exit; leaving it to systemd"
+                % reported)
+
+        elif reported == "running":
+            _cap = stale_cap_for(status_data)
+            if status_mtime is not None and status_age > _cap:
+                hung = True
+                problems.append(
+                    "status.json is stale (%.0fs > %.0fs, which is 3 full steps at "
+                    "the run's own reported rate) while the process is alive -- "
+                    "looks HUNG" % (status_age, _cap))
+
+        elif reported is not None:
+            # A state this watchdog has never heard of. Refusing to act is always
+            # recoverable; acting on a misreading is not.
+            problems.append(
+                "unrecognised training status %r -- refusing to judge it" % reported)
+        elif status_mtime is None:
+            age = read_proc_start_age_seconds(pid) if pid else None
+            if age is not None and age > NO_STATUS_GRACE_SECONDS:
+                hung = True
+                problems.append(f"process has been alive {age:.0f}s with no status.json ever written (> {NO_STATUS_GRACE_SECONDS}s grace) -- looks HUNG")
+
+    # 4. loss checks
+    loss_finite = True
+    loss_trend = "insufficient_data"
+    if status_data is not None:
+        loss = status_data.get("loss")
+        if isinstance(loss, (int, float)):
+            if math.isnan(loss) or math.isinf(loss):
+                loss_finite = False
+                problems.append("loss is NaN/Inf")
+            else:
+                # CODER-06: one row per STEP. A step takes 16.7 min and this pass
+                # runs every 5, so the same step used to be appended 3-4 times.
+                _step = status_data.get("step")
+                if _step is None or _step != last_history_step():
+                    append_jsonl(LOSS_HISTORY, {"ts": time.time(), "step": _step,
+                                               "loss": loss})
+        loss_trend, trend_detail = compute_loss_trend()
+        # CODER-06: only a direction the numbers can actually support is reported.
+        if loss_trend == "stalled":
+            problems.append(f"loss flat within noise over the trend window ({trend_detail}) -- reported only, a restart cannot fix this")
+        elif loss_trend == "increasing":
+            problems.append(f"loss RISING over the trend window ({trend_detail}) -- reported only, a restart cannot fix this")
+
+    # 4b. the held-out number -- the only one that closes the loop (CODER-04)
+    eval_row = newest_eval()
+    _evalmsg = eval_lag_problem(eval_row, (status_data or {}).get("step"))
+    if _evalmsg:
+        problems.append(_evalmsg)
+
+    # 5. GPU (informational -- a single idle reading is not, on its own, proof of a hang)
+    gpu_util = get_gpu_util()
+    if alive and not hung and gpu_util is not None and max(gpu_util) < GPU_IDLE_THRESHOLD:
+        problems.append(f"GPU utilization {gpu_util} looks idle while the process reports alive+fresh (informational, transient checkpoints/eval can look like this)")
+
+    # 6. checkpoint freshness (informational -- true interval is unknown to us)
+    ckpt_age = newest_ckpt_age_seconds()
+    if enabled and ckpt_age is not None and ckpt_age > CKPT_STALE_WARN_SECONDS:
+        problems.append(f"newest checkpoint is {ckpt_age / 3600:.1f}h old (informational, interval unknown)")
+
+    # 7. dead-or-hung -> fix, gated by ENABLED + backoff + crash-loop cap
+    needs_restart = (not alive) or hung
+    restart_queued = False
+
+    # --- states in which a restart is the WRONG answer -------------------
+    exec_status = unit_exec_main_status() if (via_systemd and not alive) else None
+    if needs_restart and not alive:
+        if run_completed(status_data):                       # CODER-03
+            needs_restart = False
+            problems.append(
+                "run COMPLETE: status 'finished' at step %s/%s. Not a failure and "
+                "not restartable -- `for step in range(max, max)` would reload 47 GB "
+                "to do nothing. What comes after 1600 steps is a human decision."
+                % (status_data.get("step"), status_data.get("max_steps")))
+        else:
+            _refuse = refuse_restart_reason((status_data or {}).get("status"),
+                                           exec_status)                # CODER-02
+            if _refuse:
+                needs_restart = False
+                problems.append("REFUSING to restart: " + _refuse)
+                if not ESCALATION_FLAG.exists():
+                    save_json(ESCALATION_FLAG,
+                              {"ts": now_iso(), "reason": _refuse})
+                    log("escalating instead of restarting: " + _refuse, "CRITICAL")
+
+    # --- our own restart is still in flight (CODER-01) -------------------
+    if needs_restart and (unit_busy or pending_restart_active(state)):
+        needs_restart = False
+        problems.append(
+            "a restart is already in progress (unit busy or queued %.0fs ago) -- "
+            "not booking a second one for the same event"
+            % (time.time() - (state.get("restart_pending_ts") or time.time())))
+    if alive and state.get("restart_pending_ts"):
+        state.pop("restart_pending_ts", None)   # the queued restart landed
+
+    # The escalation GATE is the flag file's existence, full stop -- that is
+    # what the escalation message tells a human to delete, so deleting it
+    # must be a COMPLETE undo. If we also kept a separate persistent
+    # "escalated" bit that outlived the file, a human clearing the flag
+    # would still get immediately re-escalated by the same stale
+    # restart_history (since the crash-loop cap looks at the last hour) --
+    # confusing and, worse, indistinguishable from "the delete didn't work".
+    # So: state["escalated"] exists ONLY to notice that a human just cleared
+    # the file, and that noticing resets the crash-loop counters so the very
+    # next check gets a genuine fresh attempt instead of re-tripping the cap.
+    escalated = ESCALATION_FLAG.exists()
+    if state.get("escalated") and not escalated:
+        log("WATCHDOG-ESCALATED was cleared by a human -- resetting crash-loop counters for a fresh attempt", "INFO")
+        state["restart_history"] = []
+        state["consecutive_restarts"] = 0
+    state["escalated"] = escalated
+
+    if needs_restart:
+        why = "dead" if not alive else "hung"
+        if not enabled:
+            problems.append(f"training process is {why}, but ~/coder-train/ENABLED does not exist -- refusing to auto-start (Iddo's call)")
+        elif escalated:
+            problems.append("WATCHDOG-ESCALATED is present -- refusing further auto-restart until a human clears it")
+        else:
+            ok_backoff, reason = restart_allowed(state)
+            if not ok_backoff:
+                if "crash-loop cap" in reason:
+                    save_json(ESCALATION_FLAG, {"ts": now_iso(), "reason": reason})
+                    state["escalated"] = True
+                    escalated = True
+                    problems.append(f"CRASH-LOOP: {reason} -- escalating, wrote WATCHDOG-ESCALATED")
+                    log(f"CRASH-LOOP escalation: {reason}", "CRITICAL")
+                else:
+                    problems.append(f"restart deferred: {reason}")
+            else:
+                log(f"attempting restart (reason={why}, via_systemd={via_systemd})", "WARN")
+                problems.append(f"training process was {why} -- restart attempted this pass")
+                ok, detail = do_restart(hung, pid, via_systemd)
+                actions.append(detail)
+                state.setdefault("restart_history", []).append(time.time())
+                state["last_restart_ts"] = time.time()
+                state["consecutive_restarts"] = state.get("consecutive_restarts", 0) + 1
+                if ok:
+                    log(f"restart OK: {detail}", "WARN")
+                    if via_systemd:
+                        # CODER-01: the job is QUEUED, not finished. The stop alone
+                        # writes 47 GB (365-453 s measured) and the resume reads it
+                        # back. Polling for 5 s could never see it come up, and the
+                        # old code never even got here because systemctl's 15 s
+                        # timeout made every successful restart look FAILED.
+                        # Confirm on the NEXT pass.
+                        state["restart_pending_ts"] = time.time()
+                        restart_queued = True
+                        hung = False
+                        needs_restart = False
+                        actions.append("restart job queued; liveness will be "
+                                       "confirmed on the next pass (a graceful stop "
+                                       "here takes 7-8 minutes)")
+                    else:
+                        # Re-confirm liveness so the verdict reflects reality AFTER
+                        # the fix, not the pre-fix snapshot -- a successful auto
+                        # recovery should not still read as an unresolved BROKEN.
+                        for _ in range(5):
+                            time.sleep(1)
+                            alive, pid, via_systemd, unit_busy = determine_liveness()
+                            if alive:
+                                break
+                        if alive:
+                            hung = False
+                            needs_restart = False
+                            actions.append("post-restart check: process confirmed alive")
+                        else:
+                            problems.append("post-restart check: process still not visible in /proc after 5s")
+                else:
+                    problems.append(f"restart attempt FAILED: {detail}")
+                    log(f"restart FAILED: {detail}", "ERROR")
+    else:
+        # healthy (or never-started) -- let the backoff counter heal after a
+        # stable stretch, so one old crash doesn't keep slowing down restarts
+        # forever. This never touches WATCHDOG-ESCALATED itself (that stays a
+        # deliberate human gate, see WATCHDOG.md) -- only the reset above,
+        # triggered by the file's disappearance, does that.
+        if enabled and (time.time() - state.get("last_restart_ts", 0)) > STABLE_RESET_SECONDS:
+            if state.get("consecutive_restarts", 0):
+                log("stable for 30+ min since last restart -- resetting backoff counter", "INFO")
+            state["consecutive_restarts"] = 0
+
+    # 8. verdict
+    never_started = (not enabled) and (not alive) and (status_data is None) and (pid is None)
+    if never_started:
+        verdict = "UNKNOWN"
+        reason = "training not started yet (no ENABLED sentinel, no status.json, no process) -- expected before Iddo authorizes the run"
+    elif escalated:
+        verdict = "BROKEN"
+        reason = "crash-loop escalated -- a human must inspect and delete ~/coder-train/WATCHDOG-ESCALATED to resume auto-restart"
+    elif not loss_finite:
+        verdict = "BROKEN"
+        reason = "loss is NaN/Inf"
+    elif restart_queued:
+        # CODER-01: we asked; the answer takes minutes. Do not call it fixed and
+        # do not call it broken -- say what is actually known.
+        verdict = "UNKNOWN"
+        reason = ("restart job queued this pass; liveness is confirmed on the next "
+                  "pass. " + "; ".join(problems))
+    elif run_completed(status_data) and not alive:
+        # CODER-03: a finished run is a finished run, not a broken one.
+        verdict = "VERIFIED"
+        reason = ("run complete at step %s/%s -- awaiting a human decision on what "
+                  "comes next (second cycle, new corpus, or stop and export)"
+                  % ((status_data or {}).get("step"),
+                     (status_data or {}).get("max_steps")))
+    elif unit_busy and not needs_restart:
+        verdict = "UNKNOWN"
+        reason = ("systemd unit is mid stop/start (47 GB checkpoint in flight); "
+                  + "; ".join(problems))
+    elif needs_restart:
+        verdict = "BROKEN"
+        reason = "; ".join(problems) if problems else f"process {'dead' if not alive else 'hung'}"
+    elif disk_free_gb is not None and disk_free_gb < MIN_DISK_FREE_GB:
+        verdict = "BROKEN"
+        reason = f"disk still low after cleanup: {disk_free_gb:.1f}GB free"
+    elif problems:
+        verdict = "VERIFIED"
+        reason = "alive and fresh; informational warnings only: " + " | ".join(problems)
+    else:
+        verdict = "VERIFIED"
+        reason = "training alive, status fresh, loss finite, GPU busy, disk and checkpoints OK"
+
+    verdict_line = f"{verdict}: {reason}"
+
+    out = {
+        "timestamp": now_iso(),
+        "verdict": verdict,
+        "verdict_line": verdict_line,
+        "enabled": enabled,
+        "process_alive": alive,
+        "pid": pid,
+        "via_systemd_unit": via_systemd,
+        "hung": hung,
+        "status_age_seconds": status_age,
+        "step": status_data.get("step") if status_data else None,
+        "tokens_seen": status_data.get("tokens_seen") if status_data else None,
+        "loss": json_safe_number(status_data.get("loss")) if status_data else None,
+        "loss_finite": loss_finite,
+        "loss_trend": loss_trend,
+        "tokens_per_sec": json_safe_number(status_data.get("tokens_per_sec")) if status_data else None,
+        "peak_gb": json_safe_number(status_data.get("peak_gb")) if status_data else None,
+        "gpu_util_percent": gpu_util,
+        "disk_free_gb": disk_free_gb,
+        "newest_ckpt_age_seconds": ckpt_age,
+        "heldout_eval": ({"step": eval_row.get("step"),
+                          "ce": eval_row.get("MEAN_CE_NATS"),
+                          "top1": eval_row.get("TOP1_ACCURACY"),
+                          "vs_base": eval_row.get("vs_base"),
+                          "timestamp": eval_row.get("timestamp")}
+                         if eval_row else None),
+        "restarts_last_hour": restarts_last_hour(state),   # CODER-10: filtered here, not only in restart_allowed()
+        "unit_busy": unit_busy,
+        "restart_queued_this_pass": restart_queued,
+        "unit_exec_main_status": exec_status,
+        "consecutive_restarts": state.get("consecutive_restarts", 0),
+        "escalated": escalated,
+        "actions_taken": actions,
+        "problems": problems,
+    }
+    save_json(WATCHDOG_STATUS, out)
+    save_json(WATCHDOG_STATE, state)
+    log(verdict_line)
+    print(json.dumps(out, indent=2, ensure_ascii=False))
+    return 0 if verdict != "BROKEN" else 1
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except Exception as e:
+        # Never let an uncaught exception look like a crash with no explanation.
+        import traceback
+        tb = traceback.format_exc()
+        try:
+            log(f"WATCHDOG CRASHED: {e}\n{tb}", "CRITICAL")
+            BASE.mkdir(parents=True, exist_ok=True)
+            save_json(WATCHDOG_STATUS, {
+                "timestamp": now_iso(),
+                "verdict": "UNKNOWN",
+                "verdict_line": f"UNKNOWN: watchdog itself crashed: {e}",
+                "error": str(e),
+                "traceback": tb,
+            })
+        except Exception:
+            print(f"WATCHDOG CRASHED (and could not even write status): {e}\n{tb}", file=sys.stderr)
+        sys.exit(2)

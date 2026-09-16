@@ -1,0 +1,436 @@
+[
+ {
+  "id": "b01_03",
+  "block": 1,
+  "k": 3,
+  "prompt": "Close macro of an array of small round glass photocells set in a black metal grid, each lens catching a point of warm light, slow lateral tracking shot, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 786047
+ },
+ {
+  "id": "b02_02",
+  "block": 2,
+  "k": 2,
+  "prompt": "Over the shoulder view of a man in 1950s clothing writing equations in pencil in a notebook on a cluttered laboratory desk, slide rule and coffee cup beside him, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 809198
+ },
+ {
+  "id": "b02_05",
+  "block": 2,
+  "k": 5,
+  "prompt": "Stacks of freshly printed newspapers sliding across a conveyor in a 1950s pressroom, ink shine, motion blur, warm overhead lamps, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 832349
+ },
+ {
+  "id": "b03_02",
+  "block": 3,
+  "k": 2,
+  "prompt": "Small electric motors with brass gears turning a rotary dial shaft inside a grey machine chassis, oiled metal, warm practical light, macro, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 855500
+ },
+ {
+  "id": "b03_05",
+  "block": 3,
+  "k": 5,
+  "prompt": "Time lapse of a pale green shoot pushing up out of dark earth and unfolding its first leaves, soft window light, macro, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 878651
+ },
+ {
+  "id": "b04_03",
+  "block": 4,
+  "k": 3,
+  "prompt": "Macro of a human eye, iris contracting, reflection of a bright window curving across it, extremely detailed, slow zoom out, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 901802
+ },
+ {
+  "id": "b05_03",
+  "block": 5,
+  "k": 3,
+  "prompt": "Wide shot of many different animals scattered across a foggy open field at dawn, sheep, dogs, horses, cats, soft grey light, static composition, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 924953
+ },
+ {
+  "id": "b05_06",
+  "block": 5,
+  "k": 6,
+  "prompt": "A chalk line being drawn slowly across a dark grey slate surface by an unseen hand, chalk dust falling, side light, macro, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 948104
+ },
+ {
+  "id": "b06_03",
+  "block": 6,
+  "k": 3,
+  "prompt": "A child learning to walk across a wooden floor towards outstretched adult hands, backlit by a bright window, warm and soft, slow motion, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 971255
+ },
+ {
+  "id": "b07_02",
+  "block": 7,
+  "k": 2,
+  "prompt": "A dense three dimensional web of glowing fibres in dark space, points of light travelling along them, slow rotation, volumetric, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 994406
+ },
+ {
+  "id": "b07_05",
+  "block": 7,
+  "k": 5,
+  "prompt": "Close macro of a synapse, two membranes almost touching, tiny glowing particles crossing the gap, deep blue and amber, very shallow focus, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1017557
+ },
+ {
+  "id": "b08_03",
+  "block": 8,
+  "k": 3,
+  "prompt": "A brass balance beam tipping past its balance point and swinging down decisively, macro, dark background, warm rim light, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1040708
+ },
+ {
+  "id": "b09_02",
+  "block": 9,
+  "k": 2,
+  "prompt": "An old toggle switch on a grey metal panel being flipped by a finger, macro, warm light, satisfying mechanical motion, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1063859
+ },
+ {
+  "id": "b10_01",
+  "block": 10,
+  "k": 1,
+  "prompt": "White chalk equations being written slowly on a black slate blackboard by an unseen hand, chalk dust in the air, side light, macro, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1087010
+ },
+ {
+  "id": "b10_04",
+  "block": 10,
+  "k": 4,
+  "prompt": "A slow orbit around a dense cloud of tiny glowing points suspended in dark space, drifting and reorganising, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1110161
+ },
+ {
+  "id": "b11_03",
+  "block": 11,
+  "k": 3,
+  "prompt": "Reverse view from behind a photocell array, hundreds of soldered wires fanning out into a thick braided bundle, macro, warm light, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1133312
+ },
+ {
+  "id": "b12_02",
+  "block": 12,
+  "k": 2,
+  "prompt": "Rows of vacuum tubes glowing orange inside a dark metal chassis, heat shimmer above them, macro, slow lateral move, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1156463
+ },
+ {
+  "id": "b12_05",
+  "block": 12,
+  "k": 5,
+  "prompt": "A small electric motor with reduction gears turning a potentiometer shaft, oil sheen on the gear teeth, macro, warm light, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1179614
+ },
+ {
+  "id": "b13_01",
+  "block": 13,
+  "k": 1,
+  "prompt": "Macro of a single dial rotating a few degrees clockwise, stopping, then a few degrees back, precise mechanical motion, warm light, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1202765
+ },
+ {
+  "id": "b13_04",
+  "block": 13,
+  "k": 4,
+  "prompt": "A needle on an analogue meter swinging past centre, overshooting, then settling, macro, glass reflection, warm light, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1225916
+ },
+ {
+  "id": "b14_03",
+  "block": 14,
+  "k": 3,
+  "prompt": "Slow orbit around a complex mechanical assembly of shafts, dials and small motors, warm rim light, dark background, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1249067
+ },
+ {
+  "id": "b15_03",
+  "block": 15,
+  "k": 3,
+  "prompt": "Macro of a red indicator lamp flashing on a grey control panel, a warning pulse, dark surroundings, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1272218
+ },
+ {
+  "id": "b15_06",
+  "block": 15,
+  "k": 6,
+  "prompt": "Many small white and dark spheres on a white surface, the camera slowly rotating around them so they appear to separate into two groups, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1295369
+ },
+ {
+  "id": "b15_09",
+  "block": 15,
+  "k": 9,
+  "prompt": "Wide static shot of a large 1958 machine standing silent in a laboratory at night, one small lamp glowing on its panel, dust in the air, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1318520
+ },
+ {
+  "id": "b16_03",
+  "block": 16,
+  "k": 3,
+  "prompt": "Four dark spheres at the corners of a square on a white surface, top down view, a straight shadow sweeping across them and never dividing them cleanly, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1341671
+ },
+ {
+  "id": "b17_03",
+  "block": 17,
+  "k": 3,
+  "prompt": "Two academics in dark suits in a 1969 university office, one closing a heavy book, cold window light, documentary portrait, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1364822
+ },
+ {
+  "id": "b17_06",
+  "block": 17,
+  "k": 6,
+  "prompt": "Snow falling slowly outside the dark window of an empty institutional building at dusk, blue grey light, still and quiet, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1387973
+ },
+ {
+  "id": "b18_03",
+  "block": 18,
+  "k": 3,
+  "prompt": "A dense three dimensional lattice of glowing nodes and connecting lines rotating slowly in darkness, deep blue and white, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1411124
+ },
+ {
+  "id": "b19_01",
+  "block": 19,
+  "k": 1,
+  "prompt": "A vast server hall with endless rows of racks, blue and green status lights blinking, cold light, slow forward dolly down the aisle, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1434275
+ },
+ {
+  "id": "b19_04",
+  "block": 19,
+  "k": 4,
+  "prompt": "A person face lit only by the glow of a screen at night, eyes moving as they read, warm and blue mixed light, quiet, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1457426
+ },
+ {
+  "id": "b19_07",
+  "block": 19,
+  "k": 7,
+  "prompt": "A single living neuron in a dish, its dendrites twitching and extending very slowly, faint blue fluorescence, dark background, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1480577
+ },
+ {
+  "id": "b20_03",
+  "block": 20,
+  "k": 3,
+  "prompt": "Copper wire being wound tightly onto a steel core by hand, macro, warm workshop light, tactile detail, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1503728
+ },
+ {
+  "id": "b20_06",
+  "block": 20,
+  "k": 6,
+  "prompt": "An empty laboratory floor of worn linoleum with the marks where heavy equipment once stood, cold window light, slow pan, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1526879
+ },
+ {
+  "id": "b21_02",
+  "block": 21,
+  "k": 2,
+  "prompt": "Heat shimmer rising above rows of cooling units on a rooftop at sunset, distorted air, warm and cold contrast, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1550030
+ },
+ {
+  "id": "b21_05",
+  "block": 21,
+  "k": 5,
+  "prompt": "A single small light bulb glowing warmly in an otherwise completely dark room, filament visible, macro, intimate, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1573181
+ },
+ {
+  "id": "b22_03",
+  "block": 22,
+  "k": 3,
+  "prompt": "Freight wagons of a long train passing at speed through a dark industrial yard, cold sodium light, motion blur, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1596332
+ },
+ {
+  "id": "b22_06",
+  "block": 22,
+  "k": 6,
+  "prompt": "A brass potentiometer shaft turning slowly in warm light beside a faintly glowing biological synapse, matched framing, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1619483
+ },
+ {
+  "id": "b23_03",
+  "block": 23,
+  "k": 3,
+  "prompt": "Four small electronic components arranged in a square on a white surface, three of them clearly visible and one covered by a small card, top down, studio light, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1642634
+ },
+ {
+  "id": "b23_06",
+  "block": 23,
+  "k": 6,
+  "prompt": "Time lapse from above of a river slowly carving a channel through sand, the path deepening and remembering, warm daylight, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1665785
+ },
+ {
+  "id": "b23_09",
+  "block": 23,
+  "k": 9,
+  "prompt": "Extreme macro of current flowing through a crystalline lattice, atoms shifting position slightly and staying there, blue and violet glow, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1688936
+ },
+ {
+  "id": "b24_02",
+  "block": 24,
+  "k": 2,
+  "prompt": "Extreme macro of a brass dial turning continuously and smoothly, no clicks, warm raking light, dark background, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1712087
+ },
+ {
+  "id": "b24_05",
+  "block": 24,
+  "k": 5,
+  "prompt": "Tree roots exposed in dark soil, thick and branching, water seeping between them, macro, soft daylight, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1735238
+ },
+ {
+  "id": "b25_03",
+  "block": 25,
+  "k": 3,
+  "prompt": "Coarse salt crystals falling in slow motion onto a dark surface, backlit, extreme macro, each crystal catching light, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1758389
+ },
+ {
+  "id": "b26_03",
+  "block": 26,
+  "k": 3,
+  "prompt": "Extreme macro inside translucent amber gel, tiny particles drifting slowly through it, backlit, shallow focus, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1781540
+ },
+ {
+  "id": "b27_01",
+  "block": 27,
+  "k": 1,
+  "prompt": "A grid of many small amber gel drops on a copper sheet, evenly spaced, backlit so each one glows, top down view, slow drift, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1804691
+ },
+ {
+  "id": "b27_04",
+  "block": 27,
+  "k": 4,
+  "prompt": "An oscilloscope screen showing smooth overlapping sine waves in green phosphor, slow drift, dark room, macro, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1827842
+ },
+ {
+  "id": "b27_07",
+  "block": 27,
+  "k": 7,
+  "prompt": "Smooth continuous waveforms of coloured light flowing across a dark surface with no steps or edges, slow motion, macro, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1850993
+ },
+ {
+  "id": "b28_03",
+  "block": 28,
+  "k": 3,
+  "prompt": "Extreme macro of a small gel and copper device, imperfect and slightly uneven, tiny bubbles visible, honest daylight, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1874144
+ },
+ {
+  "id": "b29_01",
+  "block": 29,
+  "k": 1,
+  "prompt": "A huge 1958 machine cabinet standing in a large empty hall, wide static shot, cold light through high windows, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1897295
+ },
+ {
+  "id": "b29_04",
+  "block": 29,
+  "k": 4,
+  "prompt": "A supermarket shopping basket on a kitchen counter containing salt, agar and a small roll of copper foil, warm daylight, top down, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1920446
+ },
+ {
+  "id": "b30_01",
+  "block": 30,
+  "k": 1,
+  "prompt": "A 1958 machine of dials and motors in warm tungsten light, one last slow push in, dust drifting, reverent and quiet, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1943597
+ },
+ {
+  "id": "b30_04",
+  "block": 30,
+  "k": 4,
+  "prompt": "A single amber gel drop on copper glowing faintly from within on a dark table, extremely slow push in, warm light, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 1966748
+ },
+ {
+  "id": "b03_99",
+  "block": 3,
+  "k": 99,
+  "prompt": "Extreme macro of a paper card with a black circle printed on it sliding into a metal holder under a lamp, clean laboratory table, shallow focus, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5510613
+ },
+ {
+  "id": "b04_99",
+  "block": 4,
+  "k": 99,
+  "prompt": "A pair of hands sorting small wooden blocks into two separate piles on a plain table, warm daylight, top down view, unhurried, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5518330
+ },
+ {
+  "id": "b10_99",
+  "block": 10,
+  "k": 99,
+  "prompt": "A slow push in on a single small brass dial at the centre of a panel of hundreds of identical dials, warm raking light, shallow focus, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5526047
+ },
+ {
+  "id": "b13_99",
+  "block": 13,
+  "k": 99,
+  "prompt": "Extreme macro of a fine wiper arm sweeping a few millimetres across a carbon track inside a potentiometer, warm light, dark background, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5533764
+ },
+ {
+  "id": "b16_99",
+  "block": 16,
+  "k": 99,
+  "prompt": "A straight taut wire above a white surface scattered with black and white spheres, the wire rotating and never separating them, top down, clean light, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5541481
+ },
+ {
+  "id": "b22_99",
+  "block": 22,
+  "k": 99,
+  "prompt": "A slow orbit around a single glowing junction where two branching filaments meet, warm gold on deep blue, extreme macro, volumetric, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5549198
+ },
+ {
+  "id": "b25_99",
+  "block": 25,
+  "k": 99,
+  "prompt": "Thin copper foil being cut carefully with scissors on a kitchen table, the cut edge catching warm daylight, macro, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5556915
+ },
+ {
+  "id": "b26_99",
+  "block": 26,
+  "k": 99,
+  "prompt": "Extreme macro of the boundary between amber gel and a copper surface, the metal darkening slightly where the gel touches it, backlit, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5564632
+ },
+ {
+  "id": "b28_99",
+  "block": 28,
+  "k": 99,
+  "prompt": "A modest device of copper and amber gel sitting on a windowsill in plain afternoon light, ordinary and unglamorous, static shot, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5572349
+ },
+ {
+  "id": "b30_99",
+  "block": 30,
+  "k": 99,
+  "prompt": "A wide dark sky before dawn with one bright star low on the horizon, absolutely still, extremely slow drift, full frame edge to edge, no borders, no letterbox, no text, no captions, photorealistic, slow deliberate camera movement, rich detail",
+  "seed": 5580066
+ }
+]

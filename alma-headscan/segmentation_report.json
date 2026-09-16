@@ -1,0 +1,1000 @@
+{
+ "frames": 60,
+ "masks_passed_qa": 37,
+ "verdict_notes": [
+  "Masks err PERMISSIVE (background included), never the destructive direction: on every passing mask the full head+neck is INSIDE the mask, so a silhouette carve cannot cut into the reconstructed head.",
+  "Residual defect A: ~10 passing masks keep a bookshelf band/strip above or beside the crown (3-8% of mask area, up to ~150 px outward) \u2014 warm book spines are colorimetrically skin-like; a permissive sector simply fails to carve, it does not corrupt.",
+  "Residual defect B: k033/k045 (tilted head) include a small shoulder-top wedge where the axis-aligned neck trapezoid meets the shoulder; small area, same permissive direction.",
+  "Honest failures, no mask shipped: crown cluster k017-k021 (head dome abuts bare shoulders, no face anchor to validate a mask against), desk zone k026-k029 (no head in frame), left profiles k036-k037 (backlit, unreachable across the measured ~10-inlier SIFT transition), plus QA-rejected leaky masks (k030-k032, k034, k038, k040-k044, k049, k022).",
+  "Boundary precision on clean sectors ~5-15 px at 1080x1920; grabCut ran at half resolution."
+ ],
+ "per_frame": [
+  {
+   "frame": "k000",
+   "source": "front",
+   "box": [
+    218,
+    878,
+    592,
+    592
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2301,
+    "solidity": 0.852,
+    "base_fill": 0.575
+   }
+  },
+  {
+   "frame": "k001",
+   "source": "front",
+   "box": [
+    230,
+    806,
+    592,
+    592
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2471,
+    "solidity": 0.82,
+    "base_fill": 0.625
+   }
+  },
+  {
+   "frame": "k002",
+   "source": "front",
+   "box": [
+    226,
+    818,
+    580,
+    580
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2516,
+    "solidity": 0.837,
+    "base_fill": 0.66
+   }
+  },
+  {
+   "frame": "k003",
+   "source": "front",
+   "box": [
+    218,
+    818,
+    580,
+    580
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2454,
+    "solidity": 0.824,
+    "base_fill": 0.649
+   }
+  },
+  {
+   "frame": "k004",
+   "source": "front",
+   "box": [
+    212,
+    820,
+    588,
+    588
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2637,
+    "solidity": 0.832,
+    "base_fill": 0.674
+   }
+  },
+  {
+   "frame": "k005",
+   "source": "front",
+   "box": [
+    210,
+    822,
+    582,
+    582
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2411,
+    "solidity": 0.865,
+    "base_fill": 0.63
+   }
+  },
+  {
+   "frame": "k006",
+   "source": "front",
+   "box": [
+    198,
+    814,
+    602,
+    602
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2609,
+    "solidity": 0.842,
+    "base_fill": 0.639
+   }
+  },
+  {
+   "frame": "k007",
+   "source": "front",
+   "box": [
+    204,
+    826,
+    598,
+    598
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.261,
+    "solidity": 0.851,
+    "base_fill": 0.65
+   }
+  },
+  {
+   "frame": "k008",
+   "source": "front",
+   "box": [
+    206,
+    834,
+    582,
+    582
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2643,
+    "solidity": 0.858,
+    "base_fill": 0.681
+   }
+  },
+  {
+   "frame": "k009",
+   "source": "front",
+   "box": [
+    164,
+    956,
+    622,
+    622
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.3161,
+    "solidity": 0.822,
+    "base_fill": 0.712
+   }
+  },
+  {
+   "frame": "k010",
+   "source": "front",
+   "box": [
+    184,
+    1004,
+    622,
+    622
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.262,
+    "solidity": 0.842,
+    "base_fill": 0.605
+   }
+  },
+  {
+   "frame": "k011",
+   "source": "front",
+   "box": [
+    204,
+    1018,
+    626,
+    626
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2681,
+    "solidity": 0.802,
+    "base_fill": 0.618
+   }
+  },
+  {
+   "frame": "k012",
+   "source": "front",
+   "box": [
+    206,
+    1042,
+    628,
+    628
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2649,
+    "solidity": 0.843,
+    "base_fill": 0.616
+   }
+  },
+  {
+   "frame": "k013",
+   "source": "propagated<-k012(115inl)",
+   "box": [
+    209,
+    1031,
+    638,
+    618
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2787,
+    "solidity": 0.833,
+    "base_fill": 0.647
+   }
+  },
+  {
+   "frame": "k014",
+   "source": "propagated<-k013(210inl)",
+   "box": [
+    201,
+    1042,
+    656,
+    645
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2782,
+    "solidity": 0.847,
+    "base_fill": 0.618
+   }
+  },
+  {
+   "frame": "k015",
+   "source": "propagated<-k014(151inl)",
+   "box": [
+    206,
+    1068,
+    670,
+    656
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2531,
+    "solidity": 0.912,
+    "base_fill": 0.557
+   }
+  },
+  {
+   "frame": "k016",
+   "source": "propagated<-k015(271inl)",
+   "box": [
+    193,
+    1049,
+    687,
+    684
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2616,
+    "solidity": 0.902,
+    "base_fill": 0.543
+   }
+  },
+  {
+   "frame": "k017",
+   "source": "none",
+   "box": null,
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "no_head_region"
+    ]
+   }
+  },
+  {
+   "frame": "k018",
+   "source": "none",
+   "box": null,
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "no_head_region"
+    ]
+   }
+  },
+  {
+   "frame": "k019",
+   "source": "none",
+   "box": null,
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "no_head_region"
+    ]
+   }
+  },
+  {
+   "frame": "k020",
+   "source": "none",
+   "box": null,
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "no_head_region"
+    ]
+   }
+  },
+  {
+   "frame": "k021",
+   "source": "none",
+   "box": null,
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "no_head_region"
+    ]
+   }
+  },
+  {
+   "frame": "k022",
+   "source": "propagated-far<-k016(36inl)",
+   "box": [
+    -6,
+    703,
+    702,
+    677
+   ],
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "touches_side_border"
+    ],
+    "area_frac": 0.3108,
+    "solidity": 0.955,
+    "base_fill": 0.662
+   }
+  },
+  {
+   "frame": "k023",
+   "source": "front",
+   "box": [
+    270,
+    914,
+    566,
+    566
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2508,
+    "solidity": 0.951,
+    "base_fill": 0.698
+   }
+  },
+  {
+   "frame": "k024",
+   "source": "front",
+   "box": [
+    320,
+    916,
+    566,
+    566
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2482,
+    "solidity": 0.92,
+    "base_fill": 0.698
+   }
+  },
+  {
+   "frame": "k025",
+   "source": "front",
+   "box": [
+    344,
+    912,
+    588,
+    588
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2222,
+    "solidity": 0.882,
+    "base_fill": 0.576
+   }
+  },
+  {
+   "frame": "k026",
+   "source": "none",
+   "box": null,
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "no_head_region"
+    ]
+   }
+  },
+  {
+   "frame": "k027",
+   "source": "none",
+   "box": null,
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "no_head_region"
+    ]
+   }
+  },
+  {
+   "frame": "k028",
+   "source": "none",
+   "box": null,
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "no_head_region"
+    ]
+   }
+  },
+  {
+   "frame": "k029",
+   "source": "none",
+   "box": null,
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "no_head_region"
+    ]
+   }
+  },
+  {
+   "frame": "k030",
+   "source": "front",
+   "box": [
+    118,
+    968,
+    560,
+    560
+   ],
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "solidity=0.78",
+     "touches_side_border"
+    ],
+    "area_frac": 0.2177,
+    "solidity": 0.781,
+    "base_fill": 0.619
+   }
+  },
+  {
+   "frame": "k031",
+   "source": "front",
+   "box": [
+    134,
+    998,
+    550,
+    550
+   ],
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "base_fill=0.45"
+    ],
+    "area_frac": 0.1516,
+    "solidity": 0.938,
+    "base_fill": 0.451
+   }
+  },
+  {
+   "frame": "k032",
+   "source": "front",
+   "box": [
+    158,
+    988,
+    550,
+    550
+   ],
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "base_fill=0.47"
+    ],
+    "area_frac": 0.1568,
+    "solidity": 0.944,
+    "base_fill": 0.466
+   }
+  },
+  {
+   "frame": "k033",
+   "source": "front",
+   "box": [
+    150,
+    990,
+    586,
+    586
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2176,
+    "solidity": 0.857,
+    "base_fill": 0.569
+   }
+  },
+  {
+   "frame": "k034",
+   "source": "front",
+   "box": [
+    30,
+    776,
+    822,
+    822
+   ],
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "area_frac=0.514",
+     "touches_side_border"
+    ],
+    "area_frac": 0.5141,
+    "solidity": 0.873,
+    "base_fill": 0.748
+   }
+  },
+  {
+   "frame": "k035",
+   "source": "propagated<-k038(335inl)",
+   "box": [
+    66,
+    678,
+    761,
+    771
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.356,
+    "solidity": 0.923,
+    "base_fill": 0.559
+   }
+  },
+  {
+   "frame": "k036",
+   "source": "none",
+   "box": null,
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "no_head_region"
+    ]
+   }
+  },
+  {
+   "frame": "k037",
+   "source": "none",
+   "box": null,
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "no_head_region"
+    ]
+   }
+  },
+  {
+   "frame": "k038",
+   "source": "front",
+   "box": [
+    162,
+    696,
+    684,
+    684
+   ],
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "base_fill=0.49"
+    ],
+    "area_frac": 0.2538,
+    "solidity": 0.834,
+    "base_fill": 0.488
+   }
+  },
+  {
+   "frame": "k039",
+   "source": "propagated<-k038(433inl)",
+   "box": [
+    142,
+    665,
+    697,
+    695
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2651,
+    "solidity": 0.823,
+    "base_fill": 0.503
+   }
+  },
+  {
+   "frame": "k040",
+   "source": "propagated<-k039(523inl)",
+   "box": [
+    121,
+    664,
+    708,
+    702
+   ],
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "base_fill=0.46"
+    ],
+    "area_frac": 0.2491,
+    "solidity": 0.911,
+    "base_fill": 0.461
+   }
+  },
+  {
+   "frame": "k041",
+   "source": "propagated<-k040(407inl)",
+   "box": [
+    -35,
+    682,
+    772,
+    764
+   ],
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "touches_side_border"
+    ],
+    "area_frac": 0.3787,
+    "solidity": 0.899,
+    "base_fill": 0.662
+   }
+  },
+  {
+   "frame": "k042",
+   "source": "propagated<-k041(842inl)",
+   "box": [
+    -38,
+    660,
+    778,
+    770
+   ],
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "area_frac=0.421",
+     "touches_side_border"
+    ],
+    "area_frac": 0.4209,
+    "solidity": 0.914,
+    "base_fill": 0.692
+   }
+  },
+  {
+   "frame": "k043",
+   "source": "propagated<-k042(699inl)",
+   "box": [
+    -22,
+    671,
+    782,
+    776
+   ],
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "area_frac=0.439",
+     "touches_side_border"
+    ],
+    "area_frac": 0.4391,
+    "solidity": 0.917,
+    "base_fill": 0.704
+   }
+  },
+  {
+   "frame": "k044",
+   "source": "propagated<-k043(653inl)",
+   "box": [
+    -51,
+    673,
+    786,
+    780
+   ],
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "area_frac=0.425",
+     "touches_side_border"
+    ],
+    "area_frac": 0.4245,
+    "solidity": 0.915,
+    "base_fill": 0.695
+   }
+  },
+  {
+   "frame": "k045",
+   "source": "front",
+   "box": [
+    138,
+    672,
+    776,
+    776
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.3517,
+    "solidity": 0.833,
+    "base_fill": 0.517
+   }
+  },
+  {
+   "frame": "k046",
+   "source": "front-noeye",
+   "box": [
+    148,
+    716,
+    708,
+    708
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2837,
+    "solidity": 0.843,
+    "base_fill": 0.503
+   }
+  },
+  {
+   "frame": "k047",
+   "source": "front",
+   "box": [
+    146,
+    696,
+    736,
+    736
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.324,
+    "solidity": 0.872,
+    "base_fill": 0.532
+   }
+  },
+  {
+   "frame": "k048",
+   "source": "front",
+   "box": [
+    180,
+    690,
+    696,
+    696
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2811,
+    "solidity": 0.889,
+    "base_fill": 0.525
+   }
+  },
+  {
+   "frame": "k049",
+   "source": "front",
+   "box": [
+    188,
+    664,
+    722,
+    722
+   ],
+   "qa": {
+    "ok": false,
+    "reasons": [
+     "touches_side_border"
+    ],
+    "area_frac": 0.3495,
+    "solidity": 0.841,
+    "base_fill": 0.602
+   }
+  },
+  {
+   "frame": "k050",
+   "source": "front-noeye",
+   "box": [
+    216,
+    702,
+    644,
+    644
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2563,
+    "solidity": 0.883,
+    "base_fill": 0.559
+   }
+  },
+  {
+   "frame": "k051",
+   "source": "front",
+   "box": [
+    196,
+    684,
+    676,
+    676
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2706,
+    "solidity": 0.875,
+    "base_fill": 0.534
+   }
+  },
+  {
+   "frame": "k052",
+   "source": "front-noeye",
+   "box": [
+    164,
+    660,
+    710,
+    710
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.299,
+    "solidity": 0.894,
+    "base_fill": 0.526
+   }
+  },
+  {
+   "frame": "k053",
+   "source": "front-noeye",
+   "box": [
+    174,
+    662,
+    698,
+    698
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2759,
+    "solidity": 0.878,
+    "base_fill": 0.512
+   }
+  },
+  {
+   "frame": "k054",
+   "source": "propagated<-k053(868inl)",
+   "box": [
+    175,
+    663,
+    699,
+    702
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2938,
+    "solidity": 0.89,
+    "base_fill": 0.528
+   }
+  },
+  {
+   "frame": "k055",
+   "source": "propagated<-k054(888inl)",
+   "box": [
+    169,
+    655,
+    704,
+    711
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2935,
+    "solidity": 0.898,
+    "base_fill": 0.527
+   }
+  },
+  {
+   "frame": "k056",
+   "source": "propagated<-k055(903inl)",
+   "box": [
+    167,
+    649,
+    708,
+    719
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.2867,
+    "solidity": 0.895,
+    "base_fill": 0.509
+   }
+  },
+  {
+   "frame": "k057",
+   "source": "front-noeye",
+   "box": [
+    160,
+    656,
+    726,
+    726
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.309,
+    "solidity": 0.895,
+    "base_fill": 0.52
+   }
+  },
+  {
+   "frame": "k058",
+   "source": "front-noeye",
+   "box": [
+    172,
+    646,
+    724,
+    724
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.3534,
+    "solidity": 0.868,
+    "base_fill": 0.608
+   }
+  },
+  {
+   "frame": "k059",
+   "source": "front",
+   "box": [
+    166,
+    662,
+    708,
+    708
+   ],
+   "qa": {
+    "ok": true,
+    "reasons": [],
+    "area_frac": 0.3049,
+    "solidity": 0.818,
+    "base_fill": 0.549
+   }
+  }
+ ],
+ "sheets": [
+  "D:\\CLAUDE\\alma-headscan\\contact_masks_1.png",
+  "D:\\CLAUDE\\alma-headscan\\contact_masks_2.png"
+ ]
+}

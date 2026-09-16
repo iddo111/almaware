@@ -1,0 +1,28 @@
+{
+  "_comment": "Linux override for voice_input_xplat.py — merged on top of config.json. CPU-first by default (set device=cuda only if you have an NVIDIA GPU + CUDA libs). Edit input_device to your mic name substring (run: python mic.py to list devices). ALMAWARE · iddoperez.ai",
+
+  "device": "cpu",
+  "model": "small",
+  "cpu_model": "small",
+  "base_model": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+
+  "input_device": null,
+  "fallback_devices": ["USB", "BRIO", "Yeti", "Scarlett", "pulse", "default"],
+  "never_use_devices": ["WH-1000XM4", "Bluetooth", "Headset"],
+  "idle_if_no_good_mic": false,
+
+  "mode": "vad",
+  "auto_enter": true,
+  "default_target": "focused",
+
+  "ducking_enabled": false,
+  "duck_pct": 100,
+
+  "use_clipboard_paste": true,
+  "terminal_paste": false,
+
+  "vad_rms_threshold": 220,
+  "silence_secs": 1.2,
+  "min_secs": 0.6,
+  "max_secs": 30
+}

@@ -1,0 +1,56 @@
+[
+ {
+  "file": "RAW-ba-dot.wav",
+  "truth": null,
+  "text": "אה",
+  "pred": "A"
+ },
+ {
+  "file": "RAW-ba-frame.wav",
+  "truth": null,
+  "text": "אלו",
+  "pred": "A"
+ },
+ {
+  "file": "RAW-ba-raw.wav",
+  "truth": null,
+  "text": "אה",
+  "pred": "A"
+ },
+ {
+  "file": "RAW-ba-word.wav",
+  "truth": null,
+  "text": "היית",
+  "pred": "H"
+ },
+ {
+  "file": "RAW-ma-raw.wav",
+  "truth": null,
+  "text": "לא",
+  "pred": "L"
+ },
+ {
+  "file": "RAW-ma-word.wav",
+  "truth": null,
+  "text": "הרו",
+  "pred": "H"
+ },
+ {
+  "file": "RAW-na-raw.wav",
+  "truth": null,
+  "text": "לא",
+  "pred": "L"
+ },
+ {
+  "file": "RAW-sa-raw.wav",
+  "truth": null,
+  "text": "ס...",
+  "pred": "S"
+ },
+ {
+  "file": "RAW-tza-raw.wav",
+  "truth": null,
+  "text": "ס...",
+  "pred": "S"
+ }
+]

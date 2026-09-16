@@ -1,0 +1,75 @@
+{
+  "alma": "0.1",
+  "weave": "L1_weighted_sum",
+  "knots": [
+    {
+      "name": "x1"
+    },
+    {
+      "name": "x2"
+    },
+    {
+      "name": "x3"
+    },
+    {
+      "name": "neuron",
+      "verb": "sum",
+      "trigger": "count 3",
+      "bias": -1.0
+    },
+    {
+      "name": "y",
+      "verb": "fringe"
+    }
+  ],
+  "threads": [
+    {
+      "from": "x1",
+      "to": "neuron",
+      "strands": [
+        {
+          "weight": 0.5,
+          "delay": 1
+        }
+      ]
+    },
+    {
+      "from": "x2",
+      "to": "neuron",
+      "strands": [
+        {
+          "weight": -0.25,
+          "delay": 1
+        }
+      ]
+    },
+    {
+      "from": "x3",
+      "to": "neuron",
+      "strands": [
+        {
+          "weight": 2.0,
+          "delay": 1
+        }
+      ]
+    },
+    {
+      "from": "neuron",
+      "to": "y"
+    }
+  ],
+  "seeds": [
+    {
+      "to": "x1",
+      "value": 4.0
+    },
+    {
+      "to": "x2",
+      "value": -2.0
+    },
+    {
+      "to": "x3",
+      "value": 1.0
+    }
+  ]
+}

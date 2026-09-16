@@ -1,0 +1,51 @@
+{
+  "status": "generated",
+  "started_at_utc": "2026-07-22T12:04:52.889457+00:00",
+  "host": "edgexpert-01e6",
+  "platform": "Linux-6.17.0-1026-nvidia-aarch64-with-glibc2.39",
+  "python": "3.12.3",
+  "executable": "/usr/bin/python3.12",
+  "packages": {
+    "torch": "2.10.0+cu130",
+    "torchvision": "0.25.0+cu130",
+    "diffusers": "0.40.0.dev0",
+    "transformers": "5.14.1",
+    "accelerate": "1.14.0",
+    "safetensors": "0.8.0",
+    "sentencepiece": "0.2.2",
+    "imageio": "2.37.4",
+    "imageio-ffmpeg": "0.6.0"
+  },
+  "config": {
+    "prompt": "A single small brass robot walks across a quiet sunlit workbench, cinematic natural light, stable camera, realistic materials, clean background.",
+    "negative_prompt": "text, subtitles, watermark, logo, duplicate subject, deformed limbs, flicker, camera shake, low detail, overexposure",
+    "seed": 20260722,
+    "width": 832,
+    "height": 480,
+    "num_frames": 17,
+    "num_inference_steps": 8,
+    "guidance_scale": 5.0,
+    "fps": 24,
+    "model_dir": "/home/eran3/models/alma-studio/Wan2.2-TI2V-5B-Diffusers",
+    "model_noncache_file_count": 29,
+    "model_noncache_bytes": 34203021834,
+    "model_incomplete_files": []
+  },
+  "cuda": {
+    "torch_cuda_version": "13.0",
+    "device_name": "NVIDIA GB10",
+    "device_capability": [
+      12,
+      1
+    ]
+  },
+  "finished_at_utc": "2026-07-22T12:06:57.191415+00:00",
+  "elapsed_seconds": 124.297,
+  "output_path": "/home/eran3/alma-studio/canaries/wan-ti2v-acceptance-scalefix-20260722T150452+0300/wan-ti2v-canary.mp4",
+  "output_bytes": 45829,
+  "output_sha256": "3d2ebc1c3c9fb18d7cb379d7a20a0f03a9a5b42103e893dd1279c12d4b927c1c",
+  "produced_frames": 17,
+  "validation_scale": "normalized-float-0-1-to-0-255",
+  "frame_std_min": 61.681766510009766,
+  "frame_std_max": 65.37217712402344
+}

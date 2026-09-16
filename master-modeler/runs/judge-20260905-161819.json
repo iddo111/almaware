@@ -1,0 +1,348 @@
+[
+  {
+    "id": "fleurs-human",
+    "what": "FLEURS he_il syllable cut, 1502 speaker ids, IPA-recognised labels (subsample pulled read-only from eran2:~/eran-food-human2)",
+    "root": "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\0bb19b15-e55e-4ca6-b4d0-9b011e3200b3\\scratchpad\\fleurs-sample",
+    "n_clips": 1116,
+    "notes": [],
+    "ear": "eran-brain/body/ears.py repr=cochlea bands=24 pool=loudest60 dim=192",
+    "provenance": {
+      "verdict": "HUMAN-CLAIMED",
+      "records_read": [
+        "C:\\Users\\iddo1\\AppData\\Local\\Temp\\claude\\D--CLAUDE\\0bb19b15-e55e-4ca6-b4d0-9b011e3200b3\\scratchpad\\fleurs-sample\\ATTRIBUTION.txt"
+      ],
+      "synthetic_evidence": [],
+      "human_markers": [
+        "fleurs",
+        "speaker"
+      ]
+    },
+    "n_units": 19,
+    "n_groups": 641,
+    "units": [
+      "B",
+      "D",
+      "F",
+      "G",
+      "H",
+      "K",
+      "L",
+      "M",
+      "N",
+      "P",
+      "R",
+      "S",
+      "SH",
+      "T",
+      "TS",
+      "V",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "groups": [
+      "fleurs-1",
+      "fleurs-10",
+      "fleurs-100",
+      "fleurs-1000",
+      "fleurs-1001",
+      "fleurs-1002",
+      "fleurs-1004",
+      "fleurs-1006",
+      "fleurs-1007",
+      "fleurs-1008",
+      "fleurs-101",
+      "fleurs-1011",
+      "..."
+    ],
+    "between_unit_cosine": -0.0059,
+    "per_unit": [
+      {
+        "unit": "B",
+        "k": 60,
+        "within_cosine": 0.1132,
+        "excess": 0.1185,
+        "n_eff": 7.51,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "D",
+        "k": 60,
+        "within_cosine": 0.0826,
+        "excess": 0.088,
+        "n_eff": 9.69,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "F",
+        "k": 60,
+        "within_cosine": 0.1272,
+        "excess": 0.1324,
+        "n_eff": 6.81,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "G",
+        "k": 60,
+        "within_cosine": 0.0841,
+        "excess": 0.0895,
+        "n_eff": 9.56,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "H",
+        "k": 60,
+        "within_cosine": 0.0819,
+        "excess": 0.0873,
+        "n_eff": 9.75,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "K",
+        "k": 60,
+        "within_cosine": 0.0441,
+        "excess": 0.0497,
+        "n_eff": 15.26,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "L",
+        "k": 60,
+        "within_cosine": 0.0727,
+        "excess": 0.0782,
+        "n_eff": 10.69,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "M",
+        "k": 60,
+        "within_cosine": 0.1051,
+        "excess": 0.1103,
+        "n_eff": 7.99,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "N",
+        "k": 60,
+        "within_cosine": 0.0929,
+        "excess": 0.0982,
+        "n_eff": 8.83,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "P",
+        "k": 60,
+        "within_cosine": 0.053,
+        "excess": 0.0585,
+        "n_eff": 13.47,
+        "twin_frac": 0.001
+      },
+      {
+        "unit": "R",
+        "k": 60,
+        "within_cosine": 0.0916,
+        "excess": 0.097,
+        "n_eff": 8.93,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "S",
+        "k": 60,
+        "within_cosine": 0.2206,
+        "excess": 0.2252,
+        "n_eff": 4.2,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "SH",
+        "k": 60,
+        "within_cosine": 0.2748,
+        "excess": 0.279,
+        "n_eff": 3.44,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "T",
+        "k": 60,
+        "within_cosine": 0.0286,
+        "excess": 0.0343,
+        "n_eff": 19.83,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "TS",
+        "k": 51,
+        "within_cosine": 0.1039,
+        "excess": 0.1092,
+        "n_eff": 7.89,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "V",
+        "k": 60,
+        "within_cosine": 0.079,
+        "excess": 0.0845,
+        "n_eff": 10.03,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "X",
+        "k": 60,
+        "within_cosine": 0.1896,
+        "excess": 0.1943,
+        "n_eff": 4.81,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "Y",
+        "k": 60,
+        "within_cosine": 0.1331,
+        "excess": 0.1382,
+        "n_eff": 6.56,
+        "twin_frac": 0.0
+      },
+      {
+        "unit": "Z",
+        "k": 45,
+        "within_cosine": 0.0789,
+        "excess": 0.0843,
+        "n_eff": 9.56,
+        "twin_frac": 0.0
+      }
+    ],
+    "within_cosine_mean": 0.1083,
+    "excess_mean": 0.1135,
+    "n_eff_median": 8.93,
+    "k_median": 60,
+    "twin_frac_mean": 0.0,
+    "block": {
+      "unit_pairs": 171,
+      "disjoint_in_time": 0,
+      "block_fraction": 0.0,
+      "span_seconds": 89.0
+    },
+    "drift": {
+      "floor": 0.5036,
+      "correct": 562,
+      "n": 1116,
+      "units_used": 19,
+      "per_unit": [
+        {
+          "unit": "B",
+          "k": 60,
+          "accuracy": 0.4667
+        },
+        {
+          "unit": "D",
+          "k": 60,
+          "accuracy": 0.4667
+        },
+        {
+          "unit": "F",
+          "k": 60,
+          "accuracy": 0.4333
+        },
+        {
+          "unit": "G",
+          "k": 60,
+          "accuracy": 0.4167
+        },
+        {
+          "unit": "H",
+          "k": 60,
+          "accuracy": 0.4667
+        },
+        {
+          "unit": "K",
+          "k": 60,
+          "accuracy": 0.4333
+        },
+        {
+          "unit": "L",
+          "k": 60,
+          "accuracy": 0.4667
+        },
+        {
+          "unit": "M",
+          "k": 60,
+          "accuracy": 0.5667
+        },
+        {
+          "unit": "N",
+          "k": 60,
+          "accuracy": 0.4833
+        },
+        {
+          "unit": "P",
+          "k": 60,
+          "accuracy": 0.6
+        },
+        {
+          "unit": "R",
+          "k": 60,
+          "accuracy": 0.5833
+        },
+        {
+          "unit": "S",
+          "k": 60,
+          "accuracy": 0.55
+        },
+        {
+          "unit": "SH",
+          "k": 60,
+          "accuracy": 0.6667
+        },
+        {
+          "unit": "T",
+          "k": 60,
+          "accuracy": 0.4833
+        },
+        {
+          "unit": "TS",
+          "k": 51,
+          "accuracy": 0.6471
+        },
+        {
+          "unit": "V",
+          "k": 60,
+          "accuracy": 0.4667
+        },
+        {
+          "unit": "X",
+          "k": 60,
+          "accuracy": 0.45
+        },
+        {
+          "unit": "Y",
+          "k": 60,
+          "accuracy": 0.45
+        },
+        {
+          "unit": "Z",
+          "k": 45,
+          "accuracy": 0.4889
+        }
+      ]
+    },
+    "artefact": [],
+    "artefact_confounded": false,
+    "chance": 0.0526,
+    "signal": {
+      "accuracy": 0.254,
+      "n": 63,
+      "how": "leave-group-out",
+      "p_vs_chance": 1.1794279603044279e-07
+    },
+    "leakage": {
+      "random_split_accuracy": 0.3244,
+      "honest_split_accuracy": 0.254,
+      "gap": 0.0704
+    },
+    "flags": [],
+    "verdict": "ACCEPT",
+    "reasons": [
+      "all five probes passed"
+    ],
+    "seconds": 1.5
+  }
+]

@@ -1,0 +1,275 @@
+{
+  "metadata": {
+    "generated_date": "2026-08-10",
+    "generated_by": "Claude Code inventory scan",
+    "total_items": 25,
+    "notes": "Grok projects on this PC (C: and D:). Excludes archived worktrees in D:\\_grok_archive_from_C (640GB). Projects without git status are single-purpose or non-versioned utilities."
+  },
+  "projects": [
+    {
+      "name": "grok-coder",
+      "path": "D:\\CLAUDE\\grok-coder",
+      "what": "Native Tkinter desktop app (like Claude Desktop) for Grok-1 chat with cleanup guard and OpenAI-compatible endpoint",
+      "status": "live",
+      "run_url": "Double-click 'Grok-1 Coder.url' on Desktop or run grok1_tk.py; connects to grok1_shim (:8899)",
+      "last_modified": "2026-07-11",
+      "key_files": ["grok1_tk.py", "grok_coder.html"]
+    },
+    {
+      "name": "grok1_shim",
+      "path": "D:\\CLAUDE\\grok1_shim.py",
+      "what": "OpenAI-compatible chat/completion shim that wraps base Grok-1 (llama.cpp :8080) and fixes ChatML-template garbage",
+      "status": "live",
+      "run_url": "start_grok1_shim.cmd or 'python3 grok1_shim.py'; listens on 127.0.0.1:8899; orchestrated by fabric_keeper",
+      "last_modified": "2026-07-17",
+      "key_files": ["grok1_shim.py", "start_grok1_shim.cmd"]
+    },
+    {
+      "name": "grok-web-claws",
+      "path": "D:\\CLAUDE\\grok-web-claws",
+      "what": "Windows native desktop app (tkinter) that chats with web-based AI (Grok, ChatGPT, Gemini) via Chrome DevTools Protocol, with optional agentic read/write/run tools",
+      "status": "working",
+      "run_url": "GROK-WEB-CLAWS.bat or 'Grok Web Claws' Desktop shortcut; run CHROME-DEBUG.bat first to start Chrome on port 9222",
+      "last_modified": "2026-07-11",
+      "key_files": ["grok_web_claws.py", "CHROME-DEBUG.bat"]
+    },
+    {
+      "name": "grok-ollama-gateway",
+      "path": "D:\\CLAUDE\\grok-ollama-gateway",
+      "what": "Ollama API gateway/bridge for Grok models",
+      "status": "working",
+      "run_url": "python gateway.py or as systemd service (grok-ollama-gateway.service)",
+      "last_modified": "2026-07-18",
+      "key_files": ["gateway.py", "grok-ollama-gateway.service"]
+    },
+    {
+      "name": "grok-raw-ui",
+      "path": "D:\\CLAUDE\\grok-raw-ui",
+      "what": "Raw HTTP server for web-based Grok-1 chat UI",
+      "status": "working",
+      "run_url": "python server.py or systemd service (grok-raw-ui.service)",
+      "last_modified": "2026-07-17",
+      "key_files": ["server.py", "grok-raw-ui.service"]
+    },
+    {
+      "name": "grok-raw-ui-v2",
+      "path": "D:\\CLAUDE\\grok-raw-ui-v2",
+      "what": "Raw UI v2 with built-in English language guard and self-regulating logic for base Grok-1",
+      "status": "working",
+      "run_url": "python server.py or as systemd service",
+      "last_modified": "2026-07-18",
+      "key_files": ["server.py", "20-english-guard.conf"]
+    },
+    {
+      "name": "grok1-fixed-harness",
+      "path": "D:\\CLAUDE\\grok1-fixed-harness",
+      "what": "Fixed harness with RPC stability improvements for Grok-1 (eran1-3 fabric mesh)",
+      "status": "working",
+      "run_url": "systemd service: grok1-agent-harness.service on eran1",
+      "last_modified": "2026-07-17",
+      "key_files": ["server.py", "grok1-agent-harness.service", "10-rpc-stability.conf"]
+    },
+    {
+      "name": "grok1-fixed-harness-v2",
+      "path": "D:\\CLAUDE\\grok1-fixed-harness-v2",
+      "what": "Fixed harness v2 with English guard configuration for Grok-1 base model filtering",
+      "status": "working",
+      "run_url": "systemd service with 20-english-guard.conf; alternative harness config",
+      "last_modified": "2026-07-18",
+      "key_files": ["server.py", "20-english-guard.conf"]
+    },
+    {
+      "name": "grok1_agent",
+      "path": "D:\\CLAUDE\\grok1_agent.py",
+      "what": "Agent layer for Grok-1 with tool support (web search, URL fetch)",
+      "status": "working",
+      "run_url": "Imported by grok1_shim.py; standalone: python grok1_agent.py",
+      "last_modified": "2026-07-17",
+      "key_files": ["grok1_agent.py", "grok1_tools.py"]
+    },
+    {
+      "name": "grok1_context",
+      "path": "D:\\CLAUDE\\grok1_context.py",
+      "what": "Context builder for Grok-1 providing system message generation and conversation state",
+      "status": "working",
+      "run_url": "Imported by grok1_shim.py and grok1_agent.py",
+      "last_modified": "2026-07-17",
+      "key_files": ["grok1_context.py"]
+    },
+    {
+      "name": "grok1_tools",
+      "path": "D:\\CLAUDE\\grok1_tools.py",
+      "what": "Tool integration for Grok-1 (web_search, fetch_url) for agentic capabilities",
+      "status": "working",
+      "run_url": "Imported by grok1_shim.py and grok1_agent.py",
+      "last_modified": "2026-07-12",
+      "key_files": ["grok1_tools.py"]
+    },
+    {
+      "name": "grok1-chat",
+      "path": "D:\\CLAUDE\\grok1-chat",
+      "what": "Chat interface for Grok-1 (earlier iteration)",
+      "status": "stale",
+      "run_url": "python chat_grok.py (older; superseded by grok1_tk.py)",
+      "last_modified": "2026-07-11",
+      "key_files": ["chat_grok.py"]
+    },
+    {
+      "name": "grok1-workspace",
+      "path": "D:\\CLAUDE\\grok1-workspace",
+      "what": "Grok-1 workspace directory for experiments and configurations",
+      "status": "unknown",
+      "run_url": "Working directory for Grok-1 development",
+      "last_modified": "2026-07-17",
+      "key_files": []
+    },
+    {
+      "name": "fabric_keeper",
+      "path": "D:\\CLAUDE\\fabric_keeper.cmd",
+      "what": "Self-healing keeper script (Windows Task Scheduler) that monitors Grok-1 cluster (eran1-4) and auto-restarts services every 15min",
+      "status": "live",
+      "run_url": "Runs as scheduled task 'QSFP-Grok1-Keeper' every 15 minutes; can also run manually",
+      "last_modified": "2026-07-18",
+      "key_files": ["fabric_keeper.cmd", "fabric_keeper.log"]
+    },
+    {
+      "name": "grok-switch",
+      "path": "D:\\CLAUDE\\grok-switch.ps1",
+      "what": "PowerShell script to switch between different Grok-1 harness versions (build vs local experimental)",
+      "status": "live",
+      "run_url": "powershell -NoProfile grok-switch.ps1 build|local|status",
+      "last_modified": "2026-07-17",
+      "key_files": ["grok-switch.ps1"]
+    },
+    {
+      "name": "glock-gui-mvp",
+      "path": "D:\\CLAUDE\\archive\\glock-gui-mvp",
+      "what": "GUI MVP for GLOCK (AI-powered IDE planner/executor with cost tracking and test feedback)",
+      "status": "stale",
+      "run_url": "Archived; see glock-gui-mvp.zip in D:\\CLAUDE\\",
+      "last_modified": "2026-05-27",
+      "key_files": []
+    },
+    {
+      "name": "glock-cortex",
+      "path": "D:\\CLAUDE\\archive\\glock-cortex",
+      "what": "GLOCK cortex/agent logic for multi-step planning and execution",
+      "status": "stale",
+      "run_url": "Archived",
+      "last_modified": "2026-06-11",
+      "key_files": []
+    },
+    {
+      "name": "glock-slack-bridge",
+      "path": "D:\\CLAUDE\\archive\\glock-slack-bridge",
+      "what": "Slack integration bridge for GLOCK",
+      "status": "stale",
+      "run_url": "Archived",
+      "last_modified": "2026-05-31",
+      "key_files": []
+    },
+    {
+      "name": "GLOCK feature priorities",
+      "path": "D:\\CLAUDE\\glock-feature-priorities.md",
+      "what": "Ranked feature roadmap for GLOCK (IDE extension, cost tracking, multi-file refactoring with test feedback)",
+      "status": "working",
+      "run_url": "Documentation/reference",
+      "last_modified": "2026-07-17",
+      "key_files": []
+    },
+    {
+      "name": "GLOCK competitive positioning",
+      "path": "D:\\CLAUDE\\glock-competitive-positioning.md",
+      "what": "Market positioning strategy for GLOCK vs Cursor, Copilot, and Claude CLI",
+      "status": "working",
+      "run_url": "Documentation/strategy",
+      "last_modified": "2026-07-17",
+      "key_files": []
+    },
+    {
+      "name": "Grok-1 private stack reference",
+      "path": "C:\\Users\\iddo1\\.claude\\projects\\D--CLAUDE\\memory\\reference_grok1_private_stack.md",
+      "what": "Memory file documenting Grok-1 infrastructure (llama.cpp on eran1-3, 200G QSFP fabric, RPC workers, self-healing keeper)",
+      "status": "live",
+      "run_url": "Reference/documentation",
+      "last_modified": "2026-07-12",
+      "key_files": []
+    },
+    {
+      "name": "Grok disk archive",
+      "path": "D:\\_grok_archive_from_C",
+      "what": "Archived 640GB of old Grok CLI worktrees moved from C: drive to recover disk space (2026-07-03)",
+      "status": "stale",
+      "run_url": "Archive (read-only); old worktrees available if needed",
+      "last_modified": "2026-07-03",
+      "key_files": [],
+      "note": "Contains disposable historical worktrees; not needed for active development"
+    },
+    {
+      "name": "GROK_OPTIMIZATION_PLAN",
+      "path": "D:\\CLAUDE\\GROK_OPTIMIZATION_PLAN.md",
+      "what": "Technical roadmap for Grok-1 Q6 optimization on DGX1-3 cluster (health probes, bounded requests, quality assessment)",
+      "status": "working",
+      "run_url": "Documentation/technical plan",
+      "last_modified": "2026-07-17",
+      "key_files": []
+    },
+    {
+      "name": "grok1 SSH launcher",
+      "path": "D:\\CLAUDE\\Grok1-SSH.cmd",
+      "what": "Windows launcher script for SSH access to eran1 (Grok-1 head node)",
+      "status": "working",
+      "run_url": "Grok1-SSH.cmd to open SSH tunnel to eran1",
+      "last_modified": "2026-07-17",
+      "key_files": []
+    },
+    {
+      "name": "Grok-1 tunnel",
+      "path": "D:\\CLAUDE\\start-grok-tunnel.ps1",
+      "what": "PowerShell script to establish SSH tunnel to Grok-1 cluster",
+      "status": "working",
+      "run_url": "powershell -NoProfile start-grok-tunnel.ps1",
+      "last_modified": "2026-07-20",
+      "key_files": []
+    }
+  ],
+  "skipped_items": [
+    {
+      "reason": "caches/temp",
+      "examples": [
+        "C:\\Users\\iddo1\\.grok\\downloads (package cache)",
+        "C:\\Users\\iddo1\\.grok\\marketplace-cache",
+        "C:\\Users\\iddo1\\.grok\\logs",
+        "C:\\Users\\iddo1\\.grok\\completions"
+      ]
+    },
+    {
+      "reason": "build artifacts",
+      "examples": [
+        "C:\\Users\\iddo1\\.grok\\dist",
+        "D:\\_security-audit-upstream (build outputs)"
+      ]
+    },
+    {
+      "reason": "old backups",
+      "examples": [
+        "C:\\Users\\iddo1\\.grok\\archive\\old-worktrees",
+        "C:\\Users\\iddo1\\.grok\\_backup_2026-07-02"
+      ]
+    },
+    {
+      "reason": "config/plugin data",
+      "examples": [
+        "C:\\Users\\iddo1\\.grok\\plugins",
+        "C:\\Users\\iddo1\\.grok\\hooks",
+        "C:\\Users\\iddo1\\.grok\\mcps"
+      ]
+    }
+  ],
+  "infrastructure_notes": {
+    "grok_1_local_stack": "Runs on eran1 (llama.cpp head) + eran2+eran3 (RPC workers) over QSFP 200G fabric; tailscale endpoint <tailnet-ip>:8080; shim at :8899",
+    "grok_1_status_endpoint": "GET http://<tailnet-ip>:8080/health (llama-server) or http://127.0.0.1:8899/health (shim)",
+    "keeper_monitoring": "fabric_keeper.cmd runs every 15min via Task Scheduler; checks all 4 eran nodes + Grok-1 service + shim; auto-restarts if any down",
+    "glock_status": "Feature roadmap complete; GUI MVP archived (glock-gui-mvp.zip); cortex/slack-bridge in archive; no active development as of 2026-08-10"
+  }
+}

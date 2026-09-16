@@ -1,0 +1,20 @@
+{
+  "theme": "tan",
+  "font_size": 14,
+  "temperature": 0.3,
+  "max_tokens": 4000,
+  "stream": true,
+  "rag_recall": true,
+  "rag_standard": true,
+  "rag_project": true,
+  "rag_ramchat": true,
+  "rag_quorum": true,
+  "rag_brain2": true,
+  "recall_limit": 4,
+  "door": "http://<tailnet-ip>:8000/v1/chat/completions",
+  "model": "gpt-oss-120b",
+  "sidebar_width": 367,
+  "send_on_enter": true,
+  "room_visible": true,
+  "room_width": 360
+}

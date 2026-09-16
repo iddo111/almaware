@@ -1,0 +1,251 @@
+{
+  "title_he": "קרופוטקין, ״עזרה הדדית״ (1902) — שמונה טענות",
+  "title_en": "Kropotkin, Mutual Aid (1902) — eight claims",
+  "source": "D:/CLAUDE/_deliverables/hub/kropotkin — the booklet's body text. The claims, the premises each rests on, the objections raised against it and the grade of each source were transcribed from the argument. NO verdict from the booklet was transcribed; schema.load_case refuses a case file that names one.",
+  "kind": "document",
+  "note_he": "מקרה מבחן: מול הפסק שנכתב בקריאה אנושית קפדנית.",
+  "note_en": "Validation case: run against a ledger produced by careful human reading.",
+
+  "claims": [
+    {
+      "id": "K1",
+      "by": "kropotkin",
+      "text_he": "שיתוף פעולה בטבע נפוץ, מובנה ומסתגל",
+      "text_en": "Cooperation in nature is widespread, structured and adaptive",
+      "premises": [
+        "field observation in Siberia and Manchuria, 1862-1867",
+        "the same pattern reported across insects, birds and mammals"
+      ],
+      "evidence": [
+        {
+          "provenance": "replicated",
+          "source": "one of the largest research programmes in biology today",
+          "note_he": "מדידות חוזרות במאה שנה שלאחר מכן",
+          "note_en": "repeatedly measured across the century since"
+        }
+      ]
+    },
+    {
+      "id": "K2",
+      "by": "kropotkin",
+      "text_he": "״זירת הגלדיאטורים״ של הקסלי היא תיאור גרוע של הטבע",
+      "text_en": "Huxley's gladiators' show is a bad description of nature",
+      "premises": [
+        "what field observation actually shows is mostly not intraspecific combat"
+      ],
+      "evidence": [
+        {
+          "provenance": "replicated",
+          "source": "nobody working in the field defends the gladiator picture",
+          "note_he": "אין מגן בתחום",
+          "note_en": "no defender in the field"
+        }
+      ]
+    },
+    {
+      "id": "K3",
+      "by": "kropotkin",
+      "text_he": "נמלים מאכילות זו את זו; הזפק הקדמי הוא איבר משותף",
+      "text_en": "Ants feed one another; the forward crop is a communal organ",
+      "premises": [
+        "direct observation of ants regurgitating to nestmates"
+      ],
+      "evidence": [
+        {
+          "provenance": "primary",
+          "source": "trophallaxis; the organ is now called the social stomach",
+          "note_he": "אושר וקיבל שם",
+          "note_en": "confirmed and named"
+        }
+      ]
+    },
+    {
+      "id": "K4",
+      "by": "kropotkin",
+      "text_he": "המאבק המכריע הוא בתנאים, לא בבני המין עצמו",
+      "text_en": "The decisive struggle is against conditions, not against one's own kind",
+      "premises": [
+        "in the populations he observed, cold and famine killed far more than rivals did"
+      ],
+      "universal_over": "population",
+      "formal": {
+        "premises": ["forall p: conditions_decisive(p)"],
+        "conclusion": "forall p: conditions_decisive(p)"
+      },
+      "evidence": [
+        {
+          "provenance": "secondary",
+          "source": "his own Siberian transects, sparse populations",
+          "note_he": "אוכלוסיות דלילות בלבד",
+          "note_en": "sparse populations only"
+        }
+      ]
+    },
+    {
+      "id": "K5",
+      "by": "kropotkin",
+      "text_he": "עזרה הדדית אינה זקוקה להסבר מיוחד",
+      "text_en": "Mutual aid needs no special explanation",
+      "premises": [
+        "mutual aid is widespread",
+        "mutual aid benefits the species that practises it"
+      ],
+      "formal": {
+        "premises": ["widespread", "species_benefit"],
+        "conclusion": "not needs_explanation"
+      },
+      "evidence": [
+        {
+          "provenance": "secondary",
+          "source": "the same field reports that support K1",
+          "note_he": "אותן תצפיות",
+          "note_en": "the same observations"
+        }
+      ]
+    },
+    {
+      "id": "K6",
+      "by": "kropotkin",
+      "text_he": "הרגל נשמר משום שהוא מיטיב עם המין",
+      "text_en": "A habit is kept because it benefits the species",
+      "premises": [
+        "mutual aid benefits the species",
+        "what benefits the species is kept"
+      ],
+      "formal": {
+        "premises": ["benefits_species", "implies(benefits_species, kept)"],
+        "conclusion": "kept"
+      },
+      "evidence": [
+        {
+          "provenance": "unchecked",
+          "source": "asserted as a general rule of evolution, no measurement given",
+          "note_he": "נטען ככלל, בלי מדידה",
+          "note_en": "asserted as a rule, never measured"
+        }
+      ]
+    },
+    {
+      "id": "K7",
+      "by": "kropotkin",
+      "text_he": "הרגלים חברתיים שנרכשו בחיים עוברים בירושה",
+      "text_en": "Sociable habits acquired in a lifetime are inherited",
+      "premises": [
+        "habits formed by a generation reappear in the next"
+      ],
+      "evidence": [
+        {
+          "provenance": "superseded",
+          "source": "Lamarckian inheritance, standard in 1902",
+          "note_he": "התנגדות ויסמן הייתה ידועה אך לא מוכרעת; מנדל טרם התגלה מחדש",
+          "note_en": "Weismann's objection was known but unsettled; Mendel not yet rediscovered"
+        }
+      ]
+    },
+    {
+      "id": "K8",
+      "by": "kropotkin",
+      "text_he": "בני אדם יכולים להתפדר בלי מרכז וזה יחזיק",
+      "text_en": "People can federate without a centre and it will hold",
+      "premises": [
+        "medieval guilds, village communes and free cities ran themselves for centuries"
+      ],
+      "universal_over": "commons",
+      "formal": {
+        "premises": ["forall c: federation_holds(c)"],
+        "conclusion": "forall c: federation_holds(c)"
+      },
+      "evidence": [
+        {
+          "provenance": "contested",
+          "source": "medieval chapters; selective on the internal violence his own sources record",
+          "note_he": "בורר לכיוון שאליו הוא רוצה ללכת",
+          "note_en": "selects toward the direction he wants to go"
+        }
+      ]
+    }
+  ],
+
+  "attacks": [
+    {
+      "id": "A_huxley",
+      "by": "huxley-1888",
+      "attacks": "K1",
+      "target": "premise",
+      "text_he": "הטבע הוא זירת גלדיאטורים; המאבק בתוך המין הוא הכלל",
+      "text_en": "Nature is a gladiators' show; struggle within the species is the rule"
+    },
+    {
+      "id": "T_field",
+      "by": "a-century-of-field-biology",
+      "attacks": "A_huxley",
+      "target": "evidence",
+      "text_he": "מאה שנה של מדידה בשדה: שיתוף פעולה נמדד, מובנה ומסתגל",
+      "text_en": "A century of field measurement: cooperation is measured, structured, adaptive"
+    },
+    {
+      "id": "A_huxley2",
+      "by": "huxley-1888",
+      "attacks": "K2",
+      "target": "premise",
+      "text_he": "התיאור שלי נכון: העולם הוא מלחמת כול בכול",
+      "text_en": "My description is right: the world is a war of each against all"
+    },
+    {
+      "id": "T_field2",
+      "by": "the-field-today",
+      "attacks": "A_huxley2",
+      "target": "evidence",
+      "text_he": "איש מאנשי התחום אינו מגן על תמונת הגלדיאטורים",
+      "text_en": "Nobody working in the field defends the gladiator picture"
+    },
+    {
+      "id": "A_dense",
+      "by": "population-ecology",
+      "attacks": "K4",
+      "target": "scope",
+      "scope_he": "אוכלוסיות צפופות",
+      "scope_en": "dense populations",
+      "text_he": "באוכלוסיות צפופות המאבק בתוך המין הוא דווקא המכריע",
+      "text_en": "Where populations are dense, competition within the species is the decisive one",
+      "formal": "exists p: dense(p) and not conditions_decisive(p)"
+    },
+    {
+      "id": "A_needs_why",
+      "by": "hamilton-1964-trivers-1971",
+      "attacks": "K5",
+      "target": "inference",
+      "text_he": "היא כן זקוקה להסבר: ברירת שארים 1964, הדדיות 1971, תוצר לוואי, ברירה רב-רמתית",
+      "text_en": "It did need one: kin selection 1964, reciprocity 1971, by-product, multilevel selection",
+      "formal": "needs_explanation"
+    },
+    {
+      "id": "A_williams",
+      "by": "williams-1966",
+      "attacks": "K6",
+      "target": "mechanism",
+      "text_he": "הרמאי שבתוך הקבוצה מכרסם בהרגל שמיטיב עם המין",
+      "text_en": "The cheat inside the group eats away the habit that benefits the species",
+      "formal": "cheat_arises and cheat_pays and implies(cheat_arises and cheat_pays, not kept)"
+    },
+    {
+      "id": "A_weismann",
+      "by": "weismann",
+      "attacks": "K7",
+      "target": "premise",
+      "text_he": "אין מסלול מהגוף אל תאי הרבייה — ההרגל הנרכש אינו עובר",
+      "text_en": "There is no path from the body to the germ line — an acquired habit is not passed on"
+    },
+    {
+      "id": "A_ostrom",
+      "by": "ostrom-1990",
+      "attacks": "K8",
+      "target": "scope",
+      "scope_he": "היכן שהתנאים שהיא מנתה אינם מתקיימים",
+      "scope_en": "wherever the conditions she named are not met",
+      "text_he": "נחלות משותפות מחזיקות רק בתנאים שהוא מעולם לא פירט — גבולות ברורים, כללים מקומיים, פיקוח עצמי, סנקציות מדורגות",
+      "text_en": "Commons hold only under conditions he never gave — clear boundaries, local rules, self-monitoring, graduated sanctions",
+      "formal": "exists c: not conditions_met(c) and not federation_holds(c)"
+    }
+  ]
+}

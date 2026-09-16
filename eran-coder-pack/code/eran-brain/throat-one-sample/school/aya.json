@@ -1,0 +1,326 @@
+{
+ "syl": "aya",
+ "letter": "alef/ayin glottal onset (a-?-a)",
+ "signature_ok": true,
+ "attempts": 2,
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -0.9,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    0.0
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.25,
+   0.09000000000000001,
+   0.32
+  ],
+  "f0_knots": [
+   105.0,
+   101.85,
+   97.65
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.02,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "params": {
+  "d1": 0.25,
+  "d2": 0.09000000000000001,
+  "d3": 0.32,
+  "glide": 0.02,
+  "gap_knots": [
+   -0.6013,
+   -0.0092,
+   -0.631,
+   -0.9,
+   1.6041,
+   -1.8558,
+   1.8504,
+   1.933
+  ],
+  "gap_cpos": 0.65,
+  "gap_carea": 2.0
+ },
+ "measured": {
+  "gap_db_re_vowel": -21.1,
+  "gap_ms_at_le_-20dB": 70,
+  "rise_10_90_ms": 35.0,
+  "vowel1_F": [
+   574,
+   1216,
+   2616
+  ],
+  "vowel2_F": [
+   550,
+   1216,
+   2675
+  ],
+  "f0_v2": 98.8,
+  "hnr_v2_db": 14.0,
+  "burst": {
+   "max_jump_db": 67.5,
+   "at_ms": 350.0,
+   "burst": true
+  },
+  "onset_overshoot_db": 1.0,
+  "gap_centroid_hz": 570,
+  "traj_F1F2F3": [
+   [
+    320,
+    579,
+    1402,
+    2449
+   ],
+   [
+    330,
+    533,
+    1308,
+    2449
+   ],
+   [
+    340,
+    555,
+    1231,
+    2558
+   ],
+   [
+    350,
+    560,
+    1196,
+    2623
+   ],
+   [
+    360,
+    569,
+    1215,
+    2662
+   ],
+   [
+    370,
+    579,
+    1233,
+    2691
+   ],
+   [
+    380,
+    572,
+    1227,
+    2697
+   ],
+   [
+    390,
+    580,
+    1251,
+    2679
+   ],
+   [
+    400,
+    570,
+    1243,
+    2256
+   ],
+   [
+    410,
+    573,
+    1234,
+    2762
+   ],
+   [
+    420,
+    575,
+    1226,
+    2653
+   ],
+   [
+    430,
+    573,
+    1187,
+    2653
+   ]
+  ],
+  "env20_db": [
+   -15.1,
+   -11.7,
+   -11.3,
+   -10.9,
+   -11.3,
+   -10.7,
+   -10.6,
+   -10.3,
+   -10.2,
+   -10.5,
+   -10.3,
+   -11.4,
+   -11.7,
+   -23.0,
+   -41.4,
+   -58.2,
+   -76.0,
+   -18.1,
+   -12.0,
+   -10.6,
+   -11.3,
+   -10.8,
+   -10.7,
+   -10.7,
+   -11.4,
+   -11.6,
+   -11.8,
+   -12.5,
+   -12.3,
+   -11.6,
+   -12.0,
+   -11.8,
+   -11.6
+  ],
+  "exp": "gap <= -20 dB for >= 50 ms, voicing rise 10-90% <= 70 ms, no burst = onset overshoot <= +3 dB re vowel (the jump metric fires on ANY onset from silence), both vowels 580/1226, f0 ~105"
+ },
+ "log": [
+  {
+   "attempt": 1,
+   "params": {
+    "d1": 0.25,
+    "d2": 0.07,
+    "d3": 0.32,
+    "glide": 0.02,
+    "gap_knots": [
+     -0.6013,
+     -0.0092,
+     -0.631,
+     -1.4002,
+     1.6041,
+     -1.8558,
+     1.8504,
+     1.933
+    ],
+    "gap_cpos": 0.65,
+    "gap_carea": 2.0
+   },
+   "ok": false,
+   "measured": {
+    "gap_db_re_vowel": -14.5,
+    "gap_ms_at_le_-20dB": 0,
+    "rise_10_90_ms": 70.0,
+    "vowel1_F": [
+     573,
+     1215,
+     2619
+    ],
+    "vowel2_F": [
+     552,
+     1218,
+     2652
+    ],
+    "f0_v2": 99.4,
+    "hnr_v2_db": 13.2,
+    "burst": {
+     "max_jump_db": 14.3,
+     "at_ms": 335.0,
+     "burst": false
+    },
+    "onset_overshoot_db": 0.2,
+    "gap_centroid_hz": 2889,
+    "exp": "gap <= -20 dB for >= 50 ms, voicing rise 10-90% <= 70 ms, no burst = onset overshoot <= +3 dB re vowel (the jump metric fires on ANY onset from silence), both vowels 580/1226, f0 ~105"
+   }
+  },
+  {
+   "attempt": 2,
+   "params": {
+    "d1": 0.25,
+    "d2": 0.09000000000000001,
+    "d3": 0.32,
+    "glide": 0.02,
+    "gap_knots": [
+     -0.6013,
+     -0.0092,
+     -0.631,
+     -0.9,
+     1.6041,
+     -1.8558,
+     1.8504,
+     1.933
+    ],
+    "gap_cpos": 0.65,
+    "gap_carea": 2.0
+   },
+   "ok": true,
+   "measured": {
+    "gap_db_re_vowel": -21.1,
+    "gap_ms_at_le_-20dB": 70,
+    "rise_10_90_ms": 35.0,
+    "vowel1_F": [
+     574,
+     1216,
+     2616
+    ],
+    "vowel2_F": [
+     550,
+     1216,
+     2675
+    ],
+    "f0_v2": 98.8,
+    "hnr_v2_db": 14.0,
+    "burst": {
+     "max_jump_db": 67.5,
+     "at_ms": 350.0,
+     "burst": true
+    },
+    "onset_overshoot_db": 1.0,
+    "gap_centroid_hz": 570,
+    "exp": "gap <= -20 dB for >= 50 ms, voicing rise 10-90% <= 70 ms, no burst = onset overshoot <= +3 dB re vowel (the jump metric fires on ANY onset from silence), both vowels 580/1226, f0 ~105"
+   }
+  }
+ ],
+ "speaker": "ERAN",
+ "mouth": "eran2:~/mouth-v2/mouth2.py adult 17.60 cm, backend c",
+ "author": "claude-cli-PEH-GLOTTAL 2026-09-02"
+}

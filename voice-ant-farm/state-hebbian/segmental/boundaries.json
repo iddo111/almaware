@@ -1,0 +1,141 @@
+{
+  "question": "how often does the detector fire, and does it fire in the right places",
+  "tolerance_seconds": 0.02,
+  "segmenter": {
+    "window": 3,
+    "smooth": 2,
+    "high": 2.0,
+    "low": 0.3,
+    "min_frames": 4,
+    "max_frames": 30
+  },
+  "caveat": "chain junctions have no coarticulation across them, so chain recall is an upper bound on recall inside connected speech",
+  "rates": {
+    "heldout_syllables": {
+      "files": 132,
+      "speech_seconds": 56.54,
+      "segments": 322,
+      "segments_per_second": 5.695,
+      "segments_per_file_mean": 2.439,
+      "mean_segment_ms": 175.59
+    },
+    "words": {
+      "files": 96,
+      "speech_seconds": 56.73,
+      "segments": 297,
+      "segments_per_second": 5.235,
+      "segments_per_file_mean": 3.094,
+      "mean_segment_ms": 191.01
+    },
+    "human_corpus_sample_400_files": {
+      "files": 400,
+      "speech_seconds": 2520.59,
+      "segments": 10732,
+      "segments_per_second": 4.258,
+      "segments_per_file_mean": 26.83,
+      "mean_segment_ms": 234.87
+    }
+  },
+  "placement_on_syllable_chains": {
+    "segmenter": {
+      "true_positive": 133,
+      "false_positive": 650,
+      "false_negative": 203,
+      "precision": 0.169859515,
+      "recall": 0.395833333,
+      "f1": 0.237712243,
+      "r_value": -0.414517,
+      "mean_abs_error_ms": 11.52,
+      "predicted_per_chain": 16.31,
+      "reference_per_chain": 7.0
+    },
+    "uniform_grid": {
+      "true_positive": 65,
+      "false_positive": 718,
+      "false_negative": 271,
+      "precision": 0.083014049,
+      "recall": 0.193452381,
+      "f1": 0.116175156,
+      "r_value": -0.533387,
+      "mean_abs_error_ms": 10.5,
+      "predicted_per_chain": 16.31,
+      "reference_per_chain": 7.0
+    },
+    "random_uniform": {
+      "true_positive": 49,
+      "false_positive": 734,
+      "false_negative": 287,
+      "precision": 0.062579821,
+      "recall": 0.145833333,
+      "f1": 0.087578195,
+      "r_value": -0.562828,
+      "mean_abs_error_ms": 8.58,
+      "predicted_per_chain": 16.31,
+      "reference_per_chain": 7.0
+    },
+    "frame_codebook_transitions": {
+      "true_positive": 336,
+      "false_positive": 11529,
+      "false_negative": 0,
+      "precision": 0.028318584,
+      "recall": 1.0,
+      "f1": 0.055077453,
+      "r_value": -28.287551,
+      "mean_abs_error_ms": 12.74,
+      "predicted_per_chain": 247.19,
+      "reference_per_chain": 7.0
+    }
+  },
+  "placement_tolerance_sweep": {
+    "10ms": {
+      "recall": 0.1637,
+      "precision": 0.0702,
+      "random_null_recall": 0.0863,
+      "recall_over_null": 1.897
+    },
+    "20ms": {
+      "recall": 0.3958,
+      "precision": 0.1699,
+      "random_null_recall": 0.1458,
+      "recall_over_null": 2.714
+    },
+    "30ms": {
+      "recall": 0.6131,
+      "precision": 0.2631,
+      "random_null_recall": 0.2143,
+      "recall_over_null": 2.861
+    },
+    "40ms": {
+      "recall": 0.7589,
+      "precision": 0.3257,
+      "random_null_recall": 0.3006,
+      "recall_over_null": 2.525
+    },
+    "60ms": {
+      "recall": 0.875,
+      "precision": 0.3755,
+      "random_null_recall": 0.4375,
+      "recall_over_null": 2.0
+    }
+  },
+  "twin_repeatability": {
+    "true_positive": 44,
+    "false_positive": 149,
+    "false_negative": 143,
+    "precision": 0.227979275,
+    "recall": 0.235294118,
+    "f1": 0.231578947,
+    "mean_abs_error_ms": 7.64,
+    "twin_pairs": 132,
+    "base_renderings": 44,
+    "null_random_same_count": {
+      "true_positive": 15,
+      "false_positive": 178,
+      "false_negative": 172,
+      "precision": 0.077720207,
+      "recall": 0.080213904,
+      "f1": 0.078947368
+    }
+  },
+  "seconds": 19.8
+}

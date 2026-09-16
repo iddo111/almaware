@@ -1,0 +1,101 @@
+{
+  "generated": "2026-05-22T10:05:41",
+  "targets": {
+    "alma-face-refs": {
+      "path": "D:\\CLAUDE\\alma-memorial\\face-refs",
+      "exists": true,
+      "kind": "dir",
+      "size_bytes": 636972435,
+      "size_human": "607.5MB",
+      "file_count": 825
+    },
+    "alma-facerec-out": {
+      "path": "D:\\CLAUDE\\alma-memorial\\facerec_out",
+      "exists": true,
+      "kind": "dir",
+      "size_bytes": 117023947,
+      "size_human": "111.6MB",
+      "file_count": 35
+    },
+    "alma-tools": {
+      "path": "D:\\CLAUDE\\alma-memorial\\tools",
+      "exists": true,
+      "kind": "dir",
+      "size_bytes": 873891,
+      "size_human": "853.4KB",
+      "file_count": 63
+    },
+    "simpletracker-models": {
+      "path": "D:\\CLAUDE\\simpletracker-training\\models\\v1",
+      "exists": true,
+      "kind": "dir",
+      "size_bytes": 152195683,
+      "size_human": "145.1MB",
+      "file_count": 9
+    },
+    "simpletracker-runs": {
+      "path": "D:\\CLAUDE\\simpletracker-training\\runs",
+      "exists": true,
+      "kind": "dir",
+      "size_bytes": 322009565,
+      "size_human": "307.1MB",
+      "file_count": 93
+    },
+    "simpletracker-scripts": {
+      "path": "D:\\CLAUDE\\simpletracker-training\\scripts",
+      "exists": true,
+      "kind": "dir",
+      "size_bytes": 69335,
+      "size_human": "67.7KB",
+      "file_count": 14
+    },
+    "simpletracker-root": {
+      "path": "D:\\CLAUDE\\simpletracker-training",
+      "exists": true,
+      "kind": "dir",
+      "size_bytes": 647972589,
+      "size_human": "618.0MB",
+      "file_count": 621
+    },
+    "maimon-light": {
+      "path": "D:\\CLAUDE\\projects\\maimon-light",
+      "exists": true,
+      "kind": "dir",
+      "size_bytes": 141420630,
+      "size_human": "134.9MB",
+      "file_count": 95
+    },
+    "kabbalah-ai": {
+      "path": "D:\\CLAUDE\\apps\\kabbalah-ai",
+      "exists": true,
+      "kind": "dir",
+      "size_bytes": 26754,
+      "size_human": "26.1KB",
+      "file_count": 9
+    },
+    "agriculture-chapters": {
+      "path": "D:\\CLAUDE\\agriculture-encyclopedia-v2\\chapters",
+      "exists": true,
+      "kind": "dir",
+      "size_bytes": 4668520,
+      "size_human": "4.5MB",
+      "file_count": 56
+    },
+    "agriculture-scripts": {
+      "path": "D:\\CLAUDE\\agriculture-encyclopedia-v2\\scripts",
+      "exists": true,
+      "kind": "dir",
+      "size_bytes": 278510,
+      "size_human": "272.0KB",
+      "file_count": 8
+    },
+    "agriculture-pdf": {
+      "path": "D:\\CLAUDE\\pdf\\Future_of_Agriculture_Vol_II.pdf",
+      "exists": true,
+      "kind": "file",
+      "size_bytes": 29990683,
+      "size_human": "28.6MB",
+      "sha256": null
+    }
+  }
+}

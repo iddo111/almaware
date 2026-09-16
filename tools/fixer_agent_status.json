@@ -1,0 +1,29 @@
+{
+  "updated": "2026-05-06T13:42:44.600788",
+  "apps": {
+    "alma_facerec_gui": {
+      "state": "ok"
+    },
+    "alma_trainer_loop": {
+      "state": "skipped"
+    },
+    "ai_media_center_gui": {
+      "state": "ok"
+    },
+    "wa_bridge": {
+      "state": "ok"
+    },
+    "wa_responder": {
+      "state": "ok"
+    },
+    "wa_watchdog": {
+      "state": "ok"
+    },
+    "mosquitto": {
+      "state": "ok"
+    },
+    "iddoperez_ai_site": {
+      "state": "ok"
+    }
+  }
+}

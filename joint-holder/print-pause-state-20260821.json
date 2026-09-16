@@ -1,0 +1,17 @@
+{
+ "captured": "2026-08-21 05:29",
+ "file": "cone_body_PLA_1d17h32m56s.gcode",
+ "state": "paused",
+ "print_duration_min": 405.5,
+ "filament_used_mm": 40903.2,
+ "file_position": 2016797,
+ "progress_pct": 18.69,
+ "gcode_z": 50.05030810934736,
+ "toolhead_pos": [
+  225.0,
+  345.0,
+  50.05030810934736,
+  50580.97791600499
+ ],
+ "nozzle_now": 140.12
+}

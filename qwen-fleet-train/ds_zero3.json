@@ -1,0 +1,23 @@
+{
+  "bf16": { "enabled": true },
+  "zero_optimization": {
+    "stage": 3,
+    "overlap_comm": true,
+    "contiguous_gradients": true,
+    "reduce_bucket_size": 500000000,
+    "stage3_prefetch_bucket_size": 500000000,
+    "stage3_param_persistence_threshold": 1000000,
+    "stage3_max_live_parameters": 1000000000,
+    "stage3_max_reuse_distance": 1000000000,
+    "stage3_gather_16bit_weights_on_model_save": true,
+    "offload_optimizer": { "device": "none" },
+    "offload_param": { "device": "none" }
+  },
+  "gradient_accumulation_steps": "auto",
+  "gradient_clipping": 1.0,
+  "train_micro_batch_size_per_gpu": "auto",
+  "train_batch_size": "auto",
+  "steps_per_print": 10,
+  "wall_clock_breakdown": false,
+  "_notes": "ZeRO-3 shards weights+grads+optimizer across the 3 fabric nodes. offload=none on purpose: GB10 is UNIFIED memory (CPU+GPU share one 121GB pool) so CPU-offload adds NO capacity, it only burns Grace cores. stage3_gather_16bit_weights_on_model_save=true makes Trainer.save_model() write a normal consolidated HF checkpoint that eran4/vLLM can load directly. If GPU-allocator fragmentation ever OOMs at ~14B (it should not), toggle offload_optimizer.device to 'cpu' — same RAM, less allocator churn."
+}

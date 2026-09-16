@@ -1,0 +1,828 @@
+{
+  "format_version": 1,
+  "experiment": "sociality",
+  "hypothesis_under_test": "many ants forming social bonds increases learning exponentially",
+  "condition": "NOISE",
+  "colony_size": 4,
+  "replicate": 1,
+  "rounds": 5,
+  "units": 64,
+  "ants": [
+    "ant-00",
+    "ant-01",
+    "ant-02",
+    "ant-03"
+  ],
+  "seeds": [
+    1946210044,
+    1146735078,
+    722647013,
+    839789582
+  ],
+  "seeds_by_ant": {
+    "ant-00": 1946210044,
+    "ant-01": 1146735078,
+    "ant-02": 722647013,
+    "ant-03": 839789582
+  },
+  "recordings": "D:\\CLAUDE\\voice-ant-farm\\recordings",
+  "corpus_manifest_sha256": "a6c34e0e67de9c590cbc57a7747a7046efbc3a784f26672e29964a23d09188ee",
+  "heldout_measured_against": "real-recordings-only",
+  "heldout_pcm_sha256": [
+    "39ae835f5e2d0d1a66468637657cbff85333f00346f2adb0ed0957c84266655c",
+    "6c98c06584dcfe9d44909c9dcdb01f5f69a535954b66945c9f92008053cffcce",
+    "896bd0858dc49ccc45285616aba86b73ccd4469deeb15358db37dd9b574a0027",
+    "999eb2c4973db6348e43cf6706407823d319696c15b56889805676317bd58c04",
+    "a3dc80bc5efda80f50ba1add1a0f83cefbab60775db9b817cbb7398031bbdfdb",
+    "e19607bfb82d827d06ff5d0c344380cb1a967f6bb8d5630eca1d77e50ef70a86",
+    "e976aecf4d5c7cee1323bdd49e9daaf81eb6f2b892434439e0c78afd18d60e99",
+    "febd95c782a18c1623513cd1980aab5ffdee3a0f2b47a81f8a186eb09058c977"
+  ],
+  "volume_matching": {
+    "donation_slots": 3,
+    "matched_added_samples_per_ant": 795280,
+    "reference_added_samples_per_ant": 795280,
+    "matched_conditions": [
+      "SELF_ECHO",
+      "SOCIAL",
+      "NOISE"
+    ],
+    "tolerance": 0.03,
+    "requested_synthetic_proportion": 0.3,
+    "actual_synthetic_proportion": 0.299961,
+    "budget_was_clamped": false,
+    "real_training_samples": 1856000,
+    "segment_plan": [
+      {
+        "slot": 0,
+        "segment_samples": 264743,
+        "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+        "synthetic_samples": 264720,
+        "clamped": false,
+        "segment": "segment-00.wav"
+      },
+      {
+        "slot": 1,
+        "segment_samples": 265143,
+        "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+        "synthetic_samples": 265040,
+        "clamped": false,
+        "segment": "segment-01.wav"
+      },
+      {
+        "slot": 2,
+        "segment_samples": 265543,
+        "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+        "synthetic_samples": 265520,
+        "clamped": false,
+        "segment": "segment-02.wav"
+      }
+    ]
+  },
+  "per_round": [
+    {
+      "round": 0,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9333475232124329,
+        "ant-01": 0.9345400929450989,
+        "ant-02": 1.0052649974822998,
+        "ant-03": 0.9791091680526733
+      },
+      "mean_heldout_error": 0.9630654454231262,
+      "added_samples_per_ant": {
+        "ant-00": 0,
+        "ant-01": 0,
+        "ant-02": 0,
+        "ant-03": 0
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 0.0,
+        "ant-01": 0.0,
+        "ant-02": 0.0,
+        "ant-03": 0.0
+      },
+      "added_audio_per_ant": {
+        "ant-00": [],
+        "ant-01": [],
+        "ant-02": [],
+        "ant-03": []
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.632498741149902,
+        "ant-01": 4.632498741149902,
+        "ant-02": 4.632498741149902,
+        "ant-03": 4.632498741149902
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "e65959b376949de74bef1edde73b3e8d22c1c8a224d947d125868dce60600fc8",
+        "ant-01": "1d1f60c1108188e9bc37d168729196f58ce20237b99a1fa2a254b413e2e5e9c8",
+        "ant-02": "9cc675de997edc13d5330aae735a1c998ed66c84a0d09ea2628681d5c21a11f2",
+        "ant-03": "4fb22dd7db221abc374994f0d02a66930493d35186cd206fc24de452b2e376c1"
+      }
+    },
+    {
+      "round": 1,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9237051010131836,
+        "ant-01": 0.9171212315559387,
+        "ant-02": 0.916694164276123,
+        "ant-03": 0.9213649034500122
+      },
+      "mean_heldout_error": 0.9197213500738144,
+      "added_samples_per_ant": {
+        "ant-00": 795280,
+        "ant-01": 795280,
+        "ant-02": 795280,
+        "ant-03": 795280
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 49.705,
+        "ant-01": 49.705,
+        "ant-02": 49.705,
+        "ant-03": 49.705
+      },
+      "added_audio_per_ant": {
+        "ant-00": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "1d3212970a97894f05980d5bc839470db699e29dfc36010fcba5268f68a1c632",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "45210814a9e1420635e0706a765174ba91bd2d17d3c511b113024a86798638b2",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "1d439cc209003d4f34a3349d0dea4ed80cd6df8dd8dd07089ba1e4432f43b06c",
+            "sample_count": 265520
+          }
+        ],
+        "ant-01": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "1948f9b00aa18ccf0a8a84c6e89e9027fe54b19a782e6b047cbaa2d331fd174b",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "0d183de3fa46135c80121da1368c4100395deedc268c87a77f45166d5b8632d7",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "26167cfdab1630dc2e9143913cea4354b07a6cae5920d87d5d7b6acfe85b8a7f",
+            "sample_count": 265520
+          }
+        ],
+        "ant-02": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "25ad498d85504df651ad20d2cd72edd17e0eb2e5a19e172685f4740f5fc1907b",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "063795ba6ad4d46105df73a199c2c5940bfc657ff8cc86aa7ceccd54a69b1c21",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "d5fe3fa3ab59f1a4c20267ce28b3eb49a9527706bc45cbba4ba08c3be6e53bd3",
+            "sample_count": 265520
+          }
+        ],
+        "ant-03": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "2e128c89038bc64772e00fe011b9e3b546cded2b7eb32a0949f7aec3daba477b",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "61da885cfd0e6d5351add54afc5ae319bba907b91e047197d3d88d44789f4aef",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "521b71b4403a42aeb5863a91f90952a23c848ca1b9d26f65a133f9fd5187d469",
+            "sample_count": 265520
+          }
+        ]
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.605391502380371,
+        "ant-01": 4.605271339416504,
+        "ant-02": 4.605201244354248,
+        "ant-03": 4.605274200439453
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "2e19e8c1a214304700051551750efd147ef894dcf400eeb4e947822a734cb328",
+        "ant-01": "b0035baf79700affeee5f9477b59f2185cdda5bd43ddb703aacfd505b3c1caa9",
+        "ant-02": "e4fa0fee7f59b8834e6c92b1ef1a9292a690b64d22c7c9abd335829a73e91135",
+        "ant-03": "b50326430ff3887a8b9bcb7d30230dcbd3a335038aa6cda0bf6ff17cd67d3bc0"
+      }
+    },
+    {
+      "round": 2,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9301403164863586,
+        "ant-01": 0.9149632453918457,
+        "ant-02": 0.9115402698516846,
+        "ant-03": 0.9212979674339294
+      },
+      "mean_heldout_error": 0.9194854497909546,
+      "added_samples_per_ant": {
+        "ant-00": 795280,
+        "ant-01": 795280,
+        "ant-02": 795280,
+        "ant-03": 795280
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 49.705,
+        "ant-01": 49.705,
+        "ant-02": 49.705,
+        "ant-03": 49.705
+      },
+      "added_audio_per_ant": {
+        "ant-00": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "6fdde51e59a6f5f1b8d4b236e4156c2c472c3f28d26ca611e943bb3100918d19",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "2da9c6333170f505d14db77547186338c49daceba516d727dbc60c96f61c89fe",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "5370c8d2f6428ccd5707e412b667f701a99eced0c0f84476e6e6a8bf271d9471",
+            "sample_count": 265520
+          }
+        ],
+        "ant-01": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "5690f8b1b8679238fe75ed928ed62c8dcb4de1f3e6a0ae5963b1cb855b54c113",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "b3726b5a113647dacb0383f631fbd18311a2e6ad731a7952565dfeaf172c9040",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "b76d2428d52890f9f426c2e4d4db635ae2dbc5dd5f7b6b7d178e7880204b400b",
+            "sample_count": 265520
+          }
+        ],
+        "ant-02": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "6bbef49beb6a30167159087e519e6e1ed4f6173382115e670bb6098fa155928f",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "6ef068de2c6d7beee24a580fd9d4029092dbc7cf6d8cd232ad360461eaf79fab",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "22afd7771b29efd6b5ab9d942f6812dac00c06323ab8a5c64f4277d65d544c12",
+            "sample_count": 265520
+          }
+        ],
+        "ant-03": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "dea04981f6b884cf1301323d23b17bd3e5923f167e9a6c42f7d807dc1951a44f",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "1b11a918227b35fbc6e3f09216b805cd6cfa18ff8e176a76300288c973d9a05b",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "1b896b68f8e0f37b78af0b3f061b8ce77676815da58f8249462e649116be1958",
+            "sample_count": 265520
+          }
+        ]
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.60498571395874,
+        "ant-01": 4.6052446365356445,
+        "ant-02": 4.605339527130127,
+        "ant-03": 4.605099201202393
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "dd5d1db8861a4a6c082fd9fd0010bdb58fa3213db56f589340671b0721081367",
+        "ant-01": "5ac27183f4324ced2a85dcc19993b2aa5a097c5f910a0b2bc59f110552fe342d",
+        "ant-02": "87ac39f33dab4806349182b4b2f873ef2c78551d7818c87dd9f7fa02e87823a0",
+        "ant-03": "cd24bd865d26f158426d23b2280a78c07276e2698423791258fc2fcc73ae8a2d"
+      }
+    },
+    {
+      "round": 3,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9319847822189331,
+        "ant-01": 0.9172701239585876,
+        "ant-02": 0.9098429679870605,
+        "ant-03": 0.9328503012657166
+      },
+      "mean_heldout_error": 0.9229870438575745,
+      "added_samples_per_ant": {
+        "ant-00": 795280,
+        "ant-01": 795280,
+        "ant-02": 795280,
+        "ant-03": 795280
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 49.705,
+        "ant-01": 49.705,
+        "ant-02": 49.705,
+        "ant-03": 49.705
+      },
+      "added_audio_per_ant": {
+        "ant-00": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "efbd8267aaf8b469cd2de6a03817f367c1b5abe2b607777dd99ced4848312230",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "c6c38bd71583cf50befea4f947b1033c9d213ac468e0719621ecd15b4ec5de9d",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "e4895153c8e1701a60be708603ecb0c722452842db357f6985357fc1cecc0f56",
+            "sample_count": 265520
+          }
+        ],
+        "ant-01": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "a916ddd570a1c974515c4fca7fa046a32350e65de651df2d57e4275e4290b027",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "296c5cdf6a36638502e3ed083ecd5493b00216bd1a7923d2ac5f9ca6e616827d",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "faea250858e0f148aba1fc21680637a443e7e80e89333f06b2e96b009297c0dd",
+            "sample_count": 265520
+          }
+        ],
+        "ant-02": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "edd7f6c8a06a5d11855016ca7db7d19b9f99f64abcdf4b4547efd68f526f47f0",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "d51cab927c14e817c1e3e1055ccb21ebe2975bc66c56cbd1753036c917228222",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "f5eb3f4068d3846b2b9df6290a730295d4dfd083adb531c15d2b0dcc0cc04dba",
+            "sample_count": 265520
+          }
+        ],
+        "ant-03": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "f5c11bda30340828b964f02fc813e55e567520171bfebd731396545e25861013",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "23367e8cda7b1eff0a725876a4db5016fc7a184864eda4c899174f46ff70661a",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "ad05c0be2050f23cc86cf109c487b6e82aa8fbb759dc2c21d7e4a8eb89efbfb2",
+            "sample_count": 265520
+          }
+        ]
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.6052093505859375,
+        "ant-01": 4.605313777923584,
+        "ant-02": 4.605299472808838,
+        "ant-03": 4.605264663696289
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "5a836ea7c05e7f10e40639cd6f66f3d3b4e621f09b8e433b03a7b2016b0b3861",
+        "ant-01": "3f02d2d914c5b6787f6d371179475446b1ccef3e3103a13c7cab15f439e002c3",
+        "ant-02": "b34bf8af4a611fceaff587438702379bfb78771e5e62a5c526a6e5f62298895b",
+        "ant-03": "4c5e9a39598b50531a1d91fee09dc8c1abc07388f217bf8c78ae172bb160c060"
+      }
+    },
+    {
+      "round": 4,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9298094511032104,
+        "ant-01": 0.9102821350097656,
+        "ant-02": 0.899904727935791,
+        "ant-03": 0.9128424525260925
+      },
+      "mean_heldout_error": 0.9132096916437149,
+      "added_samples_per_ant": {
+        "ant-00": 795280,
+        "ant-01": 795280,
+        "ant-02": 795280,
+        "ant-03": 795280
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 49.705,
+        "ant-01": 49.705,
+        "ant-02": 49.705,
+        "ant-03": 49.705
+      },
+      "added_audio_per_ant": {
+        "ant-00": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "9d907da59446d7310dd6554d5ebe7132347f6850c2ea1288545d8e2635b67a83",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "62f42ab056cb0d00d42363ae7f72700106d63c094063bf4eebf6aec40e93f836",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "0817c2d2a86c1165e15fd7ef3bd6172c558952b0f8d64c669e248db1aedb348c",
+            "sample_count": 265520
+          }
+        ],
+        "ant-01": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "a4a200d2e741b92812f80bcd2e9f6be48ea4ccae28c1b04a4dbf45410dbe0907",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "b1a201a13ed74bf3bb2de769f978e9171d9895defbe047904cd8e1b52a6a9677",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "f7968d75c8aa9b82a753d07ccc7a5ac11a7cf7c7ad88f367729f0e8ac18b1246",
+            "sample_count": 265520
+          }
+        ],
+        "ant-02": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "6ab775476ab99141a20537fccff170824a7964277ff7be40c4228071d3cc062e",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "15d802f0be5b63f1bdcdacf0af44c2f64508f15d65bdd4d4feab2440d95ab7ce",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "4e4cf87ea4f608d8603dba166b6bb009dceb5e5a485e6f3cd918ddaba41fa232",
+            "sample_count": 265520
+          }
+        ],
+        "ant-03": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "ad86d465262b1167f38e68bc6192fc16ee6b461e1f47f689b08f6c99a48ee64c",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "04791ae3ce9ccfc4fd7e43d93ccb481b530feb5787116afa4c229d6fb3697476",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "4f2a3bfd74b75d83e6be851eecb3ee0d704255b7ce681097e5325fd1d053b5f5",
+            "sample_count": 265520
+          }
+        ]
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.6053595542907715,
+        "ant-01": 4.605241298675537,
+        "ant-02": 4.605285167694092,
+        "ant-03": 4.605045795440674
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "0cf90ca4cb06483d3248fa8bde5316f84f5126d7bf07f0cc1288a8c341b3011d",
+        "ant-01": "9e18b14910828feb9659b3ea0c190a8bf3a7f5eaf73d4c55095aec702a7857f0",
+        "ant-02": "333eefaf9276b485903aa59b940f38df22860ffd49e721ffafa9245126788ea5",
+        "ant-03": "80e32b4d1128521ec706c77935ab61eb42ee3f646f8f56cd2ab5273c8f6abce2"
+      }
+    },
+    {
+      "round": 5,
+      "per_ant_heldout_error": {
+        "ant-00": 0.9347931742668152,
+        "ant-01": 0.9140468239784241,
+        "ant-02": 0.9210723042488098,
+        "ant-03": 0.923293948173523
+      },
+      "mean_heldout_error": 0.923301562666893,
+      "added_samples_per_ant": {
+        "ant-00": 795280,
+        "ant-01": 795280,
+        "ant-02": 795280,
+        "ant-03": 795280
+      },
+      "added_seconds_per_ant": {
+        "ant-00": 49.705,
+        "ant-01": 49.705,
+        "ant-02": 49.705,
+        "ant-03": 49.705
+      },
+      "added_audio_per_ant": {
+        "ant-00": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "1a55d9f81c0c3748d30a5ab6e6f50db97a184091dec5c335b605e277415c4c75",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "227a138f48a5b74486b7dae257db815744dc6b9d17b7e6ca2419c36340144add",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "bf76e7b32e3ec1daa08d7d966903b5306169778732ba1533a3c87f879c8846c3",
+            "sample_count": 265520
+          }
+        ],
+        "ant-01": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "fd382150adffccb4542ce0fd4de2636ddf7cee94d9f84a2fc0d10733224db569",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "e45005d5f2cb08ec626bf235244fa068d851c31aa5db07b5849f89fa38b61038",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "45d1003bc41438e014b12da73ce67b2c48885a4ba7baf1a5840cdd7f3e332b89",
+            "sample_count": 265520
+          }
+        ],
+        "ant-02": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "d920385716b956b9ff8190a187de02a22ec795a0e168e4d271d93d4c2663b95b",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "40dba0afe9c589ec47758eeda94294980cf4ad1ebc646b9853debe4d99bb6368",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "8bd63c00fb49942ffc74f306d2c67cc502b02a14e530ddb1b7c911f8da4e26d1",
+            "sample_count": 265520
+          }
+        ],
+        "ant-03": [
+          {
+            "slot": 0,
+            "producer": "phase-randomised-noise",
+            "file": "added-00.wav",
+            "segment_pcm_sha256": "b35a355890ae5ce8bf664ea37835771d1efaf070e8a32ef6d3a21343ec429c3c",
+            "pcm_sha256": "e9a74f2c2ecb6270c130f92760bfca899622588f162eea33aa09b7229d2984c3",
+            "sample_count": 264720
+          },
+          {
+            "slot": 1,
+            "producer": "phase-randomised-noise",
+            "file": "added-01.wav",
+            "segment_pcm_sha256": "ff722e35f9d4b60871974d73ce9087c11e8b01803bb95ab8da51cbff92c8678d",
+            "pcm_sha256": "24c73d8fc7d1cd23abccd23b87a19ae30c0fc23a79449e21113d47a0095346ff",
+            "sample_count": 265040
+          },
+          {
+            "slot": 2,
+            "producer": "phase-randomised-noise",
+            "file": "added-02.wav",
+            "segment_pcm_sha256": "4a4ae91a4f219ac1b231b7ce1a28c4671661bbb0439bcdc95b4e97f7b19d9dd0",
+            "pcm_sha256": "1ab8328436bb06d3adf778d9996d0b6a4141ff05eb45daca975a1cf888fdd36a",
+            "sample_count": 265520
+          }
+        ]
+      },
+      "per_ant_heldout_error_before": {
+        "ant-00": 4.605009078979492,
+        "ant-01": 4.605281829833984,
+        "ant-02": 4.605188369750977,
+        "ant-03": 4.605061054229736
+      },
+      "per_ant_checkpoint_sha256": {
+        "ant-00": "97cbf809b3d7f67355300623f5d980622764a3eaf66fc214ffe2e21861f15cc2",
+        "ant-01": "5e3b99912530d51c3e7bf4681f946dc219e7f15aaae136ad6a8162e768d9972a",
+        "ant-02": "7e03a4d20f2acc5ca7b8952a2877940522276278bc06ffbe72666cb8b7b63fb8",
+        "ant-03": "4a87bfb813b5e3c5344bc8b63a27b0c6bb32c62db0a1633b5fad68b662ae410c"
+      }
+    }
+  ],
+  "final_mean_heldout_error": 0.923301562666893,
+  "baseline_round0_mean_heldout_error": 0.9630654454231262,
+  "notes": "round 0 is a real-audio-only bootstrap and is identical across conditions for a given replicate; rounds 1..N are the treatment rounds. Each round retrains from scratch on that round's mix, so added audio does not accumulate.",
+  "claim_limit": "held-out vector-quantization error on real recordings only; not a claim about speech, meaning or conversation"
+}

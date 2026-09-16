@@ -1,0 +1,52 @@
+{
+  "_comment": "ERAN v1 config -- DGX 4 fast path. SAME model dims as config.json so it RESUMES the same Eran from checkpoints/latest.pt; only the training loop is opened up (no mic competes on the DGX).",
+  "_data_comment": "Voice-only corpus, built live by data.py. NEVER a book corpus.",
+
+  "_paths_comment": "Relative paths so this config works on the Linux DGX too (dgx4_launch.sh cd's into eran-live first). The checkpoint + voice corpus must be present on the DGX -- see report. fleet_status_path points at a sibling fleet/ checkout.",
+  "checkpoint_dir": "checkpoints",
+  "log_path": "eran.log",
+  "metrics_path": "logs/metrics.jsonl",
+  "watch_path": "watch.log",
+  "fleet_status_path": "../fleet/eran_live_status.json",
+
+  "model": {
+    "vocab_size": 260,
+    "block_size": 128,
+    "n_layer": 4,
+    "n_head": 4,
+    "n_embd": 256,
+    "dropout": 0.1
+  },
+
+  "train": {
+    "batch_size": 256,
+    "grad_accum_steps": 1,
+    "amp": "bf16",
+    "learning_rate": 3e-4,
+    "min_lr": 3e-5,
+    "warmup_steps": 200,
+    "lr_decay_steps": 50000,
+    "weight_decay": 0.1,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "grad_clip": 1.0,
+    "max_steps": 0,
+    "checkpoint_interval": 2000,
+    "log_interval": 50,
+    "reload_corpus_interval": 2000,
+    "watch_interval_sec": 120,
+    "val_split": 0.02
+  },
+
+  "gpu": {
+    "device": "cuda",
+    "vram_fraction": 0.0,
+    "gpu_target_pct": 100,
+    "step_sleep_ms": 0,
+    "compile": true,
+    "allow_tf32": true,
+    "_comment": "vram_fraction 0 = no cap (dedicated DGX). step_sleep_ms 0 = full throttle. batch_size is PER-GPU; DDP multiplies by nproc_per_node."
+  },
+
+  "seed": 1337
+}

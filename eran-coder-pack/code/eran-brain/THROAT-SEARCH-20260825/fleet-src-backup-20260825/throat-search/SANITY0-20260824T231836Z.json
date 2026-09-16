@@ -1,0 +1,104 @@
+{
+ "utc": "20260824T231836Z",
+ "host": "edgexpert-041d",
+ "expect": {
+  "ah_best_plain192": 0.43120789968882467,
+  "loo_balanced": 92.5,
+  "sep192": 0.2330396254720251,
+  "gap_real_ah": 0.05992597417290143,
+  "gap_real_abba": -0.04691948473090274
+ },
+ "A_cma_sphere": {
+  "best": 9.68094428356724e-07,
+  "gens": 292,
+  "ok": true
+ },
+ "B_fastseq": {
+  "ok": true,
+  "max_abs_diff": 9.094947017729282e-13,
+  "speedup": 0.6180281357655987
+ },
+ "C_ah_best": {
+  "measured": 0.4312079347069729,
+  "ok": true
+ },
+ "D_frozen_probe": {
+  "loo": {
+   "a": 93.0,
+   "b": 92.0
+  },
+  "balanced": 92.5,
+  "sep": 0.23303962754253357,
+  "gap_real_ah": 0.05992595187954338,
+  "gap_real_abba": -0.04691950855915822,
+  "ok": true
+ },
+ "E_silence": {
+  "frozen": {
+   "0": 0.07769811840699059,
+   "40": 0.07915227934363239,
+   "60": 0.07361669490957798,
+   "80": 0.07111828019053408,
+   "120": 0.0662808399715761,
+   "160": 0.06333820294352802
+  },
+  "extended": {
+   "0": 2.1815189690759387,
+   "40": 2.1503068102622107,
+   "60": 1.8238392478465297,
+   "80": 1.6038002425012958,
+   "120": 1.391162773439977,
+   "160": 1.264730365432476
+  }
+ },
+ "E_gesture": {
+  "rows": [
+   {
+    "ms": 40,
+    "rel_move_frozen": 0.8140509011166743,
+    "rel_move_extended": 0.9156783756587171,
+    "ratio": 1.1248416707144913,
+    "toward_abba": true
+   },
+   {
+    "ms": 60,
+    "rel_move_frozen": 0.9692524517965868,
+    "rel_move_extended": 1.0941655255617226,
+    "ratio": 1.1288756851051545,
+    "toward_abba": true
+   },
+   {
+    "ms": 80,
+    "rel_move_frozen": 1.1598257084961767,
+    "rel_move_extended": 1.2690355291052242,
+    "ratio": 1.0941605448206941,
+    "toward_abba": true
+   },
+   {
+    "ms": 120,
+    "rel_move_frozen": 1.4118468085594609,
+    "rel_move_extended": 1.5207857482666094,
+    "ratio": 1.0771605949361471,
+    "toward_abba": true
+   },
+   {
+    "ms": 160,
+    "rel_move_frozen": 1.4754734316449474,
+    "rel_move_extended": 1.5779484514838045,
+    "ratio": 1.0694522975751666,
+    "toward_abba": true
+   }
+  ],
+  "median_ratio": 1.0941605448206941,
+  "ratio_30x_claim_reproduced": false,
+  "silence_rel_frozen": 0.06162005842050041,
+  "silence_rel_extended": 0.13920112319627886,
+  "silence_gain": 2.259022902029057,
+  "all_toward_abba": true,
+  "extended_loo_balanced": 93.5,
+  "sepE": 6.586071883563439,
+  "ok": true
+ },
+ "F_throughput_eps": 16.257765046284558,
+ "ALL_OK": true
+}

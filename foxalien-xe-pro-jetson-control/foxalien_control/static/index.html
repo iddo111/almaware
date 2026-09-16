@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XE-PRO Recovery Console</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-lockup">
+      <p class="eyebrow">JETSON NANO / GRBL 1.1</p>
+      <h1>XE-PRO <span>Recovery Console</span></h1>
+      <p class="console-purpose">Local motion control · validation · commissioning evidence</p>
+    </div>
+    <div class="header-actions">
+      <span id="utcClock" class="utc-clock">--:--:-- UTC</span>
+      <button id="connectButton" class="button primary">Connect</button>
+      <button id="disconnectButton" class="button quiet">Disconnect</button>
+    </div>
+  </header>
+
+  <section class="safety-strip" aria-label="Safety status">
+    <div id="modeBadge" class="safety-cell warning"><b>SIMULATION</b><span>no hardware motion</span></div>
+    <div id="connectionBadge" class="safety-cell"><b>DISCONNECTED</b><span>controller link</span></div>
+    <div class="safety-cell danger"><b>SPINDLE LOCKED</b><span>M3 / M4 / S rejected</span></div>
+    <div class="safety-cell"><b>HARD E-STOP REQUIRED</b><span>software hold is not an E-stop</span></div>
+  </section>
+
+  <main>
+    <section class="machine-grid">
+      <article class="panel telemetry-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">01 / MACHINE</p>
+            <h2>Position & state</h2>
+          </div>
+          <span id="machineState" class="state-pill">Disconnected</span>
+        </div>
+
+        <div class="telemetry-layout">
+          <div class="work-envelope" aria-label="Machine work envelope visualization">
+            <div class="envelope-grid"></div>
+            <div id="crosshair" class="crosshair">
+              <span></span>
+            </div>
+            <div class="axis-label x-label">X 400 mm</div>
+            <div class="axis-label y-label">Y 400 mm</div>
+            <div class="origin-mark">0,0</div>
+          </div>
+          <div class="dro">
+            <div><span>X</span><output id="posX">0.000</output><small>mm</small></div>
+            <div><span>Y</span><output id="posY">0.000</output><small>mm</small></div>
+            <div><span>Z</span><output id="posZ">0.000</output><small>mm</small></div>
+            <dl>
+              <div><dt>Feed</dt><dd id="feedValue">0 mm/min</dd></div>
+              <div><dt>Spindle</dt><dd id="spindleValue">0 rpm</dd></div>
+              <div><dt>Limit pins</dt><dd id="pinValue">—</dd></div>
+            </dl>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel connection-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">02 / LINK</p>
+            <h2>Controller boundary</h2>
+          </div>
+        </div>
+        <dl class="spec-list">
+          <div><dt>Transport</dt><dd id="transportValue">simulation</dd></div>
+          <div><dt>Serial</dt><dd id="serialValue">/dev/ttyACM0</dd></div>
+          <div><dt>Protocol</dt><dd>GRBL v1.1 / 115200</dd></div>
+          <div><dt>Envelope</dt><dd id="envelopeValue">400 × 400 × 95 mm</dd></div>
+        </dl>
+        <div class="hard-rule"></div>
+        <p class="boundary-note">
+          The Jetson is the operator console and G-code sender. A dedicated controller
+          must generate STEP/DIR signals and own limits, probe, and spindle isolation.
+        </p>
+        <div class="controller-actions">
+          <button id="unlockButton" class="button outline">Unlock alarm</button>
+          <button id="setZeroButton" class="button outline">Set XYZ work zero</button>
+          <button id="softResetButton" class="button outline danger-text">Soft reset</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="operations-grid">
+      <article class="panel jog-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">03 / MANUAL MOTION</p>
+            <h2>Jog pendant</h2>
+          </div>
+          <button id="holdButton" class="button stop">Stop motion</button>
+        </div>
+
+        <div class="jog-settings">
+          <label>Step
+            <select id="jogStep">
+              <option value="0.1">0.1 mm</option>
+              <option value="1" selected>1 mm</option>
+              <option value="5">5 mm</option>
+              <option value="10">10 mm</option>
+            </select>
+          </label>
+          <label>Feed
+            <select id="jogFeed">
+              <option value="100">100 mm/min</option>
+              <option value="300">300 mm/min</option>
+              <option value="600" selected>600 mm/min</option>
+              <option value="1000">1000 mm/min</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="pendant">
+          <button class="jog-button north" data-axis="Y" data-sign="1" aria-label="Jog Y positive">Y+</button>
+          <button class="jog-button west" data-axis="X" data-sign="-1" aria-label="Jog X negative">X−</button>
+          <div class="pendant-center">XY</div>
+          <button class="jog-button east" data-axis="X" data-sign="1" aria-label="Jog X positive">X+</button>
+          <button class="jog-button south" data-axis="Y" data-sign="-1" aria-label="Jog Y negative">Y−</button>
+          <div class="z-controls">
+            <button class="jog-button" data-axis="Z" data-sign="1">Z+</button>
+            <span>Z</span>
+            <button class="jog-button" data-axis="Z" data-sign="-1">Z−</button>
+          </div>
+        </div>
+        <div class="manual-actions">
+          <button id="homeButton" class="button outline">Home machine</button>
+          <button id="resumeButton" class="button outline">Resume / cycle start</button>
+        </div>
+        <p class="microcopy">Keep one hand at the physical E-stop during first-motion tests.</p>
+      </article>
+
+      <article class="panel job-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">04 / PROGRAM</p>
+            <h2>Examples, preview & dry motion</h2>
+          </div>
+          <label class="file-button">Open .nc
+            <input id="fileInput" type="file" accept=".nc,.gcode,.tap,.txt">
+          </label>
+        </div>
+
+        <div class="example-heading">
+          <div>
+            <span>Built-in air-cut examples</span>
+            <small>Relative moves · spindle off · return to start</small>
+          </div>
+          <span class="example-count" id="exampleCount">loading</span>
+        </div>
+        <div id="exampleGrid" class="example-grid" aria-live="polite"></div>
+
+        <div class="program-workspace">
+          <div class="editor-column">
+            <div class="source-title">
+              <label class="source-label" for="gcodeSource">Program source</label>
+              <span id="programName">untitled.nc</span>
+            </div>
+            <textarea id="gcodeSource" spellcheck="false" placeholder="G21&#10;G91&#10;G1 X1 F100&#10;G1 X-1 F100&#10;M5"></textarea>
+          </div>
+
+          <aside class="preview-column" aria-label="Toolpath preview">
+            <div class="preview-head">
+              <span>XY toolpath</span>
+              <span id="previewState">VALIDATE TO DRAW</span>
+            </div>
+            <svg id="toolpathPreview" viewBox="0 0 640 400" role="img" aria-label="Validated XY toolpath">
+              <defs>
+                <pattern id="minorGrid" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <path d="M 16 0 L 0 0 0 16" class="minor-grid-line"></path>
+                </pattern>
+                <pattern id="majorGrid" width="80" height="80" patternUnits="userSpaceOnUse">
+                  <rect width="80" height="80" fill="url(#minorGrid)"></rect>
+                  <path d="M 80 0 L 0 0 0 80" class="major-grid-line"></path>
+                </pattern>
+              </defs>
+              <rect width="640" height="400" fill="url(#majorGrid)"></rect>
+              <g id="toolpathLayer"></g>
+              <text id="previewEmpty" x="320" y="202" text-anchor="middle">Validate a program to inspect its path</text>
+            </svg>
+            <dl class="preview-metrics">
+              <div><dt>Path</dt><dd id="pathDistance">—</dd></div>
+              <div><dt>X span</dt><dd id="xSpan">—</dd></div>
+              <div><dt>Y span</dt><dd id="ySpan">—</dd></div>
+              <div><dt>Lines</dt><dd id="programLines">—</dd></div>
+            </dl>
+            <p>Preview shows XY geometry only. It does not prove fixture clearance or a safe work zero.</p>
+          </aside>
+        </div>
+
+        <div class="validation-row">
+          <button id="validateButton" class="button primary">Validate program</button>
+          <div id="validationSummary" class="validation-summary neutral">Not validated</div>
+        </div>
+        <ul id="validationIssues" class="issue-list" aria-live="polite"></ul>
+
+        <fieldset class="preflight">
+          <legend>Required before any motion</legend>
+          <label><input type="checkbox" data-approval="operator_present"> Operator remains at the machine</label>
+          <label><input type="checkbox" data-approval="area_clear"> Gantry, work area, and cables are clear</label>
+          <label><input type="checkbox" data-approval="hardware_estop_ready"> Physical E-stop removes motion power and was tested</label>
+          <label><input type="checkbox" data-approval="spindle_power_isolated"> Spindle is unplugged / power is physically isolated</label>
+        </fieldset>
+
+        <div class="job-actions">
+          <button id="startButton" class="button start" disabled>Start dry motion</button>
+          <button id="pauseButton" class="button outline">Pause</button>
+          <button id="abortButton" class="button outline danger-text">Abort</button>
+        </div>
+        <div class="progress-track"><div id="jobProgress"></div></div>
+        <p id="jobStatus" class="microcopy">No job loaded.</p>
+      </article>
+    </section>
+
+    <section class="panel event-panel">
+      <div class="panel-heading">
+        <div>
+          <p class="section-index">05 / EVIDENCE</p>
+          <h2>Controller event log</h2>
+        </div>
+        <span class="live-mark"><i></i> LIVE</span>
+      </div>
+      <div id="eventLog" class="event-log" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

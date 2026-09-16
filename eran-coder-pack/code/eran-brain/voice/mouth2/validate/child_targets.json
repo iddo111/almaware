@@ -1,0 +1,67 @@
+{
+  "a": {
+    "F1": 1000.0,
+    "F2": 1600.0,
+    "F3": null,
+    "source": "literature: Vorperian & Kent 2007, ~age 5, approximate chart values (REVISED 2026-08-26, was vtl 757.5/1751.5 -- see meta.revision_20260826)"
+  },
+  "i": {
+    "F1": 430.0,
+    "F2": 3100.0,
+    "F3": null,
+    "source": "literature: Vorperian & Kent 2007, ~age 5, approximate chart values"
+  },
+  "u": {
+    "F1": 480.0,
+    "F2": 1400.0,
+    "F3": null,
+    "source": "literature: Vorperian & Kent 2007, ~age 5, approximate chart values"
+  },
+  "meta": {
+    "vtl_version": "API 2.4.2 Jun 14 2026",
+    "age_months": 60,
+    "is_male": true,
+    "method": "JD3.speaker adult preset shapes fetched BEFORE vtlSetAnatomyFromAge(60, male) (the age API drops the shape library), then vtlGetTransferFunction (16384-pt, sr=44100, df=2.69 Hz), F1-F3 peak-picked in 150-5500 Hz; per-vowel plausibility gate: min area >= 0.10 cm^2 and child/adult F1,F2 ratios in [1.0, 1.7], else Vorperian & Kent 2007 literature fallback",
+    "gpl_boundary": "VTL runs only on the PC in .venv-vtl; only these numbers ship.",
+    "vtl_adult_formants": {
+      "a": [
+        668.7,
+        1193.2,
+        2426.2
+      ],
+      "i": [
+        208.1,
+        2148.8,
+        3128.7
+      ],
+      "u": [
+        253.1,
+        795.4,
+        2511.7
+      ]
+    },
+    "vtl_child_raw": {
+      "a": {
+        "F1": 757.5,
+        "F2": 1751.5,
+        "F3": 3246.0,
+        "min_area_cm2": 0.2184
+      },
+      "i": {
+        "F1": 292.4,
+        "F2": 656.3,
+        "F3": 769.3,
+        "min_area_cm2": 0.0001
+      },
+      "u": {
+        "F1": 491.0,
+        "F2": 1804.9,
+        "F3": 3068.1,
+        "min_area_cm2": 0.2274
+      }
+    },
+    "literature_reference": "Vorperian & Kent 2007, JSLHR 50(6):1510-1545; approximate ~age-5 chart values",
+    "revision_20260826": "Phase 1 (MOUTH v2 build): /a/ retargeted from VTL (757.5/1751.5) to literature (1000/1600). Evidence: (1) VTL's child/adult F1 ratio for /a/ is 758/669 = 1.13 where measured children run ~1.4 (V&K 2007 age-5 /a/ F1 ~1000-1030) -- the Phase-0 plausibility gate [1.0,1.7] was too loose to catch it; (2) the Story & Bunton 2018 geometry (the project's geometry authority) puts child /a/ F1 at 1323 Hz through the verified lossless hard-wall analytic2 engine (published 4yr column: 1368), physically incompatible with 758. VTL raw values remain in meta.vtl_child_raw. The S&B-vs-literature residual (~+25% on /a/ F1 in a lossless hard-wall model) is a documented model-class disagreement, NOT hidden by this revision.",
+    "generated": "oracle_vtl.py, 2026-08-26"
+  }
+}

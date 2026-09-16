@@ -1,0 +1,41 @@
+{
+  "alma": "0.1",
+  "weave": "fib",
+  "knots": [
+    {
+      "name": "f",
+      "verb": "sum"
+    },
+    {
+      "name": "show",
+      "verb": "fringe"
+    }
+  ],
+  "threads": [
+    {
+      "from": "f",
+      "to": "f",
+      "strands": [
+        {
+          "weight": 1.0,
+          "delay": 1
+        },
+        {
+          "weight": 1.0,
+          "delay": 2
+        }
+      ]
+    },
+    {
+      "from": "f",
+      "to": "show"
+    }
+  ],
+  "seeds": [
+    {
+      "to": "f",
+      "value": 1.0
+    }
+  ],
+  "run": 10
+}

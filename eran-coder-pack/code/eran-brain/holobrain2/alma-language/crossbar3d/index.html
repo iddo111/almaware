@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALMA · Shisha Crossbar — a learning weave in 3D</title>
+<meta name="description" content="An interactive 3D memristor crossbar that learns: strand thickness is weight (conductance), it drifts as it trains, and sparks show a vector-matrix multiply per beat. Part of ALMA Language. לע״נ שיפרה ז״ל">
+<meta name="color-scheme" content="dark">
+<style>
+  :root{--teal:#18c2b0;--gold:#ffcf5c;--red:#ff6b6b;--purple:#b79bff;--ink:#eaf4f7;}
+  *{margin:0;box-sizing:border-box}
+  html,body{height:100%;background:#070d14;color:var(--ink);
+    font-family:'Segoe UI',Arial,sans-serif;overflow:hidden}
+  #c{display:block;width:100vw;height:100vh;cursor:grab}
+  #c:active{cursor:grabbing}
+  .hud{position:fixed;top:14px;left:14px;pointer-events:none;
+    background:rgba(8,16,24,.55);border:1px solid rgba(120,200,210,.25);
+    border-radius:12px;padding:12px 16px;backdrop-filter:blur(6px);max-width:320px}
+  .hud h1{font-size:15px;letter-spacing:.5px;color:#fff}
+  .hud .weave{color:var(--gold);font-size:12px;margin-top:2px}
+  .hud .row{font-size:12.5px;margin-top:7px;color:#bfe0e6}
+  .hud b{color:#fff}
+  .lo{color:var(--teal)} .hi{color:var(--red)}
+  .legend{position:fixed;bottom:14px;left:14px;font-size:11.5px;color:#8fb3bc;
+    background:rgba(8,16,24,.5);border:1px solid rgba(120,200,210,.2);border-radius:10px;padding:8px 12px}
+  .legend span{display:inline-flex;align-items:center;gap:5px;margin-right:12px}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .ctl{position:fixed;top:14px;right:14px;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+  .ctl button{background:rgba(24,194,176,.14);color:#dffcf7;border:1px solid rgba(24,194,176,.4);
+    border-radius:8px;padding:7px 12px;font-size:13px;cursor:pointer;transition:.15s;min-width:120px}
+  .ctl button:hover{background:rgba(24,194,176,.28)}
+  .ctl .grp{display:flex;gap:6px}
+  .ctl .grp button{min-width:0;padding:7px 11px}
+  .tag{position:fixed;bottom:14px;right:14px;font-size:11px;color:#5f7a83}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div class="hud">
+  <h1>🧠 ALMA — Shisha Crossbar</h1>
+  <div class="weave">weave: shisha-crossbar · a learning weave (ALMA Language)</div>
+  <div class="row">beat <b id="beat">0</b> &nbsp;·&nbsp; loss <b id="loss">—</b></div>
+  <div class="row"><b id="ncells">0</b> strands (memristor cells) · <b id="nk">0</b> knots (row+col wires)</div>
+  <div class="row" style="color:#9fc4cc">thickness = weight (conductance). It <b>drifts</b> = it learns.<br>sparks = signals flowing (a vector-matrix multiply per beat).</div>
+</div>
+
+<div class="ctl">
+  <button id="play">⏸ Pause</button>
+  <button id="reset">↺ Reset training</button>
+  <div class="grp">
+    <button id="minus">− grid</button>
+    <button id="plus">+ grid</button>
+  </div>
+  <div class="grp">
+    <button id="slow">− speed</button>
+    <button id="fast">+ speed</button>
+  </div>
+</div>
+
+<div class="legend">
+  <span><i class="dot" style="background:var(--teal)"></i> low weight</span>
+  <span><i class="dot" style="background:var(--gold)"></i> mid</span>
+  <span><i class="dot" style="background:var(--red)"></i> high weight</span>
+  <span><i class="dot" style="background:#fff"></i> spark</span>
+  &nbsp; drag to orbit
+</div>
+<div class="tag">ALMAWARE · 100% ours, no libraries · לע"נ שיפרה ז"ל</div>
+
+<script>
+"use strict";
+const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+let W, H, DPR;
+function resize(){ DPR=Math.min(devicePixelRatio||1,2); W=cv.width=innerWidth*DPR; H=cv.height=innerHeight*DPR;
+  cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px'; }
+addEventListener('resize', resize); resize();
+
+// ---- state ----
+let N = 6;                 // grid is N x N (his "more than nine")
+let W_ = [], T_ = [];      // weights + target (the pattern being learned)
+let beat = 0, loss = 1, playing = true, speed = 1;
+let yaw = 0.7, pitch = 0.5, dragging=false, px=0, py=0, autoYaw=0.0035;
+const S = 46;              // grid spacing
+const YGAP = 26;           // separation between row-layer and column-layer
+
+// target pattern = an "ALMA diamond" so the learned weights form a shape
+function makeTarget(){
+  T_ = []; W_ = [];
+  const c=(N-1)/2;
+  for(let i=0;i<N;i++){ T_[i]=[]; W_[i]=[];
+    for(let j=0;j<N;j++){
+      const d = (Math.abs(i-c)+Math.abs(j-c))/N;      // diamond
+      T_[i][j] = Math.max(0, 1 - 1.7*d);
+      W_[i][j] = 0.08 + 0.05*Math.sin(i*3+j);         // start near-blank
+    }
+  }
+  beat=0; loss=1;
+}
+makeTarget();
+
+// ---- one training beat: delta rule + memristor variability (honest noise) ----
+function trainStep(){
+  const lr=0.06; let e=0, n=0;
+  for(let i=0;i<N;i++) for(let j=0;j<N;j++){
+    const noise = (Math.sin(beat*0.7+i*2.1+j*1.3))*0.015;  // device jitter (deterministic, resume-safe)
+    W_[i][j] += lr*(T_[i][j]-W_[i][j]) + noise;
+    W_[i][j] = Math.min(1, Math.max(0, W_[i][j]));
+    e += Math.abs(T_[i][j]-W_[i][j]); n++;
+  }
+  loss = e/n; beat++;
+}
+
+// ---- 3D ----
+function rot(p){ // yaw about Y, then pitch about X
+  const cy=Math.cos(yaw), sy=Math.sin(yaw);
+  let x=p.x*cy - p.z*sy, z=p.x*sy + p.z*cy, y=p.y;
+  const cx=Math.cos(pitch), sx=Math.sin(pitch);
+  let y2=y*cx - z*sx, z2=y*sx + z*cx;
+  return {x, y:y2, z:z2};
+}
+function project(p){
+  const r=rot(p), fov=520, f=fov/(fov+r.z);
+  return {x:W/2 + r.x*f*DPR, y:H/2 + r.y*f*DPR, f, z:r.z};
+}
+function cellPos(i,j){ const c=(N-1)/2; return {x:(j-c)*S, y:0, z:(i-c)*S}; }
+function rowPos(i,t){ const c=(N-1)/2, L=((N-1)/2)*S+S*0.7; return {x:-L+2*L*t, y:-YGAP/2, z:(i-c)*S}; }
+function colPos(j,t){ const c=(N-1)/2, L=((N-1)/2)*S+S*0.7; return {x:(j-c)*S, y:YGAP/2, z:-L+2*L*t}; }
+
+function weightColor(w){
+  // teal -> gold -> red
+  let r,g,b;
+  if(w<0.5){ const t=w/0.5; r=24+(255-24)*t; g=194+(207-194)*t; b=176+(92-176)*t; }
+  else { const t=(w-0.5)/0.5; r=255; g=207+(107-207)*t; b=92+(107-92)*t; }
+  return [r|0,g|0,b|0];
+}
+
+function line3(a,b,color,width,alpha){
+  const A=project(a), B=project(b);
+  ctx.strokeStyle=`rgba(${color[0]},${color[1]},${color[2]},${alpha})`;
+  ctx.lineWidth=width*DPR*Math.max(0.4,A.f);
+  ctx.beginPath(); ctx.moveTo(A.x,A.y); ctx.lineTo(B.x,B.y); ctx.stroke();
+}
+
+function draw(){
+  ctx.fillStyle='#070d14'; ctx.fillRect(0,0,W,H);
+  // faint starfield
+  ctx.fillStyle='rgba(120,200,210,0.06)';
+  for(let k=0;k<60;k++){ const x=(k*97%W), y=((k*53)%H); ctx.fillRect(x,y,DPR,DPR); }
+
+  // wires (threads): rows (bottom-ish) and columns (top-ish)
+  for(let i=0;i<N;i++) line3(rowPos(i,0),rowPos(i,1),[90,150,170],1.2,0.35);
+  for(let j=0;j<N;j++) line3(colPos(j,0),colPos(j,1),[90,150,170],1.2,0.35);
+
+  // active spark: a pulse sweeping one row each cycle -> lights the column by weight
+  const activeRow = Math.floor(beat/2) % N;
+  const pulse = (performance.now()/700) % 1;
+
+  // cells (strands) — sort by depth so far cells draw first
+  const cells=[];
+  for(let i=0;i<N;i++) for(let j=0;j<N;j++){
+    const p=project(cellPos(i,j)); cells.push({i,j,p});
+  }
+  cells.sort((a,b)=>b.p.z-a.p.z);
+
+  for(const {i,j,p} of cells){
+    const w=W_[i][j], col=weightColor(w);
+    const R=(3+11*w)*DPR*Math.max(0.4,p.f);
+    // glow
+    const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,R*2.4);
+    g.addColorStop(0,`rgba(${col[0]},${col[1]},${col[2]},${0.85})`);
+    g.addColorStop(1,`rgba(${col[0]},${col[1]},${col[2]},0)`);
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,R*2.4,0,7); ctx.fill();
+    ctx.fillStyle=`rgb(${col[0]},${col[1]},${col[2]})`;
+    ctx.beginPath(); ctx.arc(p.x,p.y,R,0,7); ctx.fill();
+
+    // spark: on the active row, pulse cells near the sweep, brightness ∝ weight
+    if(i===activeRow){
+      const cx=j/(N-1);
+      const near=1-Math.min(1,Math.abs(cx-pulse)*N*0.6);
+      if(near>0){
+        ctx.fillStyle=`rgba(255,255,255,${near*0.9})`;
+        ctx.beginPath(); ctx.arc(p.x,p.y,R*0.6+2*DPR,0,7); ctx.fill();
+        // spark runs down the column proportional to weight (the multiply)
+        const cp=project(colPos(j, 0.5+0.5*w));
+        ctx.fillStyle=`rgba(255,255,255,${near*w})`;
+        ctx.beginPath(); ctx.arc(cp.x,cp.y,3*DPR,0,7); ctx.fill();
+      }
+    }
+  }
+}
+
+// ---- loop ----
+let acc=0, last=performance.now();
+function frame(now){
+  const dt=now-last; last=now;
+  if(!dragging) yaw+=autoYaw;
+  if(playing){ acc+=dt*speed; while(acc>60){ trainStep(); acc-=60; } }
+  draw();
+  document.getElementById('beat').textContent=beat;
+  document.getElementById('loss').innerHTML=(loss).toFixed(3);
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+// ---- HUD counts ----
+function counts(){ document.getElementById('ncells').textContent=N*N;
+  document.getElementById('nk').textContent=2*N; }
+counts();
+
+// ---- controls ----
+cv.addEventListener('mousedown',e=>{dragging=true;px=e.clientX;py=e.clientY;});
+addEventListener('mouseup',()=>dragging=false);
+addEventListener('mousemove',e=>{ if(!dragging)return;
+  yaw+=(e.clientX-px)*0.008; pitch+=(e.clientY-py)*0.008;
+  pitch=Math.max(-1.3,Math.min(1.3,pitch)); px=e.clientX; py=e.clientY; });
+cv.addEventListener('touchstart',e=>{dragging=true;px=e.touches[0].clientX;py=e.touches[0].clientY;},{passive:true});
+cv.addEventListener('touchmove',e=>{ yaw+=(e.touches[0].clientX-px)*0.01; pitch+=(e.touches[0].clientY-py)*0.01;
+  pitch=Math.max(-1.3,Math.min(1.3,pitch)); px=e.touches[0].clientX; py=e.touches[0].clientY; },{passive:true});
+cv.addEventListener('touchend',()=>dragging=false);
+
+document.getElementById('play').onclick=e=>{playing=!playing; e.target.textContent=playing?'⏸ Pause':'▶ Play';};
+document.getElementById('reset').onclick=()=>makeTarget();
+document.getElementById('plus').onclick=()=>{ N=Math.min(16,N+1); makeTarget(); counts(); };
+document.getElementById('minus').onclick=()=>{ N=Math.max(3,N-1); makeTarget(); counts(); };
+document.getElementById('fast').onclick=()=>speed=Math.min(6,speed+0.5);
+document.getElementById('slow').onclick=()=>speed=Math.max(0.5,speed-0.5);
+</script>
+</body>
+</html>

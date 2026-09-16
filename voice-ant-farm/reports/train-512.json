@@ -1,0 +1,42 @@
+{
+  "units": 512,
+  "state": "state-syllables\\512",
+  "seconds": 282.1,
+  "colony_sha256": "f06c768c4274ed990ca690e10dde71efc0e43afb9c986f895413b4a581036fd1",
+  "selected_ant": "ant-d",
+  "codebooks_merged": false,
+  "ants": [
+    {
+      "ant": "ant-a",
+      "seed": 7007,
+      "heldout_error_before": 2.1445705890655518,
+      "heldout_error_after": 0.2275553196668625,
+      "evaluation_error_after": 0.20413212478160858,
+      "checkpoint_sha256": "e426fad689f2d5edfebcda920c30800f80d3057cfa41859004d3f64bd5578411"
+    },
+    {
+      "ant": "ant-b",
+      "seed": 7019,
+      "heldout_error_before": 2.1445705890655518,
+      "heldout_error_after": 0.22765319049358368,
+      "evaluation_error_after": 0.20668156445026398,
+      "checkpoint_sha256": "06b5e77291bde93939fad07bf297f68db74cee221009d425a781f6675c7d1032"
+    },
+    {
+      "ant": "ant-c",
+      "seed": 7039,
+      "heldout_error_before": 2.1445705890655518,
+      "heldout_error_after": 0.22586201131343842,
+      "evaluation_error_after": 0.20600607991218567,
+      "checkpoint_sha256": "053face3873fc6f6fc265688c3a17073e44c2a40d39a402c63e0da34cf05d814"
+    },
+    {
+      "ant": "ant-d",
+      "seed": 7057,
+      "heldout_error_before": 2.1445705890655518,
+      "heldout_error_after": 0.22186504304409027,
+      "evaluation_error_after": 0.20069897174835205,
+      "checkpoint_sha256": "956842103cad33ab5016ae45eab5d7e0d55eb2259de414acff7c95772cc731c7"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+ "joint_step": 1500,
+ "split_step": 1500,
+ "seeds": [
+  "907",
+  "1337",
+  "2026"
+ ],
+ "seconds": 45295.3,
+ "per_lane": {
+  "drum": {
+   "joint_nats": 722481.4063812544,
+   "split_nats": 669516.818644654,
+   "diff_nats": -52964.58773660039,
+   "diff_sd": 22492.61110236915,
+   "diff_bits_per_second": -1.6869685832817485
+  },
+  "pitch": {
+   "joint_nats": 1668102.6798103824,
+   "split_nats": 1576352.1395499855,
+   "diff_nats": -91750.5402603969,
+   "diff_sd": 13498.04969422289,
+   "diff_bits_per_second": -2.922335196644194
+  },
+  "dur": {
+   "joint_nats": 296396.5725024566,
+   "split_nats": 266299.7694414829,
+   "diff_nats": -30096.803060973685,
+   "diff_sd": 7409.35673159296,
+   "diff_bits_per_second": -0.9586095803025592
+  },
+  "struct": {
+   "joint_nats": 347022.1073274584,
+   "split_nats": 431443.77984506957,
+   "diff_nats": 84421.67251761116,
+   "diff_sd": 16019.496546948298,
+   "diff_bits_per_second": 2.6889043296922575
+  }
+ },
+ "total_joint_bits_per_second": 96.63564971603434,
+ "total_split_bits_per_second": 93.7566406854981,
+ "gap_bits_per_second": -2.879009030536244,
+ "clock_cost_bits_per_second": 2.6889043296922575,
+ "non_clock_gain_bits_per_second": -5.567913360228502,
+ "one_clock_estimate": {
+  "joint": 96.63564971603434,
+  "split": 85.1956541717741,
+  "split_sd": 0.20241958768845042,
+  "gap": -11.43999554426025,
+  "gap_sd": 0.5948967092820575,
+  "caveat": "OPTIMISTIC. Drops the pitch stream's struct nats from the total without retraining the pitch model with the clock as unscored context. Not a result."
+ }
+}

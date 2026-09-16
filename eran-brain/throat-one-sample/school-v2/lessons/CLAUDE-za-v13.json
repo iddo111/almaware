@@ -1,0 +1,126 @@
+{
+ "speaker": "CLAUDE",
+ "syl": "za",
+ "letter": "zayin",
+ "hebrew": "ז",
+ "facts": {
+  "place": "tip",
+  "manner": "fricative",
+  "nasal": 0,
+  "voiced": 1
+ },
+ "decisions": {
+  "knots": "AH",
+  "constr": "narrow",
+  "nasal": 0,
+  "voice": "part",
+  "release": "plain",
+  "burst": 0,
+  "pre": 0
+ },
+ "amounts": {
+  "c_pos": 0.9046174750559842,
+  "c_area": 0.11096403372846932,
+  "velum": 0.0,
+  "ten": 0.3103910302024135,
+  "voi": 0.3996266627475025,
+  "d_pre": 0.0,
+  "d_cons": 0.08369733140753795,
+  "d_trans": 0.015,
+  "d_gap": 0.04,
+  "gap_pos": 0.65,
+  "gap_area": 2.0,
+  "gap_voi": 0.0,
+  "gap_ten": 0.6,
+  "d_bridge": 0.0,
+  "d_vowel": 0.32604495978212056,
+  "glide": 0.36541550971627484,
+  "gain": 6.0,
+  "f0": 108.64992880853555,
+  "trans_voi": null
+ },
+ "live_amounts": [
+  "c_area",
+  "c_pos",
+  "d_cons",
+  "d_trans",
+  "d_vowel",
+  "f0",
+  "glide",
+  "ten",
+  "trans_voi",
+  "voi"
+ ],
+ "gesture": {
+  "keyframes": [
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9046,
+    0.111,
+    0.0,
+    0.3104,
+    0.3996
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.9046,
+    0.111,
+    0.0,
+    0.3104,
+    0.3996
+   ],
+   [
+    -0.6013,
+    -0.0092,
+    -0.631,
+    -1.4002,
+    1.6041,
+    -1.8558,
+    1.8504,
+    1.933,
+    0.65,
+    2.0,
+    0.0,
+    0.6,
+    1.0
+   ]
+  ],
+  "keyframe_dims": "k1..k8 log2-area, c_pos, c_area, velum, tenseness, voicing",
+  "durations": [
+   0.0837,
+   0.015,
+   0.326
+  ],
+  "f0_knots": [
+   108.64992880853555,
+   108.64992880853555,
+   101.04443379193806
+  ],
+  "tenseness_knots": [
+   0.6,
+   0.6,
+   0.55
+  ],
+  "glide": 0.36541550971627484,
+  "burst": null,
+  "backend": "c",
+  "seed": 0
+ },
+ "ruler": "school-v2/ruler.py (09-02 family rulers + verifiers' objections)",
+ "brief": "ok   voiced f0 108 hnr 3.3 (1.5-7); ok   >2k frac 0.20 >= 0.15; ok   centroid 2785 ~3 kHz; ok   level -8.0 (-12..-4); ok   no burst (jump 5.9)",
+ "attempt": 35
+}

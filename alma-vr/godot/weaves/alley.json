@@ -1,0 +1,148 @@
+{
+  "alma": "0.1",
+  "weave": "alley",
+  "knots": [
+    {
+      "name": "shmulik",
+      "verb": "sum",
+      "trigger": "rise 0.5"
+    },
+    {
+      "name": "rachel",
+      "verb": "sum",
+      "trigger": "rise 0.5"
+    },
+    {
+      "name": "templar",
+      "verb": "sum",
+      "trigger": "rise 0.5"
+    },
+    {
+      "name": "rumour",
+      "verb": "fringe"
+    }
+  ],
+  "threads": [
+    {
+      "from": "shmulik",
+      "to": "rachel",
+      "strands": [
+        {
+          "weight": 0.8,
+          "delay": 1
+        }
+      ]
+    },
+    {
+      "from": "shmulik",
+      "to": "templar",
+      "strands": [
+        {
+          "weight": 0.2,
+          "delay": 1
+        }
+      ]
+    },
+    {
+      "from": "rachel",
+      "to": "rumour"
+    },
+    {
+      "from": "templar",
+      "to": "rumour"
+    }
+  ],
+  "seeds": [
+    {
+      "to": "shmulik",
+      "value": 1.0
+    }
+  ],
+  "scene": {
+    "seed": 1337,
+    "layout": "bfs-layer",
+    "positions": {
+      "shmulik": [
+        0.0824,
+        3.0233,
+        0.0
+      ],
+      "rachel": [
+        -1.6939,
+        3.0601,
+        6.0
+      ],
+      "templar": [
+        1.366,
+        3.2271,
+        6.0
+      ],
+      "rumour": [
+        -0.0814,
+        3.2027,
+        12.0
+      ]
+    }
+  },
+  "trace": {
+    "beats": 3,
+    "finished": true,
+    "fires": [
+      {
+        "beat": 1,
+        "knot": "shmulik",
+        "spoke": 1.0
+      },
+      {
+        "beat": 2,
+        "knot": "rachel",
+        "spoke": 0.8
+      },
+      {
+        "beat": 3,
+        "knot": "rumour",
+        "spoke": 0.8
+      }
+    ],
+    "fringes": {
+      "rumour": [
+        [
+          3,
+          0.8
+        ]
+      ]
+    },
+    "sparks": [
+      {
+        "from": "shmulik",
+        "to": "rachel",
+        "port": "in",
+        "weight": 0.8,
+        "delay": 1,
+        "depart_beat": 1,
+        "arrival_beat": 2,
+        "value": 0.8
+      },
+      {
+        "from": "shmulik",
+        "to": "templar",
+        "port": "in",
+        "weight": 0.2,
+        "delay": 1,
+        "depart_beat": 1,
+        "arrival_beat": 2,
+        "value": 0.2
+      },
+      {
+        "from": "rachel",
+        "to": "rumour",
+        "port": "in",
+        "weight": 1.0,
+        "delay": 1,
+        "depart_beat": 2,
+        "arrival_beat": 3,
+        "value": 0.8
+      }
+    ]
+  }
+}

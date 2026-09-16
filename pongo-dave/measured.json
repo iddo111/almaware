@@ -1,0 +1,185 @@
+{
+  "v1": {
+    "variant": "v1",
+    "watertight": true,
+    "winding_consistent": true,
+    "volume_positive": true,
+    "euler_number": 2,
+    "genus0_prism": true,
+    "triangles": 280,
+    "vertices": 142,
+    "bbox_mm_XxYxZ": [
+      15.4,
+      70.0,
+      40.0
+    ],
+    "volume_mm3": 26031.6048,
+    "petg_mass_g_at_1.27": 33.0601,
+    "ray_at_z+5_solid_spans_X": [
+      [
+        0.0,
+        1.5
+      ],
+      [
+        13.9,
+        15.4
+      ]
+    ],
+    "ray_at_top-10_solid_spans_X": [
+      [
+        0.0,
+        15.4
+      ]
+    ],
+    "nominal": {
+      "slot_w": 12.4,
+      "wall": 1.5,
+      "slot_depth": 20.0,
+      "total_h": 40.0,
+      "fillet_r": 3.0,
+      "length": 70.0,
+      "title": "v1 - faithful to sketch (1.5 mm wall)",
+      "outer_w": 15.4
+    },
+    "measured_slot_width_mm": 12.4,
+    "measured_wall_left_mm": 1.5,
+    "measured_wall_right_mm": 1.5,
+    "ray_at_z+1_solid_spans_X": [
+      [
+        0.0,
+        1.5
+      ],
+      [
+        13.9,
+        15.4
+      ]
+    ],
+    "slot_opens_at_z0": true,
+    "spine_is_solid": true,
+    "measured_spine_width_mm": 15.4,
+    "stl": "D:/CLAUDE/pongo-dave/dave-uclip-v1.stl",
+    "title": "v1 - faithful to sketch (1.5 mm wall)"
+  },
+  "v2-thick": {
+    "variant": "v2-thick",
+    "watertight": true,
+    "winding_consistent": true,
+    "volume_positive": true,
+    "euler_number": 2,
+    "genus0_prism": true,
+    "triangles": 280,
+    "vertices": 142,
+    "bbox_mm_XxYxZ": [
+      17.4,
+      70.0,
+      40.0
+    ],
+    "volume_mm3": 31631.6048,
+    "petg_mass_g_at_1.27": 40.1721,
+    "ray_at_z+5_solid_spans_X": [
+      [
+        0.0,
+        2.5
+      ],
+      [
+        14.9,
+        17.4
+      ]
+    ],
+    "ray_at_top-10_solid_spans_X": [
+      [
+        0.0,
+        17.4
+      ]
+    ],
+    "nominal": {
+      "slot_w": 12.4,
+      "wall": 2.5,
+      "slot_depth": 20.0,
+      "total_h": 40.0,
+      "fillet_r": 3.0,
+      "length": 70.0,
+      "title": "v2 - stronger (2.5 mm wall)",
+      "outer_w": 17.4
+    },
+    "measured_slot_width_mm": 12.4,
+    "measured_wall_left_mm": 2.5,
+    "measured_wall_right_mm": 2.5,
+    "ray_at_z+1_solid_spans_X": [
+      [
+        0.0,
+        2.5
+      ],
+      [
+        14.9,
+        17.4
+      ]
+    ],
+    "slot_opens_at_z0": true,
+    "spine_is_solid": true,
+    "measured_spine_width_mm": 17.4,
+    "stl": "D:/CLAUDE/pongo-dave/dave-uclip-v2-thick.stl",
+    "title": "v2 - stronger (2.5 mm wall)"
+  },
+  "v2-exact": {
+    "variant": "v2-exact",
+    "watertight": true,
+    "winding_consistent": true,
+    "volume_positive": true,
+    "euler_number": 2,
+    "genus0_prism": true,
+    "triangles": 28,
+    "vertices": 16,
+    "bbox_mm_XxYxZ": [
+      15.0,
+      70.0,
+      40.0
+    ],
+    "volume_mm3": 25200.0,
+    "petg_mass_g_at_1.27": 32.004,
+    "ray_at_z+5_solid_spans_X": [
+      [
+        0.0,
+        1.5
+      ],
+      [
+        13.5,
+        15.0
+      ]
+    ],
+    "ray_at_top-10_solid_spans_X": [
+      [
+        0.0,
+        15.0
+      ]
+    ],
+    "nominal": {
+      "slot_w": 12.0,
+      "wall": 1.5,
+      "slot_depth": 20.0,
+      "total_h": 40.0,
+      "fillet_r": 0.0,
+      "length": 70.0,
+      "title": "v2 - EXACTLY Dave's sketch, no additions",
+      "outer_w": 15.0
+    },
+    "measured_slot_width_mm": 12.0,
+    "measured_wall_left_mm": 1.5,
+    "measured_wall_right_mm": 1.5,
+    "ray_at_z+1_solid_spans_X": [
+      [
+        0.0,
+        1.5
+      ],
+      [
+        13.5,
+        15.0
+      ]
+    ],
+    "slot_opens_at_z0": true,
+    "spine_is_solid": true,
+    "measured_spine_width_mm": 15.0,
+    "stl": "D:/CLAUDE/pongo-dave/dave-uclip-v2-exact.stl",
+    "title": "v2 - EXACTLY Dave's sketch, no additions"
+  }
+}

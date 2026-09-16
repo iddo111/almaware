@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "owner": "iddo111",
+  "source": "Trimmed 2026-08-31 for dsh on eran3 from C:/Users/<user>/.iddo-harness/policy.yaml (2026-07-23). JSON not YAML because the gate plugin is zero-dependency (node stdlib has no YAML parser). Windows-only rules dropped (format/del /q/reg delete/regedit). ADDED: ERAN read-only fence (eran1 untouchable).",
+  "block": {
+    "commands": [
+      "rm -rf /",
+      "rm -rf /*",
+      "rm -rf ~",
+      "rm -rf ~/*",
+      "mkfs*",
+      "dd if=* of=/dev/*",
+      "shutdown*",
+      "reboot*",
+      "*password*",
+      "*token*",
+      "*secret*",
+      "ssh*eran1*",
+      "*<lan-ip>*",
+      "*<tailnet-ip>*",
+      "*<fabric-ip>*",
+      "*eranb-*"
+    ],
+    "command_substrings": [
+      "/etc/",
+      "/boot/",
+      "/.ssh/id_",
+      ".aws/credentials"
+    ]
+  },
+  "require_confirm": {
+    "commands": [
+      "pip install*",
+      "pip3 install*",
+      "npm install*",
+      "apt install*",
+      "apt-get install*",
+      "sudo apt*",
+      "docker run*",
+      "docker rm*",
+      "docker rmi*",
+      "git push*",
+      "git commit*",
+      "git merge*",
+      "git rebase*",
+      "git reset --hard*",
+      "systemctl start*",
+      "systemctl stop*",
+      "systemctl enable*",
+      "systemctl disable*"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "alma": "0.1",
+  "weave": "cheat",
+  "knots": [
+    {
+      "name": "x1"
+    },
+    {
+      "name": "x2"
+    },
+    {
+      "name": "y_sign",
+      "verb": "spell",
+      "trigger": "count 2",
+      "spell": "xor"
+    },
+    {
+      "name": "y",
+      "verb": "fringe"
+    }
+  ],
+  "threads": [
+    {
+      "from": "x1",
+      "to": "y_sign"
+    },
+    {
+      "from": "x2",
+      "to": "y_sign"
+    },
+    {
+      "from": "y_sign",
+      "to": "y"
+    }
+  ],
+  "seeds": [
+    {
+      "to": "x1",
+      "value": 0.0
+    },
+    {
+      "to": "x2",
+      "value": 0.0
+    }
+  ]
+}

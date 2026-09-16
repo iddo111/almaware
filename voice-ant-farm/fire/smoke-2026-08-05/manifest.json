@@ -1,0 +1,277 @@
+{
+  "format_version": 1,
+  "architecture": "tribal-fire-sound-only-exchange",
+  "round_id": "smoke-2026-08-05",
+  "crossed_the_fire": "synthesized-waveforms-only",
+  "never_shared": "weights-codebooks-unit-identifiers",
+  "max_synthetic": 0.3,
+  "producers": {
+    "ant-a": {
+      "checkpoint_sha256": "3ba95cb86360490688b700a08fbc1281942d26df5fb5fcfe176d20e434b319d8",
+      "utterance_count": 3,
+      "files": [
+        {
+          "path": "utterance-000.wav",
+          "audio_sha256": "046afdc0b0ac6a3646e500cf1c59e1a70c86bf5582db83518660d11a37e5c6bc",
+          "pcm_sha256": "3fb2aa4e422a36865eada81811f0d223710182e6ebb6ad2cab27170527e2951e",
+          "sample_rate": 16000,
+          "sample_count": 129520,
+          "duration_seconds": 8.095
+        },
+        {
+          "path": "utterance-001.wav",
+          "audio_sha256": "c550dc0b9ed4aed165bb05693bb8a5f3bf1b2d1199cf9b38e289b8d55684221f",
+          "pcm_sha256": "bb040df1b19600f67b871981b542a96775cc166ef3ee68e9e7e7c637de8ed3d3",
+          "sample_rate": 16000,
+          "sample_count": 108720,
+          "duration_seconds": 6.795
+        },
+        {
+          "path": "utterance-002.wav",
+          "audio_sha256": "7d9fba7d6fda1370036bd1422533d295b5a56273c9bb313e8fec3aac833947be",
+          "pcm_sha256": "f38168f817f33de06b45a81ccd3c23e7c881ff5ebc044bc3a7fe308dd8f2acbe",
+          "sample_rate": 16000,
+          "sample_count": 339120,
+          "duration_seconds": 21.195
+        }
+      ]
+    },
+    "ant-b": {
+      "checkpoint_sha256": "eb80c4f88a23be213b51c1fc9ff754f11e0258c4f2034e611e60ba9c6867075c",
+      "utterance_count": 3,
+      "files": [
+        {
+          "path": "utterance-000.wav",
+          "audio_sha256": "8876074ff0bc8de73daef03f7c07b246bbb1242188a1973804b90992a3bec85c",
+          "pcm_sha256": "f1d046d0557067054966aa2b908ee12306f5af8b1177ee1063271c60e8c968f9",
+          "sample_rate": 16000,
+          "sample_count": 129520,
+          "duration_seconds": 8.095
+        },
+        {
+          "path": "utterance-001.wav",
+          "audio_sha256": "be2fbecf8544575849b4d4bb9c1107892b257624d9ab78e5adcd264f9724c73f",
+          "pcm_sha256": "0b8c1da8ba439f3568c45561cc3e0173e8b74197beb48da37eb52ba7fbc9adfc",
+          "sample_rate": 16000,
+          "sample_count": 108720,
+          "duration_seconds": 6.795
+        },
+        {
+          "path": "utterance-002.wav",
+          "audio_sha256": "6c7cd2cc072a14fcac770e3e7343c0311a83463754adccd1c96b15322fab5ec1",
+          "pcm_sha256": "4f5553d2a4acae9c89d7372e15367c8197dd2476c3366c6774b287ca810610ae",
+          "sample_rate": 16000,
+          "sample_count": 339120,
+          "duration_seconds": 21.195
+        }
+      ]
+    },
+    "ant-c": {
+      "checkpoint_sha256": "3c2e4daadbfbafb9f0a9743c8ce1faae75da8fa93c3f17743781cbe092362955",
+      "utterance_count": 3,
+      "files": [
+        {
+          "path": "utterance-000.wav",
+          "audio_sha256": "86d6f6e4c444af7b82d2ece74fc8386e9e9c55aa1ca303de53811b2067da3db1",
+          "pcm_sha256": "ab0559e068a46cd6b92c193e54ba606d26bd25e784ead03147b67013b1bb6a66",
+          "sample_rate": 16000,
+          "sample_count": 129520,
+          "duration_seconds": 8.095
+        },
+        {
+          "path": "utterance-001.wav",
+          "audio_sha256": "302ffed72adf5d80428aa48d4f02ead8d5d171c47dabda4081e34543b047cd95",
+          "pcm_sha256": "9019905eaca14bee3b64e24101ada65aea5552d8a39d1b0664f8b52371d86ec9",
+          "sample_rate": 16000,
+          "sample_count": 108720,
+          "duration_seconds": 6.795
+        },
+        {
+          "path": "utterance-002.wav",
+          "audio_sha256": "2b79d9a0e2c7380f7906ffdcf49c0a7debff32e23e08007cd2818fa6e60134c9",
+          "pcm_sha256": "02088323c5e068dc6923867f2862aded898e289900072ed35622eb574a156094",
+          "sample_rate": 16000,
+          "sample_count": 339120,
+          "duration_seconds": 21.195
+        }
+      ]
+    },
+    "ant-d": {
+      "checkpoint_sha256": "9391357c4c5df462812449dae348c46babc5802022b9b25cca9c560c23388cbd",
+      "utterance_count": 3,
+      "files": [
+        {
+          "path": "utterance-000.wav",
+          "audio_sha256": "beba578157b088879119e69d9e27e386cbe64e84e1cd2dfeb602d4f8452abe69",
+          "pcm_sha256": "749df73aaaad098bfa6795bbcec195953d63eebe5edb4d19e96e2a3761d31aa5",
+          "sample_rate": 16000,
+          "sample_count": 129520,
+          "duration_seconds": 8.095
+        },
+        {
+          "path": "utterance-001.wav",
+          "audio_sha256": "22486ed2e798b59b55d276197ed752b314d507aa1909e96a6c53b9bc85b529e2",
+          "pcm_sha256": "ee53dd3b266ac63a52c2f001bac86fc90eb7cfd1ede12cdd6c1f5976d6803d3d",
+          "sample_rate": 16000,
+          "sample_count": 108720,
+          "duration_seconds": 6.795
+        },
+        {
+          "path": "utterance-002.wav",
+          "audio_sha256": "1f36838abb3faec0d384c9606c2c0ccdb15e4eff460712374b92e387f0263a17",
+          "pcm_sha256": "56bc0099c6f8280b93511a69ac17f7d13be0639449692dfc07b44b4047f4a92c",
+          "sample_rate": 16000,
+          "sample_count": 339120,
+          "duration_seconds": 21.195
+        }
+      ]
+    }
+  },
+  "mixes": {
+    "ant-a": {
+      "directory": "mix/ant-a",
+      "real_file_count": 8,
+      "real_seconds": 116.0,
+      "fire_files": [
+        {
+          "producer": "ant-b",
+          "path": "fire-ant-b-utterance-000.wav",
+          "pcm_sha256": "f1d046d0557067054966aa2b908ee12306f5af8b1177ee1063271c60e8c968f9",
+          "duration_seconds": 8.095
+        },
+        {
+          "producer": "ant-b",
+          "path": "fire-ant-b-utterance-001.wav",
+          "pcm_sha256": "0b8c1da8ba439f3568c45561cc3e0173e8b74197beb48da37eb52ba7fbc9adfc",
+          "duration_seconds": 6.795
+        },
+        {
+          "producer": "ant-b",
+          "path": "fire-ant-b-utterance-002.wav",
+          "pcm_sha256": "4f5553d2a4acae9c89d7372e15367c8197dd2476c3366c6774b287ca810610ae",
+          "duration_seconds": 21.195
+        },
+        {
+          "producer": "ant-c",
+          "path": "fire-ant-c-utterance-000.wav",
+          "pcm_sha256": "ab0559e068a46cd6b92c193e54ba606d26bd25e784ead03147b67013b1bb6a66",
+          "duration_seconds": 8.095
+        }
+      ],
+      "fire_file_count": 4,
+      "synthetic_seconds": 44.18,
+      "synthetic_proportion": 0.275815,
+      "max_synthetic": 0.3,
+      "own_fire_excluded": true
+    },
+    "ant-b": {
+      "directory": "mix/ant-b",
+      "real_file_count": 8,
+      "real_seconds": 116.0,
+      "fire_files": [
+        {
+          "producer": "ant-a",
+          "path": "fire-ant-a-utterance-000.wav",
+          "pcm_sha256": "3fb2aa4e422a36865eada81811f0d223710182e6ebb6ad2cab27170527e2951e",
+          "duration_seconds": 8.095
+        },
+        {
+          "producer": "ant-a",
+          "path": "fire-ant-a-utterance-001.wav",
+          "pcm_sha256": "bb040df1b19600f67b871981b542a96775cc166ef3ee68e9e7e7c637de8ed3d3",
+          "duration_seconds": 6.795
+        },
+        {
+          "producer": "ant-a",
+          "path": "fire-ant-a-utterance-002.wav",
+          "pcm_sha256": "f38168f817f33de06b45a81ccd3c23e7c881ff5ebc044bc3a7fe308dd8f2acbe",
+          "duration_seconds": 21.195
+        },
+        {
+          "producer": "ant-c",
+          "path": "fire-ant-c-utterance-000.wav",
+          "pcm_sha256": "ab0559e068a46cd6b92c193e54ba606d26bd25e784ead03147b67013b1bb6a66",
+          "duration_seconds": 8.095
+        }
+      ],
+      "fire_file_count": 4,
+      "synthetic_seconds": 44.18,
+      "synthetic_proportion": 0.275815,
+      "max_synthetic": 0.3,
+      "own_fire_excluded": true
+    },
+    "ant-c": {
+      "directory": "mix/ant-c",
+      "real_file_count": 8,
+      "real_seconds": 116.0,
+      "fire_files": [
+        {
+          "producer": "ant-a",
+          "path": "fire-ant-a-utterance-000.wav",
+          "pcm_sha256": "3fb2aa4e422a36865eada81811f0d223710182e6ebb6ad2cab27170527e2951e",
+          "duration_seconds": 8.095
+        },
+        {
+          "producer": "ant-a",
+          "path": "fire-ant-a-utterance-001.wav",
+          "pcm_sha256": "bb040df1b19600f67b871981b542a96775cc166ef3ee68e9e7e7c637de8ed3d3",
+          "duration_seconds": 6.795
+        },
+        {
+          "producer": "ant-a",
+          "path": "fire-ant-a-utterance-002.wav",
+          "pcm_sha256": "f38168f817f33de06b45a81ccd3c23e7c881ff5ebc044bc3a7fe308dd8f2acbe",
+          "duration_seconds": 21.195
+        },
+        {
+          "producer": "ant-b",
+          "path": "fire-ant-b-utterance-000.wav",
+          "pcm_sha256": "f1d046d0557067054966aa2b908ee12306f5af8b1177ee1063271c60e8c968f9",
+          "duration_seconds": 8.095
+        }
+      ],
+      "fire_file_count": 4,
+      "synthetic_seconds": 44.18,
+      "synthetic_proportion": 0.275815,
+      "max_synthetic": 0.3,
+      "own_fire_excluded": true
+    },
+    "ant-d": {
+      "directory": "mix/ant-d",
+      "real_file_count": 8,
+      "real_seconds": 116.0,
+      "fire_files": [
+        {
+          "producer": "ant-a",
+          "path": "fire-ant-a-utterance-000.wav",
+          "pcm_sha256": "3fb2aa4e422a36865eada81811f0d223710182e6ebb6ad2cab27170527e2951e",
+          "duration_seconds": 8.095
+        },
+        {
+          "producer": "ant-a",
+          "path": "fire-ant-a-utterance-001.wav",
+          "pcm_sha256": "bb040df1b19600f67b871981b542a96775cc166ef3ee68e9e7e7c637de8ed3d3",
+          "duration_seconds": 6.795
+        },
+        {
+          "producer": "ant-a",
+          "path": "fire-ant-a-utterance-002.wav",
+          "pcm_sha256": "f38168f817f33de06b45a81ccd3c23e7c881ff5ebc044bc3a7fe308dd8f2acbe",
+          "duration_seconds": 21.195
+        },
+        {
+          "producer": "ant-b",
+          "path": "fire-ant-b-utterance-000.wav",
+          "pcm_sha256": "f1d046d0557067054966aa2b908ee12306f5af8b1177ee1063271c60e8c968f9",
+          "duration_seconds": 8.095
+        }
+      ],
+      "fire_file_count": 4,
+      "synthetic_seconds": 44.18,
+      "synthetic_proportion": 0.275815,
+      "max_synthetic": 0.3,
+      "own_fire_excluded": true
+    }
+  },
+  "manifest_sha256": "a9c9dab3a4710db2874e209f4bfcacaed1487e3f9948b2b6a204629b7c6c1f0f"
+}

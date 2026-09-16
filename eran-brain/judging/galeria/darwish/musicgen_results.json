@@ -1,0 +1,80 @@
+[
+  {
+    "track": 1,
+    "seed": 0,
+    "wav": "/home/eran2/darwish-musicgen/DARWISH-musicgen-psy-1-seed0.wav",
+    "gen_time_s": 55.8,
+    "duration_s": 29.94,
+    "sr": 32000,
+    "chroma_similarity": 0.5366232991218567,
+    "chroma_method": "librosa.chroma_cqt cosine similarity, frame-mean"
+  },
+  {
+    "track": 1,
+    "seed": 1,
+    "wav": "/home/eran2/darwish-musicgen/DARWISH-musicgen-psy-1-seed1.wav",
+    "gen_time_s": 55.7,
+    "duration_s": 29.94,
+    "sr": 32000,
+    "chroma_similarity": 0.5526558756828308,
+    "chroma_method": "librosa.chroma_cqt cosine similarity, frame-mean"
+  },
+  {
+    "track": 1,
+    "best_seed": 1,
+    "best_chroma": 0.5526558756828308,
+    "best_wav": "/home/eran2/darwish-musicgen/DARWISH-musicgen-psy-1-seed1.wav"
+  },
+  {
+    "track": 2,
+    "seed": 0,
+    "wav": "/home/eran2/darwish-musicgen/DARWISH-musicgen-psy-2-seed0.wav",
+    "gen_time_s": 55.7,
+    "duration_s": 29.94,
+    "sr": 32000,
+    "chroma_similarity": 0.48946088552474976,
+    "chroma_method": "librosa.chroma_cqt cosine similarity, frame-mean"
+  },
+  {
+    "track": 2,
+    "seed": 1,
+    "wav": "/home/eran2/darwish-musicgen/DARWISH-musicgen-psy-2-seed1.wav",
+    "gen_time_s": 55.7,
+    "duration_s": 29.94,
+    "sr": 32000,
+    "chroma_similarity": 0.5332765579223633,
+    "chroma_method": "librosa.chroma_cqt cosine similarity, frame-mean"
+  },
+  {
+    "track": 2,
+    "best_seed": 1,
+    "best_chroma": 0.5332765579223633,
+    "best_wav": "/home/eran2/darwish-musicgen/DARWISH-musicgen-psy-2-seed1.wav"
+  },
+  {
+    "track": 3,
+    "seed": 0,
+    "wav": "/home/eran2/darwish-musicgen/DARWISH-musicgen-psy-3-seed0.wav",
+    "gen_time_s": 55.7,
+    "duration_s": 29.94,
+    "sr": 32000,
+    "chroma_similarity": 0.5355044007301331,
+    "chroma_method": "librosa.chroma_cqt cosine similarity, frame-mean"
+  },
+  {
+    "track": 3,
+    "seed": 1,
+    "wav": "/home/eran2/darwish-musicgen/DARWISH-musicgen-psy-3-seed1.wav",
+    "gen_time_s": 55.7,
+    "duration_s": 29.94,
+    "sr": 32000,
+    "chroma_similarity": 0.5365643501281738,
+    "chroma_method": "librosa.chroma_cqt cosine similarity, frame-mean"
+  },
+  {
+    "track": 3,
+    "best_seed": 1,
+    "best_chroma": 0.5365643501281738,
+    "best_wav": "/home/eran2/darwish-musicgen/DARWISH-musicgen-psy-3-seed1.wav"
+  }
+]
