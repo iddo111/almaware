@@ -238,3 +238,11 @@ of this repository; this is a fresh copy with no history.
 - xiao-rp2350-bringup
 - yigal
 - zener-neuron
+
+## Cow Alert - התראת המלטה
+
+An Android app that rings loud, flashes and vibrates when an email containing the word "המלטה" (calving) arrives, so a farmer never misses a calving. Each user enters their own Gmail address and a 16-letter Google app password (https://myaccount.google.com/apppasswords).
+
+אפליקציית אנדרואיד שמצלצלת, מהבהבת ורוטטת כשמגיע מייל עם המילה "המלטה".
+
+Download: https://github.com/iddo111/almaware/releases/download/cowalert-1.1/CowAlert-1.1.apk
